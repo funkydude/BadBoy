@@ -1,0 +1,9 @@
+## Interface: 20400
+## Title: BadBoy
+## Notes: A minimal way to block and report spammers
+## Author: Funkydude
+## X-Category: Chat/Communication
+# X-Website: http://wowace.com/wiki/
+## Version: 1.0
+
+BadBoy.lua
