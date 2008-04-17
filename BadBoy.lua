@@ -7,6 +7,7 @@ local triggers = { --list taken from SpamSentry, <3
 	"100g.ca",
 	"1225game",
 	"29games",
+	"2wowgold",
 	"365ige",
 	"5uneed",
 	"agamegold",
