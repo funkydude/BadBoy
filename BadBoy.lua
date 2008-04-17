@@ -1,5 +1,6 @@
 local ipairs = ipairs
 local fnd = string.find
+local lower = string.lower
 
 local triggers = { --list taken from SpamSentry, <3
 	"100g.ca",
@@ -92,8 +93,9 @@ local triggers = { --list taken from SpamSentry, <3
 
 local prev = 0
 local function filter()
+	local msg = lower(arg1)
 	for _, v in ipairs(triggers) do
-		if fnd(arg1, v) then
+		if fnd(msg, v) then
 			local time = GetTime()
 			if (time - prev) > 5 then
 				prev = time
