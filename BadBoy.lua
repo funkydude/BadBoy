@@ -1,7 +1,7 @@
 local ipairs = ipairs
 local fnd = string.find
 
-local triggers = {
+local triggers = { --list taken from SpamSentry, <3
 	"100g.ca",
 	"1225game",
 	"29games",
@@ -90,14 +90,18 @@ local triggers = {
 	"zlywy",
 }
 
+local prev = 0
 local function filter()
 	for _, v in ipairs(triggers) do
 		if fnd(arg1, v) then
-			local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
-			if dialog then
-				dialog.data = arg11
+			local time = GetTime()
+			if (time - prev) > 5 then
+				prev = time
+				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
+				if dialog then
+					dialog.data = arg11
+				end
 			end
-			ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: Spam blocked from "..arg2..".")
 			return true
 		end
 	end
@@ -108,4 +112,3 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
-
