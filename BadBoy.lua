@@ -3,6 +3,7 @@ local fnd = string.find
 local lower = string.lower
 
 local triggers = { --list taken from SpamSentry, <3
+	--websites
 	"100g.ca",
 	"1225game",
 	"29games",
@@ -90,6 +91,8 @@ local triggers = { --list taken from SpamSentry, <3
 	"wowsupplier",
 	"wowtoolbox",
 	"zlywy",
+	--phrases
+	"(%d+) (%S+) per (%d+) gold",
 }
 
 local prev = 0
