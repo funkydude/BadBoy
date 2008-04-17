@@ -2,6 +2,7 @@
 ## Title: BadBoy
 ## Notes: A minimal way to block and report spammers
 ## Author: Funkydude
+## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(SpamSentry Blacklist)
 ## X-Category: Chat/Communication
 # X-Website: http://wowace.com/wiki/
 ## Version: 1.0
