@@ -1,10 +1,13 @@
 ## Interface: 20400
 ## Title: BadBoy
-## Notes: A minimal way to block and report spammers
+## Notes: A light, automatic spam blocker & reporter.
 ## Author: Funkydude
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(SpamSentry Blacklist)
 ## X-Category: Chat/Communication
-# X-Website: http://wowace.com/wiki/
+## X-Website: http://www.wowace.com/wiki/BadBoy
+## X-RelSite-WoWI: 8736
+## X-RelSite-Curse: 12292
+## X-AceForum: 12899
 ## Version: 1.0
 
 BadBoy.lua
