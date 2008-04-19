@@ -86,6 +86,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"woweuropegold",
 	"wowforever",
 	"wowfreebuy",
+	"wowgoldbuy",
 	"wowgoldsky",
 	"wowgoldex",
 	"wowgshop",
