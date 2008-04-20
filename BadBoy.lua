@@ -69,6 +69,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"scggame",
 	"ssegames",
 	"speedpanda",
+	"tbgold",
 	"terrarpg",
 	"torchgame",
 	"tulongold",
