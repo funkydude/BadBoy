@@ -2,7 +2,6 @@ local ipairs = ipairs
 local fnd = string.find
 local lower = string.lower
 local info = COMPLAINT_ADDED
-local GetTime = _G.GetTime
 
 local AUTO_REPORT = true --false otherwise
 
@@ -99,6 +98,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"wowstar2008",
 	"wowsupplier",
 	"wowtoolbox",
+	"yesdaq",
 	"zlywy",
 	--phrases
 	"(%d+) (%S+) per (%d+) gold",
