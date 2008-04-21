@@ -38,6 +38,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"helpugame",
 	"heygt",
 	"h e y g t",
+	"heypk",
 	"hugold",
 	"igdollar",
 	"igamebuy",
@@ -65,6 +66,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"scggame",
 	"ssegames",
 	"speedpanda",
+	"susanexpress"
 	"tbgold",
 	"terrarpg",
 	"torchgame",
