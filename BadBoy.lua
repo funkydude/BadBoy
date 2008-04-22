@@ -37,6 +37,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"heygt",
 	"h e y g t",
 	"heypk",
+	"hpygame",
 	"hugold",
 	"igdollar",
 	"igamebuy",
