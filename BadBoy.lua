@@ -1,6 +1,6 @@
-local ipairs = ipairs
-local fnd = string.find
-local lower = string.lower
+local ipairs = _G.ipairs
+local fnd = _G.string.find
+local lower = _G.string.lower
 local info = COMPLAINT_ADDED
 
 local AUTO_REPORT = true --false otherwise
