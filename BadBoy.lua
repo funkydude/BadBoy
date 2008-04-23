@@ -9,6 +9,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--websites
 	"1wowgold",
 	"2wowgold",
+	"29gameswow",
 	"365ige",
 	"5uneed",
 	"51uoo",
