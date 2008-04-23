@@ -102,6 +102,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 
 local prev = 0
 local function filter()
+	if not CanComplainChat(arg11) then return end
 	local msg = lower(arg1)
 	msg = gsub(msg, " ", "")
 	for _, v in ipairs(triggers) do
@@ -109,15 +110,13 @@ local function filter()
 			local time = GetTime()
 			if (time - prev) > 7 then
 				prev = time
-				if CanComplainChat(arg11) then
-					if AUTO_REPORT then
-						COMPLAINT_ADDED = info .. " ("..arg2..")"
-						ComplainChat(arg11)
-					else
-						local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
-						if dialog then
-							dialog.data = arg11
-						end
+				if AUTO_REPORT then
+					COMPLAINT_ADDED = info .. " ("..arg2..")"
+					ComplainChat(arg11)
+				else
+					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
+					if dialog then
+						dialog.data = arg11
 					end
 				end
 			end
