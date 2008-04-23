@@ -1,6 +1,7 @@
 local ipairs = _G.ipairs
 local fnd = _G.string.find
 local lower = _G.string.lower
+local gsub = _G.string.gsub
 local info = COMPLAINT_ADDED
 
 local AUTO_REPORT = true --false otherwise
@@ -37,7 +38,6 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"happygolds",
 	"helpugame",
 	"heygt",
-	"h e y g t",
 	"heypk",
 	"hpygame",
 	"hugold",
@@ -62,8 +62,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"okstar2008",
 	"ownyo%.com",
 	"pkpkg",
-	"playdone %. com",
-	"play done,com",
+	"playdone",
 	"player123",
 	"scggame",
 	"scggold",
@@ -99,25 +98,26 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"wowspa",
 	"wowsupplier",
 	"yesdaq",
-	--phrases
-	"(%d+) (%S+) per (%d+) gold",
 }
 
 local prev = 0
 local function filter()
 	local msg = lower(arg1)
+	msg = gsub(msg, " ", "")
 	for _, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
 			if (time - prev) > 7 then
 				prev = time
-				if AUTO_REPORT then
-					COMPLAINT_ADDED = info .. " ("..arg2..")"
-					ComplainChat(arg11)
-				else
-					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
-					if dialog then
-						dialog.data = arg11
+				if CanComplainChat(arg11) then
+					if AUTO_REPORT then
+						COMPLAINT_ADDED = info .. " ("..arg2..")"
+						ComplainChat(arg11)
+					else
+						local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
+						if dialog then
+							dialog.data = arg11
+						end
 					end
 				end
 			end
