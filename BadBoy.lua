@@ -59,6 +59,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"0gs365",
 	"ogs4u",
 	"okstar2008",
+	"ownyo%.com",
 	"pkpkg",
 	"playdone %. com",
 	"play done,com",
