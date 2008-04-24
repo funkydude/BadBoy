@@ -63,6 +63,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"speedpanda%.com", --24 April 08
 	"susanexpress%.com", --24 April 08
 	"tbgold%.com", --24 April 08
+	"tctwow%.com", --24 April 08
 	"terrarpg%.com", --24 April 08 forward mmoinn
 	"tgtimes%.com", --24 April 08
 	"torchgame%.com", --24 April 08
