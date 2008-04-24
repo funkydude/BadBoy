@@ -1,7 +1,7 @@
 local ipairs = _G.ipairs
 local fnd = _G.string.find
-local lower = _G.string.lower
-local gsub = _G.string.gsub
+local lower = _G.strlower
+local gsub = _G.strreplace or _G.string.gsub
 local info = COMPLAINT_ADDED
 
 local AUTO_REPORT = true --false otherwise
@@ -92,7 +92,12 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"wowseller",
 	"wowspa",
 	"wowsupplier",
+	"wowwar%.net", --www.wowwar.net 24 April 08
 	"yesdaq",
+	--phrases
+	"(%d+)poundsper(%d+)gold", -- X pounds per X gold
+	"(%d+)dollarsper(%d+)gold", -- X dollars per X gold
+	"(%d+)eurosper(%d+)gold", -- X euros per X gold
 }
 
 local prev = 0
