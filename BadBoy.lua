@@ -30,6 +30,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"gmworker%.c%S+", --24 April 08
 	"gmworking%.c%S+", --24 April 08
 	"gmworking%.e+u+", --25 April 08 forward gmworking.com
+	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold230%.c%S+", --24 April 08
 	"gold4guild%.c%S+", --24 April 08
 	--"goldwithyou", --24 April 08 Expired
