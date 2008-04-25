@@ -21,7 +21,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--"eusupplier%.c%S+", --24 April 08 Expired
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fastgg%.c%S+", --24 April 08
-	"free%-levels%.c%S+", --24 April 08
+	"free%-levels", --25 April 08 DOT / .
 	"gagora%.c%S+", --24 April 08
 	"gamegold123%.c%S+", --24 April 08
 	"gamenoble%.c%S+", --24 April 08
