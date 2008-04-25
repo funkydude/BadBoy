@@ -81,7 +81,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"wowfbi%.(%l+)", --24 April 08 forward gamegold123
 	"wowforever%.(%l+)", --24 April 08
 	--"wowfreebuy", --24 April 08 Expired
-	"wowgoldbuy%.(%l+)", --24 April 08 forward gm963
+	"wowgoldbuy%.(%l+)", --24 April 08 forward gm963 (.net)
 	--"wowgoldsky", --24 April 08 Expired
 	--"wowgoldex%.(%l+)", --24 April 08 Expired
 	"wowgshop%.(%l+)", --24 April 08
@@ -91,7 +91,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--"wowseller%.(%l+)", --24 April 08 Expired
 	"wowspa%.(%l+)", --24 April 08
 	"wowsupplier%.(%l+)", --24 April 08
-	"wowwar%.(%l+)", --24 April 08 forward wowforever
+	"wowwar%.(%l+)", --24 April 08 forward wowforever (.net)
 	"yesdaq%.(%l+)", --24 April 08
 	--phrases
 	"(%d+)poundsper(%d+)gold", -- X pounds per X gold
