@@ -8,91 +8,91 @@ local AUTO_REPORT = true --false otherwise
 
 local triggers = { --list partially taken from SpamSentry, <3
 	--websites
-	"1wowgold%.(%l+)", --24 April 08 forward scggold
-	"2wowgold%.(%l+)", --24 April 08 forward gmworker
-	"29gameswow%.(%l+)", --24 April 08
-	"365ige%.(%l+)", --24 April 08 forward gold230
-	"5uneed%.(%l+)", --24 April 08
-	"51uoo%.(%l+)", --24 April 08
-	"agamegold%.(%l+)", --24 April 08
-	"bigmouthnest%.(%l+)", --24 April 08 forward yesdaq
-	--"championshall%.(%l+)", --24 April 08 Expired
-	"cheapsgold%.(%l+)", --24 April 08
-	--"eusupplier%.(%l+)", --24 April 08 Expired
-	"eugspa%.(%l+)", --24 April 08 forward mmospa
-	"fastgg%.(%l+)", --24 April 08
-	"free%-levels%.(%l+)", --24 April 08
-	"gagora%.(%l+)", --24 April 08
-	"gamegold123%.(%l+)", --24 April 08
-	"gamenoble%.(%l+)", --24 April 08
-	"gm365%.(%l+)", --24 April 08 ogm365/igm365
-	"gm963%.(%l+)", --24 April 08
-	"gmworker%.(%l+)", --24 April 08
-	"gmworking%.(%l+)", --24 April 08
-	"gold230%.(%l+)", --24 April 08
-	"gold4guild%.(%l+)", --24 April 08
+	"1wowgold%.(c+o+m+)", --24 April 08 forward scggold
+	"2wowgold%.(c+o+m+)", --24 April 08 forward gmworker
+	"29gameswow%.(c+o+m+)", --24 April 08
+	"365ige%.(c+o+m+)", --24 April 08 forward gold230
+	"5uneed%.(c+o+m+)", --24 April 08
+	"51uoo%.(c+o+m+)", --24 April 08
+	"agamegold%.(c+o+m+)", --24 April 08
+	"bigmouthnest%.(c+o+m+)", --24 April 08 forward yesdaq
+	--"championshall%.(c+o+m+)", --24 April 08 Expired
+	"cheapsgold%.(c+o+m+)", --24 April 08
+	--"eusupplier%.(c+o+m+)", --24 April 08 Expired
+	"eugspa%.(c+o+m+)", --24 April 08 forward mmospa
+	"fastgg%.(c+o+m+)", --24 April 08
+	"free%-levels%.(c+o+m+)", --24 April 08
+	"gagora%.(c+o+m+)", --24 April 08
+	"gamegold123%.(c+o+m+)", --24 April 08
+	"gamenoble%.(c+o+m+)", --24 April 08
+	"gm365%.(c+o+m+)", --24 April 08 ogm365/igm365
+	"gm963%.(c+o+m+)", --24 April 08
+	"gmworker%.(c+o+m+)", --24 April 08
+	"gmworking%.(c+o+m+)", --24 April 08
+	"gold230%.(c+o+m+)", --24 April 08
+	"gold4guild%.(c+o+m+)", --24 April 08
 	--"goldwithyou", --24 April 08 Expired
-	"goldwow%.(%l+)", --24 April 08 forward ige
-	"gtgold%.(%l+)", --24 April 08 gtgold/heygt
-	"happygolds%.(%l+)", --24 April 08
-	"helpugame%.(%l+)", --24 April 08
-	"heygt%.(%l+)", --24 April 08 heygt/gtgold
-	"heypk%.(%l+)", --24 April 08
-	"hpygame%.(%l+)", --24 April 08
+	"goldwow%.(c+o+m+)", --24 April 08 forward ige
+	"gtgold%.(c+o+m+)", --24 April 08 gtgold/heygt
+	"happygolds%.(c+o+m+)", --24 April 08
+	"helpugame%.(c+o+m+)", --24 April 08
+	"heygt%.(c+o+m+)", --24 April 08 heygt/gtgold
+	"heypk%.(c+o+m+)", --24 April 08
+	"hpygame%.(c+o+m+)", --24 April 08
 	--"hugold", --24 April 08 Expired
-	"igamebuy%.(%l+)", --24 April 08
-	"ige%.(%l+)", --24 April 08
-	"igfad%.(%l+)", --24 April 08
-	"igs365%.(%l+)", --24 April 08 forward gmworker
-	"itemrate%.(%l+)", --24 April 08
-	"iuc365%.(%l+)", --24 April 08
-	"kgsgold%.(%l+)", --24 April 08
-	"luckwow%.(%l+)", --24 April 08
-	"mmoinn%.(%l+)", --24 April 08
-	"mmospa%.(%l+)", --24 April 08
-	"ogchannel%.(%l+)", --24 April 08
+	"igamebuy%.(c+o+m+)", --24 April 08
+	"ige%.(c+o+m+)", --24 April 08
+	"igfad%.(c+o+m+)", --24 April 08
+	"igs365%.(c+o+m+)", --24 April 08 forward gmworker
+	"itemrate%.(c+o+m+)", --24 April 08
+	"iuc365%.(c+o+m+)", --24 April 08
+	"kgsgold%.(c+o+m+)", --24 April 08
+	"luckwow%.(c+o+m+)", --24 April 08
+	"mmoinn%.(c+o+m+)", --24 April 08
+	"mmospa%.(c+o+m+)", --24 April 08
+	"ogchannel%.(c+o+m+)", --24 April 08
 	--"ogmarket", --24 April 08 Expired
 	--"okstar2008", --24 April 08 Expired
-	"ownyo%.(%l+)", --24 April 08
-	"pkpkg%.(%l+)", --24 April 08
-	"playdone%.(%l+)", --24 April 08
+	"ownyo%.(c+o+m+)", --24 April 08
+	"pkpkg%.(c+o+m+)", --24 April 08
+	"playdone%.(c+o+m+)", --24 April 08
 	--"player123", --24 April 08 Expired
-	"scggame%.(%l+)", --24 April 08
-	"scggold%.(%l+)", --24 April 08
-	"ssegames%.(%l+)", --24 April 08
-	"speedpanda%.(%l+)", --24 April 08
-	"susanexpress%.(%l+)", --24 April 08
-	"tbgold%.(%l+)", --24 April 08
-	"tctwow%.(%l+)", --24 April 08
-	"terrarpg%.(%l+)", --24 April 08 forward mmoinn
-	"tgtimes%.(%l+)", --24 April 08
-	"torchgame%.(%l+)", --24 April 08
-	"tulongold%.(%l+)", --24 April 08
+	"scggame%.(c+o+m+)", --24 April 08
+	"scggold%.(c+o+m+)", --24 April 08
+	"ssegames%.(c+o+m+)", --24 April 08
+	"speedpanda%.(c+o+m+)", --24 April 08
+	"susanexpress%.(c+o+m+)", --24 April 08
+	"tbgold%.(c+o+m+)", --24 April 08
+	"tctwow%.(c+o+m+)", --24 April 08
+	"terrarpg%.(c+o+m+)", --24 April 08 forward mmoinn
+	"tgtimes%.(c+o+m+)", --24 April 08
+	"torchgame%.(c+o+m+)", --24 April 08
+	"tulongold%.(c+o+m+)", --24 April 08
 	--"tusongame", --24 April 08 Expired
-	"ucgogo%.(%l+)", --24 April 08
+	"ucgogo%.(c+o+m+)", --24 April 08
 	"ucatm%.(%l+)%.tw", --24 April 08 .com/.url
-	"ukwowgold%.(%l+)", --24 April 08
-	"whoyo%.(%l+)", --24 April 08
-	"wow4s%.(%l+)", --24 April 08 forward agamegold
-	"wow7gold%.(%l+)", --24 April 08
-	"wowcoming%.(%l+)", --24 April 08
+	"ukwowgold%.(c+o+m+)", --24 April 08
+	"whoyo%.(c+o+m+)", --24 April 08
+	"wow4s%.(c+o+m+)", --24 April 08 forward agamegold
+	"wow7gold%.(c+o+m+)", --24 April 08
+	"wowcoming%.(c+o+m+)", --24 April 08
 	"wow%-europe%.cn", --24 April 08 forward gmworker
 	--"woweuropegold",  --24 April 08 Expired
-	"wowfbi%.(%l+)", --24 April 08 forward gamegold123
-	"wowforever%.(%l+)", --24 April 08
+	"wowfbi%.(c+o+m+)", --24 April 08 forward gamegold123
+	"wowforever%.(c+o+m+)", --24 April 08
 	--"wowfreebuy", --24 April 08 Expired
-	"wowgoldbuy%.(%l+)", --24 April 08 forward gm963 (.net)
+	"wowgoldbuy%.(n+e+t+)", --24 April 08 forward gm963
 	--"wowgoldsky", --24 April 08 Expired
-	--"wowgoldex%.(%l+)", --24 April 08 Expired
-	"wowgshop%.(%l+)", --24 April 08
-	"wowjx%.(%l+)", --24 April 08 forward wowforever
-	"wowmine%.(%l+)", --24 April 08
-	"wowpanning%.(%l+)", --24 April 08
-	--"wowseller%.(%l+)", --24 April 08 Expired
-	"wowspa%.(%l+)", --24 April 08
-	"wowsupplier%.(%l+)", --24 April 08
-	"wowwar%.(%l+)", --24 April 08 forward wowforever (.net)
-	"yesdaq%.(%l+)", --24 April 08
+	--"wowgoldex%.(c+o+m+)", --24 April 08 Expired
+	"wowgshop%.(c+o+m+)", --24 April 08
+	"wowjx%.(c+o+m+)", --24 April 08 forward wowforever
+	"wowmine%.(c+o+m+)", --24 April 08
+	"wowpanning%.(c+o+m+)", --24 April 08
+	--"wowseller%.(c+o+m+)", --24 April 08 Expired
+	"wowspa%.(c+o+m+)", --24 April 08
+	"wowsupplier%.(c+o+m+)", --24 April 08
+	"wowwar%.(n+e+t+)", --24 April 08 forward wowforever
+	"yesdaq%.(c+o+m+)", --24 April 08
 	--phrases
 	"(%d+)poundsper(%d+)gold", -- X pounds per X gold
 	"(%d+)dollarsper(%d+)gold", -- X dollars per X gold
