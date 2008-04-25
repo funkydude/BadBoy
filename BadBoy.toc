@@ -8,6 +8,6 @@
 ## X-RelSite-WoWI: 8736
 ## X-RelSite-Curse: 12292
 ## X-AceForum: 12899
-## Version: 1.2
+## Version: 1.3
 
 BadBoy.lua
