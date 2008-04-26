@@ -52,6 +52,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"itemrate%.c%S+", --24 April 08
 	"iuc365%.c%S+", --24 April 08
 	"kgsgold%.c%S+", --24 April 08
+	"leetgold%.c%S+", --27 April 08
 	"luckwow%.c%S+", --24 April 08
 	"mmoinn%.c%S+", --24 April 08
 	"mmospa%.c%S+", --24 April 08
