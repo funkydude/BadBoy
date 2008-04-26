@@ -60,6 +60,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"ownyo%.c%S+", --24 April 08
 	"pkpkg%.c%S+", --24 April 08
 	"playdone%.c%S+", --24 April 08
+	"psmmo%.c%S+", --26 April 08
 	--"player123", --24 April 08 Expired
 	"scggame%.c%S+", --24 April 08
 	"scggold%.c%S+", --24 April 08
