@@ -21,7 +21,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--"eusupplier%.c%S+", --24 April 08 Expired
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fastgg%.c%S+", --24 April 08
-	"free%-levels", --25 April 08 DOT / .
+	"free%-levels", --25 April 08 DOT / . com
 	"gagora%.c%S+", --24 April 08
 	"gamegold123%.c%S+", --24 April 08
 	"gamenoble%.c%S+", --24 April 08
@@ -34,6 +34,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"gold230%.c%S+", --24 April 08
 	"gold4guild%.c%S+", --24 April 08
 	--"goldwithyou", --24 April 08 Expired
+	"goldpager%.c%S+", --26 April 08 forward yesdaq
 	"goldwow%.c%S+", --24 April 08 forward ige
 	"gtgold%.c%S+", --24 April 08 gtgold/heygt
 	"happygolds%.c%S+", --24 April 08
@@ -75,7 +76,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"ucatm%.%l+%.tw", --24 April 08 .com/.url
 	"ukwowgold%.c%S+", --24 April 08
 	"whoyo%.c%S+", --24 April 08
-	"wow4s%.c%S+", --24 April 08 forward agamegold
+	"wow4s%.%S+", --26 April 08 .com / .net forward agamegold
 	"wow7gold%.c%S+", --24 April 08
 	"wowcoming%.c%S+", --24 April 08
 	"wow%-europe%.cn", --24 April 08 forward gmworker
@@ -96,9 +97,9 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"wowwar%.n+e+t+", --24 April 08 forward wowforever
 	"yesdaq%.c%S+", --24 April 08
 	--phrases
-	"(%d+)poundsper(%d+)gold", -- X pounds per X gold
-	"(%d+)dollarsper(%d+)gold", -- X dollars per X gold
-	"(%d+)eurosper(%d+)gold", -- X euros per X gold
+	"%d+poundsper%d+gold", -- X pounds per X gold
+	"%d+dollarsper%d+gold", -- X dollars per X gold
+	"%d+eurosper%d+gold", -- X euros per X gold
 }
 
 local prev = 0
