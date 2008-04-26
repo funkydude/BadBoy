@@ -18,6 +18,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
 	--"championshall%.c%S+", --24 April 08 Expired
 	"cheapsgold%.c%S+", --24 April 08
+	"dewowgold%.c%S+", --26 April 08
 	--"eusupplier%.c%S+", --24 April 08 Expired
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fastgg%.c%S+", --24 April 08
