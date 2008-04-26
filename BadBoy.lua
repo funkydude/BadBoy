@@ -47,6 +47,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"ige%.c%S+", --24 April 08
 	"igfad%.c%S+", --24 April 08
 	"igs365%.c%S+", --24 April 08 forward gmworker
+	"item4sale%.c%S+", --26 April 08
 	"itemrate%.c%S+", --24 April 08
 	"iuc365%.c%S+", --24 April 08
 	"kgsgold%.c%S+", --24 April 08
