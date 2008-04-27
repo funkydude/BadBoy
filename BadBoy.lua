@@ -70,6 +70,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"scggold%.c%S+", --24 April 08
 	"ssegames%.c%S+", --24 April 08
 	"speedpanda%.c%S+", --24 April 08
+	"supplier2008%.c%S+", --27 April 08 forward tradewowgold
 	"%.susanexpress%.%S+", --27 April 08 .com/.?om
 	"tbgold%.c%S+", --24 April 08
 	"tctwow%.c%S+", --24 April 08
