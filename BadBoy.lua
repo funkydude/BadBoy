@@ -21,6 +21,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"dewowgold%.c%S+", --26 April 08
 	--"eusupplier%.c%S+", --24 April 08 Expired
 	"eugspa%.c%S+", --24 April 08 forward mmospa
+	"fast70%.c%S+", --27 April 08
 	"fastgg%.c%S+", --24 April 08
 	"free%-levels", --25 April 08 DOT / . com
 	"gagora%.c%S+", --24 April 08
