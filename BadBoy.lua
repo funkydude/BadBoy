@@ -97,6 +97,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--"wowgoldsky", --24 April 08 Expired
 	--"wowgoldex%.c%S+", --24 April 08 Expired
 	"wowgshop%.c%S+", --24 April 08
+	"wow%-hackers%.c%S+", --27 April 08 forward god-mod
 	"wowjx%.c%S+", --24 April 08 forward wowforever
 	"wowmine%.c%S+", --24 April 08
 	"wowpanning%.c%S+", --24 April 08
