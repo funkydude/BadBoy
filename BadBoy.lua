@@ -25,6 +25,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"fastgg%.c%S+", --24 April 08
 	"free%-levels", --25 April 08 DOT / . com
 	"gagora%.c%S+", --24 April 08
+	"game1999%.c%S+", --28 April 08
 	"gamegold123%.c%S+", --24 April 08
 	"gamenoble%.c%S+", --24 April 08
 	"gm365%.c%S+", --24 April 08 ogm365/igm365
