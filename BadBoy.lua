@@ -83,6 +83,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"ucatm%.%l+%.tw", --24 April 08 .com/.url
 	"ukwowgold%.c%S+", --24 April 08
 	"vesgame%.c%S+", --27 April 08
+	"vgsale%.c%S+", --28 April 08
 	"vsguy%.c%S+", --26 April 08
 	"whoyo%.c%S+", --24 April 08
 	"wow4s%.%S+", --26 April 08 .com / .net forward agamegold
