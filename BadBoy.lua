@@ -31,6 +31,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"game1999%.c%S+", --28 April 08
 	"gamegold123%.c%S+", --24 April 08
 	"gamenoble%.c%S+", --24 April 08
+	"get%-levels%.c%S+", --29 April 08
 	"gm365%.c%S+", --24 April 08 ogm365/igm365
 	"gm963%.c%S+", --24 April 08
 	"gmworker%.c%S+", --24 April 08
@@ -62,7 +63,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"luckwow%.c%S+", --24 April 08
 	"mmoinn%.c%S+", --24 April 08
 	"mmospa%.c%S+", --24 April 08
-	"ogchannel%.c%S+", --24 April 08
+	"ogchanne%S%.c%S+", --29 April 08 ogchannel /ogchanneI
 	--"ogmarket", --24 April 08 Expired
 	--"okstar2008", --24 April 08 Expired
 	"owny%S%.c%S+", --28 April 08 ownyo.com
