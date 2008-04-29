@@ -20,6 +20,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--"championshall%.c%S+", --24 April 08 Expired
 	"cheapsgold%.c%S+", --24 April 08
 	"dewowgold%.c%S+", --26 April 08
+	"df%-game%.c%S+", --29 April 08
 	"dgamespydotc%S+", --29 April 08 dgamespy DOT com
 	--"eusupplier%.c%S+", --24 April 08 Expired
 	"eugspa%.c%S+", --24 April 08 forward mmospa
@@ -108,6 +109,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"wowseller%.c%S+", --24 April 08
 	"wowspa%.c%S+", --24 April 08
 	"wowsupplier%.c%S+", --24 April 08
+	"wowton%.c%S+", --29 April 08
 	"wowwar%.n+e+t+", --24 April 08 forward wowforever
 	"yesdaq%.c%S+", --24 April 08
 	--phrases
