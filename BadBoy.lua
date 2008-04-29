@@ -67,7 +67,8 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"ogchanne%S%.c%S+", --29 April 08 ogchannel /ogchanneI
 	--"ogmarket", --24 April 08 Expired
 	--"okstar2008", --24 April 08 Expired
-	"owny%S%.c%S+", --28 April 08 ownyo.com
+	"ownyo%.c%S+", --29 April 08 ownyo.com
+	"owny%S+%.com", --29 April 08 ownyo.com
 	"pkpkg%.c%S+", --24 April 08
 	"playdone%.c%S+", --24 April 08
 	"psmmo%.c%S+", --26 April 08
