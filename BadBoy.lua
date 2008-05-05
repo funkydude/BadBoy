@@ -51,6 +51,7 @@ local triggers = {
 	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold230%.c%S+", --24 April 08
 	"gold4guild%.c%S+", --24 April 08
+	"goldmyspace%.c%S+", --5 May 08 forward yesdaq
 	--"goldwithyou", --24 April 08 Expired
 	"goldpager%.c%S+", --26 April 08 forward yesdaq
 	"goldsaler%.c%S+", --5 May 08
