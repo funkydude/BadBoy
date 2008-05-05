@@ -6,8 +6,14 @@ local info = COMPLAINT_ADDED
 
 local AUTO_REPORT = true --false otherwise
 
-local triggers = { --list partially taken from SpamSentry, <3
-	--websites
+local triggers = {
+	--phrases
+	"gold.*powerlevell?ing", --gold [optional random text] powerlevel(l)ing
+	"%d+poundsper%d+gold", -- X pounds per X gold
+	"%d+dollarsper%d+gold", -- X dollars per X gold
+	"%d+eurosper%d+gold", -- X euros per X gold
+	"%dg/%deu", --X G / X EU
+	--websites, list partially taken from SpamSentry
 	"1wowgold%.c%S+", --24 April 08 forward scggold
 	"2wowgold%.c%S+", --5 May 08 forward gmworker
 	"2wowgold%.%Som", --5 May 08 forward gmworker
@@ -115,28 +121,27 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--"wowgoldsky", --24 April 08 Expired
 	--"wowgoldex%.c%S+", --24 April 08 Expired
 	"wowgshop%.c%S+", --24 April 08
-	"wow%-hackers%.c%S+", --27 April 08 forward god-mod
-	"wowhackers%.c%S+", --5 May 08
+	"wow%-?hackers%.c%S+", --5 May 08 forward god-mod | wow-hackers / wowhackers
 	"wowhax%.c%S+", --5 May 08
 	"wowjx%.c%S+", --24 April 08 forward wowforever
 	"wowmine%.c%S+", --24 April 08
 	"wowpanning%.c%S+", --24 April 08
+	"wowpl%.n+e+t+", --5 May 08
 	"wowseller%.c%S+", --24 April 08
 	"wowspa%.c%S+", --24 April 08
 	"wowsupplier%.c%S+", --24 April 08
 	"wowton%.c%S+", --29 April 08
 	"wowwar%.n+e+t+", --24 April 08 forward wowforever
 	"yesdaq%.c%S+", --24 April 08
-	--phrases
-	"%d+poundsper%d+gold", -- X pounds per X gold
-	"%d+dollarsper%d+gold", -- X dollars per X gold
-	"%d+eurosper%d+gold", -- X euros per X gold
 }
 
-local prev = 0
+local prev, prevmsg, result = 0, nil, nil
 local function filter()
 	if not CanComplainChat(arg11) then return end
-	local msg = lower(arg1)
+	local msg = arg1
+	if msg == prevmsg then return result end
+	prevmsg = msg
+	msg = lower(msg)
 	msg = gsub(msg, " ", "")
 	msg = gsub(msg, ",", ".")
 	for _, v in ipairs(triggers) do
@@ -154,9 +159,11 @@ local function filter()
 					end
 				end
 			end
+			result = true
 			return true
 		end
 	end
+	result = nil
 end
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
