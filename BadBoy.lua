@@ -9,7 +9,8 @@ local AUTO_REPORT = true --false otherwise
 local triggers = { --list partially taken from SpamSentry, <3
 	--websites
 	"1wowgold%.c%S+", --24 April 08 forward scggold
-	"2wowgold%.c%S+", --24 April 08 forward gmworker
+	"2wowgold%.c%S+", --5 May 08 forward gmworker
+	"2wowgold%.%Som", --5 May 08 forward gmworker
 	"29gameswow%.c%S+", --24 April 08
 	"365ige%.c%S+", --24 April 08 forward gold230
 	"5uneed%.c%S+", --24 April 08
@@ -23,11 +24,13 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"df%-game%.c%S+", --29 April 08
 	"dgameskydotc%S+", --29 April 08 dgamesky DOT com
 	"dgamespydotc%S+", --29 April 08 dgamespy DOT com
+	"epicgamegold%.c%S+", --5 May 08
 	--"eusupplier%.c%S+", --24 April 08 Expired
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fast70%.c%S+", --27 April 08
 	"fastgg%.c%S+", --24 April 08
 	"fedwow%.c%S+", --30 April 08
+	"fkugold%.c%S+", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
 	"gagora%.c%S+", --24 April 08
 	"game1999%.c%S+", --28 April 08
@@ -44,7 +47,9 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"gold4guild%.c%S+", --24 April 08
 	--"goldwithyou", --24 April 08 Expired
 	"goldpager%.c%S+", --26 April 08 forward yesdaq
+	"goldsaler%.c%S+", --5 May 08
 	"goldwow%.c%S+", --24 April 08 forward ige
+	"goldzombie%.c%S+", --5 May 08
 	"gtgold%.c%S+", --24 April 08 gtgold/heygt
 	"happygolds%.c%S+", --24 April 08
 	"helpugame%.c%S+", --24 April 08
@@ -63,10 +68,12 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"kgsgold%.c%S+", --24 April 08
 	"leetgold%.c%S+", --27 April 08
 	"luckwow%.c%S+", --24 April 08
+	"mayapl%.%S+", --5 May 08 mayapl.com
 	"mmoinn%.c%S+", --24 April 08
 	"mmospa%.c%S+", --24 April 08
 	"ogchanne%S%.c%S+", --29 April 08 ogchannel /ogchanneI
 	--"ogmarket", --24 April 08 Expired
+	"okpenos%.c%S+", --5 May 08 forward yesaq
 	--"okstar2008", --24 April 08 Expired
 	"ownyo%.c%S+", --29 April 08 ownyo.com
 	"owny%S+%.com", --29 April 08 ownyo.com
@@ -74,6 +81,7 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"playdone%.c%S+", --24 April 08
 	"psmmo%.c%S+", --26 April 08
 	--"player123", --24 April 08 Expired
+	"qwowgold%.c%S+", --5 May 08
 	"scggame%.c%S+", --24 April 08
 	"scggold%.c%S+", --24 April 08
 	"ssegames%.c%S+", --24 April 08
@@ -94,10 +102,11 @@ local triggers = { --list partially taken from SpamSentry, <3
 	"vgsale%.c%S+", --28 April 08
 	"vsguy%.c%S+", --26 April 08
 	"whoyo%.c%S+", --24 April 08
+	"wow%-europe%.cn", --24 April 08 forward gmworker
 	"wow4s%.%S+", --26 April 08 .com / .net forward agamegold
 	"wow7gold%.c%S+", --24 April 08
+	"wowcnn%.c%S+", --5 May 08 forward gamegold123
 	"wowcoming%.c%S+", --24 April 08
-	"wow%-europe%.cn", --24 April 08 forward gmworker
 	--"woweuropegold",  --24 April 08 Expired
 	"wowfbi%.c%S+", --24 April 08 forward gamegold123
 	"wowforever%.c%S+", --24 April 08
@@ -107,6 +116,8 @@ local triggers = { --list partially taken from SpamSentry, <3
 	--"wowgoldex%.c%S+", --24 April 08 Expired
 	"wowgshop%.c%S+", --24 April 08
 	"wow%-hackers%.c%S+", --27 April 08 forward god-mod
+	"wowhackers%.c%S+", --5 May 08
+	"wowhax%.c%S+", --5 May 08
 	"wowjx%.c%S+", --24 April 08 forward wowforever
 	"wowmine%.c%S+", --24 April 08
 	"wowpanning%.c%S+", --24 April 08
