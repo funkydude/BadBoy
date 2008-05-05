@@ -137,9 +137,8 @@ local triggers = {
 }
 
 local prev, prevmsg, result = 0, nil, nil
-local function filter()
+local function filter(msg)
 	if not CanComplainChat(arg11) then return end
-	local msg = arg1
 	if msg == prevmsg then return result end --works around a blizz bug
 	prevmsg = msg
 	msg = lower(msg)
