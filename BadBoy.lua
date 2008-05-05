@@ -12,7 +12,7 @@ local triggers = {
 	"%d+poundsper%d+gold", -- X pounds per X gold
 	"%d+dollarsper%d+gold", -- X dollars per X gold
 	"%d+eurosper%d+gold", -- X euros per X gold
-	"%dg/%deu", --X G / X EU
+	"%d+g%/%d+eu", --X G / X EU
 	--websites, list partially taken from SpamSentry
 	"1wowgold%.c%S+", --24 April 08 forward scggold
 	"2wowgold%.c%S+", --5 May 08 forward gmworker
@@ -139,7 +139,7 @@ local prev, prevmsg, result = 0, nil, nil
 local function filter()
 	if not CanComplainChat(arg11) then return end
 	local msg = arg1
-	if msg == prevmsg then return result end
+	if msg == prevmsg then return result end --works around a blizz bug
 	prevmsg = msg
 	msg = lower(msg)
 	msg = gsub(msg, " ", "")
