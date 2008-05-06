@@ -137,11 +137,11 @@ local triggers = {
 	"yesdaq%.c%S+", --24 April 08
 }
 
-local prev, prevmsg, result = 0, nil, nil
+local prev, prevID, result = 0, 0, nil
 local function filter(msg)
 	if not CanComplainChat(arg11) then return end
-	if msg == prevmsg then return result end --works around a blizz bug
-	prevmsg = msg
+	if arg11 == prevID then return result end --to work around a blizz bug
+	prevID = arg11
 	msg = lower(msg)
 	msg = gsub(msg, " ", "")
 	msg = gsub(msg, ",", ".")
