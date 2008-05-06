@@ -137,11 +137,10 @@ local triggers = {
 	"yesdaq%.c%S+", --24 April 08
 }
 
-local prev, prevID, result = 0, 0, nil
+local prev, savedID, result = 0, 0, nil
 local function filter(msg)
-	if not CanComplainChat(arg11) then return end
-	if arg11 == prevID then return result end --to work around a blizz bug
-	prevID = arg11
+	if arg11 == savedID then return result else savedID = arg11 end --to work around a blizz bug
+	if not CanComplainChat(savedID) then return end
 	msg = lower(msg)
 	msg = gsub(msg, " ", "")
 	msg = gsub(msg, ",", ".")
@@ -152,11 +151,11 @@ local function filter(msg)
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
-					ComplainChat(arg11)
+					ComplainChat(savedID)
 				else
 					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
 					if dialog then
-						dialog.data = arg11
+						dialog.data = savedID
 					end
 				end
 			end
