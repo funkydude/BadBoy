@@ -76,6 +76,7 @@ local triggers = {
 	"kgsgold%.c%S+", --24 April 08
 	"leetgold%.c%S+", --27 April 08
 	"luckwow%.c%S+", --24 April 08
+	"m8gold%.c%S+", --6 May 08
 	"mayapl%.%S+", --5 May 08 mayapl.com
 	"mmoinn%.c%S+", --24 April 08
 	"mmospa%.c%S+", --24 April 08
@@ -127,7 +128,7 @@ local triggers = {
 	"wowhax%.c%S+", --5 May 08
 	"wowjx%.c%S+", --24 April 08 forward wowforever
 	"wowmine%.c%S+", --24 April 08
-	"wowpanning%.c%S+", --24 April 08
+	"wowpann%Sng%.c%S+", --24 April 08 wowpanning / wowpannlng
 	"wowpl%.n+e+t+", --5 May 08
 	"wowseller%.c%S+", --24 April 08
 	"wowspa%.c%S+", --24 April 08
