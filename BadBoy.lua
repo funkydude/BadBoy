@@ -9,11 +9,11 @@ local AUTO_REPORT = true --false otherwise
 local triggers = {
 	--phrases
 	"%.o+%.", --some random crappy art [.ooooO Ooooo.]
-	"%(only%d+%.?%d*euros%)", --more crap for the filter
-	"%d+%.?%d*poundsper%d+%.?%d*gold", -- X pounds per X gold
+	"%(only%d+%.?%d*eur?o?s?%)", --more crap for the filter
+	"%d+%.?%d*pounds?per%d+%.?%d*g", -- X pounds per X gold
 	"%d+%.?%d*dollarsper%d+%.?%d*gold", -- X dollars per X gold
-	"%d+%.?%d*eurosper%d+%.?%d*gold", -- X euros per X gold
-	"%d+%.?%d*g%/%d+%.?%d*eu", --X G / X EU
+	"%d+%.?%d*eu%l+%d+%.?%d*g", -- X euros per X gold
+	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu", --X G / X EU
 	"gold.*powerle?ve?ll?ing", --gold [optional random text] powerlevel(l)ing
 
 	--websites, list partially taken from SpamSentry
