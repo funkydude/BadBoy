@@ -141,7 +141,7 @@ local triggers = {
 local prev, savedID, result = 0, 0, nil
 local function filter(msg)
 	if arg11 == savedID then return result else savedID = arg11 end --to work around a blizz bug
-	if not CanComplainChat(savedID) then return end
+	if not CanComplainChat(savedID) then result = nil return end
 	msg = lower(msg)
 	msg = gsub(msg, " ", "")
 	msg = gsub(msg, ",", ".")
