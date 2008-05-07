@@ -8,11 +8,14 @@ local AUTO_REPORT = true --false otherwise
 
 local triggers = {
 	--phrases
-	"gold.*powerlevell?ing", --gold [optional random text] powerlevel(l)ing
-	"%d+poundsper%d+gold", -- X pounds per X gold
-	"%d+dollarsper%d+gold", -- X dollars per X gold
-	"%d+eurosper%d+gold", -- X euros per X gold
-	"%d+g%/%d+eu", --X G / X EU
+	"%.o+%.", --some random crappy art [.ooooO Ooooo.]
+	"%(only%d+%.?%d*euros%)", --more crap for the filter
+	"%d+%.?%d*poundsper%d+%.?%d*gold", -- X pounds per X gold
+	"%d+%.?%d*dollarsper%d+%.?%d*gold", -- X dollars per X gold
+	"%d+%.?%d*eurosper%d+%.?%d*gold", -- X euros per X gold
+	"%d+%.?%d*g%/%d+%.?%d*eu", --X G / X EU
+	"gold.*powerle?ve?ll?ing", --gold [optional random text] powerlevel(l)ing
+
 	--websites, list partially taken from SpamSentry
 	"1wowgold%.c%S+", --24 April 08 forward scggold
 	"2wowgold%.c%S+", --5 May 08 forward gmworker
@@ -145,10 +148,10 @@ local function filter(msg)
 	msg = lower(msg)
 	msg = gsub(msg, " ", "")
 	msg = gsub(msg, ",", ".")
-	for _, v in ipairs(triggers) do
+	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
-			if (time - prev) > 20 then
+			if (time - prev) > 20 and k > 6 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
