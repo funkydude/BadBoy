@@ -15,10 +15,18 @@ local triggers = {
 	"gold.*powerle?ve?ll?ing", --gold [optional random text] powerlevel(l)ing
 	"%d+g.*powerle?ve?ll?ing",
 	"cheap.*fast.*gold",
-	"golds?.*fastdelivery",
+	"cheap.*fast.*delivery.*%d+g",
+	"golds?.*fast.*delivery",
+	"%d+g.*fast.*delivery",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
-	"%.o+%.", --some random crappy art [.ooooO Ooooo.]
-	"%(only%d+%.?%d*eur?o?s?%)", --more crap for the filter
+	"gold.*%d+.*%d+.*gold",
+
+	--URL's
+	"gold4guild", --8 May 08 | com
+
+	--Random
+	"%.o+%.", --[.ooooO Ooooo.]
+	"%(only%d+%.?%d*eur?o?s?%)",
 
 	--websites, list partially taken from SpamSentry
 	--[[
@@ -33,22 +41,20 @@ local triggers = {
 	"2wowgold%.%Som", --5 May 08 forward gmworker
 	"29gameswow%.c%S+", --24 April 08
 	"365ige%.c%S+", --24 April 08 forward gold230
-	--"5uneed%.c%S+", --24 April 08 PHASED OUT 5 MAY 08
+	--"5uneed%.c%S+", --PHASED OUT 5 MAY 08
 	"51uoo%.c%S+", --24 April 08
 	"agamegold%.c%S+", --24 April 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
 	"brothergame%.c%S+", --29 April 08
-	--"championshall%.c%S+", --24 April 08 Expired
 	"cheapsgold%.c%S+", --24 April 08
 	"dewowgold%.c%S+", --26 April 08
 	"df%-game%.c%S+", --29 April 08
 	"dgameskydotc%S+", --29 April 08 dgamesky DOT com
 	"dgamespydotc%S+", --29 April 08 dgamespy DOT com
 	"epicgamegold%.c%S+", --5 May 08
-	--"eusupplier%.c%S+", --24 April 08 Expired
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fast70%.c%S+", --27 April 08
-	"fastgg%.c%S+", --24 April 08
+	--"fastgg%.c%S+", --PHASED OUT 8 MAY 08
 	"fedwow%.c%S+", --30 April 08
 	"fkugold%.c%S+", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
@@ -57,17 +63,15 @@ local triggers = {
 	"gamegold123%.c%S+", --24 April 08
 	"gamenoble%.c%S+", --24 April 08
 	"get%-levels%.c%S+", --29 April 08
-	"gm365%.c%S+", --24 April 08 ogm365/igm365
+	--"gm365%.c%S+", --ogm365/igm365 Phased 8 May 08
 	"gm963%.c%S+", --24 April 08
 	"gmworker%.c%S+", --24 April 08
 	"gmworking%.c%S+", --24 April 08
 	"gmworking%.e+u+", --25 April 08 forward gmworking.com
 	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold230%.c%S+", --24 April 08
-	"gold4guild", --8 MAY 08 [NO PHASE]
 	"gold660%.c%S+", --6 May 08
 	"goldmyspace%.c%S+", --5 May 08 forward yesdaq
-	--"goldwithyou", --24 April 08 Expired
 	"goldpager%.c%S+", --26 April 08 forward yesdaq
 	"goldsaler%.c%S+", --5 May 08
 	"goldwow%.c%S+", --24 April 08 forward ige
@@ -78,7 +82,6 @@ local triggers = {
 	"heygt%.c%S+", --24 April 08 heygt/gtgold
 	"heypk%.c%S+", --24 April 08
 	"hpygame%.c%S+", --24 April 08
-	--"hugold", --24 April 08 Expired
 	"igamebuy%.c%S+", --24 April 08
 	"ige%.c%S+", --24 April 08
 	"igfad%.c%S+", --24 April 08
@@ -90,20 +93,17 @@ local triggers = {
 	"kgsgold%.c%S+", --24 April 08
 	"leetgold%.c%S+", --27 April 08
 	"luckwow%.c%S+", --24 April 08
-	"m8gold%.c%S+", --6 May 08
+	--"m8gold%.c%S+", --Phased 8 May 08
 	"mayapl%.%S+", --5 May 08 mayapl.com
 	"mmoinn%.c%S+", --24 April 08
 	"mmospa%.c%S+", --24 April 08
 	"ogchanne%S%.c%S+", --29 April 08 ogchannel /ogchanneI
-	--"ogmarket", --24 April 08 Expired
 	"okpenos%.c%S+", --5 May 08 forward yesaq
-	--"okstar2008", --24 April 08 Expired
 	"ownyo%.c%S+", --29 April 08 ownyo.com
 	"owny%S+%.com", --29 April 08 ownyo.com
 	"pkpkg%.c%S+", --24 April 08
 	"playdone%.c%S+", --24 April 08
 	"psmmo%.c%S+", --26 April 08
-	--"player123", --24 April 08 Expired
 	"qwowgold%.c%S+", --5 May 08
 	"scggame%.c%S+", --24 April 08
 	"scggold%.c%S+", --24 April 08
@@ -117,7 +117,6 @@ local triggers = {
 	"tgtimes%.c%S+", --24 April 08
 	"torchgame%.c%S+", --24 April 08
 	"tulongold%.c%S+", --24 April 08
-	--"tusongame", --24 April 08 Expired
 	"ucgogo%.c%S+", --24 April 08
 	"ucatm%.%l+%.tw", --24 April 08 .com/.url
 	"ukwowgold%.c%S+", --24 April 08
@@ -125,18 +124,14 @@ local triggers = {
 	"vgsale%.c%S+", --28 April 08
 	"vsguy%.c%S+", --26 April 08
 	"whoyo%.c%S+", --24 April 08
-	--"wow%-europe%.cn", --24 April 08 forward gmworker PHASED OUT 8 MAY 08
+	--"wow%-europe%.cn", --forward gmworker Phased 8 May 08
 	"wow4s%.%S+", --26 April 08 .com / .net forward agamegold
 	"wow7gold%.c%S+", --24 April 08
 	"wowcnn%.c%S+", --5 May 08 forward gamegold123
 	"wowcoming%.c%S+", --24 April 08
-	--"woweuropegold",  --24 April 08 Expired
 	"wowfbi%.c%S+", --24 April 08 forward gamegold123
 	"wowforever%.c%S+", --24 April 08
-	--"wowfreebuy", --24 April 08 Expired
 	"wowgoldbuy%.n+e+t+", --24 April 08 forward gm963
-	--"wowgoldsky", --24 April 08 Expired
-	--"wowgoldex%.c%S+", --24 April 08 Expired
 	"wowgshop%.c%S+", --24 April 08
 	"wow%-?hackers%.c%S+", --5 May 08 forward god-mod | wow-hackers / wowhackers
 	"wowhax%.c%S+", --5 May 08
@@ -162,7 +157,7 @@ local function filter(msg)
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
-			if (time - prev) > 20 and (k < 10 or k > 11) then
+			if (time - prev) > 20 and (k < 14 or k > 15) then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
