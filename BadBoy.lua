@@ -8,24 +8,32 @@ local AUTO_REPORT = true --false otherwise
 
 local triggers = {
 	--phrases
-	"%.o+%.", --some random crappy art [.ooooO Ooooo.]
-	"%(only%d+%.?%d*eur?o?s?%)", --more crap for the filter
 	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu", --X G / X EU
 	"%d+%.?%d*pounds?per%d+%.?%d*g", -- X pounds per X gold
 	"%d+%.?%d*dollarsper%d+%.?%d*gold", -- X dollars per X gold
 	"%d+%.?%d*eu%l+%d+%.?%d*g", -- X euros per X gold
 	"gold.*powerle?ve?ll?ing", --gold [optional random text] powerlevel(l)ing
+	"%d+g.*powerle?ve?ll?ing",
 	"cheap.*fast.*gold",
 	"golds?.*fastdelivery",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
+	"%.o+%.", --some random crappy art [.ooooO Ooooo.]
+	"%(only%d+%.?%d*eur?o?s?%)", --more crap for the filter
 
 	--websites, list partially taken from SpamSentry
+	--[[
+		As of 8 May 08 phasing out of websites
+		has started, please report any lines missed by
+		badboy on the post at wowace.com
+		Links will be slowly removed over time in
+		preference of phrases.
+	]]
 	"1wowgold%.c%S+", --24 April 08 forward scggold
 	"2wowgold%.c%S+", --5 May 08 forward gmworker
 	"2wowgold%.%Som", --5 May 08 forward gmworker
 	"29gameswow%.c%S+", --24 April 08
 	"365ige%.c%S+", --24 April 08 forward gold230
-	"5uneed%.c%S+", --24 April 08
+	--"5uneed%.c%S+", --24 April 08 PHASED OUT 5 MAY 08
 	"51uoo%.c%S+", --24 April 08
 	"agamegold%.c%S+", --24 April 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
@@ -56,7 +64,7 @@ local triggers = {
 	"gmworking%.e+u+", --25 April 08 forward gmworking.com
 	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold230%.c%S+", --24 April 08
-	"gold4guild%.c%S+", --24 April 08
+	"gold4guild", --8 MAY 08 [NO PHASE]
 	"gold660%.c%S+", --6 May 08
 	"goldmyspace%.c%S+", --5 May 08 forward yesdaq
 	--"goldwithyou", --24 April 08 Expired
@@ -117,7 +125,7 @@ local triggers = {
 	"vgsale%.c%S+", --28 April 08
 	"vsguy%.c%S+", --26 April 08
 	"whoyo%.c%S+", --24 April 08
-	"wow%-europe%.cn", --24 April 08 forward gmworker
+	--"wow%-europe%.cn", --24 April 08 forward gmworker PHASED OUT 8 MAY 08
 	"wow4s%.%S+", --26 April 08 .com / .net forward agamegold
 	"wow7gold%.c%S+", --24 April 08
 	"wowcnn%.c%S+", --5 May 08 forward gamegold123
@@ -154,7 +162,7 @@ local function filter(msg)
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
-			if (time - prev) > 20 and k > 3 then
+			if (time - prev) > 20 and (k < 10 or k > 11) then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
