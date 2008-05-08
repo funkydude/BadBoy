@@ -10,10 +10,10 @@ local triggers = {
 	--phrases
 	"%.o+%.", --some random crappy art [.ooooO Ooooo.]
 	"%(only%d+%.?%d*eur?o?s?%)", --more crap for the filter
+	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu", --X G / X EU
 	"%d+%.?%d*pounds?per%d+%.?%d*g", -- X pounds per X gold
 	"%d+%.?%d*dollarsper%d+%.?%d*gold", -- X dollars per X gold
 	"%d+%.?%d*eu%l+%d+%.?%d*g", -- X euros per X gold
-	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu", --X G / X EU
 	"gold.*powerle?ve?ll?ing", --gold [optional random text] powerlevel(l)ing
 
 	--websites, list partially taken from SpamSentry
@@ -151,7 +151,7 @@ local function filter(msg)
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
-			if (time - prev) > 20 and k > 6 then
+			if (time - prev) > 20 and k > 3 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
