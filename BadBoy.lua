@@ -16,6 +16,7 @@ local triggers = {
 	"%d+%.?%d*eu%l+%d+%.?%d*g", -- X euros per X gold
 	"gold.*powerle?ve?ll?ing", --gold [optional random text] powerlevel(l)ing
 	"cheap.*fast.*gold",
+	"golds?.*fastdelivery",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 
 	--websites, list partially taken from SpamSentry
