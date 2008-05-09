@@ -7,47 +7,31 @@ local info = COMPLAINT_ADDED
 local AUTO_REPORT = true --false otherwise
 
 local triggers = {
-	--phrases
+	--Random
+	"%.o+%.", --[.ooooO Ooooo.]
+	"%(only%d+%.?%d*eur?o?s?%)",
+
+	--Phrases
 	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu",
 	"%d+%.?%d*pounds?per%d+%.?%d*g",
 	"%d+%.?%d*dollarsper%d+%.?%d*gold",
 	"%d+%.?%d*eu%l+%d+%.?%d*g",
 	"gold.*powerle?ve?ll?ing",
-	"%d+g.*powerle?ve?ll?ing",
 	"cheap.*fast.*gold",
-	"cheap.*fast.*delivery.*%d+g",
-	"golds?.*fast.*delivery",
-	"%d+g.*fast.*delivery",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
-	"gold.*%d+.*%d+.*gold",
-	"cheap.*gold.*%d+g",
 
 	--URL's
-	"gold4guild", --8 May 08 | com
-
-	--Random
-	"%.o+%.", --[.ooooO Ooooo.]
-	"%(only%d+%.?%d*eur?o?s?%)",
-
-	--websites, list partially taken from SpamSentry
-	--[[
-		As of 8 May 08 phasing out of websites
-		has started, please report any lines missed by
-		badboy on the post at wowace.com
-		Links will be slowly removed over time in
-		preference of phrases.
-	]]
-	--[["1wowgold%.c%S+", --24 April 08 forward scggold
+	"1wowgold%.c%S+", --24 April 08 forward scggold
 	"2wowgold%.c%S+", --5 May 08 forward gmworker
 	"2wowgold%.%Som", --5 May 08 forward gmworker
 	"29gameswow%.c%S+", --24 April 08
 	"365ige%.c%S+", --24 April 08 forward gold230
-	--"5uneed%.c%S+", --Phased 8 May 08
+	"5uneed%.c%S+", --8 May 08
 	"51uoo%.c%S+", --24 April 08
 	"agamegold%.c%S+", --24 April 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
 	"brothergame%.c%S+", --29 April 08
-	--"cheapsgold%.c%S+", --Phased 8 May 08
+	"cheapsgold%.c%S+", --8 May 08
 	"dewowgold%.c%S+", --26 April 08
 	"df%-game%.c%S+", --29 April 08
 	"dgameskydotc%S+", --29 April 08 dgamesky DOT com
@@ -55,7 +39,7 @@ local triggers = {
 	"epicgamegold%.c%S+", --5 May 08
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fast70%.c%S+", --27 April 08
-	--"fastgg%.c%S+", --Phased 8 May 08
+	"fastgg%.c%S+", --8 May 08
 	"fedwow%.c%S+", --30 April 08
 	"fkugold%.c%S+", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
@@ -63,15 +47,18 @@ local triggers = {
 	"game1999%.c%S+", --28 April 08
 	"gamegold123%.c%S+", --24 April 08
 	"gamenoble%.c%S+", --24 April 08
+	"games%-level%.n+e+t", --9May 08
 	"get%-levels%.c%S+", --29 April 08
-	--"gm365%.c%S+", --ogm365/igm365 Phased 8 May 08
+	"gm365%.c%S+", --ogm365/igm365 8 May 08
 	"gm963%.c%S+", --24 April 08
 	"gmworker%.c%S+", --24 April 08
 	"gmworking%.c%S+", --24 April 08
-	--"gmworking%.e+u+", --forward gmworking.com Phased 8 May 08
+	"gmworking%.e+u+", --8 May 08 forward gmworking.com 
 	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold230%.c%S+", --24 April 08
+	"gold4guild", --9 May 08
 	"gold660%.c%S+", --6 May 08
+	"goldhi5%.c", --9 May 08 forward yesdaq
 	"goldmyspace%.c%S+", --5 May 08 forward yesdaq
 	"goldpager%.c%S+", --26 April 08 forward yesdaq
 	"goldsaler%.c%S+", --5 May 08
@@ -82,6 +69,7 @@ local triggers = {
 	"helpugame%.c%S+", --24 April 08
 	"heygt%.c%S+", --24 April 08 heygt/gtgold
 	"heypk%.c%S+", --24 April 08
+	"hotpvp%.c", --9 May 08
 	"hpygame%.c%S+", --24 April 08
 	"igamebuy%.c%S+", --24 April 08
 	"ige%.c%S+", --24 April 08
@@ -94,7 +82,7 @@ local triggers = {
 	"kgsgold%.c%S+", --24 April 08
 	"leetgold%.c%S+", --27 April 08
 	"luckwow%.c%S+", --24 April 08
-	--"m8gold%.c%S+", --Phased 8 May 08
+	"m8gold%.c%S+", --8 May 08
 	"mayapl%.%S+", --5 May 08 mayapl.com
 	"mmoinn%.c%S+", --24 April 08
 	"mmospa%.c%S+", --24 April 08
@@ -105,6 +93,7 @@ local triggers = {
 	"pkpkg%.c%S+", --24 April 08
 	"playdone%.c%S+", --24 April 08
 	"psmmo%.c%S+", --26 April 08
+	"pvpboydot", --9 May 08 dot com
 	"qwowgold%.c%S+", --5 May 08
 	"scggame%.c%S+", --24 April 08
 	"scggold%.c%S+", --24 April 08
@@ -112,7 +101,7 @@ local triggers = {
 	"speedpanda%.c%S+", --24 April 08
 	"supplier2008%.c%S+", --27 April 08 forward tradewowgold
 	"%.susanexpress%.%S+", --27 April 08 .com/.?om
-	--"tbgold%.c%S+", --Phased 8 May 08
+	"tbgold%.c%S+", --8 May 08
 	"tctwow%.c%S+", --24 April 08
 	"terrarpg%.c%S+", --24 April 08 forward mmoinn
 	"tgtimes%.c%S+", --24 April 08
@@ -125,14 +114,16 @@ local triggers = {
 	"vgsale%.c%S+", --28 April 08
 	"vsguy%.c%S+", --26 April 08
 	"whoyo%.c%S+", --24 April 08
-	--"wow%-europe%.cn", --forward gmworker Phased 8 May 08
+	"wow%-europe%.cn", --8 May 08 forward gmworker
 	"wow4s%.%S+", --26 April 08 .com / .net forward agamegold
 	"wow7gold%.c%S+", --24 April 08
 	"wowcnn%.c%S+", --5 May 08 forward gamegold123
 	"wowcoming%.c%S+", --24 April 08
 	"wowfbi%.c%S+", --24 April 08 forward gamegold123
 	"wowforever%.c%S+", --24 April 08
+	"wowgamelife", --9 May 08 
 	"wowgoldbuy%.n+e+t+", --24 April 08 forward gm963
+	"wowgoldget%.c", --9 May 08
 	"wowgshop%.c%S+", --24 April 08
 	"wow%-?hackers%.c%S+", --5 May 08 forward god-mod | wow-hackers / wowhackers
 	"wowhax%.c%S+", --5 May 08
@@ -145,7 +136,7 @@ local triggers = {
 	"wowsupplier%.c%S+", --24 April 08
 	"wowton%.c%S+", --29 April 08
 	"wowwar%.n+e+t+", --24 April 08 forward wowforever
-	"yesdaq%.c%S+", --24 April 08]]
+	"yesdaq%.c%S+", --24 April 08
 }
 
 local prev, savedID, result = 0, 0, nil
@@ -158,7 +149,7 @@ local function filter(msg)
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
-			if (time - prev) > 20 and k < 15 then
+			if (time - prev) > 20 and k > 2 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
