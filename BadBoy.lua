@@ -158,7 +158,7 @@ local function filter(msg)
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
-			if (time - prev) > 20 and k < 14 then
+			if (time - prev) > 20 and k < 15 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
