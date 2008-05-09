@@ -46,7 +46,7 @@ local triggers = {
 	"agamegold%.c%S+", --24 April 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
 	"brothergame%.c%S+", --29 April 08
-	"cheapsgold%.c%S+", --24 April 08
+	--"cheapsgold%.c%S+", --Phased 8 May 08
 	"dewowgold%.c%S+", --26 April 08
 	"df%-game%.c%S+", --29 April 08
 	"dgameskydotc%S+", --29 April 08 dgamesky DOT com
@@ -157,7 +157,7 @@ local function filter(msg)
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
 			local time = GetTime()
-			if (time - prev) > 20 and (k < 14 or k > 15) then
+			if (time - prev) > 20 and k < 14 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = info .. " ("..arg2..")"
@@ -176,9 +176,7 @@ local function filter(msg)
 	result = nil
 end
 local frame = CreateFrame("Frame")
-local function fixmsg()
-	COMPLAINT_ADDED = info
-end
+local function fixmsg() COMPLAINT_ADDED = info end
 frame:SetScript("OnEvent", fixmsg)
 frame:RegisterEvent("CHAT_MSG_SYSTEM")
 
