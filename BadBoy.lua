@@ -58,7 +58,7 @@ local triggers = {
 	"gold230%.c%S+", --24 April 08
 	"gold4guild", --9 May 08
 	"gold660%.c%S+", --6 May 08
-	"goldclassmates%.c" --9 May 08  forward yesdaq
+	"goldclassmates%.c", --9 May 08  forward yesdaq
 	"goldhi5%.c", --9 May 08 forward yesdaq
 	"goldmyspace%.c%S+", --5 May 08 forward yesdaq
 	"goldpager%.c%S+", --26 April 08 forward yesdaq
