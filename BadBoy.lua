@@ -1,6 +1,6 @@
 local ipairs = _G.ipairs
-local fnd = _G.strfind
-local lower = _G.strlower
+local fnd = _G.string.find
+local lower = _G.string.lower
 local gsub = _G.strreplace or _G.gsub
 local info = COMPLAINT_ADDED
 
@@ -8,11 +8,11 @@ local AUTO_REPORT = true --false otherwise
 
 local triggers = {
 	--phrases
-	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu", --X G / X EU
-	"%d+%.?%d*pounds?per%d+%.?%d*g", -- X pounds per X gold
-	"%d+%.?%d*dollarsper%d+%.?%d*gold", -- X dollars per X gold
-	"%d+%.?%d*eu%l+%d+%.?%d*g", -- X euros per X gold
-	"gold.*powerle?ve?ll?ing", --gold [optional random text] powerlevel(l)ing
+	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu",
+	"%d+%.?%d*pounds?per%d+%.?%d*g",
+	"%d+%.?%d*dollarsper%d+%.?%d*gold",
+	"%d+%.?%d*eu%l+%d+%.?%d*g",
+	"gold.*powerle?ve?ll?ing",
 	"%d+g.*powerle?ve?ll?ing",
 	"cheap.*fast.*gold",
 	"cheap.*fast.*delivery.*%d+g",
@@ -36,12 +36,12 @@ local triggers = {
 		Links will be slowly removed over time in
 		preference of phrases.
 	]]
-	"1wowgold%.c%S+", --24 April 08 forward scggold
+	--[["1wowgold%.c%S+", --24 April 08 forward scggold
 	"2wowgold%.c%S+", --5 May 08 forward gmworker
 	"2wowgold%.%Som", --5 May 08 forward gmworker
 	"29gameswow%.c%S+", --24 April 08
 	"365ige%.c%S+", --24 April 08 forward gold230
-	--"5uneed%.c%S+", --PHASED OUT 5 MAY 08
+	--"5uneed%.c%S+", --Phased 8 May 08
 	"51uoo%.c%S+", --24 April 08
 	"agamegold%.c%S+", --24 April 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
@@ -54,7 +54,7 @@ local triggers = {
 	"epicgamegold%.c%S+", --5 May 08
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fast70%.c%S+", --27 April 08
-	--"fastgg%.c%S+", --PHASED OUT 8 MAY 08
+	--"fastgg%.c%S+", --Phased 8 May 08
 	"fedwow%.c%S+", --30 April 08
 	"fkugold%.c%S+", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
@@ -67,7 +67,7 @@ local triggers = {
 	"gm963%.c%S+", --24 April 08
 	"gmworker%.c%S+", --24 April 08
 	"gmworking%.c%S+", --24 April 08
-	"gmworking%.e+u+", --25 April 08 forward gmworking.com
+	--"gmworking%.e+u+", --forward gmworking.com Phased 8 May 08
 	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold230%.c%S+", --24 April 08
 	"gold660%.c%S+", --6 May 08
@@ -111,7 +111,7 @@ local triggers = {
 	"speedpanda%.c%S+", --24 April 08
 	"supplier2008%.c%S+", --27 April 08 forward tradewowgold
 	"%.susanexpress%.%S+", --27 April 08 .com/.?om
-	"tbgold%.c%S+", --24 April 08
+	--"tbgold%.c%S+", --Phased 8 May 08
 	"tctwow%.c%S+", --24 April 08
 	"terrarpg%.c%S+", --24 April 08 forward mmoinn
 	"tgtimes%.c%S+", --24 April 08
@@ -144,7 +144,7 @@ local triggers = {
 	"wowsupplier%.c%S+", --24 April 08
 	"wowton%.c%S+", --29 April 08
 	"wowwar%.n+e+t+", --24 April 08 forward wowforever
-	"yesdaq%.c%S+", --24 April 08
+	"yesdaq%.c%S+", --24 April 08]]
 }
 
 local prev, savedID, result = 0, 0, nil
@@ -175,6 +175,12 @@ local function filter(msg)
 	end
 	result = nil
 end
+local frame = CreateFrame("Frame")
+local function fixmsg()
+	COMPLAINT_ADDED = info
+end
+frame:SetScript("OnEvent", fixmsg)
+frame:RegisterEvent("CHAT_MSG_SYSTEM")
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
