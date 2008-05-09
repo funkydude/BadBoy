@@ -87,6 +87,7 @@ local triggers = {
 	"mayapl%.%S+", --5 May 08 mayapl.com
 	"mmoinn%.c%S+", --24 April 08
 	"mmospa%.c%S+", --24 April 08
+	"mmoxplore%.c", -- 9 May 08
 	"ogchanne%S%.c%S+", --29 April 08 ogchannel /ogchanneI
 	"okpenos%.c%S+", --5 May 08 forward yesaq
 	"ownyo%.c%S+", --29 April 08 ownyo.com
