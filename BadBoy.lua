@@ -34,8 +34,7 @@ local triggers = {
 	"cheapsgold%.c%S+", --8 May 08
 	"dewowgold%.c%S+", --26 April 08
 	"df%-game%.c%S+", --29 April 08
-	"dgameskydotc%S+", --29 April 08 dgamesky DOT com
-	"dgamespydotc%S+", --29 April 08 dgamespy DOT com
+	"dgames%Sydotc", --29 April 08 dgame(sky/spy) DOT com
 	"epicgamegold%.c%S+", --5 May 08
 	"eugspa%.c%S+", --24 April 08 forward mmospa
 	"fast70%.c%S+", --27 April 08
