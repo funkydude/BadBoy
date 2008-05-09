@@ -20,6 +20,7 @@ local triggers = {
 	"%d+g.*fast.*delivery",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"gold.*%d+.*%d+.*gold",
+	"cheap.*gold.*%d+g",
 
 	--URL's
 	"gold4guild", --8 May 08 | com
