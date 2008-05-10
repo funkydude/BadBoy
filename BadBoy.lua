@@ -107,6 +107,7 @@ local triggers = {
 	"terrarpg%.c%S+", --24 April 08 forward mmoinn
 	"tgtimes%.c%S+", --24 April 08
 	"torchgame%.c%S+", --24 April 08
+	"tpsale%.c", --9 May 08
 	"tulongold%.c%S+", --24 April 08
 	"ucgogo%.c%S+", --24 April 08
 	"ucatm%.%l+%.tw", --24 April 08 .com/.url
