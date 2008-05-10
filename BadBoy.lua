@@ -126,6 +126,7 @@ local triggers = {
 	"wowgamelife", --9 May 08 
 	"wowgoldbuy%.n+e+t+", --24 April 08 forward gm963
 	"wowgoldget%.c", --9 May 08
+	"wowgsg%.c", --10 May 08
 	"wowgshop%.c%S+", --24 April 08
 	"wow%-?hackers%.c%S+", --5 May 08 forward god-mod | wow-hackers / wowhackers
 	"wowhax%.c%S+", --5 May 08
