@@ -134,6 +134,7 @@ local triggers = {
 	"wowmine%.c%S+", --24 April 08
 	"wowpann%Sng%.c%S+", --24 April 08 wowpanning / wowpannlng
 	"wowpl%.n+e+t+", --5 May 08
+	"wowplayer%.d+e+", --11 May 08
 	"wowseller%.c%S+", --24 April 08
 	"wowspa%.c%S+", --24 April 08
 	"wowsupplier%.c%S+", --24 April 08
