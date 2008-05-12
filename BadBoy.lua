@@ -127,6 +127,7 @@ local triggers = {
 	"wowforever%.c%S+", --24 April 08
 	"wowgamelife", --9 May 08 
 	"wowgoldbuy%.n+e+t+", --24 April 08 forward gm963
+	"wowgoldduper%.c", --12 May 08
 	"wowgoldget%.c", --9 May 08
 	"wowgsg%.c", --10 May 08
 	"wowgshop%.c%S+", --24 April 08
