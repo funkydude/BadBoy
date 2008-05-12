@@ -20,6 +20,7 @@ local triggers = {
 	"cheap.*fast.*gold",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"%$%d+%.?%d*%=%d+gold",
+	"%d+g%=%d+%.?%d*eur",
 
 	--URL's
 	"%dwowgold%.c", --24 April 08 1wowgold forward scggold | 2wowgold forward gmworker
@@ -30,6 +31,7 @@ local triggers = {
 	"51uoo%.c%S+", --24 April 08
 	"agamegold%.c%S+", --24 April 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
+	"brbgame%.c", --12 May 08
 	"brothergame%.c%S+", --29 April 08
 	"cheapsgold%.c%S+", --8 May 08
 	"dewowgold%.c%S+", --26 April 08
@@ -91,7 +93,7 @@ local triggers = {
 	"okpenos%.c%S+", --5 May 08 forward yesaq
 	"ownyo%.c%S+", --29 April 08 ownyo.com
 	"owny%S+%.com", --29 April 08 ownyo.com
-	"pkpkg%.c%S+", --24 April 08
+	--"pkpkg%.c%S+", --24 April 08
 	"playdone%.c%S+", --24 April 08
 	"psmmo%.c%S+", --26 April 08
 	"pvpboydot", --9 May 08 dot com
