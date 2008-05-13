@@ -19,8 +19,10 @@ local triggers = {
 	"gold.*powerle?ve?ll?ing",
 	"cheap.*fast.*gold",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
-	"%$%d+%.?%d*%=%d+gold",
-	"%d+g%=%d+%.?%d*eur",
+	"%$%d+%.?%d*%W%d+gold",
+	"%d+g%W%d+%.?%d*eur",
+	"%d+g%W%d+%.?%d*usd",
+	"%d+%.?%d*usd%W%d+g",
 
 	--URL's
 	"%dwowgold%.c", --24 April 08 1wowgold forward scggold | 2wowgold forward gmworker
@@ -30,7 +32,7 @@ local triggers = {
 	"5uneed%.c%S+", --8 May 08
 	"51uoo%.c%S+", --24 April 08
 	"agamegold%.c%S+", --24 April 08
-	"belrion%(dot%)c", --13 May 08
+	--"belrion%(dot%)c", --13 May 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
 	"brbgame%.c", --12 May 08
 	"brothergame%.c%S+", --29 April 08
@@ -104,7 +106,7 @@ local triggers = {
 	"ssegames%.c%S+", --24 April 08
 	"speedpanda%.c%S+", --24 April 08
 	"supplier2008%.c%S+", --27 April 08 forward tradewowgold
-	"%.susanexpress%.%S+", --27 April 08 .com/.?om
+	--"%.susanexpress%.%S+", --27 April 08 .com/.?om
 	"tbgold%.c%S+", --8 May 08
 	"tctwow%.c%S+", --24 April 08
 	"terrarpg%.c%S+", --24 April 08 forward mmoinn
