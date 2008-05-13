@@ -163,7 +163,7 @@ local function filter(msg)
 			if (time - prev) > 20 and k > 2 then
 				prev = time
 				if AUTO_REPORT then
-					COMPLAINT_ADDED = info .. " ("..arg2..")"
+					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
 					ComplainChat(savedID)
 				else
 					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
