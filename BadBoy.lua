@@ -30,6 +30,7 @@ local triggers = {
 	"5uneed%.c%S+", --8 May 08
 	"51uoo%.c%S+", --24 April 08
 	"agamegold%.c%S+", --24 April 08
+	"belrion%(dot%)c", --13 May 08
 	"bigmouthnest%.c%S+", --24 April 08 forward yesdaq
 	"brbgame%.c", --12 May 08
 	"brothergame%.c%S+", --29 April 08
@@ -116,6 +117,7 @@ local triggers = {
 	"ukwowgold%.c%S+", --24 April 08
 	"vesgame%.c%S+", --27 April 08
 	"vgsale%.c%S+", --28 April 08
+	"vicsaledotc", --13 May 08
 	"vsguy%.c%S+", --26 April 08
 	"whoyo%.c%S+", --24 April 08
 	"wow%-europe%.cn", --8 May 08 forward gmworker
