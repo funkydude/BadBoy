@@ -111,7 +111,7 @@ local triggers = {
 	"speedpanda%.c", --24 April 08
 	"supplier2008%.c", --27 April 08 forward tradewowgold
 	--"%.susanexpress%.", --27 April 08 .com/.?om
-	"tbgold%.c", --8 May 08
+	--"tbgold%.c", --8 May 08
 	"tctwow%.c", --24 April 08
 	"terrarpg%.c", --24 April 08 forward mmoinn
 	"tgtimes%.c", --24 April 08
@@ -120,7 +120,7 @@ local triggers = {
 	"tulongold%.c", --24 April 08
 	"ucgogo%.c", --24 April 08
 	"ucatm%.%l+%.tw", --24 April 08 .com/.url
-	"ukwowgold%.c", --24 April 08
+	--"ukwowgold%.c", --24 April 08
 	"vesgame%.c", --27 April 08
 	"vgsale%.c", --28 April 08
 	"vicsaledotc", --13 May 08
