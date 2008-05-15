@@ -74,7 +74,7 @@ local triggers = {
 	"goldwow%.c", --24 April 08 forward ige
 	"goldzombie%.c", --5 May 08
 	--"gtgold%.c", --24 April 08 gtgold/heygt
-	"happygolds%.c", --24 April 08
+	--"happygolds%.c", --24 April 08
 	"helpugame%.c", --24 April 08
 	"heygt%.c", --24 April 08 heygt/gtgold
 	"heypk%.c", --24 April 08
@@ -105,6 +105,7 @@ local triggers = {
 	"psmmo%.c", --26 April 08
 	"pvpboydot", --9 May 08 dot com
 	"qwowgold%.c", --5 May 08
+	"scbgold%.c", --15 May 08
 	"scggame%.c", --24 April 08
 	"scggold%.c", --24 April 08
 	"ssegames%.c", --24 April 08
