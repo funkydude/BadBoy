@@ -47,7 +47,7 @@ local triggers = {
 	"epicgamegold%.c", --5 May 08
 	"eugspa%.c", --24 April 08 forward mmospa
 	"fast70%.c", --27 April 08
-	"fastgg%.c", --8 May 08
+	--"fastgg%.c", --8 May 08
 	"fedwow%.c", --30 April 08
 	"fkugold%.c", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
@@ -64,7 +64,7 @@ local triggers = {
 	"gmworking%.e+u+", --8 May 08 forward gmworking.com 
 	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold230%.c", --24 April 08
-	"gold4guild", --9 May 08 .com
+	"gold4guild", --9 May 08 .com ##
 	"gold660%.c", --6 May 08
 	"goldclassmates%.c", --9 May 08  forward yesdaq
 	"goldhi5%.c", --9 May 08 forward yesdaq
@@ -164,6 +164,7 @@ local function filter(msg)
 	msg = rep(msg, ",", ".")
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
+			--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
 			local time = GetTime()
 			if (time - prev) > 20 and k > 5 then
 				prev = time
