@@ -12,6 +12,7 @@ local triggers = {
 	"%+%=+%+",
 	"gold%¦%=%¦power",
 	"%+%=%@%-%=%@%-%+",
+	"^www$",
 
 	--Phrases
 	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu",
@@ -88,7 +89,7 @@ local triggers = {
 	"item4sale%.c", --26 April 08
 	"itemrate%.c", --24 April 08
 	"iuc365%.c", --24 April 08
-	"kgsgold%.c", --24 April 08
+	"kgsgold", --16 May 08 ##
 	"leetgold%.c", --27 April 08
 	"luckwow%.c", --24 April 08
 	--"m8gold%.c", --8 May 08
@@ -166,7 +167,7 @@ local function filter(msg)
 		if fnd(msg, v) then
 			--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
 			local time = GetTime()
-			if (time - prev) > 20 and k > 5 then
+			if (time - prev) > 20 and k > 6 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
