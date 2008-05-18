@@ -28,6 +28,7 @@ local triggers = {
 	"%d+g%W%d+%.?%d*%$",
 	"%d+%.?%d*usd%W%d+g",
 	"%d+%.?%d*gbp%W%d+g",
+	"%d+%.%d+%W%d+g%.?%d+%.%d+%W%d+g",
 
 	--URL's
 	--"%dwowgold%.c", --24 April 08 1wowgold forward scggold | 2wowgold forward gmworker
