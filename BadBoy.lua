@@ -13,6 +13,7 @@ local triggers = {
 	"gold%¦%=%¦power",
 	"%+%=%@%-%=%@%-%+",
 	"^www$",
+	"^%.com$",
 
 	--Phrases
 	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu",
@@ -29,6 +30,7 @@ local triggers = {
 	"%d+%.?%d*usd%W%d+g",
 	"%d+%.?%d*gbp%W%d+g",
 	"%d+%.%d+%W%d+g%.?%d+%.%d+%W%d+g",
+	"%d+g%Weur%d+",
 
 	--URL's
 	--"%dwowgold%.c", --24 April 08 1wowgold forward scggold | 2wowgold forward gmworker
@@ -169,7 +171,7 @@ local function filter(msg)
 		if fnd(msg, v) then
 			--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
 			local time = GetTime()
-			if k > 6 and (time - prev) > 20 then
+			if k > 7 and (time - prev) > 20 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
