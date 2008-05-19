@@ -24,6 +24,7 @@ local triggers = {
 	"cheap.*fast.*gold",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"%$%d+%.?%d*%W%d+gold",
+	"gbp%d+%.?%d*%W%d+g",
 	"%d+g%W%d+%.?%d*eur",
 	"%d+g%W%d+%.?%d*usd",
 	"%d+g%W%d+%.?%d*%$",
