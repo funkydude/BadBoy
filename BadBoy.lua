@@ -7,13 +7,16 @@ local AUTO_REPORT = true --false otherwise
 
 local triggers = {
 	--Random/Art
-	"%.o+%.", --[.ooooO Ooooo.]
+	"^%.o+%.$", --[.ooooO Ooooo.]
 	"%(only%d+%.?%d*eur?o?s?%)",
 	"%+%=+%+",
 	"gold%¦%=%¦power",
 	"%+%=%@%-%=%@%-%+",
 	"^www$",
 	"^%.com$",
+	"^%\%(only%d+%.?%d*pounds%)%/$",
+	"^%\%_%)for%d+g%(%_%/$",
+	"^$",
 
 	--Phrases
 	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu",
@@ -23,11 +26,11 @@ local triggers = {
 	"gold.*powerle?ve?l",
 	"cheap.*fast.*gold",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
-	"%$%d+%.?%d*%W%d+gold",
+	"%$%d+%.?%d*%W%d+g",
 	"gbp%d+%.?%d*%W%d+g",
-	"%d+g%W%d+%.?%d*eur",
-	"%d+g%W%d+%.?%d*usd",
-	"%d+g%W%d+%.?%d*%$",
+	"%d+go?l?d?%W%d+%.?%d*eur",
+	"%d+go?l?d?%W%d+%.?%d*usd",
+	"%d+go?l?d?%W%d+%.?%d*%$",
 	"%d+%.?%d*usd%W%d+g",
 	"%d+%.?%d*gbp%W%d+g",
 	"%d+%.%d+%W%d+g%.?%d+%.%d+%W%d+g",
@@ -64,7 +67,7 @@ local triggers = {
 	--"gamenoble%.c", --24 April 08
 	"games%-level%.n+e+t", --9May 08
 	"get%-levels%.c", --29 April 08
-	"gm365%.c", --ogm365/igm365 8 May 08
+	--"gm365%.c", --ogm365/igm365 8 May 08
 	"gm963%.c", --24 April 08
 	--"gmworker%.c", --24 April 08
 	"gmworking%.c", --24 April 08
@@ -85,7 +88,7 @@ local triggers = {
 	"helpugame%.c", --24 April 08
 	"heygt%.c", --24 April 08 heygt/gtgold
 	"heypk%.c", --24 April 08
-	"hotpvp%.c", --9 May 08
+	--"hotpvp%.c", --9 May 08
 	"hpygame%.c", --24 April 08
 	"igamebuy%.c", --24 April 08
 	"ige%.c", --24 April 08
@@ -105,8 +108,8 @@ local triggers = {
 	"mmoxplore%.c", -- 9 May 08
 	"ogchanneI.c", --29 April 08 actually ogchannel not ogchanneI
 	"okpenos%.c", --5 May 08 forward yesaq
-	"ownyo%.c", --29 April 08 ownyo.com
-	"owny%S+%.com", --29 April 08 ownyo.com
+	--"ownyo%.c", --29 April 08 ownyo.com
+	--"owny%S+%.com", --29 April 08 ownyo.com
 	--"pkpkg%.c", --24 April 08
 	"playdone%.c", --24 April 08
 	"psmmo%.c", --26 April 08
@@ -142,7 +145,7 @@ local triggers = {
 	"wowfbi%.c", --24 April 08 forward gamegold123
 	"wowforever%.c", --24 April 08
 	"wowgamelife", --9 May 08 
-	"wowgoldbuy%.n+e+t+", --24 April 08 forward gm963
+	--"wowgoldbuy%.n+e+t+", --24 April 08 forward gm963
 	"wowgoldduper%.c", --12 May 08
 	"wowgoldget%.c", --9 May 08
 	"wowgsg%.c", --10 May 08
@@ -157,7 +160,7 @@ local triggers = {
 	"wowseller%.c", --24 April 08
 	"wowspa%.c", --24 April 08
 	"wowsupplier%.c", --24 April 08
-	"wowton%.c", --29 April 08
+	--"wowton%.c", --29 April 08
 	"wowwar%.n+e+t+", --24 April 08 forward wowforever
 	"yesdaq%.c", --24 April 08
 }
@@ -173,7 +176,7 @@ local function filter(msg)
 		if fnd(msg, v) then
 			--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
 			local time = GetTime()
-			if k > 7 and (time - prev) > 20 then
+			if k > 10 and (time - prev) > 20 then
 				prev = time
 				if AUTO_REPORT then
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
