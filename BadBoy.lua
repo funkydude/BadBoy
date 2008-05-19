@@ -20,7 +20,7 @@ local triggers = {
 	"%d+%.?%d*pounds?per%d+%.?%d*g",
 	"%d+%.?%d*dollarsper%d+%.?%d*gold",
 	"%d+%.?%d*eu%l+%d+%.?%d*g",
-	"gold.*powerle?ve?ll?ing",
+	"gold.*powerle?ve?l",
 	"cheap.*fast.*gold",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"%$%d+%.?%d*%W%d+gold",
@@ -35,7 +35,7 @@ local triggers = {
 
 	--URL's
 	--"%dwowgold%.c", --24 April 08 1wowgold forward scggold | 2wowgold forward gmworker
-	"2joygame%.c", --18 May 08
+	"2joygame%.c", --18 May 08 ## (deDE)
 	"2wowgold%.%Som", --5 May 08 forward gmworker
 	"29gameswow%.c", --24 April 08
 	"365ige%.c", --24 April 08 forward gold230
