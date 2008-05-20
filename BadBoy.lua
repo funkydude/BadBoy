@@ -44,6 +44,7 @@ local triggers = {
 	"365ige%.c", --24 April 08 forward gold230
 	"5uneed%.c", --8 May 08
 	"51uoo%.c", --24 April 08
+	"925fancy%.c", --20 May 08 ##
 	--"agamegold%.c", --24 April 08
 	"baycoo%.c", --14 May 08
 	--"belrion%(dot%)c", --13 May 08
