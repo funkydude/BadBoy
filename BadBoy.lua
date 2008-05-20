@@ -58,7 +58,7 @@ local triggers = {
 	"epicgamegold%.c", --5 May 08
 	"eugspa%.c", --24 April 08 forward mmospa
 	"fast70%.c", --27 April 08
-	--"fastgg%.c", --8 May 08
+	"fastgg%.c", --20 May 08 ##
 	"fedwow%.c", --30 April 08
 	"fkugold%.c", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
