@@ -51,6 +51,7 @@ local triggers = {
 	"bigmouthnest%.c", --24 April 08 forward yesdaq
 	"brbgame%.c", --12 May 08
 	"brothergame%.c", --29 April 08
+	"cfsgold%.c", --20 May 08 ## (deDE)
 	--"cheapsgold%.c", --8 May 08
 	"dewowgold%.c", --26 April 08
 	"df%-game%.c", --29 April 08
