@@ -33,7 +33,7 @@ local triggers = {
 	"%d+go?l?d?%W%d+%.?%d*%$",
 	"%d+%.?%d*usd%W%d+g",
 	"%d+%.?%d*gbp%W%d+g",
-	"%d+%.%d+%W%d+g%.?%d+%.%d+%W%d+g",
+	"%d+%.%d+%W%d%d%d+g",
 	"%d+g%Weur%d+",
 
 	--URL's
