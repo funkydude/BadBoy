@@ -108,6 +108,7 @@ local triggers = {
 	--"mmoinn%.c", --24 April 08
 	"mmospa%.c", --24 April 08
 	"mmoxplore%.c", -- 9 May 08
+	"mmowned%(dot%)c", --21 May 08 ##
 	"ogchanneI.c", --29 April 08 actually ogchannel not ogchanneI
 	"okpenos%.c", --5 May 08 forward yesaq
 	--"ownyo%.c", --29 April 08 ownyo.com
