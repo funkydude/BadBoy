@@ -117,6 +117,7 @@ local triggers = {
 	"playdone%.c", --24 April 08
 	"psmmo%.c", --26 April 08
 	"pvpboydot", --9 May 08 dot com
+	"pvp365%.c", --21 May 08 ## (frFR)
 	"qwowgold%.c", --5 May 08
 	"scbgold%.c", --15 May 08
 	"scggame%.c", --24 April 08
