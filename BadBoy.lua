@@ -139,6 +139,7 @@ local triggers = {
 	"vesgame%.c", --27 April 08
 	"vgsale%.c", --28 April 08
 	"vicsaledotc", --13 May 08
+	"vovgold%.c", --22 May 08 ##
 	"vsguy%.c", --26 April 08
 	"whoyo%.c", --24 April 08
 	"wow%-europe%.cn", --8 May 08 forward gmworker
