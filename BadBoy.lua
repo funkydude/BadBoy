@@ -122,6 +122,7 @@ local triggers = {
 	"scbgold%.c", --15 May 08
 	"scggame%.c", --24 April 08
 	"scggold%.c", --24 April 08
+	"sevengold%.c", --24 May 08 ##
 	"ssegames%.c", --24 April 08
 	"speedpanda%.c", --24 April 08
 	"supplier2008%.c", --27 April 08 forward tradewowgold
