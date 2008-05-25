@@ -27,7 +27,8 @@ local triggers = {
 	"%d+go?l?d?%W%d+%.?%d*usd",
 	"%d+go?l?d?%W%d+%.?%d*%$",
 	"%d+%.?%d*usd%W%d+g",
-	"%d+%.?%d*gbp%W%d+",
+	"%d+%.%d+gbp%W%d%d%d+",
+	"%d+%.%d+eur%W%d%d%d+",
 	"%d+%.%d+%W%d%d%d+g",
 	"%d+g%Weur%d+",
 
@@ -74,12 +75,12 @@ local triggers = {
 	"goldzombie%.c", --5 May 08
 	"happygolds%.c", --25 May 08 ##
 	"helpugame%.c", --24 April 08
-	"heygt%.c", --24 April 08 heygt/gtgold
-	"heypk%.c", --24 April 08
-	"hpygame%.c", --24 April 08
-	"igamebuy%.c", --24 April 08
-	"ige%.c", --24 April 08
-	"igfad%.c", --24 April 08
+	--"heygt%.c", --24 April 08 heygt/gtgold
+	--"heypk%.c", --24 April 08
+	--"hpygame%.c", --24 April 08
+	--"igamebuy%.c", --24 April 08
+	--"ige%.c", --24 April 08
+	--"igfad%.c", --24 April 08
 	"ighey%.c", --27 April 08
 	"item4sale%.c", --26 April 08
 	"itemrate%.c", --24 April 08
@@ -138,7 +139,7 @@ local triggers = {
 	"wowpannlng%.c", --24 April 08 actually wowpanning not wowpannlng
 	"wowpl%.n+e+t+", --5 May 08
 	"wowplayer%.d+e+", --11 May 08
-	--"wowseller%.c", --24 April 08
+	"wowseller%.c", --25 May 08 ##
 	--"wowspa%.c", --24 April 08
 	--"wowsupplier%.c", --24 April 08
 	--"wowwar%.n+e+t+", --24 April 08 forward wowforever
