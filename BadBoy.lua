@@ -21,6 +21,7 @@ local triggers = {
 	--Phrases
 	"%d+%.?%d*go?l?d?%/%d+%.?%d*eu",
 	"%d+%.?%d*pounds?per%d+g",
+	"%d+%.?%d*eur?o?s?per%d+g",
 	"gold.*powerle?ve?l",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"%d+go?l?d?%W%d+%.?%d*eur",
@@ -36,14 +37,14 @@ local triggers = {
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"2wowgold%.%Som", --5 May 08 forward gmworker
 	--"29gameswow%.c", --24 April 08
-	"365ige%.c", --24 April 08 forward gold230
+	--"365ige%.c", --24 April 08 forward gold230
 	"5uneed%.c", --8 May 08
 	--"51uoo%.c", --24 April 08
 	"925fancy%.c", --20 May 08 ##
 	"baycoo%.c", --14 May 08
 	"bigmouthnest%.c", --24 April 08 forward yesdaq
 	"brbgame%.c", --12 May 08
-	"brothergame%.c", --29 April 08
+	--"brothergame%.c", --29 April 08
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"dewowgold%.c", --26 April 08
 	"df%-game%.c", --29 April 08
@@ -56,7 +57,7 @@ local triggers = {
 	"fkugold%.c", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
 	--"gagora%.c", --24 April 08
-	"game1999%.c", --28 April 08
+	--"game1999%.c", --28 April 08
 	"games%-level%.n+e+t", --9May 08
 	"get%-levels%.c", --29 April 08
 	--"gm963%.c", --24 April 08
@@ -108,7 +109,7 @@ local triggers = {
 	"supplier2008%.c", --27 April 08 forward tradewowgold
 	"tctwow%.c", --24 April 08
 	"terrarpg%.c", --24 April 08 forward mmoinn
-	"tgtimes%.c", --24 April 08
+	--"tgtimes%.c", --24 April 08
 	--"torchgame%.c", --24 April 08
 	"tpsale%.c", --9 May 08
 	--"tulongold%.c", --24 April 08
