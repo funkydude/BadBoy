@@ -25,3 +25,7 @@ BadBoy download location.
 >Partial credit to Anea(Author of SpamSentry) of
 which this database was originally built in
 a location of your choosing.
+
+You are in no way allowed to continue leeching the
+database of this addon, a database copy should be a
+one time thing to get started.
