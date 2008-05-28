@@ -46,6 +46,7 @@ local triggers = {
 	"brbgame%.c", --12 May 08
 	--"brothergame%.c", --29 April 08
 	"cfsgold%.c", --20 May 08 ## (deDE)
+	"cheapleveling.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08
 	"df%-game%.c", --29 April 08
 	"dgames%Sydotc", --29 April 08 dgame(sky/spy) DOT com
