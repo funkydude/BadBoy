@@ -28,9 +28,7 @@ local triggers = {
 	"%d+go?l?d?%W%d+%.?%d*%$",
 	"%d+%.?%d*usd%W%d+g",
 	"%d+%.%d+gbp%W%d%d%d+",
-	"%d+%.%d+gbp/%d%d%d+",
 	"%d+%.%d+eur%W%d%d%d+",
-	"%d+%.%d+eur/%d%d%d+",
 	"%d+%.%d+%W%d%d%d+g",
 	"%d+g%Weur%d+",
 
