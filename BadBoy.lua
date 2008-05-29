@@ -23,7 +23,7 @@ local triggers = {
 	"%d+%.?%d*eur?o?s?per%d+g",
 	"gold.*powerle?ve?l",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
-	"%d+go?l?d?%W%d+%.%d+eu",
+	"%d+go?l?d?%W%d+%.?%d*eu",
 	"%d+go?l?d?%W%d+%.?%d*usd",
 	"%d+go?l?d?%W%d+%.?%d*%$",
 	"%d+%.?%d*usd%W%d+g",
@@ -65,19 +65,19 @@ local triggers = {
 	"goldsaler%.c", --5 May 08
 	"goldzombie%.c", --5 May 08
 	"happygolds%.c", --25 May 08 ##
-	"helpugame%.c", --24 April 08
+	--"helpugame%.c", --24 April 08
 	"ighey%.c", --27 April 08
 	"item4sale%.c", --26 April 08
-	"itemrate%.c", --24 April 08
+	--"itemrate%.c", --24 April 08
 	"iuc365%.c", --24 April 08
-	"k4gold%.?c", -- 28 May 08
+	--"k4gold%.?c", -- 28 May 08
 	"kgsgold", --16 May 08 .com ##
 	"leetgold%.c", --27 April 08
 	"mmoxplore%.c", -- 9 May 08
 	"mmowned%(dot%)c", --21 May 08 ##
 	"ogchanneI.c", --29 April 08 actually ogchannel not ogchanneI
 	"okpenos%.c", --5 May 08 forward yesdaq
-	"psmmo%.c", --26 April 08
+	--"psmmo%.c", --26 April 08
 	"pvpboydot", --9 May 08 dot com
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"qwowgold%.c", --5 May 08
@@ -97,7 +97,7 @@ local triggers = {
 	--"vsguy%.c", --26 April 08
 	--"whoyo%.c", --24 April 08
 	"wow%-europe%.cn", --8 May 08 forward gmworker
-	--"wow7gold%.c", --24 April 08
+	"wow7gold%.c", --29 May 08 ##
 	"wowcnn%.c", --5 May 08 forward gamegold123
 	--"wowcoming%.c", --24 April 08
 	"wowgamelife", --9 May 08 
@@ -111,7 +111,7 @@ local triggers = {
 	"wowpl%.n+e+t+", --5 May 08
 	"wowplayer%.d+e+", --11 May 08
 	"wowseller%.c", --25 May 08 ##
-	"yesdaq%.c", --24 April 08
+	--"yesdaq%.c", --24 April 08
 }
 
 local info, prev, savedID, result = COMPLAINT_ADDED, 0, 0, nil
