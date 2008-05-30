@@ -38,7 +38,7 @@ local triggers = {
 	"5uneed%.c", --8 May 08
 	"925fancy%.c", --20 May 08 ##
 	"baycoo%.c", --14 May 08
-	"bigmouthnest%.c", --24 April 08 forward yesdaq
+	--"bigmouthnest%.c", --24 April 08 forward yesdaq
 	"brbgame%.c", --12 May 08
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapleveling.c", --28 May 08 ##
@@ -60,8 +60,8 @@ local triggers = {
 	"gold660%.c", --6 May 08
 	"goldclassmates%.c", --9 May 08  forward yesdaq
 	"goldhi5%.c", --9 May 08 forward yesdaq
-	"goldmyspace%.c", --5 May 08 forward yesdaq
-	"goldpager%.c", --26 April 08 forward yesdaq
+	--"goldmyspace%.c", --5 May 08 forward yesdaq
+	--"goldpager%.c", --26 April 08 forward yesdaq
 	"goldsaler%.c", --5 May 08
 	"goldzombie%.c", --5 May 08
 	"happygolds%.c", --25 May 08 ##
@@ -84,7 +84,7 @@ local triggers = {
 	"scbgold%.c", --15 May 08
 	"sevengold%.c", --24 May 08 ##
 	--"ssegames%.c", --24 April 08
-	--"supplier2008%.c", --27 April 08 forward tradewowgold
+	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	--"tctwow%.c", --24 April 08
 	--"terrarpg%.c", --24 April 08 forward mmoinn
 	"tpsale%.c", --9 May 08
