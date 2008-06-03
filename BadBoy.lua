@@ -46,7 +46,7 @@ local triggers = {
 	"dewowgold%.c", --26 April 08
 	"df%-game%.c", --29 April 08
 	"dgames%Sydotc", --29 April 08 dgame(sky/spy) DOT com
-	"epicgamegold%.c", --5 May 08
+	--"epicgamegold%.c", --5 May 08
 	"fast70%.c", --27 April 08
 	"fastgg%.c", --20 May 08 ##
 	"fedwow%.c", --30 April 08
@@ -71,7 +71,7 @@ local triggers = {
 	--"okpenos%.c", --5 May 08 forward yesdaq
 	"pvpboydot", --9 May 08 dot com
 	"pvp365%.c", --21 May 08 ## (frFR)
-	"qwowgold%.c", --5 May 08
+	--"qwowgold%.c", --5 May 08
 	"scbgold%.c", --15 May 08
 	"sevengold%.c", --24 May 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
@@ -92,6 +92,7 @@ local triggers = {
 	"wowpl%.n+e+t+", --5 May 08
 	"wowplayer%.d+e+", --11 May 08
 	"wowseller%.c", --25 May 08 ##
+	"yesdaq%.c", --3 June 08 ##
 }
 
 local info, prev, savedID, result = COMPLAINT_ADDED, 0, 0, nil
