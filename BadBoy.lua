@@ -36,8 +36,8 @@ local triggers = {
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
-	"2wowgold%.%Som", --5 May 08 forward gmworker
-	"5uneed%.c", --8 May 08
+	--"2wowgold%.%Som", --5 May 08 forward gmworker
+	--"5uneed%.c", --8 May 08
 	"925fancy%.c", --20 May 08 ##
 	"baycoo%.c", --14 May 08
 	"brbgame%.c", --12 May 08
@@ -49,25 +49,25 @@ local triggers = {
 	--"epicgamegold%.c", --5 May 08
 	"fast70%.c", --27 April 08
 	"fastgg%.c", --20 May 08 ##
-	"fedwow%.c", --30 April 08
+	--"fedwow%.c", --30 April 08
 	--"fkugold%.c", --5 May 08 forward yedaq
 	"free%-levels", --25 April 08 DOT / . com
 	"games%-level%.n+e+t", --9May 08
 	"get%-levels%.c", --29 April 08
 	"god%-moddot", --25 April 08 god-mod DOT com
 	"gold4guild", --9 May 08 .com ##
-	"gold660%.c", --6 May 08
-	"goldsaler%.c", --5 May 08
-	"goldzombie%.c", --5 May 08
+	--"gold660%.c", --6 May 08
+	--"goldsaler%.c", --5 May 08
+	--"goldzombie%.c", --5 May 08
 	"happygolds%.c", --25 May 08 ##
 	--"ighey%.c", --27 April 08
-	"item4sale%.c", --26 April 08
-	"iuc365%.c", --24 April 08
+	--"item4sale%.c", --26 April 08
+	--"iuc365%.c", --24 April 08
 	"kgsgold", --16 May 08 .com ##
 	--"leetgold%.c", --27 April 08
-	"mmoxplore%.c", -- 9 May 08
+	--"mmoxplore%.c", -- 9 May 08
 	"mmowned%(dot%)c", --21 May 08 ##
-	"ogchanneI.c", --29 April 08 actually ogchannel not ogchanneI
+	--"ogchanneI.c", --29 April 08 actually ogchannel not ogchanneI
 	--"okpenos%.c", --5 May 08 forward yesdaq
 	"pvpboydot", --9 May 08 dot com
 	"pvp365%.c", --21 May 08 ## (frFR)
@@ -89,7 +89,7 @@ local triggers = {
 	"wowhax%.c", --5 May 08
 	--"wowmine%.c", --24 April 08
 	"wowpannlng%.c", --24 April 08 actually wowpanning not wowpannlng
-	"wowpl%.n+e+t+", --5 May 08
+	--"wowpl%.n+e+t+", --5 May 08
 	"wowplayer%.d+e+", --11 May 08
 	"wowseller%.c", --25 May 08 ##
 	"yesdaq%.c", --3 June 08 ##
