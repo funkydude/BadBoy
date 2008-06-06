@@ -36,6 +36,7 @@ local triggers = {
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
+	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
 	"baycoo%.c", --14 May 08
 	"brbgame%.c", --12 May 08
