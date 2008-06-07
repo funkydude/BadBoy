@@ -23,7 +23,7 @@ local triggers = {
 	"%d+%.?%d*eur?o?s?per%d+g",
 	"gold.*powerle?ve?l",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
-	"%d+go?l?d?[/\92=]%d+%.?%d*eu",
+	"%d+go?l?d?[/\92=]%d+%-?%.?%d*eu",
 	"%d+g?o?l?d?[/\92=]%d+%.?%d*usd",
 	"%d+go?l?d?[/\92=]%d+%.?%d*[¥£€%$]",
 	"[¥£€%$]%d+%.?%d*[/\92=]%d+g",
@@ -43,8 +43,6 @@ local triggers = {
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapleveling.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08
-	--"df%-game%.c", --29 April 08
-	--"dgames%Sydotc", --29 April 08 dgame(sky/spy) DOT com
 	"fast70%.c", --27 April 08
 	"fastgg%.c", --20 May 08 ##
 	"free%-levels", --25 April 08 DOT / . com
@@ -66,9 +64,9 @@ local triggers = {
 	"vovgold%.c", --22 May 08 ##
 	"wow%-europe%.cn", --8 May 08 forward gmworker
 	"wow7gold%.c", --29 May 08 ##
-	"wowgamelife", --9 May 08 
-	"wowgoldduper%.c", --12 May 08
-	"wowgoldget%.c", --9 May 08
+	--"wowgamelife", --9 May 08 
+	--"wowgoldduper%.c", --12 May 08
+	--"wowgoldget%.c", --9 May 08
 	"wowgsg%.c", --10 May 08
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers
 	"wowhax%.c", --5 May 08
