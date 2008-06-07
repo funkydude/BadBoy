@@ -23,7 +23,7 @@ local triggers = {
 	"%d+%.?%d*eur?o?s?per%d+g",
 	"gold.*powerle?ve?l",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
-	"%d+go?l?d?[/\92=]%d+%-?%.?%d*eu",
+	"%d+go?l?d?[/\92=]%d+[%-%.]?%d*eu",
 	"%d+g?o?l?d?[/\92=]%d+%.?%d*usd",
 	"%d+go?l?d?[/\92=]%d+%.?%d*[¥£€%$]",
 	"[¥£€%$]%d+%.?%d*[/\92=]%d+g",
