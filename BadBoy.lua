@@ -60,6 +60,7 @@ local triggers = {
 	"sevengold%.c", --24 May 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"tpsale", --2 June 08 .com ##
+	"upgold.net", --10 June 08 ##
 	"vicsaledotc", --13 May 08
 	"vovgold%.c", --22 May 08 ##
 	"wow%-europe%.cn", --8 May 08 forward gmworker
