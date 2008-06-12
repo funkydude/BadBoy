@@ -2,12 +2,13 @@
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Author: Funkydude
+## SavedVariables: BADBOY_POPUP
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist)
 ## X-Category: Chat/Communication
 ## X-Website: http://www.wowace.com/wiki/BadBoy
 ## X-RelSite-WoWI: 8736
 ## X-RelSite-Curse: 12292
 ## X-AceForum: 12899
-## Version: 1.8.1
+## Version: 1.9
 
 BadBoy.lua

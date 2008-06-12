@@ -3,8 +3,6 @@ local fnd = _G.string.find
 local lower = _G.string.lower
 local rep = _G.strreplace
 
-local AUTO_REPORT = true --false otherwise
-
 local triggers = {
 	--Random/Art
 	"^%.o+%.$", --[.ooooO Ooooo.]
@@ -39,8 +37,8 @@ local triggers = {
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
-	"baycoo%.c", --14 May 08
-	"brbgame%.c", --12 May 08
+	--"baycoo%.c", --14 May 08
+	--"brbgame%.c", --12 May 08
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapleveling.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08
@@ -54,22 +52,18 @@ local triggers = {
 	"happygolds%.c", --25 May 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"mmowned%(dot%)c", --21 May 08 ##
-	--"ogchanneI.c", --29 April 08 actually ogchannel not ogchanneI
 	"pvpboydot", --9 May 08 dot com
 	"pvp365%.c", --21 May 08 ## (frFR)
-	"scbgold%.c", --15 May 08
+	--"scbgold%.c", --15 May 08
 	"sevengold%.c", --24 May 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"tpsale", --2 June 08 .com ##
 	"upgold.net", --10 June 08 ##
-	"vicsaledotc", --13 May 08
+	--"vicsaledotc", --13 May 08
 	"vovgold%.c", --22 May 08 ##
 	"wow%-europe%.cn", --8 May 08 forward gmworker
 	"wow7gold%.c", --29 May 08 ##
-	--"wowgamelife", --9 May 08 
-	--"wowgoldduper%.c", --12 May 08
-	--"wowgoldget%.c", --9 May 08
-	"wowgsg%.c", --10 May 08
+	--"wowgsg%.c", --10 May 08
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers
 	"wowhax%.c", --5 May 08
 	"wowpannlng%.c", --24 April 08 actually wowpanning not wowpannlng
@@ -78,7 +72,7 @@ local triggers = {
 	"yesdaq%.c", --3 June 08 ##
 }
 
-local info, prev, savedID, result = COMPLAINT_ADDED, 0, 0, nil
+local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
 local function filter(msg)
 	if arg11 == savedID then return result else savedID = arg11 end --to work around a blizz bug
 	if not CanComplainChat(savedID) then result = nil return end
@@ -91,7 +85,7 @@ local function filter(msg)
 			local time = GetTime()
 			if k > 10 and (time - prev) > 20 then
 				prev = time
-				if AUTO_REPORT then
+				if not _G.BADBOY_POPUP then
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
 					ComplainChat(savedID)
 				else
