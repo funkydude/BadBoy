@@ -17,7 +17,7 @@ local triggers = {
 	"^$",
 
 	--Phrases
-	"%d+%.?%d*pounds?per%d+g",
+	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d+g",
 	"%d+%.?%d*eur?o?s?per%d+g",
 	"gold.*powerle?ve?l",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
