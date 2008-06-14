@@ -30,14 +30,15 @@ local triggers = {
 	"%d+%.%d+eur[/\92=]%d%d%d+",
 	"%d+%.%d+[/\92=]%d%d%d+g",
 	"%d+g[/\92=]eur%d+",
-	"%d+go?l?d?only%d+%.?%d*[¥£€%$]",
-	"%d+go?l?d?for[¥£€%$]%d+",
+	"%d+g%l*only%d+%.?%d*[¥£€%$]",
+	"%d+g%l*for[¥£€%$]%d+",
 	"%d+g%l*only%d+%.?%d*eu",
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
+	"beatwow%.c", --14 June 08 ##
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cwowgold%.c", --13 June 08 ##
 	"cheapleveling%.c", --28 May 08 ##
@@ -52,19 +53,19 @@ local triggers = {
 	"happygolds%.c", --25 May 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"mmowned%(dot%)c", --21 May 08 ##
-	"pvpboydot", --9 May 08 dot com
+	--"pvpboydot", --9 May 08 dot com
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"sevengold%.c", --24 May 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
 	"vovgold%.c", --22 May 08 ##
-	"wow%-europe%.cn", --8 May 08 forward gmworker
+	--"wow%-europe%.cn", --8 May 08 forward gmworker
 	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers
 	"wowhax%.c", --5 May 08
 	"wowpannlng%.c", --24 April 08 actually wowpanning not wowpannlng
-	"wowplayer%.d+e+", --11 May 08
+	"wowplayer%.de", --11 May 08
 	"wowseller%.c", --25 May 08 ##
 	"yesdaq%.c", --3 June 08 ##
 }
