@@ -52,6 +52,7 @@ local triggers = {
 	"get%-levels%.c", --29 April 08 ~~
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
+	"gsc%-online%.eu", --15 June 08 ## (deDE) NOTE: "/ XXXXG ab XX,XX EURO /"
 	"happygolds%.c", --25 May 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"mmowned%(dot%)c", --21 May 08 ##
