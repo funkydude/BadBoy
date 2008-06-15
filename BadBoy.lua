@@ -33,6 +33,8 @@ local triggers = {
 	"%d+g%l*only%d+%.?%d*[¥£€%$]",
 	"%d+g%l*for[¥£€%$]%d+",
 	"%d+g%l*only%d+%.?%d*eu",
+	"%d+go?l?d?[/\92=][¥£€%$]%d+",
+	"gold.*[¥£€%$]%d+%.%d+[/\92=]%d+",
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
@@ -42,30 +44,27 @@ local triggers = {
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cwowgold%.c", --13 June 08 ##
 	"cheapleveling%.c", --28 May 08 ##
-	"dewowgold%.c", --26 April 08
-	"fast70%.c", --27 April 08
+	"dewowgold%.c", --26 April 08 ~~
+	"fast70%.c", --27 April 08 ~~
 	"fastgg%.c", --20 May 08 ##
-	"free%-levels", --25 April 08 DOT / . com
-	"games%-level%.n+e+t", --9May 08
-	"get%-levels%.c", --29 April 08
-	"god%-moddot", --25 April 08 god-mod DOT com
+	"free%-levels", --25 April 08 DOT / . com ~~
+	"games%-level%.n+e+t", --9May 08 ~~
+	"get%-levels%.c", --29 April 08 ~~
+	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
 	"happygolds%.c", --25 May 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"mmowned%(dot%)c", --21 May 08 ##
-	--"pvpboydot", --9 May 08 dot com
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"sevengold%.c", --24 May 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
 	"vovgold%.c", --22 May 08 ##
-	--"wow%-europe%.cn", --8 May 08 forward gmworker
 	"wow7gold%.c", --29 May 08 ##
-	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers
-	"wowhax%.c", --5 May 08
-	"wowpannlng%.c", --24 April 08 actually wowpanning not wowpannlng
-	"wowplayer%.de", --11 May 08
+	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
+	"wowhax%.c", --5 May 08 ~~
+	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
 	"yesdaq%.c", --3 June 08 ##
 }
