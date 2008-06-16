@@ -34,7 +34,6 @@ local triggers = {
 	"%d+g%l*for[¥£€%$]%d+",
 	"%d+g%l*only%d+%.?%d*eu",
 	"%d+go?l?d?[/\92=][¥£€%$]%d+",
-	"%d+g.+gold.+%d+%.%d+[/\92=]%d+",
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
@@ -68,7 +67,7 @@ local triggers = {
 	"wowhax%.c", --5 May 08 ~~
 	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
-	"yesdaq%.c", --3 June 08 ##
+	"yesdaq%.", --16 June 08 ##
 }
 
 local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
