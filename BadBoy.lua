@@ -59,6 +59,7 @@ local triggers = {
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"sevengold%.c", --24 May 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
+	"torchgame%.c", --16 June 08 ## (deDE)
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
 	"vovgold%.c", --22 May 08 ##
