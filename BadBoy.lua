@@ -56,6 +56,7 @@ local triggers = {
 	"happygolds%.c", --25 May 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"mmowned%(dot%)c", --21 May 08 ##
+	"pkpkg%.c", --17 June 08 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"sevengold%.c", --24 May 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
