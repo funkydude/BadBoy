@@ -35,6 +35,7 @@ local triggers = {
 	"%d+g%l*only%d+%.?%d*eu",
 	"%d+go?l?d?[/\92=][\194\165\194\163%$\226\130\172]%d+",
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
+	"gold.*%d+%.%d%dper%d+g",
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
@@ -47,7 +48,6 @@ local triggers = {
 	"dewowgold%.c", --26 April 08 ~~
 	"fast70%.c", --27 April 08 ~~
 	"fastgg%.c", --20 May 08 ##
-	"free%-levels", --25 April 08 DOT / . com ~~
 	"games%-level%.n+e+t", --9May 08 ~~
 	"get%-levels%.c", --29 April 08 ~~
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
