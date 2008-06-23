@@ -101,10 +101,9 @@ local function filter(msg)
 	end
 	result = nil
 end
-local frame = CreateFrame("Frame")
-local function fixmsg() COMPLAINT_ADDED = info end
-frame:SetScript("OnEvent", fixmsg)
-frame:RegisterEvent("CHAT_MSG_SYSTEM")
+local bb = CreateFrame("Frame", "BadBoy")
+bb:SetScript("OnEvent", function() _G.COMPLAINT_ADDED = info end)
+bb:RegisterEvent("CHAT_MSG_SYSTEM")
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
