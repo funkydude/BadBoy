@@ -65,6 +65,7 @@ local triggers = {
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
 	"vovgold%.c", --22 May 08 ##
+	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
 	"wowhax%.c", --5 May 08 ~~
