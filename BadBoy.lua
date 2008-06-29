@@ -56,6 +56,7 @@ local triggers = {
 	"gsc%-online%.eu", --15 June 08 ## (deDE) NOTE: "/ XXXXG ab XX,XX EURO /"
 	"happygolds%.c", --25 May 08 ##
 	"kgsgold", --16 May 08 .com ##
+	"klanexecute%.dk", --29 June 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
 	"pkpkg%.c", --17 June 08 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
