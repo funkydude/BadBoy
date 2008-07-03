@@ -17,8 +17,9 @@ local triggers = {
 	"^$",
 
 	--Phrases
-	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d+g",
-	"%d+%.?%d*eur?o?s?per%d+g",
+	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d%d%d+g",
+	"%d+%.?%d*eur?o?s?[/\92=]?p?e?r?%d%d%d+",
+	"%d+%.?%d*dollars?[/\92=]?p?e?r?%d%d%d+g",
 	"gold.*powerle?ve?l",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"%d+go?l?d?[/\92=]%d+[%-%.]?%d*eu",
@@ -27,7 +28,6 @@ local triggers = {
 	"[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92=]%d+g",
 	"%d+%.?%d*usd[/\92=]%d+g",
 	"%d+%.%d+gbp[/\92=]%d%d%d+",
-	"%d+%.%d+eur?o?s?[/\92=]%d%d%d+",
 	"%d+%.%d+[/\92=]%d%d%d+g",
 	"%d+go?l?d?[/\92=]eur?%d+",
 	"%d+g%l*only%d+%.?%d*[\194\165\194\163%$\226\130\172]",
@@ -37,7 +37,6 @@ local triggers = {
 	"%d+go?l?d?[/\92=][\194\165\194\163%$\226\130\172]%d+",
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
 	"gold.*%d+%.%d%dper%d+g",
-	"%d+%.?%d*dollarsper%d+g",
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
