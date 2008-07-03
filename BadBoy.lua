@@ -37,6 +37,7 @@ local triggers = {
 	"%d+go?l?d?[/\92=][\194\165\194\163%$\226\130\172]%d+",
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
 	"gold.*%d+%.%d%dper%d+g",
+	"%d+%.?%d*dollarsper%d+g",
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
