@@ -37,6 +37,7 @@ local triggers = {
 	"%d+go?l?d?[/\92=][\194\165\194\163%$\226\130\172]%d+",
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
 	"gold.*%d+%.%d%dper%d+g",
+	"%d+%.?%d*per%d%d%d+g.*gold",
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
@@ -54,7 +55,7 @@ local triggers = {
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
 	"gsc%-online%.eu", --15 June 08 ## (deDE) NOTE: "/ XXXXG ab XX,XX EURO /"
-	"happygolds%.c", --25 May 08 ##
+	"happygolds%.", --08 July 08 ## (com)
 	"kgsgold", --16 May 08 .com ##
 	"klanexecute%.dk", --29 June 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
