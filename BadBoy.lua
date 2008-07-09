@@ -38,6 +38,7 @@ local triggers = {
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
 	"gold.*%d+%.%d%dper%d+g",
 	"%d+%.?%d*per%d%d%d+g.*gold",
+	"only%d+[\194\165\194\163%$\226\130\172]for%d%d%d+g.*safe", --fast delivery, safe trade
 
 	--URL's
 	"2joygame%.c", --18 May 08 ## (deDE)
