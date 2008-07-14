@@ -59,6 +59,7 @@ local triggers = {
 	"gold4guild", --9 May 08 .com ##
 	"gsc%-online%.eu", --15 June 08 ## (deDE) NOTE: "/ XXXXG ab XX,XX EURO /"
 	"happygolds%.", --08 July 08 ## (com)
+	"helpgolds%.c", --14 July 08 ## (deDE)
 	"kgsgold", --16 May 08 .com ##
 	"klanexecute%.dk", --29 June 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
