@@ -75,6 +75,7 @@ local triggers = {
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
+	"wowgamelife", --14 July 08 ##
 	"wowhax%.c", --5 May 08 ~~
 	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
