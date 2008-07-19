@@ -20,7 +20,7 @@ local triggers = {
 	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d%d%d+g",
 	"%d+%.?%d*eur?o?s?[/\92=]?p?e?r?%d%d%d+",
 	"%d+%.?%d*dollars?[/\92=]?p?e?r?%d%d%d+g",
-	"gold.*powerle?ve?l",
+	"gold.*power%-?le?ve?l",
 	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"%d+go?l?d?[/\92=]%d+[%-%.]?%d*eu",
 	"%d+g?o?l?d?[/\92=]%d+%.?%d*usd",
@@ -85,7 +85,7 @@ local triggers = {
 local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
 local function filter(msg)
 	if arg11 == savedID then return result else savedID = arg11 end --to work around a blizz bug
-	if not CanComplainChat(savedID) then result = nil return end
+	if not _G.CanComplainChat(savedID) then result = nil return end
 	msg = lower(msg)
 	msg = rep(msg, " ", "")
 	msg = rep(msg, ",", ".")
@@ -96,7 +96,7 @@ local function filter(msg)
 			if k > 10 and (time - prev) > 20 then
 				prev = time
 				if not _G.BADBOY_POPUP then
-					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
+					_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
 					ComplainChat(savedID)
 				else
 					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
