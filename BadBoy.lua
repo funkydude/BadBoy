@@ -67,6 +67,7 @@ local triggers = {
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"rollhack%.c", --5 July 08 ##
 	"sevengold%.c", --24 May 08 ##
+	"ssegames%.c", --20 July 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"torchgame%.c", --16 June 08 ## (deDE)
 	"tpsale", --2 June 08 .com ##
