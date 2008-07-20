@@ -79,6 +79,7 @@ local triggers = {
 	"wowhax%.c", --5 May 08 ~~
 	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
+	"wowsogood%.c", --20 July 08 ##
 	"yesdaq%.", --16 June 08 ##
 }
 
