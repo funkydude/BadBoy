@@ -45,6 +45,7 @@ local triggers = {
 	"company.*%d+.*gold.*buysome",
 
 	--URL's
+	"15freelevels%.c", --26 July 08 ##
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
