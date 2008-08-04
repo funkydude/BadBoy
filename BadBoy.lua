@@ -30,6 +30,7 @@ local triggers = {
 	"%d+%.%d+gbp[/\92=]%d%d%d+",
 	"%d+%.%d+[/\92=]%d%d%d+g",
 	"%d+go?l?d?[/\92=]eur?%d+",
+	"%d+g%l?ab%d+%.?%d*eu", --deDE
 	"%d+g%l*only%d+%.?%d*[\194\165\194\163%$\226\130\172]",
 	"%d+g%l*for[\194\165\194\163%$\226\130\172]%d+",
 	"%d+g%l*only%d+%.?%d*eu",
@@ -60,11 +61,11 @@ local triggers = {
 	"get%-levels%.c", --29 April 08 ~~
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
-	"gsc%-online%.eu", --15 June 08 ## (deDE) NOTE: "/ XXXXG ab XX,XX EURO /"
 	"happygolds%.", --08 July 08 ## (com)
 	"helpgolds%.c", --14 July 08 ## (deDE)
 	"kgsgold", --16 May 08 .com ##
 	"klanexecute%.dk", --29 June 08 ##
+	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
 	"pkpkg%.c", --17 June 08 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
