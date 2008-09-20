@@ -61,8 +61,10 @@ local triggers = {
 	"get%-levels%.c", --29 April 08 ~~
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
+	"goldspeeder%.c", --20 September 08 ##
 	"happygolds%.", --08 July 08 ## (com)
 	"helpgolds%.c", --14 July 08 ## (deDE)
+	"holdwow%.c", -- 20 September 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"klanexecute%.dk", --29 June 08 ##
 	"mmobusiness%.c", --04 August 08 ##
@@ -76,6 +78,7 @@ local triggers = {
 	"torchgame%.c", --16 June 08 ## (deDE)
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
+	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow7gold%.c", --29 May 08 ##
@@ -121,6 +124,7 @@ end
 local bb = CreateFrame("Frame", "BadBoy")
 bb:SetScript("OnEvent", function() _G.COMPLAINT_ADDED = info end)
 bb:RegisterEvent("CHAT_MSG_SYSTEM")
+bb = nil
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
