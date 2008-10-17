@@ -8,7 +8,6 @@ local triggers = {
 	"^%.o+%.$", --[.ooooO Ooooo.]
 	"%(only%d+%.?%d*eur?o?s?%)",
 	"%+%=+%+",
-	"gold%¦%=%¦power",
 	"%+%=%@%-%=%@%-%+",
 	"^www$",
 	"^%.com$",
@@ -60,6 +59,7 @@ local triggers = {
 	"fast70%.c", --27 April 08 ~~
 	"fastgg%.c", --20 May 08 ##
 	"games%-level%.n+e+t", --9May 08 ~~
+	"garden2game%.com", --17 Oct 08
 	"get%-levels%.c", --29 April 08 ~~
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
@@ -105,7 +105,7 @@ local function filter(msg)
 		if fnd(msg, v) then
 			--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
 			local time = GetTime()
-			if k > 10 and (time - prev) > 20 then
+			if k > 9 and (time - prev) > 20 then
 				prev = time
 				if not _G.BADBOY_POPUP then
 					_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
