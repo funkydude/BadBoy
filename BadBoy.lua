@@ -88,6 +88,7 @@ local triggers = {
 	"wowgamelife", --14 July 08 ##
 	"wowgold%-de%.c", --16 August 08 ##
 	"wowhax%.c", --5 May 08 ~~
+	"worldofgolds%.com", --20 October 08
 	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
 	"wowsogood%.c", --20 July 08 ##
