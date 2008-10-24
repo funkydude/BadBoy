@@ -67,6 +67,7 @@ local triggers = {
 	"happygolds%.", --08 July 08 ## (com)
 	"helpgolds%.c", --14 July 08 ## (deDE)
 	"holdwow%.c", -- 20 September 08 ##
+	"k4gold%.c", --24 October 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"klanexecute%.dk", --29 June 08 ##
 	"mmobusiness%.c", --04 August 08 ##
