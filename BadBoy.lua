@@ -69,7 +69,6 @@ local triggers = {
 	"holdwow%.c", -- 20 September 08 ##
 	"k4gold%.c", --24 October 08 ##
 	"kgsgold", --16 May 08 .com ##
-	"klanexecute%.dk", --29 June 08 ##
 	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
 	"pkpkg%.c", --17 June 08 ##
@@ -84,6 +83,7 @@ local triggers = {
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
+	"wow4s%.net", --27 October 08 ~~
 	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
 	"wowgamelife", --14 July 08 ##
