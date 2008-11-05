@@ -56,6 +56,7 @@ local triggers = {
 	"cwowgold%.c", --13 June 08 ##
 	"cheapleveling%.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08 ~~
+	"dgamesky%.c", --5 November 08 ##
 	"fast70%.c", --27 April 08 ~~
 	"fastgg%.c", --20 May 08 ##
 	"games%-level%.n+e+t", --9May 08 ~~
