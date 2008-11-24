@@ -54,6 +54,7 @@ local triggers = {
 	"925fancy%.c", --20 May 08 ##
 	"beatwow%.c", --14 June 08 ##
 	"cfsgold%.c", --20 May 08 ## (deDE)
+	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"cwowgold%.c", --13 June 08 ##
 	"cheapleveling%.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08 ~~
@@ -91,6 +92,7 @@ local triggers = {
 	"wowgamelife", --14 July 08 ##
 	"wowgold%-de%.c", --16 August 08 ##
 	"wowhax%.c", --5 May 08 ~~
+	"wowmygold%.c", --11 November 08 ##
 	"worldofgolds%.com", --20 October 08
 	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
