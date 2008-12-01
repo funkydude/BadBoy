@@ -47,6 +47,7 @@ local triggers = {
 	"gold.*cheap.*safe",
 	"company.*%d+.*gold.*buysome",
 	"%d+.*wow.*gold.*for.*[\194\165\194\163%$\226\130\172]%d+",
+	".*%d+.*powerleveling%d%-%d+=%d+eur",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
