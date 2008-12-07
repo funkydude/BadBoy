@@ -66,6 +66,7 @@ local triggers = {
 	"games%-level%.n+e+t", --9May 08 ~~
 	"garden2game%.com", --17 Oct 08
 	"get%-levels%.c", --29 April 08 ~~
+	"gmw.rking%.eu", --07 December 08 ##
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
 	"goldspeeder%.c", --20 September 08 ##
