@@ -48,6 +48,7 @@ local triggers = {
 	"company.*%d+.*gold.*buysome",
 	"%d+.*wow.*gold.*for.*[\194\165\194\163%$\226\130\172]%d+",
 	".*%d+.*powerleveling%d%-%d+=%d+eur",
+	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -63,6 +64,7 @@ local triggers = {
 	"dgamesky%.c", --5 November 08 ##
 	"fast70%.c", --27 April 08 ~~
 	"fastgg%.c", --20 May 08 ##
+	"fastgolds%.c", --11 December 08 ##
 	"games%-level%.n+e+t", --9May 08 ~~
 	"garden2game%.com", --17 Oct 08
 	"get%-levels%.c", --29 April 08 ~~
@@ -75,6 +77,7 @@ local triggers = {
 	"holdwow%.c", -- 20 September 08 ##
 	"k4gold%.c", --24 October 08 ##
 	"kgsgold", --16 May 08 .com ##
+	"luckygolds%.c", --11 December 09 ##
 	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
 	"pkpkg%.c", --17 June 08 ##

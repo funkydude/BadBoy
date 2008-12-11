@@ -5,6 +5,6 @@
 ## SavedVariables: BADBOY_POPUP
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist)
 ## X-Category: Chat/Communication
-## Version: 2.1.1.1
+## Version: 2.1.1.4
 
 BadBoy.lua
