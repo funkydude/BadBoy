@@ -65,6 +65,7 @@ local triggers = {
 	"fast70%.c", --27 April 08 ~~
 	"fastgg%.c", --20 May 08 ##
 	"fastgolds%.c", --11 December 08 ##
+	"fesgt%.c", --22 December 08 ## (esES)
 	"games%-level%.n+e+t", --9May 08 ~~
 	"garden2game%.com", --17 Oct 08
 	"get%-levels%.c", --29 April 08 ~~
@@ -93,6 +94,7 @@ local triggers = {
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
+	"wow1gold%.c", --22 December 08 ## (deDE)
 	"wow4s%.net", --27 October 08 ~~
 	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
@@ -105,6 +107,10 @@ local triggers = {
 	"wowseller%.c", --25 May 08 ##
 	"wowsogood%.c", --20 July 08 ##
 	"yesdaq%.", --16 June 08 ##
+
+	--Emails
+	"ice3mana%@hotmail%.com", --22 December 08
+	"kimmwarlock%@hotmail%.com", --22 December 08
 }
 
 local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
