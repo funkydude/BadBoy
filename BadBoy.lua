@@ -50,6 +50,9 @@ local triggers = {
 	".*%d+.*powerleveling%d%-%d+=%d+eur",
 	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
 
+	--temp
+	"happygolds.*christmas.*%d+.*%d+.*gold",
+
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
 	"2joygame%.c", --18 May 08 ## (deDE)
@@ -58,6 +61,7 @@ local triggers = {
 	"beatwow%.c", --14 June 08 ##
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapsgold%.c", --24 November 08 ## (deDE)
+	"coolwlk%.c", --29 December 08 ## (deDE)
 	"cwowgold%.c", --13 June 08 ##
 	"cheapleveling%.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08 ~~
