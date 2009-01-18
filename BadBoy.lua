@@ -90,6 +90,7 @@ local triggers = {
 	"pkpkg%.c", --17 June 08 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"rollhack%.c", --5 July 08 ##
+	"safegolds%.c", --18 Jan 09 ##
 	"sevengold%.c", --24 May 08 ##
 	"ssegames%.c", --20 July 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
