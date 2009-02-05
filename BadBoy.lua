@@ -4,17 +4,6 @@ local lower = _G.string.lower
 local rep = _G.strreplace
 
 local triggers = {
-	--Random/Art
-	"^%.o+%.$", --[.ooooO Ooooo.]
-	"%(only%d+%.?%d*eur?o?s?%)",
-	"%+%=+%+",
-	"%+%=%@%-%=%@%-%+",
-	"^www$",
-	"^%.com$",
-	"^\92%(only%d+%.?%d*pounds%)%/$",
-	"^\92%_%)for%d+g%(%_%/$",
-	"^$",
-
 	--Phrases
 	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d%d%d+g",
 	"%d+%.?%d*eur?o?s?[/\92=]?p?e?r?%d%d%d+",
@@ -50,9 +39,6 @@ local triggers = {
 	".*%d+.*powerleveling%d%-%d+=%d+eur",
 	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
 
-	--temp
-	"happygolds.*christmas.*%d+.*%d+.*gold",
-
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
 	"2joygame%.c", --18 May 08 ## (deDE)
@@ -84,6 +70,7 @@ local triggers = {
 	"ibgibg.c", --30 December 08 ## (deDE)
 	"k4gold%.c", --24 October 08 ##
 	"kgsgold", --16 May 08 .com ##
+	"leveler4wow.c", --04 January 09 ~~
 	"luckygolds%.c", --11 December 09 ##
 	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
@@ -117,6 +104,7 @@ local triggers = {
 	--Emails
 	"ice3mana%@hotmail%.com", --22 December 08
 	"kimmwarlock%@hotmail%.com", --22 December 08
+	"wowmana01%@hotmail%.com", --04 January 09
 }
 
 local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
@@ -130,7 +118,7 @@ local function filter(msg)
 		if fnd(msg, v) then
 			--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
 			local time = GetTime()
-			if k > 9 and (time - prev) > 20 then
+			if (time - prev) > 20 then
 				prev = time
 				if not _G.BADBOY_POPUP then
 					_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
