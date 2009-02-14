@@ -83,6 +83,7 @@ local triggers = {
 	"sevengold%.c", --24 May 08 ##
 	"ssegames%.c", --20 July 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
+	"tebuy%.net", --14 February 09 ##
 	"tebuy%.ws", --05 February 09 ##
 	"torchgame%.c", --16 June 08 ## (deDE)
 	"tpsale", --2 June 08 .com ##
@@ -121,7 +122,7 @@ local function filter(msg)
 		if fnd(msg, v) then
 			--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
 			local time = GetTime()
-			if (time - prev) > 20 then
+			if (time - prev) > 20 then --timer so we don't report retards that think saying "no we won't visit goldsiteX" is smart
 				prev = time
 				if not _G.BADBOY_POPUP then
 					_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
