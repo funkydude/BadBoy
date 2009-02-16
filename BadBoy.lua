@@ -74,6 +74,7 @@ local triggers = {
 	"kgsgold", --16 May 08 .com ##
 	"leveler4wow.c", --04 January 09 ~~
 	"luckygolds%.c", --11 December 09 ##
+	"mmige%.c", --16 February 09 ##
 	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
 	"pkpkg%.c", --17 June 08 ##
