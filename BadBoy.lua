@@ -47,6 +47,7 @@ local triggers = {
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
 	"beatwow%.c", --14 June 08 ##
+	"buyeuwow%.net", --20 February 09 ##
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"coolwlk%.c", --29 December 08 ## (deDE)
@@ -105,6 +106,7 @@ local triggers = {
 	"wowseller%.c", --25 May 08 ##
 	"wowsogood%.c", --20 July 08 ##
 	"yesdaq%.", --16 June 08 ##
+	"zibank%.com", --20 February 09 ## WTF at this? Not gold selling, some kind of goods website
 
 	--Emails
 	"ice3mana%@hotmail%.com", --22 December 08
