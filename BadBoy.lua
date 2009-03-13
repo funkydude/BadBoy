@@ -40,6 +40,7 @@ local triggers = {
 	".*%d+.*powerleveling%d%-%d+=%d+eur",
 	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
 	"happygolds.*gold.*gold",
+	"wirhaben%d+kgoldaufdiesemserver", --deDE
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -71,6 +72,7 @@ local triggers = {
 	"helpgolds%.c", --14 July 08 ## (deDE)
 	"holdwow%.c", -- 20 September 08 ##
 	"ibgibg.c", --30 December 08 ## (deDE)
+	"ignmax%.c", --13 March 09 ##
 	"k4gold%.c", --24 October 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"leveler4wow.c", --04 January 09 ~~
