@@ -107,6 +107,7 @@ local triggers = {
 	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
 	"wowsogood%.c", --20 July 08 ##
+	"wowyour%.c", --18 March 09 ##
 	"yesdaq%.", --16 June 08 ##
 	"zibank%.com", --20 February 09 ## WTF at this? Not gold selling, some kind of goods website
 
