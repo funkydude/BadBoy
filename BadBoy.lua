@@ -40,6 +40,7 @@ local triggers = {
 	".*%d+.*powerleveling%d%-%d+=%d+eur",
 	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
 	"happygolds.*gold.*gold",
+	"happygoldspointcom.*g",
 	"wirhaben%d+kgoldaufdiesemserver", --deDE
 
 	--URL's
