@@ -68,6 +68,7 @@ local triggers = {
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
 	"goldspeeder%.c", --20 September 08 ##
+	"gome4gold%.c", --24 March 09 ##
 	"goodgolds%.c", --13 December 08 ##
 	"happygolds%.", --08 July 08 ## (com)
 	"helpgolds%.c", --14 July 08 ## (deDE)
