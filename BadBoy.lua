@@ -46,6 +46,7 @@ local triggers = {
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
 	"2joygame%.c", --18 May 08 ## (deDE)
+	"4wowgold%.c", --6 April 09 ##
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
 	"beatwow%.c", --14 June 08 ##
@@ -120,8 +121,8 @@ local triggers = {
 }
 
 local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
-local function filter(msg)
-	if arg11 == savedID then return result else savedID = arg11 end --to work around a blizz bug
+local function filter(msg) --we use mainly global args, using any more than 1 local doesn't work, blizz bug, args return nil
+	if arg11 == savedID then return result else savedID = arg11 end --to work around a blizz bug, messages sent 7 times, 1 per chatframe
 	if not _G.CanComplainChat(savedID) then result = nil return end
 	msg = lower(msg)
 	msg = rep(msg, " ", "")
