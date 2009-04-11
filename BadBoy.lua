@@ -119,6 +119,9 @@ local triggers = {
 	"ice3mana%@hotmail%.com", --22 December 08
 	"kimmwarlock%@hotmail%.com", --22 December 08
 	"wowmana01%@hotmail%.com", --04 January 09
+
+	--Lvl 1 whisperers
+	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
 }
 
 local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
