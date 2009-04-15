@@ -125,74 +125,39 @@ local triggers = {
 }
 
 local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
-
-local filter
-local ver = GetBuildInfo()
-if ver == "3.0.9" then
-	filter = function(msg)
-		if arg11 == savedID then return result else savedID = arg11 end --to work around a blizz bug
-		if not _G.CanComplainChat(savedID) then result = nil return end
-		msg = lower(msg)
-		msg = rep(msg, " ", "")
-		msg = rep(msg, ",", ".")
-		for k, v in ipairs(triggers) do
-			if fnd(msg, v) then
-				--ChatFrame1:AddMessage("|cFF33FF99BadBoy|r: "..v.." - "..msg) --Debug
-				local time = GetTime()
-				if (time - prev) > 20 then --timer so we don't report retards that think saying "no we won't visit goldsiteX" is smart
-					prev = time
-					if not _G.BADBOY_POPUP then
-						_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..arg2..")"
-						ComplainChat(savedID)
-					else
-						local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", arg2)
-						if dialog then
-							dialog.data = savedID
-						end
+local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
+	if id == savedID then return result else savedID = id end --to work around the fact that messages are sent 7 times, 1 per chatframe
+	if not _G.CanComplainChat(id) then result = nil return end --don't report ourself
+	msg = lower(msg)
+	msg = rep(msg, " ", "")
+	msg = rep(msg, ",", ".")
+	for k, v in ipairs(triggers) do
+		if fnd(msg, v) then
+			--print("|cFF33FF99BadBoy|r: ", v, " - ", msg, name) --Debug
+			local time = GetTime()
+			if (time - prev) > 20 then --timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
+				prev = time
+				if not _G.BADBOY_POPUP then
+					_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..name..")"
+					ComplainChat(id)
+				else
+					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
+					if dialog then
+						dialog.data = id
 					end
 				end
-				result = true
-				return true
 			end
+			result = true
+			return true
 		end
-		result = nil
 	end
-else
-	print("|cFF33FF99BadBoy|r: WARNING - Please update to v3, this version breaks chat")
-	filter = function(_, _, msg, name, _, _, _, _, _, _, _, _, id)
-		if id == savedID then return result else savedID = id end --to work around the fact that messages are sent 7 times, 1 per chatframe
-		if not _G.CanComplainChat(id) then result = nil return end --don't report ourself
-		msg = lower(msg)
-		msg = rep(msg, " ", "")
-		msg = rep(msg, ",", ".")
-		for k, v in ipairs(triggers) do
-			if fnd(msg, v) then
-				--print("|cFF33FF99BadBoy|r: ", v, " - ", msg, name) --Debug
-				local time = GetTime()
-				if (time - prev) > 20 then --timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
-					prev = time
-					if not _G.BADBOY_POPUP then
-						_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..name..")"
-						ComplainChat(id)
-					else
-						local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
-						if dialog then
-							dialog.data = id
-						end
-					end
-				end
-				result = true
-				return true
-			end
-		end
-		result = nil
-	end
+	result = nil
 end
 
 local bb = CreateFrame("Frame", "BadBoy")
 --We need to wait for login before setting the CVar so we set it in this function to save creating a whole new one
---Keep in mind the main purpose of this function or to reset the global variable back to normal, we need to delay that until the report message appears
-bb:SetScript("OnEvent", function(...) SetCVar("spamFilter", 1) _G.COMPLAINT_ADDED = info end)
+--Keep in mind the main purpose of this function is to reset the global variable back to normal, we need to delay that until the report message appears
+bb:SetScript("OnEvent", function() SetCVar("spamFilter", 1) _G.COMPLAINT_ADDED = info end)
 bb:RegisterEvent("CHAT_MSG_SYSTEM")
 bb:RegisterEvent("PLAYER_LOGIN")
 bb = nil
