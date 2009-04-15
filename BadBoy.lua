@@ -124,8 +124,16 @@ local triggers = {
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
 }
 
-local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
+local info, prev, savedID, result, fail = _G.COMPLAINT_ADDED, 0, 0, nil, nil
 local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
+	if type(id) ~= "number" then
+		if not fail then
+			fail = true
+			print("|cFF33FF99BadBoy|r: Spam can not be reported.")
+			print("|cFF33FF99BadBoy|r: An unknown addon is breaking BadBoy.")
+		end
+		return
+	end
 	if id == savedID then return result else savedID = id end --to work around the fact that messages are sent 7 times, 1 per chatframe
 	if not _G.CanComplainChat(id) then result = nil return end --don't report ourself
 	msg = lower(msg)
