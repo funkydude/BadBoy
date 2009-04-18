@@ -125,11 +125,13 @@ local triggers = {
 }
 
 local info, prev, savedID, result, fail = _G.COMPLAINT_ADDED, 0, 0, nil, nil
+local type, n = _G.type, "number" --temp for a few weeks
 local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
-	if type(id) ~= "number" then
+	--remove this check after a few weeks, gives addons time to update and fix.
+	if type(id) ~= n then
 		if not fail then
 			fail = true
-			print("|cFF33FF99BadBoy|r: Spam can not be reported.")
+			print("|cFF33FF99BadBoy|r: Spam reporting error.")
 			print("|cFF33FF99BadBoy|r: An unknown addon is breaking BadBoy.")
 		end
 		return
