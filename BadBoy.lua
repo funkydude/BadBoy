@@ -124,8 +124,8 @@ local triggers = {
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
 }
 
-local info, prev, savedID, result, fail = _G.COMPLAINT_ADDED, 0, 0, nil, nil
-local type, n = _G.type, "number" --temp for a few weeks
+local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
+local type, n, fail = _G.type, "number", nil --temp for a few weeks
 local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
 	--remove this check after a few weeks, gives addons time to update and fix.
 	if type(id) ~= n then
@@ -164,17 +164,24 @@ local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
 	result = nil
 end
 
-local bb = CreateFrame("Frame", "BadBoy")
---We need to wait for login before setting the CVar so we set it in this function to save creating a whole new one
---Keep in mind the main purpose of this function is to reset the global variable back to normal, we need to delay that until the report message appears
-bb:SetScript("OnEvent", function() SetCVar("spamFilter", 1) _G.COMPLAINT_ADDED = info end)
-bb:RegisterEvent("CHAT_MSG_SYSTEM")
-bb:RegisterEvent("PLAYER_LOGIN")
-bb = nil
-
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
+
+--Function for silenting BadBoy reports
+ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
+	if msg == info then
+		return --Manual report, back down
+	elseif msg == _G.COMPLAINT_ADDED then
+		_G.COMPLAINT_ADDED = info --Reset global variable for normal manual reporting messages
+		if _G.BADBOY_SILENT then
+			return true --Filter out the report if enabled
+		end
+	end
+	--Ninja this in here to prevent creating a login function & frame
+	--We force this on so we don't have spam that would have been filtered, reported on forums
+	SetCVar("spamFilter", 1)
+end)
 
