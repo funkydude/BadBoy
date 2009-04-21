@@ -54,6 +54,7 @@ local triggers = {
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"coolwlk%.c", --29 December 08 ## (deDE)
+	"crazyraid%.c", --20 April 09 ##
 	"cwowgold%.c", --13 June 08 ##
 	"cheapleveling%.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08 ~~
@@ -138,6 +139,7 @@ local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
 	end
 	if id == savedID then return result else savedID = id end --to work around the fact that messages are sent 7 times, 1 per chatframe
 	if not _G.CanComplainChat(id) then result = nil return end --don't report ourself
+	local raw = msg
 	msg = lower(msg)
 	msg = rep(msg, " ", "")
 	msg = rep(msg, ",", ".")
@@ -147,14 +149,15 @@ local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
 			local time = GetTime()
 			if (time - prev) > 20 then --timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
 				prev = time
-				if not _G.BADBOY_POPUP then
-					_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..name..")"
-					ComplainChat(id)
-				else
-					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
+				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..name..")"
+				if _G.BADBOY_POPUP then
+					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. raw
+					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
 					if dialog then
 						dialog.data = id
 					end
+				else
+					_G.ComplainChat(id)
 				end
 			end
 			result = true
@@ -170,18 +173,22 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 
---Function for silenting BadBoy reports
+--Function for disabling BadBoy reports
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 	if msg == info then
-		return --Manual report, back down
+		return --Manual spam report, back down
 	elseif msg == _G.COMPLAINT_ADDED then
-		_G.COMPLAINT_ADDED = info --Reset global variable for normal manual reporting messages
+		_G.COMPLAINT_ADDED = info --Reset reported message to default for manual reporting
+		if _G.BADBOY_POPUP then
+			--Reset popup message to default for manual reporting
+			_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION
+		end
 		if _G.BADBOY_SILENT then
 			return true --Filter out the report if enabled
 		end
 	end
 	--Ninja this in here to prevent creating a login function & frame
-	--We force this on so we don't have spam that would have been filtered, reported on forums
+	--We force this on so we don't have spam that would have been filtered, reported on the forums
 	SetCVar("spamFilter", 1)
 end)
 
