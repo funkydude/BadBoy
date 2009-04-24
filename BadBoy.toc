@@ -6,6 +6,6 @@
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist)
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved
-## Version: 3.2.0.1
+## Version: 3.3.0.0
 
 BadBoy.lua

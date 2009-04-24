@@ -125,9 +125,9 @@ local triggers = {
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
 }
 
-local info, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
+local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
 local type, n, fail = _G.type, "number", nil --temp for a few weeks
-local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
+local function filter(_, event, msg, name, _, _, _, _, chanid, _, _, _, id)
 	--remove this check after a few weeks, gives addons time to update and fix.
 	if type(id) ~= n then
 		if not fail then
@@ -138,6 +138,7 @@ local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
 		return
 	end
 	if id == savedID then return result else savedID = id end --to work around the fact that messages are sent 7 times, 1 per chatframe
+	if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official blizz channels
 	if not _G.CanComplainChat(id) then result = nil return end --don't report ourself
 	local raw = msg
 	msg = lower(msg)
@@ -149,7 +150,7 @@ local function filter(_, _, msg, name, _, _, _, _, _, _, _, _, id)
 			local time = GetTime()
 			if (time - prev) > 20 then --timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
 				prev = time
-				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. info .. " ("..name..")"
+				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. orig .. " ("..name..")"
 				if _G.BADBOY_POPUP then
 					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. raw
 					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
@@ -175,10 +176,10 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 
 --Function for disabling BadBoy reports
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
-	if msg == info then
+	if msg == orig then
 		return --Manual spam report, back down
 	elseif msg == _G.COMPLAINT_ADDED then
-		_G.COMPLAINT_ADDED = info --Reset reported message to default for manual reporting
+		_G.COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
 		if _G.BADBOY_POPUP then
 			--Reset popup message to default for manual reporting
 			_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION
