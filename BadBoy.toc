@@ -1,4 +1,5 @@
 ## Interface: 30100
+## Version: 3.3.0.1
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Author: Funkydude
@@ -6,6 +7,5 @@
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist)
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved
-## Version: 3.3.0.0
 
 BadBoy.lua

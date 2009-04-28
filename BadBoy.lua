@@ -137,8 +137,8 @@ local function filter(_, event, msg, name, _, _, _, _, chanid, _, _, _, id)
 		end
 		return
 	end
-	if id == savedID then return result else savedID = id end --to work around the fact that messages are sent 7 times, 1 per chatframe
-	if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official blizz channels
+	if id == savedID then return result else savedID = id end --incase a message is sent more than once (registered to more than 1 chatframe)
+	if event == "CHAT_MSG_CHANNEL" and chanid == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 	if not _G.CanComplainChat(id) then result = nil return end --don't report ourself
 	local raw = msg
 	msg = lower(msg)
@@ -146,7 +146,7 @@ local function filter(_, event, msg, name, _, _, _, _, chanid, _, _, _, id)
 	msg = rep(msg, ",", ".")
 	for k, v in ipairs(triggers) do
 		if fnd(msg, v) then
-			--print("|cFF33FF99BadBoy|r: ", v, " - ", msg, name) --Debug
+			--print("|cFF33FF99BadBoy|r: ", v, " - ", raw, name) --Debug
 			local time = GetTime()
 			if (time - prev) > 20 then --timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
 				prev = time
@@ -154,9 +154,7 @@ local function filter(_, event, msg, name, _, _, _, _, chanid, _, _, _, id)
 				if _G.BADBOY_POPUP then
 					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. raw
 					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
-					if dialog then
-						dialog.data = id
-					end
+					dialog.data = id
 				else
 					_G.ComplainChat(id)
 				end
@@ -174,7 +172,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 
---Function for disabling BadBoy reports
+--Function for disabling BadBoy reports and misc required functions
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 	if msg == orig then
 		return --Manual spam report, back down
