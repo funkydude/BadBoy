@@ -172,6 +172,8 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
+ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
+ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
 --Function for disabling BadBoy reports and misc required functions
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
