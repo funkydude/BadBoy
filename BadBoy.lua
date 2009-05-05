@@ -42,6 +42,7 @@ local triggers = {
 	"happygolds.*gold.*gold",
 	"happygoldspointcom.*g",
 	"wirhaben%d+kgoldaufdiesemserver", --deDE
+	".*%d%d%d+gonlycosted[\194\165\194\163%$\226\130\172]%d+%.%d%d+usd",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -51,6 +52,7 @@ local triggers = {
 	"925fancy%.c", --20 May 08 ##
 	"beatwow%.c", --14 June 08 ##
 	"buyeuwow%.net", --20 February 09 ##
+	"buywowgolds%.c", --05 May 09 ##
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"coolwlk%.c", --29 December 08 ## (deDE)
@@ -69,6 +71,7 @@ local triggers = {
 	"gmw.rking%.eu", --07 December 08 ##
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
+	"goldruler%.c", --05 May 09 ~~
 	"goldspeeder%.c", --20 September 08 ##
 	"gome4gold%.c", --24 March 09 ##
 	"goodgolds%.c", --13 December 08 ##
