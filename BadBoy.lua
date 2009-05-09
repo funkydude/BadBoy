@@ -77,6 +77,7 @@ local triggers = {
 	"gome4gold%.c", --24 March 09 ##
 	"goodgolds%.c", --13 December 08 ##
 	"happygolds%.", --08 July 08 ## (com)
+	"happyleveling%.c", --09 May 09 ##
 	"helpgolds%.c", --14 July 08 ## (deDE)
 	"holdwow%.c", -- 20 September 08 ##
 	"ibgibg.c", --30 December 08 ## (deDE)
