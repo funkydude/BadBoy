@@ -95,6 +95,7 @@ local triggers = {
 	"rollhack%.c", --5 July 08 ##
 	"safegolds%.c", --18 Jan 09 ##
 	"sevengold%.c", --24 May 08 ##
+	"skygolds%.c", --09 May 09 ##
 	"ssegames%.c", --20 July 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"tbgold%.c", --29 April 09 ##
