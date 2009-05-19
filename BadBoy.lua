@@ -43,6 +43,8 @@ local triggers = {
 	"happygoldspointcom.*g",
 	"wirhaben%d+kgoldaufdiesemserver", --deDE
 	".*%d%d%d+gonlycosted[\194\165\194\163%$\226\130\172]%d+%.%d%d+usd",
+	"power%-?le?ve?l.*%d%d%d+g.*%d%d%d+g",
+	"sellyour.*gold.*%d+us.*%d%.?%d+g",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
