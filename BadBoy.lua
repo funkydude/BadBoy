@@ -108,6 +108,7 @@ local triggers = {
 	"upgold%.net", --10 June 08 ##
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
+	"welcomegold%.com", --24 May 09 ## [Multi Line]
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow1gold%.c", --22 December 08 ## (deDE)
 	"wow4s%.net", --27 October 08 ~~
@@ -146,26 +147,27 @@ local function filter(_, event, msg, name, _, _, _, _, chanid, _, _, _, id)
 		end
 		return
 	end
-	if id == savedID then return result else savedID = id end --incase a message is sent more than once (registered to more than 1 chatframe)
+	if id == savedID then return result else savedID = id end --Incase a message is sent more than once (registered to more than 1 chatframe)
 	if event == "CHAT_MSG_CHANNEL" and chanid == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-	if not _G.CanComplainChat(id) then result = nil return end --don't report ourself
+	if not _G.CanComplainChat(id) then result = nil return end --Don't report ourself
 	local raw = msg
-	msg = lower(msg)
-	msg = rep(msg, " ", "")
-	msg = rep(msg, ",", ".")
-	for k, v in ipairs(triggers) do
-		if fnd(msg, v) then
-			--print("|cFF33FF99BadBoy|r: ", v, " - ", raw, name) --Debug
+	msg = lower(msg) --Lower all text, remove capitals
+	msg = rep(msg, " ", "") --Remove spaces
+	msg = rep(msg, ",", ".") --Convert commas to periods
+	for k, v in ipairs(triggers) do --Scan database
+		if fnd(msg, v) then --Found a match
+			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, name) end --Debug
 			local time = GetTime()
-			if (time - prev) > 20 then --timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
+			if (time - prev) > 20 then --Timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
 				prev = time
-				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. orig .. " ("..name..")"
-				if _G.BADBOY_POPUP then
+				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. orig .. " ("..name..")" --Add name to reported message
+				if _G.BADBOY_POPUP then --Manual reporting via popup
+					--Add original spam line to Blizzard popup message
 					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. raw
 					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
 					dialog.data = id
 				else
-					_G.ComplainChat(id)
+					_G.ComplainChat(id) --Automatically report
 				end
 			end
 			result = true
