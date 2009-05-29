@@ -92,6 +92,7 @@ local triggers = {
 	"mmige%.c", --16 February 09 ##
 	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
+	"mounts%-wow%.c", --29 May 09 ##
 	"pkpkg%.c", --17 June 08 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"rollhack%.c", --5 July 08 ##
