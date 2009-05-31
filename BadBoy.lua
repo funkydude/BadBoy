@@ -52,6 +52,7 @@ local triggers = {
 	"4wowgold%.c", --6 April 09 ##
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
+	"ak774%.com", --30 May 09 ##
 	"beatwow%.c", --14 June 08 ##
 	"blizzard%-worldofwarcraft%.c", --07 May 09 ## Phishing url
 	"buyeuwow%.net", --20 February 09 ##
@@ -111,6 +112,7 @@ local triggers = {
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
 	"welcomegold%.com", --24 May 09 ## [Multi Line]
+	"wootwowgold[%@%.]", --31 May 09 ## Mail/url
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow1gold%.c", --22 December 08 ## (deDE)
 	"wow4s%.net", --27 October 08 ~~
