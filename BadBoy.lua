@@ -45,6 +45,7 @@ local triggers = {
 	".*%d%d%d+gonlycosted[\194\165\194\163%$\226\130\172]%d+%.%d%d+usd",
 	"power%-?le?ve?l.*%d%d%d+g.*%d%d%d+g",
 	"sellyour.*gold.*%d+us.*%d%.?%d+g",
+	"gold.*%d%d%d+g[/\92=]gbp%d+",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -52,9 +53,10 @@ local triggers = {
 	"4wowgold%.c", --6 April 09 ##
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
-	"fromak774%.com", --30 May 09 ## from ak774.com [dead]
+	"ak774%.com", --30 May 09 ##
 	"beatwow%.c", --14 June 08 ##
 	"blizzard%-worldofwarcraft%.c", --07 May 09 ## Phishing url
+	"brothergame%.com", --02 June 09 ## (deDE)
 	"buyeuwow%.net", --20 February 09 ##
 	"buywowgolds%.c", --05 May 09 ##
 	"cfsgold%.c", --20 May 08 ## (deDE)
