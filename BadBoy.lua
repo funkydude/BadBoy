@@ -55,6 +55,7 @@ local triggers = {
 	"925fancy%.c", --20 May 08 ##
 	"ak774%.com", --30 May 09 ##
 	"beatwow%.c", --14 June 08 ##
+	"blizz%-mounts%.c", --05 June 09 ## Phishing url
 	"blizzard%-worldofwarcraft%.c", --07 May 09 ## Phishing url
 	"brothergame%.com", --02 June 09 ## (deDE)
 	"buyeuwow%.net", --20 February 09 ##
