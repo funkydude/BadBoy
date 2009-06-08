@@ -78,6 +78,7 @@ local triggers = {
 	"gmw.rking%.eu", --07 December 08 ##
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
+	"goldba%.c", --9 June 09 ##
 	"goldruler%.c", --05 May 09 ~~
 	"goldspeeder%.c", --20 September 08 ##
 	"gome4gold%.c", --24 March 09 ##
