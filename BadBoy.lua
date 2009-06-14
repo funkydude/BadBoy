@@ -123,6 +123,7 @@ local triggers = {
 	"wow4s%.net", --27 October 08 ~~
 	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
+	"wow%-npc%.c", --15 June 09 ##
 	"wowgamelife", --14 July 08 ##
 	"wowgold%-de%.c", --16 August 08 ##
 	"wowhax%.c", --5 May 08 ~~
