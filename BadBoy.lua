@@ -47,6 +47,7 @@ local triggers = {
 	"sellyour.*gold.*%d+us.*%d%.?%d*g",
 	"gold.*%d%d%d+g[/\92=]gbp%d+",
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
+	"blizzard.*mount.*free.*trial.*log",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -114,6 +115,7 @@ local triggers = {
 	"torchgame%.c", --16 June 08 ## (deDE)
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
+	"uswow%-worldofwarcraft%.c", --19 June 09 ## Mounts Phishing
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
 	"welcomegold%.com", --24 May 09 ## [Multi Line]
