@@ -48,9 +48,12 @@ local triggers = {
 	"gold.*%d%d%d+g[/\92=]gbp%d+",
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
 	"blizzard.*mount.*free.*trial.*log",
+	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
+	"%d%d+eur?o?s?for%d%d%d%d+g",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
+	"17mins%.c", --21 June 09 ##
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"4wowgold%.c", --6 April 09 ##
 	"5uneed%.c", --6 June 08 ##
@@ -74,6 +77,7 @@ local triggers = {
 	"fastgg%.c", --20 May 08 ##
 	"fastgolds%.c", --11 December 08 ##
 	"fesgt%.c", --22 December 08 ## (esES)
+	"g4pitem.c", --19 June 09 ## Item Selling
 	"games%-level%.n+e+t", --9May 08 ~~
 	"garden2game%.com", --17 Oct 08
 	"get%-levels%.c", --29 April 08 ~~
@@ -112,6 +116,7 @@ local triggers = {
 	"tbgold%.c", --29 April 09 ##
 	"tebuy%.net", --14 February 09 ##
 	"tebuy%.ws", --05 February 09 ##
+	"time2wow%.c", --19 June 09 ##
 	"torchgame%.c", --16 June 08 ## (deDE)
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
