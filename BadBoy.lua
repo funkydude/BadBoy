@@ -50,6 +50,7 @@ local triggers = {
 	"blizzard.*mount.*free.*trial.*log",
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
 	"%d%d+eur?o?s?for%d%d%d%d+g",
+	"gold.*cheap.*price.*fast.*delivery",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -100,6 +101,7 @@ local triggers = {
 	"leveler4wow.c", --04 January 09 ~~
 	"%.levelvip%.", --08 April 09 ## (OM
 	"luckygolds%.c", --11 December 09 ##
+	"marketgolds%.c", --29 June 09 ##
 	"mmige%.c", --16 February 09 ##
 	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
@@ -123,7 +125,9 @@ local triggers = {
 	"uswow%-worldofwarcraft%.c", --19 June 09 ## Mounts Phishing
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
+	"vsvgame%.c", --29 June 09 ##
 	"welcomegold%.com", --24 May 09 ## [Multi Line]
+	"wlkwowgold%.net", --28 June 09 ##
 	"wootwowgold[%@%.]", --31 May 09 ## Mail/url
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow1gold%.c", --22 December 08 ## (deDE)
@@ -133,6 +137,7 @@ local triggers = {
 	"wow%-npc%.c", --15 June 09 ##
 	"wowgamelife", --14 July 08 ##
 	"wowgold%-de%.c", --16 August 08 ##
+	"wowgoldtm%.c", --21 June 09 ##
 	"wowhax%.c", --5 May 08 ~~
 	"wowmygold%.c", --11 November 08 ##
 	"worldofgolds%.com", --20 October 08
@@ -150,6 +155,7 @@ local triggers = {
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
+	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
