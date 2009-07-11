@@ -55,6 +55,7 @@ local triggers = {
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
 	"17mins%.c", --21 June 09 ##
+	"29gameswow%.c", --11 July 09##
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"4wowgold%.c", --6 April 09 ##
 	"5uneed%.c", --6 June 08 ##
@@ -156,6 +157,8 @@ local triggers = {
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
 	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
+	"gold.*server.*%d+.*stock.*buy", --Excuse me, i have sold 10k gold on this server, 22k left in stock right now, do you wanna buy some today?, 20-30mins delivery:)
+	"free.*powerleveling.*level.*%d+.*interested", --Hello there! I am offering free powerleveling from level 70-80! Perhaps you are intrested? :)v
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
