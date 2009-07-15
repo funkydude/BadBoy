@@ -49,8 +49,10 @@ local triggers = {
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
 	"blizzard.*mount.*free.*trial.*log",
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
+	"gold.*%d+k[/\92=]gbp%d%d+.*gold",
 	"%d%d+eur?o?s?for%d%d%d%d+g",
 	"gold.*cheap.*price.*fast.*delivery",
+	"powerlevel%l?ing.*gold.*fast.*delivery",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -112,6 +114,7 @@ local triggers = {
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"rollhack%.c", --5 July 08 ##
 	"safegolds%.c", --18 Jan 09 ##
+	"selfgold%.c", --16 July 09 ## (deDE)
 	"sevengold%.c", --24 May 08 ##
 	"skygolds%.c", --09 May 09 ##
 	"ssegames%.c", --20 July 08 ##
@@ -159,6 +162,7 @@ local triggers = {
 	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
 	"gold.*server.*%d+.*stock.*buy", --Excuse me, i have sold 10k gold on this server, 22k left in stock right now, do you wanna buy some today?, 20-30mins delivery:)
 	"free.*powerleveling.*level.*%d+.*interested", --Hello there! I am offering free powerleveling from level 70-80! Perhaps you are intrested? :)v
+	"friend.*tellyoutheprice.*%d+k.*gold", --dear friend.. may i tell you the price for 10k wow gold ?^^
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
@@ -189,7 +193,7 @@ local function filter(_, event, msg, name, _, _, _, _, chanid, _, _, _, id)
 				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. orig .. " ("..name..")" --Add name to reported message
 				if _G.BADBOY_POPUP then --Manual reporting via popup
 					--Add original spam line to Blizzard popup message
-					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. raw
+					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. rep(raw, "%", "%%")
 					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
 					dialog.data = id
 				else
