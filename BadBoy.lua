@@ -25,6 +25,7 @@ local triggers = {
 	"%d+g%l*only%d+%.?%d*eu",
 	"%d+g%l*only%d+%.?%d*usd",
 	"%d%d%d+gjust[\194\165\194\163%$\226\130\172]%d+",
+	"%d%d%d+gjust%d+%.?%d*[\194\165\194\163%$\226\130\172]",
 	"%d%d%d+go?l?d?[/\92=]usd%d+",
 	"%d+go?l?d?[/\92=][\194\165\194\163%$\226\130\172]%d+",
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
@@ -53,6 +54,7 @@ local triggers = {
 	"%d%d+eur?o?s?for%d%d%d%d+g",
 	"gold.*cheap.*price.*fast.*delivery",
 	"powerlevel%l?ing.*gold.*fast.*delivery",
+	"%d+k[/\92=]%d+%.%d+gbp.*%%.*gold",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -97,10 +99,12 @@ local triggers = {
 	"happyleveling%.c", --09 May 09 ##
 	"helpgolds%.c", --14 July 08 ## (deDE)
 	"holdwow%.c", -- 20 September 08 ##
+	"hotgolds%.c", --19 July 09 ##
 	"ibgibg.c", --30 December 08 ## (deDE)
 	"ignmax%.c", --13 March 09 ##
 	"k4gold%.c", --24 October 08 ##
 	"kgsgold", --16 May 08 .com ##
+	"kugold%.c", --19 July 09 ##
 	"leveler4wow.c", --04 January 09 ~~
 	"%.levelvip%.", --08 April 09 ## (OM
 	"luckygolds%.c", --11 December 09 ##
@@ -109,6 +113,7 @@ local triggers = {
 	"mmobusiness%.c", --04 August 08 ##
 	"mmowned%(dot%)c", --21 May 08 ##
 	"mounts%-wow%.c", --29 May 09 ##
+	"nowgold%.?com", --16 July 09 ##
 	"oofay%.c", --30 May 09 ##
 	"pkpkg%.c", --17 June 08 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
