@@ -55,6 +55,7 @@ local triggers = {
 	"gold.*cheap.*price.*fast.*delivery",
 	"powerlevel%l?ing.*gold.*fast.*delivery",
 	"%d+k[/\92=]%d+%.%d+gbp.*%%.*gold",
+	"service.*price.*delivery.*gold",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -84,6 +85,7 @@ local triggers = {
 	"fastgolds%.c", --11 December 08 ##
 	"fesgt%.c", --22 December 08 ## (esES)
 	"g4pitem.c", --19 June 09 ## Item Selling
+	"g4ppowerleveling%.c", --25 July 09 ##
 	"games%-level%.n+e+t", --9May 08 ~~
 	"garden2game%.com", --17 Oct 08
 	"get%-levels%.c", --29 April 08 ~~
@@ -111,6 +113,7 @@ local triggers = {
 	"marketgolds%.c", --29 June 09 ##
 	"mmige%.c", --16 February 09 ##
 	"mmobusiness%.c", --04 August 08 ##
+	"mmoggg%.c", --25 July 09 ## (deDE)
 	"mmowned%(dot%)c", --21 May 08 ##
 	"mounts%-wow%.c", --29 May 09 ##
 	"nowgold%.?com", --16 July 09 ##
@@ -135,9 +138,12 @@ local triggers = {
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
 	"vsvgame%.c", --29 June 09 ##
+	"warcraft%-advantage%.c", --25 July 09 ## Hacks/trojan
 	"welcomegold%.com", --24 May 09 ## [Multi Line]
 	"wlkwowgold%.net", --28 June 09 ##
 	"wootwowgold[%@%.]", --31 May 09 ## Mail/url
+	"woowmart%.c", --25 July 09 ##
+	"worldofgolds%.com", --20 October 08
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow1gold%.c", --22 December 08 ## (deDE)
 	"wow4s%.net", --27 October 08 ~~
@@ -149,7 +155,6 @@ local triggers = {
 	"wowgoldtm%.c", --21 June 09 ##
 	"wowhax%.c", --5 May 08 ~~
 	"wowmygold%.c", --11 November 08 ##
-	"worldofgolds%.com", --20 October 08
 	"wowplayer%.de", --11 May 08 ~~
 	"wowseller%.c", --25 May 08 ##
 	"wowsogood%.c", --20 July 08 ##
@@ -168,6 +173,10 @@ local triggers = {
 	"gold.*server.*%d+.*stock.*buy", --Excuse me, i have sold 10k gold on this server, 22k left in stock right now, do you wanna buy some today?, 20-30mins delivery:)
 	"free.*powerleveling.*level.*%d+.*interested", --Hello there! I am offering free powerleveling from level 70-80! Perhaps you are intrested? :)v
 	"friend.*tellyoutheprice.*%d+k.*gold", --dear friend.. may i tell you the price for 10k wow gold ?^^
+	"we.*%d+k.*stock.*realm", --hi, we got 25k+++ in stock on this realm. r u interested?:P
+	"we.*%d+k.*stock.*gold", --Sorry to bother you , We have 26k gold in stock right now. Are you intrested in buying some gold today?
+	"we.*%d+k.*gold.*buy", --Sorry to bother. We got around 27.4k gold on this server, wondering if you might buy some quick gold with face to face trading ingame?
+	"so?rr?y.*interest.*cheap.*gold", --sorry to trouble you , just wondering whether you have  any interest in getting some cheap gold at this moment ,dear dude ? ^^
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
