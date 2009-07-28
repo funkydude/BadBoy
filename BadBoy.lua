@@ -56,6 +56,7 @@ local triggers = {
 	"powerlevel%l?ing.*gold.*fast.*delivery",
 	"%d+k[/\92=]%d+%.%d+gbp.*%%.*gold",
 	"service.*price.*delivery.*gold",
+	"\226\130\172%d+%.?%d*f\195\188r%d%d%d+gold", --deDE
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -172,11 +173,13 @@ local triggers = {
 	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
 	"gold.*server.*%d+.*stock.*buy", --Excuse me, i have sold 10k gold on this server, 22k left in stock right now, do you wanna buy some today?, 20-30mins delivery:)
 	"free.*powerleveling.*level.*%d+.*interested", --Hello there! I am offering free powerleveling from level 70-80! Perhaps you are intrested? :)v
-	"friend.*tellyoutheprice.*%d+k.*gold", --dear friend.. may i tell you the price for 10k wow gold ?^^
+	"friend.*price.*%d+k.*gold", --dear friend.. may i tell you the price for 10k wow gold ?^^
 	"we.*%d+k.*stock.*realm", --hi, we got 25k+++ in stock on this realm. r u interested?:P
 	"we.*%d+k.*stock.*gold", --Sorry to bother you , We have 26k gold in stock right now. Are you intrested in buying some gold today?
 	"we.*%d+k.*gold.*buy", --Sorry to bother. We got around 27.4k gold on this server, wondering if you might buy some quick gold with face to face trading ingame?
 	"so?rr?y.*interest.*cheap.*gold", --sorry to trouble you , just wondering whether you have  any interest in getting some cheap gold at this moment ,dear dude ? ^^
+	"we.*%d+k.*stock.*interested", --hi,we have 40k in stock today,interested ?:)
+	"we.*%d%d%d+g.*stock.*price", --hi,we have the last 23600g in stock now ,ill give you the bottom price.do u need any?:D
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
