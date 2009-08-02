@@ -49,14 +49,18 @@ local triggers = {
 	"gold.*%d%d%d+g[/\92=]gbp%d+",
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
 	"blizzard.*mount.*free.*trial.*log",
+	"freespectraltigerloot.*redeem",
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
 	"gold.*%d+k[/\92=]gbp%d%d+.*gold",
 	"%d%d+eur?o?s?for%d%d%d%d+g",
 	"gold.*cheap.*price.*fast.*delivery",
 	"powerlevel%l?ing.*gold.*fast.*delivery",
-	"%d+k[/\92=]%d+%.%d+gbp.*%%.*gold",
+	"%d+k[/\92=]%d+%.?%d*gbp.*%%.*gold",
+	"gold.*%d+k[/\92=]%d+%.?%d*eur",
 	"service.*price.*delivery.*gold",
 	"\226\130\172%d+%.?%d*f\195\188r%d%d%d+gold", --deDE
+	"gold.*deliver?y.*service",
+	"gold.*deliver?y.*safe",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -163,11 +167,6 @@ local triggers = {
 	"yesdaq%.", --16 June 08 ##
 	"zibank%.com", --20 February 09 ## WTF at this? Not gold selling, some kind of goods website
 
-	--Emails
-	"ice3mana%@hotmail%.com", --22 December 08
-	"kimmwarlock%@hotmail%.com", --22 December 08
-	"wowmana01%@hotmail%.com", --04 January 09
-
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
 	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
@@ -180,6 +179,8 @@ local triggers = {
 	"so?rr?y.*interest.*cheap.*gold", --sorry to trouble you , just wondering whether you have  any interest in getting some cheap gold at this moment ,dear dude ? ^^
 	"we.*%d+k.*stock.*interested", --hi,we have 40k in stock today,interested ?:)
 	"we.*%d%d%d+g.*stock.*price", --hi,we have the last 23600g in stock now ,ill give you the bottom price.do u need any?:D
+	"cheap.*price.*buy.*%d%d%d+.*gold", --Really sorry to bother you , Cheapest price, no more waiting! I just wonder if you want to buy some of our 36000 gold stock. :)
+	"buy.*gold.*bonus.*deliver", --Sry to bother u ,may i know whether u need to buy gold ? if u want to buy  ,i can give u nice bonus and it just takes 5-15mins to deliver. :) if not ,really so sry ,have a nice day !XD
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
