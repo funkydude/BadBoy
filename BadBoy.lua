@@ -24,6 +24,7 @@ local triggers = {
 	"%d+g%l*for[\194\165\194\163%$\226\130\172]%d+",
 	"%d+g%l*only%d+%.?%d*eu",
 	"%d+g%l*only%d+%.?%d*usd",
+	"%d%d%d+gonlyeur%d+%.?%d*",
 	"%d%d%d+gjust[\194\165\194\163%$\226\130\172]%d+",
 	"%d%d%d+gjust%d+%.?%d*[\194\165\194\163%$\226\130\172]",
 	"%d%d%d+go?l?d?[/\92=]usd%d+",
@@ -61,6 +62,8 @@ local triggers = {
 	"\226\130\172%d+%.?%d*f\195\188r%d%d%d+gold", --deDE
 	"gold.*deliver?y.*service",
 	"gold.*deliver?y.*safe",
+	"gold.*stock.*deliver?y",
+	"visit.*cheap.*gold",
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -115,6 +118,7 @@ local triggers = {
 	"leveler4wow.c", --04 January 09 ~~
 	"%.levelvip%.", --08 April 09 ## (OM
 	"luckygolds%.c", --11 December 09 ##
+	"lvinn%.c", --07 August 09 @@
 	"marketgolds%.c", --29 June 09 ##
 	"mmige%.c", --16 February 09 ##
 	"mmobusiness%.c", --04 August 08 ##
@@ -181,6 +185,7 @@ local triggers = {
 	"we.*%d%d%d+g.*stock.*price", --hi,we have the last 23600g in stock now ,ill give you the bottom price.do u need any?:D
 	"cheap.*price.*buy.*%d%d%d+.*gold", --Really sorry to bother you , Cheapest price, no more waiting! I just wonder if you want to buy some of our 36000 gold stock. :)
 	"buy.*gold.*bonus.*deliver", --Sry to bother u ,may i know whether u need to buy gold ? if u want to buy  ,i can give u nice bonus and it just takes 5-15mins to deliver. :) if not ,really so sry ,have a nice day !XD
+	"hi.*%d%d+k.*stock.*interest", --hi ,30k++in stock any interest?:)
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
