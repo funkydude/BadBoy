@@ -64,6 +64,7 @@ local triggers = {
 	"gold.*deliver?y.*safe",
 	"gold.*stock.*deliver?y",
 	"visit.*cheap.*gold",
+	"you.*become.*blizzard.*gift.*%.com", --Hi You have become a Blizzard lucky player, 3 days later you'll get a surprise gift of the mysterious, registered address: XYZ [PHISHING]
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -78,6 +79,7 @@ local triggers = {
 	"blizz%-mounts%.c", --05 June 09 ## Phishing url
 	"blizzard%-worldofwarcraft%.c", --07 May 09 ## Phishing url
 	"brothergame%.com", --02 June 09 ## (deDE)
+	"btwor%.com", --12 August (Malware) @@
 	"buyeuwow%.net", --20 February 09 ##
 	"buywowgolds%.c", --05 May 09 ##
 	"cfsgold%.c", --20 May 08 ## (deDE)
@@ -115,6 +117,7 @@ local triggers = {
 	"k4gold%.c", --24 October 08 ##
 	"kgsgold", --16 May 08 .com ##
 	"kugold%.c", --19 July 09 ##
+	"let4gold%.c", --12 August 09 ##
 	"leveler4wow.c", --04 January 09 ~~
 	"%.levelvip%.", --08 April 09 ## (OM
 	"luckygolds%.c", --11 December 09 ##
