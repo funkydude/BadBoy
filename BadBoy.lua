@@ -64,7 +64,7 @@ local triggers = {
 	"gold.*deliver?y.*safe",
 	"gold.*stock.*deliver?y",
 	"visit.*cheap.*gold",
-	"you.*become.*blizzard.*gift.*%.com", --Hi You have become a Blizzard lucky player, 3 days later you'll get a surprise gift of the mysterious, registered address: XYZ [PHISHING]
+	"you.*become.*blizzard.*gift.*add?res", --Hi You have become a Blizzard lucky player, 3 days later you'll get a surprise gift of the mysterious, registered address: XYZ [PHISHING]
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
