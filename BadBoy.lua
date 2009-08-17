@@ -57,9 +57,10 @@ local triggers = {
 	"gold.*cheap.*price.*fast.*delivery",
 	"powerlevel%l?ing.*gold.*fast.*delivery",
 	"%d+k[/\92=]%d+%.?%d*gbp.*%%.*gold",
-	"gold.*%d+k[/\92=]%d+%.?%d*eur",
+	"gold.*%d+k[/\92=]%d+%.?%d*eu",
 	"service.*price.*delivery.*gold",
 	"\226\130\172%d+%.?%d*f\195\188r%d%d%d+gold", --deDE
+	"gold.*%d+%.?%d*eur?o?for%d%d%d+g",
 	"gold.*deliver?y.*service",
 	"gold.*deliver?y.*safe",
 	"gold.*stock.*deliver?y",
@@ -189,6 +190,9 @@ local triggers = {
 	"cheap.*price.*buy.*%d%d%d+.*gold", --Really sorry to bother you , Cheapest price, no more waiting! I just wonder if you want to buy some of our 36000 gold stock. :)
 	"buy.*gold.*bonus.*deliver", --Sry to bother u ,may i know whether u need to buy gold ? if u want to buy  ,i can give u nice bonus and it just takes 5-15mins to deliver. :) if not ,really so sry ,have a nice day !XD
 	"hi.*%d%d+k.*stock.*interest", --hi ,30k++in stock any interest?:)
+	"wondering.*you.*need.*buy.*g.*so?r?ry", --I am sunny, just wondering if you might need to buy some G. If not, sry to bother.:)
+	"buy.*wow.*curr?ency.*deliver", --Would u like to buy WOW CURRENCY on our site?:)We deliver in 5min:-)
+	"interest.*%d+kg.*price.*delive", --:P any interested in the last 30kg with the bottom price.. delivery within 5 to 10 mins:)
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
