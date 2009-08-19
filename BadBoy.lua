@@ -65,6 +65,7 @@ local triggers = {
 	"gold.*deliver?y.*safe",
 	"gold.*stock.*deliver?y",
 	"visit.*cheap.*gold",
+	"%d+kgonly%d+%.?%d*eu.*gold",
 	"you.*become.*blizzard.*gift.*add?res", --Hi You have become a Blizzard lucky player, 3 days later you'll get a surprise gift of the mysterious, registered address: XYZ [PHISHING]
 
 	--URL's
@@ -91,6 +92,7 @@ local triggers = {
 	"cheapleveling%.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08 ~~
 	"dgamesky%.c", --5 November 08 ##
+	"eur%-gold%.c", --19 August 09 @@
 	"fast70%.c", --27 April 08 ~~
 	"fastgg%.c", --20 May 08 ##
 	"fastgolds%.c", --11 December 08 ##
@@ -193,6 +195,7 @@ local triggers = {
 	"wondering.*you.*need.*buy.*g.*so?r?ry", --I am sunny, just wondering if you might need to buy some G. If not, sry to bother.:)
 	"buy.*wow.*curr?ency.*deliver", --Would u like to buy WOW CURRENCY on our site?:)We deliver in 5min:-)
 	"interest.*%d+kg.*price.*delive", --:P any interested in the last 30kg with the bottom price.. delivery within 5 to 10 mins:)
+	"sorr?y.*bother.*another.*wow.*account.*use", --Hi,mate,sorry to bother,may i ask if u have another wow account that u dont use?:)
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
