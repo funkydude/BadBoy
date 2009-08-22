@@ -66,6 +66,7 @@ local triggers = {
 	"gold.*stock.*deliver?y",
 	"visit.*cheap.*gold",
 	"%d+kgonly%d+%.?%d*eu.*gold",
+	"powerle?ve?l.*gold.*gold",
 	"you.*become.*blizzard.*gift.*add?res", --Hi You have become a Blizzard lucky player, 3 days later you'll get a surprise gift of the mysterious, registered address: XYZ [PHISHING]
 
 	--URL's
@@ -106,6 +107,7 @@ local triggers = {
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"gold4guild", --9 May 08 .com ##
 	"goldba%.c", --9 June 09 ##
+	"goldku%.c", --22 August 09 @@ [typos]
 	"goldruler%.c", --05 May 09 ~~
 	"goldspeeder%.c", --20 September 08 ##
 	"gome4gold%.c", --24 March 09 ##
