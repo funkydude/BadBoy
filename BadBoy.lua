@@ -64,9 +64,11 @@ local triggers = {
 	"gold.*deliver?y.*service",
 	"gold.*deliver?y.*safe",
 	"gold.*stock.*deliver?y",
+	"gold.*%d+%.?%d*kjustfor%d+%.?%d*gbp",
 	"visit.*cheap.*gold",
 	"%d+kgonly%d+%.?%d*eu.*gold",
 	"powerle?ve?l.*gold.*gold",
+	"low.*price.*gold.*discount",
 	"you.*become.*blizzard.*gift.*add?res", --Hi You have become a Blizzard lucky player, 3 days later you'll get a surprise gift of the mysterious, registered address: XYZ [PHISHING]
 
 	--URL's
@@ -198,6 +200,9 @@ local triggers = {
 	"buy.*wow.*curr?ency.*deliver", --Would u like to buy WOW CURRENCY on our site?:)We deliver in 5min:-)
 	"interest.*%d+kg.*price.*delive", --:P any interested in the last 30kg with the bottom price.. delivery within 5 to 10 mins:)
 	"sorr?y.*bother.*another.*wow.*account.*use", --Hi,mate,sorry to bother,may i ask if u have another wow account that u dont use?:)
+	"hello.*%d%d+k.*stock.*buy.*now", --hello mate :) 40k stock now,wanna buy some now?^^
+	"price.*%d%d+g.*sale.*gold", --Excuse me. Bottom price!.  New and fresh 30000 G is for sale. Are you intrested in buying some gold today?
+	"so?rr?y.*you.*tellyou.*%d+k.*wow.*gold", --sorry to bother you,may i tell you how much for 5k wow gold
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
