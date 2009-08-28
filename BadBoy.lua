@@ -49,7 +49,9 @@ local triggers = {
 	"sellyour.*gold.*%d+us.*%d%.?%d*g",
 	"gold.*%d%d%d+g[/\92=]gbp%d+",
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
-	"blizzard.*mount.*free.*trial.*log",
+	"blizzard.*mount.*free.*trial.*log", --mount phishing
+	"free.*mount.*info.*log", --Free trial for new mounts. For more informaton please log into:   XYZ
+	"blizzard.*einf\195\188hrung.*reittiere.*kostenlose.*testversion.*melde", --mount phishing deDE
 	"freespectraltigerloot.*redeem",
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
 	"gold.*%d+k[/\92=]gbp%d%d+.*gold",
@@ -203,6 +205,7 @@ local triggers = {
 	"hello.*%d%d+k.*stock.*buy.*now", --hello mate :) 40k stock now,wanna buy some now?^^
 	"price.*%d%d+g.*sale.*gold", --Excuse me. Bottom price!.  New and fresh 30000 G is for sale. Are you intrested in buying some gold today?
 	"so?rr?y.*you.*tellyou.*%d+k.*wow.*gold", --sorry to bother you,may i tell you how much for 5k wow gold
+	"excuse.*do.*need.*buy.*wow.*gold", --Excuse me,do u need to buy some wowgold?
 }
 
 local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
