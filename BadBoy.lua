@@ -50,7 +50,7 @@ local triggers = {
 	"gold.*%d%d%d+g[/\92=]gbp%d+",
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
 	"blizzard.*mount.*free.*trial.*log", --mount phishing
-	"free.*mount.*info.*log", --Free trial for new mounts. For more informaton please log into:   XYZ
+	"free.*mount.*info.*log",
 	"blizzard.*einf\195\188hrung.*reittiere.*kostenlose.*testversion.*melde", --mount phishing deDE
 	"freespectraltigerloot.*redeem",
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
@@ -71,7 +71,35 @@ local triggers = {
 	"%d+kgonly%d+%.?%d*eu.*gold",
 	"powerle?ve?l.*gold.*gold",
 	"low.*price.*gold.*discount",
-	"you.*become.*blizzard.*gift.*add?res", --Hi You have become a Blizzard lucky player, 3 days later you'll get a surprise gift of the mysterious, registered address: XYZ [PHISHING]
+	"%W+.*wow.*gold.*shop.*%W+",
+	"%d%d%d+gjust%d%.?%d*eu",
+	"you.*become.*blizzard.*gift.*add?res",
+	"check.*new.*warcraft.*chron.*movie.*at",
+
+	--Lvl 1 whisperers
+	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
+	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
+	"gold.*server.*%d+.*stock.*buy", --Excuse me, i have sold 10k gold on this server, 22k left in stock right now, do you wanna buy some today?, 20-30mins delivery:)
+	"free.*powerleveling.*level.*%d+.*interested", --Hello there! I am offering free powerleveling from level 70-80! Perhaps you are intrested? :)v
+	"friend.*price.*%d+k.*gold", --dear friend.. may i tell you the price for 10k wow gold ?^^
+	"we.*%d+k.*stock.*realm", --hi, we got 25k+++ in stock on this realm. r u interested?:P
+	"we.*%d+k.*stock.*gold", --Sorry to bother you , We have 26k gold in stock right now. Are you intrested in buying some gold today?
+	"we.*%d+k.*gold.*buy", --Sorry to bother. We got around 27.4k gold on this server, wondering if you might buy some quick gold with face to face trading ingame?
+	"so?rr?y.*interest.*cheap.*gold", --sorry to trouble you , just wondering whether you have  any interest in getting some cheap gold at this moment ,dear dude ? ^^
+	"we.*%d+k.*stock.*interested", --hi,we have 40k in stock today,interested ?:)
+	"we.*%d%d%d+g.*stock.*price", --hi,we have the last 23600g in stock now ,ill give you the bottom price.do u need any?:D
+	"cheap.*price.*buy.*%d%d%d+.*gold", --Really sorry to bother you , Cheapest price, no more waiting! I just wonder if you want to buy some of our 36000 gold stock. :)
+	"buy.*gold.*bonus.*deliver", --Sry to bother u ,may i know whether u need to buy gold ? if u want to buy  ,i can give u nice bonus and it just takes 5-15mins to deliver. :) if not ,really so sry ,have a nice day !XD
+	"hi.*%d%d+k.*stock.*interest", --hi ,30k++in stock any interest?:)
+	"wondering.*you.*need.*buy.*g.*so?r?ry", --I am sunny, just wondering if you might need to buy some G. If not, sry to bother.:)
+	"buy.*wow.*curr?ency.*deliver", --Would u like to buy WOW CURRENCY on our site?:)We deliver in 5min:-)
+	"interest.*%d+kg.*price.*delive", --:P any interested in the last 30kg with the bottom price.. delivery within 5 to 10 mins:)
+	"sorr?y.*bother.*another.*wow.*account.*use", --Hi,mate,sorry to bother,may i ask if u have another wow account that u dont use?:)
+	"hello.*%d%d+k.*stock.*buy.*now", --hello mate :) 40k stock now,wanna buy some now?^^
+	"price.*%d%d+g.*sale.*gold", --Excuse me. Bottom price!.  New and fresh 30000 G is for sale. Are you intrested in buying some gold today?
+	"so?rr?y.*you.*tellyou.*%d+k.*wow.*gold", --sorry to bother you,may i tell you how much for 5k wow gold
+	"excuse.*do.*need.*buy.*wow.*gold", --Excuse me,do u need to buy some wowgold?
+	"bother.*%d%d%d+g.*server.*quick.*gold", --Sry to bother you, We have 57890 gold on this server do you want to purchase some quick gold today?
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -83,8 +111,6 @@ local triggers = {
 	"925fancy%.c", --20 May 08 ##
 	"ak774%.com", --30 May 09 ##
 	"beatwow%.c", --14 June 08 ##
-	"blizz%-mounts%.c", --05 June 09 ## Phishing url
-	"blizzard%-worldofwarcraft%.c", --07 May 09 ## Phishing url
 	"brothergame%.com", --02 June 09 ## (deDE)
 	"btwor%.com", --12 August (Malware) @@
 	"buyeuwow%.net", --20 February 09 ##
@@ -155,7 +181,6 @@ local triggers = {
 	"torchgame%.c", --16 June 08 ## (deDE)
 	"tpsale", --2 June 08 .com ##
 	"upgold%.net", --10 June 08 ##
-	"uswow%-worldofwarcraft%.c", --19 June 09 ## Mounts Phishing
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"vovgold%.c", --22 May 08 ##
 	"vsvgame%.c", --29 June 09 ##
@@ -182,65 +207,31 @@ local triggers = {
 	"wowyour%.c", --18 March 09 ##
 	"yesdaq%.", --16 June 08 ##
 	"zibank%.com", --20 February 09 ## WTF at this? Not gold selling, some kind of goods website
-
-	--Lvl 1 whisperers
-	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
-	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
-	"gold.*server.*%d+.*stock.*buy", --Excuse me, i have sold 10k gold on this server, 22k left in stock right now, do you wanna buy some today?, 20-30mins delivery:)
-	"free.*powerleveling.*level.*%d+.*interested", --Hello there! I am offering free powerleveling from level 70-80! Perhaps you are intrested? :)v
-	"friend.*price.*%d+k.*gold", --dear friend.. may i tell you the price for 10k wow gold ?^^
-	"we.*%d+k.*stock.*realm", --hi, we got 25k+++ in stock on this realm. r u interested?:P
-	"we.*%d+k.*stock.*gold", --Sorry to bother you , We have 26k gold in stock right now. Are you intrested in buying some gold today?
-	"we.*%d+k.*gold.*buy", --Sorry to bother. We got around 27.4k gold on this server, wondering if you might buy some quick gold with face to face trading ingame?
-	"so?rr?y.*interest.*cheap.*gold", --sorry to trouble you , just wondering whether you have  any interest in getting some cheap gold at this moment ,dear dude ? ^^
-	"we.*%d+k.*stock.*interested", --hi,we have 40k in stock today,interested ?:)
-	"we.*%d%d%d+g.*stock.*price", --hi,we have the last 23600g in stock now ,ill give you the bottom price.do u need any?:D
-	"cheap.*price.*buy.*%d%d%d+.*gold", --Really sorry to bother you , Cheapest price, no more waiting! I just wonder if you want to buy some of our 36000 gold stock. :)
-	"buy.*gold.*bonus.*deliver", --Sry to bother u ,may i know whether u need to buy gold ? if u want to buy  ,i can give u nice bonus and it just takes 5-15mins to deliver. :) if not ,really so sry ,have a nice day !XD
-	"hi.*%d%d+k.*stock.*interest", --hi ,30k++in stock any interest?:)
-	"wondering.*you.*need.*buy.*g.*so?r?ry", --I am sunny, just wondering if you might need to buy some G. If not, sry to bother.:)
-	"buy.*wow.*curr?ency.*deliver", --Would u like to buy WOW CURRENCY on our site?:)We deliver in 5min:-)
-	"interest.*%d+kg.*price.*delive", --:P any interested in the last 30kg with the bottom price.. delivery within 5 to 10 mins:)
-	"sorr?y.*bother.*another.*wow.*account.*use", --Hi,mate,sorry to bother,may i ask if u have another wow account that u dont use?:)
-	"hello.*%d%d+k.*stock.*buy.*now", --hello mate :) 40k stock now,wanna buy some now?^^
-	"price.*%d%d+g.*sale.*gold", --Excuse me. Bottom price!.  New and fresh 30000 G is for sale. Are you intrested in buying some gold today?
-	"so?rr?y.*you.*tellyou.*%d+k.*wow.*gold", --sorry to bother you,may i tell you how much for 5k wow gold
-	"excuse.*do.*need.*buy.*wow.*gold", --Excuse me,do u need to buy some wowgold?
 }
 
-local orig, prev, savedID, result = _G.COMPLAINT_ADDED, 0, 0, nil
-local type, n, fail = _G.type, "number", nil --temp for a few weeks
-local function filter(_, event, msg, name, _, _, _, _, chanid, _, _, _, id)
-	--remove this check after a few weeks, gives addons time to update and fix.
-	if type(id) ~= n then
-		if not fail then
-			fail = true
-			print("|cFF33FF99BadBoy|r: Spam reporting error.")
-			print("|cFF33FF99BadBoy|r: An unknown addon is breaking BadBoy.")
-		end
-		return
-	end
-	if id == savedID then return result else savedID = id end --Incase a message is sent more than once (registered to more than 1 chatframe)
-	if event == "CHAT_MSG_CHANNEL" and chanid == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-	if not _G.CanComplainChat(id) then result = nil return end --Don't report ourself
+local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
+local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
+	if lineId == prevLineId then return result else prevLineId = lineId end --Incase a message is sent more than once (registered to more than 1 chatframe)
+	if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
+	if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself
 	local raw = msg
 	msg = lower(msg) --Lower all text, remove capitals
 	msg = rep(msg, " ", "") --Remove spaces
 	msg = rep(msg, ",", ".") --Convert commas to periods
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, name) end --Debug
+			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, player) end --Debug
 			local time = GetTime()
-			if (time - prev) > 20 then --Timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
-				prev = time
-				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: " .. orig .. " ("..name..")" --Add name to reported message
+			if (time - prevReportTime) > 20 then --Timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
+				prevReportTime = time
+				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 				if _G.BADBOY_POPUP then --Manual reporting via popup
 					--Add original spam line to Blizzard popup message
 					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. rep(raw, "%", "%%")
-					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", name)
-					dialog.data = id
+					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+					dialog.data = lineId
 				else
-					_G.ComplainChat(id) --Automatically report
+					_G.ComplainChat(lineId) --Automatically report
 				end
 			end
 			result = true
