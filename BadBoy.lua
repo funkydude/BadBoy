@@ -75,6 +75,9 @@ local triggers = {
 	"%d%d%d+gjust%d%.?%d*eu",
 	"you.*become.*blizzard.*gift.*add?res",
 	"check.*new.*warcraft.*chron.*movie.*at",
+	"mount.*server.*guys.*go.*app.*available",
+	"set.*gear.*instance.*honor.*sale.*whisp", --T9 full set,superior gears from instance,212K honor points,emblem of Heroism and conquest are on sale now,we can get them 4u,just whisper me plz!!!
+	"visit.*site.*items.*mats.*sale", --If you WTB these items,please visit our siteXYZ,we have all the BOE ITEMS and MATS for sale.we also provide the account trading and powerleveling service!!
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
@@ -100,6 +103,7 @@ local triggers = {
 	"so?rr?y.*you.*tellyou.*%d+k.*wow.*gold", --sorry to bother you,may i tell you how much for 5k wow gold
 	"excuse.*do.*need.*buy.*wow.*gold", --Excuse me,do u need to buy some wowgold?
 	"bother.*%d%d%d+g.*server.*quick.*gold", --Sry to bother you, We have 57890 gold on this server do you want to purchase some quick gold today?
+	"hey.*interest.*some.*fast.*%d+kg.*left", --hey,interested in some g fast?got 27kg left atm:)
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
