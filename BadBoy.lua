@@ -78,6 +78,7 @@ local triggers = {
 	"mount.*server.*guys.*go.*app.*available",
 	"set.*gear.*instance.*honor.*sale.*whisp", --T9 full set,superior gears from instance,212K honor points,emblem of Heroism and conquest are on sale now,we can get them 4u,just whisper me plz!!!
 	"visit.*site.*items.*mats.*sale", --If you WTB these items,please visit our siteXYZ,we have all the BOE ITEMS and MATS for sale.we also provide the account trading and powerleveling service!!
+	"get.*%d%d%d+g.*free.*gold.*store",
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
@@ -104,6 +105,9 @@ local triggers = {
 	"excuse.*do.*need.*buy.*wow.*gold", --Excuse me,do u need to buy some wowgold?
 	"bother.*%d%d%d+g.*server.*quick.*gold", --Sry to bother you, We have 57890 gold on this server do you want to purchase some quick gold today?
 	"hey.*interest.*some.*fast.*%d+kg.*left", --hey,interested in some g fast?got 27kg left atm:)
+	"know.*need.*buy.*gold.*delivery", --hi,its kitty here. may i know if you need to buy some quick gold today. 20-50 mins delivery speed,
+	"may.*know.*have.*account.*don.*use", -- Hi ,May i know if you have an useless account that you dont use now ? :)  
+	"company.*le?ve?l.*char.*%d%d.*free", --our company  can lvl your char to lvl 80 for FREE.
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
@@ -206,6 +210,7 @@ local triggers = {
 	"wowhax%.c", --5 May 08 ~~
 	"wowmygold%.c", --11 November 08 ##
 	"wowplayer%.de", --11 May 08 ~~
+	"wowqueen%.c", --14 September 09 @@
 	"wowseller%.c", --25 May 08 ##
 	"wowsogood%.c", --20 July 08 ##
 	"wowyour%.c", --18 March 09 ##
