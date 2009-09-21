@@ -68,6 +68,7 @@ local triggers = {
 	"gold.*stock.*deliver?y",
 	"gold.*%d+%.?%d*kjustfor%d+%.?%d*gbp",
 	"visit.*cheap.*gold",
+	"gold.*%d%d%d+justfor%d+%.?%d*gbp",
 	"%d+kgonly%d+%.?%d*eu.*gold",
 	"powerle?ve?l.*gold.*gold",
 	"low.*price.*gold.*discount",
@@ -79,6 +80,8 @@ local triggers = {
 	"set.*gear.*instance.*honor.*sale.*whisp", --T9 full set,superior gears from instance,212K honor points,emblem of Heroism and conquest are on sale now,we can get them 4u,just whisper me plz!!!
 	"visit.*site.*items.*mats.*sale", --If you WTB these items,please visit our siteXYZ,we have all the BOE ITEMS and MATS for sale.we also provide the account trading and powerleveling service!!
 	"get.*%d%d%d+g.*free.*gold.*store",
+	"blizz.*launch.*cata.*trial.*info.*log",
+	"free.*mount.*wow.*first.*code.*claim",
 	"wts.*%[.*%].*we.*boe.*mats.*sale", --wts [Pendulum of Doom] [Krol Cleaver] we have all the Boe items,mats and t8/t8.5 for sale .XYZ!!
 	"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
 
@@ -112,6 +115,7 @@ local triggers = {
 	"company.*le?ve?l.*char.*%d%d.*free", --our company  can lvl your char to lvl 80 for FREE.
 	"so?r?ry.*need.*cheap.*gold.*%d+", --sorry to disurb you. do you need some cheap gold 20k just need 122eur(108GBP)
 	"hi.*isthis.*mainchar.*thiserver", --Hi %name%, is this ur main character on this server? :)
+	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 
 	--URL's
 	"15freelevels%.c", --26 July 08 ##
