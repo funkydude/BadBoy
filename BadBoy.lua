@@ -73,6 +73,7 @@ local triggers = {
 	"%d+kgonly%d+%.?%d*eu.*gold",
 	"powerle?ve?l.*gold.*gold",
 	"low.*price.*gold.*discount",
+	"cheap.*fast.*gold.*deliv",
 	"%W+.*wow.*gold.*shop.*%W+",
 	"%d%d%d+gjust%d%.?%d*eu",
 	"you.*become.*blizzard.*gift.*add?res",
