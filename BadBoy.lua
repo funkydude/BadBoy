@@ -8,8 +8,6 @@ local triggers = {
 	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d%d%d+g",
 	"%d+%.?%d*eur?o?s?[/\92=]?p?e?r?%d%d%d+",
 	"%d+%.?%d*dollars?[/\92=]?p?e?r?%d%d%d+g",
-	"gold.*power%-?le?ve?l",
-	"%d+%.?%d*%l*forle?ve?l%d+%-%d+",
 	"%d+go?l?d?[/\92=]%d+[%-%.]?%d*eu",
 	"%d+g?o?l?d?s?[/\92=]%d+%.?%d*usd",
 	"%d+g?o?l?d?s?[/\92=]%d+%.?%d*gbp",
@@ -76,6 +74,7 @@ local triggers = {
 	"cheap.*fast.*gold.*deliv",
 	"%W+.*wow.*gold.*shop.*%W+",
 	"%d%d%d+gjust%d%.?%d*eu",
+	"gold.*low.*price.*%d+kg",
 	"you.*become.*blizzard.*gift.*add?res",
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
@@ -121,7 +120,6 @@ local triggers = {
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 
 	--URL's
-	"15freelevels%.c", --26 July 08 ##
 	"17mins%.c", --21 June 09 ##
 	"29gameswow%.c", --11 July 09##
 	"2joygame%.c", --18 May 08 ## (deDE)
@@ -129,7 +127,6 @@ local triggers = {
 	"5uneed%.c", --6 June 08 ##
 	"925fancy%.c", --20 May 08 ##
 	"ak774%.com", --30 May 09 ##
-	"beatwow%.c", --14 June 08 ##
 	"brothergame%.com", --02 June 09 ## (deDE)
 	"btwor%.com", --12 August (Malware) @@
 	"buyeuwow%.net", --20 February 09 ##
@@ -181,7 +178,6 @@ local triggers = {
 	"mmobusiness%.c", --04 August 08 ##
 	"mmoggg%.c", --25 July 09 ## (deDE)
 	"mmowned%(dot%)c", --21 May 08 ##
-	"mounts%-wow%.c", --29 May 09 ##
 	"nowgold%.?com", --16 July 09 ##
 	"oofay%.c", --30 May 09 ##
 	"pkpkg%.c", --17 June 08 ##
