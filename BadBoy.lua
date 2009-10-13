@@ -39,8 +39,6 @@ local triggers = {
 	"%d+.*wow.*gold.*for.*[\194\165\194\163%$\226\130\172]%d+",
 	".*%d+.*powerleveling%d%-%d+=%d+eur",
 	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
-	"happygolds.*gold.*gold",
-	"happygoldspointcom.*g",
 	"wirhaben%d+kgoldaufdiesemserver", --deDE
 	".*%d%d%d+gonlycosted[\194\165\194\163%$\226\130\172]%d+%.%d%d+usd",
 	"power%-?le?ve?l.*%d%d%d+g.*%d%d%d+g",
@@ -86,6 +84,7 @@ local triggers = {
 	"free.*mount.*wow.*first.*code.*claim",
 	"wts.*%[.*%].*we.*boe.*mats.*sale", --wts [Pendulum of Doom] [Krol Cleaver] we have all the Boe items,mats and t8/t8.5 for sale .XYZ!!
 	"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
+	"hello.*master.*warcraft.*acc.*temp.*suspend.*info", --hello! [Game Master]GM: Your world of warcraft account has been temporarily suspended. please go to XYZ for further information 
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
@@ -223,6 +222,11 @@ local triggers = {
 	"wowyour%.c", --18 March 09 ##
 	"yesdaq%.", --16 June 08 ##
 	"zibank%.com", --20 February 09 ## WTF at this? Not gold selling, some kind of goods website
+
+	--Advanced URL's
+	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
+	"happygolds.*gold.*gold",
+	"happygoldspointcom.*g",
 }
 
 local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
