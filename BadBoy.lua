@@ -64,7 +64,7 @@ local triggers = {
 	"gold.*deliver?y.*safe",
 	"gold.*stock.*deliver?y",
 	"gold.*%d+%.?%d*kjustfor%d+%.?%d*gbp",
-	"visit.*cheap.*gold",
+	"cheap.*gold.*%d+.*profes.*le?ve?l",
 	"gold.*%d%d%d+justfor%d+%.?%d*gbp",
 	"%d+kgonly%d+%.?%d*eu.*gold",
 	"powerle?ve?l.*gold.*gold",
@@ -150,7 +150,6 @@ local triggers = {
 	"get%-levels%.c", --29 April 08 ~~
 	"gmw.rking%.eu", --07 December 08 ##
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
-	"gold4guild", --9 May 08 .com ##
 	"goldba%.c", --9 June 09 ##
 	"goldku%.c", --22 August 09 @@ [typos]
 	"goldruler%.c", --05 May 09 ~~
@@ -179,24 +178,17 @@ local triggers = {
 	"mmowned%(dot%)c", --21 May 08 ##
 	"nowgold%.?com", --16 July 09 ##
 	"oofay%.c", --30 May 09 ##
-	"pkpkg%.c", --17 June 08 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
-	"rollhack%.c", --5 July 08 ##
 	"safegolds%.c", --18 Jan 09 ##
 	"selfgold%.c", --16 July 09 ## (deDE)
-	"sevengold%.c", --24 May 08 ##
 	"skygolds%.c", --09 May 09 ##
-	"ssegames%.c", --20 July 08 ##
 	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"tbgold%.c", --29 April 09 ##
 	"tebuy%.net", --14 February 09 ##
 	"tebuy%.ws", --05 February 09 ##
 	"time2wow%.c", --19 June 09 ##
 	"torchgame%.c", --16 June 08 ## (deDE)
-	"tpsale", --2 June 08 .com ##
-	"upgold%.net", --10 June 08 ##
 	"vesgame%.c", --20 September 08 ## (deDE)
-	"vovgold%.c", --22 May 08 ##
 	"vsvgame%.c", --29 June 09 ##
 	"warcraft%-advantage%.c", --25 July 09 ## Hacks/trojan
 	"welcomegold%.com", --24 May 09 ## [Multi Line]
@@ -210,11 +202,9 @@ local triggers = {
 	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
 	"wow%-npc%.c", --15 June 09 ##
-	"wowgamelife", --14 July 08 ##
 	"wowgold%-de%.c", --16 August 08 ##
 	"wowgoldtm%.c", --21 June 09 ##
 	"wowhax%.c", --5 May 08 ~~
-	"wowmygold%.c", --11 November 08 ##
 	"wowplayer%.de", --11 May 08 ~~
 	"wowqueen%.c", --14 September 09 @@
 	"wowseller%.c", --25 May 08 ##
@@ -227,6 +217,7 @@ local triggers = {
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
 	"happygolds.*gold.*gold",
 	"happygoldspointcom.*g",
+	"friend.*website.*gold4guild",
 }
 
 local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
