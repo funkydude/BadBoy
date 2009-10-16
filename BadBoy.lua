@@ -134,13 +134,10 @@ local triggers = {
 	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"coolwlk%.c", --29 December 08 ## (deDE)
 	"crazyraid%.c", --20 April 09 ##
-	"cwowgold%.c", --13 June 08 ##
-	"cheapleveling%.c", --28 May 08 ##
 	"dewowgold%.c", --26 April 08 ~~
 	"dgamesky%.c", --5 November 08 ##
 	"eur%-gold%.c", --19 August 09 @@
 	"fast70%.c", --27 April 08 ~~
-	"fastgg%.c", --20 May 08 ##
 	"fastgolds%.c", --11 December 08 ##
 	"fesgt%.c", --22 December 08 ## (esES)
 	"g4pitem.c", --19 June 09 ## Item Selling
@@ -153,7 +150,6 @@ local triggers = {
 	"goldba%.c", --9 June 09 ##
 	"goldku%.c", --22 August 09 @@ [typos]
 	"goldruler%.c", --05 May 09 ~~
-	"goldspeeder%.c", --20 September 08 ##
 	"gome4gold%.c", --24 March 09 ##
 	"goodgolds%.c", --13 December 08 ##
 	"happygolds%.", --08 July 08 ## (com)
@@ -173,7 +169,6 @@ local triggers = {
 	"lvinn%.c", --07 August 09 @@
 	"marketgolds%.c", --29 June 09 ##
 	"mmige%.c", --16 February 09 ##
-	"mmobusiness%.c", --04 August 08 ##
 	"mmoggg%.c", --25 July 09 ## (deDE)
 	"mmowned%(dot%)c", --21 May 08 ##
 	"nowgold%.?com", --16 July 09 ##
@@ -211,13 +206,13 @@ local triggers = {
 	"wowsogood%.c", --20 July 08 ##
 	"wowyour%.c", --18 March 09 ##
 	"yesdaq%.", --16 June 08 ##
-	"zibank%.com", --20 February 09 ## WTF at this? Not gold selling, some kind of goods website
 
 	--Advanced URL's
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
 	"happygolds.*gold.*gold",
 	"happygoldspointcom.*g",
 	"friend.*website.*gold4guild",
+	"cheap.*wow.*gold.*brogame%.c",
 }
 
 local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
