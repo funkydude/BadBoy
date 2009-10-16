@@ -151,11 +151,9 @@ local triggers = {
 	"goldku%.c", --22 August 09 @@ [typos]
 	"goldruler%.c", --05 May 09 ~~
 	"gome4gold%.c", --24 March 09 ##
-	"goodgolds%.c", --13 December 08 ##
 	"happygolds%.", --08 July 08 ## (com)
 	"happyleveling%.c", --09 May 09 ##
 	"helpgolds%.c", --14 July 08 ## (deDE)
-	"holdwow%.c", -- 20 September 08 ##
 	"hotgolds%.c", --19 July 09 ##
 	"ibgibg.c", --30 December 08 ## (deDE)
 	"ignmax%.c", --13 March 09 ##
