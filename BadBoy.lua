@@ -60,6 +60,7 @@ local triggers = {
 	"service.*price.*delivery.*gold",
 	"\226\130\172%d+%.?%d*f\195\188r%d%d%d+gold", --deDE
 	"gold.*%d+%.?%d*eur?o?for%d%d%d+g",
+	"%d+.*stock.*%d+%.?%d*eur%W+%d+%.?%d*k",
 	"gold.*deliver?y.*service",
 	"gold.*deliver?y.*safe",
 	"gold.*stock.*deliver?y",
@@ -70,6 +71,7 @@ local triggers = {
 	"powerle?ve?l.*gold.*gold",
 	"low.*price.*gold.*discount",
 	"cheap.*fast.*gold.*deliv",
+	"gold.*%d%d%d+g%W+%d+%.?%d*%$",
 	"%W+.*wow.*gold.*shop.*%W+",
 	"%d%d%d+gjust%d%.?%d*eu",
 	"gold.*low.*price.*%d+kg",
@@ -133,12 +135,9 @@ local triggers = {
 	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"coolwlk%.c", --29 December 08 ## (deDE)
-	"crazyraid%.c", --20 April 09 ##
 	"dewowgold%.c", --26 April 08 ~~
 	"dgamesky%.c", --5 November 08 ##
 	"eur%-gold%.c", --19 August 09 @@
-	"fast70%.c", --27 April 08 ~~
-	"fastgolds%.c", --11 December 08 ##
 	"fesgt%.c", --22 December 08 ## (esES)
 	"g4pitem.c", --19 June 09 ## Item Selling
 	"g4ppowerleveling%.c", --25 July 09 ##
@@ -152,13 +151,11 @@ local triggers = {
 	"goldruler%.c", --05 May 09 ~~
 	"gome4gold%.c", --24 March 09 ##
 	"happygolds%.", --08 July 08 ## (com)
-	"happyleveling%.c", --09 May 09 ##
 	"helpgolds%.c", --14 July 08 ## (deDE)
 	"hotgolds%.c", --19 July 09 ##
 	"ibgibg.c", --30 December 08 ## (deDE)
 	"ignmax%.c", --13 March 09 ##
 	"k4gold%.c", --24 October 08 ##
-	"kgsgold", --16 May 08 .com ##
 	"kugold%.c", --19 July 09 ##
 	"let4gold%.c", --12 August 09 ##
 	"leveler4wow.c", --04 January 09 ~~
@@ -172,17 +169,14 @@ local triggers = {
 	"nowgold%.?com", --16 July 09 ##
 	"oofay%.c", --30 May 09 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
-	"safegolds%.c", --18 Jan 09 ##
 	"selfgold%.c", --16 July 09 ## (deDE)
 	"skygolds%.c", --09 May 09 ##
-	"supplier2008%.c", --30 May 08 forward tradewowgold ##
 	"tbgold%.c", --29 April 09 ##
 	"tebuy%.net", --14 February 09 ##
 	"tebuy%.ws", --05 February 09 ##
 	"time2wow%.c", --19 June 09 ##
 	"torchgame%.c", --16 June 08 ## (deDE)
 	"vesgame%.c", --20 September 08 ## (deDE)
-	"vsvgame%.c", --29 June 09 ##
 	"warcraft%-advantage%.c", --25 July 09 ## Hacks/trojan
 	"welcomegold%.com", --24 May 09 ## [Multi Line]
 	"wlkwowgold%.net", --28 June 09 ##
@@ -200,8 +194,6 @@ local triggers = {
 	"wowhax%.c", --5 May 08 ~~
 	"wowplayer%.de", --11 May 08 ~~
 	"wowqueen%.c", --14 September 09 @@
-	"wowseller%.c", --25 May 08 ##
-	"wowsogood%.c", --20 July 08 ##
 	"wowyour%.c", --18 March 09 ##
 	"yesdaq%.", --16 June 08 ##
 
