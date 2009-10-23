@@ -98,7 +98,7 @@ local triggers = {
 	"we.*%d+k.*stock.*gold", --Sorry to bother you , We have 26k gold in stock right now. Are you intrested in buying some gold today?
 	"we.*%d+k.*gold.*buy", --Sorry to bother. We got around 27.4k gold on this server, wondering if you might buy some quick gold with face to face trading ingame?
 	"so?rr?y.*interest.*cheap.*gold", --sorry to trouble you , just wondering whether you have  any interest in getting some cheap gold at this moment ,dear dude ? ^^
-	"we.*%d+k.*stock.*interested", --hi,we have 40k in stock today,interested ?:)
+	"we.*%d+k.*stock.*interest", --hi,we have 40k in stock today,interested ?:)
 	"we.*%d%d%d+g.*stock.*price", --hi,we have the last 23600g in stock now ,ill give you the bottom price.do u need any?:D
 	"cheap.*price.*buy.*%d%d%d+.*gold", --Really sorry to bother you , Cheapest price, no more waiting! I just wonder if you want to buy some of our 36000 gold stock. :)
 	"buy.*gold.*bonus.*deliver", --Sry to bother u ,may i know whether u need to buy gold ? if u want to buy  ,i can give u nice bonus and it just takes 5-15mins to deliver. :) if not ,really so sry ,have a nice day !XD
@@ -119,39 +119,31 @@ local triggers = {
 	"so?r?ry.*need.*cheap.*gold.*%d+", --sorry to disurb you. do you need some cheap gold 20k just need 122eur(108GBP)
 	"hi.*isthis.*mainchar.*thiserver", --Hi %name%, is this ur main character on this server? :)
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
+	"sorry.*disturb.*gold.*cheap.*interest", --hi,m8.Sorry to disturb you ,this is jerry from wow70gold, our web is doing promotion,the price is really cheap ,could I interest you in some?
 
 	--URL's
 	"17mins%.c", --21 June 09 ##
 	"29gameswow%.c", --11 July 09##
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"4wowgold%.c", --6 April 09 ##
-	"5uneed%.c", --6 June 08 ##
-	"925fancy%.c", --20 May 08 ##
 	"ak774%.com", --30 May 09 ##
 	"brothergame%.com", --02 June 09 ## (deDE)
 	"btwor%.com", --12 August (Malware) @@
 	"buyeuwow%.net", --20 February 09 ##
 	"buywowgolds%.c", --05 May 09 ##
-	"cfsgold%.c", --20 May 08 ## (deDE)
 	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"coolwlk%.c", --29 December 08 ## (deDE)
-	"dewowgold%.c", --26 April 08 ~~
-	"dgamesky%.c", --5 November 08 ##
 	"eur%-gold%.c", --19 August 09 @@
 	"fesgt%.c", --22 December 08 ## (esES)
 	"g4pitem.c", --19 June 09 ## Item Selling
 	"g4ppowerleveling%.c", --25 July 09 ##
 	"games%-level%.n+e+t", --9May 08 ~~
-	"garden2game%.com", --17 Oct 08
 	"get%-levels%.c", --29 April 08 ~~
-	"gmw.rking%.eu", --07 December 08 ##
 	"god%-moddot", --25 April 08 god-mod DOT com ~~
 	"goldba%.c", --9 June 09 ##
 	"goldku%.c", --22 August 09 @@ [typos]
 	"goldruler%.c", --05 May 09 ~~
 	"gome4gold%.c", --24 March 09 ##
-	"happygolds%.", --08 July 08 ## (com)
-	"helpgolds%.c", --14 July 08 ## (deDE)
 	"hotgolds%.c", --19 July 09 ##
 	"ibgibg.c", --30 December 08 ## (deDE)
 	"ignmax%.c", --13 March 09 ##
@@ -170,7 +162,6 @@ local triggers = {
 	"oofay%.c", --30 May 09 ##
 	"pvp365%.c", --21 May 08 ## (frFR)
 	"selfgold%.c", --16 July 09 ## (deDE)
-	"skygolds%.c", --09 May 09 ##
 	"tbgold%.c", --29 April 09 ##
 	"tebuy%.net", --14 February 09 ##
 	"tebuy%.ws", --05 February 09 ##
@@ -182,20 +173,15 @@ local triggers = {
 	"wlkwowgold%.net", --28 June 09 ##
 	"wootwowgold[%@%.]", --31 May 09 ## Mail/url
 	"woowmart%.c", --25 July 09 ##
-	"worldofgolds%.com", --20 October 08
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow1gold%.c", --22 December 08 ## (deDE)
-	"wow4s%.net", --27 October 08 ~~
-	"wow7gold%.c", --29 May 08 ##
 	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
 	"wow%-npc%.c", --15 June 09 ##
 	"wowgold%-de%.c", --16 August 08 ##
-	"wowgoldtm%.c", --21 June 09 ##
 	"wowhax%.c", --5 May 08 ~~
 	"wowplayer%.de", --11 May 08 ~~
 	"wowqueen%.c", --14 September 09 @@
 	"wowyour%.c", --18 March 09 ##
-	"yesdaq%.", --16 June 08 ##
 
 	--Advanced URL's
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
@@ -203,6 +189,7 @@ local triggers = {
 	"happygoldspointcom.*g",
 	"friend.*website.*gold4guild",
 	"cheap.*wow.*gold.*brogame%.c",
+	"^%W+w*%.?gold4guild%.c[o0]m%W+$",
 }
 
 local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
