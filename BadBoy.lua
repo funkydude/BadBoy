@@ -190,7 +190,7 @@ local triggers = {
 	"wowqueen%.c", --14 September 09 @@
 }
 
-local orig, prevLineId, result = _G.COMPLAINT_ADDED, 0, nil
+local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
 	if lineId == prevLineId then return result else prevLineId = lineId end --Incase a message is sent more than once (registered to more than 1 chatframe)
 	if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
@@ -201,19 +201,23 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = rep(msg, ",", ".") --Convert commas to periods
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k > 120 then
-				print("|cFF33FF99BadBoy|r: ALPHA, Please post this spam line on the forums!")
-				print("|cFF33FF99BadBoy|r:", "-", raw, "-")
-			end
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, player) end --Debug
-			_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-			if _G.BADBOY_POPUP then --Manual reporting via popup
-				--Add original spam line to Blizzard popup message
-				_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. rep(raw, "%", "%%")
-				local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
-				dialog.data = lineId
-			else
-				_G.ComplainChat(lineId) --Automatically report
+			local time = GetTime()
+			if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
+				if k > 120 then
+					print("|cFF33FF99BadBoy|r: ALPHA, Please post this spam line on the forums!")
+					print("|cFF33FF99BadBoy|r:", "-", raw, "-")
+				end
+				prevReportTime = time
+				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
+				if _G.BADBOY_POPUP then --Manual reporting via popup
+					--Add original spam line to Blizzard popup message
+					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. rep(raw, "%", "%%")
+					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+					dialog.data = lineId
+				else
+					_G.ComplainChat(lineId) --Automatically report
+				end
 			end
 			result = true
 			return true
