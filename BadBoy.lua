@@ -75,6 +75,7 @@ local triggers = {
 	"%W+.*wow.*gold.*shop.*%W+",
 	"%d%d%d+gjust%d%.?%d*eu",
 	"gold.*low.*price.*%d+kg",
+	"discount.*buy.*gold.*coupon",
 	"you.*become.*blizzard.*gift.*add?res",
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
@@ -120,6 +121,14 @@ local triggers = {
 	"hi.*isthis.*mainchar.*thiserver", --Hi %name%, is this ur main character on this server? :)
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 	"sorry.*disturb.*gold.*cheap.*interest", --hi,m8.Sorry to disturb you ,this is jerry from wow70gold, our web is doing promotion,the price is really cheap ,could I interest you in some?
+
+	--Advanced URL's
+	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
+	"happygolds.*gold.*gold",
+	"happygoldspointcom.*g",
+	"friend.*website.*gold4guild",
+	"cheap.*wow.*gold.*brogame%.c",
+	"^%W+w*%.?gold4guild%.c[o0]m%W+$",
 
 	--URL's
 	"17mins%.c", --21 June 09 ##
@@ -170,8 +179,6 @@ local triggers = {
 	"vesgame%.c", --20 September 08 ## (deDE)
 	"warcraft%-advantage%.c", --25 July 09 ## Hacks/trojan
 	"welcomegold%.com", --24 May 09 ## [Multi Line]
-	"wlkwowgold%.net", --28 June 09 ##
-	"wootwowgold[%@%.]", --31 May 09 ## Mail/url
 	"woowmart%.c", --25 July 09 ##
 	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
 	"wow1gold%.c", --22 December 08 ## (deDE)
@@ -181,18 +188,9 @@ local triggers = {
 	"wowhax%.c", --5 May 08 ~~
 	"wowplayer%.de", --11 May 08 ~~
 	"wowqueen%.c", --14 September 09 @@
-	"wowyour%.c", --18 March 09 ##
-
-	--Advanced URL's
-	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
-	"happygolds.*gold.*gold",
-	"happygoldspointcom.*g",
-	"friend.*website.*gold4guild",
-	"cheap.*wow.*gold.*brogame%.c",
-	"^%W+w*%.?gold4guild%.c[o0]m%W+$",
 }
 
-local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
+local orig, prevLineId, result = _G.COMPLAINT_ADDED, 0, nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
 	if lineId == prevLineId then return result else prevLineId = lineId end --Incase a message is sent more than once (registered to more than 1 chatframe)
 	if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
@@ -203,19 +201,19 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = rep(msg, ",", ".") --Convert commas to periods
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
+			if k > 120 then
+				print("|cFF33FF99BadBoy|r: ALPHA, Please post this spam line on the forums!")
+				print("|cFF33FF99BadBoy|r:", "-", raw, "-")
+			end
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, player) end --Debug
-			local time = GetTime()
-			if (time - prevReportTime) > 20 then --Timer so we don't report people that think saying "no we won't visit goldsiteX" is smart
-				prevReportTime = time
-				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-				if _G.BADBOY_POPUP then --Manual reporting via popup
-					--Add original spam line to Blizzard popup message
-					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. rep(raw, "%", "%%")
-					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
-					dialog.data = lineId
-				else
-					_G.ComplainChat(lineId) --Automatically report
-				end
+			_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
+			if _G.BADBOY_POPUP then --Manual reporting via popup
+				--Add original spam line to Blizzard popup message
+				_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. rep(raw, "%", "%%")
+				local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+				dialog.data = lineId
+			else
+				_G.ComplainChat(lineId) --Automatically report
 			end
 			result = true
 			return true
