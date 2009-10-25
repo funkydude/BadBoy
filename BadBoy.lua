@@ -79,6 +79,7 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
+	"fast.*cheap.*gold.*well?come", --Need fast and cheapest gold? Welcome to gold2wow website,big surprise is waiting for u,thx :P
 	"set.*gear.*instance.*honor.*sale.*whisp", --T9 full set,superior gears from instance,212K honor points,emblem of Heroism and conquest are on sale now,we can get them 4u,just whisper me plz!!!
 	"visit.*site.*items.*mats.*sale", --If you WTB these items,please visit our siteXYZ,we have all the BOE ITEMS and MATS for sale.we also provide the account trading and powerleveling service!!
 	"get.*%d%d%d+g.*free.*gold.*store",
@@ -138,7 +139,6 @@ local triggers = {
 	"ak774%.com", --30 May 09 ##
 	"brothergame%.com", --02 June 09 ## (deDE)
 	"btwor%.com", --12 August (Malware) @@
-	"buyeuwow%.net", --20 February 09 ##
 	"buywowgolds%.c", --05 May 09 ##
 	"cheapsgold%.c", --24 November 08 ## (deDE)
 	"coolwlk%.c", --29 December 08 ## (deDE)
@@ -155,7 +155,6 @@ local triggers = {
 	"gome4gold%.c", --24 March 09 ##
 	"hotgolds%.c", --19 July 09 ##
 	"ibgibg.c", --30 December 08 ## (deDE)
-	"ignmax%.c", --13 March 09 ##
 	"k4gold%.c", --24 October 08 ##
 	"kugold%.c", --19 July 09 ##
 	"let4gold%.c", --12 August 09 ##
