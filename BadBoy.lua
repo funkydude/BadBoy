@@ -203,10 +203,10 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, player) end --Debug
 			local time = GetTime()
 			if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
-				--if k > 120 then
-				--	print("|cFF33FF99BadBoy|r: ALPHA, Please post this spam line on the forums!")
-				--	print("|cFF33FF99BadBoy|r:", "-", raw, "-")
-				--end
+				if k > 122 then
+					print("|cFF33FF99BadBoy|r: ALPHA, Please post this spam line on the forums!")
+					print("|cFF33FF99BadBoy|r:", "-", raw, "-")
+				end
 				prevReportTime = time
 				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 				if _G.BADBOY_POPUP then --Manual reporting via popup
