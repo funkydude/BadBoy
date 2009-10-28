@@ -131,9 +131,10 @@ local triggers = {
 	"friend.*website.*gold4guild",
 	"cheap.*wow.*gold.*brogame%.c",
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$",
+	"^{vvv/bzgold/con%(v=w;/=%.;n=m%)}$",
 
 	--URL's
-	"17mins%.c", --21 June 09 ##
+	--[["17mins%.c", --21 June 09 ##
 	"29gameswow%.c", --11 July 09##
 	"2joygame%.c", --18 May 08 ## (deDE)
 	"4wowgold%.c", --6 April 09 ##
@@ -186,7 +187,7 @@ local triggers = {
 	"wowgold%-de%.c", --16 August 08 ##
 	"wowhax%.c", --5 May 08 ~~
 	"wowplayer%.de", --11 May 08 ~~
-	"wowqueen%.c", --14 September 09 @@
+	"wowqueen%.c", --14 September 09 @@]]
 }
 
 local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
@@ -203,10 +204,10 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, player) end --Debug
 			local time = GetTime()
 			if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
-				if k > 122 then
+				--[[if k > 122 then
 					print("|cFF33FF99BadBoy|r: ALPHA, Please post this spam line on the forums!")
 					print("|cFF33FF99BadBoy|r:", "-", raw, "-")
-				end
+				end]]
 				prevReportTime = time
 				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 				if _G.BADBOY_POPUP then --Manual reporting via popup
