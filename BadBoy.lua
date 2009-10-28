@@ -123,6 +123,7 @@ local triggers = {
 	"hi.*isthis.*mainchar.*thiserver", --Hi %name%, is this ur main character on this server? :)
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 	"sorry.*disturb.*gold.*cheap.*interest", --hi,m8.Sorry to disturb you ,this is jerry from wow70gold, our web is doing promotion,the price is really cheap ,could I interest you in some?
+	"hi.*you.*need.*gold.*we.*promotion", --[hi.do] you need some gold atm?we now have a promotion for it ^^
 
 	--Advanced URL's
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
