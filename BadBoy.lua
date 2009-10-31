@@ -126,69 +126,13 @@ local triggers = {
 	"hi.*you.*need.*gold.*we.*promotion", --[hi.do] you need some gold atm?we now have a promotion for it ^^
 
 	--Advanced URL's
-	"wow.*provider.*igs%.c.*po?we?rle?ve?l",
-	"happygolds.*gold.*gold",
-	"happygoldspointcom.*g",
-	"friend.*website.*gold4guild",
-	"cheap.*wow.*gold.*brogame%.c",
-	"^%W+w*%.?gold4guild%.c[o0]m%W+$",
-	"^{vvv/bzgold/con%(v=w;/=%.;n=m%)}$",
-
-	--URL's
-	--[["17mins%.c", --21 June 09 ##
-	"29gameswow%.c", --11 July 09##
-	"2joygame%.c", --18 May 08 ## (deDE)
-	"4wowgold%.c", --6 April 09 ##
-	"ak774%.com", --30 May 09 ##
-	"brothergame%.com", --02 June 09 ## (deDE)
-	"btwor%.com", --12 August (Malware) @@
-	"buywowgolds%.c", --05 May 09 ##
-	"cheapsgold%.c", --24 November 08 ## (deDE)
-	"coolwlk%.c", --29 December 08 ## (deDE)
-	"eur%-gold%.c", --19 August 09 @@
-	"fesgt%.c", --22 December 08 ## (esES)
-	"g4pitem.c", --19 June 09 ## Item Selling
-	"g4ppowerleveling%.c", --25 July 09 ##
-	"games%-level%.n+e+t", --9May 08 ~~
-	"get%-levels%.c", --29 April 08 ~~
-	"god%-moddot", --25 April 08 god-mod DOT com ~~
-	"goldba%.c", --9 June 09 ##
-	"goldku%.c", --22 August 09 @@ [typos]
-	"goldruler%.c", --05 May 09 ~~
-	"gome4gold%.c", --24 March 09 ##
-	"hotgolds%.c", --19 July 09 ##
-	"ibgibg.c", --30 December 08 ## (deDE)
-	"k4gold%.c", --24 October 08 ##
-	"kugold%.c", --19 July 09 ##
-	"let4gold%.c", --12 August 09 ##
-	"leveler4wow.c", --04 January 09 ~~
-	"%.levelvip%.", --08 April 09 ## (OM
-	"luckygolds%.c", --11 December 09 ##
-	"lvinn%.c", --07 August 09 @@
-	"marketgolds%.c", --29 June 09 ##
-	"mmige%.c", --16 February 09 ##
-	"mmoggg%.c", --25 July 09 ## (deDE)
-	"mmowned%(dot%)c", --21 May 08 ##
-	"nowgold%.?com", --16 July 09 ##
-	"oofay%.c", --30 May 09 ##
-	"pvp365%.c", --21 May 08 ## (frFR)
-	"selfgold%.c", --16 July 09 ## (deDE)
-	"tbgold%.c", --29 April 09 ##
-	"tebuy%.net", --14 February 09 ##
-	"tebuy%.ws", --05 February 09 ##
-	"torchgame%.c", --16 June 08 ## (deDE)
-	"vesgame%.c", --20 September 08 ## (deDE)
-	"warcraft%-advantage%.c", --25 July 09 ## Hacks/trojan
-	"welcomegold%.com", --24 May 09 ## [Multi Line]
-	"woowmart%.c", --25 July 09 ##
-	"worldofwarcraf%l?hacks%.net", --28 June 08 ##
-	"wow1gold%.c", --22 December 08 ## (deDE)
-	"wow%-?hackers%.c", --5 May 08 forward god-mod | wow-hackers / wowhackers ~~
-	"wow%-npc%.c", --15 June 09 ##
-	"wowgold%-de%.c", --16 August 08 ##
-	"wowhax%.c", --5 May 08 ~~
-	"wowplayer%.de", --11 May 08 ~~
-	"wowqueen%.c", --14 September 09 @@]]
+	"wow.*provider.*igs%.c.*po?we?rle?ve?l", --31 October 09
+	"happygolds.*gold.*gold", --31 October 09
+	"happygoldspointcom.*g", --31 October 09
+	"friend.*website.*gold4guild", --31 October 09
+	"cheap.*wow.*gold.*brogame%.c", --31 October 09
+	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
+	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
 }
 
 local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
@@ -205,10 +149,6 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, player) end --Debug
 			local time = GetTime()
 			if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
-				--[[if k > 122 then
-					print("|cFF33FF99BadBoy|r: ALPHA, Please post this spam line on the forums!")
-					print("|cFF33FF99BadBoy|r:", "-", raw, "-")
-				end]]
 				prevReportTime = time
 				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 				if _G.BADBOY_POPUP then --Manual reporting via popup
