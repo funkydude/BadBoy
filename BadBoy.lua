@@ -79,6 +79,10 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
+	--enUS	[[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Delivery in 4Min, 24h Service Gold on all Servers. 100% Security
+	"%d+.*gold.*lieferung.*gold", --deDE [[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Lieferung in 4 Min, 24h ServiceGold auf allen Servern, 100% Sicherheit!
+	--enUS	low price!!! now 10000g = only 66 euro !!!!! Delivery is secure & fast~~ more informations under-------- www.vsvgame.com-----------------
+	"%d%d%d+g%W%l*%d%d+eu.*lieferung", --deDE niedriger Preis!!! jetzt 10000g = nur 66 euro !!!!! Lieferung ist sicher & schnell~~ mehr Informationen unter-------- www.vsvgame.com-----------------
 	"fast.*cheap.*gold.*well?come", --Need fast and cheapest gold? Welcome to gold2wow website,big surprise is waiting for u,thx :P
 	"set.*gear.*instance.*honor.*sale.*whisp", --T9 full set,superior gears from instance,212K honor points,emblem of Heroism and conquest are on sale now,we can get them 4u,just whisper me plz!!!
 	"visit.*site.*items.*mats.*sale", --If you WTB these items,please visit our siteXYZ,we have all the BOE ITEMS and MATS for sale.we also provide the account trading and powerleveling service!!
@@ -124,6 +128,7 @@ local triggers = {
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 	"sorry.*disturb.*gold.*cheap.*interest", --hi,m8.Sorry to disturb you ,this is jerry from wow70gold, our web is doing promotion,the price is really cheap ,could I interest you in some?
 	"hi.*you.*need.*gold.*we.*promotion", --[hi.do] you need some gold atm?we now have a promotion for it ^^
+	"buy.*cheap.*gold.*deliver.*trade", --Hi,would u like to buy some cheap gold(6.9 euro/1k)? Delivery time just 5mins, we trade face to face at SW bank.sry to bother,have fun:)
 
 	--Advanced URL's
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l", --31 October 09
