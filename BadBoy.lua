@@ -80,6 +80,8 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"promotion.*buy.*gold.*fast.*delive", --Crazy promotion on WGL<< wwwwowgamelifecom >>  now,1k just for 5 GBP,10K just for 50 GBP, if u buy more than 10k,anther 10% extra gold as gift for u again^^ come on, all friend~ fastest delivery(within 5-10 mins) cya^^
+	"promotion.*purchase.*%d+k.*well?come", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.k4gold.com>
 	"fast.*gold.*server.*deliver", --Welcome.!>>>>>> www.FesGame.com<<<<< Fast-Easy-Safe Gold shop!we got 50k golds on this sever, 10K=Euro39.99.deliver golds in 60mins.!!!!
 	"crazy.*price.*code.*%d+k.*%d+pound", ---  www.k4gold.com for coming Halloween, crazy cut down price to reward customer, code "sugar"per 1K send 10% extra just 6pounds ,com on! take action^^   -
 	"cheap.*price.*gold.*deliver", --<< [www.mm4ss.com] >> The cheapest price ( 5.3 euro for 1000 +5% free gold, and, 50 for 10000G + 10% free gold^^coupon code:vip07 ) and fastest delivery (within 5-10mins).welcome to our website.Thanks ^^ cya ^^
@@ -87,6 +89,8 @@ local triggers = {
 	"%d+.*gold.*lieferung.*gold", --deDE [[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Lieferung in 4 Min, 24h ServiceGold auf allen Servern, 100% Sicherheit!
 	--enUS	low price!!! now 10000g = only 66 euro !!!!! Delivery is secure & fast~~ more informations under-------- www.vsvgame.com-----------------
 	"%d%d%d+g%W%l*%d%d+eu.*lieferung", --deDE niedriger Preis!!! jetzt 10000g = nur 66 euro !!!!! Lieferung ist sicher & schnell~~ mehr Informationen unter-------- www.vsvgame.com-----------------
+	--enUS	Welcome~! Cheap gold, fast delivery, 10k for only 66 euros~~~~www.goldku.com~~~~
+	"gold.*%d+kostennur%d+%.?%d*eu", --deDE herzlich Willkommen~!  billiges Gold, schnelle Lieferung, 10k kosten nur 66 euro~~~~www.goldku.com~~~~
 	"fast.*cheap.*gold.*well?come", --Need fast and cheapest gold? Welcome to gold2wow website,big surprise is waiting for u,thx :P
 	"set.*gear.*instance.*honor.*sale.*whisp", --T9 full set,superior gears from instance,212K honor points,emblem of Heroism and conquest are on sale now,we can get them 4u,just whisper me plz!!!
 	"visit.*site.*items.*mats.*sale", --If you WTB these items,please visit our siteXYZ,we have all the BOE ITEMS and MATS for sale.we also provide the account trading and powerleveling service!!
@@ -132,7 +136,8 @@ local triggers = {
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 	"sorry.*disturb.*gold.*cheap.*interest", --hi,m8.Sorry to disturb you ,this is jerry from wow70gold, our web is doing promotion,the price is really cheap ,could I interest you in some?
 	"hi.*you.*need.*gold.*we.*promotion", --[hi.do] you need some gold atm?we now have a promotion for it ^^
-	"buy.*cheap.*gold.*deliver.*trade", --Hi,would u like to buy some cheap gold(6.9 euro/1k)? Delivery time just 5mins, we trade face to face at SW bank.sry to bother,have fun:)
+	"buy.*cheap.*gold.*eur.*bother", --Hi, would you like to buy some cheap gold (6.99euro/1k) today :) if not, sorry to bother you, have fun!
+	"buy.*gold.*low.*price.*disturb", --Hi, would you like to buy some gold at a low price today? 1000g costs 6.99 euro. If not, just ignore me. :P Sorry to disturb, thanks and have a nice day!
 
 	--Advanced URL's
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l", --31 October 09
