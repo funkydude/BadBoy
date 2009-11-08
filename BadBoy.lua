@@ -80,6 +80,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"promotion.*%d%d%d+g%l*only%l*%$%d+.*discount", --GameUSD Promotion: A 1000G only costs you $2. Sign up with the gift code"2usd" on [www.GameUsd.com] now! ONLY 20 members available everyday! 2% discount coupon code for first time visitor! Enjoy it!
 	"promotion.*buy.*gold.*fast.*delive", --Crazy promotion on WGL<< wwwwowgamelifecom >>  now,1k just for 5 GBP,10K just for 50 GBP, if u buy more than 10k,anther 10% extra gold as gift for u again^^ come on, all friend~ fastest delivery(within 5-10 mins) cya^^
 	"promotion.*purchase.*%d+k.*well?come", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.k4gold.com>
 	"fast.*gold.*server.*deliver", --Welcome.!>>>>>> www.FesGame.com<<<<< Fast-Easy-Safe Gold shop!we got 50k golds on this sever, 10K=Euro39.99.deliver golds in 60mins.!!!!
@@ -203,9 +204,10 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 		if _G.BADBOY_SILENT then
 			return true --Filter out the report if enabled
 		end
+	else
+		--Ninja this in here to prevent creating a login function & frame
+		--We force this on so we don't have spam that would have been filtered, reported on the forums
+		SetCVar("spamFilter", 1)
 	end
-	--Ninja this in here to prevent creating a login function & frame
-	--We force this on so we don't have spam that would have been filtered, reported on the forums
-	SetCVar("spamFilter", 1)
 end)
 
