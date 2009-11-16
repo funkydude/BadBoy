@@ -52,8 +52,6 @@ local triggers = {
 	"freespectraltigerloot.*redeem",
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
 	"gold.*%d+k[/\92=]gbp%d%d+.*gold",
-	"%d%d+eur?o?s?for%d%d%d%d+g",
-	"gold.*cheap.*price.*fast.*delivery",
 	"powerlevel%l?ing.*gold.*fast.*delivery",
 	"%d+k[/\92=]%d+%.?%d*gbp.*%%.*gold",
 	"gold.*%d+k[/\92=]%d+%.?%d*eu",
@@ -80,12 +78,14 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
-	"promotion.*%d%d%d+g%l*only%l*%$%d+.*discount", --GameUSD Promotion: A 1000G only costs you $2. Sign up with the gift code"2usd" on [www.GameUsd.com] now! ONLY 20 members available everyday! 2% discount coupon code for first time visitor! Enjoy it!
+	"cheap.*price.*fast.*deliver", --www{star}mm4ss{star}com >> The cheapest price ( 5.2 Euro for 1000  and, 49.91Euro for 10000G  ) and fastest delivery.welcome to our website.Thanks ^^ cya ^^
+	--Amazing! 1000G only costs you $2. Sign up an account on [www.GameUSD.com] NOW with the GIFT CODE $2 to get this slashed price! Google "Gameusd" to check our reputation in our customers!
+	--Promotion: A 1000G only costs you $2. Sign up an account on [www.GameUSD.com] NOW with the GIFT CODE  $2 to get this slashed price! 50 members available everyday! Our normal price is $6 per 1000G without promotion! Hurry!
+	"%d%d%d+g%l*only%l*%$%d+.*gift.*code", --GameUSD Promotion: A 1000G only costs you $2. Sign up with the gift code"2usd" on [www.GameUsd.com] now! ONLY 20 members available everyday! 2% discount coupon code for first time visitor! Enjoy it!
 	"promotion.*buy.*gold.*fast.*delive", --Crazy promotion on WGL<< wwwwowgamelifecom >>  now,1k just for 5 GBP,10K just for 50 GBP, if u buy more than 10k,anther 10% extra gold as gift for u again^^ come on, all friend~ fastest delivery(within 5-10 mins) cya^^
 	"promotion.*purchase.*%d+k.*well?come", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.k4gold.com>
 	"fast.*gold.*server.*deliver", --Welcome.!>>>>>> www.FesGame.com<<<<< Fast-Easy-Safe Gold shop!we got 50k golds on this sever, 10K=Euro39.99.deliver golds in 60mins.!!!!
 	"crazy.*price.*code.*%d+k.*%d+pound", ---  www.k4gold.com for coming Halloween, crazy cut down price to reward customer, code "sugar"per 1K send 10% extra just 6pounds ,com on! take action^^   -
-	"cheap.*price.*gold.*deliver", --<< [www.mm4ss.com] >> The cheapest price ( 5.3 euro for 1000 +5% free gold, and, 50 for 10000G + 10% free gold^^coupon code:vip07 ) and fastest delivery (within 5-10mins).welcome to our website.Thanks ^^ cya ^^
 	--enUS	[[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Delivery in 4Min, 24h Service Gold on all Servers. 100% Security
 	"%d+.*gold.*lieferung.*gold", --deDE [[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Lieferung in 4 Min, 24h ServiceGold auf allen Servern, 100% Sicherheit!
 	--enUS	low price!!! now 10000g = only 66 euro !!!!! Delivery is secure & fast~~ more informations under-------- www.vsvgame.com-----------------
@@ -151,12 +151,16 @@ local triggers = {
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
 }
 
-local orig, prevReportTime, prevLineId, result = _G.COMPLAINT_ADDED, 0, 0, nil
+local orig, prevReportTime, prevLineId, result, raw = _G.COMPLAINT_ADDED, 0, 0, nil, ""
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
-	if lineId == prevLineId then return result else prevLineId = lineId end --Incase a message is sent more than once (registered to more than 1 chatframe)
-	if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-	if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself
-	local raw = msg
+	if lineId == prevLineId then
+		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
+	else
+		prevLineId = lineId
+		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
+		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
+		if raw == msg then result = true return true else raw = msg end
+	end
 	msg = lower(msg) --Lower all text, remove capitals
 	msg = rep(msg, " ", "") --Remove spaces
 	msg = rep(msg, ",", ".") --Convert commas to periods
@@ -190,6 +194,9 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
+
+_G["SlashCmdList"]["BADBOY_MAIN"] = function() LoadAddOn("BadBoy_GUI") InterfaceOptionsFrame_OpenToCategory("BadBoy") end
+_G["SLASH_BADBOY_MAIN1"] = "/badboy"
 
 --Function for disabling BadBoy reports and misc required functions
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
