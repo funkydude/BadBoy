@@ -195,9 +195,6 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
-_G["SlashCmdList"]["BADBOY_MAIN"] = function() LoadAddOn("BadBoy_GUI") InterfaceOptionsFrame_OpenToCategory("BadBoy") end
-_G["SLASH_BADBOY_MAIN1"] = "/badboy"
-
 --Function for disabling BadBoy reports and misc required functions
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 	if msg == orig then

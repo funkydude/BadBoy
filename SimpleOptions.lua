@@ -1,5 +1,8 @@
 
 do
+	_G["SlashCmdList"]["BADBOY_MAIN"] = function() InterfaceOptionsFrame_OpenToCategory("BadBoy") end
+	_G["SLASH_BADBOY_MAIN1"] = "/badboy"
+
 	local frame = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
 	frame.name = "BadBoy"
 	InterfaceOptions_AddCategory(frame)
@@ -31,7 +34,6 @@ do
 	btnNoReportMsg:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
 	btnNoReportMsg:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
 	btnNoReportMsg:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
-	btnNoReportMsg:SetDisabledCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check-Disabled")
 	btnNoReportMsg:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
 
 	local btnNoReportMsgText = btnNoReportMsg:CreateFontString("BadBoyConfigButton1Title", "ARTWORK", "GameFontHighlight")
@@ -61,7 +63,6 @@ do
 	btnManualReport:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
 	btnManualReport:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
 	btnManualReport:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
-	btnManualReport:SetDisabledCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check-Disabled")
 	btnManualReport:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
 
 	local btnManualReportText = btnManualReport:CreateFontString("BadBoyConfigButton2Title", "ARTWORK", "GameFontHighlight")

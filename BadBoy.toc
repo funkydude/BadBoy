@@ -9,3 +9,4 @@
 ## X-License: All Rights Reserved
 
 BadBoy.lua
+SimpleOptions.lua

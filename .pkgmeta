@@ -1,4 +1,1 @@
 package-as: BadBoy
-
-move-folders:
-    BadBoy/GUI: BadBoy_GUI

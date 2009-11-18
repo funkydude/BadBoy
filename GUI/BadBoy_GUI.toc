@@ -1,8 +1,0 @@
-## Interface: 30200
-## Title: BadBoy_GUI
-## Notes: Load On Demand Config for BadBoy.
-## Author: Funkydude
-## LoadOnDemand: 1
-## Dependencies: BadBoy
-
-BadBoy_GUI.lua
