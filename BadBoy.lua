@@ -78,6 +78,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"safe.*fast.*cheap.*gold", --The   safest   and   the  fastest  powerleveling  Lv1-80=====EUR 42.28  Lv1-60=====EUR 26.25 |   cheapest 10000Gold  Only  EUR 40.83 WWW . bestpowerleveling . NET ( 97
 	"cheap.*price.*fast.*deliver", --www{star}mm4ss{star}com >> The cheapest price ( 5.2 Euro for 1000  and, 49.91Euro for 10000G  ) and fastest delivery.welcome to our website.Thanks ^^ cya ^^
 	--Amazing! 1000G only costs you $2. Sign up an account on [www.GameUSD.com] NOW with the GIFT CODE $2 to get this slashed price! Google "Gameusd" to check our reputation in our customers!
 	--Promotion: A 1000G only costs you $2. Sign up an account on [www.GameUSD.com] NOW with the GIFT CODE  $2 to get this slashed price! 50 members available everyday! Our normal price is $6 per 1000G without promotion! Hurry!

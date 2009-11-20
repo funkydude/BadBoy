@@ -18,7 +18,9 @@ do
 	btnNoReportMsg:SetPoint("TOPLEFT", 16, -52)
 	btnNoReportMsg:SetScript("OnShow", function(frame)
 		if BADBOY_SILENT then
-			frame:SetChecked()
+			frame:SetChecked(true)
+		else
+			frame:SetChecked(false)
 		end
 	end)
 	btnNoReportMsg:SetScript("OnClick", function(frame)
@@ -49,7 +51,9 @@ do
 	btnManualReport:SetPoint("TOPLEFT", 16, -82)
 	btnManualReport:SetScript("OnShow", function(frame)
 		if BADBOY_POPUP then
-			frame:SetChecked()
+			frame:SetChecked(true)
+		else
+			frame:SetChecked(false)
 		end
 	end)
 	btnManualReport:SetScript("OnClick", function(frame)
