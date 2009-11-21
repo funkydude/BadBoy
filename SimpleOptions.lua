@@ -1,8 +1,15 @@
 
 do
+	--Slash handler
 	_G["SlashCmdList"]["BADBOY_MAIN"] = function() InterfaceOptionsFrame_OpenToCategory("BadBoy") end
 	_G["SLASH_BADBOY_MAIN1"] = "/badboy"
 
+	--Locale
+	local locNoReportMsg = "Hide '%s' message"
+	local locManualReport = "Disable Automatic Spam Report (Show popup)"
+	local L = GetLocale()
+
+	--Begin GUI
 	local badboy = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
 	badboy:Hide()
 	badboy.name = "BadBoy"
@@ -43,7 +50,7 @@ do
 
 	local btnNoReportMsgText = btnNoReportMsg:CreateFontString("BadBoyConfigButton1Title", "ARTWORK", "GameFontHighlight")
 	btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
-	btnNoReportMsgText:SetText(("Hide '%s' message"):format(COMPLAINT_ADDED))
+	btnNoReportMsgText:SetText((locNoReportMsg):format(COMPLAINT_ADDED))
 
 	local btnManualReport = CreateFrame("CheckButton", "BadBoyConfigButton2", badboy)
 	btnManualReport:SetWidth(26)
@@ -76,6 +83,6 @@ do
 
 	local btnManualReportText = btnManualReport:CreateFontString("BadBoyConfigButton2Title", "ARTWORK", "GameFontHighlight")
 	btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
-	btnManualReportText:SetText("Disable Automatic Spam Report (Show popup)")
+	btnManualReportText:SetText(locManualReport)
 end
 
