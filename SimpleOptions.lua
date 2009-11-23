@@ -8,6 +8,10 @@ do
 	local locNoReportMsg = "Hide '%s' message"
 	local locManualReport = "Disable Automatic Spam Report (Show popup)"
 	local L = GetLocale()
+	if L == "frFR" then
+		locNoReportMsg = "Cacher le message '%s'"
+		locManualReport = "Désactiver le signalement auto. du spam (affiche un popup)"
+	end
 
 	--Begin GUI
 	local badboy = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
