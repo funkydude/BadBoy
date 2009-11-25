@@ -78,6 +78,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"gold.*d[ei]liver.*power%-?le?ve?l", --<www.4wowgold.c@m>,Cheapest Gold,5% of Bonus Golds to You (1000g=9.49$ 10000=87.39$)!with the discount code : "STOCK" ,order<10 Mins Diliver. The Professional Power-leveling & Honor-leveling for You! Welcome to (www.4wowgold.c@m)^_^
 	"gold.*package.*%d%d+k.*promotion", --Patch 3.3 is coming, <<www.K4gold.com>> offers new VIP package. Say 200 loyal points with 200 free G for 10k,1500 points with 1500 free G for 50k. Use "DRAGON" as promotional code. And introduce others for secret gifts from live chat.Action now plz!
 	"safe.*fast.*cheap.*gold", --The   safest   and   the  fastest  powerleveling  Lv1-80=====EUR 42.28  Lv1-60=====EUR 26.25 |   cheapest 10000Gold  Only  EUR 40.83 WWW . bestpowerleveling . NET ( 97
 	"cheap.*price.*fast.*deliver", --www{star}mm4ss{star}com >> The cheapest price ( 5.2 Euro for 1000  and, 49.91Euro for 10000G  ) and fastest delivery.welcome to our website.Thanks ^^ cya ^^
@@ -107,6 +108,7 @@ local triggers = {
 	"battle.*account.*player.*penguin.*register", --Hi,Battle.net account Players will receive a brand-new penguin in-game pet, Registered address : XYZ
 	"become.*lucky.*player.*mysterious.*gift.*register", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
 	"christmas.*blizz.*gift.*receive.*free.*log", --Hello, Christmas is approaching, Blizzard released Christmas gifts players can receive free of charge,please log in: XYZ
+	"player.*network.*blizz.*compensation.*log", --Dear players, because the network of World of Warcraft had broken off, Blizzard decided to give each player certain compensation.Please log in: XYZ and receive compensation for goods.
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
@@ -162,6 +164,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
+		--If text is same as last line but line ID is differentent someone is macro spamming, consolidate to 1 line
 		if raw == msg then result = true return true else raw = msg end
 	end
 	msg = lower(msg) --Lower all text, remove capitals
