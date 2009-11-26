@@ -156,7 +156,7 @@ local triggers = {
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
 }
 
-local orig, prevReportTime, prevLineId, result, raw = _G.COMPLAINT_ADDED, 0, 0, nil, ""
+local orig, prevReportTime, prevLineId, prevPlayer, result, raw = _G.COMPLAINT_ADDED, 0, 0, "", nil, ""
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -164,8 +164,8 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
-		--If text is same as last line but line ID is differentent someone is macro spamming, consolidate to 1 line
-		if raw == msg then result = true return true else raw = msg end
+		--If the text is same as the last line but the lineId is different, someone is macro spamming, consolidate to 1 line
+		if raw == msg and player == prevPlayer then result = true return true else raw = msg prevPlayer = player end
 	end
 	msg = lower(msg) --Lower all text, remove capitals
 	msg = rep(msg, " ", "") --Remove spaces
