@@ -14,6 +14,9 @@ do
 	elseif L == "deDE" then
 		locNoReportMsg = "'%s' Meldung verstecken"
 		locManualReport = "Automatisches Spam melden deaktivieren (Popup anzeigen)"
+	elseif L == "esES" or L == "esMX" then
+		locNoReportMsg = "Ocultar el mensaje '%s'"
+		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
 	end
 
 	--Begin GUI

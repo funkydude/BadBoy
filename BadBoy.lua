@@ -113,6 +113,7 @@ local triggers = {
 	"become.*lucky.*player.*mysterious.*gift.*register", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
 	"christmas.*blizz.*gift.*receive.*free.*log", --Hello, Christmas is approaching, Blizzard released Christmas gifts players can receive free of charge,please log in: XYZ
 	"player.*network.*blizz.*compensation.*log", --Dear players, because the network of World of Warcraft had broken off, Blizzard decided to give each player certain compensation.Please log in: XYZ and receive compensation for goods.
+	"player.*blizz.*system.*scan.*acount", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]"
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
