@@ -78,6 +78,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"d[ei]liver.*stock.*safe.*gold", --<<WWW.WowRuler.COM>> 60USD=10k+Bonus Delivery in 10 mins (we have full stock of this server) Welcome to WWW.WowRuler.COM! Opportunity seldom knocks twice! Purely Manual without bot or hacking, Absolutely Safe Gold!
 	--"WGL"=<< wwwwowgamelifecom >> the crazy promotion for our 2-year Anniversary cellebration ( 5.5 Euro for 1000 g,  50 Euro for 10000g+5% Free gold ^^fastest delivery in 5-10 mins.welcome to our website^^
 	"promotion.*gold.*d[ei]liver", --Crazy promotion on WGL<< wwwwowgamelifecom >>  now,1k just for 5 GBP,10K just for 50 GBP, if u buy more than 10k,anther 10% extra gold as gift for u again^^ come on, all friend~ fastest delivery(within 5-10 mins) cya^^
 	"buy.*gold.*euro.*gold", --Hi, Would you like to buy some gold today? In our site, it is 6.99 euro for 1k(trade gold face to face in 5-15 mins). If not, just enjoy the game ^^. (i am candy from [www.tbowow.com)]
