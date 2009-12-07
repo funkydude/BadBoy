@@ -113,7 +113,7 @@ local triggers = {
 	"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
 	"hello.*master.*warcraft.*acc.*temp.*suspend.*info", --hello! [Game Master]GM: Your world of warcraft account has been temporarily suspended. please go to XYZ for further information
 	"battle.*account.*player.*penguin.*register", --Hi,Battle.net account Players will receive a brand-new penguin in-game pet, Registered address : XYZ
-	"become.*lucky.*player.*mysterious.*gift.*register", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
+	"become.*lucky.*player.*mysterious.*gift.*[lr][oe]g", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
 	"christmas.*blizz.*gift.*receive.*free.*log", --Hello, Christmas is approaching, Blizzard released Christmas gifts players can receive free of charge,please log in: XYZ
 	"player.*network.*blizz.*compensation.*log", --Dear players, because the network of World of Warcraft had broken off, Blizzard decided to give each player certain compensation.Please log in: XYZ and receive compensation for goods.
 	"player.*blizz.*system.*scan.*acount", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]"
