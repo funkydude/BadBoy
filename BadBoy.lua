@@ -79,11 +79,12 @@ local triggers = {
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
 	"site.*bonus.*welcome.*gold", --r site, u can get bonuses, they use ur Char Name as the introducer,The more people u recommend,the more u will make,for more details,welcome to <www.4WOWGOLD.c@m>.com
-	"price.*fast.*d[ei]liver.*safe", --WGL=[[  wwwwowgamelifecom ]] always have 1800k+++ in stock the lowest price with[ 55 Euro for 10k +1000g free] fast delivery : with 5-10 mins most 100% safe trade by [ face to face ] plz choose my website with best service :) ^^
-	"%d%d+k[/\92=]%d%d+%.?%d*eu.*gold", --10K=73EUR 10mins deliver .welcome to mysite ...WW W.g o l d ku.c0 m....
-	"d[ei]liver.*stock.*safe.*gold", --<<WWW.WowRuler.COM>> 60USD=10k+Bonus Delivery in 10 mins (we have full stock of this server) Welcome to WWW.WowRuler.COM! Opportunity seldom knocks twice! Purely Manual without bot or hacking, Absolutely Safe Gold!
+	--WGL=<<www. wowgamelife .c@m >> always have 1800k+in stock << 50Euro for 10k+1000g free >>fast delivery with 5-15 mins most safe trade plz choose my website with best service ^^
+	"fast.*d[ei]liver.*safe.*trade", --WGL=[[  wwwwowgamelifecom ]] always have 1800k+++ in stock the lowest price with[ 55 Euro for 10k +1000g free] fast delivery : with 5-10 mins most 100% safe trade by [ face to face ] plz choose my website with best service :) ^^
 	--"WGL"=<< wwwwowgamelifecom >> the crazy promotion for our 2-year Anniversary cellebration ( 5.5 Euro for 1000 g,  50 Euro for 10000g+5% Free gold ^^fastest delivery in 5-10 mins.welcome to our website^^
 	"promotion.*gold.*d[ei]liver", --Crazy promotion on WGL<< wwwwowgamelifecom >>  now,1k just for 5 GBP,10K just for 50 GBP, if u buy more than 10k,anther 10% extra gold as gift for u again^^ come on, all friend~ fastest delivery(within 5-10 mins) cya^^
+	"%d%d+k[/\92=]%d%d+%.?%d*eu.*gold", --10K=73EUR 10mins deliver .welcome to mysite ...WW W.g o l d ku.c0 m....
+	"d[ei]liver.*stock.*safe.*gold", --<<WWW.WowRuler.COM>> 60USD=10k+Bonus Delivery in 10 mins (we have full stock of this server) Welcome to WWW.WowRuler.COM! Opportunity seldom knocks twice! Purely Manual without bot or hacking, Absolutely Safe Gold!
 	"buy.*gold.*euro.*gold", --Hi, Would you like to buy some gold today? In our site, it is 6.99 euro for 1k(trade gold face to face in 5-15 mins). If not, just enjoy the game ^^. (i am candy from [www.tbowow.com)]
 	"gold.*sale.*d[ei]liver", --hi, im sally from [www.tbowow.com,] we have a lot of gold for sale, 6.99euro/1k and deliver in 10 mins after pay :) this is the best service for u, do you want to buy some gold today mate? :)
 	"gold.*bonus.*discount", --Triple promotions at <www.k4gold.com>: 10% bonus g for each order;extra bonus for big orders more than 10k;and promotional code "dragon" for vip discount. Also private gifts from live chat for introducing others
