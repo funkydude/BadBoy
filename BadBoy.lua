@@ -89,15 +89,15 @@ local triggers = {
 	"gold.*sale.*d[ei]liver", --hi, im sally from [www.tbowow.com,] we have a lot of gold for sale, 6.99euro/1k and deliver in 10 mins after pay :) this is the best service for u, do you want to buy some gold today mate? :)
 	"gold.*bonus.*discount", --Triple promotions at <www.k4gold.com>: 10% bonus g for each order;extra bonus for big orders more than 10k;and promotional code "dragon" for vip discount. Also private gifts from live chat for introducing others
 	"gold.*d[ei]liver.*power%-?le?ve?l", --<www.4wowgold.c@m>,Cheapest Gold,5% of Bonus Golds to You (1000g=9.49$ 10000=87.39$)!with the discount code : "STOCK" ,order<10 Mins Diliver. The Professional Power-leveling & Honor-leveling for You! Welcome to (www.4wowgold.c@m)^_^
-	"gold.*package.*%d%d+k.*promotion", --Patch 3.3 is coming, <<www.K4gold.com>> offers new VIP package. Say 200 loyal points with 200 free G for 10k,1500 points with 1500 free G for 50k. Use "DRAGON" as promotional code. And introduce others for secret gifts from live chat.Action now plz!
+	--"gold.*package.*%d%d+k.*promotion", --Patch 3.3 is coming, <<www.K4gold.com>> offers new VIP package. Say 200 loyal points with 200 free G for 10k,1500 points with 1500 free G for 50k. Use "DRAGON" as promotional code. And introduce others for secret gifts from live chat.Action now plz!
 	"safe.*fast.*cheap.*gold", --The safest and the fastest  powerleveling  Lv1-80=====EUR 42.28  Lv1-60=====EUR 26.25 |   cheapest 10000Gold  Only  EUR 40.83 WWW . bestpowerleveling . NET ( 97
 	"cheap.*price.*fast.*d[ie]liver", --www{star}mm4ss{star}com >> The cheapest price ( 5.2 Euro for 1000  and, 49.91Euro for 10000G  ) and fastest delivery.welcome to our website.Thanks ^^ cya ^^
 	--Amazing! 1000G only costs you $2. Sign up an account on [www.GameUSD.com] NOW with the GIFT CODE $2 to get this slashed price! Google "Gameusd" to check our reputation in our customers!
 	--Promotion: A 1000G only costs you $2. Sign up an account on [www.GameUSD.com] NOW with the GIFT CODE  $2 to get this slashed price! 50 members available everyday! Our normal price is $6 per 1000G without promotion! Hurry!
 	"%d%d%d+g%l*only%l*%$%d+.*gift.*code", --GameUSD Promotion: A 1000G only costs you $2. Sign up with the gift code"2usd" on [www.GameUsd.com] now! ONLY 20 members available everyday! 2% discount coupon code for first time visitor! Enjoy it!
-	"promotion.*purchase.*%d+k.*well?come", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.k4gold.com>
+	--"promotion.*purchase.*%d+k.*well?come", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.k4gold.com>
 	"fast.*gold.*server.*deliver", --Welcome.!>>>>>> www.FesGame.com<<<<< Fast-Easy-Safe Gold shop!we got 50k golds on this sever, 10K=Euro39.99.deliver golds in 60mins.!!!!
-	"crazy.*price.*code.*%d+k.*%d+pound", ---  www.k4gold.com for coming Halloween, crazy cut down price to reward customer, code "sugar"per 1K send 10% extra just 6pounds ,com on! take action^^   -
+	--"crazy.*price.*code.*%d+k.*%d+pound", ---  www.k4gold.com for coming Halloween, crazy cut down price to reward customer, code "sugar"per 1K send 10% extra just 6pounds ,com on! take action^^   -
 	--enUS	[[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Delivery in 4Min, 24h Service Gold on all Servers. 100% Security
 	"%d+.*gold.*lieferung.*gold", --deDE [[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Lieferung in 4 Min, 24h ServiceGold auf allen Servern, 100% Sicherheit!
 	--enUS	low price!!! now 10000g = only 66 euro !!!!! Delivery is secure & fast~~ more informations under-------- www.vsvgame.com-----------------
@@ -108,6 +108,8 @@ local triggers = {
 	"set.*gear.*instance.*honor.*sale.*whisp", --T9 full set,superior gears from instance,212K honor points,emblem of Heroism and conquest are on sale now,we can get them 4u,just whisper me plz!!!
 	"visit.*site.*items.*mats.*sale", --If you WTB these items,please visit our siteXYZ,we have all the BOE ITEMS and MATS for sale.we also provide the account trading and powerleveling service!!
 	"get.*%d%d%d+g.*free.*gold.*store",
+	--enUS	[[The cheapest 37 EUR/10K WOW PO]].99% 4 minutes for delivery,24/7 service. Normal stock.100% for the Secure! No Bot, No Acc closed, 1 to 60 EUR 72 EUR WOW 80,70-80 PO He has no one that sells for less! [[ www.wow-europe.cn ]]
+	"livraison.*stock.*%d+eur", --frFR [[Le moins cher 37 EUR/10K WOW PO]].99% 4 minutes pour la livraison,24/7 service. Plein stock.100% pour la Securise !! No bot, No Acc close,1-60 EUR 80,70-80 EUR 72 WOW PO Il n'a pas de personne qui vends moins cher![[ www.wow-europe.cn ]]
 	"blizz.*launch.*cata.*trial.*info.*log",
 	"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
 	"free.*mount.*wow.*first.*code.*claim",
@@ -166,6 +168,8 @@ local triggers = {
 	"cheap.*wow.*gold.*brogame%.c", --31 October 09
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
+	"%d%d+.*%Ww+%.k4gold%.com%W", --need Free[Plans: Titanium Razorplate][crusader orb] etcwe have alot kinds of recips and mats as a reward if u need g.15000+free mats=$112 with discount code"stock",welcome to<www.k4gold.com> dot come for more details.
+	"%Ww+%.k4gold%.com%W.*%d%d+", --Special Sales for Patch3.3: <www.K4GOLD.com> offers free ore and recipes for orders bigger than 10k, other ore and recipes are also available for your special need. Catch the Chance!
 }
 
 local orig, prevReportTime, prevLineId, prevPlayer, result, raw = _G.COMPLAINT_ADDED, 0, 0, "", nil, ""
