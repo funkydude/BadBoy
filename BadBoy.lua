@@ -78,6 +78,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"powerle?ve?l.*safe.*fast", --Buy cheapest powerleveling on [HappyLeveling.com] ,7/24 hours live help.T9, T8, T7 package 1-80 only $50. 11-12 days, 70-80 only $19.99 5-6 days ,safe&fast ==279
 	"site.*bonus.*welcome.*gold", --r site, u can get bonuses, they use ur Char Name as the introducer,The more people u recommend,the more u will make,for more details,welcome to <www.4WOWGOLD.c@m>.com
 	--WGL=<<www. wowgamelife .c@m >> always have 1800k+in stock << 50Euro for 10k+1000g free >>fast delivery with 5-15 mins most safe trade plz choose my website with best service ^^
 	"fast.*d[ei]liver.*safe.*trade", --WGL=[[  wwwwowgamelifecom ]] always have 1800k+++ in stock the lowest price with[ 55 Euro for 10k +1000g free] fast delivery : with 5-10 mins most 100% safe trade by [ face to face ] plz choose my website with best service :) ^^
@@ -167,6 +168,7 @@ local triggers = {
 	"friend.*website.*gold4guild", --31 October 09
 	"cheap.*wow.*gold.*brogame%.c", --31 October 09
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
+	"^www%.ignmax%.com$", --12 December 09
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
 	"%d%d+.*%Ww+%.k4gold%.com%W", --need Free[Plans: Titanium Razorplate][crusader orb] etcwe have alot kinds of recips and mats as a reward if u need g.15000+free mats=$112 with discount code"stock",welcome to<www.k4gold.com> dot come for more details.
 	"%Ww+%.k4gold%.com%W.*%d%d+", --Special Sales for Patch3.3: <www.K4GOLD.com> offers free ore and recipes for orders bigger than 10k, other ore and recipes are also available for your special need. Catch the Chance!
