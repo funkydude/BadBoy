@@ -78,6 +78,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"cheap.*fast.*gold.*stock", --The strongest and cheapest and fastest WOW gold service provider <71wow.com> ,abundant stock for every server ,and 5k=$30, 10k=$59,20k=$119 and all orders can be finished in 10mins.
 	"sale.*gold.*discount", --Sales,Sales,Sales! ~www gdpgold (0m~ Provides up to 30% off for you, Enjoy NEW RAID, Enjoy patch3.3, Vist ~www gdpgold (0m! Get the discount with this code: HH30
 	"powerle?ve?l.*safe.*fast", --Buy cheapest powerleveling on [HappyLeveling.com] ,7/24 hours live help.T9, T8, T7 package 1-80 only $50. 11-12 days, 70-80 only $19.99 5-6 days ,safe&fast ==279
 	"site.*bonus.*welcome.*gold", --r site, u can get bonuses, they use ur Char Name as the introducer,The more people u recommend,the more u will make,for more details,welcome to <www.4WOWGOLD.c@m>.com
