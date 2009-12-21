@@ -78,6 +78,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"friend.*item.*visit.*sale", --Dear friend,If you WTB these items,plz visit<www.g4pitem.com>,we have all the lv264 BOE ITEMS and MATS for sale.
 	"gold.*bonus.*fast.*deliver", -- New Patch Scream at <www.4WOWGOLD.c@m>: First, 20% price cut; Second, free Ore and Recipes for big orders; Third, use promotional code "dragon" for bonus G and fast delivery.
 	"cheap.*fast.*gold.*stock", --The strongest and cheapest and fastest WOW gold service provider <71wow.com> ,abundant stock for every server ,and 5k=$30, 10k=$59,20k=$119 and all orders can be finished in 10mins.
 	"sale.*gold.*discount", --Sales,Sales,Sales! ~www gdpgold (0m~ Provides up to 30% off for you, Enjoy NEW RAID, Enjoy patch3.3, Vist ~www gdpgold (0m! Get the discount with this code: HH30
