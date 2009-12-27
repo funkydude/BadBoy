@@ -78,7 +78,8 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
-	"gold.*price.*deliver", --Free Gold for Christmas:<uGuysGold.c0m> beats other sites with cheap price(1000G==EUR3.85 =USD5.77),  5% extra free gold, and Instant delivery.  We are trustworthy and professional. Google uGuysGold to find our reputation and  take your G0ld  now :)
+	--Sales Promotion Activities for Christmas. Price declined to $5.98/k, Visit ThIGe.(@m to enjoy 15 mins of delivery. Use code: CMAS to enjoy 10% free gold with your order! ThIGe.(om Now!
+	"price.*deliver.*gold", --Free Gold for Christmas:<uGuysGold.c0m> beats other sites with cheap price(1000G==EUR3.85 =USD5.77),  5% extra free gold, and Instant delivery.  We are trustworthy and professional. Google uGuysGold to find our reputation and  take your G0ld  now :)
 	"low.*price.*fast.*deliver", --www.pvpbank.com --lowest price+fastest delivery+bestservice.The more you buy,the more you get for the Christmas. 50-9000G is ready for you.
 	"friend.*item.*visit.*sale", --Dear friend,If you WTB these items,plz visit<www.g4pitem.com>,we have all the lv264 BOE ITEMS and MATS for sale.
 	"gold.*bonus.*fast.*deliver", -- New Patch Scream at <www.4WOWGOLD.c@m>: First, 20% price cut; Second, free Ore and Recipes for big orders; Third, use promotional code "dragon" for bonus G and fast delivery.
