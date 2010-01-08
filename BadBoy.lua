@@ -78,6 +78,7 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"price.*gold.*service", --In order to repay all WoW players better,SusanExpress reduced the price at 5.98$/1K. Furthermore,10% Bonus Gold is still existent! Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com
 	"promot[ei].*bonus.*gold", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.4WOWGOLD.c@m>  
 	--Sales Promotion Activities for Christmas. Price declined to $5.98/k, Visit ThIGe.(@m to enjoy 15 mins of delivery. Use code: CMAS to enjoy 10% free gold with your order! ThIGe.(om Now!
 	"price.*deliver.*gold", --Free Gold for Christmas:<uGuysGold.c0m> beats other sites with cheap price(1000G==EUR3.85 =USD5.77),  5% extra free gold, and Instant delivery.  We are trustworthy and professional. Google uGuysGold to find our reputation and  take your G0ld  now :)
@@ -119,6 +120,8 @@ local triggers = {
 	"get.*%d%d%d+g.*free.*gold.*store",
 	--enUS	[[The cheapest 37 EUR/10K WOW PO]].99% 4 minutes for delivery,24/7 service. Normal stock.100% for the Secure! No Bot, No Acc closed, 1 to 60 EUR 72 EUR WOW 80,70-80 PO He has no one that sells for less! [[ www.wow-europe.cn ]]
 	"livraison.*stock.*%d+eur", --frFR [[Le moins cher 37 EUR/10K WOW PO]].99% 4 minutes pour la livraison,24/7 service. Plein stock.100% pour la Securise !! No bot, No Acc close,1-60 EUR 80,70-80 EUR 72 WOW PO Il n'a pas de personne qui vends moins cher![[ www.wow-europe.cn ]]
+	--enUS	www.pvpbank.com - low prices and fast delivery+ best service. the more you buy the more you will get for christmas. 50 -9000 are quickly yours
+	"prixbas.*livraisonexpresse", --frFR [www.pvpbank.com] -- prix bas + livraison expresse + meilleur service. Plus vous achetez, plus vous aurez gagner pour le Noel. 50 po - 9000 po  sont pr?ts pour vous ^^
 	"blizz.*launch.*cata.*trial.*info.*log",
 	"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
 	"free.*mount.*wow.*first.*code.*claim",
