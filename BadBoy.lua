@@ -78,7 +78,8 @@ local triggers = {
 	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
-	"price.*gold.*service", --In order to repay all WoW players better,SusanExpress reduced the price at 5.98$/1K. Furthermore,10% Bonus Gold is still existent! Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com
+	--In order to repay all WoW players better,SusanExpress reduced the price at 3.34eur/1K. Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com"
+	"reduced.*price.*best.*service", --In order to repay all WoW players better,SusanExpress reduced the price at 5.98$/1K. Furthermore,10% Bonus Gold is still existent! Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com
 	"promot[ei].*bonus.*gold", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.4WOWGOLD.c@m>  
 	--Sales Promotion Activities for Christmas. Price declined to $5.98/k, Visit ThIGe.(@m to enjoy 15 mins of delivery. Use code: CMAS to enjoy 10% free gold with your order! ThIGe.(om Now!
 	"price.*deliver.*gold", --Free Gold for Christmas:<uGuysGold.c0m> beats other sites with cheap price(1000G==EUR3.85 =USD5.77),  5% extra free gold, and Instant delivery.  We are trustworthy and professional. Google uGuysGold to find our reputation and  take your G0ld  now :)
