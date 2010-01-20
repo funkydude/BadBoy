@@ -1,7 +1,3 @@
-local ipairs = _G.ipairs
-local fnd = _G.string.find
-local lower = _G.string.lower
-local rep = _G.strreplace
 
 local triggers = {
 	--Phrases
@@ -18,38 +14,22 @@ local triggers = {
 	"%d+%.%d+[/\92=]%d%d%d+g",
 	"%d+go?l?d?[/\92=]eur?%d+",
 	"%d+g%l*ab%d+%.?%d*eu", --deDE
-	"%d+g%l*only%d+%.?%d*[\194\165\194\163%$\226\130\172]",
-	"%d+g%l*for[\194\165\194\163%$\226\130\172]%d+",
-	"%d+g%l*only%d+%.?%d*eu",
-	"%d+g%l*only%d+%.?%d*usd",
-	"%d%d%d+gonlyeur%d+%.?%d*",
 	"%d%d%d+gjust[\194\165\194\163%$\226\130\172]%d+",
 	"%d%d%d+gjust%d+%.?%d*[\194\165\194\163%$\226\130\172]",
 	"%d%d%d+go?l?d?[/\92=]usd%d+",
 	"%d+go?l?d?[/\92=][\194\165\194\163%$\226\130\172]%d+",
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
-	"gold.*%d+%.%d%dper%d+g",
 	"%d+%.?%d*per%d%d%d+g.*gold",
-	"only%d+[\194\165\194\163%$\226\130\172]for%d%d%d+g.*safe", --fast delivery, safe trade
-	"gold.*[\194\165\194\163%$\226\130\172]%d+%.?%d*per%l*%d%d%d+g", --deliver
-	"gold.*%d+%.?%d*[\194\165\194\163%$\226\130\172][/\92=]%d%d%d+g",
-	"%d+%.?%d*[\194\165\194\163%$\226\130\172][/\92=]%d%d%d+g.*delivery",
 	"gold.*cheap.*safe",
-	"company.*%d+.*gold.*buysome",
 	"%d+.*wow.*gold.*for.*[\194\165\194\163%$\226\130\172]%d+",
 	".*%d+.*powerleveling%d%-%d+=%d+eur",
 	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
 	"wirhaben%d+kgoldaufdiesemserver", --deDE
-	".*%d%d%d+gonlycosted[\194\165\194\163%$\226\130\172]%d+%.%d%d+usd",
 	"power%-?le?ve?l.*%d%d%d+g.*%d%d%d+g",
-	"sellyour.*gold.*%d+us.*%d%.?%d*g",
-	"gold.*%d%d%d+g[/\92=]gbp%d+",
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
 	"blizzard.*mount.*free.*trial.*log", --mount phishing
-	"free.*mount.*info.*log",
 	"blizzard.*einf\195\188hrung.*reittiere.*kostenlose.*testversion.*melde", --mount phishing deDE
 	"blizz.*kosten.*test.*info.*einlog", --deDE
-	"freespectraltigerloot.*redeem",
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
 	"gold.*%d+k[/\92=]gbp%d%d+.*gold",
 	"powerlevel%l?ing.*gold.*fast.*delivery",
@@ -75,7 +55,6 @@ local triggers = {
 	"gold.*low.*price.*%d+kg",
 	"discount.*buy.*gold.*coupon",
 	"you.*become.*blizzard.*gift.*add?res",
-	"check.*new.*warcraft.*chron.*movie.*at",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
 	--In order to repay all WoW players better,SusanExpress reduced the price at 3.34eur/1K. Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com"
@@ -108,7 +87,6 @@ local triggers = {
 	"%d%d%d+g%l*only%l*%$%d+.*gift.*code", --GameUSD Promotion: A 1000G only costs you $2. Sign up with the gift code"2usd" on [www.GameUsd.com] now! ONLY 20 members available everyday! 2% discount coupon code for first time visitor! Enjoy it!
 	--"promotion.*purchase.*%d+k.*well?come", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.k4gold.com>
 	"fast.*gold.*server.*deliver", --Welcome.!>>>>>> www.FesGame.com<<<<< Fast-Easy-Safe Gold shop!we got 50k golds on this sever, 10K=Euro39.99.deliver golds in 60mins.!!!!
-	--"crazy.*price.*code.*%d+k.*%d+pound", ---  www.k4gold.com for coming Halloween, crazy cut down price to reward customer, code "sugar"per 1K send 10% extra just 6pounds ,com on! take action^^   -
 	--enUS	[[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Delivery in 4Min, 24h Service Gold on all Servers. 100% Security
 	"%d+.*gold.*lieferung.*gold", --deDE [[ 49.79/10k ]] WoW EU Gold [[ www . brothergame . com ]]99% Lieferung in 4 Min, 24h ServiceGold auf allen Servern, 100% Sicherheit!
 	--enUS	low price!!! now 10000g = only 66 euro !!!!! Delivery is secure & fast~~ more informations under-------- www.vsvgame.com-----------------
@@ -129,9 +107,7 @@ local triggers = {
 	"wts.*%[.*%].*we.*boe.*mats.*sale", --wts [Pendulum of Doom] [Krol Cleaver] we have all the Boe items,mats and t8/t8.5 for sale .XYZ!!
 	"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
 	"hello.*master.*warcraft.*acc.*temp.*suspend.*info", --hello! [Game Master]GM: Your world of warcraft account has been temporarily suspended. please go to XYZ for further information
-	"battle.*account.*player.*penguin.*register", --Hi,Battle.net account Players will receive a brand-new penguin in-game pet, Registered address : XYZ
 	"become.*lucky.*player.*mysterious.*gift.*[lr][oe]g", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
-	"christmas.*blizz.*gift.*receive.*free.*log", --Hello, Christmas is approaching, Blizzard released Christmas gifts players can receive free of charge,please log in: XYZ
 	"player.*network.*blizz.*compensation.*log", --Dear players, because the network of World of Warcraft had broken off, Blizzard decided to give each player certain compensation.Please log in: XYZ and receive compensation for goods.
 	"player.*blizz.*system.*scan.*acount", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]"
 	"free.*spec.*mount.*code.*site", --Giving away free Spectral Tiger Mount ! Just be first to Reedem code : XU2199UXAI2881HTYAXNNB910 , go add it on site :  [XYZ] im stoping with damt wow ! GL guys
@@ -190,7 +166,7 @@ local triggers = {
 	"%Ww+%.k4gold%.com%W.*%d%d+", --Special Sales for Patch3.3: <www.K4GOLD.com> offers free ore and recipes for orders bigger than 10k, other ore and recipes are also available for your special need. Catch the Chance!
 }
 
-local orig, prevReportTime, prevLineId, prevPlayer, result, raw = _G.COMPLAINT_ADDED, 0, 0, "", nil, ""
+local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = _G.COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -198,22 +174,34 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
-		--If the text is same as the last line but the lineId is different, someone is macro spamming, consolidate to 1 line
-		if raw == msg and player == prevPlayer then result = true return true else raw = msg prevPlayer = player end
+		--START: 5 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 5
+		for k,v in ipairs(chatLines) do
+			if v == msg then
+				for l,w in ipairs(chatPlayers) do
+					if l == k and w == player then
+						result = true return true
+					end
+				end
+			end
+			if k == 5 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
+		end
+		table.insert(chatLines, msg)
+		table.insert(chatPlayers, player)
+		--END: Text buffer
 	end
-	msg = lower(msg) --Lower all text, remove capitals
-	msg = rep(msg, " ", "") --Remove spaces
-	msg = rep(msg, ",", ".") --Convert commas to periods
+	msg = (msg):lower() --Lower all text, remove capitals
+	msg = strreplace(msg, " ", "") --Remove spaces
+	msg = strreplace(msg, ",", ".") --Convert commas to periods
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", raw, player) end --Debug
+			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", chatLines[#chatLines], player) end --Debug
 			local time = GetTime()
 			if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 				prevReportTime = time
 				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 				if _G.BADBOY_POPUP then --Manual reporting via popup
 					--Add original spam line to Blizzard popup message
-					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. rep(raw, "%", "%%")
+					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(chatLines[#chatLines], "%", "%%")
 					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 					dialog.data = lineId
 				else
