@@ -164,6 +164,7 @@ local triggers = {
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
 	"%d%d+.*%Ww+%.k4gold%.com%W", --need Free[Plans: Titanium Razorplate][crusader orb] etcwe have alot kinds of recips and mats as a reward if u need g.15000+free mats=$112 with discount code"stock",welcome to<www.k4gold.com> dot come for more details.
 	"%Ww+%.k4gold%.com%W.*%d%d+", --Special Sales for Patch3.3: <www.K4GOLD.com> offers free ore and recipes for orders bigger than 10k, other ore and recipes are also available for your special need. Catch the Chance!
+	"skillcopper%.eu.*wow.*spectral", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
 local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = _G.COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
