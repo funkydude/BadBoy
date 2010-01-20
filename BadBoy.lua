@@ -17,13 +17,9 @@ local triggers = {
 	"%d%d%d+gjust[\194\165\194\163%$\226\130\172]%d+",
 	"%d%d%d+gjust%d+%.?%d*[\194\165\194\163%$\226\130\172]",
 	"%d%d%d+go?l?d?[/\92=]usd%d+",
-	"%d+go?l?d?[/\92=][\194\165\194\163%$\226\130\172]%d+",
 	"gold.*%d+[/\92=]%d+%.?%d*eu",
 	"%d+%.?%d*per%d%d%d+g.*gold",
 	"gold.*cheap.*safe",
-	"%d+.*wow.*gold.*for.*[\194\165\194\163%$\226\130\172]%d+",
-	".*%d+.*powerleveling%d%-%d+=%d+eur",
-	"[\194\165\194\163%$\226\130\172]%d+%.?%d*for%d%d%d+g.*gold",
 	"wirhaben%d+kgoldaufdiesemserver", --deDE
 	"power%-?le?ve?l.*%d%d%d+g.*%d%d%d+g",
 	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
