@@ -1,6 +1,9 @@
 
 local triggers = {
 	--Phrases
+	"%d+eurfor%d%d%d+g",
+	"%d%d%d+g.?only.?%d%.?%d*eur",
+
 	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d%d%d+g",
 	"%d+%.?%d*eur?o?s?[/\92=]?p?e?r?%d%d%d+",
 	"%d+%.?%d*dollars?[/\92=]?p?e?r?%d%d%d+g",
@@ -154,8 +157,10 @@ local triggers = {
 	"happygolds.*gold.*gold", --31 October 09
 	"happygoldspointcom.*g", --31 October 09
 	"friend.*website.*gold4guild", --31 October 09
+	"friend.*website.*gg4g%.c", --27 January 09
 	"cheap.*wow.*gold.*brogame%.c", --31 October 09
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
+	"^%W+gg4g%.com%W+$", --27 January 09
 	"^www%.ignmax%.com$", --12 December 09
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
 	"%d%d+.*%Ww+%.k4gold%.com%W", --need Free[Plans: Titanium Razorplate][crusader orb] etcwe have alot kinds of recips and mats as a reward if u need g.15000+free mats=$112 with discount code"stock",welcome to<www.k4gold.com> dot come for more details.
