@@ -56,6 +56,9 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"free.*gold.*gold.*bonus", --ant to get free gold? just ask your friends to get some gold on <www.4WOWGOLD.c@m/special2> with your char name in Introduce char blank, then you can get 10% bonuses G from his order, more details to <www.4WOWGOLD.c@m/special2>
+	"discount.*gold.*cheap", -->>>>30% discount for all new customers! WoW Gold, Powerleveling, CD-Keys and much more! Cheaper than ever! Only at [MMOGGG.COM]
+	"offer.*free.*gold.*deliver", --Greeting! SusanExpress is offering 5% free gold for the coming Valentine's Day. (1k/$6.88) Delivery time from 30 minutes to several hours. Welcome to SusanExpress.?om, we are awaiting for you.
 	--In order to repay all WoW players better,SusanExpress reduced the price at 3.34eur/1K. Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com"
 	"reduced.*price.*best.*service", --In order to repay all WoW players better,SusanExpress reduced the price at 5.98$/1K. Furthermore,10% Bonus Gold is still existent! Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com
 	"promot[ei].*bonus.*gold", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.4WOWGOLD.c@m>  
@@ -162,6 +165,7 @@ local triggers = {
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
 	"^%W+gg4g%.com%W+$", --27 January 09
 	"^www%.ignmax%.com$", --12 December 09
+	"^%W+wowbuffet%.comisinsane%W+$", -->>>>>wowbuffet.com is insane! <<<<< --03 February 10
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
 	"%d%d+.*%Ww+%.k4gold%.com%W", --need Free[Plans: Titanium Razorplate][crusader orb] etcwe have alot kinds of recips and mats as a reward if u need g.15000+free mats=$112 with discount code"stock",welcome to<www.k4gold.com> dot come for more details.
 	"%Ww+%.k4gold%.com%W.*%d%d+", --Special Sales for Patch3.3: <www.K4GOLD.com> offers free ore and recipes for orders bigger than 10k, other ore and recipes are also available for your special need. Catch the Chance!
