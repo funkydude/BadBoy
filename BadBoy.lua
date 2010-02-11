@@ -3,6 +3,7 @@ local triggers = {
 	--Phrases
 	"%d+eurfor%d%d%d+g",
 	"%d%d%d+g.?only.?%d%.?%d*eur",
+	"%d+%.?%d*eurfuer%d%d%d+g", -->>>>1 EUR fuer 1000G?<<<
 
 	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d%d%d+g",
 	"%d+%.?%d*eur?o?s?[/\92=]?p?e?r?%d%d%d+",
@@ -56,6 +57,7 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"euro.*delivery.*service", --38.56 euro/10k, delivery in 15mins,24/7 service, more than 100000 faithful customers, McAfee Secure ,Welcome to www.storeingame.com
 	"free.*gold.*gold.*bonus", --ant to get free gold? just ask your friends to get some gold on <www.4WOWGOLD.c@m/special2> with your char name in Introduce char blank, then you can get 10% bonuses G from his order, more details to <www.4WOWGOLD.c@m/special2>
 	"discount.*gold.*cheap", -->>>>30% discount for all new customers! WoW Gold, Powerleveling, CD-Keys and much more! Cheaper than ever! Only at [MMOGGG.COM]
 	"offer.*free.*gold.*deliver", --Greeting! SusanExpress is offering 5% free gold for the coming Valentine's Day. (1k/$6.88) Delivery time from 30 minutes to several hours. Welcome to SusanExpress.?om, we are awaiting for you.
@@ -189,7 +191,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 					end
 				end
 			end
-			if k == 5 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
+			if k == 6 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
 		end
 		table.insert(chatLines, msg)
 		table.insert(chatPlayers, player)
@@ -198,6 +200,11 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
 	msg = strreplace(msg, ",", ".") --Convert commas to periods
+	--START: Art remover
+	if fnd(msg, "^%p+$") then
+		result = true return true
+	end
+	--END: Art remover
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", chatLines[#chatLines], player) end --Debug
