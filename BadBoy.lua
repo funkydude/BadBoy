@@ -182,6 +182,16 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
+	end
+	msg = (msg):lower() --Lower all text, remove capitals
+	msg = strreplace(msg, " ", "") --Remove spaces
+	msg = strreplace(msg, ",", ".") --Convert commas to periods
+	if event == "CHAT_MSG_CHANNEL" or event == "CHAT_MSG_YELL" then
+		--START: Art remover
+		if fnd(msg, "^%p+$") then
+			result = true return true
+		end
+		--END: Art remover
 		--START: 5 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 5
 		for k,v in ipairs(chatLines) do
 			if v == msg then
@@ -197,14 +207,6 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		table.insert(chatPlayers, player)
 		--END: Text buffer
 	end
-	msg = (msg):lower() --Lower all text, remove capitals
-	msg = strreplace(msg, " ", "") --Remove spaces
-	msg = strreplace(msg, ",", ".") --Convert commas to periods
-	--START: Art remover
-	if fnd(msg, "^%p+$") then
-		result = true return true
-	end
-	--END: Art remover
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", chatLines[#chatLines], player) end --Debug
