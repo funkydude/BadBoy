@@ -183,6 +183,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
 	end
+	local debug = msg
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
 	msg = strreplace(msg, ",", ".") --Convert commas to periods
@@ -209,14 +210,14 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	end
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", chatLines[#chatLines], player) end --Debug
+			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", debug, player) end --Debug
 			local time = GetTime()
 			if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 				prevReportTime = time
 				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 				if _G.BADBOY_POPUP then --Manual reporting via popup
 					--Add original spam line to Blizzard popup message
-					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(chatLines[#chatLines], "%", "%%")
+					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
 					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 					dialog.data = lineId
 				else
