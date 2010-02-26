@@ -183,32 +183,31 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
+		if not UnitInRaid(player) and not UnitInParty(player) then result = nil return end --Don't try macro/filter raid/party members
 	end
 	local debug = msg
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
 	msg = strreplace(msg, ",", ".") --Convert commas to periods
-	if event == "CHAT_MSG_CHANNEL" or event == "CHAT_MSG_YELL" then
-		--START: Art remover
-		if fnd(msg, "^%p+$") then
-			result = true return true
-		end
-		--END: Art remover
-		--START: 5 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 5
-		for k,v in ipairs(chatLines) do
-			if v == msg then
-				for l,w in ipairs(chatPlayers) do
-					if l == k and w == player then
-						result = true return true
-					end
+	--START: Art remover
+	if fnd(msg, "^%p+$") then
+		result = true return true
+	end
+	--END: Art remover
+	--START: 5 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 5
+	for k,v in ipairs(chatLines) do
+		if v == msg then
+			for l,w in ipairs(chatPlayers) do
+				if l == k and w == player then
+					result = true return true
 				end
 			end
-			if k == 6 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
 		end
-		table.insert(chatLines, msg)
-		table.insert(chatPlayers, player)
-		--END: Text buffer
+		if k == 6 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
 	end
+	table.insert(chatLines, msg)
+	table.insert(chatPlayers, player)
+	--END: Text buffer
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
 			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", debug, player) end --Debug
