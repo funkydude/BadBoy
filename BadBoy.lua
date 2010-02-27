@@ -183,7 +183,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
-		if not UnitInRaid(player) and not UnitInParty(player) then result = nil return end --Don't try macro/filter raid/party members
+		if UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't try macro/filter raid/party members
 	end
 	local debug = msg
 	msg = (msg):lower() --Lower all text, remove capitals
