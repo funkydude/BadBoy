@@ -63,6 +63,7 @@ local triggers = {
 	"offer.*free.*gold.*deliver", --Greeting! SusanExpress is offering 5% free gold for the coming Valentine's Day. (1k/$6.88) Delivery time from 30 minutes to several hours. Welcome to SusanExpress.?om, we are awaiting for you.
 	--In order to repay all WoW players better,SusanExpress reduced the price at 3.34eur/1K. Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com"
 	"reduced.*price.*best.*service", --In order to repay all WoW players better,SusanExpress reduced the price at 5.98$/1K. Furthermore,10% Bonus Gold is still existent! Please grasp the chance, we will continue providing the best service for you. Welcome to www.SusanExpress.Com
+	"gold.*customer.*low.*price", --Hi from SusanExpress.Com. Not all that glitters is gold, so make sure you have some extra change in your pocket. In gratitude to our customers old & new, we continue to provide the lowest price (1K/$7.88) within 30 mins to a few hrs
 	"promot[ei].*bonus.*gold", --Big promotion:we have hot new deals that you never see anywhere else,purchase g will get you mats or recipes for bonus. 15K-25K get ore ,35K get recipes,50K will get you ore and recipes.Welcome to <www.4WOWGOLD.c@m>  
 	--Sales Promotion Activities for Christmas. Price declined to $5.98/k, Visit ThIGe.(@m to enjoy 15 mins of delivery. Use code: CMAS to enjoy 10% free gold with your order! ThIGe.(om Now!
 	"price.*deliver.*gold", --Free Gold for Christmas:<uGuysGold.c0m> beats other sites with cheap price(1000G==EUR3.85 =USD5.77),  5% extra free gold, and Instant delivery.  We are trustworthy and professional. Google uGuysGold to find our reputation and  take your G0ld  now :)
@@ -119,7 +120,9 @@ local triggers = {
 	"become.*lucky.*player.*free.*motor.*log", --Hi. You have become the lucky players, will receive free a motorcycle. please log in:XYZ
 	"become.*blizz.*customer.*gift.*reg", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Mystery Gift, registered address: XYZ
 	"claim.*free.*time.*warcraft.*free", --Hi,Claim Your Free Game Time!One or more of your World of Warcraft licenses are eligible for 70 free days of game time! please log in:XYZ
-	"warcraft.*account.*suspended.*info", --Your world of warcraft account has been temporarily suspended. go to  [www.us.battle-world.com] for further information.......
+	"warcraft.*account.*suspended.*info", --Your world of warcraft account has been temporarily suspended. go to  [XYZ] for further information.......
+	"blizz.*launch.*free.*now.*log", --#Hey! Blizzard is to launch Free unicorn zebra, Get Now please log in : [XYZ] .^#
+	"system.*pumping.*lucky.*player.*info", --Hello, you have been system Pumping To the lucky player ,For more informationplease log in: [XYZ]
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
