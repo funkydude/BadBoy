@@ -193,7 +193,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = strreplace(msg, " ", "") --Remove spaces
 	msg = strreplace(msg, ",", ".") --Convert commas to periods
 	--START: Art remover
-	if fnd(msg, "^%p+$") then
+	if fnd(msg, "^%p%p%p%p+$") then
 		result = true return true
 	end
 	--END: Art remover
