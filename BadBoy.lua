@@ -57,6 +57,8 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"gold.*stock.*sale", --[www.comewow.com] Coupon code "LOVE" 6$ per 1k gold, with thousands of stock on every server;Powerlevel 70-80 is only $89;Level 80 toons sells at $150;Go for the Best on-line Service on [www.comewow.com] with a great variety of armors for sale.
+	"gold.*cheap.*fast.*gold", --Happy to buy the gold!old brand provide the cheapest,fastest gold for you <WWW.VIPKINA.C0M> with the dis code:vipkinas,1.1k wow money only sell 7 dollars, come come come to : <WWW.VIPKINA.C0M>
 	"euro.*delivery.*service", --38.56 euro/10k, delivery in 15mins,24/7 service, more than 100000 faithful customers, McAfee Secure ,Welcome to www.storeingame.com
 	"free.*gold.*gold.*bonus", --ant to get free gold? just ask your friends to get some gold on <www.4WOWGOLD.c@m/special2> with your char name in Introduce char blank, then you can get 10% bonuses G from his order, more details to <www.4WOWGOLD.c@m/special2>
 	"discount.*gold.*cheap", -->>>>30% discount for all new customers! WoW Gold, Powerleveling, CD-Keys and much more! Cheaper than ever! Only at [MMOGGG.COM]
@@ -123,6 +125,7 @@ local triggers = {
 	"warcraft.*account.*suspended.*info", --Your world of warcraft account has been temporarily suspended. go to  [XYZ] for further information.......
 	"blizz.*launch.*free.*now.*log", --#Hey! Blizzard is to launch Free unicorn zebra, Get Now please log in : [XYZ] .^#
 	"system.*pumping.*lucky.*player.*info", --Hello, you have been system Pumping To the lucky player ,For more informationplease log in: [XYZ]
+	"warcraft.*blizzard.*scan.*account.*safety", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
