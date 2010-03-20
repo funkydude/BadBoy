@@ -4,6 +4,8 @@ local triggers = {
 	"%d+eurfor%d%d%d+g",
 	"%d%d%d+g.?only.?%d%.?%d*eur",
 	"%d+%.?%d*eurfuer%d%d%d+g", -->>>>1 EUR fuer 1000G?<<<
+	"%d+%.?%d*eurf\195\188r%d%d%d+g", -->>>>>1 EUR fur 1000G?<<<<<
+	"%d+%.?%d*gbpfor%d%d%d+g", -->>>>> 1 GPB for 1000G <<<<<
 
 	"%d+%.?%d*pounds?[/\92=]?p?e?r?%d%d%d+g",
 	"%d+%.?%d*eur?o?s?[/\92=]?p?e?r?%d%d%d+",
@@ -57,6 +59,8 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"promotion.*discount.*gold", --www.********** dot com invites u to join our crazy promotion, 7$=1000g,and " dear2010 " is ur diamond discount code, everyone can get the gold in short tiem if u visit www.********** dot com
+	"livraison.*service.*secure", --frFR 39.99 euro/10k, Livraison en 15 minutes, 24/7 service, plus de 100000 clients fideles, McAfee Secure ,Bienvenue *  [www.storeingame.com]
 	"gold.*stock.*sale", --[www.comewow.com] Coupon code "LOVE" 6$ per 1k gold, with thousands of stock on every server;Powerlevel 70-80 is only $89;Level 80 toons sells at $150;Go for the Best on-line Service on [www.comewow.com] with a great variety of armors for sale.
 	"gold.*cheap.*fast.*gold", --Happy to buy the gold!old brand provide the cheapest,fastest gold for you <WWW.VIPKINA.C0M> with the dis code:vipkinas,1.1k wow money only sell 7 dollars, come come come to : <WWW.VIPKINA.C0M>
 	"euro.*delivery.*service", --38.56 euro/10k, delivery in 15mins,24/7 service, more than 100000 faithful customers, McAfee Secure ,Welcome to www.storeingame.com
@@ -127,6 +131,7 @@ local triggers = {
 	"system.*pumping.*lucky.*player.*info", --Hello, you have been system Pumping To the lucky player ,For more informationplease log in: [XYZ]
 	"warcraft.*blizzard.*scan.*account.*safety", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]
 	"celebrate.*blizzard.*warcraft.*gift.*log", --Hello, To celebrate the Blizzard anniversary, World of Warcraft released gifts players can receive free of charge, please log in; [XYZ]
+	"blizzard.*offer.*free.*riding.*log", --Hi, Bizzard Enterainment offers you one time free rare riding chance. Now take it , please login:[XYZ]
 
 	--Lvl 1 whisperers
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
