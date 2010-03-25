@@ -59,6 +59,9 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	--enUS :39.99 euro/10k,delivery within 15 mins, 24/7 service, more than 100.000 loyal customers,McAfee Secure ! Welcome at [www.storeingame.com]
+	"lieferung.*service.*secure", --frFR :39.99 euro/10k,lieferung innerhalb vor 15 mins, 24/7 service, mehr als 100.000 treuen Kunden,McAfee Secure ! Willkommen bei [www.storeingame.com]
+	"safe.*fast.*deliver.*bank", --Safely fast delivery 1000=$4 only Check our website [www.game1313.org] for more information Already got some in our bank can trade now in this sever All sever will delivery in one minute im sry for bother here
 	"promotion.*discount.*gold", --www.********** dot com invites u to join our crazy promotion, 7$=1000g,and " dear2010 " is ur diamond discount code, everyone can get the gold in short tiem if u visit www.********** dot com
 	"livraison.*service.*secure", --frFR 39.99 euro/10k, Livraison en 15 minutes, 24/7 service, plus de 100000 clients fideles, McAfee Secure ,Bienvenue *  [www.storeingame.com]
 	"gold.*stock.*sale", --[www.comewow.com] Coupon code "LOVE" 6$ per 1k gold, with thousands of stock on every server;Powerlevel 70-80 is only $89;Level 80 toons sells at $150;Go for the Best on-line Service on [www.comewow.com] with a great variety of armors for sale.
@@ -134,6 +137,7 @@ local triggers = {
 	"blizzard.*offer.*free.*riding.*log", --Hi, Bizzard Enterainment offers you one time free rare riding chance. Now take it , please login:[XYZ]
 
 	--Lvl 1 whisperers
+	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
 	".*%d+.*lfggameteam.*", --actually we have 10kg in stock from Lfggame team ,do you want some?
 	"gold.*stock.*%d+.*min.*delivery.*buy.*gold", --hey,sry to bother,we have gold in stock,10-30mins delivery time. u wanna buy some gold today ?:)
 	"gold.*server.*%d+.*stock.*buy", --Excuse me, i have sold 10k gold on this server, 22k left in stock right now, do you wanna buy some today?, 20-30mins delivery:)
