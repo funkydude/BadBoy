@@ -59,6 +59,7 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"gold.*order.*free.*gold", --welcome to < www.4wowgold.c@m>,when you introduce friends to our site ordering with your character name,you can enjoy about 15% free gold according to your friends' order amount
 	--enUS :39.99 euro/10k,delivery within 15 mins, 24/7 service, more than 100.000 loyal customers,McAfee Secure ! Welcome at [www.storeingame.com]
 	"lieferung.*service.*secure", --frFR :39.99 euro/10k,lieferung innerhalb vor 15 mins, 24/7 service, mehr als 100.000 treuen Kunden,McAfee Secure ! Willkommen bei [www.storeingame.com]
 	"safe.*fast.*deliver.*bank", --Safely fast delivery 1000=$4 only Check our website [www.game1313.org] for more information Already got some in our bank can trade now in this sever All sever will delivery in one minute im sry for bother here
@@ -135,6 +136,7 @@ local triggers = {
 	"warcraft.*blizzard.*scan.*account.*safety", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]
 	"celebrate.*blizzard.*warcraft.*gift.*log", --Hello, To celebrate the Blizzard anniversary, World of Warcraft released gifts players can receive free of charge, please log in; [XYZ]
 	"blizzard.*offer.*free.*riding.*log", --Hi, Bizzard Enterainment offers you one time free rare riding chance. Now take it , please login:[XYZ]
+	"you.*obtain.*mount.*blizzard.*info", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. For more information, please visit [XYZ]
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
