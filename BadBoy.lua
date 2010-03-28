@@ -177,6 +177,8 @@ local triggers = {
 	"price.*gold.*fast.*d[ei]liver", --Sorry to bother you .Do you want to buy gold today ?We give the best price and safest gold and fastest delivery .Only takes 5-10mins? ^^
 
 	--Advanced URL's
+	"^%W+osteraktionvonmmoggg%W+$", --temp
+	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l", --31 October 09
 	"happygolds.*gold.*gold", --31 October 09
 	"happygoldspointcom.*g", --31 October 09
