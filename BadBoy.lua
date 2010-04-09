@@ -59,6 +59,7 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"fast.*stock.*deliver.*gold", --Welcome to  [www.FesGame.com] Fast-Easy-Safe.full stock.Deliver in  20min.E29.99=10000+1000 now.!Select you Gold and P0werLeveling!Thanks for your attention!
 	"gold.*order.*free.*gold", --welcome to < www.4wowgold.c@m>,when you introduce friends to our site ordering with your character name,you can enjoy about 15% free gold according to your friends' order amount
 	--enUS :39.99 euro/10k,delivery within 15 mins, 24/7 service, more than 100.000 loyal customers,McAfee Secure ! Welcome at [www.storeingame.com]
 	"lieferung.*service.*secure", --frFR :39.99 euro/10k,lieferung innerhalb vor 15 mins, 24/7 service, mehr als 100.000 treuen Kunden,McAfee Secure ! Willkommen bei [www.storeingame.com]
@@ -138,6 +139,7 @@ local triggers = {
 	"enter.*offer.*free.*riding.*log", --Hi, Bizzard Enterainment offers you one time free rare riding chance. Now take it , please login:[XYZ]
 	"you.*obtain.*mount.*blizzard.*info", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. For more information, please visit [XYZ]
 	"congrat.*present.*blizz.*gold.*please", --Hi! congratulations on being presented by Blizzard of 3500 gold, please log in to recieve: XYZ
+	"you.*account.*temp.*disabled.*info", --Your account will be temporarily disabled.Please visit [XYZ] for more information
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -176,10 +178,12 @@ local triggers = {
 	"buy.*cheap.*gold.*eur.*bother", --Hi, would you like to buy some cheap gold (6.99euro/1k) today :) if not, sorry to bother you, have fun!
 	"buy.*gold.*low.*price.*disturb", --Hi, would you like to buy some gold at a low price today? 1000g costs 6.99 euro. If not, just ignore me. :P Sorry to disturb, thanks and have a nice day!
 	"price.*gold.*fast.*d[ei]liver", --Sorry to bother you .Do you want to buy gold today ?We give the best price and safest gold and fastest delivery .Only takes 5-10mins? ^^
+	"stock.*sell.*deliver.*buy", --I'm from pickgoldup,we got 24.5k g in stock to sell, 15 mis to deliver ,do you wana buy some now?:)
 
 	--Advanced URL's
 	"^%W+osteraktionvonmmoggg%W+$", --temp
 	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
+	"^%W+mmo4store%.com%W+$", --======<< [mmo4store.com] >>======
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l", --31 October 09
 	"happygolds.*gold.*gold", --31 October 09
 	"happygoldspointcom.*g", --31 October 09
