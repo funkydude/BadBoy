@@ -139,6 +139,8 @@ local triggers = {
 	"you.*obtain.*mount.*blizzard.*info", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. For more information, please visit [XYZ]
 	"congrat.*present.*blizz.*gold.*please", --Hi! congratulations on being presented by Blizzard of 3500 gold, please log in to recieve: XYZ
 	"you.*account.*temp.*disabled.*info", --Your account will be temporarily disabled.Please visit [XYZ] for more information
+	"congratu.*cata.*beta.*invitation.*activate", --Congratulations! You've got a WOW Cataclysm Beta Invitation. Please visit XYZ to activate your account.
+	"congratu.*shirt.*world.*warcraft.*prize", --Hello. Congratulations, you get a T shirt for World of Warcraft. Want to know prizes, please visit the Forum: XYZ
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -180,6 +182,8 @@ local triggers = {
 	"stock.*sell.*deliver.*buy", --I'm from pickgoldup,we got 24.5k g in stock to sell, 15 mis to deliver ,do you wana buy some now?:)
 
 	--Advanced URL's
+	"^%W+mmoggg%.de%W+$", --11 April 10
+	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
 	"^%W+osteraktionvonmmoggg%W+$", --temp
 	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
 	"^%W+mmo4store%.com%W+$", --======<< [mmo4store.com] >>======
