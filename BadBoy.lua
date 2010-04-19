@@ -193,6 +193,7 @@ local triggers = {
 	"happygoldspointcom.*g", --31 October 09
 	"friend.*website.*gold4guild", --31 October 09
 	"friend.*website.*gg4g%.c", --27 January 09
+	"friend.*website.*wowseller.com", --18 April 10  (yeah they use "," in the url so "." in pattern, not "%.")
 	"cheap.*wow.*gold.*brogame%.c", --31 October 09
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
 	"^%W+gg4g%.com%W+$", --27 January 09
@@ -203,6 +204,11 @@ local triggers = {
 	"%W?w+%.k4gold%.com%W.*%d%d+", --Special Sales for Patch3.3: <www.K4GOLD.com> offers free ore and recipes for orders bigger than 10k, other ore and recipes are also available for your special need. Catch the Chance!
 	"skillcopper%.eu.*wow.*spectral", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
+
+local _G = _G
+local ipairs,table,strreplace = ipairs,table,strreplace
+local UnitInRaid,UnitInParty = UnitInRaid,UnitInParty
+-- GLOBALS: print, SetCVar, GetTime
 
 local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = _G.COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
