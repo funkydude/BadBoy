@@ -142,6 +142,7 @@ local triggers = {
 	"blizz.*account.*warcraft.*catac.*beta", --hello,Blizzard Entertainment notifies you that your account has been chosen to participate in World of Warcraft Cataclysm beta test. For more information please visit  [XYZ]
 	--enUS Congratulations you will become a happy player, you will get a free trial version of the new Blizzard 310% Invincible Ghost flying mount, 24 hours, please register now: XYZ
 	"spieler.*testversion.*blizz.*invincible.*ghost", --deDE Herzlichen Gluckwunsch Sie werden gluckliche Spieler, werden Sie eine kostenlose Testversion erhalten neuesten Blizzard 310% Invincible Ghost fliegende Reittiere, 24 Stunden, bitte jetzt anmelden: XYZ
+	"blizz.*launch.*mount.*trial.*info", --Hi, Blizzard is about to launch a new mounts, Free trial, For more information, please log in: XYZ
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -193,7 +194,7 @@ local triggers = {
 	"happygoldspointcom.*g", --31 October 09
 	"friend.*website.*gold4guild", --31 October 09
 	"friend.*website.*gg4g%.c", --27 January 09
-	"friend.*website.*wowseller.com", --18 April 10  (yeah they use "," in the url so "." in pattern, not "%.")
+	"friend.*website.*wowseller%.c", --18 April 10
 	"cheap.*wow.*gold.*brogame%.c", --31 October 09
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
 	"^%W+gg4g%.com%W+$", --27 January 09
@@ -205,19 +206,14 @@ local triggers = {
 	"skillcopper%.eu.*wow.*spectral", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
-local _G = _G
-local ipairs,table,strreplace = ipairs,table,strreplace
-local UnitInRaid,UnitInParty = UnitInRaid,UnitInParty
--- GLOBALS: print, SetCVar, GetTime
-
-local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = _G.COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
+local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-		if not _G.CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
+		if not CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
 		if UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't try macro/filter raid/party members
 	end
 	local debug = msg
@@ -229,7 +225,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		result = true return true
 	end
 	--END: Art remover
-	--START: 5 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 5
+	--START: 6 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 6
 	for k,v in ipairs(chatLines) do
 		if v == msg then
 			for l,w in ipairs(chatPlayers) do
@@ -245,18 +241,18 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	--END: Text buffer
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if _G.BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", debug, player) end --Debug
+			if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", v, " - ", debug, player) end --Debug
 			local time = GetTime()
 			if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 				prevReportTime = time
-				_G.COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-				if _G.BADBOY_POPUP then --Manual reporting via popup
+				COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
+				if BADBOY_POPUP then --Manual reporting via popup
 					--Add original spam line to Blizzard popup message
-					_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
-					local dialog = _G.StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+					StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
+					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 					dialog.data = lineId
 				else
-					_G.ComplainChat(lineId) --Automatically report
+					ComplainChat(lineId) --Automatically report
 				end
 			end
 			result = true
@@ -278,13 +274,13 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 	if msg == orig then
 		return --Manual spam report, back down
-	elseif msg == _G.COMPLAINT_ADDED then
-		_G.COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
-		if _G.BADBOY_POPUP then
+	elseif msg == COMPLAINT_ADDED then
+		COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
+		if BADBOY_POPUP then
 			--Reset popup message to default for manual reporting
-			_G.StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = _G.REPORT_SPAM_CONFIRMATION
+			StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION
 		end
-		if _G.BADBOY_SILENT then
+		if BADBOY_SILENT then
 			return true --Filter out the report if enabled
 		end
 	else
