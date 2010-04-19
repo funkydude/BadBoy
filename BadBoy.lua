@@ -206,6 +206,7 @@ local triggers = {
 	"skillcopper%.eu.*wow.*spectral", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
+-- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, table, UnitInParty, UnitInRaid, ComplainChat, CanComplainChat
 local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
