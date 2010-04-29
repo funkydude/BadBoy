@@ -59,7 +59,9 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
-	"%d%d%d%d+g.*deliver.*discount", --Dear %t,WWW.Gamesky2,CQM,10000G/$29,5-30 minutes delivery!30% Discount Code:100002 Pw:12345 lvl 70-80/$37.99.100K Honor Points $34.99 WWW.Gamesky2,CQM! [25]
+	"safe.*deliver.*low.*price", --Your trustable friend <IGS.COM> comes again with the instant&safe delivery of g in lowest price as usual. 1000G=$4.53 !!!
+	--Dear >%t<,WWW.Gamesky2,COM, Happy Labor Day! 11000G/$29, over 20k plus 20% bonus! 5-30 minutes delivery! lvl 70-80/$37.99.100K Honor Points $34.99 WWW.Gamesky2,COM! [26]
+	"%d%d%d%d+g.*deliver.*honor", --Dear %t,WWW.Gamesky2,CQM,10000G/$29,5-30 minutes delivery!30% Discount Code:100002 Pw:12345 lvl 70-80/$37.99.100K Honor Points $34.99 WWW.Gamesky2,CQM! [25]
 	"fast.*stock.*deliver.*gold", --Welcome to  [www.FesGame.com] Fast-Easy-Safe.full stock.Deliver in  20min.E29.99=10000+1000 now.!Select you Gold and P0werLeveling!Thanks for your attention!
 	"gold.*order.*free.*gold", --welcome to < www.4wowgold.c@m>,when you introduce friends to our site ordering with your character name,you can enjoy about 15% free gold according to your friends' order amount
 	--enUS :39.99 euro/10k,delivery within 15 mins, 24/7 service, more than 100.000 loyal customers,McAfee Secure ! Welcome at [www.storeingame.com]
@@ -199,6 +201,7 @@ local triggers = {
 	"friend.*website.*wowseller%.c", --18 April 10
 	"cheap.*wow.*gold.*brogame%.c", --31 October 09
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
+	"^%W+w*%.?wowseller%.c[o0]m%W+$", --18 April 10
 	"^%W+gg4g%.com%W+$", --27 January 09
 	"^www%.ignmax%.com$", --12 December 09
 	"^%W+wowbuffet%.comisinsane%W+$", -->>>>>wowbuffet.com is insane! <<<<< --03 February 10
@@ -223,11 +226,6 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
 	msg = strreplace(msg, ",", ".") --Convert commas to periods
-	--START: Art remover
-	if fnd(msg, "^%p%p%p%p+$") then
-		result = true return true
-	end
-	--END: Art remover
 	--START: 6 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 6
 	for k,v in ipairs(chatLines) do
 		if v == msg then
@@ -262,6 +260,11 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			return true
 		end
 	end
+	--START: Art remover
+	if fnd(msg, "^%p%p%p%p+$") then
+		result = true return true
+	end
+	--END: Art remover
 	result = nil
 end
 

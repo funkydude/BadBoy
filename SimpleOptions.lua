@@ -12,11 +12,14 @@ do
 		locNoReportMsg = "Cacher le message '%s'"
 		locManualReport = "Désactiver le signalement auto. du spam (affiche un popup)"
 	elseif L == "deDE" then
-		locNoReportMsg = "'%s' Meldung verstecken"
-		locManualReport = "Automatisches Spam melden deaktivieren (Popup anzeigen)"
+		locNoReportMsg = "'%s' Meldung verbergen"
+		locManualReport = "Automatische Spam-Meldungen deaktivieren (Pop-Up anzeigen)"
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏 '%s' 信息"
 		locManualReport = "禁用信息自動過濾系統(顯示彈出)"
+	elseif L == "zhCN" then
+		locNoReportMsg = "隐藏 '%s' 信息"
+		locManualReport = "禁用信息自动过滤系统(显示弹出)"
 	elseif L == "esES" or L == "esMX" then
 		locNoReportMsg = "Ocultar el mensaje '%s'"
 		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
