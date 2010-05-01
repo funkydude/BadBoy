@@ -59,6 +59,7 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"safe.*cheap.*gold.*stock", --The safest and cheapest gold come from the biggest gold stock: [MINEWOW.com]. 10k gold only for $41.99 use code:COFII. For the gold are all sufficient stock in all the servers,you will get your gold as the fastest speed. Today's stock: 670K
 	"safe.*deliver.*low.*price", --Your trustable friend <IGS.COM> comes again with the instant&safe delivery of g in lowest price as usual. 1000G=$4.53 !!!
 	--Dear >%t<,WWW.Gamesky2,COM, Happy Labor Day! 11000G/$29, over 20k plus 20% bonus! 5-30 minutes delivery! lvl 70-80/$37.99.100K Honor Points $34.99 WWW.Gamesky2,COM! [26]
 	"%d%d%d%d+g.*deliver.*honor", --Dear %t,WWW.Gamesky2,CQM,10000G/$29,5-30 minutes delivery!30% Discount Code:100002 Pw:12345 lvl 70-80/$37.99.100K Honor Points $34.99 WWW.Gamesky2,CQM! [25]
@@ -147,6 +148,7 @@ local triggers = {
 	"spieler.*testversion.*blizz.*invincible.*ghost", --deDE Herzlichen Gluckwunsch Sie werden gluckliche Spieler, werden Sie eine kostenlose Testversion erhalten neuesten Blizzard 310% Invincible Ghost fliegende Reittiere, 24 Stunden, bitte jetzt anmelden: XYZ
 	"blizz.*launch.*mount.*trial.*info", --Hi, Blizzard is about to launch a new mounts, Free trial, For more information, please log in: XYZ
 	"you.*drawn.*system.*gift.*steed", --Hello,you are drawn in the system to receive your gift.Please visit: [XYZ] Celestial Steed will be yours.
+	"blizz.*system.*account.*violation.*trading", --Hello! Blizzard game system scan to your game account, a violation of rules of the game's virtual currency trading! Please visit our website [XYZ] review your account information, or we will suspend your account.
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
