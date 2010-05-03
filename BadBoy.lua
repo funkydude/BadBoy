@@ -149,6 +149,9 @@ local triggers = {
 	"blizz.*launch.*mount.*trial.*info", --Hi, Blizzard is about to launch a new mounts, Free trial, For more information, please log in: XYZ
 	"you.*drawn.*system.*gift.*steed", --Hello,you are drawn in the system to receive your gift.Please visit: [XYZ] Celestial Steed will be yours.
 	"blizz.*system.*account.*violation.*trading", --Hello! Blizzard game system scan to your game account, a violation of rules of the game's virtual currency trading! Please visit our website [XYZ] review your account information, or we will suspend your account.
+	"thank.*support.*warcraft.*blizz.*steed", --Hello. To thank you for your support for World of Warcraft. Blizzard will be giving your horse a celestial steed.Receiving please visit: XYZ
+	"hallo.*system.*gift.*steed.*erhalten", --Hallo, sind Sie in das System gezogen, um Ihren Besuch gift.Please: XYZ Celestial Steed erhalten verkaufen werden
+	"spieler.*netz.*warcraft.*blizz.*kompensation", --Liebe Spieler, weil das Netz der World of Warcraft gebrochen hatte, entschied sich Blizzard zu geben, jeder Spieler gewisse Kompensation. Bitte besuchen Sie: XYZ und erhalten einen Ausgleich fur Waren.
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
