@@ -155,6 +155,7 @@ local triggers = {
 	"hallo.*system.*gift.*steed.*erhalten", --Hallo, sind Sie in das System gezogen, um Ihren Besuch gift.Please: XYZ Celestial Steed erhalten verkaufen werden
 	"spieler.*netz.*warcraft.*blizz.*kompensation", --Liebe Spieler, weil das Netz der World of Warcraft gebrochen hatte, entschied sich Blizzard zu geben, jeder Spieler gewisse Kompensation. Bitte besuchen Sie: XYZ und erhalten einen Ausgleich fur Waren.
 	"master.*konto.*deaktiviert.*besuchen.*informationen", --Hallo! Game Master(GM) whispers: Ihr Konto wird vorubergehend [deaktiviert.Bitte] besuchen [XYZ] fur weitere Informationen
+	"obtain.*mount.*blizzard.*receive.*submit", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ and submit your email.
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -200,6 +201,7 @@ local triggers = {
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
 	"^%W+osteraktionvonmmoggg%W+$", --temp
 	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
+	"^%W+mai%-aktionvonmmoggg%W+$", --temp
 	"^%W+mmo4store%.com%W+$", --======<< [mmo4store.com] >>======
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l", --31 October 09
 	"happygolds.*gold.*gold", --31 October 09
