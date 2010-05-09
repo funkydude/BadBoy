@@ -59,6 +59,8 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"deliver.*game.*info.*gift.*server", --Deliver in 5-10 mins make you are the best in game come to <www.game1313.org> for more information $3.98/1000+5% gift got some ready in this sever can deliver now im sry for bother here
+	"gold.*deliver.*gold.*order", --hello,welcome to [WWW.PANNINGWOW.COM], 10k gold only EUR 23 ,We can delivery your gold wow on the order in a short while. please remember our website  [http://www.panningwow.com]
 	"safe.*cheap.*gold.*stock", --The safest and cheapest gold come from the biggest gold stock: [MINEWOW.com]. 10k gold only for $41.99 use code:COFII. For the gold are all sufficient stock in all the servers,you will get your gold as the fastest speed. Today's stock: 670K
 	"safe.*deliver.*low.*price", --Your trustable friend <IGS.COM> comes again with the instant&safe delivery of g in lowest price as usual. 1000G=$4.53 !!!
 	--Dear >%t<,WWW.Gamesky2,COM, Happy Labor Day! 11000G/$29, over 20k plus 20% bonus! 5-30 minutes delivery! lvl 70-80/$37.99.100K Honor Points $34.99 WWW.Gamesky2,COM! [26]
@@ -152,6 +154,7 @@ local triggers = {
 	"thank.*support.*warcraft.*blizz.*steed", --Hello. To thank you for your support for World of Warcraft. Blizzard will be giving your horse a celestial steed.Receiving please visit: XYZ
 	"hallo.*system.*gift.*steed.*erhalten", --Hallo, sind Sie in das System gezogen, um Ihren Besuch gift.Please: XYZ Celestial Steed erhalten verkaufen werden
 	"spieler.*netz.*warcraft.*blizz.*kompensation", --Liebe Spieler, weil das Netz der World of Warcraft gebrochen hatte, entschied sich Blizzard zu geben, jeder Spieler gewisse Kompensation. Bitte besuchen Sie: XYZ und erhalten einen Ausgleich fur Waren.
+	"master.*konto.*deaktiviert.*besuchen.*informationen", --Hallo! Game Master(GM) whispers: Ihr Konto wird vorubergehend [deaktiviert.Bitte] besuchen [XYZ] fur weitere Informationen
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
