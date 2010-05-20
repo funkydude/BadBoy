@@ -59,6 +59,8 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"welcome.*gold.*service.*cheap.*price", --Welcome to WWW.4WOWGOLD.C@M.,excellent service with cheapest price, 2000G for about 4GBP with big surprise. Best wishes!
+	"gold.*gold.*server.*deliver", --10,000 Gold for 16.14 Pounds! More than 100,000 Gold On This server! Delivery within 10 mins! www.cyawow.com
 	"gold.*server.*deliver.*welcome", --Hi,Have 150K Gold On This server!Only 16.14Pounds per 10K GOld!Delivery within 10mins!Welcome to www.cyawow.com!
 	"deliver.*game.*info.*gift.*server", --Deliver in 5-10 mins make you are the best in game come to <www.game1313.org> for more information $3.98/1000+5% gift got some ready in this sever can deliver now im sry for bother here
 	"gold.*deliver.*gold.*order", --hello,welcome to [WWW.PANNINGWOW.COM], 10k gold only EUR 23 ,We can delivery your gold wow on the order in a short while. please remember our website  [http://www.panningwow.com]
@@ -197,6 +199,7 @@ local triggers = {
 	"buy.*gold.*low.*price.*disturb", --Hi, would you like to buy some gold at a low price today? 1000g costs 6.99 euro. If not, just ignore me. :P Sorry to disturb, thanks and have a nice day!
 	"price.*gold.*fast.*d[ei]liver", --Sorry to bother you .Do you want to buy gold today ?We give the best price and safest gold and fastest delivery .Only takes 5-10mins? ^^
 	"stock.*sell.*deliver.*buy", --I'm from pickgoldup,we got 24.5k g in stock to sell, 15 mis to deliver ,do you wana buy some now?:)
+	"need.*buy.*gold.*fast.*deliver", --Excuse me, just asking that do you need to buy some gold in fast delivery and nice price.:)
 
 	--Advanced URL's
 	"^%W+mmoggg%.de%W+$", --11 April 10
