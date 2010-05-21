@@ -59,6 +59,7 @@ local triggers = {
 	"you.*become.*blizzard.*gift.*add?res",
 	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	"safe.*fast.*gold.*service", --www. tgtimes. com >> Safe and Fast with gold services , the price is very cheap 10000g = 22 eruos, Huge stock, all goods are available, Deliver in 10 mins usualy. This is the right choice! Try please . WWW. TGTIMES. COM
 	"welcome.*gold.*service.*cheap.*price", --Welcome to WWW.4WOWGOLD.C@M.,excellent service with cheapest price, 2000G for about 4GBP with big surprise. Best wishes!
 	"gold.*gold.*server.*deliver", --10,000 Gold for 16.14 Pounds! More than 100,000 Gold On This server! Delivery within 10 mins! www.cyawow.com
 	"gold.*server.*deliver.*welcome", --Hi,Have 150K Gold On This server!Only 16.14Pounds per 10K GOld!Delivery within 10mins!Welcome to www.cyawow.com!
@@ -160,6 +161,8 @@ local triggers = {
 	"master.*konto.*deaktiviert.*besuchen.*informationen", --Hallo! Game Master(GM) whispers: Ihr Konto wird vorubergehend [deaktiviert.Bitte] besuchen [XYZ] fur weitere Informationen
 	"obtain.*mount.*blizzard.*receive.*submit", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ and submit your email.
 	"player.*account.*complain.*info.*right", --Dear players, your account is complaints by other players, please visit account information site validate your information,or else will stop using your account's rights in one hour. warcraft account information site: XYZ
+	--enUS Support for world of warcraft. Blizzard will give you a Celestial Steed .To receive it, please visit: [XYZ]
+	"warcraft.*blizzard.*himmlischen.*steed.*receiv", --Unterstutzung fur World of Warcraft. Blizzard wird geben Ihrem Pferd einen Besuch bitte himmlischen [steed.Receiving]: [XYZ]
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
