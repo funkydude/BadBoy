@@ -28,9 +28,6 @@ local triggers = {
 	"gold.*cheap.*safe",
 	"wirhaben%d+kgoldaufdiesemserver", --deDE
 	"power%-?le?ve?l.*%d%d%d+g.*%d%d%d+g",
-	"wowgold.*low.*[\194\165\194\163%$\226\130\172]%d+%.?%d*[/\92]%d%d%d+",
-	"blizzard.*mount.*free.*trial.*log", --mount phishing
-	"blizzard.*einf\195\188hrung.*reittiere.*kostenlose.*testversion.*melde", --mount phishing deDE
 	"blizz.*kosten.*test.*info.*einlog", --deDE
 	"gold.*%d%d%d+g[/\92=]pounds?%d+.*gold",
 	"gold.*%d+k[/\92=]gbp%d%d+.*gold",
@@ -52,13 +49,17 @@ local triggers = {
 	"low.*price.*gold.*discount",
 	"cheap.*fast.*gold.*deliv",
 	"gold.*%d%d%d+g%W+%d+%.?%d*%$",
-	"%W+.*wow.*gold.*shop.*%W+",
 	"%d%d%d+gjust%d%.?%d*eu",
 	"gold.*low.*price.*%d+kg",
 	"discount.*buy.*gold.*coupon",
-	"you.*become.*blizzard.*gift.*add?res",
-	"mount.*server.*guys.*go.*app.*available",
 	"deliver.*buy.*gold.*fast",
+	--[www.tgtimes.com>>] sicher und schnell mit Gold-Dienstleistungen, der Preis sehr billig 10000g = 22 eruos, Grobes Lager ist, werden alle Waren verfugbar, Lieferung innerhalb von 10 Minuten. Dies ist die richtige Wahl! Versuchen Sie, bitte. WWW.TGTIM
+	"gold.*preis.*innerhalb", --:[[ 18 EUR/10000 WOW GOLD ]]  DE Acc. u. IP., Blitzlieferung, Paypal / uberweisung,Am niedrigest Preis!!  Werden innerhalb 24 Stunden 95% der Bestellungen  ausgeliefert. [[  www.wow-europe.cn ]
+	"crazy.*price.*gold.*welcome", --<><><><>2 Euro = 1000g!!!!!!!,Crazy price for gold here.welcome to  www..gold2wow..com<><><><> 
+	"gold.*service.*deliver", --Hello everyone ! Do you want buy the cheapest gold ? Please visit our web : WWW.7GGOLD.COM 10000G is only 23.39 EUR , 20000G is only 43.68EUR. And we have the best service ,fast delivery . Please remember our website: WWW.7GGOLD.COM
+	"willkommen.*preis.*goldvorrat", --Hallo, willkommen zu << www.wowwar.net >>. Gunstigster Preis fur 10.000G=21.98 EUR. Wir haben einen riesigen Goldvorrat und 10 Minuten Lieferzeit. Wir sind Ihre beste Wahl
+	"willkommen.*kosten.*anlieferung", --Hallo,Willkommen bei<<WWW.LUCKWAR.COM>> 10000g kosten nur 26Eur,10 Minuten Anlieferung.Freuen Sie sich auf Ihren Besuch.
+	"welcome.*cost.*deliver.*gold", --Hello,welcome to <<WWW.LUCKWAR.COM>> 10000G cost 18Eur only, Deliver the golds 10min,Look forward to your visit.
 	"safe.*fast.*gold.*service", --www. tgtimes. com >> Safe and Fast with gold services , the price is very cheap 10000g = 22 eruos, Huge stock, all goods are available, Deliver in 10 mins usualy. This is the right choice! Try please . WWW. TGTIMES. COM
 	"welcome.*gold.*service.*cheap.*price", --Welcome to WWW.4WOWGOLD.C@M.,excellent service with cheapest price, 2000G for about 4GBP with big surprise. Best wishes!
 	"gold.*gold.*server.*deliver", --10,000 Gold for 16.14 Pounds! More than 100,000 Gold On This server! Delivery within 10 mins! www.cyawow.com
@@ -205,22 +206,24 @@ local triggers = {
 	"need.*buy.*gold.*fast.*deliver", --Excuse me, just asking that do you need to buy some gold in fast delivery and nice price.:)
 
 	--Advanced URL's
-	"^%W+mmoggg%.de%W+$", --11 April 10
+	"^%W+m+oggg%.de%W+$", --11 April 10
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
-	"^%W+osteraktionvonmmoggg%W+$", --temp
+	--"^%W+osteraktionvonmmoggg%W+$", --temp
 	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
-	"^%W+mai%-aktionvonmmoggg%W+$", --temp
-	"^%W+mmo4store%.com%W+$", --======<< [mmo4store.com] >>======
+	--"^%W+mai%-aktionvonmmoggg%W+$", --temp
+	"^%W+.*nehme.*zeit.*genie.*aktion.*mmoggg.*%W+$", --temp
+	"^%W+50%%kostenlosesgold.*preise.*optionen%W+$", --temp
+	"%W+mmo4store%.com%W+", --======<< [mmo4store.com] >>======
 	"wow.*provider.*igs%.c.*po?we?rle?ve?l", --31 October 09
 	"happygolds.*gold.*gold", --31 October 09
 	"happygoldspointcom.*g", --31 October 09
 	"friend.*website.*gold4guild", --31 October 09
-	"friend.*website.*gg4g%.c", --27 January 09
+	"friend.*website.*gg4g%.[ce]", --27 January 09
 	"friend.*website.*wowseller%.c", --18 April 10
 	"cheap.*wow.*gold.*brogame%.c", --31 October 09
 	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --31 October 09
 	"^%W+w*%.?wowseller%.c[o0]m%W+$", --18 April 10
-	"^%W+gg4g%.com%W+$", --27 January 09
+	"^%W+gg4g%.[ce][ou]m?%W+$", --27 January 09
 	"^www%.ignmax%.com$", --12 December 09
 	"^%W+wowbuffet%.comisinsane%W+$", -->>>>>wowbuffet.com is insane! <<<<< --03 February 10
 	"{vvv%Wbzgold%Wco[nm]%(v=w;%W=%.;?n?=?m?%)}$", --31 October 09 --Free gold={vvv_bzgold_com(v=w;_=.)}  --{vvv/bzgold/con(v=w;/=.;n=m)}
