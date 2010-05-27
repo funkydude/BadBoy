@@ -53,6 +53,7 @@ local triggers = {
 	"gold.*low.*price.*%d+kg",
 	"discount.*buy.*gold.*coupon",
 	"deliver.*buy.*gold.*fast",
+	"gold.*order.*discount", --<WWW.4WOWGOLD.C@M> offers free items for big orders. Motorcycle for 100k, and Battered Hilt for 90k. discount code: CF. First come, first served! Come on!
 	--[www.tgtimes.com>>] sicher und schnell mit Gold-Dienstleistungen, der Preis sehr billig 10000g = 22 eruos, Grobes Lager ist, werden alle Waren verfugbar, Lieferung innerhalb von 10 Minuten. Dies ist die richtige Wahl! Versuchen Sie, bitte. WWW.TGTIM
 	"gold.*preis.*innerhalb", --:[[ 18 EUR/10000 WOW GOLD ]]  DE Acc. u. IP., Blitzlieferung, Paypal / uberweisung,Am niedrigest Preis!!  Werden innerhalb 24 Stunden 95% der Bestellungen  ausgeliefert. [[  www.wow-europe.cn ]
 	"crazy.*price.*gold.*welcome", --<><><><>2 Euro = 1000g!!!!!!!,Crazy price for gold here.welcome to  www..gold2wow..com<><><><> 
@@ -164,6 +165,8 @@ local triggers = {
 	"player.*account.*complain.*info.*right", --Dear players, your account is complaints by other players, please visit account information site validate your information,or else will stop using your account's rights in one hour. warcraft account information site: XYZ
 	--enUS Support for world of warcraft. Blizzard will give you a Celestial Steed .To receive it, please visit: [XYZ]
 	"warcraft.*blizzard.*himmlischen.*steed.*receiv", --Unterstutzung fur World of Warcraft. Blizzard wird geben Ihrem Pferd einen Besuch bitte himmlischen [steed.Receiving]: [XYZ]
+	"detected.*software.*account.*info.*action", --We have detected third-party software associated with your account. Please log in to [XYZ] with your [Battle.Net] information before action is taken against your account
+	"support.*warcraft.*website.*rare.*mount", --Hello! Thank you for your support for World of Warcraft, now visit the official website will have the rare baby, and mounts, please visit: XYZ
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
