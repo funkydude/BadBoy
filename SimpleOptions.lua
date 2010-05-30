@@ -17,12 +17,16 @@ do
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏 '%s' 信息"
 		locManualReport = "禁用信息自動過濾系統(顯示彈出)"
+		BADBOY_NOLATIN = true
 	elseif L == "zhCN" then
 		locNoReportMsg = "隐藏 '%s' 信息"
 		locManualReport = "禁用信息自动过滤系统(显示弹出)"
+		BADBOY_NOLATIN = true
 	elseif L == "esES" or L == "esMX" then
 		locNoReportMsg = "Ocultar el mensaje '%s'"
 		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
+	elseif L == "koKR" or L == "ruRU" then
+		BADBOY_NOLATIN = true
 	end
 
 	--Begin GUI

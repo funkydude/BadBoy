@@ -210,6 +210,8 @@ local triggers = {
 	"need.*buy.*gold.*fast.*deliver", --Excuse me, just asking that do you need to buy some gold in fast delivery and nice price.:)
 
 	--Advanced URL's
+	"^%W+mm[0o]%[?yy%.c[0o]m%W+$", --30 May 10
+	"choice.*mmo4store.*only", --Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k
 	"^%W+m+oggg%.de%W+$", --11 April 10
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
 	--"^%W+osteraktionvonmmoggg%W+$", --temp
@@ -253,10 +255,10 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = strreplace(msg, ",", ".") --Convert commas to periods
 	--START: 6 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 6
 	for k,v in ipairs(chatLines) do
-		if v == msg then
+		if v == msg then --If message same as one in previous 6...
 			for l,w in ipairs(chatPlayers) do
-				if l == k and w == player then
-					result = true return true
+				if l == k and w == player then --...and from the same person...
+					result = true return true --...filter!
 				end
 			end
 		end
@@ -285,8 +287,9 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			return true
 		end
 	end
-	--START: Art remover
-	if fnd(msg, "^%p%p%p%p+$") then
+	--START: Art remover after blacklist check to prevent hiding and not reporting, for latin based languages, as %W only supports that... :(
+	if not BADBOY_NOLATIN and fnd(msg, "%W%W%W%W%W%W") then
+		print("|cFF33FF99BadBoy_ALPHA-NOART|r: ", debug)
 		result = true return true
 	end
 	--END: Art remover
