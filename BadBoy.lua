@@ -53,6 +53,7 @@ local triggers = {
 	"gold.*low.*price.*%d+kg",
 	"discount.*buy.*gold.*coupon",
 	"deliver.*buy.*gold.*fast",
+	"cheap.*gold.*discount", --dear friend, cheapest gold in <WWW.4WOWGOLD.C@M> fast delievry ,no risk. "GPS" as discount code for saving more money.3.8$ for 1000g, even 35$ for 10000g.come on!
 	"gold.*order.*discount", --<WWW.4WOWGOLD.C@M> offers free items for big orders. Motorcycle for 100k, and Battered Hilt for 90k. discount code: CF. First come, first served! Come on!
 	--[www.tgtimes.com>>] sicher und schnell mit Gold-Dienstleistungen, der Preis sehr billig 10000g = 22 eruos, Grobes Lager ist, werden alle Waren verfugbar, Lieferung innerhalb von 10 Minuten. Dies ist die richtige Wahl! Versuchen Sie, bitte. WWW.TGTIM
 	"gold.*preis.*innerhalb", --:[[ 18 EUR/10000 WOW GOLD ]]  DE Acc. u. IP., Blitzlieferung, Paypal / uberweisung,Am niedrigest Preis!!  Werden innerhalb 24 Stunden 95% der Bestellungen  ausgeliefert. [[  www.wow-europe.cn ]
