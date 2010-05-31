@@ -288,8 +288,9 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			return true
 		end
 	end
-	--START: Art remover after blacklist check to prevent hiding and not reporting, for latin based languages, as %W only supports that... :(
-	if not BADBOY_NOLATIN and fnd(msg, "%W%W%W%W%W%W%W%W") then
+	--START: Art remover after blacklist check to prevent hiding and not reporting
+	--Only applies for gen/trade/LFG/etc and for latin based languages, as %W only supports that... :(
+	if channelId > 0 and not BADBOY_NOLATIN and fnd(msg, "%W%W%W%W%W%W%W%W") then
 		debug = strreplace(debug, "|", "||")
 		print("|cFF33FF99BadBoy_ALPHA-NOART|r: ", debug)
 		result = true return true
