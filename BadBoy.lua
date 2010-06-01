@@ -290,7 +290,8 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	end
 	--START: Art remover after blacklist check to prevent hiding and not reporting
 	--Only applies for gen/trade/LFG/etc and for latin based languages, as %W only supports that... :(
-	if channelId > 0 and not BADBOY_NOLATIN and fnd(msg, "%W%W%W%W%W%W%W%W") then
+	--Exclude lines with item links "|cff", I think this whole thing is reasonably ugly, but the gold spammers like to draw sometimes...
+	if channelId > 0 and not BADBOY_NOLATIN and not fnd(msg, "|cff") and fnd(msg, "%W%W%W%W%W%W%W%W") then
 		debug = strreplace(debug, "|", "||")
 		print("|cFF33FF99BadBoy_ALPHA-NOART|r: ", debug)
 		result = true return true
