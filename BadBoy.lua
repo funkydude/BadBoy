@@ -53,6 +53,7 @@ local triggers = {
 	"gold.*low.*price.*%d+kg",
 	"discount.*buy.*gold.*coupon",
 	"deliver.*buy.*gold.*fast",
+	"cheap.*gold.*deliver", --Cheap G from the Top1 WOW G company--G4P :  $30 for 10K gold at [mmo8wow.Com] with discount code ? cheap30 ? :) Welcome to our site and fill out the forms, 10min delivery is ready for you !!
 	"cheap.*gold.*discount", --dear friend, cheapest gold in <WWW.4WOWGOLD.C@M> fast delievry ,no risk. "GPS" as discount code for saving more money.3.8$ for 1000g, even 35$ for 10000g.come on!
 	"gold.*order.*discount", --<WWW.4WOWGOLD.C@M> offers free items for big orders. Motorcycle for 100k, and Battered Hilt for 90k. discount code: CF. First come, first served! Come on!
 	--[www.tgtimes.com>>] sicher und schnell mit Gold-Dienstleistungen, der Preis sehr billig 10000g = 22 eruos, Grobes Lager ist, werden alle Waren verfugbar, Lieferung innerhalb von 10 Minuten. Dies ist die richtige Wahl! Versuchen Sie, bitte. WWW.TGTIM
@@ -291,7 +292,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	--START: Art remover after blacklist check to prevent hiding and not reporting
 	--Only applies for gen/trade/LFG/etc and for latin based languages, as %W only supports that... :(
 	--Exclude lines with item links "|cff", I think this whole thing is reasonably ugly, but the gold spammers like to draw sometimes...
-	if channelId > 0 and not BADBOY_NOLATIN and not fnd(msg, "|cff") and fnd(msg, "%W%W%W%W%W%W%W%W") then
+	if channelId > 0 and not BADBOY_NOLATIN and not fnd(msg, "|cff") and fnd(msg, "%W%W%W%W%W%W%W") then
 		debug = strreplace(debug, "|", "||")
 		print("|cFF33FF99BadBoy_ALPHA-NOART|r: ", debug)
 		result = true return true
