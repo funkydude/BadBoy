@@ -171,6 +171,7 @@ local triggers = {
 	"support.*warcraft.*website.*rare.*mount", --Hello! Thank you for your support for World of Warcraft, now visit the official website will have the rare baby, and mounts, please visit: XYZ
 	"drawn.*system.*gift.*tiger", --Hello,you are drawn in the system to receive your gift.Pleast visit:   [XYZ]  Swift Spectral Tiger will be yours.
 	"customer.*blizz.*lucky.*player.*gift", --Dear Customer, you have become a blizzard lucky Players, can get a gift,registered address: XYZ
+	"drawn.*system.*receive.*cataclysm.*beta", --CONGRATULATiONS!YOU ARE DRAWN IN THE SYSTEM TO RECEiVE YOUR ACHiEVEMENTS REWARDS! IT'S A CATACLYSM  CLOSED BETA!PLEASE  ViSIT:[XYZ--BLiZZARD]
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -293,7 +294,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	--START: Art remover after blacklist check to prevent hiding and not reporting
 	--Only applies for gen/trade/LFG/etc and for latin based languages, as %W only supports that... :(
 	--Exclude lines with item links "|cff", I think this whole thing is reasonably ugly, but the gold spammers like to draw sometimes...
-	if channelId > 0 and not BADBOY_NOLATIN and not fnd(msg, "|cff") and fnd(msg, "%W%W%W%W%W%W%W") then
+	if channelId > 0 and not BADBOY_ALLOWART and not BADBOY_NOLATIN and not fnd(msg, "|cff") and fnd(msg, "%W%W%W%W%W%W%W") then
 		debug = strreplace(debug, "|", "||")
 		print("|cFF33FF99BadBoy_ALPHA-NOART|r: ", debug)
 		result = true return true
