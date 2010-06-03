@@ -8,7 +8,7 @@ do
 	local locNoReportMsg = "Hide '%s' message"
 	local locManualReport = "Disable Automatic Spam Report (Show popup)"
 	local locNoArtTitle = "Disable ASCII art filter"
-	local locNoArtDesc = "This filter is designed to remove gold spam lines |cFF33FF99ONLY|r from public channels (gen/trade/LFG/etc) with repetitive symbols like '-' and '+' but can sometimes filter innocent players that use |cFF33FF99A LOT|r of '.' or '!' which most people consider spam anyway."
+	local locNoArtDesc = "This filter is designed to remove gold spam lines with repetitive symbols like '-' and '+' |cFF33FF99ONLY|r from public channels (gen/trade/LFG/etc) but can sometimes filter innocent players that use |cFF33FF99A LOT|r of '.' or '!' which most people consider spam anyway."
 	local L = GetLocale()
 	if L == "frFR" then
 		locNoReportMsg = "Cacher le message '%s'"
