@@ -7,6 +7,8 @@ do
 	--Locale
 	local locNoReportMsg = "Hide '%s' message"
 	local locManualReport = "Disable Automatic Spam Report (Show popup)"
+	local locNoArtTitle = "Disable ASCII art filter"
+	local locNoArtDesc = "This filter is designed to remove gold spam lines |cFF33FF99ONLY|r from public channels (gen/trade/LFG/etc) with repetitive symbols like '-' and '+' but can sometimes filter innocent players that use |cFF33FF99A LOT|r of '.' or '!' which most people consider spam anyway."
 	local L = GetLocale()
 	if L == "frFR" then
 		locNoReportMsg = "Cacher le message '%s'"
@@ -104,5 +106,44 @@ do
 	local btnManualReportText = btnManualReport:CreateFontString("BadBoyConfigButton2Title", "ARTWORK", "GameFontHighlight")
 	btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
 	btnManualReportText:SetText(locManualReport)
+
+	local btnNoArtFilter = CreateFrame("CheckButton", "BadBoyConfigButton3", badboy)
+	btnNoArtFilter:SetWidth(26)
+	btnNoArtFilter:SetHeight(26)
+	btnNoArtFilter:SetPoint("TOPLEFT", 16, -112)
+	btnNoArtFilter:SetScript("OnShow", function(frame)
+		if BADBOY_ALLOWART then
+			frame:SetChecked(true)
+		else
+			frame:SetChecked(false)
+		end
+	end)
+	btnNoArtFilter:SetScript("OnClick", function(frame)
+		local tick = frame:GetChecked()
+		if tick then
+			PlaySound("igMainMenuOptionCheckBoxOn")
+			BADBOY_ALLOWART = true
+		else
+			PlaySound("igMainMenuOptionCheckBoxOff")
+			BADBOY_ALLOWART = nil
+		end
+	end)
+
+	btnNoArtFilter:SetHitRectInsets(0, -100, 0, 0)
+
+	btnNoArtFilter:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
+	btnNoArtFilter:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
+	btnNoArtFilter:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
+	btnNoArtFilter:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
+
+	local btnNoArtFilterText = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Title", "ARTWORK", "GameFontHighlight")
+	btnNoArtFilterText:SetPoint("LEFT", btnNoArtFilter, "RIGHT", 0, 1)
+	local btnNoArtFilterTextTwo = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Title", "ARTWORK", "GameFontHighlight")
+	btnNoArtFilterTextTwo:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMRIGHT")
+	btnNoArtFilterTextTwo:SetWidth(350)
+	btnNoArtFilterTextTwo:SetHeight(70)
+	btnNoArtFilterTextTwo:SetJustifyH("LEFT")
+	btnNoArtFilterText:SetText(locNoArtTitle)
+	btnNoArtFilterTextTwo:SetText(locNoArtDesc)
 end
 
