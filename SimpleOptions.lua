@@ -13,9 +13,13 @@ do
 	if L == "frFR" then
 		locNoReportMsg = "Cacher le message '%s'"
 		locManualReport = "Désactiver le signalement auto. du spam (affiche un popup)"
+		locNoArtTitle = "Désactiver le filtre des 'dessins' ASCII"
+		locNoArtDesc = "Ce filtre a été conçu pour enlever les lignes des vendeurs d'or utilisant des symboles répétés tels que '-' et '+', mais |cFF33FF99UNIQUEMENT|r ceux des canaux publics (général/commerce/RdG/etc.). Il peut arriver que certains joueurs innocents soient aussi filtrés car utilisant de |cFF33FF99NOMBREUX|r '.' ou '!', ce qui dérange la plupart des gens de toute façon."
 	elseif L == "deDE" then
 		locNoReportMsg = "'%s' Meldung verbergen"
 		locManualReport = "Automatische Spam-Meldungen deaktivieren (Pop-Up anzeigen)"
+		locNoArtTitle = "ASCII-Kunst-Filter deaktivieren"
+		locNoArtDesc = "Dieser Filter entfernt Goldspam-Zeilen mit vielen Zeichen wie z.B. '-' und '+' |cFF33FF99NUR|r von öffentlichen Kanälen (Allgemein/Handel/LFG/etc), kann aber manchmal auch normale Spieler filtern, die |cFF33FF99VIELE|r '.' oder '!' benutzen, was die meisten Spieler aber sowieso als Spam ansehen. Diese Spieler werden |cFF33FF99NICHT|r gemeldet."
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏 '%s' 信息"
 		locManualReport = "禁用信息自動過濾系統(顯示彈出)"
@@ -27,6 +31,8 @@ do
 	elseif L == "esES" or L == "esMX" then
 		locNoReportMsg = "Ocultar el mensaje '%s'"
 		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
+		locNoArtTitle = "Deshabilitar filtro de arte ASCII"
+		locNoArtDesc = "Este filtro está diseñado para eliminar las líneas de spam de oro con símbolos repetitivos como '-' y '+' |cFF33FF99SÓLO|r de los canales públicos (gen/comercio/BdG/etc), aunque puede a veces filtrar jugadores inocentes que usan |cFF33FF99A MUCHOS|r '.' ó '!' que la mayoría de gente consederaría spam igualmente. Éstos |cFF33FF99NO|r son reportados."
 	elseif L == "koKR" or L == "ruRU" then
 		BADBOY_NOLATIN = true
 	end
@@ -138,10 +144,10 @@ do
 
 	local btnNoArtFilterText = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Title", "ARTWORK", "GameFontHighlight")
 	btnNoArtFilterText:SetPoint("LEFT", btnNoArtFilter, "RIGHT", 0, 1)
-	local btnNoArtFilterTextTwo = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Title", "ARTWORK", "GameFontHighlight")
-	btnNoArtFilterTextTwo:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMRIGHT")
+	local btnNoArtFilterTextTwo = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Desc", "ARTWORK", "GameFontHighlight")
+	btnNoArtFilterTextTwo:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMRIGHT", 0, 6)
 	btnNoArtFilterTextTwo:SetWidth(350)
-	btnNoArtFilterTextTwo:SetHeight(70)
+	btnNoArtFilterTextTwo:SetHeight(90)
 	btnNoArtFilterTextTwo:SetJustifyH("LEFT")
 	btnNoArtFilterText:SetText(locNoArtTitle)
 	btnNoArtFilterTextTwo:SetText(locNoArtDesc)
