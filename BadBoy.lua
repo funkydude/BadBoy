@@ -217,6 +217,7 @@ local triggers = {
 
 	--Advanced URL's
 	"^%W+mm[0o]%[?yy%.c[0o]m%W+$", --30 May 10
+	"^%W+diymm[0o]game.c[0o]m%W+$", --07 June 10
 	"choice.*mmo4store.*only", --Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k
 	"^%W+m+oggg%.de%W+$", --11 April 10
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
