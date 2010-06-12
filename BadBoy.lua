@@ -53,6 +53,7 @@ local triggers = {
 	"gold.*low.*price.*%d+kg",
 	"discount.*buy.*gold.*coupon",
 	"deliver.*buy.*gold.*fast",
+	"discount.*price.*welcome", --During the World Cup,there will be big discount on (badwebsitehere),the price of all the realms will be reduced to be (1k=2.98 USD),Welcome everybody presence!
 	"gold.*discount.*bonus", --<WWW.DATE4GOLD.COM> 10k only sell 29 dollars, with the discount code"VIP",besides,u can get 2% bonus as the hoilday gift, moresurprise,welcome to <WWW.DATE4GOLD.COM>
 	"cheap.*gold.*deliver", --Cheap G from the Top1 WOW G company--G4P :  $30 for 10K gold at [mmo8wow.Com] with discount code ? cheap30 ? :) Welcome to our site and fill out the forms, 10min delivery is ready for you !!
 	"cheap.*gold.*discount", --dear friend, cheapest gold in <WWW.4WOWGOLD.C@M> fast delievry ,no risk. "GPS" as discount code for saving more money.3.8$ for 1000g, even 35$ for 10000g.come on!
@@ -175,6 +176,7 @@ local triggers = {
 	"drawn.*system.*receive.*cataclysm.*beta", --CONGRATULATiONS!YOU ARE DRAWN IN THE SYSTEM TO RECEiVE YOUR ACHiEVEMENTS REWARDS! IT'S A CATACLYSM  CLOSED BETA!PLEASE  ViSIT:[XYZ--BLiZZARD]
 	"hallo.*schon.*system.*erhalten.*klicken", --Hallo!Sie sind schon von diesem System auserwahlt worden und werden Pramie erhalten. Klicken Sie bitte: [XYZ]#!
 	"blizz.*notif[iy].*account.*cataclysm.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to participate in Cataclysm beta test. For more information please visit: XYZ
+	"blizz.*account.*safety.*hacker.*opportunity", --Blizzard latest activities, cell phone locked account hundred percent safety of your account, no interference by hackers who have the opportunity to get big disaster trial eligibility, please visit:XYZ
 
 	--Lvl 1 whisperers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -217,14 +219,15 @@ local triggers = {
 	"need.*buy.*gold.*fast.*deliver", --Excuse me, just asking that do you need to buy some gold in fast delivery and nice price.:)
 
 	--Advanced URL's
+	"^%W+neueaktion.*mmoggg.*%W+$", -->>>Neue Aktion bei [MMOGGG.DE] <<< --12 June 10
+	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --12 June 10
+	"well?come.*website.*wowgamegold%..*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --12 June 10
 	"^%W+mm[0o]%[?yy%.c[0o]m%W+$", --30 May 10
 	"^%W+diymm[0o]game.c[0o]m%W+$", --07 June 10
 	"choice.*mmo4store.*only", --Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k
 	"^%W+m+oggg%.de%W+$", --11 April 10
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
-	--"^%W+osteraktionvonmmoggg%W+$", --temp
 	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
-	--"^%W+mai%-aktionvonmmoggg%W+$", --temp
 	"^%W+.*nehme.*zeit.*genie.*aktion.*mmoggg.*%W+$", --temp
 	"^%W+50%%kostenlosesgold.*preise.*optionen%W+$", --temp
 	"%W+mmo4store%.com%W+", --======<< [mmo4store.com] >>======
