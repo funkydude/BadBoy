@@ -33,7 +33,11 @@ do
 		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
 		locNoArtTitle = "Deshabilitar filtro de arte ASCII"
 		locNoArtDesc = "Este filtro está diseñado para eliminar las líneas de spam de oro con símbolos repetitivos como '-' y '+' |cFF33FF99SÓLO|r de los canales públicos (gen/comercio/BdG/etc), aunque puede a veces filtrar jugadores inocentes que usan |cFF33FF99A MUCHOS|r '.' ó '!' que la mayoría de gente consederaría spam igualmente. Éstos |cFF33FF99NO|r son reportados."
-	elseif L == "koKR" or L == "ruRU" then
+	elseif L == "koKR" then
+		BADBOY_NOLATIN = true
+	elseif L == "ruRU" then
+		locNoReportMsg = "Прятать сообщение '%s'"
+		locManualReport = "Отключить автоматическую жалобу на спам (показывать подтверждение)"
 		BADBOY_NOLATIN = true
 	end
 
@@ -112,6 +116,8 @@ do
 	local btnManualReportText = btnManualReport:CreateFontString("BadBoyConfigButton2Title", "ARTWORK", "GameFontHighlight")
 	btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
 	btnManualReportText:SetText(locManualReport)
+
+	if BADBOY_NOLATIN then return end
 
 	local btnNoArtFilter = CreateFrame("CheckButton", "BadBoyConfigButton3", badboy)
 	btnNoArtFilter:SetWidth(26)
