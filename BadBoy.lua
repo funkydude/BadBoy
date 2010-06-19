@@ -116,11 +116,12 @@ local triggers = {
 	"^%W+diymm[0o]game.c[0o]m%W+$", --June 10
 	"choice.*mmo4store%.c.*only", --Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
 	"choice.*buyeugold%.c.*only", --Good Choice==> BUYEUGOLD.COM==>Only E17 per 10K --June 10
-	"^%W+m+oggg%.de%W+$", --April 10
+	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
 	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
 	"^%W+.*nehme.*zeit.*genie.*aktion.*mmoggg.*%W+$", --temp
 	"^%W+50%%kostenlosesgold.*preise.*optionen%W+$", --temp
+	"^%W+use.*promocode.*save.*gold.*mats%W+$", --temp
 	"%W+mmo4store%.com%W+", --June 10
 	"friend.*website.*gold4guild", --October 09
 	"friend.*website.*gg4g%.[ce]", --January 09
