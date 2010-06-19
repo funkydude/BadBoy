@@ -114,8 +114,10 @@ local triggers = {
 	"well?come.*website.*wowgamegold%..*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
 	"^%W+mm[0o]%[?yy%.c[0o]m%W+$", --May 10
 	"^%W+diymm[0o]game.c[0o]m%W+$", --June 10
-	"choice.*mmo4store%.c.*only", --Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
-	"choice.*buyeugold%.c.*only", --Good Choice==> BUYEUGOLD.COM==>Only E17 per 10K --June 10
+	--Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
+	--Good Choice==> BUYEUGOLD.COM==>Only E17 per 10K --June 10
+	"^goodchoice%W+.*c[o0]m%W+only.*per.*k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
+	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
 	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
 	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
