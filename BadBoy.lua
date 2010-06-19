@@ -124,7 +124,7 @@ local triggers = {
 	"^%W+.*nehme.*zeit.*genie.*aktion.*mmoggg.*%W+$", --temp
 	"^%W+50%%kostenlosesgold.*preise.*optionen%W+$", --temp
 	"^%W+use.*promocode.*save.*gold.*mats%W+$", --temp
-	"%W+mmo4store%.com%W+", --June 10
+	"%W+mmo4store%.c[0o]m%W+", --June 10
 	"friend.*website.*gold4guild", --October 09
 	"friend.*website.*gg4g%.[ce]", --January 09
 	"friend.*website.*wowseller%.c", --April 10
