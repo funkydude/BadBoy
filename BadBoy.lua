@@ -1,26 +1,26 @@
---DO NOT MODIFY DATABASE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
+--DO NOT MODIFY DATABASE OR YOU MAY REPORT INNOCENT PEOPLE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
 local triggers = {
 	--English - Common
-	"gold", --1
+	"bonus", --1
 	"buy", --2
-	"stock", --3
-	"discount", --4
+	"cheap", --3
+	"customer", --4
 	"deliver", --5
-	"www", --6
-	"price", --7
-	"cheap", --8
-	"safe", --9
-	"service", --10
-	"customer", --11
-	"lowest", --12
-	"bonus", --13
-	"reduced", --14
-	"promotion", --15
-	"order", --16
-	"welcome", --17
-	"server", --18
-	"secure", --19
-	"powerlevel", --20
+	"discount", --6
+	"gold", --7
+	"lowest", --8
+	"order", --9
+	"powerlevel", --10
+	"price", --11
+	"promotion", --12
+	"reduced", --13
+	"safe", --14
+	"secure", --15
+	"server", --16
+	"service", --17
+	"stock", --18
+	"welcome", --19
+	"www", --20
 	"%d%deuro?%W", --21
 
 	--French - Common
@@ -28,8 +28,8 @@ local triggers = {
 
 	--German - Common
 	"lieferung", --delivery --23
-	"willkommen", --welcome --24
-	"preis", --price --25
+	"preis", --price --24
+	"willkommen", --welcome --25
 
 	--Phishing
 	"blizz.*launch.*cata.*trial.*info.*log",
