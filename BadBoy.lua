@@ -12,7 +12,7 @@ local triggers = {
 	"order", --9
 	"powerlevel", --10
 	"price", --11
-	"promotion", --12
+	"promoti[on][gn]", --12
 	"reduced", --13
 	"safe", --14
 	"secure", --15
