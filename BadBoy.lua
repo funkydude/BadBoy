@@ -107,8 +107,9 @@ local triggers = {
 	"so?r?ry.*need.*cheap.*gold.*%d+", --sorry to disurb you. do you need some cheap gold 20k just need 122eur(108GBP)
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 	"hi.*you.*need.*gold.*we.*promotion", --[hi.do] you need some gold atm?we now have a promotion for it ^^
+	"brbgame.*need.*gold.*only.*fast.*deliver", --sry to bother i am maria from brbgame, may i pease enquire as to whether u r in need of wow gold ?:P only 3$ per k with fast delivery !\
 
-	--Advanced URL's
+	--Advanced URL's/Misc
 	"^%W+neueaktion.*mmoggg.*%W+$", -->>>Neue Aktion bei [MMOGGG.DE] <<< --June 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
 	"well?come.*website.*wowgamegold%..*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
@@ -126,6 +127,7 @@ local triggers = {
 	"^%W+50%%kostenlosesgold.*preise.*optionen%W+$", --temp
 	"^%W+use.*promocode.*save.*gold.*mats%W+$", --temp
 	"%W+mmo4store%.c[0o]m%W+", --June 10
+	"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
 	"friend.*website.*gold4guild", --October 09
 	"friend.*website.*gg4g%.[ce]", --January 09
 	"friend.*website.*wowseller%.c", --April 10
@@ -134,6 +136,8 @@ local triggers = {
 	"^%W+gg4g%.[ce][ou]m?%W+$", --January 09
 	"^www%.ignmax%.com$", --December 09
 	"gamesky2%..*deliver", --January 10
+	"www.*cheap.*safe.*info.*cost", --<< www.ignaccount.com >> Cheap,Safe & Transferal level 80 accounts with all the registered information on << www.ignaccount.com >> cost only $180 --June 10
+	"%[.*%].*wehave.*boeitems.*mats.*sale.*www", --wts [Battered Hilt] [Wodin's Lucky Necklace] we have all the Boe items,mats and t10/t10.5 for sale .<www.ignah.com>!! --June 10
 	"skillcopper%.eu.*wow.*spectral", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
@@ -231,5 +235,11 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 		--We force this on so we don't have spam that would have been filtered, reported on the forums
 		SetCVar("spamFilter", 1)
 	end
+end)
+
+--Temporary, until Blizzard fix the floating spam bots, we need to fix the sleep spam
+ChatFrame_AddMessageEventFilter("CHAT_MSG_TEXT_EMOTE", function(_, _, msg, player)
+	if not CanComplainChat(player) then return end --Don't filter ourself/friends
+	if msg:find("zzz") then return true end
 end)
 
