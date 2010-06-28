@@ -78,6 +78,8 @@ local triggers = {
 	"blizz.*notif[iy].*account.*cataclysm.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to participate in Cataclysm beta test. For more information please visit: XYZ
 	"blizz.*account.*safety.*hacker.*opportunity", --Blizzard latest activities, cell phone locked account hundred percent safety of your account, no interference by hackers who have the opportunity to get big disaster trial eligibility, please visit:XYZ
 	"blizz.*warcraft.*account.*info.*disable", --Hello! Blizzard World of Warcraft game found in violation of your game account, please visit our website [XYZ] enter your information, pending review, or we will permanently disable your game account. 
+	"blizz.*monk.*store.*log.*submit.*free", --Hello, In celebration of BlizzCon 2010 you have receieved a Pandaren Monk Pet from the Blizzard Pet Store. please log in at [XYZ] Submit your email, and your free pet will be sent to all of your characters!
+	"surprise.*summon.*worgen.*first.*conquer.*visit", --surprise!Summons from goblins and worgens, the first warrior to conquer Azeroth will be you!please visit:[XYZ]
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -138,6 +140,7 @@ local triggers = {
 	"^%W+gg4g%.[ce][ou]m?%W+$", --January 09
 	"^www%.ignmax%.com$", --December 09
 	"gamesky2%..*deliver", --January 10
+	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"^%W+.*enjoy.*promotion.*offline%-ah%.com%W+$", -->>>Take a little time enjoy World Cup Promotion of Offline-AH.COM<<< --June 10 / "Expires 11/7"
 	"^%W+goldforonly.*gbp%W+$", -->>>GOLD for only 0.0016GBP<<< --temp
 	"^%W+ilvl.*weapons.*freemountsonsite%W+$", -->>>ilvl 251/264 weapons even free mounts Onsite <<< --temp
