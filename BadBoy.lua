@@ -21,15 +21,16 @@ local triggers = {
 	"stock", --18
 	"welcome", --19
 	"www", --20
-	"%d%deuro?%W", --21
+	"%d%.?%deuro?%W", --21
+	"%d%.?%deuro?for%d", --22
 
 	--French - Common
-	"livraison", --delivery --22
+	"livraison", --delivery --23
 
 	--German - Common
-	"lieferung", --delivery --23
-	"preis", --price --24
-	"willkommen", --welcome --25
+	"lieferung", --delivery --24
+	"preis", --price --25
+	"willkommen", --welcome --26
 
 	--Phishing
 	"blizz.*launch.*cata.*trial.*info.*log",
@@ -113,6 +114,8 @@ local triggers = {
 	"stock.*gold.*wonder.*buy.*so?rr?y", --Full stock gold! Wondering you might wanna buy some today ? sorry for bothering you.
 	"hi.*you.*need.*gold.*we.*promotion", --[hi.do] you need some gold atm?we now have a promotion for it ^^
 	"brbgame.*need.*gold.*only.*fast.*deliver", --sry to bother i am maria from brbgame, may i pease enquire as to whether u r in need of wow gold ?:P only 3$ per k with fast delivery !\
+	"master.*account.*info.*changed.*visit.*info", --hello! [Game Master]GM:Your account information is changed, please visit [XYZ] understanding of your information
+	"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
 
 	--Casino
 	--HATERZZ CASINO! 1-64 You lose.. 65-94 You get double, 95-100 TRIPLE! Starting at 10g, max is 400g!
@@ -135,7 +138,8 @@ local triggers = {
 	--Good Choice ===> MMO4STORE.CC ==> only E16.36 per 10k --June 10
 	"^goodchoice%W+.*%.c[co0@]m?%W+only.*per%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
 	--Choice "M4M"==>WOWGAMELIFE.C@M==>Only E17 per 10K
-	"^choice.*%W+.*%.c[co0@]m?%W+only.*per%d+k$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
+	--"M4M"==>WOWGAMELIFE.C@M==>Only E15 per 10K
+	".*m4m.*%W+.*%.c[co0@]m?%W+only.*per%d+k$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
 	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
 	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
@@ -194,7 +198,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local points = 0
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k > 25 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k > 26 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5
 			else
 				points = points + 1 --We only want certain words getting 1 point
