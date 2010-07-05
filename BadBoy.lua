@@ -130,7 +130,7 @@ local triggers = {
 	--Advanced URL's/Misc
 	"^%W+neueaktion.*mmoggg.*%W+$", -->>>Neue Aktion bei [MMOGGG.DE] <<< --June 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
-	"well?come.*website.*wowgamegold%..*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
+	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
 	"^%W+mm[0o]%[?yy%.c[0o]m%W+$", --May 10
 	"^%W+diymm[0o]game.c[0o]m%W+$", --June 10
 	--Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
