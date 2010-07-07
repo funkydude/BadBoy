@@ -32,6 +32,11 @@ local triggers = {
 	"preis", --price --25
 	"willkommen", --welcome --26
 
+	--Spanish - Common
+	"barato", --cheap --27
+	"seguros", --safe/secure --28
+	"r\195\161pidos", --fast --29
+
 	--Phishing
 	"blizz.*launch.*cata.*trial.*info.*log",
 	"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
@@ -128,6 +133,8 @@ local triggers = {
 	"%d%-%d%d.*%d%d%-%d%d.*%d+.*triple.*%d+.*m[ai][xn]", --Euphoric rolls make you happy!  1-60 i win   61-91 you double your bet  92-99 you triple 100+ quad Min Bet 350g
 
 	--Advanced URL's/Misc
+	"^%W+service.*website.*wowgoldcat%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
+	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
 	"^%W+neueaktion.*mmoggg.*%W+$", -->>>Neue Aktion bei [MMOGGG.DE] <<< --June 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
 	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
@@ -198,7 +205,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local points = 0
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k > 26 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k > 29 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5
 			else
 				points = points + 1 --We only want certain words getting 1 point
