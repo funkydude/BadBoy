@@ -133,7 +133,7 @@ local triggers = {
 	"%d%-%d%d.*%d%d%-%d%d.*%d+.*triple.*%d+.*m[ai][xn]", --Euphoric rolls make you happy!  1-60 i win   61-91 you double your bet  92-99 you triple 100+ quad Min Bet 350g
 
 	--Advanced URL's/Misc
-	"^%W+service.*website.*wowgoldcat%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
+	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
 	"^%W+neueaktion.*mmoggg.*%W+$", -->>>Neue Aktion bei [MMOGGG.DE] <<< --June 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
