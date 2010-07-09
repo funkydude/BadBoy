@@ -89,6 +89,7 @@ local triggers = {
 	"congratulation.*limited.*warcraft.*mounts.*log", --Congratulations, you get limited edition World of Warcraft flying mounts.  please log in to receive:  XYZ
 	"become.*blizz.*customer.*free.*log", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Free unicorn zebra , please log in : XYZ
 	"congratulation.*warcraft.*mount.*tiger.*log", --Congratulations! World of Warcraft virtual rare mounts you get the Ghost Tiger Mounts, please log in to receive: XYZ
+	"warcraft.*cataclysm.*beta.*download.*visit", --Hello,World of Warcraft: 85 Cataclysm Test!beta client download!please visit: XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
