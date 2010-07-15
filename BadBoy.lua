@@ -94,6 +94,7 @@ local triggers = {
 	"blizz.*scan.*system.*account.*virtuel.*website", --Hallo Blizzard Scanning-System zu Ihrem Spiel-Account ein Versto gegen die Regeln des Spiels virtuelle Devisenhandel Bitte besuchen Sie unsere Website XYZ prufen Sie die Kontodaten oder wir werden Ihrem Konto auszusetzen.
 	"master.*account.*info.*changed.*visit.*info", --hello! [Game Master]GM:Your account information is changed, please visit [XYZ] understanding of your information
 	"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
+	"congratu.*celestial.*mount.*warcraft.*log.*receive", --Congratulations, you get Celestial Steed Flying mount in World of Warcraft, please log in to receive
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -125,6 +126,7 @@ local triggers = {
 	"hi.*you.*need.*gold.*we.*promotion", --[hi.do] you need some gold atm?we now have a promotion for it ^^
 	"brbgame.*need.*gold.*only.*fast.*deliver", --sry to bother i am maria from brbgame, may i pease enquire as to whether u r in need of wow gold ?:P only 3$ per k with fast delivery !\
 	"so?r?ry.*bother.*still.*%d+k.*left.*buy.*gold", --sry to bother you ,we still have around 52k left atm, you wanna buy some gold quickly today ?
+	"may.*ask.*whether.*interest.*ing.*boe.*stuff.*rocket", --hmm, may i ask whether u r interested in g or boe stuffs such as X-53 Touring Rocket:P
 
 	--Casino
 	--HATERZZ CASINO! 1-64 You lose.. 65-94 You get double, 95-100 TRIPLE! Starting at 10g, max is 400g!
