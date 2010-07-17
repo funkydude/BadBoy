@@ -143,7 +143,6 @@ local triggers = {
 	"^morechoice%W+wowgoldcat%.com%W+.*%d+.*powerlvl.*%d+$", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
-	"^%W+neueaktion.*mmoggg.*%W+$", -->>>Neue Aktion bei [MMOGGG.DE] <<< --June 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
 	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
 	"^%W+mm[0o]%[?yy%.c[0o]m%W+$", --May 10
@@ -157,10 +156,8 @@ local triggers = {
 	".*m4m.*%W+.*%.c[co0@]m?%W+only.*per%d+k$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
 	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
-	"^%W+lastminuteangebotevonmmoggg%W+$", --temp
-	"^%W+wirschenkeneuch%d+%%mehrgold%W+$", --temp
-	"^%W+.*nehme.*zeit.*genie.*aktion.*mmoggg.*%W+$", --temp
-	"^%W+50%%kostenlosesgold.*preise.*optionen%W+$", --temp
+	"^%W+mmoggg%d+.*aktion%W+$", -->>> MMOGGG 25% Rabatt-Aktion <<< --July 10
+	"^%W+%d+.*bargeld.*rabatt.*gold%W+$", -->>> 25% Bargeld-Rabatt auf Gold<<< --July 10
 	"^%W+use.*promocode.*save.*gold.*mats%W+$", --temp
 	"%W+mmo4store%.c[0o]m%W+", --June 10
 	"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
@@ -173,7 +170,6 @@ local triggers = {
 	"^www%.ignmax%.com$", --December 09
 	"gamesky2%..*deliver", --January 10
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
-	"^%W+.*enjoy.*promotion.*offline%-ah%.com%W+$", -->>>Take a little time enjoy World Cup Promotion of Offline-AH.COM<<< --June 10 / "Expires 11/7"
 	"^%W+goldforonly.*gbp%W+$", -->>>GOLD for only 0.0016GBP<<< --temp
 	"^%W+ilvl.*weapons.*freemountsonsite%W+$", -->>>ilvl 251/264 weapons even free mounts Onsite <<< --temp
 	"www.*cheap.*safe.*info.*cost", --<< www.ignaccount.com >> Cheap,Safe & Transferal level 80 accounts with all the registered information on << www.ignaccount.com >> cost only $180 --June 10
