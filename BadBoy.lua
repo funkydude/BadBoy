@@ -140,7 +140,8 @@ local triggers = {
 	"%d%-%d%d.*%d%d%-%d%d.*%d+.*triple.*%d+.*m[ai][xn]", --Euphoric rolls make you happy!  1-60 i win   61-91 you double your bet  92-99 you triple 100+ quad Min Bet 350g
 
 	--Advanced URL's/Misc
-	"^morechoice%W+wowgoldcat%.com%W+.*%d+.*powerlvl.*%d+$", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
+	--{icon}M4S{icon}{icon}{icon}WOWGOLDCAT.COM{icon}{icon}{icon} E15.8/10k{icon}Power Lvl 1-80{icon}
+	"wowgoldcat%.com.*%d+%W%d+k.*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
