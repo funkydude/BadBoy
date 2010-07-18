@@ -96,6 +96,7 @@ local triggers = {
 	"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
 	"congratu.*celestial.*mount.*warcraft.*log.*receive", --Congratulations, you get Celestial Steed Flying mount in World of Warcraft, please log in to receive
 	"obtained.*rare.*mount.*blizzard.*haven.*receive.*log", --Hi, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ
+	"cataclysm.*qualify.*mysterious.*gift.*blizzard", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -170,6 +171,8 @@ local triggers = {
 	"^%W+gg4g%.[ce][ou]m?%W+$", --January 09
 	"^www%.ignmax%.com$", --December 09
 	"gamesky2%..*deliver", --January 10
+	--fullgamegold,com-T10 equipment,honor,skill and powerleveling 1-80 Only 170 EUR 10 days.
+	"fullgamegold%.com.*only%d+%.?%d*eur.*%d+", --***** fullgamegold,com ***** Only 1.8 EUR per 1000 gold.
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"^%W+goldforonly.*gbp%W+$", -->>>GOLD for only 0.0016GBP<<< --temp
 	"^%W+ilvl.*weapons.*freemountsonsite%W+$", -->>>ilvl 251/264 weapons even free mounts Onsite <<< --temp
