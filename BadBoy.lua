@@ -152,10 +152,11 @@ local triggers = {
 	--Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
 	--Good Choice==> BUYEUGOLD.COM==>Only E17 per 10K --June 10
 	--Good Choice ===> MMO4STORE.CC ==> only E16.36 per 10k --June 10
-	"^goodchoice%W+.*%.c[co0@]m?%W+only.*per%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
+	"^goodchoice%W+.*%.c[co0@]m?%W+only.*[fp][oe]r%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
 	--Choice "M4M"==>WOWGAMELIFE.C@M==>Only E17 per 10K
 	--"M4M"==>WOWGAMELIFE.C@M==>Only E15 per 10K
-	".*m4m.*%W+.*%.c[co0@]m?%W+only.*per%d+k$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
+	--{star}M 4 M{star}==>> BUYEUGOLD.COM ==>>Only 15 EU for 10k
+	"m4m.*%W+.*%.c[co0@]m?%W+only.*[fp][oe]r%d+k$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
 	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
 	"^%W+mmoggg%d+.*aktion%W+$", -->>> MMOGGG 25% Rabatt-Aktion <<< --July 10
