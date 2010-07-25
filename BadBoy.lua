@@ -23,20 +23,21 @@ local triggers = {
 	"www", --20
 	"%d%.?%deuro?%W", --21
 	"%d%.?%deuro?for%d", --22
+	"%W%d%d+%.?%d*%W%d+%.?%d*k", --23
 
 	--French - Common
-	"livraison", --delivery --23
+	"livraison", --delivery --24
 
 	--German - Common
-	"lieferung", --delivery --24
-	"preis", --price --25
-	"willkommen", --welcome --26
+	"lieferung", --delivery --25
+	"preis", --price --26
+	"willkommen", --welcome --27
 
 	--Spanish - Common
-	"barato", --cheap --27
-	"seguro", --safe/secure --28
-	"r[\195\161a]pido", --fast --29
-	"gratuito", --free --30
+	"barato", --cheap --28
+	"seguro", --safe/secure --29
+	"r[\195\161a]pido", --fast --30
+	"gratuito", --free --31
 
 	--Phishing
 	"blizz.*launch.*cata.*trial.*info.*log",
@@ -144,7 +145,8 @@ local triggers = {
 	--Advanced URL's/Misc
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
-	"wowgoldcat%.com.*%d+%W%d+k.*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
+	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCA T.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
+	"wowgoldcat%.com.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
 	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
@@ -215,7 +217,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local points = 0
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k > 30 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k > 31 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5
 			else
 				points = points + 1 --We only want certain words getting 1 point
