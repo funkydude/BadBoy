@@ -99,6 +99,7 @@ local triggers = {
 	"obtained.*rare.*mount.*blizzard.*haven.*receive.*log", --Hi, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ
 	"cataclysm.*qualify.*mysterious.*gift.*blizzard", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
 	"congrat.*invited.*warcraft.*cataclysm.*random.*visit", --Congratulations, you are invited to World of Warcraft Cataclysm Beta, Beta invites are completely random, Visit XYZ Cataclysm Beta more info!
+	"warcraft.*katastrophe.*kostenlos.*reittiere.*besuchen", --Hallo,Vielen Dank fur Ihre Unterstutzung fur World of Warcraft,die bevorstehende Katastrophe,haben Zugang zu den seltenen Woche kostenlos spielen Zeit und Reittiere,besuchen Sie bitte:XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -140,7 +141,8 @@ local triggers = {
 	--Little Horde House High Roller's Hide Out!!! 1-61 house, 62-92 DOUBLE, 93-100 TRIPLE!!  Min bet 500g, max 2k, bigger bets with better odds! For the High Rollers!
 	--Little Horde House Of Luck!! 1-62 i win, 63-95 DOUBLE YOUR BET, 96-100 TRIPLE YOUR BET!!! Only 10g to play! Max 1kg. Have some fun, and buy that new item you wanted!!
 	--1-63 lose 64-94 DOUBLE 95+ Triple! MIN IS 200G AND 7K IS MAX PST
-	"%d%-%d%d.*%d%d%-%d%d.*%d+.*triple.*%d+.*m[ai][xn]", --Euphoric rolls make you happy!  1-60 i win   61-91 you double your bet  92-99 you triple 100+ quad Min Bet 350g
+	--Euphoric rolls make you happy!  1-60 i win   61-91 you double your bet  92-99 you triple 100+ quad Min Bet 350g
+	"%d+%-%d+.*d[ou][bu]ble.*%d+%-%d+.*tripp?le", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
 
 	--Advanced URL's/Misc
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
@@ -155,7 +157,8 @@ local triggers = {
 	--Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
 	--Good Choice==> BUYEUGOLD.COM==>Only E17 per 10K --June 10
 	--Good Choice ===> MMO4STORE.CC ==> only E16.36 per 10k --June 10
-	"^goodchoice%W+.*%.c[co0@]m?%W+only.*[fp][oe]r%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
+	--Good==>{star}WOWGAMELIFE{star}.C@M==>Only E15 per 10K
+	"^goodc?h?o?i?c?e?%W+.*%.c[co0@]m?%W+only.*%d+.*%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
 	--Choice "M4M"==>WOWGAMELIFE.C@M==>Only E17 per 10K
 	--"M4M"==>WOWGAMELIFE.C@M==>Only E15 per 10K
 	--{star}M 4 M{star}==>> BUYEUGOLD.COM ==>>Only 15 EU for 10k
