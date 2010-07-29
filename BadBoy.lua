@@ -7,37 +7,38 @@ local triggers = {
 	"customer", --4
 	"deliver", --5
 	"discount", --6
-	"gold", --7
-	"lowest", --8
-	"order", --9
-	"powerlevel", --10
-	"price", --11
-	"promoti[on][gn]", --12
-	"reduced", --13
-	"safe", --14
-	"secure", --15
-	"server", --16
-	"service", --17
-	"stock", --18
-	"welcome", --19
-	"www", --20
-	"%d%.?%deuro?%W", --21
-	"%d%.?%deuro?for%d", --22
-	"%W%d%d+%.?%d*%W%d+%.?%d*k", --23
+	"extra", --7 //extra/sale
+	"gold", --8
+	"lowest", --9
+	"order", --10
+	"powerlevel", --11
+	"price", --12
+	"promoti[on][gn]", --13
+	"reduced", --14
+	"safe", --15
+	"secure", --16
+	"server", --17
+	"service", --18
+	"stock", --19
+	"welcome", --20
+	"www", --21
+	"%d%.?%deuro?%W", --22
+	"%d%.?%deuro?for%d", --23
+	"%W%d%d+%.?%d*%W%d+%.?%d*k", --24
 
 	--French - Common
-	"livraison", --delivery --24
+	"livraison", --delivery --25
 
 	--German - Common
-	"lieferung", --delivery --25
-	"preis", --price --26
-	"willkommen", --welcome --27
+	"lieferung", --delivery --26
+	"preis", --price --27
+	"willkommen", --welcome --28
 
 	--Spanish - Common
-	"barato", --cheap --28
-	"seguro", --safe/secure --29
-	"r[\195\161a]pido", --fast --30
-	"gratuito", --free --31
+	"barato", --cheap --29
+	"seguro", --safe/secure --30
+	"r[\195\161a]pido", --fast --31
+	"gratuito", --free --32
 
 	--Phishing
 	"blizz.*launch.*cata.*trial.*info.*log",
@@ -145,6 +146,7 @@ local triggers = {
 	"%d+%-%d+.*d[ou][bu]ble.*%d+%-%d+.*tripp?le", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
 
 	--Advanced URL's/Misc
+	"gold.*%W+.*only%d+.*%d+k%W+.*deliver$", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCA T.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
@@ -221,7 +223,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local points = 0
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k > 31 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k > 32 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5
 			else
 				points = points + 1 --We only want certain words getting 1 point
