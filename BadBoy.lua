@@ -4,27 +4,27 @@ local triggers = {
 	"bonus", --1
 	"buy", --2
 	"cheap", --3
-	"customer", --4
-	"deliver", --5
-	"discount", --6
-	"extra", --7 //extra/sale
-	"gold", --8
-	"lowest", --9
-	"order", --10
-	"powerlevel", --11
-	"price", --12
-	"promoti[on][gn]", --13
-	"reduced", --14
-	"safe", --15
-	"secure", --16
-	"server", --17
-	"service", --18
-	"stock", --19
-	"welcome", --20
-	"www", --21
-	"%d%.?%deuro?%W", --22
-	"%d%.?%deuro?for%d", --23
-	"%W%d%d+%.?%d*%W%d+%.?%d*k", --24
+	"coupon", --4
+	"customer", --5
+	"deliver", --6
+	"discount", --7
+	"extra", --8 //extra/sale
+	"gold", --9
+	"lowest", --10
+	"order", --11
+	"powerlevel", --12
+	"price", --13
+	"promoti[on][gn]", --14
+	"reduced", --15
+	"safe", --16
+	"secure", --17
+	"server", --18
+	"service", --19
+	"stock", --20
+	"welcome", --21
+	"www", --22
+	"%d+%.?%d*eur", --23
+	"[\226\130\172$\194\163]%d+", --24
 
 	--French - Common
 	"livraison", --delivery --25
@@ -101,6 +101,7 @@ local triggers = {
 	"cataclysm.*qualify.*mysterious.*gift.*blizzard", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
 	"congrat.*invited.*warcraft.*cataclysm.*random.*visit", --Congratulations, you are invited to World of Warcraft Cataclysm Beta, Beta invites are completely random, Visit XYZ Cataclysm Beta more info!
 	"warcraft.*katastrophe.*kostenlos.*reittiere.*besuchen", --Hallo,Vielen Dank fur Ihre Unterstutzung fur World of Warcraft,die bevorstehende Katastrophe,haben Zugang zu den seltenen Woche kostenlos spielen Zeit und Reittiere,besuchen Sie bitte:XYZ
+	"gm.*account.*suspend.*temp.*please.*info", --hi:[GM] Your account will be suspended temporarily ,Please go to for further information XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -146,11 +147,17 @@ local triggers = {
 	"%d+%-%d+.*d[ou][bu]ble.*%d+%-%d+.*tripp?le", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
 
 	--Advanced URL's/Misc
-	"gold.*%W+.*only%d+.*%d+k%W+.*deliver$", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCA T.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
 	"wowgoldcat%.com.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
+	--WTS [item] // Wir verkaufen [item]
+	--We provide equipment,mount,and stuff what you wanted.We have 300 professional players make it for you.
+	--If you have any question,please check our site{star}WWW.PVPBank.c{circle}m{star}24/7 twenty-four seven.
+	--We present 100 discount{square}core=itempvp{square}with 20% money discount.Sorry for disturb, Enjoy your game.
+	"www%.pvpbank%.c.*24", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
+	--{square}luckygolds,com{square}{diamond}only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
+	"luckygolds.*%d+eur.*%d+k.*%d+mindeliver", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
 	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
@@ -170,7 +177,6 @@ local triggers = {
 	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
 	"^%W+mmoggg%d+.*aktion%W+$", -->>> MMOGGG 25% Rabatt-Aktion <<< --July 10
 	"^%W+%d+.*bargeld.*rabatt.*gold%W+$", -->>> 25% Bargeld-Rabatt auf Gold<<< --July 10
-	"^%W+use.*promocode.*save.*gold.*mats%W+$", --temp
 	"%W+mmo4store%.c[0o]m%W+", --June 10
 	"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
 	"friend.*website.*gold4guild", --October 09
