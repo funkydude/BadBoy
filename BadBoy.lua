@@ -157,7 +157,8 @@ local triggers = {
 	--We present 100 discount{square}core=itempvp{square}with 20% money discount.Sorry for disturb, Enjoy your game.
 	"www%.pvpbank%.c.*24", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
 	--{square}luckygolds,com{square}{diamond}only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
-	"luckygolds.*%d+eur.*%d+k.*%d+mindeliver", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
+	--{square}lucktgilds,com{square}{diamond} only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
+	"g[oi]lds.*%d+eur.*%d+k.*%d+mindeliver", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
 	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
 	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
@@ -172,7 +173,8 @@ local triggers = {
 	--"M4M"==>WOWGAMELIFE.C@M==>Only E15 per 10K
 	--{star}M 4 M{star}==>> BUYEUGOLD.COM ==>>Only 15 EU for 10k
 	--{star}M 4 M{star}==> BUYEUGOLD.C@M ==>Only E15{star}10K
-	"m4m.*%W+.*%.c[co0@]m?%W+only.*%d+.*%d+k$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
+	--{star}M 4 M{star}===> BUYEUGOLD.COM ===>Only E15 per 10K+500g
+	"m4m.*%W+.*%.c[co0@]m?%W+only.*%d+.*%d+[kg]$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
 	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
 	"^%W+mmoggg%d+.*aktion%W+$", -->>> MMOGGG 25% Rabatt-Aktion <<< --July 10
