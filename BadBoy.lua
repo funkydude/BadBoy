@@ -156,7 +156,8 @@ local triggers = {
 	--We provide equipment,mount,and stuff what you wanted.We have 300 professional players make it for you.
 	--If you have any question,please check our site{star}WWW.PVPBank.c{circle}m{star}24/7 twenty-four seven.
 	--We present 100 discount{square}core=itempvp{square}with 20% money discount.Sorry for disturb, Enjoy your game.
-	"www%.pvpbank%.c.*24", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
+	--WWW.PVPBank.C{circle}MCODE=itempvp(20% price off)
+	"www%.pvpbank%.c.*%d+", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
 	--{square}luckygolds,com{square}{diamond}only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
 	--{square}lucktgilds,com{square}{diamond} only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
 	"g[oi]lds.*%d+eur.*%d+k.*%d+mindeliver", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
