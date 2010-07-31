@@ -24,21 +24,22 @@ local triggers = {
 	"welcome", --21
 	"www", --22
 	"%d+%.?%d*eur", --23
-	"[\226\130\172$\194\163]%d+", --24
+	"%d+%.?%d*dollars", --24
+	"[\226\130\172$\194\163]%d+", --25
 
 	--French - Common
-	"livraison", --delivery --25
+	"livraison", --delivery --26
 
 	--German - Common
-	"lieferung", --delivery --26
-	"preis", --price --27
-	"willkommen", --welcome --28
+	"lieferung", --delivery --27
+	"preis", --price --28
+	"willkommen", --welcome --29
 
 	--Spanish - Common
-	"barato", --cheap --29
-	"seguro", --safe/secure --30
-	"r[\195\161a]pido", --fast --31
-	"gratuito", --free --32
+	"barato", --cheap --30
+	"seguro", --safe/secure --31
+	"r[\195\161a]pido", --fast --32
+	"gratuito", --free --33
 
 	--Phishing
 	"blizz.*launch.*cata.*trial.*info.*log",
@@ -231,7 +232,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local points = 0
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k > 32 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k > 33 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5
 			else
 				points = points + 1 --We only want certain words getting 1 point
