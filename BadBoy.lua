@@ -300,7 +300,6 @@ end)
 
 --Temporary, until Blizzard fix the floating spam bots, we need to fix the sleep spam
 ChatFrame_AddMessageEventFilter("CHAT_MSG_TEXT_EMOTE", function(_, _, msg, player)
-	if not CanComplainChat(player) then return end --Don't filter ourself/friends
-	if msg:find("zzz") then return true end
+	if IsResting() and msg:find("zzz") then return true end
 end)
 
