@@ -92,17 +92,18 @@ local triggers = {
 	"surprise.*summon.*worgen.*first.*conquer.*visit", --surprise!Summons from goblins and worgens, the first warrior to conquer Azeroth will be you!please visit:[XYZ]
 	"congratulation.*limited.*warcraft.*mounts.*log", --Congratulations, you get limited edition World of Warcraft flying mounts.  please log in to receive:  XYZ
 	"become.*blizz.*customer.*free.*log", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Free unicorn zebra , please log in : XYZ
-	"congratulation.*warcraft.*mount.*tiger.*log", --Congratulations! World of Warcraft virtual rare mounts you get the Ghost Tiger Mounts, please log in to receive: XYZ
 	"warcraft.*cataclysm.*beta.*download.*visit", --Hello,World of Warcraft: 85 Cataclysm Test!beta client download!please visit: XYZ
 	"blizz.*scan.*system.*account.*virtuel.*website", --Hallo Blizzard Scanning-System zu Ihrem Spiel-Account ein Versto gegen die Regeln des Spiels virtuelle Devisenhandel Bitte besuchen Sie unsere Website XYZ prufen Sie die Kontodaten oder wir werden Ihrem Konto auszusetzen.
 	"master.*account.*info.*changed.*visit.*info", --hello! [Game Master]GM:Your account information is changed, please visit [XYZ] understanding of your information
 	"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
-	"congratu.*celestial.*mount.*warcraft.*log.*receive", --Congratulations, you get Celestial Steed Flying mount in World of Warcraft, please log in to receive
-	"obtained.*rare.*mount.*blizzard.*haven.*receive.*log", --Hi, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ
-	"cataclysm.*qualify.*mysterious.*gift.*blizzard", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
+	--Congratulations! World of Warcraft virtual rare mounts you get the Ghost Tiger Mounts, please log in to receive: XYZ
+	"congratulations.*mount.*log.*receive", --Congratulations, you get Celestial Steed Flying mount in World of Warcraft, please log in to receive
+	"mount.*blizzard.*receive.*log", --Hi, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ
+	"cataclysm.*gift.*blizzard.*log", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
 	"congrat.*invited.*warcraft.*cataclysm.*random.*visit", --Congratulations, you are invited to World of Warcraft Cataclysm Beta, Beta invites are completely random, Visit XYZ Cataclysm Beta more info!
 	"warcraft.*katastrophe.*kostenlos.*reittiere.*besuchen", --Hallo,Vielen Dank fur Ihre Unterstutzung fur World of Warcraft,die bevorstehende Katastrophe,haben Zugang zu den seltenen Woche kostenlos spielen Zeit und Reittiere,besuchen Sie bitte:XYZ
 	"gm.*account.*suspend.*temp.*please.*info", --hi:[GM] Your account will be suspended temporarily ,Please go to for further information XYZ
+	"seltenen.*blizz.*erhalten.*loggen", --Hallo, Sie haben einen seltenen Betrag von Blizzard bekommen. Aber Sie haben ihn noch nicht erhalten. Bitte loggen Sie sich ein XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -148,6 +149,8 @@ local triggers = {
 	"%d+%-%d+.*d[ou][bu]ble.*%d+%-%d+.*tripp?le", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
 
 	--Advanced URL's/Misc
+	"loverp.com.*%d%d%d+g.*coupon",
+	"sell.*cheap.*gold.*%d%d%d+g", --Selling cheap wow gold 3$=1100g,32$=10k+1000g //heuristic?
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCA T.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
