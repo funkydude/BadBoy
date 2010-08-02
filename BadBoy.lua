@@ -220,16 +220,16 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
 	msg = strreplace(msg, ",", ".") --Convert commas to periods
-	--START: 6 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 6
+	--START: 12 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 12
 	for k,v in ipairs(chatLines) do
-		if v == msg then --If message same as one in previous 6...
+		if v == msg then --If message same as one in previous 12...
 			for l,w in ipairs(chatPlayers) do
 				if l == k and w == player then --...and from the same person...
 					result = true return true --...filter!
 				end
 			end
 		end
-		if k == 6 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
+		if k == 12 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
 	end
 	table.insert(chatLines, msg)
 	table.insert(chatPlayers, player)
