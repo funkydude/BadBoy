@@ -157,7 +157,8 @@ local triggers = {
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCAT.C0M{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
-	"wowgoldcat%.c[0o]m.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
+	--M4S WOWGOLDCAT.C@M E15.8/10000GPower Lvl 70-80/E25.99
+	"wowgoldcat%.c.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
 	--WTS [item] // Wir verkaufen [item]
 	--We provide equipment,mount,and stuff what you wanted.We have 300 professional players make it for you.
 	--If you have any question,please check our site{star}WWW.PVPBank.c{circle}m{star}24/7 twenty-four seven.
