@@ -151,6 +151,8 @@ local triggers = {
 	--1-63 lose 64-94 DOUBLE 95+ Triple! MIN IS 200G AND 7K IS MAX PST
 	--Euphoric rolls make you happy!  1-60 i win   61-91 you double your bet  92-99 you triple 100+ quad Min Bet 350g
 	"%d+%-%d+.*d[ou][ub]ble.*%d+%-%d+.*tripp?le", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
+	"casino.*%d+x2.*%d+x3", --{star} CASINO {star} roll 64-99x2 your wager roll 100x3 your wager min bet 50g max 10k will show gold 100% legit (no inbetween rolls plz){diamond} good luck {diamond}
+	"casino.*%d+.*double.*%d+.*tripple", --The Golden Casino is offering 60+ Doubles, and 80+ Tripples!
 
 	--Advanced URL's/Misc
 	"games.*sale.*thankyou.*buy.*account", --games for sale warcraft iii,apb,cod mw2,css, and a lot more thank you--(multiple buyers already)also now 2 steam accounts with more then 10 games
