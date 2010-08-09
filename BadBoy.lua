@@ -108,6 +108,7 @@ local triggers = {
 	"gm.*account.*suspend.*temp.*please.*info", --hi:[GM] Your account will be suspended temporarily ,Please go to for further information XYZ
 	"seltenen.*blizz.*erhalten.*loggen", --Hallo, Sie haben einen seltenen Betrag von Blizzard bekommen. Aber Sie haben ihn noch nicht erhalten. Bitte loggen Sie sich ein XYZ
 	"blizz.*illegalen.*konto.*besuchen", --Hallo, Blizzard Anfrage an Ihren Spiel-Account an illegalen Goldhandel teilnehmen, Kontoinformationen, bitte Konto oder das Konto eingefroren werden, besuchen Sie bitte: XYZ
+	"blizz.*berechtigt.*katastrophe.*bitte", --Hallo! Blizzard Entertainment Ihnen mitteilen, dass Sie berechtigt sind, im Beta-Test teilnehmen Katastrophe. Fur weitere Informationen besuchen Sie bitte XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
