@@ -4,44 +4,45 @@ local triggers = {
 	"bonus", --1
 	"buy", --2
 	"cheap", --3
-	"coupon", --4
-	"customer", --5
-	"deliver", --6
-	"discount", --7
-	"extra", --8 //extra/sale
-	"gold", --9
-	"lowest", --10
-	"order", --11
-	"powerle?ve?l", --12
-	"price", --13
-	"promoti[on][gn]", --14
-	"reduced", --15
-	"safe", --16
-	"secure", --17
-	"server", --18
-	"service", --19
-	"stock", --20
-	"welcome", --21
-	"www", --22
-	"%d+%.?%d*eur", --23
-	"%d+%.?%d*dollars", --24
-	"[\226\130\172$\194\163]%d+", --25
+	"code", --4
+	"coupon", --5
+	"customer", --6
+	"deliver", --7
+	"discount", --8
+	"extra", --9 //extra/sale
+	"gold", --10
+	"lowest", --11
+	"order", --12
+	"powerle?ve?l", --13
+	"price", --14
+	"promoti[on][gn]", --15
+	"reduced", --16
+	"safe", --17
+	"secure", --18
+	"server", --19
+	"service", --20
+	"stock", --21
+	"welcome", --22
+	"www", --23
+	"%d+%.?%d*eur", --24
+	"%d+%.?%d*dollars", --25
+	"[\226\130\172$\194\163]%d+", --26
 
 	--French - Common
-	"livraison", --delivery --26
+	"livraison", --delivery --27
 
 	--German - Common
-	"billigster", --cheapest --27
-	"lieferung", --delivery --28
-	"preis", --price --29
-	"willkommen", --welcome --30
+	"billigster", --cheapest --28
+	"lieferung", --delivery --29
+	"preis", --price --30
+	"willkommen", --welcome --31
 
 	--Spanish - Common
-	"barato", --cheap --31
-	"gratuito", --free --32
-	"r[\195\161a]pido", --fast --33
-	"seguro", --safe/secure --34
-	"servicio", --service --35
+	"barato", --cheap --32
+	"gratuito", --free --33
+	"r[\195\161a]pido", --fast --34
+	"seguro", --safe/secure --35
+	"servicio", --service --36
 
 	--Phishing
 	"blizz.*launch.*cata.*trial.*info.*log",
@@ -157,58 +158,57 @@ local triggers = {
 
 	--Advanced URL's/Misc
 	"games.*sale.*thankyou.*buy.*account", --games for sale warcraft iii,apb,cod mw2,css, and a lot more thank you--(multiple buyers already)also now 2 steam accounts with more then 10 games
-	"loverp.com.*%d%d%d+g.*coupon",
+	"loverp[%.,]com.*%d%d%d+g.*coupon",
 	"sell.*cheap.*gold.*%d%d%d+g", --Selling cheap wow gold 3$=1100g,32$=10k+1000g //heuristic?
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCAT.C0M{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
 	--M4S WOWGOLDCAT.C@M E15.8/10000GPower Lvl 70-80/E25.99
-	"wowgoldcat%.c.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
+	"wowgoldcat.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
 	--WTS [item] // Wir verkaufen [item]
 	--We provide equipment,mount,and stuff what you wanted.We have 300 professional players make it for you.
 	--If you have any question,please check our site{star}WWW.PVPBank.c{circle}m{star}24/7 twenty-four seven.
 	--We present 100 discount{square}core=itempvp{square}with 20% money discount.Sorry for disturb, Enjoy your game.
 	--WWW.PVPBank.C{circle}MCODE=itempvp(20% price off)
-	"www%.pvpbank%.c.*%d+", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
+	"www[%.,]pvpbank[%.,]c.*%d+", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
 	--{square}luckygolds,com{square}{diamond}only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
 	--{square}lucktgilds,com{square}{diamond} only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
 	"g[oi]lds.*%d+eur.*%d+k.*%d+mindeliver", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
-	"^%W+.*buyeugold%..*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
+	"^%W+.*buyeugold.*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
 	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
-	"^%W+mm[0o]%[?yy%.c[0o]m%W+$", --May 10
-	"^%W+diymm[0o]game.c[0o]m%W+$", --June 10
+	"^%W+mm[0o]%[?yy[%.,]c[0o]m%W+$", --May 10
+	"^%W+diymm[0o]game[%.,]c[0o]m%W+$", --June 10
 	--Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
 	--Good Choice==> BUYEUGOLD.COM==>Only E17 per 10K --June 10
 	--Good Choice ===> MMO4STORE.CC ==> only E16.36 per 10k --June 10
 	--Good==>{star}WOWGAMELIFE{star}.C@M==>Only E15 per 10K
-	"^goodc?h?o?i?c?e?%W+.*%.c[co0@][o0@]?m?%W+only.*%d+.*%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
+	"^goodc?h?o?i?c?e?%W+.*[%.,]c[co0@][o0@]?m?%W+only.*%d+.*%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
 	--Choice "M4M"==>WOWGAMELIFE.C@M==>Only E17 per 10K
 	--"M4M"==>WOWGAMELIFE.C@M==>Only E15 per 10K
 	--{star}M 4 M{star}==>> BUYEUGOLD.COM ==>>Only 15 EU for 10k
 	--{star}M 4 M{star}==> BUYEUGOLD.C@M ==>Only E15{star}10K
 	--{star}M 4 M{star}===> BUYEUGOLD.COM ===>Only E15 per 10K+500g
 	--"M 4 M"==>> BUYEUGOLD.C@OM =>>Only E15 per 10K
-	"m4m.*%W+.*%.c[co0@][o0@]?m?%W+only.*%d+.*%d+[kg]$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
+	"m4m.*%W+.*[%.,]c[co0@][o0@]?m?%W+only.*%d+.*%d+[kg]$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
-	"^%W+m+oggg%.[cd][oe]m?%W+$", --April 10
+	"^%W+m+oggg[%.,][cd][oe]m?%W+$", --April 10
 	"^%W+mmoggg%d+.*aktion%W+$", -->>> MMOGGG 25% Rabatt-Aktion <<< --July 10
 	"^%W+%d+.*bargeld.*rabatt.*gold%W+$", -->>> 25% Bargeld-Rabatt auf Gold<<< --July 10
-	"%W+mmo4store%.c[0o]m%W+", --June 10
+	"%W+mmo4store[%.,]c[0o]m%W+", --June 10
 	"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
 	"friend.*website.*gold4guild", --October 09
-	"friend.*website.*gg4g%.[ce]", --January 09
-	"friend.*website.*wowseller%.c", --April 10
-	"^%W+w*%.?gold4guild%.c[o0]m%W+$", --October 09
-	"^%W+w*%.?wowseller%.c[o0]m%W+$", --April 10
-	"^%W+gg4g%.[ce][ou]m?%W+$", --January 09
-	"^www%.ignmax%.com$", --December 09
-	"gamesky2%..*deliver", --January 10
+	"friend.*website.*gg4g", --January 09
+	"friend.*website.*wowseller", --April 10
+	"^%W+w*[%.,]?gold4guild[%.,]c[o0]m%W+$", --October 09
+	"^%W+w*[%.,]?wowseller[%.,]c[o0]m%W+$", --April 10
+	"^%W+gg4g[%.,][ce][ou]m?%W+$", --January 09
+	"^www[%.,]ignmax[%.,]com$", --December 09
 	--fullgamegold,com-T10 equipment,honor,skill and powerleveling 1-80 Only 170 EUR 10 days.
-	"fullgamegold%.com.*only%d+%.?%d*eur.*%d+", --***** fullgamegold,com ***** Only 1.8 EUR per 1000 gold.
+	"fullgamegold.*only%d+%.?%d*eur.*%d+", --***** fullgamegold,com ***** Only 1.8 EUR per 1000 gold.
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
-	"skillcopper%.eu.*wow.*spectral", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
+	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
 -- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, table, UnitInParty, UnitInRaid, ComplainChat, CanComplainChat
@@ -225,7 +225,6 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local debug = msg
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
-	msg = strreplace(msg, ",", ".") --Convert commas to periods
 	--START: 12 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 12
 	for k,v in ipairs(chatLines) do
 		if v == msg then --If message same as one in previous 12...
@@ -243,7 +242,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local points = 0
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k > 35 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k > 36 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5
 			else
 				points = points + 1 --We only want certain words getting 1 point
