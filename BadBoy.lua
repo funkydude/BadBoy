@@ -68,7 +68,6 @@ local triggers = {
 	"you.*account.*temp.*disabled.*info", --Your account will be temporarily disabled.Please visit [XYZ] for more information
 	"congratu.*cata.*beta.*invitation.*activate", --Congratulations! You've got a WOW Cataclysm Beta Invitation. Please visit XYZ to activate your account.
 	"congratu.*shirt.*world.*warcraft.*prize", --Hello. Congratulations, you get a T shirt for World of Warcraft. Want to know prizes, please visit the Forum: XYZ
-	"blizz.*account.*warcraft.*catac.*beta", --hello,Blizzard Entertainment notifies you that your account has been chosen to participate in World of Warcraft Cataclysm beta test. For more information please visit  [XYZ]
 	--enUS Congratulations you will become a happy player, you will get a free trial version of the new Blizzard 310% Invincible Ghost flying mount, 24 hours, please register now: XYZ
 	"spieler.*testversion.*blizz.*invincible.*ghost", --deDE Herzlichen Gluckwunsch Sie werden gluckliche Spieler, werden Sie eine kostenlose Testversion erhalten neuesten Blizzard 310% Invincible Ghost fliegende Reittiere, 24 Stunden, bitte jetzt anmelden: XYZ
 	"blizz.*launch.*mount.*trial.*info", --Hi, Blizzard is about to launch a new mounts, Free trial, For more information, please log in: XYZ
@@ -88,7 +87,6 @@ local triggers = {
 	"customer.*blizz.*lucky.*player.*gift", --Dear Customer, you have become a blizzard lucky Players, can get a gift,registered address: XYZ
 	"drawn.*system.*receive.*cataclysm.*beta", --CONGRATULATiONS!YOU ARE DRAWN IN THE SYSTEM TO RECEiVE YOUR ACHiEVEMENTS REWARDS! IT'S A CATACLYSM  CLOSED BETA!PLEASE  ViSIT:[XYZ--BLiZZARD]
 	"hallo.*schon.*system.*erhalten.*klicken", --Hallo!Sie sind schon von diesem System auserwahlt worden und werden Pramie erhalten. Klicken Sie bitte: [XYZ]#!
-	"blizz.*notif[iy].*account.*cataclysm.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to participate in Cataclysm beta test. For more information please visit: XYZ
 	"blizz.*account.*safety.*hacker.*opportunity", --Blizzard latest activities, cell phone locked account hundred percent safety of your account, no interference by hackers who have the opportunity to get big disaster trial eligibility, please visit:XYZ
 	"blizz.*warcraft.*account.*info.*disable", --Hello! Blizzard World of Warcraft game found in violation of your game account, please visit our website [XYZ] enter your information, pending review, or we will permanently disable your game account. 
 	"blizz.*monk.*store.*log.*submit.*free", --Hello, In celebration of BlizzCon 2010 you have receieved a Pandaren Monk Pet from the Blizzard Pet Store. please log in at [XYZ] Submit your email, and your free pet will be sent to all of your characters!
@@ -110,6 +108,9 @@ local triggers = {
 	"seltenen.*blizz.*erhalten.*loggen", --Hallo, Sie haben einen seltenen Betrag von Blizzard bekommen. Aber Sie haben ihn noch nicht erhalten. Bitte loggen Sie sich ein XYZ
 	"blizz.*illegalen.*konto.*besuchen", --Hallo, Blizzard Anfrage an Ihren Spiel-Account an illegalen Goldhandel teilnehmen, Kontoinformationen, bitte Konto oder das Konto eingefroren werden, besuchen Sie bitte: XYZ
 	"blizz.*berechtigt.*katastrophe.*bitte", --Hallo! Blizzard Entertainment Ihnen mitteilen, dass Sie berechtigt sind, im Beta-Test teilnehmen Katastrophe. Fur weitere Informationen besuchen Sie bitte XYZ
+	--hello,Blizzard Entertainment notifies you that your account has been chosen to participate in World of Warcraft Cataclysm beta test. For more information please visit  [XYZ]
+	--Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to participate in Cataclysm beta test. For more information please visit: XYZ
+	"blizz.*account.*chosen.*test.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to test.For more information please visit; XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
