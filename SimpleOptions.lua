@@ -157,5 +157,20 @@ do
 	btnNoArtFilterTextTwo:SetJustifyH("LEFT")
 	btnNoArtFilterText:SetText(locNoArtTitle)
 	btnNoArtFilterTextTwo:SetText(locNoArtDesc)
+
+	local levelsTitle = badboy:CreateFontString("BadBoyLevelsConfigTitle", "ARTWORK", "GameFontNormalLarge")
+	levelsTitle:SetPoint("LEFT", 16, -16)
+	levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
+
+	local editBox = CreateFrame("EditBox", "BadBoyLevelsEditBox", badboy, "InputBoxTemplate")
+	editBox:SetPoint("LEFT", 42, -40)
+	editBox:SetWidth("50")
+	editBox:SetHeight("10")
+	editBox:SetText("Bunny!")
+	editBox:Show()
+
+	local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
+	ccleanerTitle:SetPoint("BOTTOMLEFT", 16, 0)
+	ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 end
 
