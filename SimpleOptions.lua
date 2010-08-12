@@ -54,7 +54,7 @@ do
 	local btnNoReportMsg = CreateFrame("CheckButton", "BadBoyConfigButton1", badboy)
 	btnNoReportMsg:SetWidth(26)
 	btnNoReportMsg:SetHeight(26)
-	btnNoReportMsg:SetPoint("TOPLEFT", 16, -52)
+	btnNoReportMsg:SetPoint("TOPLEFT", 16, -35)
 	btnNoReportMsg:SetScript("OnShow", function(frame)
 		if BADBOY_SILENT then
 			frame:SetChecked(true)
@@ -73,7 +73,7 @@ do
 		end
 	end)
 
-	btnNoReportMsg:SetHitRectInsets(0, -100, 0, 0)
+	btnNoReportMsg:SetHitRectInsets(0, -200, 0, 0)
 
 	btnNoReportMsg:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
 	btnNoReportMsg:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
@@ -87,7 +87,7 @@ do
 	local btnManualReport = CreateFrame("CheckButton", "BadBoyConfigButton2", badboy)
 	btnManualReport:SetWidth(26)
 	btnManualReport:SetHeight(26)
-	btnManualReport:SetPoint("TOPLEFT", 16, -82)
+	btnManualReport:SetPoint("TOPLEFT", 16, -57)
 	btnManualReport:SetScript("OnShow", function(frame)
 		if BADBOY_POPUP then
 			frame:SetChecked(true)
@@ -106,7 +106,7 @@ do
 		end
 	end)
 
-	btnManualReport:SetHitRectInsets(0, -100, 0, 0)
+	btnManualReport:SetHitRectInsets(0, -200, 0, 0)
 
 	btnManualReport:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
 	btnManualReport:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
@@ -122,7 +122,7 @@ do
 	local btnNoArtFilter = CreateFrame("CheckButton", "BadBoyConfigButton3", badboy)
 	btnNoArtFilter:SetWidth(26)
 	btnNoArtFilter:SetHeight(26)
-	btnNoArtFilter:SetPoint("TOPLEFT", 16, -112)
+	btnNoArtFilter:SetPoint("TOPLEFT", 16, -79)
 	btnNoArtFilter:SetScript("OnShow", function(frame)
 		if BADBOY_ALLOWART then
 			frame:SetChecked(true)
@@ -141,7 +141,7 @@ do
 		end
 	end)
 
-	btnNoArtFilter:SetHitRectInsets(0, -100, 0, 0)
+	btnNoArtFilter:SetHitRectInsets(0, -200, 0, 0)
 
 	btnNoArtFilter:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
 	btnNoArtFilter:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
@@ -150,27 +150,50 @@ do
 
 	local btnNoArtFilterText = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Title", "ARTWORK", "GameFontHighlight")
 	btnNoArtFilterText:SetPoint("LEFT", btnNoArtFilter, "RIGHT", 0, 1)
-	local btnNoArtFilterTextTwo = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Desc", "ARTWORK", "GameFontHighlight")
-	btnNoArtFilterTextTwo:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMRIGHT", 0, 6)
-	btnNoArtFilterTextTwo:SetWidth(350)
-	btnNoArtFilterTextTwo:SetHeight(90)
-	btnNoArtFilterTextTwo:SetJustifyH("LEFT")
 	btnNoArtFilterText:SetText(locNoArtTitle)
-	btnNoArtFilterTextTwo:SetText(locNoArtDesc)
+
+	btnNoArtFilter:SetScript("OnEnter", function(frame)
+		GameTooltip:SetOwner(frame, "ANCHOR_TOP")
+		GameTooltip:AddLine(locNoArtDesc, nil, nil, nil, true)
+		GameTooltip:Show()
+	end)
+	btnNoArtFilter:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
 
 	local levelsTitle = badboy:CreateFontString("BadBoyLevelsConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	levelsTitle:SetPoint("LEFT", 16, -16)
+	levelsTitle:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 0, -5)
 	levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
 
 	local editBox = CreateFrame("EditBox", "BadBoyLevelsEditBox", badboy, "InputBoxTemplate")
-	editBox:SetPoint("LEFT", 42, -40)
+	editBox:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 10, -35)
+	editBox:SetAutoFocus(false)
+	editBox:EnableMouse(false)
 	editBox:SetWidth("50")
 	editBox:SetHeight("10")
 	editBox:SetText("Bunny!")
 	editBox:Show()
 
 	local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	ccleanerTitle:SetPoint("BOTTOMLEFT", 16, 0)
+	ccleanerTitle:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", -10, -10)
 	ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
+
+	local ccleanerScrollArea = CreateFrame("ScrollFrame", "BadBoyCCleanerConfigScroll", badboy, "UIPanelScrollFrameTemplate")
+	ccleanerScrollArea:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", 0, -30)
+	ccleanerScrollArea:SetPoint("BOTTOMRIGHT", badboy, "BOTTOMRIGHT", -30, 8)
+
+	ccleanerEditBox = CreateFrame("EditBox", "BadBoyCCleanerEditBox", badboy)
+	ccleanerEditBox:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", 0, -30)
+	ccleanerEditBox:SetMultiLine(true)
+	ccleanerEditBox:SetMaxLetters(99999)
+	ccleanerEditBox:EnableMouse(false)
+	ccleanerEditBox:SetAutoFocus(false)
+	ccleanerEditBox:SetFontObject(ChatFontNormal)
+	ccleanerEditBox:SetWidth("350")
+	ccleanerEditBox:SetHeight("250")
+	ccleanerEditBox:SetText("m\na\nn\ny\n \nb\nu\nn\nn\ni\ne\ns\n.\n.\n.\n!")
+	ccleanerEditBox:Show()
+
+	ccleanerScrollArea:SetScrollChild(ccleanerEditBox)
 end
 
