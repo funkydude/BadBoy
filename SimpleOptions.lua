@@ -169,31 +169,86 @@ do
 	editBox:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 10, -35)
 	editBox:SetAutoFocus(false)
 	editBox:EnableMouse(false)
-	editBox:SetWidth("50")
-	editBox:SetHeight("10")
-	editBox:SetText("Bunny!")
+	editBox:SetNumeric(true)
+	editBox:SetWidth(30)
+	editBox:SetHeight(20)
+	editBox:SetMaxLetters(2)
+	editBox:SetText(10)
+	--XXX move functions to _Levels
+	editBox:SetScript("OnTextChanged", function(_, changed)
+		if changed then
+			BadBoyLevelsButton:Show()
+		end
+	end)
 	editBox:Show()
+
+	local button = CreateFrame("Button", "BadBoyLevelsButton", editBox, "UIPanelButtonTemplate")
+	button:SetWidth(40)
+	button:SetHeight(20)
+	button:SetPoint("LEFT", editBox, "RIGHT")
+	button:SetText(OKAY)
+	button:SetScript("OnClick", function(frame)
+		BadBoyLevelsEditBox:ClearFocus()
+		frame:Hide()
+	end)
+	button:Hide()
 
 	local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
 	ccleanerTitle:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", -10, -10)
 	ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 
+	local ccleanerInput = CreateFrame("EditBox", "BadBoyCCleanerInput", badboy, "InputBoxTemplate")
+	ccleanerInput:SetPoint("TOPLEFT", BadBoyLevelsEditBox, "BOTTOMLEFT", 0, -30)
+	ccleanerInput:SetAutoFocus(false)
+	ccleanerInput:EnableMouse(true)
+	ccleanerInput:SetWidth(250)
+	ccleanerInput:SetHeight(20)
+	ccleanerInput:SetMaxLetters(30)
+	ccleanerInput:SetText("WHOPPER NO ONION")
+	--XXX move functions to _CCleaner
+	ccleanerInput:SetScript("OnTextChanged", function(_, changed)
+		if changed then
+			BadBoyCCleanerButton:Show()
+		end
+	end)
+	ccleanerInput:Show()
+
+	local ccleanerButton = CreateFrame("Button", "BadBoyCCleanerButton", ccleanerInput, "UIPanelButtonTemplate")
+	ccleanerButton:SetWidth(85)
+	ccleanerButton:SetHeight(20)
+	ccleanerButton:SetPoint("LEFT", ccleanerInput, "RIGHT")
+	ccleanerButton:SetText("Add/Remove")
+	ccleanerButton:SetScript("OnClick", function(frame)
+		BadBoyCCleanerInput:ClearFocus()
+		frame:Hide()
+	end)
+	ccleanerButton:Hide()
+
 	local ccleanerScrollArea = CreateFrame("ScrollFrame", "BadBoyCCleanerConfigScroll", badboy, "UIPanelScrollFrameTemplate")
-	ccleanerScrollArea:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", 0, -30)
+	ccleanerScrollArea:SetPoint("TOPLEFT", ccleanerInput, "BOTTOMLEFT", 0, -7)
 	ccleanerScrollArea:SetPoint("BOTTOMRIGHT", badboy, "BOTTOMRIGHT", -30, 8)
 
 	ccleanerEditBox = CreateFrame("EditBox", "BadBoyCCleanerEditBox", badboy)
-	ccleanerEditBox:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", 0, -30)
 	ccleanerEditBox:SetMultiLine(true)
 	ccleanerEditBox:SetMaxLetters(99999)
 	ccleanerEditBox:EnableMouse(false)
 	ccleanerEditBox:SetAutoFocus(false)
 	ccleanerEditBox:SetFontObject(ChatFontNormal)
-	ccleanerEditBox:SetWidth("350")
-	ccleanerEditBox:SetHeight("250")
-	ccleanerEditBox:SetText("m\na\nn\ny\n \nb\nu\nn\nn\ni\ne\ns\n.\n.\n.\n!")
+	ccleanerEditBox:SetWidth(350)
+	ccleanerEditBox:SetHeight(250)
+	ccleanerEditBox:SetText("Many\nbad\nwords\nshall\nend\nup\nin\nhere")
 	ccleanerEditBox:Show()
 
 	ccleanerScrollArea:SetScrollChild(ccleanerEditBox)
+
+	local ccleanerBackdrop = CreateFrame("Frame", "BadBoyCCleanerBackdrop", badboy)
+	ccleanerBackdrop:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+		edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+		tile = true, tileSize = 16, edgeSize = 16,
+		insets = {left = 3, right = 3, top = 5, bottom = 3}}
+	)
+	ccleanerBackdrop:SetBackdropColor(0,0,0,1)
+	ccleanerBackdrop:SetPoint("TOPLEFT", ccleanerInput, "BOTTOMLEFT", -5, 0)
+	ccleanerBackdrop:SetPoint("BOTTOMRIGHT", badboy, "BOTTOMRIGHT", -3, 3)
 end
 

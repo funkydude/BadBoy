@@ -111,6 +111,7 @@ local triggers = {
 	--hello,Blizzard Entertainment notifies you that your account has been chosen to participate in World of Warcraft Cataclysm beta test. For more information please visit  [XYZ]
 	--Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to participate in Cataclysm beta test. For more information please visit: XYZ
 	"blizz.*account.*chosen.*test.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to test.For more information please visit; XYZ
+	"blizz.*inform.*qualifi.*test.*info", --Hallo! Blizzard Entertainment informiert Sie, dass Ihr qualifiziert sind, in Cataclysm Beta Test teilnehmen. Fur weitere Informationen besuchen Sie bitte XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
