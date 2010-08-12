@@ -162,43 +162,65 @@ do
 	end)
 
 	local levelsTitle = badboy:CreateFontString("BadBoyLevelsConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	levelsTitle:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 0, -5)
+	levelsTitle:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 0, -3)
 	levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
 
-	local editBox = CreateFrame("EditBox", "BadBoyLevelsEditBox", badboy, "InputBoxTemplate")
-	editBox:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 10, -35)
-	editBox:SetAutoFocus(false)
-	editBox:EnableMouse(false)
-	editBox:SetNumeric(true)
-	editBox:SetWidth(30)
-	editBox:SetHeight(20)
-	editBox:SetMaxLetters(2)
-	editBox:SetText(10)
+	local levelsBox = CreateFrame("EditBox", "BadBoyLevelsEditBox", badboy, "InputBoxTemplate")
+	levelsBox:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 10, -25)
+	levelsBox:SetAutoFocus(false)
+	levelsBox:EnableMouse(false)
+	levelsBox:SetNumeric(true)
+	levelsBox:SetWidth(30)
+	levelsBox:SetHeight(20)
+	levelsBox:SetMaxLetters(2)
+	levelsBox:SetText(10)
 	--XXX move functions to _Levels
-	editBox:SetScript("OnTextChanged", function(_, changed)
+	levelsBox:SetScript("OnTextChanged", function(_, changed)
 		if changed then
-			BadBoyLevelsButton:Show()
+			--
 		end
 	end)
-	editBox:Show()
-
-	local button = CreateFrame("Button", "BadBoyLevelsButton", editBox, "UIPanelButtonTemplate")
-	button:SetWidth(40)
-	button:SetHeight(20)
-	button:SetPoint("LEFT", editBox, "RIGHT")
-	button:SetText(OKAY)
-	button:SetScript("OnClick", function(frame)
-		BadBoyLevelsEditBox:ClearFocus()
-		frame:Hide()
-	end)
-	button:Hide()
+	levelsBox:Show()
 
 	local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	ccleanerTitle:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", -10, -10)
+	ccleanerTitle:SetPoint("TOPLEFT", levelsBox, "BOTTOMLEFT", -10, -3)
 	ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 
+	local ccleanerNoIcons = CreateFrame("CheckButton", "BadBoyCCleanerNoIconButton", badboy)
+	ccleanerNoIcons:SetWidth(26)
+	ccleanerNoIcons:SetHeight(26)
+	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyLevelsEditBox, "BOTTOMLEFT", -10, -20)
+	ccleanerNoIcons:SetScript("OnShow", function(frame)
+		--[[if BADBOY_SILENT then
+			frame:SetChecked(true)
+		else
+			frame:SetChecked(false)
+		end]]
+	end)
+	ccleanerNoIcons:SetScript("OnClick", function(frame)
+		local tick = frame:GetChecked()
+		if tick then
+			PlaySound("igMainMenuOptionCheckBoxOn")
+			--BADBOY_SILENT = true
+		else
+			PlaySound("igMainMenuOptionCheckBoxOff")
+			--BADBOY_SILENT = nil
+		end
+	end)
+
+	ccleanerNoIcons:SetHitRectInsets(0, -200, 0, 0)
+
+	ccleanerNoIcons:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
+	ccleanerNoIcons:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
+	ccleanerNoIcons:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
+	ccleanerNoIcons:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
+
+	local noIconsMsgText = ccleanerNoIcons:CreateFontString("BadBoyCCleanerNoIconButtonTitle", "ARTWORK", "GameFontHighlight")
+	noIconsMsgText:SetPoint("LEFT", ccleanerNoIcons, "RIGHT", 0, 1)
+	noIconsMsgText:SetText("Replace Raid Icons")
+
 	local ccleanerInput = CreateFrame("EditBox", "BadBoyCCleanerInput", badboy, "InputBoxTemplate")
-	ccleanerInput:SetPoint("TOPLEFT", BadBoyLevelsEditBox, "BOTTOMLEFT", 0, -30)
+	ccleanerInput:SetPoint("TOPLEFT", ccleanerNoIcons, "BOTTOMLEFT", 10, -5)
 	ccleanerInput:SetAutoFocus(false)
 	ccleanerInput:EnableMouse(true)
 	ccleanerInput:SetWidth(250)
@@ -214,7 +236,7 @@ do
 	ccleanerInput:Show()
 
 	local ccleanerButton = CreateFrame("Button", "BadBoyCCleanerButton", ccleanerInput, "UIPanelButtonTemplate")
-	ccleanerButton:SetWidth(85)
+	ccleanerButton:SetWidth(90)
 	ccleanerButton:SetHeight(20)
 	ccleanerButton:SetPoint("LEFT", ccleanerInput, "RIGHT")
 	ccleanerButton:SetText("Add/Remove")
@@ -226,7 +248,7 @@ do
 
 	local ccleanerScrollArea = CreateFrame("ScrollFrame", "BadBoyCCleanerConfigScroll", badboy, "UIPanelScrollFrameTemplate")
 	ccleanerScrollArea:SetPoint("TOPLEFT", ccleanerInput, "BOTTOMLEFT", 0, -7)
-	ccleanerScrollArea:SetPoint("BOTTOMRIGHT", badboy, "BOTTOMRIGHT", -30, 8)
+	ccleanerScrollArea:SetPoint("BOTTOMRIGHT", badboy, "BOTTOMRIGHT", -30, 10)
 
 	ccleanerEditBox = CreateFrame("EditBox", "BadBoyCCleanerEditBox", badboy)
 	ccleanerEditBox:SetMultiLine(true)
@@ -249,6 +271,6 @@ do
 	)
 	ccleanerBackdrop:SetBackdropColor(0,0,0,1)
 	ccleanerBackdrop:SetPoint("TOPLEFT", ccleanerInput, "BOTTOMLEFT", -5, 0)
-	ccleanerBackdrop:SetPoint("BOTTOMRIGHT", badboy, "BOTTOMRIGHT", -3, 3)
+	ccleanerBackdrop:SetPoint("BOTTOMRIGHT", badboy, "BOTTOMRIGHT", -27, 5)
 end
 
