@@ -38,6 +38,7 @@ do
 	elseif L == "ruRU" then
 		locNoReportMsg = "Прятать сообщение '%s'"
 		locManualReport = "Отключить автоматическую жалобу на спам (показывать подтверждение)"
+		locNoArtTitle = "Отключить фильтр ASCII-картинок"
 		BADBOY_NOLATIN = true
 	end
 
@@ -51,7 +52,7 @@ do
 	title:SetPoint("TOPLEFT", 16, -16)
 	title:SetText("BadBoy ".."@project-version@") --wowace magic, replaced with tag version
 
-	local btnNoReportMsg = CreateFrame("CheckButton", "BadBoyConfigButton1", badboy)
+	local btnNoReportMsg = CreateFrame("CheckButton", "BadBoyConfigSilenceButton", badboy)
 	btnNoReportMsg:SetWidth(26)
 	btnNoReportMsg:SetHeight(26)
 	btnNoReportMsg:SetPoint("TOPLEFT", 16, -35)
@@ -80,11 +81,11 @@ do
 	btnNoReportMsg:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
 	btnNoReportMsg:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
 
-	local btnNoReportMsgText = btnNoReportMsg:CreateFontString("BadBoyConfigButton1Title", "ARTWORK", "GameFontHighlight")
+	local btnNoReportMsgText = btnNoReportMsg:CreateFontString("BadBoyConfigSilenceButtonTitle", "ARTWORK", "GameFontHighlight")
 	btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
 	btnNoReportMsgText:SetText((locNoReportMsg):format(COMPLAINT_ADDED))
 
-	local btnManualReport = CreateFrame("CheckButton", "BadBoyConfigButton2", badboy)
+	local btnManualReport = CreateFrame("CheckButton", "BadBoyConfigPopupButton", badboy)
 	btnManualReport:SetWidth(26)
 	btnManualReport:SetHeight(26)
 	btnManualReport:SetPoint("TOPLEFT", 16, -57)
@@ -113,17 +114,21 @@ do
 	btnManualReport:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
 	btnManualReport:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
 
-	local btnManualReportText = btnManualReport:CreateFontString("BadBoyConfigButton2Title", "ARTWORK", "GameFontHighlight")
+	local btnManualReportText = btnManualReport:CreateFontString("BadBoyConfigPopupButtonTitle", "ARTWORK", "GameFontHighlight")
 	btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
 	btnManualReportText:SetText(locManualReport)
 
-	if BADBOY_NOLATIN then return end
 
-	local btnNoArtFilter = CreateFrame("CheckButton", "BadBoyConfigButton3", badboy)
+	local btnNoArtFilter = CreateFrame("CheckButton", "BadBoyConfigNoArtButton", badboy)
 	btnNoArtFilter:SetWidth(26)
 	btnNoArtFilter:SetHeight(26)
 	btnNoArtFilter:SetPoint("TOPLEFT", 16, -79)
 	btnNoArtFilter:SetScript("OnShow", function(frame)
+		if BADBOY_NOLATIN then
+			frame:Disable()
+			BadBoyConfigNoArtButtonTitle:SetTextColor(0.5, 0.5, 0.5)
+			return
+		end
 		if BADBOY_ALLOWART then
 			frame:SetChecked(true)
 		else
@@ -131,6 +136,7 @@ do
 		end
 	end)
 	btnNoArtFilter:SetScript("OnClick", function(frame)
+		if BADBOY_NOLATIN then return end
 		local tick = frame:GetChecked()
 		if tick then
 			PlaySound("igMainMenuOptionCheckBoxOn")
@@ -148,7 +154,7 @@ do
 	btnNoArtFilter:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
 	btnNoArtFilter:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
 
-	local btnNoArtFilterText = btnNoArtFilter:CreateFontString("BadBoyConfigButton3Title", "ARTWORK", "GameFontHighlight")
+	local btnNoArtFilterText = btnNoArtFilter:CreateFontString("BadBoyConfigNoArtButtonTitle", "ARTWORK", "GameFontHighlight")
 	btnNoArtFilterText:SetPoint("LEFT", btnNoArtFilter, "RIGHT", 0, 1)
 	btnNoArtFilterText:SetText(locNoArtTitle)
 
