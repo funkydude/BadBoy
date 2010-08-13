@@ -178,20 +178,20 @@ do
 		if IsAddOnLoaded("BadBoy_Levels") then
 			BadBoyLevelsConfigTitle:SetText("BadBoy_Levels ["..UNKNOWN.."]")
 			if BADBOY_LEVEL and type(BADBOY_LEVEL) ~= "number" then BADBOY_LEVEL = nil end
-			if BADBOY_LEVEL and BADBOY_LEVEL<1 or BADBOY_LEVEL>79 then BADBOY_LEVEL = nil end
+			if BADBOY_LEVEL and (BADBOY_LEVEL<1 or BADBOY_LEVEL>79) then BADBOY_LEVEL = nil end
 			frame:SetText(BADBOY_LEVEL or 1)
 			frame:EnableMouse(true)
-		end
-	end)
-	levelsBox:SetScript("OnTextChanged", function(frame, changed)
-		if changed then
-			local n = frame:GetText()
-			print(type(n))
-			if n <1 or n>79 then
-				frame:SetText(BADBOY_LEVEL or 1)
-			else
-				BADBOY_LEVEL = n
-			end
+			frame:SetScript("OnHide", function(newFrame)
+				local n = tonumber(newFrame:GetText())
+				if not n or n == "" then newFrame:SetText(BADBOY_LEVEL or 1) print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1)) return end
+				if n <1 or n>79 then
+					newFrame:SetText(BADBOY_LEVEL or 1)
+					print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1))
+				else
+					BADBOY_LEVEL = n
+					print("|cFF33FF99BadBoy_Levels|r == "..n)
+				end
+			end)
 		end
 	end)
 	levelsBox:Show()
