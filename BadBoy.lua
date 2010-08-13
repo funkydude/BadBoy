@@ -162,6 +162,7 @@ local triggers = {
 
 	--Advanced URL's/Misc
 	"games.*sale.*thankyou.*buy.*account", --games for sale warcraft iii,apb,cod mw2,css, and a lot more thank you--(multiple buyers already)also now 2 steam accounts with more then 10 games
+	"low.*price.*deliver.*loverp", --{circle}No fraud{circle}Lowest price{circle}fastest deliver{circle}==>>Loverp.com==>>only 12?per 10k
 	"loverp[%.,]com.*%d%d%d+g.*coupon",
 	"sell.*cheap.*gold.*%d%d%d+g", --Selling cheap wow gold 3$=1100g,32$=10k+1000g //heuristic?
 	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
