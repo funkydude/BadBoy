@@ -173,11 +173,25 @@ do
 	levelsBox:SetWidth(30)
 	levelsBox:SetHeight(20)
 	levelsBox:SetMaxLetters(2)
-	levelsBox:SetText(10)
-	--XXX move functions to _Levels
-	levelsBox:SetScript("OnTextChanged", function(_, changed)
+	--XXX move functions to _Levels, temporary
+	levelsBox:SetScript("OnShow", function(frame)
+		if IsAddOnLoaded("BadBoy_Levels") then
+			BadBoyLevelsConfigTitle:SetText("BadBoy_Levels ["..UNKNOWN.."]")
+			if BADBOY_LEVEL and type(BADBOY_LEVEL) ~= "number" then BADBOY_LEVEL = nil end
+			if BADBOY_LEVEL and BADBOY_LEVEL<1 or BADBOY_LEVEL>79 then BADBOY_LEVEL = nil end
+			frame:SetText(BADBOY_LEVEL or 1)
+			frame:EnableMouse(true)
+		end
+	end)
+	levelsBox:SetScript("OnTextChanged", function(frame, changed)
 		if changed then
-			--
+			local n = frame:GetText()
+			print(type(n))
+			if n <1 or n>79 then
+				frame:SetText(BADBOY_LEVEL or 1)
+			else
+				BADBOY_LEVEL = n
+			end
 		end
 	end)
 	levelsBox:Show()
