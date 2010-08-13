@@ -113,6 +113,7 @@ local triggers = {
 	"blizz.*account.*chosen.*test.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to test.For more information please visit; XYZ
 	"blizz.*inform.*qualifi.*test.*info", --Hallo! Blizzard Entertainment informiert Sie, dass Ihr qualifiziert sind, in Cataclysm Beta Test teilnehmen. Fur weitere Informationen besuchen Sie bitte XYZ
 	"congrat.*limited.*warcraft.*mount.*login", --Dear players congratulate you get a limited edition World of Warcraft flying mounts,Please login Blizzard Receiving [Gifts:XYZ]
+	"account.*ausgesetzt.*service.*info", --GM: Your World of Warcraft-Account wird vorubergehend ausgesetzt werden. Weil Sie verletzt das Spiel World of Warcraft Service-Vereinbarung. Bitte gehen Sie fur weitere Informationen XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
