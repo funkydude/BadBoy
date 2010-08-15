@@ -288,7 +288,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local points = 0
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
-		if k > 38 then points = 0 strict = nil end --Reset when entering phishing section for safety
+		if k == 39 then points = 0 strict = nil end --Reset when entering phishing section for safety
 		if fnd(msg, v) then --Found a match
 			if k > 61 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
