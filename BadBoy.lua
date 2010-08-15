@@ -1,3 +1,9 @@
+--[[	BLIZZARD IF YOU'RE READING THIS I'M BEGGING FOR YOUR HELP.
+		PLEASE LET ME FETCH EITHER PLAYER LEVEL FROM THE GIVEN GUID (WILL ALSO HELP BADBOY_LEVELS)
+		OR LET ME FETCH IF THE PLAYER IS IN A GUILD OR NOT FROM THE GIVEN GUID (SPAMMERS NEVER GUILDED)
+		OR BOTH! IT WOULD MAKE THIS MUCH EASIER!
+]]--
+
 --DO NOT MODIFY DATABASE OR YOU MAY REPORT INNOCENT PEOPLE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
 local triggers = {
 	--English - Common
@@ -9,110 +15,140 @@ local triggers = {
 	"customer", --6
 	"deliver", --7
 	"discount", --8
-	"extra", --9 //extra/sale
-	"gold", --10
-	"lowest", --11
-	"order", --12
-	"powerle?ve?l", --13
-	"price", --14
-	"promoti[on][gn]", --15
-	"reduced", --16
-	"safe", --17
-	"secure", --18
-	"server", --19
-	"service", --20
-	"stock", --21
-	"welcome", --22
-	"www", --23
-	"%d+%.?%d*eur", --24
-	"%d+%.?%d*dollars", --25
-	"[\226\130\172$\194\163]%d+", --26
+	"gold", --9
+	"lowest", --10
+	"order", --11
+	"powerle?ve?l", --12
+	"price", --13
+	"promoti[on][gn]", --14
+	"reduced", --15
+	"safe", --16
+	"server", --17
+	"service", --18
+	"stock", --19
+	"welcome", --20
 
 	--French - Common
-	"livraison", --delivery --27
+	"livraison", --delivery --21
 
 	--German - Common
-	"billigster", --cheapest --28
-	"lieferung", --delivery --29
-	"preis", --price --30
-	"willkommen", --welcome --31
+	"billigster", --cheapest --22
+	"lieferung", --delivery --23
+	"preis", --price --24
+	"willkommen", --welcome --25
 
 	--Spanish - Common
-	"barato", --cheap --32
-	"gratuito", --free --33
-	"r[\195\161a]pido", --fast --34
-	"seguro", --safe/secure --35
-	"servicio", --service --36
+	"barato", --cheap --26
+	"gratuito", --free --27
+	"r[\195\161a]pido", --fast --28
+	"seguro", --safe/secure --29
+	"servicio", --service --30
 
-	--Phishing
-	"blizz.*launch.*cata.*trial.*info.*log",
-	"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
-	"free.*mount.*wow.*first.*code.*claim",
-	"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
-	"become.*lucky.*player.*mysterious.*gift.*[lr][oe]g", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
-	"player.*network.*blizz.*compensation.*good", --Dear players, because the network of World of Warcraft had broken off, Blizzard decided to give each player certain compensation.Please log in: XYZ and receive compensation for goods.
-	"player.*blizz.*system.*scan.*acount", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]"
-	"free.*spec.*mount.*code.*site", --Giving away free Spectral Tiger Mount ! Just be first to Reedem code : XU2199UXAI2881HTYAXNNB910 , go add it on site :  [XYZ] im stoping with damt wow ! GL guys
-	"free.*spectr.*tiger.*claim.*first", --Giving away Free Spectral tiger, because i'm  stopping with wow forever, to get it, just go there  [XYZ] and claim it as first, code : LJA8-5PLH61-KAHFL-152HOA-UAKL
-	"become.*lucky.*player.*free.*motor.*log", --Hi. You have become the lucky players, will receive free a motorcycle. please log in:XYZ
-	"become.*blizz.*customer.*gift.*reg", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Mystery Gift, registered address: XYZ
-	"claim.*free.*time.*warcraft.*free", --Hi,Claim Your Free Game Time!One or more of your World of Warcraft licenses are eligible for 70 free days of game time! please log in:XYZ
-	"warcraft.*account.*temp.*suspend.*inf", --Your world of warcraft account has been temporarily suspended. go to  [XYZ] for further information.......
-	"blizz.*launch.*free.*now.*log", --#Hey! Blizzard is to launch Free unicorn zebra, Get Now please log in : [XYZ] .^#
-	"system.*pumping.*lucky.*player.*info", --Hello, you have been system Pumping To the lucky player ,For more informationplease log in: [XYZ]
-	"warcraft.*blizzard.*scan.*account.*safety", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]
-	"celebrate.*blizzard.*warcraft.*gift.*log", --Hello, To celebrate the Blizzard anniversary, World of Warcraft released gifts players can receive free of charge, please log in; [XYZ]
-	"enter.*offer.*free.*riding.*log", --Hi, Bizzard Enterainment offers you one time free rare riding chance. Now take it , please login:[XYZ]
-	"you.*obtain.*mount.*blizzard.*info", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. For more information, please visit [XYZ]
-	"congrat.*present.*blizz.*gold.*please", --Hi! congratulations on being presented by Blizzard of 3500 gold, please log in to recieve: XYZ
-	"you.*account.*temp.*disabled.*info", --Your account will be temporarily disabled.Please visit [XYZ] for more information
-	"congratu.*cata.*beta.*invitation.*activate", --Congratulations! You've got a WOW Cataclysm Beta Invitation. Please visit XYZ to activate your account.
-	"congratu.*shirt.*world.*warcraft.*prize", --Hello. Congratulations, you get a T shirt for World of Warcraft. Want to know prizes, please visit the Forum: XYZ
+	--Heavy
+	"only[\226\130\172%$\194\163]%d%d+%.?%d*[fp][oe]r%d+%.?%d*k", --31
+	"[\226\130\172%$\194\163]%d%d+%.?%d+[/\98=]%d%d+[kg]", --32
+	"only%d%d+%.?%d*euro?s?[fp][oe]r%d%d+[kg]", --33
+
+	--Heavy Strict
+	"www[%.,]", --34
+	"[%.,]c[o0@]m", --35
+	"[%.,]c{circle}m", --36
+	"[%.,]c{rt2}m", --37
+	"[%.,]net", --38
+
+	--Phishing Strict
+	"www[%.,]", --39
+	"[%.,]c[o0@]m", --40
+	"[%.,]c{circle}m", --41
+	"[%.,]c{rt2}m", --42
+	"[%.,]net", --43
+
+	--Phishing - English
+	"address", --44
+	"account", --45
+	"blizzard", --46
+	"claim", --47
+	"code", --48
+	"congratulations", --49
+	"free", --50
+	"gift", --51
+	"information", --52
+	"launch", --53
+	"log[io]n", --54
+	"luckyplayer", --55
+	"mount", --56
+	"pleasevisit", --57
+	"regist[er]", --58
+	"suspe[cn][td]ed", --59 --suspected/suspended
+	"system", --60
+	"warcraft", --61
+
+	--"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
+	--"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
+	--"become.*lucky.*player.*mysterious.*gift.*[lr][oe]g", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
+	--"player.*network.*blizz.*compensation.*good", --Dear players, because the network of World of Warcraft had broken off, Blizzard decided to give each player certain compensation.Please log in: XYZ and receive compensation for goods.
+	--"player.*blizz.*system.*scan.*acount", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]"
+	--"free.*spec.*mount.*code.*site", --Giving away free Spectral Tiger Mount ! Just be first to Reedem code : XU2199UXAI2881HTYAXNNB910 , go add it on site :  [XYZ] im stoping with damt wow ! GL guys
+	--"free.*spectr.*tiger.*claim.*first", --Giving away Free Spectral tiger, because i'm  stopping with wow forever, to get it, just go there  [XYZ] and claim it as first, code : LJA8-5PLH61-KAHFL-152HOA-UAKL
+	--"become.*lucky.*player.*free.*motor.*log", --Hi. You have become the lucky players, will receive free a motorcycle. please log in:XYZ
+	--"become.*blizz.*customer.*gift.*reg", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Mystery Gift, registered address: XYZ
+	--"claim.*free.*time.*warcraft.*free", --Hi,Claim Your Free Game Time!One or more of your World of Warcraft licenses are eligible for 70 free days of game time! please log in:XYZ
+	--"warcraft.*account.*temp.*suspend.*inf", --Your world of warcraft account has been temporarily suspended. go to  [XYZ] for further information.......
+	--"blizz.*launch.*free.*now.*log", --#Hey! Blizzard is to launch Free unicorn zebra, Get Now please log in : [XYZ] .^#
+	--"system.*pumping.*lucky.*player.*info", --Hello, you have been system Pumping To the lucky player ,For more informationplease log in: [XYZ]
+	--"warcraft.*blizzard.*scan.*account.*safety", --Dear World of Warcraft players,Blizzard system scan to your account insecurity,please log the safety net , or else Blizzard will stop using your account's rights in one hour .Certification of Warcraft account information site " [XYZ]
+	--"celebrate.*blizzard.*warcraft.*gift.*log", --Hello, To celebrate the Blizzard anniversary, World of Warcraft released gifts players can receive free of charge, please log in; [XYZ]
+	--"enter.*offer.*free.*riding.*log", --Hi, Bizzard Enterainment offers you one time free rare riding chance. Now take it , please login:[XYZ]
+	--"you.*obtain.*mount.*blizzard.*info", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. For more information, please visit [XYZ]
+	--"congrat.*present.*blizz.*gold.*please", --Hi! congratulations on being presented by Blizzard of 3500 gold, please log in to recieve: XYZ
+	--"you.*account.*temp.*disabled.*info", --Your account will be temporarily disabled.Please visit [XYZ] for more information
+	--"congratu.*cata.*beta.*invitation.*activate", --Congratulations! You've got a WOW Cataclysm Beta Invitation. Please visit XYZ to activate your account.
+	--"congratu.*shirt.*world.*warcraft.*prize", --Hello. Congratulations, you get a T shirt for World of Warcraft. Want to know prizes, please visit the Forum: XYZ
 	--enUS Congratulations you will become a happy player, you will get a free trial version of the new Blizzard 310% Invincible Ghost flying mount, 24 hours, please register now: XYZ
 	"spieler.*testversion.*blizz.*invincible.*ghost", --deDE Herzlichen Gluckwunsch Sie werden gluckliche Spieler, werden Sie eine kostenlose Testversion erhalten neuesten Blizzard 310% Invincible Ghost fliegende Reittiere, 24 Stunden, bitte jetzt anmelden: XYZ
-	"blizz.*launch.*mount.*trial.*info", --Hi, Blizzard is about to launch a new mounts, Free trial, For more information, please log in: XYZ
-	"you.*drawn.*system.*gift.*steed", --Hello,you are drawn in the system to receive your gift.Please visit: [XYZ] Celestial Steed will be yours.
-	"blizz.*system.*account.*violation.*trading", --Hello! Blizzard game system scan to your game account, a violation of rules of the game's virtual currency trading! Please visit our website [XYZ] review your account information, or we will suspend your account.
-	"thank.*support.*warcraft.*blizz.*steed", --Hello. To thank you for your support for World of Warcraft. Blizzard will be giving your horse a celestial steed.Receiving please visit: XYZ
+	--"blizz.*launch.*mount.*trial.*info", --Hi, Blizzard is about to launch a new mounts, Free trial, For more information, please log in: XYZ
+	--"you.*drawn.*system.*gift.*steed", --Hello,you are drawn in the system to receive your gift.Please visit: [XYZ] Celestial Steed will be yours.
+	--"blizz.*system.*account.*violation.*trading", --Hello! Blizzard game system scan to your game account, a violation of rules of the game's virtual currency trading! Please visit our website [XYZ] review your account information, or we will suspend your account.
+	--"thank.*support.*warcraft.*blizz.*steed", --Hello. To thank you for your support for World of Warcraft. Blizzard will be giving your horse a celestial steed.Receiving please visit: XYZ
 	"hallo.*system.*gift.*steed.*erhalten", --Hallo, sind Sie in das System gezogen, um Ihren Besuch gift.Please: XYZ Celestial Steed erhalten verkaufen werden
 	"spieler.*netz.*warcraft.*blizz.*kompensation", --Liebe Spieler, weil das Netz der World of Warcraft gebrochen hatte, entschied sich Blizzard zu geben, jeder Spieler gewisse Kompensation. Bitte besuchen Sie: XYZ und erhalten einen Ausgleich fur Waren.
 	"master.*konto.*deaktiviert.*besuchen.*informationen", --Hallo! Game Master(GM) whispers: Ihr Konto wird vorubergehend [deaktiviert.Bitte] besuchen [XYZ] fur weitere Informationen
-	"obtain.*mount.*blizzard.*receive.*submit", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ and submit your email.
-	"player.*account.*complain.*info.*right", --Dear players, your account is complaints by other players, please visit account information site validate your information,or else will stop using your account's rights in one hour. warcraft account information site: XYZ
+	--"obtain.*mount.*blizzard.*receive.*submit", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ and submit your email.
+	--"player.*account.*complain.*info.*right", --Dear players, your account is complaints by other players, please visit account information site validate your information,or else will stop using your account's rights in one hour. warcraft account information site: XYZ
 	--enUS Support for world of warcraft. Blizzard will give you a Celestial Steed .To receive it, please visit: [XYZ]
 	"warcraft.*blizzard.*himmlischen.*steed.*receiv", --Unterstutzung fur World of Warcraft. Blizzard wird geben Ihrem Pferd einen Besuch bitte himmlischen [steed.Receiving]: [XYZ]
-	"detected.*software.*account.*info.*action", --We have detected third-party software associated with your account. Please log in to [XYZ] with your [Battle.Net] information before action is taken against your account
-	"support.*warcraft.*website.*rare.*mount", --Hello! Thank you for your support for World of Warcraft, now visit the official website will have the rare baby, and mounts, please visit: XYZ
-	"drawn.*system.*gift.*tiger", --Hello,you are drawn in the system to receive your gift.Pleast visit:   [XYZ]  Swift Spectral Tiger will be yours.
-	"customer.*blizz.*lucky.*player.*gift", --Dear Customer, you have become a blizzard lucky Players, can get a gift,registered address: XYZ
-	"drawn.*system.*receive.*cataclysm.*beta", --CONGRATULATiONS!YOU ARE DRAWN IN THE SYSTEM TO RECEiVE YOUR ACHiEVEMENTS REWARDS! IT'S A CATACLYSM  CLOSED BETA!PLEASE  ViSIT:[XYZ--BLiZZARD]
+	--"detected.*software.*account.*info.*action", --We have detected third-party software associated with your account. Please log in to [XYZ] with your [Battle.Net] information before action is taken against your account
+	--"support.*warcraft.*website.*rare.*mount", --Hello! Thank you for your support for World of Warcraft, now visit the official website will have the rare baby, and mounts, please visit: XYZ
+	--"drawn.*system.*gift.*tiger", --Hello,you are drawn in the system to receive your gift.Pleast visit:   [XYZ]  Swift Spectral Tiger will be yours.
+	--"customer.*blizz.*lucky.*player.*gift", --Dear Customer, you have become a blizzard lucky Players, can get a gift,registered address: XYZ
+	--"drawn.*system.*receive.*cataclysm.*beta", --CONGRATULATiONS!YOU ARE DRAWN IN THE SYSTEM TO RECEiVE YOUR ACHiEVEMENTS REWARDS! IT'S A CATACLYSM  CLOSED BETA!PLEASE  ViSIT:[XYZ--BLiZZARD]
 	"hallo.*schon.*system.*erhalten.*klicken", --Hallo!Sie sind schon von diesem System auserwahlt worden und werden Pramie erhalten. Klicken Sie bitte: [XYZ]#!
-	"blizz.*account.*safety.*hacker.*opportunity", --Blizzard latest activities, cell phone locked account hundred percent safety of your account, no interference by hackers who have the opportunity to get big disaster trial eligibility, please visit:XYZ
-	"blizz.*warcraft.*account.*info.*disable", --Hello! Blizzard World of Warcraft game found in violation of your game account, please visit our website [XYZ] enter your information, pending review, or we will permanently disable your game account. 
-	"blizz.*monk.*store.*log.*submit.*free", --Hello, In celebration of BlizzCon 2010 you have receieved a Pandaren Monk Pet from the Blizzard Pet Store. please log in at [XYZ] Submit your email, and your free pet will be sent to all of your characters!
+	--"blizz.*account.*safety.*hacker.*opportunity", --Blizzard latest activities, cell phone locked account hundred percent safety of your account, no interference by hackers who have the opportunity to get big disaster trial eligibility, please visit:XYZ
+	--"blizz.*warcraft.*account.*info.*disable", --Hello! Blizzard World of Warcraft game found in violation of your game account, please visit our website [XYZ] enter your information, pending review, or we will permanently disable your game account. 
+	--"blizz.*monk.*store.*log.*submit.*free", --Hello, In celebration of BlizzCon 2010 you have receieved a Pandaren Monk Pet from the Blizzard Pet Store. please log in at [XYZ] Submit your email, and your free pet will be sent to all of your characters!
 	"surprise.*summon.*worgen.*first.*conquer.*visit", --surprise!Summons from goblins and worgens, the first warrior to conquer Azeroth will be you!please visit:[XYZ]
-	"congratulation.*limited.*warcraft.*mounts.*log", --Congratulations, you get limited edition World of Warcraft flying mounts.  please log in to receive:  XYZ
+	--"congratulation.*limited.*warcraft.*mounts.*log", --Congratulations, you get limited edition World of Warcraft flying mounts.  please log in to receive:  XYZ
 	"become.*blizz.*customer.*free.*log", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Free unicorn zebra , please log in : XYZ
 	"warcraft.*cataclysm.*beta.*download.*visit", --Hello,World of Warcraft: 85 Cataclysm Test!beta client download!please visit: XYZ
 	"blizz.*scan.*system.*account.*virtuel.*website", --Hallo Blizzard Scanning-System zu Ihrem Spiel-Account ein Versto gegen die Regeln des Spiels virtuelle Devisenhandel Bitte besuchen Sie unsere Website XYZ prufen Sie die Kontodaten oder wir werden Ihrem Konto auszusetzen.
-	"master.*account.*info.*changed.*visit.*info", --hello! [Game Master]GM:Your account information is changed, please visit [XYZ] understanding of your information
-	"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
+	--"master.*account.*info.*changed.*visit.*info", --hello! [Game Master]GM:Your account information is changed, please visit [XYZ] understanding of your information
+	--"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
 	--Congratulations! World of Warcraft virtual rare mounts you get the Ghost Tiger Mounts, please log in to receive: XYZ
 	--congratuiations.you get limited edition World of Warcraft flying mounts.please log in to receive:XYZ
-	"congratu.*mount.*log.*receive", --Congratulations, you get Celestial Steed Flying mount in World of Warcraft, please log in to receive
-	"mount.*blizzard.*receive.*log", --Hi, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ
-	"cataclysm.*gift.*blizzard.*log", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
+	--"congratu.*mount.*log.*receive", --Congratulations, you get Celestial Steed Flying mount in World of Warcraft, please log in to receive
+	--"mount.*blizzard.*receive.*log", --Hi, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ
+	--"cataclysm.*gift.*blizzard.*log", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
 	"congrat.*invited.*warcraft.*cataclysm.*random.*visit", --Congratulations, you are invited to World of Warcraft Cataclysm Beta, Beta invites are completely random, Visit XYZ Cataclysm Beta more info!
 	"warcraft.*katastrophe.*kostenlos.*reittiere.*besuchen", --Hallo,Vielen Dank fur Ihre Unterstutzung fur World of Warcraft,die bevorstehende Katastrophe,haben Zugang zu den seltenen Woche kostenlos spielen Zeit und Reittiere,besuchen Sie bitte:XYZ
-	"gm.*account.*suspend.*temp.*please.*info", --hi:[GM] Your account will be suspended temporarily ,Please go to for further information XYZ
+	--"gm.*account.*suspend.*temp.*please.*info", --hi:[GM] Your account will be suspended temporarily ,Please go to for further information XYZ
 	"seltenen.*blizz.*erhalten.*loggen", --Hallo, Sie haben einen seltenen Betrag von Blizzard bekommen. Aber Sie haben ihn noch nicht erhalten. Bitte loggen Sie sich ein XYZ
 	"blizz.*illegalen.*konto.*besuchen", --Hallo, Blizzard Anfrage an Ihren Spiel-Account an illegalen Goldhandel teilnehmen, Kontoinformationen, bitte Konto oder das Konto eingefroren werden, besuchen Sie bitte: XYZ
 	"blizz.*berechtigt.*katastrophe.*bitte", --Hallo! Blizzard Entertainment Ihnen mitteilen, dass Sie berechtigt sind, im Beta-Test teilnehmen Katastrophe. Fur weitere Informationen besuchen Sie bitte XYZ
 	--hello,Blizzard Entertainment notifies you that your account has been chosen to participate in World of Warcraft Cataclysm beta test. For more information please visit  [XYZ]
 	--Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to participate in Cataclysm beta test. For more information please visit: XYZ
-	"blizz.*account.*chosen.*test.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to test.For more information please visit; XYZ
+	--"blizz.*account.*chosen.*test.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to test.For more information please visit; XYZ
 	"blizz.*inform.*qualifi.*test.*info", --Hallo! Blizzard Entertainment informiert Sie, dass Ihr qualifiziert sind, in Cataclysm Beta Test teilnehmen. Fur weitere Informationen besuchen Sie bitte XYZ
-	"congrat.*limited.*warcraft.*mount.*login", --Dear players congratulate you get a limited edition World of Warcraft flying mounts,Please login Blizzard Receiving [Gifts:XYZ]
+	--"congrat.*limited.*warcraft.*mount.*login", --Dear players congratulate you get a limited edition World of Warcraft flying mounts,Please login Blizzard Receiving [Gifts:XYZ]
 	"account.*ausgesetzt.*service.*info", --GM: Your World of Warcraft-Account wird vorubergehend ausgesetzt werden. Weil Sie verletzt das Spiel World of Warcraft Service-Vereinbarung. Bitte gehen Sie fur weitere Informationen XYZ
 
 	--Personal Whispers
@@ -162,17 +198,18 @@ local triggers = {
 	"casino.*whisper.*info", --<RollReno's Casino> <Whisper for more information!>
 
 	--Advanced URL's/Misc
-	"wow4wow.*only.*per.*deliver", --[square]wow4wow,com[square][diamond]only 14 euro per 10K[diamond][triangle]10 min delivery[triangle]
+	"euro.*gold.*safer.*trade", --Only 1.66 Euros per 1000 gold, More safer trade model.
+	--"wow4wow.*only.*per.*deliver", --[square]wow4wow,com[square][diamond]only 14 euro per 10K[diamond][triangle]10 min delivery[triangle]
 	"games.*sale.*thankyou.*buy.*account", --games for sale warcraft iii,apb,cod mw2,css, and a lot more thank you--(multiple buyers already)also now 2 steam accounts with more then 10 games
-	"low.*price.*deliver.*loverp", --{circle}No fraud{circle}Lowest price{circle}fastest deliver{circle}==>>Loverp.com==>>only 12?per 10k
-	"loverp[%.,]com.*%d%d%d+g.*coupon",
+	--"low.*price.*deliver.*loverp", --{circle}No fraud{circle}Lowest price{circle}fastest deliver{circle}==>>Loverp.com==>>only 12?per 10k
+	--"loverp[%.,]com.*%d%d%d+g.*coupon",
 	"sell.*cheap.*gold.*%d%d%d+g", --Selling cheap wow gold 3$=1100g,32$=10k+1000g //heuristic?
-	"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
+	--"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCAT.C0M{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
 	--M4S WOWGOLDCAT.C@M E15.8/10000GPower Lvl 70-80/E25.99
-	"wowgoldcat.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
+	--"wowgoldcat.*%d+%W%d+[kg].*powerlvl.*%d+", --More Choice ===> [wowgoldcat.com]==> E15.8 /10k+Power Lvl 1-80 --July 10
 	--WTS [item] // Wir verkaufen [item]
 	--We provide equipment,mount,and stuff what you wanted.We have 300 professional players make it for you.
 	--If you have any question,please check our site{star}WWW.PVPBank.c{circle}m{star}24/7 twenty-four seven.
@@ -181,17 +218,17 @@ local triggers = {
 	"www[%.,]pvpbank[%.,]c.*%d+", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
 	--{square}luckygolds,com{square}{diamond}only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
 	--{square}lucktgilds,com{square}{diamond} only 14 euro per 10K{diamond}{triangle}10 min delivery{triangle}
-	"g[oi]lds.*%d+eur.*%d+k.*%d+mindeliver", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
+	--"g[oi]lds.*%d+eur.*%d+k.*%d+mindeliver", --luckygolds ==>>luckygolds,com==>>only 19 euro per 10K==>>10 min deliver
 	"^%W+safer.*loyal.*customers%W+$", -----Safer, We've many loyal customers----- July 10
-	"^%W+.*buyeugold.*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
-	"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
+	--"^%W+.*buyeugold.*only.*euro", -->> WWW .Buyeugold.COM << Only 16 Euro for10 K+500G --June 10
+	--"well?come.*website.*wowgamegold.*best", --Wellcome to our website>>> www.wowgamegold,net<<<We are your best choice. --June 10
 	"^%W+mm[0o]%[?yy[%.,]c[0o]m%W+$", --May 10
 	"^%W+diymm[0o]game[%.,]c[0o]m%W+$", --June 10
 	--Good Choice ===> MMO4STORE.C0M ==> only (=19.9 per 10k --June 10
 	--Good Choice==> BUYEUGOLD.COM==>Only E17 per 10K --June 10
 	--Good Choice ===> MMO4STORE.CC ==> only E16.36 per 10k --June 10
 	--Good==>{star}WOWGAMELIFE{star}.C@M==>Only E15 per 10K
-	"^goodc?h?o?i?c?e?%W+.*[%.,]c[co0@][o0@]?m?%W+only.*%d+.*%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
+	--"^goodc?h?o?i?c?e?%W+.*[%.,]c[co0@][o0@]?m?%W+only.*%d+.*%d+k$", --Good Choice==>29 [GOLD.COM]==>Only E18 per 10K
 	--Choice "M4M"==>WOWGAMELIFE.C@M==>Only E17 per 10K
 	--"M4M"==>WOWGAMELIFE.C@M==>Only E15 per 10K
 	--{star}M 4 M{star}==>> BUYEUGOLD.COM ==>>Only 15 EU for 10k
@@ -204,7 +241,7 @@ local triggers = {
 	"^%W+mmoggg%d+.*aktion%W+$", -->>> MMOGGG 25% Rabatt-Aktion <<< --July 10
 	"^%W+%d+.*bargeld.*rabatt.*gold%W+$", -->>> 25% Bargeld-Rabatt auf Gold<<< --July 10
 	"%W+mmo4store[%.,]c[0o]m%W+", --June 10
-	"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
+	--"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
 	"friend.*website.*gold4guild", --October 09
 	"friend.*website.*gg4g", --January 09
 	"friend.*website.*wowseller", --April 10
@@ -212,15 +249,22 @@ local triggers = {
 	"^%W+w*[%.,]?wowseller[%.,]c[o0]m%W+$", --April 10
 	"^%W+gg4g[%.,][ce][ou]m?%W+$", --January 09
 	"^www[%.,]ignmax[%.,]com$", --December 09
+	"wts.*boeitems.*sale.*ignah", --wts [Lightning-Infused Leggings] [Carapace of Forgotten Kings] we have all the Boe items,mats and t10/t10.5 for sale .<www.ignah.com>!!
 	--fullgamegold,com-T10 equipment,honor,skill and powerleveling 1-80 Only 170 EUR 10 days.
-	"fullgamegold.*only%d+%.?%d*eur.*%d+", --***** fullgamegold,com ***** Only 1.8 EUR per 1000 gold.
+	--"fullgamegold.*only%d+%.?%d*eur.*%d+", --***** fullgamegold,com ***** Only 1.8 EUR per 1000 gold.
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
 -- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, table, UnitInParty, UnitInRaid, ComplainChat, CanComplainChat
 local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
+local temp = nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
+	if not temp then
+		print("|cFF33FF99BadBoy_ALPHA-TEST|r: Automatic reporting temporarily disabled, sorry. This is for a few days whilst a new 'killer' method is tested.")
+		print("|cFF33FF99BadBoy_ALPHA-TEST|r: Please report any false alarms on the forum.")
+		temp = true
+	end
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
@@ -233,41 +277,47 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
 	--START: 12 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 12
-	for k,v in ipairs(chatLines) do
-		if v == msg then --If message same as one in previous 12...
-			for l,w in ipairs(chatPlayers) do
-				if l == k and w == player then --...and from the same person...
-					result = true return true --...filter!
-				end
-			end
+	for i=1, #chatLines do
+		if chatLines[i] == msg and chatPlayers[i] == player then --If message same as one in previous 12 and from the same person...
+			result = true return true --...filter!
 		end
-		if k == 12 then table.remove(chatLines, 1) table.remove(chatPlayers, 1) end
+		if i == 12 then tremove(chatLines, 1) tremove(chatPlayers, 1) end
 	end
-	table.insert(chatLines, msg)
-	table.insert(chatPlayers, player)
+	tinsert(chatLines, msg) tinsert(chatPlayers, player)
 	--END: Text buffer
 	local points = 0
+	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
+		if k > 38 then points = 0 strict = nil end --Reset when entering phishing section for safety
 		if fnd(msg, v) then --Found a match
-			if k > 36 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
-				points = points + 5
+			if k > 61 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+				points = points + 5 --Instant report
+			elseif k > 33 and k < 44 and not strict then
+				if k > 33 and k < 39 then --Strict section
+					points = points + 2 --Gold gets 2
+				else
+					points = points + 1 --Phishing gets 1
+				end
+				strict = true
+			elseif k > 30 and k < 34 then
+				points = points + 2 --Heavy section gets 2 points
 			else
-				points = points + 1 --We only want certain words getting 1 point
+				points = points + 1 --All else gets 1 point
 			end
 			if points > 3 then
-				if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", debug, " - ", player) end --Debug
+			--	if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", debug, " - ", player) end --Debug
 				local time = GetTime()
 				if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 					prevReportTime = time
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-					if BADBOY_POPUP then --Manual reporting via popup
+				--	if BADBOY_POPUP then --Manual reporting via popup
 						--Add original spam line to Blizzard popup message
 						StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
 						local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 						dialog.data = lineId
-					else
-						ComplainChat(lineId) --Automatically report
-					end
+				--	else
+				--		ComplainChat(lineId) --Automatically report
+				--	end
 				end
 				result = true
 				return true
