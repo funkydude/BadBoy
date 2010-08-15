@@ -56,32 +56,25 @@ local triggers = {
 	"[%.,]c{rt2}m", --37
 	"[%.,]net", --38
 
-	--Phishing Strict
-	"www[%.,]", --39
-	"[%.,]c[o0@]m", --40
-	"[%.,]c{circle}m", --41
-	"[%.,]c{rt2}m", --42
-	"[%.,]net", --43
-
 	--Phishing - English
-	"address", --44
-	"account", --45
-	"blizzard", --46
-	"claim", --47
-	"code", --48
-	"congratulations", --49
-	"free", --50
-	"gift", --51
-	"information", --52
-	"launch", --53
-	"log[io]n", --54
-	"luckyplayer", --55
-	"mount", --56
-	"pleasevisit", --57
-	"regist[er]", --58
-	"suspe[cn][td]ed", --59 --suspected/suspended
-	"system", --60
-	"warcraft", --61
+	"address", --39
+	"account", --40
+	"blizzard", --41
+	"claim", --42
+	"code", --43
+	"congratulations", --44
+	"free", --45
+	"gift", --46
+	"information", --47
+	"launch", --48
+	"log[io]n", --49
+	"luckyplayer", --50
+	"mount", --51
+	"pleasevisit", --52
+	"regist[er]", --53
+	"suspe[cn][td]ed", --54 --suspected/suspended
+	"system", --55
+	"warcraft", --56
 
 	--"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
 	--"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
@@ -286,25 +279,24 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	tinsert(chatLines, msg) tinsert(chatPlayers, player)
 	--END: Text buffer
 	local points = 0
+	local phishPoints = 0
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
-		if k == 39 then points = 0 strict = nil end --Reset when entering phishing section for safety
 		if fnd(msg, v) then --Found a match
-			if k > 61 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>56 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k > 33 and k < 44 and not strict then
-				if k > 33 and k < 39 then --Strict section
-					points = points + 2 --Gold gets 2
-				else
-					points = points + 1 --Phishing gets 1
-				end
+			elseif k>33 and k<39 and not strict then
+				points = points + 2 --Gold gets 2
+				phishPoints = phishPoints + 1 --Phishing gets 1
 				strict = true
-			elseif k > 30 and k < 34 then
+			elseif k>30 and k<34 then
 				points = points + 2 --Heavy section gets 2 points
+			elseif k>38 and k<57 then
+				phishPoints = phishPoints + 1
 			else
 				points = points + 1 --All else gets 1 point
 			end
-			if points > 3 then
+			if points > 3 or phishPoints > 3 then
 			--	if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", debug, " - ", player) end --Debug
 				print("|cFF33FF99BadBoy_ALPHA-TEST|r: Thank you for helping test an alpha version of BadBoy.")
 				print("|cFF33FF99BadBoy_ALPHA-TEST|r: Please report any false alarms on the forum.")
