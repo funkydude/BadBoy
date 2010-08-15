@@ -261,7 +261,7 @@ local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = CO
 local temp = nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
 	if not temp then
-		print("|cFF33FF99BadBoy_ALPHA-TEST|r: Automatic reporting temporarily disabled, sorry. This is for a few days whilst a new 'killer' method is tested.")
+		print("|cFF33FF99BadBoy_ALPHA-TEST|r: Temporarily, all reported spam will be printed in chat. This is for a few days whilst a new 'killer' method is tested.")
 		print("|cFF33FF99BadBoy_ALPHA-TEST|r: Please report any false alarms on the forum.")
 		temp = true
 	end
@@ -306,18 +306,21 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			end
 			if points > 3 then
 			--	if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", debug, " - ", player) end --Debug
+				print("|cFF33FF99BadBoy_ALPHA-TEST|r: Thank you for helping test an alpha version of BadBoy.")
+				print("|cFF33FF99BadBoy_ALPHA-TEST|r: Please report any false alarms on the forum.")
+				print("|cFF33FF99BadBoy_ALPHA-TEST-REPORT|r: '", debug, "'")
 				local time = GetTime()
 				if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 					prevReportTime = time
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-				--	if BADBOY_POPUP then --Manual reporting via popup
+					if BADBOY_POPUP then --Manual reporting via popup
 						--Add original spam line to Blizzard popup message
 						StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
 						local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 						dialog.data = lineId
-				--	else
-				--		ComplainChat(lineId) --Automatically report
-				--	end
+					else
+						ComplainChat(lineId) --Automatically report
+					end
 				end
 				result = true
 				return true
