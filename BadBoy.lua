@@ -45,36 +45,44 @@ local triggers = {
 	"servicio", --service --30
 
 	--Heavy
-	"only[\226\130\172%$\194\163]%d%d+%.?%d*[fp][oe]r%d+%.?%d*k", --31
-	"[\226\130\172%$\194\163]%d%d+%.?%d+[/\98=]%d%d+[kg]", --32
-	"only%d%d+%.?%d*euro?s?[fp][oe]r%d%d+[kg]", --33
+	"only[\226\130\172%$\194\163]%d+%.?%d*[fp][oe]r%d+%.?%d*[kg]", --31
+	"[\226\130\172%$\194\163]%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --32
+	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --33
+	"%d+%.?%d*[\226\130\172%$\194\163][/\98=]%d+%.?%d*[kg]", --34
 
 	--Heavy Strict
-	"www[%.,]", --34
-	"[%.,]c[o0@]m", --35
-	"[%.,]c{circle}m", --36
-	"[%.,]c{rt2}m", --37
-	"[%.,]net", --38
+	"www[%.,]", --35
+	"[%.,]c[o0@]m", --36
+	"[%.,]c{circle}m", --37
+	"[%.,]c{rt2}m", --38
+	"[%.,]net", --39
 
 	--Phishing - English
-	"address", --39
-	"account", --40
-	"blizzard", --41
-	"claim", --42
-	"code", --43
-	"congratulations", --44
-	"free", --45
-	"gift", --46
-	"information", --47
-	"launch", --48
-	"log[io]n", --49
-	"luckyplayer", --50
-	"mount", --51
-	"pleasevisit", --52
-	"regist[er]", --53
-	"suspe[cn][td]ed", --54 --suspected/suspended
-	"system", --55
-	"warcraft", --56
+	"address", --40
+	"account", --41
+	"blizzard", --42
+	"claim", --43
+	"code", --44
+	"congratulations", --45
+	"free", --46
+	"gift", --47
+	"information", --48
+	"launch", --49
+	"log[io]n", --50
+	"luckyplayer", --51
+	"mount", --52
+	"pleasevisit", --53
+	"regist[er]", --54
+	"suspe[cn][td]ed", --55 --suspected/suspended
+	"system", --56
+	"warcraft", --57
+
+	--White
+	"recruit", --58
+	"dkp", --59
+	"guild", --60
+
+	--X is recruiting, Y and Z tanks, A, B, C. Other classes also welcome. Raid times are 8-11 server. DayX dayY are 25's and other days are 10's. Pst an officer for more info or visit XYZ.com
 
 	--"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
 	--"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
@@ -196,7 +204,7 @@ local triggers = {
 	"games.*sale.*thankyou.*buy.*account", --games for sale warcraft iii,apb,cod mw2,css, and a lot more thank you--(multiple buyers already)also now 2 steam accounts with more then 10 games
 	--"low.*price.*deliver.*loverp", --{circle}No fraud{circle}Lowest price{circle}fastest deliver{circle}==>>Loverp.com==>>only 12?per 10k
 	--"loverp[%.,]com.*%d%d%d+g.*coupon",
-	"sell.*cheap.*gold.*%d%d%d+g", --Selling cheap wow gold 3$=1100g,32$=10k+1000g //heuristic?
+	--"sell.*cheap.*gold.*%d%d%d+g", --Selling cheap wow gold 3$=1100g,32$=10k+1000g //heuristic?
 	--"^%W+.*service.*website.*wowgoldcat.*%W+$", ----Good Service Website:[www.wowgoldcat.com]-- July 10
 	--{triangle}M4S{triangle} {diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10k{triangle}Power Lvl 1-80{triangle}
 	--{triangle}M4S{triangle}{diamond}{diamond}WOWGOLDCAT.COM{diamond}{diamond}{triangle} E15.8/10000G{triangle}Power Lvl 70-80/E25.99 {triangle}
@@ -228,14 +236,14 @@ local triggers = {
 	--{star}M 4 M{star}==> BUYEUGOLD.C@M ==>Only E15{star}10K
 	--{star}M 4 M{star}===> BUYEUGOLD.COM ===>Only E15 per 10K+500g
 	--"M 4 M"==>> BUYEUGOLD.C@OM =>>Only E15 per 10K
-	"m4m.*%W+.*[%.,]c[co0@][o0@]?m?%W+only.*%d+.*%d+[kg]$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
+	--"m4m.*%W+.*[%.,]c[co0@][o0@]?m?%W+only.*%d+.*%d+[kg]$", --Choice"M4M"=>>BUYEUGOLD.COM=>>Only E13.7 per 10K
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
 	"^%W+m+oggg[%.,][cd][oe]m?%W+$", --April 10
 	"^%W+mmoggg%d+.*aktion%W+$", -->>> MMOGGG 25% Rabatt-Aktion <<< --July 10
 	"^%W+%d+.*bargeld.*rabatt.*gold%W+$", -->>> 25% Bargeld-Rabatt auf Gold<<< --July 10
 	"%W+mmo4store[%.,]c[0o]m%W+", --June 10
 	--"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
-	"friend.*website.*gold4guild", --October 09
+	--"friend.*website.*gold4guild", --October 09
 	"friend.*website.*gg4g", --January 09
 	"friend.*website.*wowseller", --April 10
 	"^%W+w*[%.,]?gold4guild[%.,]c[o0]m%W+$", --October 09
@@ -283,16 +291,19 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>56 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>60 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>33 and k<39 and not strict then
+			elseif k>57 then
+				points = points - 2
+				phishPoints = phishPoints - 2
+			elseif k>39 then
+				phishPoints = phishPoints + 1
+			elseif k>34 and not strict then
 				points = points + 2 --Gold gets 2
 				phishPoints = phishPoints + 1 --Phishing gets 1
 				strict = true
-			elseif k>30 and k<34 then
+			elseif k>30 then
 				points = points + 2 --Heavy section gets 2 points
-			elseif k>38 and k<57 then
-				phishPoints = phishPoints + 1
 			else
 				points = points + 1 --All else gets 1 point
 			end
