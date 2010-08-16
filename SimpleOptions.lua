@@ -82,9 +82,9 @@ do
 		if BADBOY_NOLATIN then
 			BadBoyConfigNoArtButton:Disable()
 			BadBoyConfigNoArtButtonTitle:SetTextColor(0.5, 0.5, 0.5)
-			return
+		else
+			BadBoyConfigNoArtButton:SetChecked(BADBOY_ALLOWART)
 		end
-		BadBoyConfigNoArtButton:SetChecked(BADBOY_ALLOWART)
 	end)
 
 	local title = badboy:CreateFontString("BadBoyConfigTitle", "ARTWORK", "GameFontNormalLarge")

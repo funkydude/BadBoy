@@ -63,27 +63,26 @@ local triggers = {
 	"[%.,]net", --42
 
 	--Phishing - English
-	"address", --43
-	"account", --44
-	"blizzard", --45
-	"claim", --46
-	"code", --47
-	"congratulations", --48
-	"free", --49
-	"gift", --50
-	"information", --51
-	"launch", --52
-	"log[io]n", --53
-	"luckyplayer", --54
-	"mount", --55
-	"pleasevisit", --56
-	"regist[er]", --57
-	"suspe[cn][td]ed", --58 --suspected/suspended
-	"system", --59
-	"warcraft", --60
+	"account", --43
+	"blizz", --44
+	"claim", --45
+	"congratulations", --46
+	"free", --47
+	"gift", --48
+	"launch", --49
+	"log[io]n", --50
+	"luckyplayer", --51
+	"mount", --52
+	"pleasevisit", --53
+	"receive", --54
+	"surprise", --55
+	"suspe[cn][td]ed", --56 --suspected/suspended
+	"system", --57
+	"warcraft", --58
 
 	--X is recruiting, Y and Z tanks, A, B, C. Other classes also welcome. Raid times are 8-11 server. DayX dayY are 25's and other days are 10's. Pst an officer for more info or visit XYZ.com
 
+	--Hello, you've got a rare horse Blizzard, if you want to receive it, please connect to: [XYZ] 
 	--"blizz.*launch.*card.*exp.*reg.*free", --Hello,Blizzard will launch a three-fold experience of card (which means three times the value of experience) registration,Now you can get it 3 days for free. Address: XYZ
 	--"suspect.*trade.*gold.*login.*complain.*pos", --Becasuse you suspected of lllegal trade for gold, system will freeze your ID after one hour.If you have any questions, please login  [XYZ] to make a complaint .We will be processing as soon as possible.
 	--"become.*lucky.*player.*mysterious.*gift.*[lr][oe]g", --Hi.You have become the lucky player, 2 days, you can get a mysterious gift, registered address:XYZ
@@ -127,10 +126,10 @@ local triggers = {
 	--"blizz.*account.*safety.*hacker.*opportunity", --Blizzard latest activities, cell phone locked account hundred percent safety of your account, no interference by hackers who have the opportunity to get big disaster trial eligibility, please visit:XYZ
 	--"blizz.*warcraft.*account.*info.*disable", --Hello! Blizzard World of Warcraft game found in violation of your game account, please visit our website [XYZ] enter your information, pending review, or we will permanently disable your game account. 
 	--"blizz.*monk.*store.*log.*submit.*free", --Hello, In celebration of BlizzCon 2010 you have receieved a Pandaren Monk Pet from the Blizzard Pet Store. please log in at [XYZ] Submit your email, and your free pet will be sent to all of your characters!
-	"surprise.*summon.*worgen.*first.*conquer.*visit", --surprise!Summons from goblins and worgens, the first warrior to conquer Azeroth will be you!please visit:[XYZ]
+	--"surprise.*summon.*worgen.*first.*conquer.*visit", --surprise!Summons from goblins and worgens, the first warrior to conquer Azeroth will be you!please visit:[XYZ]
 	--"congratulation.*limited.*warcraft.*mounts.*log", --Congratulations, you get limited edition World of Warcraft flying mounts.  please log in to receive:  XYZ
-	"become.*blizz.*customer.*free.*log", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Free unicorn zebra , please log in : XYZ
-	"warcraft.*cataclysm.*beta.*download.*visit", --Hello,World of Warcraft: 85 Cataclysm Test!beta client download!please visit: XYZ
+	--"become.*blizz.*customer.*free.*log", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Free unicorn zebra , please log in : XYZ
+	--"warcraft.*cataclysm.*beta.*download.*visit", --Hello,World of Warcraft: 85 Cataclysm Test!beta client download!please visit: XYZ
 	"blizz.*scan.*system.*account.*virtuel.*website", --Hallo Blizzard Scanning-System zu Ihrem Spiel-Account ein Versto gegen die Regeln des Spiels virtuelle Devisenhandel Bitte besuchen Sie unsere Website XYZ prufen Sie die Kontodaten oder wir werden Ihrem Konto auszusetzen.
 	--"master.*account.*info.*changed.*visit.*info", --hello! [Game Master]GM:Your account information is changed, please visit [XYZ] understanding of your information
 	--"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
@@ -291,13 +290,13 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>60 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>58 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>42 and k<61 then
+			elseif k>42 and k<59 then
 				phishPoints = phishPoints + 1
 			elseif k>37 and k<43 and not strict then
-				points = points + 2 --Gold gets 2
-				phishPoints = phishPoints + 1 --Phishing gets 1
+				points = points + 2 --Only 1 trigger can get points in the strict section
+				phishPoints = phishPoints + 2
 				strict = true
 			elseif k>33 and k<38 then
 				points = points + 2 --Heavy section gets 2 points
