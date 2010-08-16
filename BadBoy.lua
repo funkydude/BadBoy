@@ -31,7 +31,7 @@ local triggers = {
 	"server", --20
 	"service", --21
 	"stock", --22
-	"welcome", --23
+	"well?come", --23
 
 	--French - Common
 	"livraison", --delivery --24
