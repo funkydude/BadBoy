@@ -48,6 +48,45 @@ do
 	badboy.name = "BadBoy"
 	InterfaceOptions_AddCategory(badboy)
 
+	badboy:SetScript("OnShow", function(frame)
+		--XXX move functions to _Levels, temporary
+		if IsAddOnLoaded("BadBoy_Levels") and not BadBoyLevelsEditBox then
+			local levelsBox = CreateFrame("EditBox", "BadBoyLevelsEditBox", frame, "InputBoxTemplate")
+			levelsBox:SetPoint("TOPLEFT", BadBoyConfigNoArtButton, "BOTTOMLEFT", 10, -25)
+			levelsBox:SetAutoFocus(false)
+			levelsBox:SetNumeric(true)
+			levelsBox:EnableMouse(true)
+			levelsBox:SetWidth(30)
+			levelsBox:SetHeight(20)
+			levelsBox:SetMaxLetters(2)
+			levelsBox:Show()
+			BadBoyLevelsConfigTitle:SetText("BadBoy_Levels v"..GetAddOnMetadata("BadBoy_Levels", "Version"))
+			if BADBOY_LEVEL and type(BADBOY_LEVEL) ~= "number" then BADBOY_LEVEL = nil end
+			if BADBOY_LEVEL and (BADBOY_LEVEL<1 or BADBOY_LEVEL>79) then BADBOY_LEVEL = nil end
+			levelsBox:SetText(BADBOY_LEVEL or 1)
+			levelsBox:SetScript("OnHide", function(newFrame)
+				local n = tonumber(newFrame:GetText())
+				if not n or n == "" then newFrame:SetText(BADBOY_LEVEL or 1) print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1)) return end
+				if n <1 or n>79 then
+					newFrame:SetText(BADBOY_LEVEL or 1)
+					print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1))
+				else
+					BADBOY_LEVEL = n
+					print("|cFF33FF99BadBoy_Levels|r == "..n)
+				end
+			end)
+		end
+
+		BadBoyConfigSilenceButton:SetChecked(BADBOY_SILENT)
+		BadBoyConfigPopupButton:SetChecked(BADBOY_POPUP)
+		if BADBOY_NOLATIN then
+			BadBoyConfigNoArtButton:Disable()
+			BadBoyConfigNoArtButtonTitle:SetTextColor(0.5, 0.5, 0.5)
+			return
+		end
+		BadBoyConfigNoArtButton:SetChecked(BADBOY_ALLOWART)
+	end)
+
 	local title = badboy:CreateFontString("BadBoyConfigTitle", "ARTWORK", "GameFontNormalLarge")
 	title:SetPoint("TOPLEFT", 16, -16)
 	title:SetText("BadBoy ".."@project-version@") --wowace magic, replaced with tag version
@@ -56,13 +95,6 @@ do
 	btnNoReportMsg:SetWidth(26)
 	btnNoReportMsg:SetHeight(26)
 	btnNoReportMsg:SetPoint("TOPLEFT", 16, -35)
-	btnNoReportMsg:SetScript("OnShow", function(frame)
-		if BADBOY_SILENT then
-			frame:SetChecked(true)
-		else
-			frame:SetChecked(false)
-		end
-	end)
 	btnNoReportMsg:SetScript("OnClick", function(frame)
 		local tick = frame:GetChecked()
 		if tick then
@@ -89,13 +121,6 @@ do
 	btnManualReport:SetWidth(26)
 	btnManualReport:SetHeight(26)
 	btnManualReport:SetPoint("TOPLEFT", 16, -57)
-	btnManualReport:SetScript("OnShow", function(frame)
-		if BADBOY_POPUP then
-			frame:SetChecked(true)
-		else
-			frame:SetChecked(false)
-		end
-	end)
 	btnManualReport:SetScript("OnClick", function(frame)
 		local tick = frame:GetChecked()
 		if tick then
@@ -123,18 +148,6 @@ do
 	btnNoArtFilter:SetWidth(26)
 	btnNoArtFilter:SetHeight(26)
 	btnNoArtFilter:SetPoint("TOPLEFT", 16, -79)
-	btnNoArtFilter:SetScript("OnShow", function(frame)
-		if BADBOY_NOLATIN then
-			frame:Disable()
-			BadBoyConfigNoArtButtonTitle:SetTextColor(0.5, 0.5, 0.5)
-			return
-		end
-		if BADBOY_ALLOWART then
-			frame:SetChecked(true)
-		else
-			frame:SetChecked(false)
-		end
-	end)
 	btnNoArtFilter:SetScript("OnClick", function(frame)
 		if BADBOY_NOLATIN then return end
 		local tick = frame:GetChecked()
@@ -171,39 +184,8 @@ do
 	levelsTitle:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 0, -3)
 	levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
 
-	local levelsBox = CreateFrame("EditBox", "BadBoyLevelsEditBox", badboy, "InputBoxTemplate")
-	levelsBox:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 10, -25)
-	levelsBox:SetAutoFocus(false)
-	levelsBox:EnableMouse(false)
-	levelsBox:SetNumeric(true)
-	levelsBox:SetWidth(30)
-	levelsBox:SetHeight(20)
-	levelsBox:SetMaxLetters(2)
-	--XXX move functions to _Levels, temporary
-	levelsBox:SetScript("OnShow", function(frame)
-		if IsAddOnLoaded("BadBoy_Levels") then
-			BadBoyLevelsConfigTitle:SetText("BadBoy_Levels ["..UNKNOWN.."]")
-			if BADBOY_LEVEL and type(BADBOY_LEVEL) ~= "number" then BADBOY_LEVEL = nil end
-			if BADBOY_LEVEL and (BADBOY_LEVEL<1 or BADBOY_LEVEL>79) then BADBOY_LEVEL = nil end
-			frame:SetText(BADBOY_LEVEL or 1)
-			frame:EnableMouse(true)
-			frame:SetScript("OnHide", function(newFrame)
-				local n = tonumber(newFrame:GetText())
-				if not n or n == "" then newFrame:SetText(BADBOY_LEVEL or 1) print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1)) return end
-				if n <1 or n>79 then
-					newFrame:SetText(BADBOY_LEVEL or 1)
-					print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1))
-				else
-					BADBOY_LEVEL = n
-					print("|cFF33FF99BadBoy_Levels|r == "..n)
-				end
-			end)
-		end
-	end)
-	levelsBox:Show()
-
 	local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	ccleanerTitle:SetPoint("TOPLEFT", levelsBox, "BOTTOMLEFT", -10, -3)
+	ccleanerTitle:SetPoint("TOPLEFT", btnNoArtFilter, "BOTTOMLEFT", 0, -48)
 	ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 end
 
