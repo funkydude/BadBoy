@@ -50,7 +50,7 @@ local triggers = {
 	"servicio", --service --33
 
 	--Heavy
-	"only[\226\130\172%$\194\163]%d+%.?%d*[fp][oe]r%d+%.?%d*[kg]", --34
+	"only[\226\130\172%$\194\163]%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --34 --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --35
 	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --36
 	"%d+%.?%d*[\226\130\172%$\194\163][/\98=]%d+%.?%d*[kg]", --37
