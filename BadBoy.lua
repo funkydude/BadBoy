@@ -6,81 +6,81 @@
 
 --DO NOT MODIFY DATABASE OR YOU MAY REPORT INNOCENT PEOPLE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
 local triggers = {
+	--White
+	"recruit", --1
+	"dkp", --2
+	"guild", --3
+
 	--English - Common
-	"bonus", --1
-	"buy", --2
-	"cheap", --3
-	"code", --4
-	"coupon", --5
-	"customer", --6
-	"deliver", --7
-	"discount", --8
-	"gold", --9
-	"lowest", --10
-	"order", --11
-	"powerle?ve?l", --12
-	"price", --13
-	"promoti[on][gn]", --14
-	"reduced", --15
-	"safe", --16
-	"server", --17
-	"service", --18
-	"stock", --19
-	"welcome", --20
+	"bonus", --4
+	"buy", --5
+	"cheap", --6
+	"code", --7
+	"coupon", --8
+	"customer", --9
+	"deliver", --10
+	"discount", --11
+	"gold", --12
+	"lowest", --13
+	"order", --14
+	"powerle?ve?l", --15
+	"price", --16
+	"promoti[on][gn]", --17
+	"reduced", --18
+	"safe", --19
+	"server", --20
+	"service", --21
+	"stock", --22
+	"welcome", --23
 
 	--French - Common
-	"livraison", --delivery --21
+	"livraison", --delivery --24
 
 	--German - Common
-	"billigster", --cheapest --22
-	"lieferung", --delivery --23
-	"preis", --price --24
-	"willkommen", --welcome --25
+	"billigster", --cheapest --25
+	"lieferung", --delivery --26
+	"preis", --price --27
+	"willkommen", --welcome --28
 
 	--Spanish - Common
-	"barato", --cheap --26
-	"gratuito", --free --27
-	"r[\195\161a]pido", --fast --28
-	"seguro", --safe/secure --29
-	"servicio", --service --30
+	"barato", --cheap --29
+	"gratuito", --free --30
+	"r[\195\161a]pido", --fast --31
+	"seguro", --safe/secure --32
+	"servicio", --service --33
 
 	--Heavy
-	"only[\226\130\172%$\194\163]%d+%.?%d*[fp][oe]r%d+%.?%d*[kg]", --31
-	"[\226\130\172%$\194\163]%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --32
-	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --33
-	"%d+%.?%d*[\226\130\172%$\194\163][/\98=]%d+%.?%d*[kg]", --34
+	"only[\226\130\172%$\194\163]%d+%.?%d*[fp][oe]r%d+%.?%d*[kg]", --34
+	"[\226\130\172%$\194\163]%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --35
+	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --36
+	"%d+%.?%d*[\226\130\172%$\194\163][/\98=]%d+%.?%d*[kg]", --37
 
 	--Heavy Strict
-	"www[%.,]", --35
-	"[%.,]c[o0@]m", --36
-	"[%.,]c{circle}m", --37
-	"[%.,]c{rt2}m", --38
-	"[%.,]net", --39
+	"www[%.,]", --38
+	"[%.,]c[o0@]m", --39
+	"[%.,]c{circle}m", --40
+	"[%.,]c{rt2}m", --41
+	"[%.,]net", --42
 
 	--Phishing - English
-	"address", --40
-	"account", --41
-	"blizzard", --42
-	"claim", --43
-	"code", --44
-	"congratulations", --45
-	"free", --46
-	"gift", --47
-	"information", --48
-	"launch", --49
-	"log[io]n", --50
-	"luckyplayer", --51
-	"mount", --52
-	"pleasevisit", --53
-	"regist[er]", --54
-	"suspe[cn][td]ed", --55 --suspected/suspended
-	"system", --56
-	"warcraft", --57
-
-	--White
-	"recruit", --58
-	"dkp", --59
-	"guild", --60
+	"address", --43
+	"account", --44
+	"blizzard", --45
+	"claim", --46
+	"code", --47
+	"congratulations", --48
+	"free", --49
+	"gift", --50
+	"information", --51
+	"launch", --52
+	"log[io]n", --53
+	"luckyplayer", --54
+	"mount", --55
+	"pleasevisit", --56
+	"regist[er]", --57
+	"suspe[cn][td]ed", --58 --suspected/suspended
+	"system", --59
+	"warcraft", --60
 
 	--X is recruiting, Y and Z tanks, A, B, C. Other classes also welcome. Raid times are 8-11 server. DayX dayY are 25's and other days are 10's. Pst an officer for more info or visit XYZ.com
 
@@ -293,19 +293,19 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		if fnd(msg, v) then --Found a match
 			if k>60 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>57 then
-				points = points - 2
-				phishPoints = phishPoints - 2
-			elseif k>39 then
+			elseif k>42 and k<61 then
 				phishPoints = phishPoints + 1
-			elseif k>34 and not strict then
+			elseif k>37 and k<43 and not strict then
 				points = points + 2 --Gold gets 2
 				phishPoints = phishPoints + 1 --Phishing gets 1
 				strict = true
-			elseif k>30 then
+			elseif k>33 and k<38 then
 				points = points + 2 --Heavy section gets 2 points
-			else
+			elseif k>3 and k<34 then
 				points = points + 1 --All else gets 1 point
+			elseif k<4 then
+				points = points - 2
+				phishPoints = phishPoints - 2 --Remove points for safe words
 			end
 			if points > 3 or phishPoints > 3 then
 			--	if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", debug, " - ", player) end --Debug
