@@ -9,7 +9,7 @@ local triggers = {
 	--White
 	"recruit", --1
 	"dkp", --2
-	"guild", --3
+	"guild", --3 --looking?
 
 	--English - Common
 	"bonus", --4
@@ -250,7 +250,7 @@ local triggers = {
 	"^%W+%d+.*bargeld.*rabatt.*gold%W+$", -->>> 25% Bargeld-Rabatt auf Gold<<< --July 10
 	"%W+mmo4store[%.,]c[0o]m%W+", --June 10
 	--"only.*euro.*per.*gold.*weare.*bestchoice", --part of gg4g spam. When report doesn't block player fast enough due to lag.
-	--"friend.*website.*gold4guild", --October 09
+	"friend.*website.*gold4guild", --October 09
 	"friend.*website.*gg4g", --January 09
 	"friend.*website.*wowseller", --April 10
 	"^%W+w*[%.,]?gold4guild[%.,]c[o0]m%W+$", --October 09
@@ -281,7 +281,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 		if not CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
 		if UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't try macro/filter raid/party members
 	end
-	local debug = msg
+	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
 	--START: 12 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 12
