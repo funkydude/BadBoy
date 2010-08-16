@@ -80,6 +80,14 @@ local triggers = {
 	"system", --57
 	"warcraft", --58
 
+	--Phishing - German
+	"berechtigt", --entitled --59
+	"erhalten", --get/receive --60
+	"deaktiviert", --deactivated --61
+	"konto", --acount --62
+	"kostenlos", --free --63
+	"qualifiziert", --qualified --64
+
 	--X is recruiting, Y and Z tanks, A, B, C. Other classes also welcome. Raid times are 8-11 server. DayX dayY are 25's and other days are 10's. Pst an officer for more info or visit XYZ.com
 
 	--Hello, you've got a rare horse Blizzard, if you want to receive it, please connect to: [XYZ] 
@@ -105,24 +113,24 @@ local triggers = {
 	--"congratu.*cata.*beta.*invitation.*activate", --Congratulations! You've got a WOW Cataclysm Beta Invitation. Please visit XYZ to activate your account.
 	--"congratu.*shirt.*world.*warcraft.*prize", --Hello. Congratulations, you get a T shirt for World of Warcraft. Want to know prizes, please visit the Forum: XYZ
 	--enUS Congratulations you will become a happy player, you will get a free trial version of the new Blizzard 310% Invincible Ghost flying mount, 24 hours, please register now: XYZ
-	"spieler.*testversion.*blizz.*invincible.*ghost", --deDE Herzlichen Gluckwunsch Sie werden gluckliche Spieler, werden Sie eine kostenlose Testversion erhalten neuesten Blizzard 310% Invincible Ghost fliegende Reittiere, 24 Stunden, bitte jetzt anmelden: XYZ
+	--"spieler.*testversion.*blizz.*invincible.*ghost", --deDE Herzlichen Gluckwunsch Sie werden gluckliche Spieler, werden Sie eine kostenlose Testversion erhalten neuesten Blizzard 310% Invincible Ghost fliegende Reittiere, 24 Stunden, bitte jetzt anmelden: XYZ
 	--"blizz.*launch.*mount.*trial.*info", --Hi, Blizzard is about to launch a new mounts, Free trial, For more information, please log in: XYZ
 	--"you.*drawn.*system.*gift.*steed", --Hello,you are drawn in the system to receive your gift.Please visit: [XYZ] Celestial Steed will be yours.
 	--"blizz.*system.*account.*violation.*trading", --Hello! Blizzard game system scan to your game account, a violation of rules of the game's virtual currency trading! Please visit our website [XYZ] review your account information, or we will suspend your account.
 	--"thank.*support.*warcraft.*blizz.*steed", --Hello. To thank you for your support for World of Warcraft. Blizzard will be giving your horse a celestial steed.Receiving please visit: XYZ
-	"hallo.*system.*gift.*steed.*erhalten", --Hallo, sind Sie in das System gezogen, um Ihren Besuch gift.Please: XYZ Celestial Steed erhalten verkaufen werden
-	"spieler.*netz.*warcraft.*blizz.*kompensation", --Liebe Spieler, weil das Netz der World of Warcraft gebrochen hatte, entschied sich Blizzard zu geben, jeder Spieler gewisse Kompensation. Bitte besuchen Sie: XYZ und erhalten einen Ausgleich fur Waren.
-	"master.*konto.*deaktiviert.*besuchen.*informationen", --Hallo! Game Master(GM) whispers: Ihr Konto wird vorubergehend [deaktiviert.Bitte] besuchen [XYZ] fur weitere Informationen
+	--"hallo.*system.*gift.*steed.*erhalten", --Hallo, sind Sie in das System gezogen, um Ihren Besuch gift.Please: XYZ Celestial Steed erhalten verkaufen werden
+	--"spieler.*netz.*warcraft.*blizz.*kompensation", --Liebe Spieler, weil das Netz der World of Warcraft gebrochen hatte, entschied sich Blizzard zu geben, jeder Spieler gewisse Kompensation. Bitte besuchen Sie: XYZ und erhalten einen Ausgleich fur Waren.
+	--"master.*konto.*deaktiviert.*besuchen.*informationen", --Hallo! Game Master(GM) whispers: Ihr Konto wird vorubergehend [deaktiviert.Bitte] besuchen [XYZ] fur weitere Informationen
 	--"obtain.*mount.*blizzard.*receive.*submit", --Hello, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ and submit your email.
 	--"player.*account.*complain.*info.*right", --Dear players, your account is complaints by other players, please visit account information site validate your information,or else will stop using your account's rights in one hour. warcraft account information site: XYZ
 	--enUS Support for world of warcraft. Blizzard will give you a Celestial Steed .To receive it, please visit: [XYZ]
-	"warcraft.*blizzard.*himmlischen.*steed.*receiv", --Unterstutzung fur World of Warcraft. Blizzard wird geben Ihrem Pferd einen Besuch bitte himmlischen [steed.Receiving]: [XYZ]
+	--"warcraft.*blizzard.*himmlischen.*steed.*receiv", --Unterstutzung fur World of Warcraft. Blizzard wird geben Ihrem Pferd einen Besuch bitte himmlischen [steed.Receiving]: [XYZ]
 	--"detected.*software.*account.*info.*action", --We have detected third-party software associated with your account. Please log in to [XYZ] with your [Battle.Net] information before action is taken against your account
 	--"support.*warcraft.*website.*rare.*mount", --Hello! Thank you for your support for World of Warcraft, now visit the official website will have the rare baby, and mounts, please visit: XYZ
 	--"drawn.*system.*gift.*tiger", --Hello,you are drawn in the system to receive your gift.Pleast visit:   [XYZ]  Swift Spectral Tiger will be yours.
 	--"customer.*blizz.*lucky.*player.*gift", --Dear Customer, you have become a blizzard lucky Players, can get a gift,registered address: XYZ
 	--"drawn.*system.*receive.*cataclysm.*beta", --CONGRATULATiONS!YOU ARE DRAWN IN THE SYSTEM TO RECEiVE YOUR ACHiEVEMENTS REWARDS! IT'S A CATACLYSM  CLOSED BETA!PLEASE  ViSIT:[XYZ--BLiZZARD]
-	"hallo.*schon.*system.*erhalten.*klicken", --Hallo!Sie sind schon von diesem System auserwahlt worden und werden Pramie erhalten. Klicken Sie bitte: [XYZ]#!
+	--"hallo.*schon.*system.*erhalten.*klicken", --Hallo!Sie sind schon von diesem System auserwahlt worden und werden Pramie erhalten. Klicken Sie bitte: [XYZ]#!
 	--"blizz.*account.*safety.*hacker.*opportunity", --Blizzard latest activities, cell phone locked account hundred percent safety of your account, no interference by hackers who have the opportunity to get big disaster trial eligibility, please visit:XYZ
 	--"blizz.*warcraft.*account.*info.*disable", --Hello! Blizzard World of Warcraft game found in violation of your game account, please visit our website [XYZ] enter your information, pending review, or we will permanently disable your game account. 
 	--"blizz.*monk.*store.*log.*submit.*free", --Hello, In celebration of BlizzCon 2010 you have receieved a Pandaren Monk Pet from the Blizzard Pet Store. please log in at [XYZ] Submit your email, and your free pet will be sent to all of your characters!
@@ -130,7 +138,7 @@ local triggers = {
 	--"congratulation.*limited.*warcraft.*mounts.*log", --Congratulations, you get limited edition World of Warcraft flying mounts.  please log in to receive:  XYZ
 	--"become.*blizz.*customer.*free.*log", --Hi! You have become a Blizz lucky Customer, 3 days later you'll get a Free unicorn zebra , please log in : XYZ
 	--"warcraft.*cataclysm.*beta.*download.*visit", --Hello,World of Warcraft: 85 Cataclysm Test!beta client download!please visit: XYZ
-	"blizz.*scan.*system.*account.*virtuel.*website", --Hallo Blizzard Scanning-System zu Ihrem Spiel-Account ein Versto gegen die Regeln des Spiels virtuelle Devisenhandel Bitte besuchen Sie unsere Website XYZ prufen Sie die Kontodaten oder wir werden Ihrem Konto auszusetzen.
+	--"blizz.*scan.*system.*account.*virtuel.*website", --Hallo Blizzard Scanning-System zu Ihrem Spiel-Account ein Versto gegen die Regeln des Spiels virtuelle Devisenhandel Bitte besuchen Sie unsere Website XYZ prufen Sie die Kontodaten oder wir werden Ihrem Konto auszusetzen.
 	--"master.*account.*info.*changed.*visit.*info", --hello! [Game Master]GM:Your account information is changed, please visit [XYZ] understanding of your information
 	--"blizz.*inform.*qualified.*cataclysm.*info", --Hello!Blizzard entertainment informs your that your are qualified toparticipate in cataclysm beta test.for more information please visit:XYZ
 	--Congratulations! World of Warcraft virtual rare mounts you get the Ghost Tiger Mounts, please log in to receive: XYZ
@@ -138,18 +146,18 @@ local triggers = {
 	--"congratu.*mount.*log.*receive", --Congratulations, you get Celestial Steed Flying mount in World of Warcraft, please log in to receive
 	--"mount.*blizzard.*receive.*log", --Hi, you have obtained a rare mount from Blizzard, but you haven't yet receive it. please log in XYZ
 	--"cataclysm.*gift.*blizzard.*log", --Hi, the Cataclysm is coming soon, you are qualify to obtain the mysterious gift from Blizzard, please log in to get it XYZ
-	"congrat.*invited.*warcraft.*cataclysm.*random.*visit", --Congratulations, you are invited to World of Warcraft Cataclysm Beta, Beta invites are completely random, Visit XYZ Cataclysm Beta more info!
-	"warcraft.*katastrophe.*kostenlos.*reittiere.*besuchen", --Hallo,Vielen Dank fur Ihre Unterstutzung fur World of Warcraft,die bevorstehende Katastrophe,haben Zugang zu den seltenen Woche kostenlos spielen Zeit und Reittiere,besuchen Sie bitte:XYZ
+	--"congrat.*invited.*warcraft.*cataclysm.*random.*visit", --Congratulations, you are invited to World of Warcraft Cataclysm Beta, Beta invites are completely random, Visit XYZ Cataclysm Beta more info!
+	--"warcraft.*katastrophe.*kostenlos.*reittiere.*besuchen", --Hallo,Vielen Dank fur Ihre Unterstutzung fur World of Warcraft,die bevorstehende Katastrophe,haben Zugang zu den seltenen Woche kostenlos spielen Zeit und Reittiere,besuchen Sie bitte:XYZ
 	--"gm.*account.*suspend.*temp.*please.*info", --hi:[GM] Your account will be suspended temporarily ,Please go to for further information XYZ
-	"seltenen.*blizz.*erhalten.*loggen", --Hallo, Sie haben einen seltenen Betrag von Blizzard bekommen. Aber Sie haben ihn noch nicht erhalten. Bitte loggen Sie sich ein XYZ
-	"blizz.*illegalen.*konto.*besuchen", --Hallo, Blizzard Anfrage an Ihren Spiel-Account an illegalen Goldhandel teilnehmen, Kontoinformationen, bitte Konto oder das Konto eingefroren werden, besuchen Sie bitte: XYZ
-	"blizz.*berechtigt.*katastrophe.*bitte", --Hallo! Blizzard Entertainment Ihnen mitteilen, dass Sie berechtigt sind, im Beta-Test teilnehmen Katastrophe. Fur weitere Informationen besuchen Sie bitte XYZ
+	--"seltenen.*blizz.*erhalten.*loggen", --Hallo, Sie haben einen seltenen Betrag von Blizzard bekommen. Aber Sie haben ihn noch nicht erhalten. Bitte loggen Sie sich ein XYZ
+	--"blizz.*illegalen.*konto.*besuchen", --Hallo, Blizzard Anfrage an Ihren Spiel-Account an illegalen Goldhandel teilnehmen, Kontoinformationen, bitte Konto oder das Konto eingefroren werden, besuchen Sie bitte: XYZ
+	--"blizz.*berechtigt.*katastrophe.*bitte", --Hallo! Blizzard Entertainment Ihnen mitteilen, dass Sie berechtigt sind, im Beta-Test teilnehmen Katastrophe. Fur weitere Informationen besuchen Sie bitte XYZ
 	--hello,Blizzard Entertainment notifies you that your account has been chosen to participate in World of Warcraft Cataclysm beta test. For more information please visit  [XYZ]
 	--Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to participate in Cataclysm beta test. For more information please visit: XYZ
 	--"blizz.*account.*chosen.*test.*info", --Hello,Blizzard Entertainment notifies you that your WOW account has been chosen to test.For more information please visit; XYZ
-	"blizz.*inform.*qualifi.*test.*info", --Hallo! Blizzard Entertainment informiert Sie, dass Ihr qualifiziert sind, in Cataclysm Beta Test teilnehmen. Fur weitere Informationen besuchen Sie bitte XYZ
+	--"blizz.*inform.*qualifi.*test.*info", --Hallo! Blizzard Entertainment informiert Sie, dass Ihr qualifiziert sind, in Cataclysm Beta Test teilnehmen. Fur weitere Informationen besuchen Sie bitte XYZ
 	--"congrat.*limited.*warcraft.*mount.*login", --Dear players congratulate you get a limited edition World of Warcraft flying mounts,Please login Blizzard Receiving [Gifts:XYZ]
-	"account.*ausgesetzt.*service.*info", --GM: Your World of Warcraft-Account wird vorubergehend ausgesetzt werden. Weil Sie verletzt das Spiel World of Warcraft Service-Vereinbarung. Bitte gehen Sie fur weitere Informationen XYZ
+	--"account.*ausgesetzt.*service.*info", --GM: Your World of Warcraft-Account wird vorubergehend ausgesetzt werden. Weil Sie verletzt das Spiel World of Warcraft Service-Vereinbarung. Bitte gehen Sie fur weitere Informationen XYZ
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -290,9 +298,9 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>58 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>64 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>42 and k<59 then
+			elseif k>42 and k<65 then
 				phishPoints = phishPoints + 1
 			elseif k>37 and k<43 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
