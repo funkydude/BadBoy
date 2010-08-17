@@ -54,39 +54,40 @@ local triggers = {
 	"[\226\130\172%$\194\163]%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --35
 	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --36
 	"%d+%.?%d*[\226\130\172%$\194\163][/\98=]%d+%.?%d*[kg]", --37
+	"only[\226\130\172%$\194\163]%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --38 --Add separate line if they start approx prices
 
 	--Heavy Strict
-	"www[%.,]", --38
-	"[%.,]c[o0@]m", --39
-	"[%.,]c{circle}m", --40
-	"[%.,]c{rt2}m", --41
-	"[%.,]net", --42
+	"www[%.,]", --39
+	"[%.,]c[o0@]m", --40
+	"[%.,]c{circle}m", --41
+	"[%.,]c{rt2}m", --42
+	"[%.,]net", --43
 
 	--Phishing - English
-	"account", --43
-	"blizz", --44
-	"claim", --45
-	"congratulations", --46
-	"free", --47
-	"gift", --48
-	"launch", --49
-	"log[io]n", --50
-	"luckyplayer", --51
-	"mount", --52
-	"pleasevisit", --53
-	"receive", --54
-	"surprise", --55
-	"suspe[cn][td]ed", --56 --suspected/suspended
-	"system", --57
-	"warcraft", --58
+	"account", --44
+	"blizz", --45
+	"claim", --46
+	"congratulations", --47
+	"free", --48
+	"gift", --49
+	"launch", --50
+	"log[io]n", --51
+	"luckyplayer", --52
+	"mount", --53
+	"pleasevisit", --54
+	"receive", --55
+	"surprise", --56
+	"suspe[cn][td]ed", --57 --suspected/suspended
+	"system", --58
+	"warcraft", --59
 
 	--Phishing - German
-	"berechtigt", --entitled --59
-	"erhalten", --get/receive --60
-	"deaktiviert", --deactivated --61
-	"konto", --acount --62
-	"kostenlos", --free --63
-	"qualifiziert", --qualified --64
+	"berechtigt", --entitled --60
+	"erhalten", --get/receive --61
+	"deaktiviert", --deactivated --62
+	"konto", --acount --63
+	"kostenlos", --free --64
+	"qualifiziert", --qualified --65
 
 	--X is recruiting, Y and Z tanks, A, B, C. Other classes also welcome. Raid times are 8-11 server. DayX dayY are 25's and other days are 10's. Pst an officer for more info or visit XYZ.com
 
@@ -292,15 +293,15 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>64 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>65 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>42 and k<65 then
+			elseif k>43 and k<66 then
 				phishPoints = phishPoints + 1
-			elseif k>37 and k<43 and not strict then
+			elseif k>38 and k<44 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 2
 				strict = true
-			elseif k>33 and k<38 then
+			elseif k>33 and k<39 then
 				points = points + 2 --Heavy section gets 2 points
 			elseif k>3 and k<34 then
 				points = points + 1 --All else gets 1 point
