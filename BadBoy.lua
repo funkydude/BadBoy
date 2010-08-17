@@ -264,15 +264,9 @@ local triggers = {
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
--- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, table, UnitInParty, UnitInRaid, ComplainChat, CanComplainChat
+-- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, tinsert, tremove, UnitInParty, UnitInRaid, ComplainChat, CanComplainChat
 local orig, prevReportTime, prevLineId, chatLines, chatPlayers, fnd, result = COMPLAINT_ADDED, 0, 0, {}, {}, string.find, nil
-local temp = nil
 local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lineId)
-	if not temp then
-		print("|cFF33FF99BadBoy_ALPHA-TEST|r: Temporarily, all reported spam will be printed in chat. This is for a few days whilst a new 'killer' method is tested.")
-		print("|cFF33FF99BadBoy_ALPHA-TEST|r: Please report any false alarms on the forum.")
-		temp = true
-	end
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
@@ -316,8 +310,6 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 			end
 			if points > 3 or phishPoints > 3 then
 			--	if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", debug, " - ", player) end --Debug
-				print("|cFF33FF99BadBoy_ALPHA-TEST|r: Thank you for helping test an alpha version of BadBoy.")
-				print("|cFF33FF99BadBoy_ALPHA-TEST|r: Please report any false alarms on the forum.")
 				print("|cFF33FF99BadBoy_ALPHA-TEST-REPORT|r: '", debug, "'")
 				local time = GetTime()
 				if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
