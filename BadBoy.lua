@@ -310,8 +310,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 				phishPoints = phishPoints - 2 --Remove points for safe words
 			end
 			if points > 3 or phishPoints > 3 then
-			--	if BADBOY_DEBUG then print("|cFF33FF99BadBoy|r: ", debug, " - ", player) end --Debug
-				print("|cFF33FF99BadBoy_ALPHA-TEST-REPORT|r: '", debug, "'")
+				if BADBOY_DEBUG then print("|cFF33FF99BadBoy_REPORT|r:", debug) end --Debug
 				local time = GetTime()
 				if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 					prevReportTime = time
@@ -334,7 +333,7 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	--Only applies for gen/trade/LFG/etc and for latin based languages, as %W only supports that... :(
 	--Exclude lines with item links "|cff", I think this whole thing is reasonably ugly, but the gold spammers like to draw sometimes...
 	if channelId > 0 and not BADBOY_ALLOWART and not BADBOY_NOLATIN and not fnd(msg, "|cff") and fnd(msg, "%W%W%W%W%W%W%W") then
-		if BADBOY_DEBUG then print("|cFF33FF99BadBoy_ART|r: ", debug, " - ", player) end
+		if BADBOY_DEBUG then print("|cFF33FF99BadBoy_ART|r:", debug, player) end
 		result = true return true
 	end
 	--END: Art remover
