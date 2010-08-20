@@ -207,6 +207,7 @@ local triggers = {
 	"casino.*whisper.*info", --<RollReno's Casino> <Whisper for more information!>
 
 	--Advanced URL's/Misc
+	"pkpkg.*gear.*pet", --WWW.PkPkg.C{circle}M more gears,mount,pet and items on
 	"euro.*gold.*safer.*trade", --Only 1.66 Euros per 1000 gold, More safer trade model.
 	--"wow4wow.*only.*per.*deliver", --[square]wow4wow,com[square][diamond]only 14 euro per 10K[diamond][triangle]10 min delivery[triangle]
 	"games.*sale.*thankyou.*buy.*account", --games for sale warcraft iii,apb,cod mw2,css, and a lot more thank you--(multiple buyers already)also now 2 steam accounts with more then 10 games
