@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Version: 6.000
+## Version: 6.001
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Author: Funkydude
@@ -8,6 +8,6 @@
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved
 
-BadBoy.lua
 SimpleOptions.lua
+BadBoy.lua
 

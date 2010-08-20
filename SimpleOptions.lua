@@ -1,8 +1,8 @@
 
 do
 	--Slash handler
-	_G["SlashCmdList"]["BADBOY_MAIN"] = function() InterfaceOptionsFrame_OpenToCategory("BadBoy") end
-	_G["SLASH_BADBOY_MAIN1"] = "/badboy"
+	SlashCmdList["BADBOY"] = function() InterfaceOptionsFrame_OpenToCategory("BadBoy") end
+	SLASH_BADBOY1 = "/badboy"
 
 	--Locale
 	local locNoReportMsg = "Hide '%s' message"
@@ -48,35 +48,7 @@ do
 	badboy.name = "BadBoy"
 	InterfaceOptions_AddCategory(badboy)
 
-	badboy:SetScript("OnShow", function(frame)
-		--XXX move functions to _Levels, temporary
-		if IsAddOnLoaded("BadBoy_Levels") and not BadBoyLevelsEditBox then
-			local levelsBox = CreateFrame("EditBox", "BadBoyLevelsEditBox", frame, "InputBoxTemplate")
-			levelsBox:SetPoint("TOPLEFT", BadBoyConfigNoArtButton, "BOTTOMLEFT", 10, -25)
-			levelsBox:SetAutoFocus(false)
-			levelsBox:SetNumeric(true)
-			levelsBox:EnableMouse(true)
-			levelsBox:SetWidth(30)
-			levelsBox:SetHeight(20)
-			levelsBox:SetMaxLetters(2)
-			levelsBox:Show()
-			BadBoyLevelsConfigTitle:SetText("BadBoy_Levels v"..GetAddOnMetadata("BadBoy_Levels", "Version"))
-			if BADBOY_LEVEL and type(BADBOY_LEVEL) ~= "number" then BADBOY_LEVEL = nil end
-			if BADBOY_LEVEL and (BADBOY_LEVEL<1 or BADBOY_LEVEL>79) then BADBOY_LEVEL = nil end
-			levelsBox:SetText(BADBOY_LEVEL or 1)
-			levelsBox:SetScript("OnHide", function(newFrame)
-				local n = tonumber(newFrame:GetText())
-				if not n or n == "" then newFrame:SetText(BADBOY_LEVEL or 1) print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1)) return end
-				if n <1 or n>79 then
-					newFrame:SetText(BADBOY_LEVEL or 1)
-					print("|cFF33FF99BadBoy_Levels|r == "..(BADBOY_LEVEL or 1))
-				else
-					BADBOY_LEVEL = n
-					print("|cFF33FF99BadBoy_Levels|r == "..n)
-				end
-			end)
-		end
-
+	badboy:SetScript("OnShow", function()
 		BadBoyConfigSilenceButton:SetChecked(BADBOY_SILENT)
 		BadBoyConfigPopupButton:SetChecked(BADBOY_POPUP)
 		if BADBOY_NOLATIN then
@@ -89,7 +61,7 @@ do
 
 	local title = badboy:CreateFontString("BadBoyConfigTitle", "ARTWORK", "GameFontNormalLarge")
 	title:SetPoint("TOPLEFT", 16, -16)
-	title:SetText("BadBoy ".."@project-version@") --wowace magic, replaced with tag version
+	title:SetText("BadBoy @project-version@") --wowace magic, replaced with tag version
 
 	local btnNoReportMsg = CreateFrame("CheckButton", "BadBoyConfigSilenceButton", badboy)
 	btnNoReportMsg:SetWidth(26)
