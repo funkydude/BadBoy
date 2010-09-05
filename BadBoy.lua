@@ -23,73 +23,75 @@ local triggers = {
 	"gold", --12
 	"lowest", --13
 	"order", --14
-	"powerle?ve?l", --15
-	"price", --16
-	"promoti[on][gn]", --17
-	"reduced", --18
-	"safe", --19
-	"server", --20
-	"service", --21
-	"stock", --22
-	"well?come", --23
+	"payment", --15
+	"powerle?ve?l", --16
+	"price", --17
+	"promoti[on][gn]", --18
+	"reduced", --19
+	"safe", --20
+	"server", --21
+	"service", --22
+	"stock", --23
+	"well?come", --24
 
 	--French - Common
-	"livraison", --delivery --24
+	"livraison", --delivery --25
 
 	--German - Common
-	"billigster", --cheapest --25
-	"lieferung", --delivery --26
-	"preis", --price --27
-	"willkommen", --welcome --28
+	"billigster", --cheapest --26
+	"lieferung", --delivery --27
+	"preis", --price --28
+	"willkommen", --welcome --29
 
 	--Spanish - Common
-	"barato", --cheap --29
-	"gratuito", --free --30
-	"r[\195\161a]pido", --fast --31
-	"seguro", --safe/secure --32
-	"servicio", --service --33
+	"barato", --cheap --30
+	"gratuito", --free --31
+	"r[\195\161a]pido", --fast --32
+	"seguro", --safe/secure --33
+	"servicio", --service --34
 
 	--Heavy
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --34 --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --35
-	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --36
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=]%d+%.?%d*[kg]", --37
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --38 --Add separate line if they start approx prices
-	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --39
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --35 --Add separate line if they start approx prices
+	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --36
+	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --37
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=]%d+%.?%d*[kg]", --38
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --39 --Add separate line if they start approx prices
+	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --40
+	"%d+%.?%d*[kg][/\98=]%d+%.?%d*eur", --41
 
 	--Heavy Strict
-	"www[%.,]", --40
-	"[%.,]c[o0@]m", --41
-	"[%.,]c{circle}m", --42
-	"[%.,]c{rt2}m", --43
-	"[%.,]cqm", --44
-	"[%.,]net", --45
+	"www[%.,]", --42
+	"[%.,]c[o0@]m", --43
+	"[%.,]c{circle}m", --44
+	"[%.,]c{rt2}m", --45
+	"[%.,]cqm", --46
+	"[%.,]net", --47
 
 	--Phishing - English
-	"account", --46
-	"blizz", --47
-	"claim", --48
-	"congratulations", --49
-	"free", --50
-	"gift", --51
-	"launch", --52
-	"log[io]n", --53
-	"luckyplayer", --54
-	"mount", --55
-	"pleasevisit", --56
-	"receive", --57
-	"surprise", --58
-	"suspe[cn][td]ed", --59 --suspected/suspended
-	"system", --60
-	"warcraft", --61
+	"account", --48
+	"blizz", --49
+	"claim", --50
+	"congratulations", --51
+	"free", --52
+	"gift", --53
+	"launch", --54
+	"log[io]n", --55
+	"luckyplayer", --56
+	"mount", --57
+	"pleasevisit", --58
+	"receive", --59
+	"surprise", --60
+	"suspe[cn][td]ed", --61 --suspected/suspended
+	"system", --62
+	"warcraft", --63
 
 	--Phishing - German
-	"berechtigt", --entitled --62
-	"erhalten", --get/receive --63
-	"deaktiviert", --deactivated --64
-	"konto", --acount --65
-	"kostenlos", --free --66
-	"qualifiziert", --qualified --67
+	"berechtigt", --entitled --64
+	"erhalten", --get/receive --65
+	"deaktiviert", --deactivated --66
+	"konto", --acount --67
+	"kostenlos", --free --68
+	"qualifiziert", --qualified --69
 
 	--X is recruiting, Y and Z tanks, A, B, C. Other classes also welcome. Raid times are 8-11 server. DayX dayY are 25's and other days are 10's. Pst an officer for more info or visit XYZ.com
 
@@ -209,6 +211,7 @@ local triggers = {
 	"casino.*whisper.*info", --<RollReno's Casino> <Whisper for more information!>
 
 	--Advanced URL's/Misc
+	"sale.*promotion.*mmoggg", --Incredible sales promotion of MMOGGG.com!
 	"pkpkg.*gear.*pet", --WWW.PkPkg.C{circle}M more gears,mount,pet and items on
 	"euro.*gold.*safer.*trade", --Only 1.66 Euros per 1000 gold, More safer trade model.
 	--"wow4wow.*only.*per.*deliver", --[square]wow4wow,com[square][diamond]only 14 euro per 10K[diamond][triangle]10 min delivery[triangle]
@@ -296,17 +299,17 @@ local function filter(_, event, msg, player, _, _, _, _, channelId, _, _, _, lin
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>67 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>69 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>45 and k<68 then
+			elseif k>47 and k<70 then
 				phishPoints = phishPoints + 1
-			elseif k>39 and k<46 and not strict then
+			elseif k>41 and k<48 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 2
 				strict = true
-			elseif k>33 and k<40 then
+			elseif k>34 and k<42 then
 				points = points + 2 --Heavy section gets 2 points
-			elseif k>3 and k<34 then
+			elseif k>3 and k<35 then
 				points = points + 1 --All else gets 1 point
 			elseif k<4 then
 				points = points - 2
