@@ -211,6 +211,8 @@ local triggers = {
 	"casino.*whisper.*info", --<RollReno's Casino> <Whisper for more information!>
 
 	--Advanced URL's/Misc
+	"price.*slash.*mmoggg", -->>> Big prices slashes at mmoggg!! <<<
+	"mmoggg.*rabat.*artikel", --MMOGGG bietet euch bis zu 50% Rabat auf alle unsere Artikel!
 	"sale.*promotion.*mmoggg", --Incredible sales promotion of MMOGGG.com!
 	"pkpkg.*gear.*pet", --WWW.PkPkg.C{circle}M more gears,mount,pet and items on
 	"euro.*gold.*safer.*trade", --Only 1.66 Euros per 1000 gold, More safer trade model.
