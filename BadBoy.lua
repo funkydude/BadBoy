@@ -209,8 +209,13 @@ local triggers = {
 	"casino.*%d+x2.*%d+x3", --{star} CASINO {star} roll 64-99x2 your wager roll 100x3 your wager min bet 50g max 10k will show gold 100% legit (no inbetween rolls plz){diamond} good luck {diamond}
 	"casino.*%d+.*double.*%d+.*tripp?le", --The Golden Casino is offering 60+ Doubles, and 80+ Tripples!
 	"casino.*whisper.*info", --<RollReno's Casino> <Whisper for more information!>
+	"d[ou][ub]ble.*%d+%-%d+.*%d+%-%d+.*tripp?le", --come too the Free Roller  gaming house!  and have ur luck of winning gold! :) pst me for invite:)  double is  62-96 97-100 tripple we also play blackjack---- u win double if you beat the host in blackjack
+	"d[ou][ub]ble.*%d+%-%d+.*tripp?le.*%d+%-%d+", --come to free roller gaming house! and have u luck of winning gold :) pst for invite :) double is 62-96 triple is 97-100. we also play blacjack---u win doubleif u beat host in blacjack
 
-	--Advanced URL's/Misc
+	--Advanced URL's/Misc --[[Re-evaluate after v4]]--
+	"nstig.*produkte.*freien.*preisfall", --Gunstig wie nie: Top-Produkte im freien Preisfall --multi
+	"{.*}.*mm4ss.*{.*}", --{triangle}www.mm4ss.com{triangle} --multi
+	"promotion.*serve.*%d+k", --Special promotion in this serve now, 21$ for 10k
 	"price.*slash.*mmoggg", -->>> Big prices slashes at mmoggg!! <<<
 	"mmoggg.*rabat.*artikel", --MMOGGG bietet euch bis zu 50% Rabat auf alle unsere Artikel!
 	"sale.*promotion.*mmoggg", --Incredible sales promotion of MMOGGG.com!
