@@ -23,24 +23,21 @@ do
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏 '%s' 信息"
 		locManualReport = "禁用信息自動過濾系統(顯示彈出)"
-		BADBOY_NOLATIN = true
 	elseif L == "zhCN" then
 		locNoReportMsg = "隐藏 '%s' 信息"
 		locManualReport = "禁用信息自动过滤系统(显示弹出)"
-		BADBOY_NOLATIN = true
 	elseif L == "esES" or L == "esMX" then
 		locNoReportMsg = "Ocultar el mensaje '%s'"
 		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
 		locNoArtTitle = "Deshabilitar filtro de arte ASCII"
 		locNoArtDesc = "Este filtro está diseñado para eliminar las líneas de spam de oro con símbolos repetitivos como '-' y '+' |cFF33FF99SÓLO|r de los canales públicos (gen/comercio/BdG/etc), aunque puede a veces filtrar jugadores inocentes que usan |cFF33FF99A MUCHOS|r '.' ó '!' que la mayoría de gente consederaría spam igualmente. Éstos |cFF33FF99NO|r son reportados."
-	elseif L == "koKR" then
-		BADBOY_NOLATIN = true
 	elseif L == "ruRU" then
 		locNoReportMsg = "Прятать сообщение '%s'"
 		locManualReport = "Отключить автоматическую жалобу на спам (показывать подтверждение)"
 		locNoArtTitle = "Отключить фильтр ASCII-картинок"
-		BADBOY_NOLATIN = true
 	end
+
+	local BADBOY_NOLATIN = true --XX TEMP
 
 	--Begin GUI
 	local badboy = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
@@ -55,7 +52,7 @@ do
 			BadBoyConfigNoArtButton:Disable()
 			BadBoyConfigNoArtButtonTitle:SetTextColor(0.5, 0.5, 0.5)
 		else
-			BadBoyConfigNoArtButton:SetChecked(BADBOY_ALLOWART)
+			BadBoyConfigNoArtButton:SetChecked(nil)
 		end
 	end)
 
@@ -125,10 +122,8 @@ do
 		local tick = frame:GetChecked()
 		if tick then
 			PlaySound("igMainMenuOptionCheckBoxOn")
-			BADBOY_ALLOWART = true
 		else
 			PlaySound("igMainMenuOptionCheckBoxOff")
-			BADBOY_ALLOWART = nil
 		end
 	end)
 
