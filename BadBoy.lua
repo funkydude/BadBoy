@@ -137,7 +137,9 @@ local triggers = {
 	"d[ou][ub]ble.*%d+%-%d+.*tripp?le.*%d+%-%d+", --come to free roller gaming house! and have u luck of winning gold :) pst for invite :) double is 62-96 triple is 97-100. we also play blacjack---u win doubleif u beat host in blacjack
 
 	--Advanced URL's/Misc
-	"%d+k.*rocket.*%$.*%d+k.*rocket.*pst", --$45 for 10k with a rocket {star} and 110$ for 30k with a Rocket{moon},if you like,plz pst
+	"customer.*promotion.*cost.*gold", --Dear customer: This is kyla from promotion site : mmowin ^_^Long time no see , how is going? Been miss ya :)As the cataclysm coming and the market cost line for gold and boe item has been down a lot recently , we will send present if ya get 30k or 50k
+	--$45=10k + one X-53 Touring Rocket, $107=30K + X-53 Touring Rocket, the promotion will be done in 10 minutes, if you like it, plz whisper me :) ty 
+	"%d+k.*rocket.*%$.*%d+k.*rocket.*like", --$45 for 10k with a rocket {star} and 110$ for 30k with a Rocket{moon},if you like,plz pst
 	"{.*}.*mm4ss.*{.*}", --{triangle}www.mm4ss.com{triangle} --multi
 	"promotion.*serve.*%d+k", --Special promotion in this serve now, 21$ for 10k
 	"pkpkg.*gear.*pet", --WWW.PkPkg.C{circle}M more gears,mount,pet and items on
