@@ -61,7 +61,7 @@ local triggers = {
 	"%d+%.?%d*[kg][/\98=]%d+%.?%d*eur", --42
 
 	--Heavy Strict
-	"www[%.,]", --43
+	"www[%.,{]", --43
 	"[%.,]c[o0@]m", --44
 	"[%.,]c{circle}m", --45
 	"[%.,]c{rt2}m", --46
