@@ -1,7 +1,10 @@
 --[[	BLIZZARD IF YOU'RE READING THIS I'M BEGGING FOR YOUR HELP.
-		PLEASE LET ME FETCH EITHER PLAYER LEVEL FROM THE GIVEN GUID (WILL ALSO HELP BADBOY_LEVELS)
-		OR LET ME FETCH IF THE PLAYER IS IN A GUILD OR NOT FROM THE GIVEN GUID (SPAMMERS NEVER GUILDED)
-		OR BOTH! IT WOULD MAKE THIS MUCH EASIER!
+		Please let me fetch either player level from the given guid (will also help BadBoy_Levels)
+		or let me fetch if the player is in a guild or not from the given guid (spammers never guilded)
+		or both!
+
+		I can then, 1) Skip scanning all chat from non-guilded members, 2) skip scanning all chat from
+		players above level 10, this would near enough eliminate any chance of false positives.
 ]]--
 
 --DO NOT MODIFY DATABASE OR YOU MAY REPORT INNOCENT PEOPLE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
@@ -84,7 +87,6 @@ local triggers = {
 	"surprise", --61
 	"suspe[cn][td]ed", --62 --suspected/suspended
 	"system", --63
-	"warcraft", --64
 
 	--Phishing - German
 	"berechtigt", --entitled --65
@@ -166,17 +168,30 @@ local triggers = {
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 }
 
--- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, UnitInParty, UnitInRaid, ComplainChat, CanComplainChat
+-- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
 local orig, prevReportTime, prevLineId, fnd, result = COMPLAINT_ADDED, 0, 0, string.find, nil
 local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
 		prevLineId = lineId
-		if flag == "GM" then result = nil return end --I'm sure GM's didn't used to be reportable.... adding this here just in case it's changed, due to a user false positive report with a GM.
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-		if not CanComplainChat(lineId) then result = nil return end --Don't report ourself/friends
-		if UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't try macro/filter raid/party members
+		if not CanComplainChat(lineId) then result = nil return end --Don't scan ourself/friends/GMs
+		if UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't scan guildies or raid/party members
+		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
+			if flag == "GM" then result = nil return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
+			--RealID support, don't scan people that whisper us via their character instead of RealID
+			--that aren't on our friends list, but are on our RealID list. CanComplainChat should really support this...
+			for i=1, select(2, BNGetNumFriends()) do
+				local toon = BNGetNumFriendToons(i)
+				for j=1, toon do
+					local _, rName, rGame, rServer = BNGetFriendToonInfo(i, j)
+					if rName == player and rGame == "WoW" and rServer == GetRealmName() then
+						result = nil return
+					end
+				end
+			end
+		end
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals

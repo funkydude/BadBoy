@@ -1,5 +1,5 @@
 ## Interface: 40000
-## Version: 6.154
+## Version: 6.200
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Author: Funkydude
