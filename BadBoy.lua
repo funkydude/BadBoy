@@ -62,31 +62,32 @@ local triggers = {
 	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --40
 	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --41
 	"%d+%.?%d*[kg][/\98=]%d+%.?%d*eur", --42
+	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --43
 
 	--Heavy Strict
-	"www[%.,{]", --43
-	"[%.,]c[o0@]m", --44
-	"[%.,]c{circle}m", --45
-	"[%.,]c{rt2}m", --46
-	"[%.,]cqm", --47
-	"[%.,]net", --48
+	"www[%.,{]", --44
+	"[%.,]c[o0@]m", --45
+	"[%.,]c{circle}m", --46
+	"[%.,]c{rt2}m", --47
+	"[%.,]cqm", --48
+	"[%.,]net", --49
 
 	--Phishing - English
-	"account", --49
-	"blizz", --50
-	"claim", --51
-	"congratulations", --52
-	"free", --53
-	"gift", --54
-	"launch", --55
-	"log[io]n", --56
-	"luckyplayer", --57
-	"mount", --58
-	"pleasevisit", --59
-	"receive", --60
-	"surprise", --61
-	"suspe[cn][td]ed", --62 --suspected/suspended
-	"system", --63
+	"account", --50
+	"blizz", --51
+	"claim", --52
+	"congratulations", --53
+	"free", --54
+	"gift", --55
+	"launch", --56
+	"log[io]n", --57
+	"luckyplayer", --58
+	"mount", --59
+	"pleasevisit", --60
+	"receive", --61
+	"surprise", --62
+	"suspe[cn][td]ed", --63 --suspected/suspended
+	"system", --64
 
 	--Phishing - German
 	"berechtigt", --entitled --65
@@ -176,8 +177,7 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	else
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-		if not CanComplainChat(lineId) then result = nil return end --Don't scan ourself/friends/GMs
-		if UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't scan guildies or raid/party members
+		if not CanComplainChat(lineId) or UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't scan ourself/friends/GMs/guildies or raid/party members
 		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
 			if flag == "GM" then result = nil return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
 			--RealID support, don't scan people that whisper us via their character instead of RealID
@@ -203,13 +203,13 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 		if fnd(msg, v) then --Found a match
 			if k>70 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>48 and k<71 then
+			elseif k>49 and k<71 then
 				phishPoints = phishPoints + 1
-			elseif k>42 and k<49 and not strict then
+			elseif k>43 and k<50 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 2
 				strict = true
-			elseif k>34 and k<43 then
+			elseif k>34 and k<44 then
 				points = points + 2 --Heavy section gets 2 points
 			elseif k>3 and k<35 then
 				points = points + 1 --All else gets 1 point
@@ -265,7 +265,6 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 		--Ninja this in here to prevent creating a login function & frame
 		--We force this on so we don't have spam that would have been filtered, reported on the forums
 		SetCVar("spamFilter", 1)
-		BADBOY_ALLOWART = nil --XX remove
 	end
 end)
 
