@@ -3,7 +3,7 @@
 		or let me fetch if the player is in a guild or not from the given guid (spammers never guilded)
 		or both!
 
-		I can then, 1) Skip scanning all chat from non-guilded members, 2) skip scanning all chat from
+		I can then, 1) Skip scanning all chat from non-guilded WoW players, 2) skip scanning all chat from
 		players above level 10, this would near enough eliminate any chance of false positives.
 ]]--
 
@@ -77,25 +77,25 @@ local triggers = {
 	"blizz", --51
 	"claim", --52
 	"congratulations", --53
-	"free", --54
-	"gift", --55
-	"launch", --56
-	"log[io]n", --57
-	"luckyplayer", --58
-	"mount", --59
-	"pleasevisit", --60
-	"receive", --61
-	"surprise", --62
-	"suspe[cn][td]ed", --63 --suspected/suspended
-	"system", --64
+	--"free",
+	"gift", --54
+	"launch", --55
+	"log[io]n", --56
+	"luckyplayer", --57
+	"mount", --58
+	"pleasevisit", --59
+	"receive", --60
+	"surprise", --61
+	"suspe[cn][td]ed", --62 --suspected/suspended
+	"system", --63
 
 	--Phishing - German
-	"berechtigt", --entitled --65
-	"erhalten", --get/receive --66
-	"deaktiviert", --deactivated --67
-	"konto", --acount --68
-	"kostenlos", --free --69
-	"qualifiziert", --qualified --70
+	"berechtigt", --entitled --64
+	"erhalten", --get/receive --65
+	"deaktiviert", --deactivated --66
+	"konto", --acount --67
+	"kostenlos", --free --68
+	"qualifiziert", --qualified --69
 
 	--X is recruiting, Y and Z tanks, A, B, C. Other classes also welcome. Raid times are 8-11 server. DayX dayY are 25's and other days are 10's. Pst an officer for more info or visit XYZ.com
 
@@ -202,13 +202,13 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>70 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>69 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 5 --Instant report
-			elseif k>49 and k<71 then
+			elseif k>49 and k<70 then
 				phishPoints = phishPoints + 1
 			elseif k>43 and k<50 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
-				phishPoints = phishPoints + 2
+				phishPoints = phishPoints + 1
 				strict = true
 			elseif k>34 and k<44 then
 				points = points + 2 --Heavy section gets 2 points
