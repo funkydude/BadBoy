@@ -32,72 +32,73 @@ local triggers = {
 	"price", --18
 	"promoti[on][gn]", --19
 	"reduced", --20
-	"safe", --21
-	"server", --22
-	"service", --23
-	"stock", --24
-	"well?come", --25
+	"rocket", --21
+	"safe", --22
+	"server", --23
+	"service", --24
+	"stock", --25
+	"well?come", --26
 
 	--French - Common
-	"livraison", --delivery --26
+	"livraison", --delivery --27
 
 	--German - Common
-	"billigster", --cheapest --27
-	"lieferung", --delivery --28
-	"preis", --price --29
-	"willkommen", --welcome --30
+	"billigster", --cheapest --28
+	"lieferung", --delivery --29
+	"preis", --price --30
+	"willkommen", --welcome --31
 
 	--Spanish - Common
-	"barato", --cheap --31
-	"gratuito", --free --32
-	"r[\195\161a]pido", --fast --33
-	"seguro", --safe/secure --34
-	"servicio", --service --35
+	"barato", --cheap --32
+	"gratuito", --free --33
+	"r[\195\161a]pido", --fast --34
+	"seguro", --safe/secure --35
+	"servicio", --service --36
 
 	--Heavy
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --36 --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --37
-	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --38
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=]%d+%.?%d*[kg]", --39
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --40 --Add separate line if they start approx prices
-	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --41
-	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --42
-	"%d+%.?%d*[kg][/\98=]%d+%.?%d*eur", --43
-	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --44
-	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --45
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --37 --Add separate line if they start approx prices
+	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --38
+	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --39
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=]%d+%.?%d*[kg]", --40
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --41 --Add separate line if they start approx prices
+	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --42
+	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --43
+	"%d+%.?%d*[kg][/\98=]%d+%.?%d*eur", --44
+	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --45
+	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --46
 
 	--Heavy Strict
-	"www[%.,{]", --46
-	"[%.,]c[o0@]m", --47
-	"[%.,]c{circle}m", --48
-	"[%.,]c{rt2}m", --49
-	"[%.,]cqm", --50
-	"[%.,]net", --51
+	"www[%.,{]", --47
+	"[%.,]c[o0@]m", --48
+	"[%.,]c{circle}m", --49
+	"[%.,]c{rt2}m", --50
+	"[%.,]cqm", --51
+	"[%.,]net", --52
 
 	--Phishing - English
-	"account", --52
-	"blizz", --53
-	"claim", --54
-	"congratulations", --55
-	"free", --56
-	"gift", --57
-	"launch", --58
-	"log[io]n", --59
-	"luckyplayer", --60
-	"mount", --61
-	"pleasevisit", --62
-	"receive", --63
-	"surprise", --64
-	"suspe[cn][td]ed", --65 --suspected/suspended
-	"system", --66
+	"account", --53
+	"blizz", --54
+	"claim", --55
+	"congratulations", --56
+	"free", --57
+	"gift", --58
+	"launch", --59
+	"log[io]n", --60
+	"luckyplayer", --61
+	"mount", --62
+	"pleasevisit", --63
+	"receive", --64
+	"surprise", --65
+	"suspe[cn][td]ed", --66 --suspected/suspended
+	"system", --67
 
 	--Phishing - German
-	"berechtigt", --entitled --67
-	"erhalten", --get/receive --68
-	"deaktiviert", --deactivated --69
-	"konto", --acount --70
-	"kostenlos", --free --71
-	"qualifiziert", --qualified --72
+	"berechtigt", --entitled --68
+	"erhalten", --get/receive --69
+	"deaktiviert", --deactivated --70
+	"konto", --acount --71
+	"kostenlos", --free --72
+	"qualifiziert", --qualified --73
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -140,13 +141,16 @@ local triggers = {
 	"d[ou][ub]ble.*%d+%-%d+.*tripp?le.*%d+%-%d+", --come to free roller gaming house! and have u luck of winning gold :) pst for invite :) double is 62-96 triple is 97-100. we also play blacjack---u win doubleif u beat host in blacjack
 
 	--Advanced URL's/Misc
+	"mmo4store.*%d+[kg].*good.*choice", --{square}MMO4STORE.C0M{square}14/10000G{square}Good Choice{square}
 	"^%W+.*mmoggg", -->>> MMOGGG is recruiting now!
 	"%d+.*items.*deliver.*k4gg", --10K=13.98For more items and for fast delivery,come toWWW.K4gg.C@M
 	"customer.*promotion.*cost.*gold", --Dear customer: This is kyla from promotion site : mmowin ^_^Long time no see , how is going? Been miss ya :)As the cataclysm coming and the market cost line for gold and boe item has been down a lot recently , we will send present if ya get 30k or 50k
 	--40$ for 10k gold or 45$ for  10k gold + 1 rocket  + one month  time card  .   25$ for  a  rocket .  we have  all boe items and 264 gears selled . if u r interested in .  plz whsiper me . :) ty
 	--$45=10k + one X-53 Touring Rocket, $107=30K + X-53 Touring Rocket, the promotion will be done in 10 minutes, if you like it, plz whisper me :) ty 
 	"%$.*rocket.*%$.*rocket.*ple?a?[sz]", --$45 for 10k with a rocket {star} and 110$ for 30k with a Rocket{moon},if you like,plz pst
-	"wts.*rocket.*%d+[kg].*free", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
+	--WTS X-53 Touring Rocket.( the only 2 seat flying mount you can aslo get a free month game time) .. pst
+	--WTS [X-53 Touring Rocket], the only 2seats flying mount, PST
+	"wts.*touring.*rocket.*mount.*pst", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
 	"{.*}.*mm4ss.*{.*}", --{triangle}www.mm4ss.com{triangle} --multi
 	"promotion.*serve.*%d+k", --Special promotion in this serve now, 21$ for 10k
 	"pkpkg.*gear.*pet", --WWW.PkPkg.C{circle}M more gears,mount,pet and items on
@@ -202,17 +206,17 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>72 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>73 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif k>51 and k<73 then
+			elseif k>52 and k<74 then
 				phishPoints = phishPoints + 1
-			elseif k>45 and k<52 and not strict then
+			elseif k>46 and k<53 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 1
 				strict = true
-			elseif k>35 and k<46 then
+			elseif k>36 and k<47 then
 				points = points + 2 --Heavy section gets 2 points
-			elseif k>4 and k<36 then
+			elseif k>4 and k<37 then
 				points = points + 1 --All else gets 1 point
 			elseif k<5 then
 				points = points - 2
