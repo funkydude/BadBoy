@@ -24,10 +24,10 @@ local triggers = {
 	"customer", --10
 	"deliver", --11
 	"discount", --12
-	"gold", --13
-	"lowest", --14
-	"order", --15
-	"payment", --16
+	"express", --13
+	"gold", --14
+	"lowest", --15
+	"order", --16
 	"powerle?ve?l", --17
 	"price", --18
 	"promoti[on][gn]", --19
@@ -63,7 +63,7 @@ local triggers = {
 	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --41 --Add separate line if they start approx prices
 	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --42
 	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --43
-	"%d+%.?%d*[kg][/\98=]%d+%.?%d*eur", --44
+	"%d+%.?%d*[kg][/\98=]%d+[%.,]?%d*eu", --44
 	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --45
 	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --46
 
