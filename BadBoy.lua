@@ -58,7 +58,7 @@ local triggers = {
 	--Heavy
 	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --37 --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --38
-	"only%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --39
+	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --39
 	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=]%d+%.?%d*[kg]", --40
 	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --41 --Add separate line if they start approx prices
 	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --42
