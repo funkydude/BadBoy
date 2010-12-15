@@ -81,24 +81,27 @@ local triggers = {
 	"claim", --55
 	"congratulations", --56
 	"free", --57
-	"gift", --58
-	"launch", --59
-	"log[io]n", --60
-	"luckyplayer", --61
-	"mount", --62
-	"pleasevisit", --63
-	"receive", --64
-	"surprise", --65
-	"suspe[cn][td]ed", --66 --suspected/suspended
-	"system", --67
+	"gamemaster", --58
+	"gift", --59
+	"launch", --60
+	"log[io]n", --61
+	"luckyplayer", --62
+	"mount", --63
+	"pleasevisit", --64
+	"receive", --65
+	"surprise", --66
+	"suspe[cn][td]ed", --67 --suspected/suspended
+	"system", --68
+
+	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --68
-	"erhalten", --get/receive --69
-	"deaktiviert", --deactivated --70
-	"konto", --acount --71
-	"kostenlos", --free --72
-	"qualifiziert", --qualified --73
+	"berechtigt", --entitled --69
+	"erhalten", --get/receive --70
+	"deaktiviert", --deactivated --71
+	"konto", --acount --72
+	"kostenlos", --free --73
+	"qualifiziert", --qualified --74
 
 	--Personal Whispers
 	"server.*purchase.*gold.*deliv", --sorry to bother,currently we have 29200g on this server, wondering if you might purchase some gold today? 15mins delivery:)
@@ -210,9 +213,9 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>73 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>74 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif k>52 and k<74 then
+			elseif k>52 and k<75 then
 				phishPoints = phishPoints + 1
 			elseif k>46 and k<53 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
