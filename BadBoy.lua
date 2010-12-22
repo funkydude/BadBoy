@@ -182,7 +182,7 @@ local triggers = {
 }
 
 -- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
-local orig, prevReportTime, prevLineId, fnd, result = COMPLAINT_ADDED, 0, 0, string.find, nil
+local orig, prevReportTime, prevLineId, fnd, result, prevMsg, prevPlayer = COMPLAINT_ADDED, 0, 0, string.find, nil, nil, nil
 local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -208,6 +208,10 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = strreplace(msg, " ", "") --Remove spaces
+	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
+	if msg == prevMsg and player == prevPlayer then result = true return true end
+	prevMsg = msg prevPlayer = player
+	--end check
 	local points = 0
 	local phishPoints = 0
 	local strict = nil
