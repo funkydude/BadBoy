@@ -237,11 +237,10 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 				phishPoints = phishPoints - 2 --Remove points for safe words
 			end
 			if points > 3 or phishPoints > 3 then
-				if BADBOY_DEBUG then print("|cFF33FF99BadBoy_REPORT|r:", debug) end --Debug
+				if BadBoyLogger then BadBoyLogger("BadBoy", event, player, debug) end
 				local time = GetTime()
 				if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 					prevReportTime = time
-					if BadBoyLogger then BadBoyLogger("BadBoy", debug) end
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 					if BADBOY_POPUP then --Manual reporting via popup
 						--Add original spam line to Blizzard popup message

@@ -3,8 +3,8 @@
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Author: Funkydude
-## SavedVariables: BADBOY_POPUP, BADBOY_SILENT, BADBOY_DEBUG
-## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist, BadBoy v1)
+## SavedVariables: BADBOY_POPUP, BADBOY_SILENT
+## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved
 
