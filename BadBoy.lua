@@ -145,6 +145,8 @@ local triggers = {
 	"casino.*bet.*%d+%-%d+", --Casino time. You give me your bet, Than You roll from 1-11 unlimited times.Your rolls add up. If you go over 21 you lose.You can stop before 21.When you stop I do the same, and if your closer to 21 than me than you get back 2 times your bet
 
 	--Advanced URL's/Misc
+	"gold.*advantage.*gold4guild", --{star}Get The Gold On Time!{star}No more boring grinding.Much more leading advantage! All at www.gold4guild.com!
+	"happy.*%d+for%d+k.*gear.*mount", --{star}{star}{star}happy new year, $100=30K,$260 for 100K, and have the nice 359lvl gears about $39~99 best mount for ya as well{star}{star}{star}{star}
 	"deliver.*gears.*g4p", --Fast delivery for Level 359/372 BoE gears!Vist <www.g4pitem.com> to get whatever you need! 
 	"sale.*joygold.*store", --Great sale! triangletriangletriangle www.joygold.com.www.joygold.com diamonddiamonddiamond 10000G.only.13.99 EUR circle WWWE have 257k stores and you can receive within 5-10 minutes star 
 	"ssegame.*euro.*deliver", -- {diamond} {diamond} SseGame {diamond} {diamond} To  celebrate the 3 years anniversary {triangle} 14 Euro for 10000G; {triangle} 5-15mins  delivery {triangle}
