@@ -66,42 +66,44 @@ local triggers = {
 	"%d+%.?%d*[kg][/\98=]%d+[%.,]?%d*eu", --44
 	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --45
 	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --46
+	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --47
 
 	--Heavy Strict
-	"www[%.,{]", --47
-	"[%.,]c[o0@]m", --48
-	"[%.,]c{circle}m", --49
-	"[%.,]c{rt2}m", --50
-	"[%.,]cqm", --51
-	"[%.,]net", --52
+	"www[%.,{]", --48
+	"[%.,]c[o0@]m", --49
+	"[%.,]c{circle}m", --50
+	"[%.,]c{rt2}m", --51
+	"[%.,]cqm", --52
+	"[%.,]net", --53
+	"{rt%d}", --54
 
 	--Phishing - English
-	"account", --53
-	"blizz", --54
-	"claim", --55
-	"congratulations", --56
-	"free", --57
-	"gamemaster", --58
-	"gift", --59
-	"launch", --60
-	"log[io]n", --61
-	"luckyplayer", --62
-	"mount", --63
-	"pleasevisit", --64
-	"receive", --65
-	"surprise", --66
-	"suspe[cn][td]ed", --67 --suspected/suspended
-	"system", --68
+	"account", --55
+	"blizz", --56
+	"claim", --57
+	"congratulations", --58
+	"free", --59
+	"gamemaster", --60
+	"gift", --61
+	"launch", --62
+	"log[io]n", --63
+	"luckyplayer", --64
+	"mount", --65
+	"pleasevisit", --66
+	"receive", --67
+	"surprise", --68
+	"suspe[cn][td]ed", --69 --suspected/suspended
+	"system", --70
 
 	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --69
-	"erhalten", --get/receive --70
-	"deaktiviert", --deactivated --71
-	"konto", --acount --72
-	"kostenlos", --free --73
-	"qualifiziert", --qualified --74
+	"berechtigt", --entitled --71
+	"erhalten", --get/receive --72
+	"deaktiviert", --deactivated --73
+	"konto", --acount --74
+	"kostenlos", --free --75
+	"qualifiziert", --qualified --76
 
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
@@ -136,7 +138,7 @@ local triggers = {
 	"may.*ask.*whether.*interest.*ing.*boe.*stuff.*rocket", --hmm, may i ask whether u r interested in g or boe stuffs such as X-53 Touring Rocket:P
 
 	--Casino
-	"%d+%-%d+.*d[ou][ub]ble.*%d+%-%d+.*tripp?le", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
+	"%d+%-%d+.*d[ou][ub]ble.*%d+%-%d+.*trip", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
 	"casino.*%d+x2.*%d+x3", --{star} CASINO {star} roll 64-99x2 your wager roll 100x3 your wager min bet 50g max 10k will show gold 100% legit (no inbetween rolls plz){diamond} good luck {diamond}
 	"casino.*%d+.*double.*%d+.*tripp?le", --The Golden Casino is offering 60+ Doubles, and 80+ Tripples!
 	"casino.*whisper.*info", --<RollReno's Casino> <Whisper for more information!>
@@ -224,15 +226,15 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	local strict = nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>74 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>76 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif k>52 and k<75 then
+			elseif k>54 and k<77 then
 				phishPoints = phishPoints + 1
-			elseif k>46 and k<53 and not strict then
+			elseif k>47 and k<55 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 1
 				strict = true
-			elseif k>36 and k<47 then
+			elseif k>36 and k<48 then
 				points = points + 2 --Heavy section gets 2 points
 			elseif k>4 and k<37 then
 				points = points + 1 --All else gets 1 point
