@@ -33,7 +33,7 @@ local triggers = {
 	"promoti[on][gn]", --19
 	"reduced", --20
 	"rocket", --21
-	"safe", --22
+	"sa[fl]e", --22
 	"server", --23
 	"service", --24
 	"stock", --25
