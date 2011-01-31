@@ -14,96 +14,106 @@ local triggers = {
 	"dkp", --2
 	"looking", --3 --guild
 	"lf[gm]", --4
+	"|cff", --5
 
 	--English - Common
-	"bonus", --5
-	"buy", --6
-	"cheap", --7
-	"code", --8
-	"coupon", --9
-	"customer", --10
-	"deliver", --11
-	"discount", --12
-	"express", --13
-	"gold", --14
-	"lowest", --15
-	"order", --16
-	"powerle?ve?l", --17
-	"price", --18
-	"promoti[on][gn]", --19
-	"reduced", --20
-	"rocket", --21
-	"sa[fl]e", --22
-	"server", --23
-	"service", --24
-	"stock", --25
-	"well?come", --26
+	"bonus", --6
+	"buy", --7
+	"cheap", --8
+	"code", --9
+	"coupon", --10
+	"customer", --11
+	"deliver", --12
+	"discount", --13
+	"express", --14
+	"gold", --15
+	"lowest", --16
+	"order", --17
+	"powerle?ve?l", --18
+	"price", --19
+	"promoti[on][gn]", --20
+	"reduced", --21
+	"rocket", --22
+	"sa[fl]e", --23
+	"server", --24
+	"service", --25
+	"stock", --26
+	"well?come", --27
 
 	--French - Common
-	"livraison", --delivery --27
+	"livraison", --delivery --28
 
 	--German - Common
-	"billigster", --cheapest --28
-	"lieferung", --delivery --29
-	"preis", --price --30
-	"willkommen", --welcome --31
+	"billigster", --cheapest --29
+	"lieferung", --delivery --30
+	"preis", --price --31
+	"willkommen", --welcome --32
 
 	--Spanish - Common
-	"barato", --cheap --32
-	"gratuito", --free --33
-	"r[\195\161a]pido", --fast --34
-	"seguro", --safe/secure --35
-	"servicio", --service --36
+	"barato", --cheap --33
+	"gratuito", --free --34
+	"r[\195\161a]pido", --fast --35
+	"seguro", --safe/secure --36
+	"servicio", --service --37
 
 	--Heavy
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --37 --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --38
-	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --39
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=%-]%d+%.?%d*[kg]", --40
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --41 --Add separate line if they start approx prices
-	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --42
-	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --43
-	"%d+%.?%d*[kg][/\98=]%d+[%.,]?%d*eu", --44
-	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --45
-	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --46
-	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --47
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --38 --Add separate line if they start approx prices
+	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --39
+	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --40
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=%-]%d+%.?%d*[kg]", --41
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --42 --Add separate line if they start approx prices
+	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --43
+	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --44
+	"%d+%.?%d*[kg][/\98=]%d+[%.,]?%d*eu", --45
+	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --46
+	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --47
+	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --48
 
 	--Heavy Strict
-	"www[%.,{]", --48
-	"[%.,]c[o0@]m", --49
-	"[%.,]c{circle}m", --50
-	"[%.,]c{rt2}m", --51
-	"[%.,]cqm", --52
-	"[%.,]net", --53
-	"{rt%d}", --54
+	"www[%.,{]", --49
+	"[%.,]c[o0@]m", --50
+	"[%.,]c{circle}m", --51
+	"[%.,]c{rt2}m", --52
+	"[%.,]cqm", --53
+	"[%.,]net", --54
+
+	--Icons
+	"{rt%d}", --55
+	"{star}", --56
+	"{circle}", --57
+	"{diamond}", --58
+	"{triangle}", --59
+	"{moon}", --60
+	"{square}", --61
+	"{cross}", --62
 
 	--Phishing - English
-	"account", --55
-	"blizz", --56
-	"claim", --57
-	"congratulations", --58
-	"free", --59
-	"gamemaster", --60
-	"gift", --61
-	"launch", --62
-	"log[io]n", --63
-	"luckyplayer", --64
-	"mount", --65
-	"pleasevisit", --66
-	"receive", --67
-	"surprise", --68
-	"suspe[cn][td]ed", --69 --suspected/suspended
-	"system", --70
+	"account", --63
+	"blizz", --64
+	"claim", --65
+	"congratulations", --66
+	"free", --67
+	"gamemaster", --68
+	"gift", --69
+	"launch", --70
+	"log[io]n", --71
+	"luckyplayer", --72
+	"mount", --73
+	"pleasevisit", --74
+	"receive", --75
+	"surprise", --76
+	"suspe[cn][td]ed", --77 --suspected/suspended
+	"system", --78
 
 	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --71
-	"erhalten", --get/receive --72
-	"deaktiviert", --deactivated --73
-	"konto", --acount --74
-	"kostenlos", --free --75
-	"qualifiziert", --qualified --76
+	"berechtigt", --entitled --79
+	"erhalten", --get/receive --80
+	"deaktiviert", --deactivated --81
+	"konto", --acount --82
+	"kostenlos", --free --83
+	"qualifiziert", --qualified --84
 
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
@@ -147,17 +157,14 @@ local triggers = {
 	"casino.*bet.*%d+%-%d+", --Casino time. You give me your bet, Than You roll from 1-11 unlimited times.Your rolls add up. If you go over 21 you lose.You can stop before 21.When you stop I do the same, and if your closer to 21 than me than you get back 2 times your bet
 
 	--Advanced URL's/Misc
-	"gold.*advantage.*gold4guild", --{star}Get The Gold On Time!{star}No more boring grinding.Much more leading advantage! All at www.gold4guild.com!
 	"happy.*%d+for%d+k.*gear.*mount", --{star}{star}{star}happy new year, $100=30K,$260 for 100K, and have the nice 359lvl gears about $39~99 best mount for ya as well{star}{star}{star}{star}
 	"deliver.*gears.*g4p", --Fast delivery for Level 359/372 BoE gears!Vist <www.g4pitem.com> to get whatever you need! 
 	"sale.*joygold.*store", --Great sale! triangletriangletriangle www.joygold.com.www.joygold.com diamonddiamonddiamond 10000G.only.13.99 EUR circle WWWE have 257k stores and you can receive within 5-10 minutes star 
-	"ssegame.*euro.*deliver", -- {diamond} {diamond} SseGame {diamond} {diamond} To  celebrate the 3 years anniversary {triangle} 14 Euro for 10000G; {triangle} 5-15mins  delivery {triangle}
 	"pkpkg.*boe.*deliver", --[PKPKG.COM] sells all kinds of 346,359lvl BOE gears. fast delivery. your confidence is all garanteed
 	"service.*pst.*info.*%d+k.*usd", --24 hrs on line servicer PST for more infor. Thanks ^_^  10k =32 u s d  -happy friday :)
 	"deathwing.*fear.*terror.*official.*cata.*surprise.*ZYY", --Deathwing has come spreading fear and terror, it is now officially World of WarCraft Cataclysm. Make sure you are prepared and find surprises at ZYY. 
 	"okgolds.*only.*%d+.*euro", --WWW.okgolds.COM,10000G+2000G.only.15.99EURO}/2
 	"mmo4store.*%d+[kg].*good.*choice", --{square}MMO4STORE.C0M{square}14/10000G{square}Good Choice{square}
-	"gold4guild.*sale.*%d+.*gold", --No more boring grinding.Much more leading advantage! All at G O L D 4 G U I L D . C O M ! Hot sale! Only 1.39 Pounds per 1000 gold!
 	"^%W+.*mmoggg", -->>> MMOGGG is recruiting now!
 	"%d+.*items.*deliver.*k4gg", --10K=13.98For more items and for fast delivery,come toWWW.K4gg.C@M
 	"customer.*promotion.*cost.*gold", --Dear customer: This is kyla from promotion site : mmowin ^_^Long time no see , how is going? Been miss ya :)As the cataclysm coming and the market cost line for gold and boe item has been down a lot recently , we will send present if ya get 30k or 50k
@@ -178,13 +185,6 @@ local triggers = {
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
 	"^%W+m+oggg[%.,][cd][oe]m?%W+$", --April 10
 	"%W+mmo4store[%.,]c[0o]m%W+", --June 10
-	"friend.*website.*gold4guild", --October 09
-	"friend.*website.*gg4g", --January 09
-	"friend.*website.*wowseller", --April 10
-	"^%W+w*[%.,]?gold4guild[%.,]c[o0]m%W+$", --October 09
-	"^%W+w*[%.,]?wowseller[%.,]c[o0]m%W+$", --April 10
-	"^%W+gg4g[%.,][ce][ou]m?%W+$", --January 09
-	"^www[%.,]ignmax[%.,]com$", --December 09
 	"wts.*boeitems.*sale.*ignah", --wts [Lightning-Infused Leggings] [Carapace of Forgotten Kings] we have all the Boe items,mats and t10/t10.5 for sale .<www.ignah.com>!!
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
@@ -221,24 +221,25 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
 	--end check
-	local points = 0
-	local phishPoints = 0
-	local strict = nil
+	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>76 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>84 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif k>54 and k<77 then
+			elseif k>62 and k<85 then
 				phishPoints = phishPoints + 1
-			elseif k>47 and k<55 and not strict then
+			elseif k>54 and k<63 and not iconBlock then
+				points = points + 1 --Only 1 trigger can get points in the icons section
+				iconBlock = true
+			elseif k>48 and k<55 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 1
 				strict = true
-			elseif k>36 and k<48 then
+			elseif k>37 and k<49 then
 				points = points + 2 --Heavy section gets 2 points
-			elseif k>4 and k<37 then
+			elseif k>5 and k<38 then
 				points = points + 1 --All else gets 1 point
-			elseif k<5 then
+			elseif k<6 then
 				points = points - 2
 				phishPoints = phishPoints - 2 --Remove points for safe words
 			end
