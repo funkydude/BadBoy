@@ -104,16 +104,17 @@ local triggers = {
 	"surprise", --76
 	"suspe[cn][td]ed", --77 --suspected/suspended
 	"system", --78
+	"validate", --79
 
 	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --79
-	"erhalten", --get/receive --80
-	"deaktiviert", --deactivated --81
-	"konto", --acount --82
-	"kostenlos", --free --83
-	"qualifiziert", --qualified --84
+	"berechtigt", --entitled --80
+	"erhalten", --get/receive --81
+	"deaktiviert", --deactivated --82
+	"konto", --acount --83
+	"kostenlos", --free --84
+	"qualifiziert", --qualified --85
 
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
@@ -232,8 +233,10 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 			for i=1, select(2, BNGetNumFriends()) do
 				local toon = BNGetNumFriendToons(i)
 				for j=1, toon do
-					local _, rName, rGame, rServer = BNGetFriendToonInfo(i, j)
-					if rName == player and rGame == "WoW" and rServer == GetRealmName() then
+					local _, rName, rGame = BNGetFriendToonInfo(i, j)
+					--don't bother checking server anymore as bnet has been bugging up a log lately
+					--returning "" as server/location (probably other things too) making the check useless
+					if rName == player and rGame == "WoW" then
 						result = nil return
 					end
 				end
@@ -250,9 +253,9 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>84 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>85 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif k>62 and k<85 then
+			elseif k>62 and k<86 then
 				phishPoints = phishPoints + 1
 			elseif k>54 and k<63 and not iconBlock then
 				points = points + 1 --Only 1 trigger can get points in the icons section
