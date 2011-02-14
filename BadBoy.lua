@@ -8,6 +8,7 @@
 ]]--
 
 --DO NOT MODIFY DATABASE OR YOU MAY REPORT INNOCENT PEOPLE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
+local myDebug = nil
 local triggers = {
 	--White
 	"recruit", --1
@@ -274,19 +275,26 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 				points = points - 2
 				phishPoints = phishPoints - 2 --Remove points for safe words
 			end
+			if myDebug then
+				print(v, points, phishPoints)
+			end
 			if points > 3 or phishPoints > 3 then
-				if BadBoyLogger then BadBoyLogger("BadBoy", event, player, debug) end
+				if BadBoyLogger and not myDebug then BadBoyLogger("BadBoy", event, player, debug) end
 				local time = GetTime()
 				if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
 					prevReportTime = time
 					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-					if BADBOY_POPUP then --Manual reporting via popup
-						--Add original spam line to Blizzard popup message
-						StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
-						local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
-						dialog.data = lineId
+					if myDebug then
+						print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
 					else
-						ComplainChat(lineId) --Automatically report
+						if BADBOY_POPUP then --Manual reporting via popup
+							--Add original spam line to Blizzard popup message
+							StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
+							local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+							dialog.data = lineId
+						else
+							ComplainChat(lineId) --Automatically report
+						end
 					end
 				end
 				result = true
