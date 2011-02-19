@@ -16,106 +16,107 @@ local triggers = {
 	"looking", --3 --guild
 	"lf[gm]", --4
 	"|cff", --5
+	"raid", --6
 
 	--English - Common
-	"bonus", --6
-	"buy", --7
-	"cheap", --8
-	"code", --9
-	"coupon", --10
-	"customer", --11
-	"deliver", --12
-	"discount", --13
-	"express", --14
-	"gold", --15
-	"lowest", --16
-	"order", --17
-	"powerle?ve?l", --18
-	"price", --19
-	"promoti[on][gn]", --20
-	"reduced", --21
-	"rocket", --22
-	"sa[fl]e", --23
-	"server", --24
-	"service", --25
-	"stock", --26
-	"well?come", --27
+	"bonus", --7
+	"buy", --8
+	"cheap", --9
+	"code", --10
+	"coupon", --11
+	"customer", --12
+	"deliver", --13
+	"discount", --14
+	"express", --15
+	"gold", --16
+	"lowest", --17
+	"order", --18
+	"powerle?ve?l", --19
+	"price", --20
+	"promoti[on][gn]", --21
+	"reduced", --22
+	"rocket", --23
+	"sa[fl]e", --24
+	"server", --25
+	"service", --26
+	"stock", --27
+	"well?come", --28
 
 	--French - Common
-	"livraison", --delivery --28
+	"livraison", --delivery --29
 
 	--German - Common
-	"billigster", --cheapest --29
-	"lieferung", --delivery --30
-	"preis", --price --31
-	"willkommen", --welcome --32
+	"billigster", --cheapest --30
+	"lieferung", --delivery --31
+	"preis", --price --32
+	"willkommen", --welcome --33
 
 	--Spanish - Common
-	"barato", --cheap --33
-	"gratuito", --free --34
-	"r[\195\161a]pido", --fast --35
-	"seguro", --safe/secure --36
-	"servicio", --service --37
+	"barato", --cheap --34
+	"gratuito", --free --35
+	"r[\195\161a]pido", --fast --36
+	"seguro", --safe/secure --37
+	"servicio", --service --38
 
 	--Heavy
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --38 --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --39
-	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --40
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=%-]%d+%.?%d*[kg]", --41
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --42 --Add separate line if they start approx prices
-	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --43
-	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --44
-	"%d+%.?%d*[kg][/\98=]%d+[%.,]?%d*eu", --45
-	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --46
-	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --47
-	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --48
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --39 --Add separate line if they start approx prices
+	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --40
+	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --41
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=%-]%d+%.?%d*[kg]", --42
+	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --43 --Add separate line if they start approx prices
+	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --44
+	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --45
+	"%d+%.?%d*[kg][/\98=]%d+[%.,]?%d*eu", --46
+	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --47
+	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --48
+	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --49
 
 	--Heavy Strict
-	"www[%.,{]", --49
-	"[%.,]c[o0@]m", --50
-	"[%.,]c{circle}m", --51
-	"[%.,]c{rt2}m", --52
-	"[%.,]cqm", --53
-	"[%.,]net", --54
+	"www[%.,{]", --50
+	"[%.,]c[o0@]m", --51
+	"[%.,]c{circle}m", --52
+	"[%.,]c{rt2}m", --53
+	"[%.,]cqm", --54
+	"[%.,]net", --55
 
 	--Icons
-	"{rt%d}", --55
-	"{star}", --56
-	"{circle}", --57
-	"{diamond}", --58
-	"{triangle}", --59
-	"{moon}", --60
-	"{square}", --61
-	"{cross}", --62
+	"{rt%d}", --56
+	"{star}", --57
+	"{circle}", --58
+	"{diamond}", --59
+	"{triangle}", --60
+	"{moon}", --61
+	"{square}", --62
+	"{cross}", --63
 
 	--Phishing - English
-	"account", --63
-	"blizz", --64
-	"claim", --65
-	"congratulations", --66
-	"free", --67
-	"gamemaster", --68
-	"gift", --69
-	"launch", --70
-	"log[io]n", --71
-	"luckyplayer", --72
-	"mount", --73
-	"pleasevisit", --74
-	"receive", --75
-	"surprise", --76
-	"suspe[cn][td]ed", --77 --suspected/suspended
-	"system", --78
-	"validate", --79
+	"account", --64
+	"blizz", --65
+	"claim", --66
+	"congratulations", --67
+	"free", --68
+	"gamemaster", --69
+	"gift", --70
+	"launch", --71
+	"log[io]n", --72
+	"luckyplayer", --73
+	"mount", --74
+	"pleasevisit", --75
+	"receive", --76
+	"surprise", --77
+	"suspe[cn][td]ed", --78 --suspected/suspended
+	"system", --79
+	"validate", --80
 
 	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --80
-	"erhalten", --get/receive --81
-	"deaktiviert", --deactivated --82
-	"konto", --acount --83
-	"kostenlos", --free --84
-	"qualifiziert", --qualified --85
+	"berechtigt", --entitled --81
+	"erhalten", --get/receive --82
+	"deaktiviert", --deactivated --83
+	"konto", --acount --84
+	"kostenlos", --free --85
+	"qualifiziert", --qualified --86
 
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
@@ -187,6 +188,10 @@ local triggers = {
 	"mm0money.*%d+.*валюту", --mm0money offers payment for 1-10k 3-20k, 6-30000g months, for gaming currency !!! Number of payment's is limited!!! Things to snatch a share of happiness!!!
 	--онлайн магазин "Trader" - продажа золота, ключей Classic, BC, WoTLC,Cataclysm,тайм карт(руб/голд). Скупаем золото - дорого! BL146
 	"продажа.*золота.*[Ссc]купаем.*золото", --online shop "Trader" - sale of gold, keys Classic, BC, WoTLC,Cataclysm,time cards(rub/gold). We buy gold - it's expensive! BL146
+	--СRАВВS-СОМРАNY.RU от [39-51р за 1к] Качественный сервис! любые суммы Все виды оплат. ICQ 24 74 84 Sкуре: WoW-Crabbs или в личку
+	"[cС]r[aА][bВ][bВ]s%-[cС][oО][mМ][pР][aА]ny%.ru.*i[Сc]q", --СRАВВS-СОМРАNY.RU from [39-51r for 1k] Quality service! any sums All kind of payments. ICQ 24 74 84 Sкуре: WoW-Crabbs or PM
+	--[www.marketgold.ru]  продажа золота 50р ВЫДАЧА СРАЗУ,ключи активации для игр,прокачка,любые способы оплаты,аттестат продавца,BL200+ онлайнчат  ICQ 315-025
+	"marketgold%.ru.*i[Сc]q", --[www.marketgold.ru]  selling gold 50r ISSUANCE OF DIRECT,key's activation for games,level-up,any way's of payment's,attestat of seller's,BL200+ online chat  ICQ 315-025
 	"happy.*%d+for%d+k.*gear.*mount", --{star}{star}{star}happy new year, $100=30K,$260 for 100K, and have the nice 359lvl gears about $39~99 best mount for ya as well{star}{star}{star}{star}
 	"deliver.*gears.*g4p", --Fast delivery for Level 359/372 BoE gears!Vist <www.g4pitem.com> to get whatever you need! 
 	"sale.*joygold.*store", --Great sale! triangletriangletriangle www.joygold.com.www.joygold.com diamonddiamonddiamond 10000G.only.13.99 EUR circle WWWE have 257k stores and you can receive within 5-10 minutes star 
@@ -256,22 +261,22 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
 	for k, v in ipairs(triggers) do --Scan database
 		if fnd(msg, v) then --Found a match
-			if k>85 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if k>86 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif k>62 and k<86 then
+			elseif k>63 and k<87 then
 				phishPoints = phishPoints + 1
-			elseif k>54 and k<63 and not iconBlock then
+			elseif k>55 and k<64 and not iconBlock then
 				points = points + 1 --Only 1 trigger can get points in the icons section
 				iconBlock = true
-			elseif k>48 and k<55 and not strict then
+			elseif k>49 and k<56 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 1
 				strict = true
-			elseif k>37 and k<49 then
+			elseif k>38 and k<50 then
 				points = points + 2 --Heavy section gets 2 points
-			elseif k>5 and k<38 then
+			elseif k>6 and k<39 then
 				points = points + 1 --All else gets 1 point
-			elseif k<6 then
+			elseif k<7 then
 				points = points - 2
 				phishPoints = phishPoints - 2 --Remove points for safe words
 			end
