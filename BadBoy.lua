@@ -60,15 +60,15 @@ local triggers = {
 
 	--Heavy
 	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --39 --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+%.?%d+[/\98=]%d+%.?%d*[kg]", --40
+	"[\226\130\172%$\194\163]+%d+%.?%d+[/\\=]%d+%.?%d*[kg]", --40
 	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --41
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\98=%-]%d+%.?%d*[kg]", --42
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\\=%-]%d+%.?%d*[kg]", --42
 	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --43 --Add separate line if they start approx prices
-	"%d+%.?%d*[kg][/\98=][\226\130\172%$\194\163]+%d+", --44
-	"%d+%.?%d*[kg][/\98=]%d+%.?%d*[\226\130\172%$\194\163]+", --45
-	"%d+%.?%d*[kg][/\98=]%d+[%.,]?%d*eu", --46
-	"%d+%.?%d*eur?o?s?[/\98=]%d+%.?%d*[kg]", --47
-	"%d+%.?%d*usd[/\98=]%d+%.?%d*[kg]", --48
+	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+", --44
+	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+", --45
+	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu", --46
+	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]", --47
+	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]", --48
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --49
 
 	--Heavy Strict
@@ -193,6 +193,7 @@ local triggers = {
 	"[cС]r[aА][bВ][bВ]s%-[cС][oО][mМ][pР][aА]ny%.ru.*i[Сc]q", --СRАВВS-СОМРАNY.RU from [39-51r for 1k] Quality service! any sums All kind of payments. ICQ 24 74 84 Sкуре: WoW-Crabbs or PM
 	--[www.marketgold.ru]  продажа золота 50р ВЫДАЧА СРАЗУ,ключи активации для игр,прокачка,любые способы оплаты,аттестат продавца,BL200+ онлайнчат  ICQ 315-025
 	"marketgold%.ru.*i[Сc]q", --[www.marketgold.ru]  selling gold 50r ISSUANCE OF DIRECT,key's activation for games,level-up,any way's of payment's,attestat of seller's,BL200+ online chat  ICQ 315-025
+	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
 	"happy.*%d+for%d+k.*gear.*mount", --{star}{star}{star}happy new year, $100=30K,$260 for 100K, and have the nice 359lvl gears about $39~99 best mount for ya as well{star}{star}{star}{star}
 	"deliver.*gears.*g4p", --Fast delivery for Level 359/372 BoE gears!Vist <www.g4pitem.com> to get whatever you need! 
 	"sale.*joygold.*store", --Great sale! triangletriangletriangle www.joygold.com.www.joygold.com diamonddiamonddiamond 10000G.only.13.99 EUR circle WWWE have 257k stores and you can receive within 5-10 minutes star 
