@@ -8,7 +8,10 @@
 ]]--
 
 --DO NOT MODIFY DATABASE OR YOU MAY REPORT INNOCENT PEOPLE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
+-- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
 local myDebug = nil
+
+--[[ Spam Recognition ]]--
 local triggers = {
 	--White
 	"recruit", --1
@@ -163,36 +166,42 @@ local triggers = {
 	--Advanced URL's/Misc
 	--Золотко от 49 \ Все типы оплаты \ Онлайн чат / Быстрая доставка \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
 	--Проdaжа zoлотa от 44 dо 49. Большие зaпaсы. Быстpaя dосtавкa. Wмp Яд Bиза Мс Qiwi. ІCQ: 5595777 Sкyрe: mywowgоld.ru оnlіne-сhat MYWОWGOLD.RU
-	"[Іi][Сc]q.*myw[Оo]wgold%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
+	"[Іi]+[сc]+q.*myw[оo]+wg[оo]+ld%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
 	--Продам по 50р. 50р-1к. Оперативная доставка, большие запасы, низкие цены. Сайт: [RPGdealer.ru] Чат на сайте, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Аттестат продавца. Все виды оплат. Ищу поставщиков
-	"%d+.*rpgdealer.*icq", --I'm sell by 50r. 50r-1k. Prompt (quick) delivery, big resourses, low prices. Site: [RPGdealer.ru] Chat on site, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Attestat of Seller's. Any kind of payments. Looking for supplier's
+	"%d+.*rpgdealer.*i[сc]+q", --I'm sell by 50r. 50r-1k. Prompt (quick) delivery, big resourses, low prices. Site: [RPGdealer.ru] Chat on site, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Attestat of Seller's. Any kind of payments. Looking for supplier's
 	--Продам монеты 44-49вмр, яд, QIWI, visa - 1000 любые суммы! Прокачка/продажа чаров! Ищу поставщиков! Персональный аттестат, сайт! Ася 222-041! Скайп firelordwow!
 	"монеты.*%d+.*qiwi.*visa", --Sell coins 44-49wmr, yam (yandex money), QIWI, visa - 1000 any sums! Level up / Sale characters! Looking for supplier's! Personal attestat, site! ICQ 222-041! Skype firelordwow!
 	--KingPeon.СОМ [от 40р - 1k] Ася:238021. Скайп: Scorpufas. Аттестат Продавца[BL 110] WM/Яд, Qiwi, Visa, Билайн/МТС и др. Моментальная передача. Онлайн-Чат на сайте.
-	"kingpeon[%.,]c.*Ася.*visa", --KingPeon.СОМ [from 40r - 1k] Icq:238021. Skype: Scorpufas. Attestat of Seller's[BL 110] WM/Yam, Qiwi, Visa, Beeline/MTS (both big Russian celluar country corporatrion) and etc. Instant transmission / transfer. Online-chat on site.
+	"kingpeon[%.,]c.*ася.*visa", --KingPeon.СОМ [from 40r - 1k] Icq:238021. Skype: Scorpufas. Attestat of Seller's[BL 110] WM/Yam, Qiwi, Visa, Beeline/MTS (both big Russian celluar country corporatrion) and etc. Instant transmission / transfer. Online-chat on site.
 	--Продам [БОГАТСТВО]  50р  СКИДКИ. WM/яд/MC/Visa/QIWI IСQ 44-27-99 ,Skype [wow-g-Online] [BL 180] Надежно, просто, честно! Отвечаю в Асю, скайп! Ищу поставщиков.
-	"%d+.*visa.*i[Сc]q.*wow%-g%-online", --I'm will sell [RICHNESS]  50r  SALES. WM/yam/MS/Visa/QIWI IСQ 44-27-99 , Skype [wow-g-Online] [BL 180] Надежно, simply, honestly! Replay in Icq, skype! Looking for suppliers.
+	"%d+.*visa.*i[сc]+q.*wow%-g%-online", --I'm will sell [RICHNESS]  50r  SALES. WM/yam/MS/Visa/QIWI IСQ 44-27-99 , Skype [wow-g-Online] [BL 180] Надежно, simply, honestly! Replay in Icq, skype! Looking for suppliers.
 	--Продам ГОЛД по 40 !!! Принимаю веб мани и яндекс деньги.
-	"Продам.*ГОЛД.*яндекс.*деньги", --I'm will sell GOLD by 40 !!! I'm accept web money and yandex money.
+	"продам.*голд.*яндекс.*деньги", --I'm will sell GOLD by 40 !!! I'm accept web money and yandex money.
 	--Продам Г по 35! Сделка с мейна. БЛ 67!!! Ася 747661 Скайп y0b0b0
 	--Продам Г по 35! Сделка с мейна.Гарантии!  БЛ 67!!! Ася 747661 Скайп y0b0b0 или  в ПМ!
-	"Продам.*Сделка.*Ася", --I'm will sell G by 35! Deal from main's (character). BL 67!!! Icq 747661 Skype y0b0b0
+	"продам.*сделка.*ася", --I'm will sell G by 35! Deal from main's (character). BL 67!!! Icq 747661 Skype y0b0b0
 	--Продаём голд 49р-55р за 1к. WoWMoney.гu. Visa/MC, WM, Я-Д, QIWI. BL 200+. Связь через iсq 38-48-29 или сайт.
-	"wowmoney[%.,].*visa.*iсq", --We are sell gold 49r-55r for 1k. WoWMoney.гu. Visa/MS, WM, YA-M, QIWI. BL 200+. Connection through iсq 38-48-29 or site.
+	"wowmoney[%.,].*visa.*i[сc]+q", --We are sell gold 49r-55r for 1k. WoWMoney.гu. Visa/MS, WM, YA-M, QIWI. BL 200+. Connection through iсq 38-48-29 or site.
 	--Nigmаz.соm - Зoлoтo всего по 53p за 1000. Получи до 11% в подарок! скидки постоянным клиентам. Быстро и удобно!
 	"nigmаz[%.,]с.*%d+.*скидки", --Nigmаz.соm - Gold only by 53r for 1000. Receive to 11% to gift! Sales for permanent customer's. Quickly and comfortable!
 	--Продам ЗОЛОТО недорого!!! От 35р за 1000!!! Оплата  Webmoney,ICQ 603388454.
-	"ЗОЛОТО.*money.*i[Сc]q", --Selling GOLD inexpensively!!! From 35r by 1000!!! Payment  Webmoney,ICQ 603388454.
+	"золото.*money.*i[сc]+q", --Selling GOLD inexpensively!!! From 35r by 1000!!! Payment  Webmoney,ICQ 603388454.
 	--продам голд 1к-40вмр
 	"продам.*голд.*%d+", --i'll sell gold 1k-40wmr
 	--mm0money предлагает оплату на 1-10к 3-20к, 6-30000г  месяцев, за игровую валюту !!! Колличество оплат ограниченно !!! Успей урвать долю счастья !!!
 	"mm0money.*%d+.*валюту", --mm0money offers payment for 1-10k 3-20k, 6-30000g months, for gaming currency !!! Number of payment's is limited!!! Things to snatch a share of happiness!!!
 	--онлайн магазин "Trader" - продажа золота, ключей Classic, BC, WoTLC,Cataclysm,тайм карт(руб/голд). Скупаем золото - дорого! BL146
-	"продажа.*золота.*[Ссc]купаем.*золото", --online shop "Trader" - sale of gold, keys Classic, BC, WoTLC,Cataclysm,time cards(rub/gold). We buy gold - it's expensive! BL146
+	"продажа.*золота.*[сc]+купаем.*золото", --online shop "Trader" - sale of gold, keys Classic, BC, WoTLC,Cataclysm,time cards(rub/gold). We buy gold - it's expensive! BL146
 	--СRАВВS-СОМРАNY.RU от [39-51р за 1к] Качественный сервис! любые суммы Все виды оплат. ICQ 24 74 84 Sкуре: WoW-Crabbs или в личку
-	"[cС]r[aА][bВ][bВ]s%-[cС][oО][mМ][pР][aА]ny%.ru.*i[Сc]q", --СRАВВS-СОМРАNY.RU from [39-51r for 1k] Quality service! any sums All kind of payments. ICQ 24 74 84 Sкуре: WoW-Crabbs or PM
+	"сервис.*оплат.*i[сc]+q.*", --СRАВВS-СОМРАNY.RU from [39-51r for 1k] Quality service! any sums All kind of payments. ICQ 24 74 84 Sкуре: WoW-Crabbs or PM
 	--[www.marketgold.ru]  продажа золота 50р ВЫДАЧА СРАЗУ,ключи активации для игр,прокачка,любые способы оплаты,аттестат продавца,BL200+ онлайнчат  ICQ 315-025
-	"marketgold%.ru.*i[Сc]q", --[www.marketgold.ru]  selling gold 50r ISSUANCE OF DIRECT,key's activation for games,level-up,any way's of payment's,attestat of seller's,BL200+ online chat  ICQ 315-025
+	"marketgold%.ru.*i[сc]+q", --[www.marketgold.ru]  selling gold 50r ISSUANCE OF DIRECT,key's activation for games,level-up,any way's of payment's,attestat of seller's,BL200+ online chat  ICQ 315-025
+	--Продажа  по 26рублей. (Nightfull-icq.ru/ICQ 811-563/BL 10.!
+	"продажа.*рублей.*i[сc]+q", --Selling on 26rubley. (Nightfull-icq.ru/ICQ 811-563/BL 10.!
+	--Продам монетки !! Гарантии,поручители  вебмани !
+	"продам.*монетки.*вебмани", --Sell Coin!! Guarantees,sureties webmoney!
+	--[ [GnomOptovik.ru] ] [ по 35р (от 100к по 30р)] [WM BL:250] [Безопасность и надёжность, Моментальная доставка] [ICQ:606667350, Skype:GnomOptovik, Чат на сайте]
+	"gnomoptovik.*доставка.*i[сc]+q", --[ [GnomOptovik.ru] ] [by 35r (from 100k to 30R)] [WM BL: 250] [Safety and reliability, instant delivery] [ICQ: 606667350, Skype: GnomOptovik, chat on the website]
 	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
 	"happy.*%d+for%d+k.*gear.*mount", --{star}{star}{star}happy new year, $100=30K,$260 for 100K, and have the nice 359lvl gears about $39~99 best mount for ya as well{star}{star}{star}{star}
 	"deliver.*gears.*g4p", --Fast delivery for Level 359/372 BoE gears!Vist <www.g4pitem.com> to get whatever you need! 
@@ -225,11 +234,56 @@ local triggers = {
 	"wts.*boeitems.*sale.*ignah", --wts [Lightning-Infused Leggings] [Carapace of Forgotten Kings] we have all the Boe items,mats and t10/t10.5 for sale .<www.ignah.com>!!
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
+	"meingd[%.,]de.*eur.*gold", --[MeinGD.de] - 0,7 Euro - 1000 Gold - [MeinGD.de]
 }
+local fnd = string.find
+local IsSpam = function(msg)
+	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
+	for i=1, #triggers do --Scan database
+		if fnd(msg, triggers[i]) then --Found a match
+			if i>86 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+				points = points + 9 --Instant report
+			elseif i>63 and i<87 then
+				phishPoints = phishPoints + 1
+			elseif i>55 and i<64 and not iconBlock then
+				points = points + 1 --Only 1 trigger can get points in the icons section
+				iconBlock = true
+			elseif i>49 and i<56 and not strict then
+				points = points + 2 --Only 1 trigger can get points in the strict section
+				phishPoints = phishPoints + 1
+				strict = true
+				elseif i>38 and i<50 then
+				points = points + 2 --Heavy section gets 2 points
+			elseif i>6 and i<39 then
+				points = points + 1 --All else gets 1 point
+				elseif i<7 then
+				points = points - 2
+				phishPoints = phishPoints - 2 --Remove points for safe words
+			end
+			if myDebug then print(triggers[i], points, phishPoints) end
+			if points > 3 or phishPoints > 3 then
+				return true
+			end
+		end
+	end
+end
 
--- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
-local orig, prevReportTime, prevLineId, fnd, result, prevMsg, prevPlayer = COMPLAINT_ADDED, 0, 0, string.find, nil, nil, nil
-local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
+--[[ Calendar Scanning ]]--
+--[[
+BadBoyConfig:SetScript("OnEvent", function()
+	for i=1, CalendarGetNumPendingInvites() do
+		--name, level, className, classFileName, inviteStatus, modStatus, inviteIsMine, inviteType = CalendarEventGetInvite(index)
+		--monthOffset, day, index = CalendarContextGetEventIndex()
+		--canReport = CalendarContextEventCanComplain([monthOffset,] day, index)
+		--CalendarContextEventComplain([monthOffset,] day, index)
+	end
+end)
+BadBoyConfig:RegisterEvent("CALENDAR_UPDATE_PENDING_INVITES")
+BadBoyConfig:RegisterEvent("CALENDAR_ACTION_PENDING")]]
+
+--[[ Chat Scanning ]]--
+local orig, prevReportTime, prevLineId, result, prevMsg, prevPlayer = COMPLAINT_ADDED, 0, 0, nil, nil, nil
+local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
@@ -244,7 +298,7 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 				local toon = BNGetNumFriendToons(i)
 				for j=1, toon do
 					local _, rName, rGame = BNGetFriendToonInfo(i, j)
-					--don't bother checking server anymore as bnet has been bugging up a log lately
+					--don't bother checking server anymore as bnet has been bugging up a lot lately
 					--returning "" as server/location (probably other things too) making the check useless
 					if rName == player and rGame == "WoW" then
 						result = nil return
@@ -260,54 +314,27 @@ local function filter(_, event, msg, player, _, _, _, flag, channelId, _, _, _, 
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
 	--end check
-	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
-	for k, v in ipairs(triggers) do --Scan database
-		if fnd(msg, v) then --Found a match
-			if k>86 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
-				points = points + 9 --Instant report
-			elseif k>63 and k<87 then
-				phishPoints = phishPoints + 1
-			elseif k>55 and k<64 and not iconBlock then
-				points = points + 1 --Only 1 trigger can get points in the icons section
-				iconBlock = true
-			elseif k>49 and k<56 and not strict then
-				points = points + 2 --Only 1 trigger can get points in the strict section
-				phishPoints = phishPoints + 1
-				strict = true
-			elseif k>38 and k<50 then
-				points = points + 2 --Heavy section gets 2 points
-			elseif k>6 and k<39 then
-				points = points + 1 --All else gets 1 point
-			elseif k<7 then
-				points = points - 2
-				phishPoints = phishPoints - 2 --Remove points for safe words
-			end
+	if IsSpam(msg) then
+		if BadBoyLogger and not myDebug then BadBoyLogger("BadBoy", event, player, debug) end
+		local time = GetTime()
+		if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
+			prevReportTime = time
+			COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
 			if myDebug then
-				print(v, points, phishPoints)
-			end
-			if points > 3 or phishPoints > 3 then
-				if BadBoyLogger and not myDebug then BadBoyLogger("BadBoy", event, player, debug) end
-				local time = GetTime()
-				if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
-					prevReportTime = time
-					COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-					if myDebug then
-						print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
-					else
-						if BADBOY_POPUP then --Manual reporting via popup
-							--Add original spam line to Blizzard popup message
-							StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
-							local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
-							dialog.data = lineId
-						else
-							ComplainChat(lineId) --Automatically report
-						end
-					end
+				print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
+			else
+				if BADBOY_POPUP then --Manual reporting via popup
+					--Add original spam line to Blizzard popup message
+					StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
+					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+					dialog.data = lineId
+				else
+					ComplainChat(lineId) --Automatically report
 				end
-				result = true
-				return true
 			end
 		end
+		result = true
+		return true
 	end
 	result = nil
 end
@@ -320,8 +347,8 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
---Function for disabling BadBoy reports and misc required functions
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
+	--Function for disabling BadBoy reports and misc required functions
 	if msg == orig then
 		return --Manual spam report, back down
 	elseif msg == COMPLAINT_ADDED then
