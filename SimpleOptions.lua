@@ -21,12 +21,16 @@ do
 	elseif L == "zhCN" then
 		locNoReportMsg = "隐藏 '%s' 信息"
 		locManualReport = "禁用信息自动过滤系统(显示弹出)"
-	elseif L == "esES" or L == "esMX" then
+	elseif L == "esES" then
 		locNoReportMsg = "Ocultar el mensaje '%s'"
 		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
+	elseif L == "esMX" then
+		locNoReportMsg = "Ocultar el mensaje '%s'"
+		locManualReport = "Desactivar el reporte automático (Mostrar popup)"
 	elseif L == "ruRU" then
 		locNoReportMsg = "Прятать сообщение '%s'"
 		locManualReport = "Отключить автоматическую жалобу на спам (показывать подтверждение)"
+	elseif L == "koKR" then
 	end
 
 	--[[ Main Panel ]]--
