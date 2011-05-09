@@ -76,7 +76,7 @@ local triggers = {
 
 	--Heavy Strict
 	"www[%.,{]", --50
-	"[%.,]c[o0@]m", --51
+	"[%.,]c%-?[o0@]%-?m", --51
 	"[%.,]c{circle}m", --52
 	"[%.,]c{rt2}m", --53
 	"[%.,]cqm", --54
@@ -106,20 +106,21 @@ local triggers = {
 	"mount", --74
 	"pleasevisit", --75
 	"receive", --76
-	"surprise", --77
-	"suspe[cn][td]ed", --78 --suspected/suspended
-	"system", --79
-	"validate", --80
+	"service", --77
+	"surprise", --78
+	"suspe[cn][td]ed", --79 --suspected/suspended
+	"system", --80
+	"validate", --81
 
 	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --81
-	"erhalten", --get/receive --82
-	"deaktiviert", --deactivated --83
-	"konto", --acount --84
-	"kostenlos", --free --85
-	"qualifiziert", --qualified --86
+	"berechtigt", --entitled --82
+	"erhalten", --get/receive --83
+	"deaktiviert", --deactivated --84
+	"konto", --acount --85
+	"kostenlos", --free --86
+	"qualifiziert", --qualified --87
 
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
@@ -163,7 +164,19 @@ local triggers = {
 	"casino.*bet.*%d+%-%d+", --Casino time. You give me your bet, Than You roll from 1-11 unlimited times.Your rolls add up. If you go over 21 you lose.You can stop before 21.When you stop I do the same, and if your closer to 21 than me than you get back 2 times your bet
 	"roll.*%d+.*roll.*%d+.*bet", --Roll 63+ x2 , Roll 100 x3, Roll 1 x4 NO MAX BETS
 
-	--Advanced URL's/Misc
+	--Russian
+	--GGRPG com от 25 за 1000  BL349 ЯД PayPal QIWI VISA|Master MoneyBookers. Доставка 5 мин. Ася 614 691 984, скайп Wowgoldall. ТК60 в наличии
+	"ggrpg.*paypal.*visa", --GGRPG com from 25 per 1000 BL349 YaM PayPal QIWI VISA | Master MoneyBookers. Ships in 5 minutes. Icq 614691984, skype Wowgoldall. TK60 in stock
+	--Золото от 24 р  за 1к  BL240+ Wowgoldsale . ru IСQ  2222-39 , на сайте онлайн чат, принимаем WM/ЯД/Visa/qiwi, ищем поставщиков
+	"wowgoldsale.*i[сc]+q.*visa", --Gold from 24 p per 1K BL240 + Wowgoldsale. ru ISQ 2222-39, the site online chat, accept WM / YaM / Visa / qiwi, looking for suppliers
+	--Сдам Г0лдец  по 25!  [Ася] 747661. [Скайп] y0b0b0 (через ноль))
+	"г[0o]лдец.*ася.*y0b0b0", --Rent G0ld  to 25!  [Icq] 747,661. [Skype] y0b0b0 (through zero))
+	--Продам картошку и другие овощи по 29-35 кило. Овощевик.рф (набирать кирилицей!) БЛ 400 - доверяйте только опытным фермерам!
+	"продам.*овощевик%.рф.*фермерам", --Sell potatoes and other vegetables by 29-35 kilogramm. Ovoschevik.rf (typing Cyrillic!) BL 400 - trust only an experienced farmers!
+	--[З0Л0ТО] сайт <INGMONEY.RU> От 25р Все виды оплат.Kонсультант на сайте. Участвуй в "супер акции" IСQ 44-27-99 Skype [INGMONEY.RU] Надежно!Набор поставщиков
+	"ingmoney.*i[сc]+q.*skype", --[G0LD] site <INGMONEY.RU> from 25p All kind of payments.Consultant on site. Participate in a "super shares" ICQ 44-27-99 Skype [INGMONEY.RU] Reliably! There is a set of suppliers
+	--mmOney: продаём оплату на 1=15000г, 3=30000г или 6=55000г месяцев  за золото. Топ гильдиям возможна передача вперёд !!! Гарантии ! моментальная покупка !
+	"оплату.*золото.*покупка", --mmOney: sell payment on 1 = 15000g, 3=30000g or 6 = 55000g months for gold. Top guilds can be sent ahead! Warranty! instant purchase!
 	--Золотко от 49 \ Все типы оплаты \ Онлайн чат / Быстрая доставка \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
 	--Проdaжа zoлотa от 44 dо 49. Большие зaпaсы. Быстpaя dосtавкa. Wмp Яд Bиза Мс Qiwi. ІCQ: 5595777 Sкyрe: mywowgоld.ru оnlіne-сhat MYWОWGOLD.RU
 	"[Іi]+[сc]+q.*myw[оo]+wg[оo]+ld%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
@@ -202,6 +215,13 @@ local triggers = {
 	"продам.*монетки.*вебмани", --Sell Coin!! Guarantees,sureties webmoney!
 	--[ [GnomOptovik.ru] ] [ по 35р (от 100к по 30р)] [WM BL:250] [Безопасность и надёжность, Моментальная доставка] [ICQ:606667350, Skype:GnomOptovik, Чат на сайте]
 	"gnomoptovik.*доставка.*i[сc]+q", --[ [GnomOptovik.ru] ] [by 35r (from 100k to 30R)] [WM BL: 250] [Safety and reliability, instant delivery] [ICQ: 606667350, Skype: GnomOptovik, chat on the website]
+
+	--Asian
+	"团购金币.*%d+=%d+k.*%d%d%d+gfree", --嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
+	--{rt3}{rt1} 春花秋月何时了，买金知多少.小楼昨夜又东风，金价不堪回首月明中. 雕栏玉砌金犹在，只是价格改.问君能有几多愁，恰似我家金价在跳楼.QQ:1069665249
+	"only%d+.*for%d+k.*rocket.*card", --only 20d for 10k,90d for 50k,X-53 rocket,recuit month card ,pst for more info{rt1}另外出售火箭月卡，买金送火箭月卡，账号，代练等，华人价格从优！！
+
+	--Advanced URL's/Misc
 	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
 	"happy.*%d+for%d+k.*gear.*mount", --{star}{star}{star}happy new year, $100=30K,$260 for 100K, and have the nice 359lvl gears about $39~99 best mount for ya as well{star}{star}{star}{star}
 	"deliver.*gears.*g4p", --Fast delivery for Level 359/372 BoE gears!Vist <www.g4pitem.com> to get whatever you need!
@@ -238,9 +258,6 @@ local triggers = {
 	"cheap.*ourgamecenter.*deliver", --The Cheapest,10K=15,{moon} 'www' OurGameCenter 'com' {moon}Fast Delivery
 	"surprise.*%d+k.*ourgamecenter", --surprise!!11K~15.99 {square} 'www' OurGameCenter 'com' {square}
 	"secure.*gamecenter.*discount", --Sorry for disturb you We are a secure website 'www' OurGameCenter 'com' 11K~15.99!(EASY TO GET 10% DISCOUNT  GET ANOTHER 5% FOR INTRODUCING FRIENDS TO US)
-	--{rt3}{rt1} 春花秋月何时了，买金知多少.小楼昨夜又东风，金价不堪回首月明中. 雕栏玉砌金犹在，只是价格改.问君能有几多愁，恰似我家金价在跳楼.QQ:1069665249
-	"团购金币.*%d+=%d+k.*%d%d%d+gfree", --嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
-	"only%d+.*for%d+k.*rocket.*card", --only 20d for 10k,90d for 50k,X-53 rocket,recuit month card ,pst for more info{rt1}另外出售火箭月卡，买金送火箭月卡，账号，代练等，华人价格从优！！
 	"%$.*boe.*deliver.*interest", --{rt3}{rt1} WTS WOW G for $$. 10k for 20$, 52k for 100$. 105k for 199$. all item level 359 BOE gear. instant delivery! PST if ya have insterest in it. ^_^
 }
 local fnd = string.find
@@ -248,9 +265,9 @@ local IsSpam = function(msg)
 	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
 	for i=1, #triggers do --Scan database
 		if fnd(msg, triggers[i]) then --Found a match
-			if i>86 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if i>87 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif i>63 and i<87 then
+			elseif i>63 and i<88 then
 				phishPoints = phishPoints + 1
 			elseif i>55 and i<64 and not iconBlock then
 				points = points + 1 --Only 1 trigger can get points in the icons section
