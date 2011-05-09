@@ -35,6 +35,7 @@ do
 
 	--[[ Main Panel ]]--
 	local badboy = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
+	--badboy:SetScript("OnEvent", function(self, event, ...) self[event](self, event, ...) end)
 	badboy:Hide()
 	badboy.name = name
 	badboy:SetScript("OnShow", function()

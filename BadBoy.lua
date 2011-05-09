@@ -235,9 +235,12 @@ local triggers = {
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 	"meingd[%.,]de.*eur.*gold", --[MeinGD.de] - 0,7 Euro - 1000 Gold - [MeinGD.de]
+	"cheap.*ourgamecenter.*deliver", --The Cheapest,10K=15,{moon} 'www' OurGameCenter 'com' {moon}Fast Delivery
 	"surprise.*%d+k.*ourgamecenter", --surprise!!11K~15.99 {square} 'www' OurGameCenter 'com' {square}
 	"secure.*gamecenter.*discount", --Sorry for disturb you We are a secure website 'www' OurGameCenter 'com' 11K~15.99!(EASY TO GET 10% DISCOUNT  GET ANOTHER 5% FOR INTRODUCING FRIENDS TO US)
 	--{rt3}{rt1} 春花秋月何时了，买金知多少.小楼昨夜又东风，金价不堪回首月明中. 雕栏玉砌金犹在，只是价格改.问君能有几多愁，恰似我家金价在跳楼.QQ:1069665249
+	"团购金币.*%d+=%d+k.*%d%d%d+gfree", --嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
+	"only%d+.*for%d+k.*rocket.*card", --only 20d for 10k,90d for 50k,X-53 rocket,recuit month card ,pst for more info{rt1}另外出售火箭月卡，买金送火箭月卡，账号，代练等，华人价格从优！！
 	"%$.*boe.*deliver.*interest", --{rt3}{rt1} WTS WOW G for $$. 10k for 20$, 52k for 100$. 105k for 199$. all item level 359 BOE gear. instant delivery! PST if ya have insterest in it. ^_^
 }
 local fnd = string.find
@@ -274,16 +277,61 @@ end
 
 --[[ Calendar Scanning ]]--
 --[[
-BadBoyConfig:SetScript("OnEvent", function()
-	for i=1, CalendarGetNumPendingInvites() do
-		--name, level, className, classFileName, inviteStatus, modStatus, inviteIsMine, inviteType = CalendarEventGetInvite(index)
-		--monthOffset, day, index = CalendarContextGetEventIndex()
-		--canReport = CalendarContextEventCanComplain([monthOffset,] day, index)
-		--CalendarContextEventComplain([monthOffset,] day, index)
+CURRENT ISSUE: remove/complain/reject functions seems to have a cooldown?
+do
+	local start = GetTime()
+	--Maybe you could make this $#!+ easier to do please Blizzard?
+	--Is...
+	--for i=1, CalendarGetNumPendingInvites() do local title, player, desc, month, day, event = CalendarEventInfoPendingInvite(i) end
+	--...too much to ask for?
+	BadBoyConfig.CALENDAR_ACTION_PENDING = function(self)
+		--Completely random chosen number to prevent lockup
+		count = count + 1
+		if count > 10 then
+			self:UnregisterEvent("CALENDAR_ACTION_PENDING")
+			--self.CALENDAR_ACTION_PENDING = nil
+			return
+		end
+		local numInvites = CalendarGetNumPendingInvites()
+		if numInvites == 0 then print("0 events, returning") return end
+		local noUpdate
+		local countedInvites = 0
+		print("Lets begin")
+		for m=0, 99 do
+			for d=1, 31 do
+				local numEvents = CalendarGetNumDayEvents(m, d)
+				for i=1, numEvents do
+					noUpdate = true
+					if CalendarContextInviteIsPending(m, d, i) then
+						CalendarContextSelectEvent(m, d, i)
+						print("Found an invite:", m, d, i)
+						countedInvites = countedInvites + 1
+						--if CalendarContextEventCanComplain() then
+							print("we can complain:", m, d, i)
+							CalendarOpenEvent(m, d, i) --CalendarOpenEvent() also fires CALENDAR_ACTION_PENDING... /facepalm
+							local _, msg, player = CalendarGetEventInfo() --msg is sometimes nil even after OpenCalendar() has updated and fired the event FFS
+							if not msg then print("FAIL") return end --Usually becomes available after a few loops
+							print(msg, player)
+							--Msg is finally available, check all calendar events for spam and completely disable the functionality
+							if IsSpam(msg) then
+								--CalendarContextEventComplain(m, d, i)
+								CalendarContextInviteRemove(m, d, i)
+								OpenCalendar()
+								print("|cFF33FF99BadBoy|r: Reported player '", player, "' for spamming your calendar with gold spam advertisements.")
+							end
+						--end
+						--Don't loop further when we've checked all pending invites
+						if countedInvites == numInvites then print("returning due to max invites") return end
+					end
+				end
+			end
+		end
+		--We can't read calendar invites so force another update
+		if not noUpdate then print"update" OpenCalendar() end
 	end
-end)
-BadBoyConfig:RegisterEvent("CALENDAR_UPDATE_PENDING_INVITES")
-BadBoyConfig:RegisterEvent("CALENDAR_ACTION_PENDING")]]
+	BadBoyConfig:RegisterEvent("CALENDAR_ACTION_PENDING")
+end
+]]
 
 --[[ Chat Scanning ]]--
 local orig, prevReportTime, prevLineId, result, prevMsg, prevPlayer = COMPLAINT_ADDED, 0, 0, nil, nil, nil
