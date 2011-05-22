@@ -57,70 +57,73 @@ local triggers = {
 	--Spanish - Common
 	"barato", --cheap --34
 	"gratuito", --free --35
-	"r[\195\161a]pido", --fast --36
+	"r[\195\161a]+pido", --fast --36
 	"seguro", --safe/secure --37
 	"servicio", --service --38
 
+	--Chinese - Common
+	"金币", --gold currency --39
+	"大家好", --hello everyone --40
+
 	--Heavy
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --39 --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+%.?%d+[/\\=]%d+%.?%d*[kg]", --40
-	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --41
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\\=%-]%d+%.?%d*[kg]", --42
-	"only[\226\130\172%$\194\163]+%d+[%.%-]?%d*{%S-}%d+%.?%d*[kg]", --43 --Add separate line if they start approx prices
-	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+", --44
-	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+", --45
-	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu", --46
-	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]", --47
-	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]", --48
-	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --49
+	"[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --41 --Add separate line if they start approx prices
+	"[\226\130\172%$\194\163]+%d+%.?%d*[/\\=]%d+%.?%d*[kg]", --42
+	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --43
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\\=%-]%d+%.?%d*[kg]", --44
+	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+", --45
+	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+", --46
+	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu", --47
+	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]", --48
+	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]", --49
+	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --50
 
 	--Heavy Strict
-	"www[%.,{]", --50
-	"[%.,]c%-?[o0@]%-?m", --51
-	"[%.,]c{circle}m", --52
-	"[%.,]c{rt2}m", --53
-	"[%.,]cqm", --54
-	"[%.,]net", --55
+	"www[%.,{]", --51
+	"[%.,]c%-?[o0@]%-?m", --52
+	"[%.,]c{circle}m", --53
+	"[%.,]c{rt2}m", --54
+	"[%.,]cqm", --55
+	"[%.,]net", --56
 
 	--Icons
-	"{rt%d}", --56
-	"{star}", --57
-	"{circle}", --58
-	"{diamond}", --59
-	"{triangle}", --60
-	"{moon}", --61
-	"{square}", --62
-	"{cross}", --63
+	"{rt%d}", --57
+	"{star}", --58
+	"{circle}", --59
+	"{diamond}", --60
+	"{triangle}", --61
+	"{moon}", --62
+	"{square}", --63
+	"{cross}", --64
 
 	--Phishing - English
-	"account", --64
-	"blizz", --65
-	"claim", --66
-	"congratulations", --67
-	"free", --68
-	"gamemaster", --69
-	"gift", --70
-	"launch", --71
-	"log[io]n", --72
-	"luckyplayer", --73
-	"mount", --74
-	"pleasevisit", --75
-	"receive", --76
-	"service", --77
-	"surprise", --78
-	"suspe[cn][td]ed", --79 --suspected/suspended
-	"system", --80
-	"validate", --81
+	"account", --65
+	"blizz", --66
+	"claim", --67
+	"congratulations", --68
+	"free", --69
+	"gamemaster", --70
+	"gift", --71
+	"launch", --72
+	"log[io]n", --73
+	"luckyplayer", --74
+	"mount", --75
+	"pleasevisit", --76
+	"receive", --77
+	"service", --78
+	"surprise", --79
+	"suspe[cn][td]ed", --80 --suspected/suspended
+	"system", --81
+	"validate", --82
 
 	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --82
-	"erhalten", --get/receive --83
-	"deaktiviert", --deactivated --84
-	"konto", --acount --85
-	"kostenlos", --free --86
-	"qualifiziert", --qualified --87
+	"berechtigt", --entitled --83
+	"erhalten", --get/receive --84
+	"deaktiviert", --deactivated --85
+	"konto", --acount --86
+	"kostenlos", --free --87
+	"qualifiziert", --qualified --88
 
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
@@ -175,11 +178,15 @@ local triggers = {
 	"продам.*овощевик%.рф.*фермерам", --Sell potatoes and other vegetables by 29-35 kilogramm. Ovoschevik.rf (typing Cyrillic!) BL 400 - trust only an experienced farmers!
 	--[З0Л0ТО] сайт <INGMONEY.RU> От 25р Все виды оплат.Kонсультант на сайте. Участвуй в "супер акции" IСQ 44-27-99 Skype [INGMONEY.RU] Надежно!Набор поставщиков
 	"ingmoney.*i[сc]+q.*skype", --[G0LD] site <INGMONEY.RU> from 25p All kind of payments.Consultant on site. Participate in a "super shares" ICQ 44-27-99 Skype [INGMONEY.RU] Reliably! There is a set of suppliers
+	--[yellow star] [З0Л0ТО]-Лучшие цены на сайте [INGMONEY. RU]Любые виды оплаты.Безопасные способы выдачи.Участвуй в супер акции Ася 44-27-99 Скайп INGMONEY. RU
+	"ingmoney%..*ася.*скайп", --[G0L0DO]-Best prices on the website [INGMONEY. RU]Any type of payments.Safe methods of extradition.Participate in the super stock Icq 44-27-99 Skype INGMONEY. RU
 	--mmOney: продаём оплату на 1=15000г, 3=30000г или 6=55000г месяцев  за золото. Топ гильдиям возможна передача вперёд !!! Гарантии ! моментальная покупка !
 	"оплату.*золото.*покупка", --mmOney: sell payment on 1 = 15000g, 3=30000g or 6 = 55000g months for gold. Top guilds can be sent ahead! Warranty! instant purchase!
 	--Золотко от 49 \ Все типы оплаты \ Онлайн чат / Быстрая доставка \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
 	--Проdaжа zoлотa от 44 dо 49. Большие зaпaсы. Быстpaя dосtавкa. Wмp Яд Bиза Мс Qiwi. ІCQ: 5595777 Sкyрe: mywowgоld.ru оnlіne-сhat MYWОWGOLD.RU
-	"[Іi]+[сc]+q.*myw[оo]+wg[оo]+ld%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
+	"[Іi]+[сc]+q.*myw[oо]+wg[oо]+ld%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
+	--Mywowgold.ru Проверенные фармеры представляют Золото от 24 Аккаунты с чарами 85го лвл от 1800р
+	"myw[oо]+wg[oо]+ld%..*фармеры", --Mywowgold.ru Audited farmers represents the Gold from 24 Accounts with chars 85 lvl from 1800r
 	--Продам по 50р. 50р-1к. Оперативная доставка, большие запасы, низкие цены. Сайт: [RPGdealer.ru] Чат на сайте, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Аттестат продавца. Все виды оплат. Ищу поставщиков
 	"%d+.*rpgdealer.*i[сc]+q", --I'm sell by 50r. 50r-1k. Prompt (quick) delivery, big resourses, low prices. Site: [RPGdealer.ru] Chat on site, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Attestat of Seller's. Any kind of payments. Looking for supplier's
 	--Продам монеты 44-49вмр, яд, QIWI, visa - 1000 любые суммы! Прокачка/продажа чаров! Ищу поставщиков! Персональный аттестат, сайт! Ася 222-041! Скайп firelordwow!
@@ -194,7 +201,8 @@ local triggers = {
 	--Продам Г по 35! Сделка с мейна.Гарантии!  БЛ 67!!! Ася 747661 Скайп y0b0b0 или  в ПМ!
 	"продам.*сделка.*ася", --I'm will sell G by 35! Deal from main's (character). BL 67!!! Icq 747661 Skype y0b0b0
 	--Продаём голд 49р-55р за 1к. WoWMoney.гu. Visa/MC, WM, Я-Д, QIWI. BL 200+. Связь через iсq 38-48-29 или сайт.
-	"wowmoney[%.,].*visa.*i[сc]+q", --We are sell gold 49r-55r for 1k. WoWMoney.гu. Visa/MS, WM, YA-M, QIWI. BL 200+. Connection through iсq 38-48-29 or site.
+	--Гoлд от 25р за 1к. WoWMоnеу.гu. Visа/MС, WМ, Я-Д, QIWI. BL210+. Связь через iсq 38-48-29 или сaйт.
+	"w[oо]+wm[oо]+n[eе]+[yу]+[%.,].*vis[aа]+.*i[сc]+q", --We are sell gold 49r-55r for 1k. WoWMoney.гu. Visa/MS, WM, YA-M, QIWI. BL 200+. Connection through iсq 38-48-29 or site.
 	--Nigmаz.соm - Зoлoтo всего по 53p за 1000. Получи до 11% в подарок! скидки постоянным клиентам. Быстро и удобно!
 	"nigmаz[%.,]с.*%d+.*скидки", --Nigmаz.соm - Gold only by 53r for 1000. Receive to 11% to gift! Sales for permanent customer's. Quickly and comfortable!
 	--Продам ЗОЛОТО недорого!!! От 35р за 1000!!! Оплата  Webmoney,ICQ 603388454.
@@ -215,11 +223,17 @@ local triggers = {
 	"продам.*монетки.*вебмани", --Sell Coin!! Guarantees,sureties webmoney!
 	--[ [GnomOptovik.ru] ] [ по 35р (от 100к по 30р)] [WM BL:250] [Безопасность и надёжность, Моментальная доставка] [ICQ:606667350, Skype:GnomOptovik, Чат на сайте]
 	"gnomoptovik.*доставка.*i[сc]+q", --[ [GnomOptovik.ru] ] [by 35r (from 100k to 30R)] [WM BL: 250] [Safety and reliability, instant delivery] [ICQ: 606667350, Skype: GnomOptovik, chat on the website]
+	--[orange] ЗОЛОТО 25р за 1к , без посредников . Персональный аттестат,мгновенная доставка,гарантии. ICQ - 603388454 или Skype - Kansas655
+	"золото.*i[сc]+q.*skype", --GOLD 25p per 1k , without intermediaries. Personal passport, instant delivery, warrantys. ICQ - 603388454 or Skype - Kansas655
+	--Пoкупaeшь больше - получаешь еще больше! Теперь до 30% бонус золота (31.5р / 1к)   - Nigmаz.сom
+	"получаешь.*золота.*nigmaz", --Buy more - get more! Now up to 30% bonus gold (31.5r / 1k)   - Nigmaz.com
 
-	--Asian
-	"团购金币.*%d+=%d+k.*%d%d%d+gfree", --嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
+	--Chinese
+	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
 	--{rt3}{rt1} 春花秋月何时了，买金知多少.小楼昨夜又东风，金价不堪回首月明中. 雕栏玉砌金犹在，只是价格改.问君能有几多愁，恰似我家金价在跳楼.QQ:1069665249
+	--大家好，金币现价：19$=10k,90$=50k另外出售火箭月卡，还有70,80,85账号，全手工代练，技能代练，荣誉等，华人价格从优！！买金币还是老牌子可靠，sky牌金币，您最好的选择！
 	"only%d+.*for%d+k.*rocket.*card", --only 20d for 10k,90d for 50k,X-53 rocket,recuit month card ,pst for more info{rt1}另外出售火箭月卡，买金送火箭月卡，账号，代练等，华人价格从优！！
+	"金币.*%d+k.*惊喜大奖", --卖坐骑啦炽热角鹰兽白色毛犀牛大小幽灵虎红色DK马等拉风坐骑热销中，金币价格170$/105k,更有惊喜大奖等你拿=D
 
 	--Advanced URL's/Misc
 	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
@@ -239,7 +253,8 @@ local triggers = {
 	"%$.*rocket.*%$.*rocket.*ple?a?[sz]", --$45 for 10k with a rocket {star} and 110$ for 30k with a Rocket{moon},if you like,plz pst
 	--WTS X-53 Touring Rocket.( the only 2 seat flying mount you can aslo get a free month game time) .. pst
 	--WTS [X-53 Touring Rocket], the only 2seats flying mount, PST
-	"wts.*touring.*rocket.*mount.*pst", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
+	"wts.*touringrocket.*mount.*pst", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
+	"wts.*touringrocket.*%d+k", --WTS[Celestial Steed],[X-53 Touring Rocket],Race,Xfer 15K,TimeCard 6K,[Cenarion Hatchling]*Rag*KT*XT*Moonk*Panda 5K
 	"{.*}.*mm4ss.*{.*}", --{triangle}www.mm4ss.com{triangle} --multi
 	"promotion.*serve.*%d+k", --Special promotion in this serve now, 21$ for 10k
 	"pkpkg.*gear.*pet", --WWW.PkPkg.C{circle}M more gears,mount,pet and items on
@@ -257,30 +272,32 @@ local triggers = {
 	"meingd[%.,]de.*eur.*gold", --[MeinGD.de] - 0,7 Euro - 1000 Gold - [MeinGD.de]
 	"cheap.*ourgamecenter.*deliver", --The Cheapest,10K=15,{moon} 'www' OurGameCenter 'com' {moon}Fast Delivery
 	"surprise.*%d+k.*ourgamecenter", --surprise!!11K~15.99 {square} 'www' OurGameCenter 'com' {square}
-	"disturb.*ourgamecenter.*stock", --Sorry for disturb{diamond}(cyrillic sha sha sha) OurGameCenter (cyrillic c o m){diamond}10K=15,have stock.
+	--Sorry for disturb{diamond}(cyrillic sha sha sha) OurGameCenter (cyrillic c o m){diamond}10K=15,have stock.
+	"ourgamecenter.*%d+k.*stock", --OurGameCenter com 10K~14K,full stock,fulfill 10 Mins.
 	"secure.*gamecenter.*discount", --Sorry for disturb you We are a secure website 'www' OurGameCenter 'com' 11K~15.99!(EASY TO GET 10% DISCOUNT  GET ANOTHER 5% FOR INTRODUCING FRIENDS TO US)
 	"%$.*boe.*deliver.*interest", --{rt3}{rt1} WTS WOW G for $$. 10k for 20$, 52k for 100$. 105k for 199$. all item level 359 BOE gear. instant delivery! PST if ya have insterest in it. ^_^
 	"wts.*%[.*%].*deliver.*buyboe", --WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection] 15mins delivery on<buyboe dot com>
+	"%d+k.*card.*rocket.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
 }
 local fnd = string.find
 local IsSpam = function(msg)
 	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
 	for i=1, #triggers do --Scan database
 		if fnd(msg, triggers[i]) then --Found a match
-			if i>87 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if i>88 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif i>63 and i<88 then
+			elseif i>64 and i<89 then
 				phishPoints = phishPoints + 1
-			elseif i>55 and i<64 and not iconBlock then
+			elseif i>56 and i<65 and not iconBlock then
 				points = points + 1 --Only 1 trigger can get points in the icons section
 				iconBlock = true
-			elseif i>49 and i<56 and not strict then
+			elseif i>50 and i<57 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 1
 				strict = true
-			elseif i>38 and i<50 then
+			elseif i>40 and i<51 then
 				points = points + 2 --Heavy section gets 2 points
-			elseif i>6 and i<39 then
+			elseif i>6 and i<41 then
 				points = points + 1 --All else gets 1 point
 			elseif i<7 then
 				points = points - 2
