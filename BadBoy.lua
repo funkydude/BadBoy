@@ -8,7 +8,7 @@
 ]]--
 
 --DO NOT MODIFY DATABASE OR YOU MAY REPORT INNOCENT PEOPLE, HEURISTIC FUNCTION DEPENDS ON WORDS BEING ON CERTAIN LINES
--- GLOBALS: print, SetCVar, GetTime, strreplace, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
+-- GLOBALS: print, SetCVar, GetTime, gsub, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
 local myDebug = nil
 
 --[[ Spam Recognition ]]--
@@ -409,7 +409,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = strreplace(msg, " ", "") --Remove spaces
+	msg = gsub(msg, " ", "") --Remove spaces
 	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
@@ -425,7 +425,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			else
 				if BADBOY_POPUP then --Manual reporting via popup
 					--Add original spam line to Blizzard popup message
-					StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. strreplace(debug, "%", "%%")
+					StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%", "%%")
 					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 					dialog.data = lineId
 				else
