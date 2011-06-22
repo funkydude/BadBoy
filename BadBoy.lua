@@ -111,7 +111,7 @@ local triggers = {
 	"receive", --77
 	"service", --78
 	"surprise", --79
-	"suspe[cn][td]ed", --80 --suspected/suspended
+	"suspe[cn][td]", --80 --suspect/suspend
 	"system", --81
 	"validate", --82
 
@@ -184,10 +184,10 @@ local triggers = {
 	"оплату.*золото.*покупка", --mmOney: sell payment on 1 = 15000g, 3=30000g or 6 = 55000g months for gold. Top guilds can be sent ahead! Warranty! instant purchase!
 	--Золотко от 49 \ Все типы оплаты \ Онлайн чат / Быстрая доставка \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
 	--Проdaжа zoлотa от 44 dо 49. Большие зaпaсы. Быстpaя dосtавкa. Wмp Яд Bиза Мс Qiwi. ІCQ: 5595777 Sкyрe: mywowgоld.ru оnlіne-сhat MYWОWGOLD.RU
-	"[Іi]+[сc]+q.*myw[oо]+wg[oо]+ld%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
+	"[Іi]+[сc]+q.*m[yу]+w[oо]+wg[oо]+ld%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
 	--Mywowgold.ru Проверенные фармеры представляют Золото от 24 Аккаунты с чарами 85го лвл от 1800р
 	--[skull]Mywowgold.ru[skull] Лучшие фармёры предлагают [orange]Золото[orange] от 24 Персонажи 85го с катаклизмом от 1800р
-	"myw[oо]+wg[oо]+ld%..*фарм[ёе]+ры", --Mywowgold.ru Audited farmers represents the Gold from 24 Accounts with chars 85 lvl from 1800r
+	"m[yу]+w[oо]+wg[oо]+ld%..*фарм[ёе]+ры", --Mywowgold.ru Audited farmers represents the Gold from 24 Accounts with chars 85 lvl from 1800r
 	--Продам по 50р. 50р-1к. Оперативная доставка, большие запасы, низкие цены. Сайт: [RPGdealer.ru] Чат на сайте, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Аттестат продавца. Все виды оплат. Ищу поставщиков
 	"%d+.*rpgdealer.*i[сc]+q", --I'm sell by 50r. 50r-1k. Prompt (quick) delivery, big resourses, low prices. Site: [RPGdealer.ru] Chat on site, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Attestat of Seller's. Any kind of payments. Looking for supplier's
 	--Продам монеты 44-49вмр, яд, QIWI, visa - 1000 любые суммы! Прокачка/продажа чаров! Ищу поставщиков! Персональный аттестат, сайт! Ася 222-041! Скайп firelordwow!
@@ -231,7 +231,9 @@ local triggers = {
 	--[orange] 23р за 1к , без посредников . Персональный аттестат,мгновенная доставка,гарантии. ICQ - 603388454 или Skype - Kansas655
 	"доставка.*i[сc]+q.*skype", --[orange] 23r per 1k, without intermediaries. Personal passport,instant delivery,warrantys. ICQ - 603388454 or Skype - Kansas655
 	--[orange]Монетки[orange] от 22. Аттестат продавца Webmoney BL100. Моментальная выдача, безопасная передача. Все виды оплат. ICQ 440-048-760; скайп: Ruszun; или пм
-	"webmoney.*i[сc]+q.*скайп", --[orange]Coins[orange] from 22. Certificate seller Webmoney BL100. Instant delivery, secure transmission. All types of payments. ICQ 440-048-760; skype: Ruszun; or pm
+	"продавца.*i[сc]+q.*скайп", --[orange]Coins[orange] from 22. Certificate seller Webmoney BL100. Instant delivery, secure transmission. All types of payments. ICQ 440-048-760; skype: Ruszun; or pm
+	--[orange] от 23.99 руб/к | [MMO-SHOP.RU] | Все виды оплат | BL WM 392+ | ICQ 94-94-70, skype: [mmo-shop.ru]  | Скупаем [orange] | ТК за 61 k [orange] | Крылатый страж в продаже
+	"mmo%-shop%.ru.*i[сc]+q.*skype", --[orange] from £ 23.99 rub/k | [MMO-SHOP.RU] | all kinds of payments | BL WM 392 + | ICQ 94-94-70, skype: [mmo-shop.ru ] | We buy [orange] | TC for 61 k [orange]| Winged Guard for sale
 
 	--Chinese
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
@@ -239,6 +241,8 @@ local triggers = {
 	--大家好，金币现价：19$=10k,90$=50k另外出售火箭月卡，还有70,80,85账号，全手工代练，技能代练，荣誉等，华人价格从优！！买金币还是老牌子可靠，sky牌金币，您最好的选择！
 	"only%d+.*for%d+k.*rocket.*card", --only 20d for 10k,90d for 50k,X-53 rocket,recuit month card ,pst for more info{rt1}另外出售火箭月卡，买金送火箭月卡，账号，代练等，华人价格从优！！
 	"金币.*%d+k.*惊喜大奖", --卖坐骑啦炽热角鹰兽白色毛犀牛大小幽灵虎红色DK马等拉风坐骑热销中，金币价格170$/105k,更有惊喜大奖等你拿=D
+	--17=10k 160=100K 359BOE LVL85 Account For SaIe 疯狂甩卖 P0werleveling 1-85 only need 7days 还有大小幽灵虎
+	"%d+=%d+k.*boe.*p[0o]we?rle?ve?ling.*虎", --17=10k 160=100K 359BOE疯狂甩卖 P0werleveling 1-85还有大小幽灵虎等你来拿PST
 
 	--Advanced URL's/Misc
 	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
@@ -285,7 +289,7 @@ local triggers = {
 	--WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection]and others pls go <buyboe dot com> 
 	--WTS [Heaving Plates of Protection] [Vial of the Sands] [Theresa's Booklight], best service on<buyboe dot com> 
 	--WTS[Krol Decapitator][Vitreous Beak of Julak-Doom][Pauldrons of Edward the Odd]cheapest on <buyboe dot com>
-	"wts.*%[.*%]*%[.*%].*buyboe.*dot.*com", --WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection] 15mins delivery on<buyboe dot com>
+	"wts.*%[.*%]*%[.*%].*buyboe.*dot.*c", --WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection] 15mins delivery on<buyboe dot com>
 	"vk.*%[.*%]*%[.*%].*buyboe.*dot.*de", --VK [Phiole der Sande][Theresas Leselampe][Maldos Shwertstock],25 Minuten Lieferung auf <buyboe(dot)de>
 	"code.*hatchling.*card.*%d%d+[kg]", --WTS Codes redeem:6PETS [Cenarion Hatchling],Lil Rag,KT,XT,Moonkin,Pandaren 5k each;Prepaid gametimecard 6K;Flying mount[Celestial Steed] 15K.PST
 	"%d+k.*card.*rocket.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
