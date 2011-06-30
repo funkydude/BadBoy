@@ -284,6 +284,7 @@ local triggers = {
 	--"surprise.*%d+k.*ourgamecenter", --surprise!!11K~15.99 {square} 'www' OurGameCenter 'com' {square}
 	--Sorry for disturb{diamond}(cyrillic sha sha sha) OurGameCenter (cyrillic c o m){diamond}10K=15,have stock.
 	"ourgamecenter.*%d+k.*stock", --OurGameCenter com 10K~14K,full stock,fulfill 10 Mins.
+	"ourgamecenter.*deliver", --www OurGameCenter com not only ensure prompt delivery but that your order remains secure every timewe guarantee it! 
 	"secure.*gamecenter.*discount", --Sorry for disturb you We are a secure website 'www' OurGameCenter 'com' 11K~15.99!(EASY TO GET 10% DISCOUNT  GET ANOTHER 5% FOR INTRODUCING FRIENDS TO US)
 	"%$.*boe.*deliver.*interest", --{rt3}{rt1} WTS WOW G for $$. 10k for 20$, 52k for 100$. 105k for 199$. all item level 359 BOE gear. instant delivery! PST if ya have insterest in it. ^_^
 	--WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection]and others pls go <buyboe dot com> 
@@ -429,7 +430,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			else
 				if BADBOY_POPUP then --Manual reporting via popup
 					--Add original spam line to Blizzard popup message
-					StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%", "%%")
+					StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%%", "%%%%")
 					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 					dialog.data = lineId
 				else
