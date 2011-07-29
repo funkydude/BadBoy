@@ -215,7 +215,8 @@ local triggers = {
 	--онлайн магазин "Trader" - продажа золота, ключей Classic, BC, WoTLC,Cataclysm,тайм карт(руб/голд). Скупаем золото - дорого! BL146
 	"продажа.*золота.*[сc]+купаем.*золото", --online shop "Trader" - sale of gold, keys Classic, BC, WoTLC,Cataclysm,time cards(rub/gold). We buy gold - it's expensive! BL146
 	--СRАВВS-СОМРАNY.RU от [39-51р за 1к] Качественный сервис! любые суммы Все виды оплат. ICQ 24 74 84 Sкуре: WoW-Crabbs или в личку
-	"сервис.*оплат.*i[сc]+q.*", --СRАВВS-СОМРАNY.RU from [39-51r for 1k] Quality service! any sums All kind of payments. ICQ 24 74 84 Sкуре: WoW-Crabbs or PM
+	--СRАВВS-СОМР АNY.RU - [блестяшки] от 21р за 1000г. ICQ 24-74-84 Skуре: WoW-Crabbs BL 300 Услуги прокачки!
+	"i[сc]+q.*wow%-crabbs", --СRАВВS-СОМРАNY.RU from [39-51r for 1k] Quality service! any sums All kind of payments. ICQ 24 74 84 Sкуре: WoW-Crabbs or PM
 	--[www.marketgold.ru]  продажа золота 50р ВЫДАЧА СРАЗУ,ключи активации для игр,прокачка,любые способы оплаты,аттестат продавца,BL200+ онлайнчат  ICQ 315-025
 	"marketgold%.ru.*i[сc]+q", --[www.marketgold.ru]  selling gold 50r ISSUANCE OF DIRECT,key's activation for games,level-up,any way's of payment's,attestat of seller's,BL200+ online chat  ICQ 315-025
 	--Продажа  по 26рублей. (Nightfull-icq.ru/ICQ 811-563/BL 10.!
@@ -234,6 +235,10 @@ local triggers = {
 	"продавца.*i[сc]+q.*скайп", --[orange]Coins[orange] from 22. Certificate seller Webmoney BL100. Instant delivery, secure transmission. All types of payments. ICQ 440-048-760; skype: Ruszun; or pm
 	--[orange] от 23.99 руб/к | [MMO-SHOP.RU] | Все виды оплат | BL WM 392+ | ICQ 94-94-70, skype: [mmo-shop.ru]  | Скупаем [orange] | ТК за 61 k [orange] | Крылатый страж в продаже
 	"mmo%-shop%.ru.*i[сc]+q.*skype", --[orange] from £ 23.99 rub/k | [MMO-SHOP.RU] | all kinds of payments | BL WM 392 + | ICQ 94-94-70, skype: [mmo-shop.ru ] | We buy [orange] | TC for 61 k [orange]| Winged Guard for sale
+	-->>> Nigmаz.сom - Золoтo всегда в наличии! Бoнус дo 30%!
+	"nigm[aа]+z%.[сc]+.*наличии", -->>> Nigmaz.som - Zoloto always in stock! Bonus to 30%!
+	--КупитьГолд.РФ [1k от 27р] Любые виды оплат, Быстрая доставка [BL 145+] Консультант на сайте. Ася: 238021. Skype: Scorpufas. Ищем поставщиков. +Прокачка, Маунты.
+	"доставка.*ася.*skype", --BuyGold.RF [1k from 27R] Any type of payments, fast delivery [BL 145 +] Consultant on the site. Icq: 238 021. Skype: Scorpufas. We are looking for suppliers. + Leveling, Mounts.
 
 	--Chinese
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
@@ -290,7 +295,9 @@ local triggers = {
 	--WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection]and others pls go <buyboe dot com> 
 	--WTS [Heaving Plates of Protection] [Vial of the Sands] [Theresa's Booklight], best service on<buyboe dot com> 
 	--WTS[Krol Decapitator][Vitreous Beak of Julak-Doom][Pauldrons of Edward the Odd]cheapest on <buyboe dot com>
-	"wts.*%[.*%].*%[.*%].*buyboe.*dot.*c", --WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection] 15mins delivery on<buyboe dot com>
+	--WTS[Gloves of Unforgiving Flame]order multiple lv378 epics to get a pet or 365 epic free on<buyboe dot com>. 
+	--Free[Parrot Cage (Hyacinth Macaw)][Disgusting Oozeling][Masterwork Elementium Deathblade]on<buyboe dot com>. 
+	"%[.*%].*buyboe.*dot.*c", --WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection] 15mins delivery on<buyboe dot com>
 	"vk.*%[.*%].*%[.*%].*buyboe.*dot.*de", --VK [Phiole der Sande][Theresas Leselampe][Maldos Shwertstock],25 Minuten Lieferung auf <buyboe(dot)de>
 	"code.*hatchling.*card.*%d%d+[kg]", --WTS Codes redeem:6PETS [Cenarion Hatchling],Lil Rag,KT,XT,Moonkin,Pandaren 5k each;Prepaid gametimecard 6K;Flying mount[Celestial Steed] 15K.PST
 	"%d+k.*card.*rocket.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
