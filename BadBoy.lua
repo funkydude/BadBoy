@@ -20,110 +20,111 @@ local triggers = {
 	"lf[gm]", --4
 	"|cff", --5
 	"raid", --6
+	"roleplay", --7
 
 	--English - Common
-	"bonus", --7
-	"buy", --8
-	"cheap", --9
-	"code", --10
-	"coupon", --11
-	"customer", --12
-	"deliver", --13
-	"discount", --14
-	"express", --15
-	"gold", --16
-	"lowest", --17
-	"order", --18
-	"powerle?ve?l", --19
-	"price", --20
-	"promoti[on][gn]", --21
-	"reduced", --22
-	"rocket", --23
-	"sa[fl]e", --24
-	"server", --25
-	"service", --26
-	"stock", --27
-	"well?come", --28
+	"bonus", --8
+	"buy", --9
+	"cheap", --10
+	"code", --11
+	"coupon", --12
+	"customer", --13
+	"deliver", --14
+	"discount", --15
+	"express", --16
+	"gold", --17
+	"lowest", --18
+	"order", --19
+	"powerle?ve?l", --20
+	"price", --21
+	"promoti[on][gn]", --22
+	"reduced", --23
+	"rocket", --24
+	"sa[fl]e", --25
+	"server", --26
+	"service", --27
+	"stock", --28
+	"well?come", --29
 
 	--French - Common
-	"livraison", --delivery --29
+	"livraison", --delivery --30
 
 	--German - Common
-	"billigster", --cheapest --30
-	"lieferung", --delivery --31
-	"preis", --price --32
-	"willkommen", --welcome --33
+	"billigster", --cheapest --31
+	"lieferung", --delivery --32
+	"preis", --price --33
+	"willkommen", --welcome --34
 
 	--Spanish - Common
-	"barato", --cheap --34
-	"gratuito", --free --35
-	"r[\195\161a]+pido", --fast --36
-	"seguro", --safe/secure --37
-	"servicio", --service --38
+	"barato", --cheap --35
+	"gratuito", --free --36
+	"r[\195\161a]+pido", --fast --37
+	"seguro", --safe/secure --38
+	"servicio", --service --39
 
 	--Chinese - Common
-	"金币", --gold currency --39
-	"大家好", --hello everyone --40
+	"金币", --gold currency --40
+	"大家好", --hello everyone --41
 
 	--Heavy
-	"[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --41 --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+%.?%d*[/\\=]%d+%.?%d*[kg]", --42
-	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --43
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\\=%-]%d+%.?%d*[kg]", --44
-	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+", --45
-	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+", --46
-	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu", --47
-	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]", --48
-	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]", --49
-	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --50
+	"[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --42 --Add separate line if they start approx prices
+	"[\226\130\172%$\194\163]+%d+%.?%d*[/\\=]%d+%.?%d*[kg]", --43
+	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]", --44
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\\=%-]%d+%.?%d*[kg]", --45
+	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+", --46
+	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+", --47
+	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu", --48
+	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]", --49
+	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]", --50
+	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]", --51
 
 	--Heavy Strict
-	"www[%.,{]", --51
-	"[%.,]c%-?[o0@]%-?m", --52
-	"[%.,]c{circle}m", --53
-	"[%.,]c{rt2}m", --54
-	"[%.,]cqm", --55
-	"[%.,]net", --56
+	"www[%.,{]", --52
+	"[%.,]c%-?[o0@]%-?m", --53
+	"[%.,]c{circle}m", --54
+	"[%.,]c{rt2}m", --55
+	"[%.,]cqm", --56
+	"[%.,]net", --57
 
 	--Icons
-	"{rt%d}", --57
-	"{star}", --58
-	"{circle}", --59
-	"{diamond}", --60
-	"{triangle}", --61
-	"{moon}", --62
-	"{square}", --63
-	"{cross}", --64
+	"{rt%d}", --58
+	"{star}", --59
+	"{circle}", --60
+	"{diamond}", --61
+	"{triangle}", --62
+	"{moon}", --63
+	"{square}", --64
+	"{cross}", --65
 
 	--Phishing - English
-	"account", --65
-	"blizz", --66
-	"claim", --67
-	"congratulations", --68
-	"free", --69
-	"gamemaster", --70
-	"gift", --71
-	"launch", --72
-	"log[io]n", --73
-	"luckyplayer", --74
-	"mount", --75
-	"pleasevisit", --76
-	"receive", --77
-	"service", --78
-	"surprise", --79
-	"suspe[cn][td]", --80 --suspect/suspend
-	"system", --81
-	"validate", --82
+	"account", --66
+	"blizz", --67
+	"claim", --68
+	"congratulations", --69
+	"free", --70
+	"gamemaster", --71
+	"gift", --72
+	"launch", --73
+	"log[io]n", --74
+	"luckyplayer", --75
+	"mount", --76
+	"pleasevisit", --77
+	"receive", --78
+	"service", --79
+	"surprise", --80
+	"suspe[cn][td]", --81 --suspect/suspend
+	"system", --82
+	"validate", --83
 
 	--hello![Game Master]GM: Your world of warcraft account has been temporarily suspended. go to  [http://www.*********.com/wow.html] for further informatio
 
 	--Phishing - German
-	"berechtigt", --entitled --83
-	"erhalten", --get/receive --84
-	"deaktiviert", --deactivated --85
-	"konto", --acount --86
-	"kostenlos", --free --87
-	"qualifiziert", --qualified --88
+	"berechtigt", --entitled --84
+	"erhalten", --get/receive --85
+	"deaktiviert", --deactivated --86
+	"konto", --acount --87
+	"kostenlos", --free --88
+	"qualifiziert", --qualified --89
 
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
@@ -305,29 +306,32 @@ local triggers = {
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
 	"wts.*pets.*card.*mount", --WTS 6PETS [Cenarion Hatchling],Lil'Rag,XT,KT,Moonkin,Panda 8K each;Prepaid gametimecard 10K;Flying Mounts[Winged Guardian],[Celestial Steed]20K each.
 	"wts.*pets.*mount.*card", --wts 6pets .mounts .rocket. gametimecard .Change camp. variable race. turn area. change a name. ^_^!
+	"wts.*gametime.*mount.*pet", --WTS Prepaid gametime code 8k per month. the mount [Winged Guardian]'[Celestial Steed] 15K each and the pets 6k each, if u are interested,PST
 	"wowhelp%.1%-click%.hu", --{square}Have a nice day, enjoy the game!{square} - {star} [http://wowhelp.1-click.hu/] - One click for all WoW help! {star}
+	"g4p.*gold.*discount", --Saray Daily Greetings ? thanks for your previous support on G4P,here I am reminding you of our info, you may need it again :web:G4Pgold,Discount code:saray,introducer ID:saray 
+	"wts.*rocket.*gametime", --WTS{rt3}"[X-53 Touring Rocket]&[Winged Guardian]&Celestial Steed&xt,kt,mo nk,cen.rag.moonkin and game time"{rt3}pst for more info.
 }
 local fnd = string.find
 local IsSpam = function(msg)
 	local points, phishPoints, strict, iconBlock = 0, 0, nil, nil
 	for i=1, #triggers do --Scan database
 		if fnd(msg, triggers[i]) then --Found a match
-			if i>88 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
+			if i>89 then --!!!CHANGE ME ACCORDING TO DATABASE ENTRIES!!!
 				points = points + 9 --Instant report
-			elseif i>64 and i<89 then
+			elseif i>65 and i<90 then
 				phishPoints = phishPoints + 1
-			elseif i>56 and i<65 and not iconBlock then
+			elseif i>57 and i<66 and not iconBlock then
 				points = points + 1 --Only 1 trigger can get points in the icons section
 				iconBlock = true
-			elseif i>50 and i<57 and not strict then
+			elseif i>51 and i<58 and not strict then
 				points = points + 2 --Only 1 trigger can get points in the strict section
 				phishPoints = phishPoints + 1
 				strict = true
-			elseif i>40 and i<51 then
+			elseif i>41 and i<52 then
 				points = points + 2 --Heavy section gets 2 points
-			elseif i>6 and i<41 then
+			elseif i>7 and i<42 then
 				points = points + 1 --All else gets 1 point
-			elseif i<7 then
+			elseif i<8 then
 				points = points - 2
 				phishPoints = phishPoints - 2 --Remove points for safe words
 			end
