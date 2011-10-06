@@ -12,9 +12,8 @@
 -- GLOBALS: print, SetCVar, GetTime, gsub, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
 local myDebug = nil
 
---[[ Spam Recognition ]]--
+--These entries remove -2 points
 local whiteList = {
-	--These entries remove two points
 	"recruit",
 	"dkp",
 	"looking", --guild
@@ -24,6 +23,7 @@ local whiteList = {
 	"roleplay",
 }
 
+--These entries add +1 point
 local commonList = {
 	--English
 	"bonus",
@@ -78,8 +78,8 @@ local commonList = {
 	"[%.,]ru", --really can't risk any more TLDs for 2 points (Heavy Strict) until Blizz implements my requests to reduce FPs, which will probably be never
 }
 
+--These entries add +2 points
 local heavyList = {
-	--any entry will add 2 points
 	"[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]+%d+%.?%d*[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]",
@@ -92,8 +92,8 @@ local heavyList = {
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
 }
 
+--These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
-	--Only one entry in this list can add 2 points
 	"www[%.,{]",
 	"[%.,]c%-?[o0@]%-?m",
 	"[%.,]c{circle}m",
@@ -102,8 +102,8 @@ local heavyRestrictedList = {
 	"[%.,]net",
 }
 
+--These entries add +1 point, but only 1 entry will count
 local restrictedIcons = {
-	--Only one entry in this list can add 2 points
 	"{rt%d}",
 	"{star}",
 	"{circle}",
@@ -114,6 +114,7 @@ local restrictedIcons = {
 	"{cross}",
 }
 
+--These entries add +1 point to the phishing count
 local phishingList = {
 	--English
 	"account",
@@ -144,6 +145,7 @@ local phishingList = {
 	"qualifiziert", --qualified
 }
 
+--Any entry here will instantly report/block
 local instantReportList = {
 	--Personal Whispers
 	"so?rr?y.*%d+[kg].*stock.*buy", --sry to bother, we have 60k g in stock today. do u wanna buy some?:)
