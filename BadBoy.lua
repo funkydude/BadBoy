@@ -75,6 +75,8 @@ local commonList = {
 	"оплаты", --payment
 	"продажа", --sale
 	"наличии", --stock/presence
+	"цене", --price
+	"покупке", --buy/buying/purchase
 	"[%.,]ru", --really can't risk any more TLDs for 2 points (Heavy Strict) until Blizz implements my requests to reduce FPs, which will probably be never
 }
 
