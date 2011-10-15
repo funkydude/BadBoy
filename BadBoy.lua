@@ -9,7 +9,7 @@
 		You haven't implemented anything to help filtering gold spam since ComplainChat(), that was years ago, please show us you care.
 ]]--
 
--- GLOBALS: print, SetCVar, GetTime, gsub, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
+-- GLOBALS: print, SetCVar, GetTime, ipairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, GetRealmName
 local myDebug = nil
 
 --These entries remove -2 points
@@ -70,13 +70,15 @@ local commonList = {
 	"大家好", --hello everyone
 
 	--Russian
-	"золота", --gold
-	"доставка", --delivery
-	"оплаты", --payment
-	"продажа", --sale
-	"наличии", --stock/presence
-	"цене", --price
-	"покупке", --buy/buying/purchase
+	"зoлoтa", --gold
+	"дocтaвкa", --delivery
+	"oплaты", --payment
+	"прoдaжa", --sale
+	"нaличии", --stock/presence
+	"цeнe", --price [serbian]
+	"пoкупкe", --buy/buying/purchase [russian]
+	"купи", --buy [serbian]
+	"быcтрo", --fast/quickly
 	"[%.,]ru", --really can't risk any more TLDs for 2 points (Heavy Strict) until Blizz implements my requests to reduce FPs, which will probably be never
 }
 
@@ -192,85 +194,8 @@ local instantReportList = {
 	"roll.*%d+.*roll.*%d+.*bet", --Roll 63+ x2 , Roll 100 x3, Roll 1 x4 NO MAX BETS
 
 	--Russian
-	--GGRPG com от 25 за 1000  BL349 ЯД PayPal QIWI VISA|Master MoneyBookers. Доставка 5 мин. Ася 614 691 984, скайп Wowgoldall. ТК60 в наличии
-	"ggrpg.*paypal.*visa", --GGRPG com from 25 per 1000 BL349 YaM PayPal QIWI VISA | Master MoneyBookers. Ships in 5 minutes. Icq 614691984, skype Wowgoldall. TK60 in stock
-	--Золото от 24 р  за 1к  BL240+ Wowgoldsale . ru IСQ  2222-39 , на сайте онлайн чат, принимаем WM/ЯД/Visa/qiwi, ищем поставщиков
-	"wowgoldsale.*i[сc]+q.*visa", --Gold from 24 p per 1K BL240 + Wowgoldsale. ru ISQ 2222-39, the site online chat, accept WM / YaM / Visa / qiwi, looking for suppliers
-	--Сдам Г0лдец  по 25!  [Ася] 747661. [Скайп] y0b0b0 (через ноль))
-	"г[0o]лдец.*ася.*y0b0b0", --Rent G0ld  to 25!  [Icq] 747,661. [Skype] y0b0b0 (through zero))
-	--Продам картошку и другие овощи по 29-35 кило. Овощевик.рф (набирать кирилицей!) БЛ 400 - доверяйте только опытным фермерам!
-	"продам.*овощевик%.рф.*фермерам", --Sell potatoes and other vegetables by 29-35 kilogramm. Ovoschevik.rf (typing Cyrillic!) BL 400 - trust only an experienced farmers!
-	--[З0Л0ТО] сайт <INGMONEY.RU> От 25р Все виды оплат.Kонсультант на сайте. Участвуй в "супер акции" IСQ 44-27-99 Skype [INGMONEY.RU] Надежно!Набор поставщиков
-	"ingmoney.*i[сc]+q.*skype", --[G0LD] site <INGMONEY.RU> from 25p All kind of payments.Consultant on site. Participate in a "super shares" ICQ 44-27-99 Skype [INGMONEY.RU] Reliably! There is a set of suppliers
-	--[yellow star] [З0Л0ТО]-Лучшие цены на сайте [INGMONEY. RU]Любые виды оплаты.Безопасные способы выдачи.Участвуй в супер акции Ася 44-27-99 Скайп INGMONEY. RU
-	"ingmoney%..*ася.*скайп", --[G0L0DO]-Best prices on the website [INGMONEY. RU]Any type of payments.Safe methods of extradition.Participate in the super stock Icq 44-27-99 Skype INGMONEY. RU
-	--mmOney: продаём оплату на 1=15000г, 3=30000г или 6=55000г месяцев  за золото. Топ гильдиям возможна передача вперёд !!! Гарантии ! моментальная покупка !
-	"оплату.*золото.*покупка", --mmOney: sell payment on 1 = 15000g, 3=30000g or 6 = 55000g months for gold. Top guilds can be sent ahead! Warranty! instant purchase!
-	--Золотко от 49 \ Все типы оплаты \ Онлайн чат / Быстрая доставка \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
-	--Проdaжа zoлотa от 44 dо 49. Большие зaпaсы. Быстpaя dосtавкa. Wмp Яд Bиза Мс Qiwi. ІCQ: 5595777 Sкyрe: mywowgоld.ru оnlіne-сhat MYWОWGOLD.RU
-	"[Іi]+[сc]+q.*m[yу]+w[oо]+wg[oо]+ld%.", --Gold from 49 \ Any kind of payments \ Online chat / Fast delivery \ Webmoney | Visa | Mc | Qiwi | Yandex | BL 400 | ICQ 5595777 | Mywowgold .ru
-	--Mywowgold.ru Проверенные фармеры представляют Золото от 24 Аккаунты с чарами 85го лвл от 1800р
-	--[skull]Mywowgold.ru[skull] Лучшие фармёры предлагают [orange]Золото[orange] от 24 Персонажи 85го с катаклизмом от 1800р
-	"m[yу]+w[oо]+wg[oо]+ld%..*фарм[ёе]+ры", --Mywowgold.ru Audited farmers represents the Gold from 24 Accounts with chars 85 lvl from 1800r
-	--Продам по 50р. 50р-1к. Оперативная доставка, большие запасы, низкие цены. Сайт: [RPGdealer.ru] Чат на сайте, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Аттестат продавца. Все виды оплат. Ищу поставщиков
-	"%d+.*rpgdealer.*i[сc]+q", --I'm sell by 50r. 50r-1k. Prompt (quick) delivery, big resourses, low prices. Site: [RPGdealer.ru] Chat on site, ICQ: 48 555 2474, Skype: [RPGdealer.ru] [220 BL WM] Attestat of Seller's. Any kind of payments. Looking for supplier's
-	--Продам монеты 44-49вмр, яд, QIWI, visa - 1000 любые суммы! Прокачка/продажа чаров! Ищу поставщиков! Персональный аттестат, сайт! Ася 222-041! Скайп firelordwow!
-	"монеты.*%d+.*qiwi.*visa", --Sell coins 44-49wmr, yam (yandex money), QIWI, visa - 1000 any sums! Level up / Sale characters! Looking for supplier's! Personal attestat, site! ICQ 222-041! Skype firelordwow!
-	--KingPeon.СОМ [от 40р - 1k] Ася:238021. Скайп: Scorpufas. Аттестат Продавца[BL 110] WM/Яд, Qiwi, Visa, Билайн/МТС и др. Моментальная передача. Онлайн-Чат на сайте.
-	"kingpeon[%.,]c.*ася.*visa", --KingPeon.СОМ [from 40r - 1k] Icq:238021. Skype: Scorpufas. Attestat of Seller's[BL 110] WM/Yam, Qiwi, Visa, Beeline/MTS (both big Russian celluar country corporatrion) and etc. Instant transmission / transfer. Online-chat on site.
-	--Продам [БОГАТСТВО]  50р  СКИДКИ. WM/яд/MC/Visa/QIWI IСQ 44-27-99 ,Skype [wow-g-Online] [BL 180] Надежно, просто, честно! Отвечаю в Асю, скайп! Ищу поставщиков.
-	"%d+.*visa.*i[сc]+q.*wow%-g%-online", --I'm will sell [RICHNESS]  50r  SALES. WM/yam/MS/Visa/QIWI IСQ 44-27-99 , Skype [wow-g-Online] [BL 180] Надежно, simply, honestly! Replay in Icq, skype! Looking for suppliers.
-	--Продам ГОЛД по 40 !!! Принимаю веб мани и яндекс деньги.
-	"продам.*голд.*яндекс.*деньги", --I'm will sell GOLD by 40 !!! I'm accept web money and yandex money.
-	--Продам Г по 35! Сделка с мейна. БЛ 67!!! Ася 747661 Скайп y0b0b0
-	--Продам Г по 35! Сделка с мейна.Гарантии!  БЛ 67!!! Ася 747661 Скайп y0b0b0 или  в ПМ!
-	"продам.*сделка.*ася", --I'm will sell G by 35! Deal from main's (character). BL 67!!! Icq 747661 Skype y0b0b0
-	--Продаём голд 49р-55р за 1к. WoWMoney.гu. Visa/MC, WM, Я-Д, QIWI. BL 200+. Связь через iсq 38-48-29 или сайт.
-	--Гoлд от 25р за 1к. WoWMоnеу.гu. Visа/MС, WМ, Я-Д, QIWI. BL210+. Связь через iсq 38-48-29 или сaйт.
-	"w[oо]+wm[oо]+n[eе]+[yу]+[%.,].*vis[aа]+.*i[сc]+q", --We are sell gold 49r-55r for 1k. WoWMoney.гu. Visa/MS, WM, YA-M, QIWI. BL 200+. Connection through iсq 38-48-29 or site.
-	--Nigmаz.соm - Зoлoтo всего по 53p за 1000. Получи до 11% в подарок! скидки постоянным клиентам. Быстро и удобно!
-	"nigmаz[%.,]с.*%d+.*скидки", --Nigmаz.соm - Gold only by 53r for 1000. Receive to 11% to gift! Sales for permanent customer's. Quickly and comfortable!
-	--Продам ЗОЛОТО недорого!!! От 35р за 1000!!! Оплата  Webmoney,ICQ 603388454.
-	"золото.*money.*i[сc]+q", --Selling GOLD inexpensively!!! From 35r by 1000!!! Payment  Webmoney,ICQ 603388454.
-	--продам голд 1к-40вмр
-	"продам.*голд.*%d+", --i'll sell gold 1k-40wmr
-	--mm0money предлагает оплату на 1-10к 3-20к, 6-30000г  месяцев, за игровую валюту !!! Колличество оплат ограниченно !!! Успей урвать долю счастья !!!
-	"mm0money.*%d+.*валюту", --mm0money offers payment for 1-10k 3-20k, 6-30000g months, for gaming currency !!! Number of payment's is limited!!! Things to snatch a share of happiness!!!
-	--онлайн магазин "Trader" - продажа золота, ключей Classic, BC, WoTLC,Cataclysm,тайм карт(руб/голд). Скупаем золото - дорого! BL146
-	"продажа.*золота.*[сc]+купаем.*золото", --online shop "Trader" - sale of gold, keys Classic, BC, WoTLC,Cataclysm,time cards(rub/gold). We buy gold - it's expensive! BL146
-	--СRАВВS-СОМРАNY.RU от [39-51р за 1к] Качественный сервис! любые суммы Все виды оплат. ICQ 24 74 84 Sкуре: WoW-Crabbs или в личку
-	--СRАВВS-СОМР АNY.RU - [блестяшки] от 21р за 1000г. ICQ 24-74-84 Skуре: WoW-Crabbs BL 300 Услуги прокачки!
-	"i[сc]+q.*wow%-crabbs", --СRАВВS-СОМРАNY.RU from [39-51r for 1k] Quality service! any sums All kind of payments. ICQ 24 74 84 Sкуре: WoW-Crabbs or PM
-	--[www.marketgold.ru]  продажа золота 50р ВЫДАЧА СРАЗУ,ключи активации для игр,прокачка,любые способы оплаты,аттестат продавца,BL200+ онлайнчат  ICQ 315-025
-	"marketgold%.ru.*i[сc]+q", --[www.marketgold.ru]  selling gold 50r ISSUANCE OF DIRECT,key's activation for games,level-up,any way's of payment's,attestat of seller's,BL200+ online chat  ICQ 315-025
-	--Продажа  по 26рублей. (Nightfull-icq.ru/ICQ 811-563/BL 10.!
-	"продажа.*рублей.*i[сc]+q", --Selling on 26rubley. (Nightfull-icq.ru/ICQ 811-563/BL 10.!
-	--Продам монетки !! Гарантии,поручители  вебмани !
-	"продам.*монетки.*вебмани", --Sell Coin!! Guarantees,sureties webmoney!
-	--[ [GnomOptovik.ru] ] [ по 35р (от 100к по 30р)] [WM BL:250] [Безопасность и надёжность, Моментальная доставка] [ICQ:606667350, Skype:GnomOptovik, Чат на сайте]
-	"gnomoptovik.*доставка.*i[сc]+q", --[ [GnomOptovik.ru] ] [by 35r (from 100k to 30R)] [WM BL: 250] [Safety and reliability, instant delivery] [ICQ: 606667350, Skype: GnomOptovik, chat on the website]
-	--[orange] ЗОЛОТО 25р за 1к , без посредников . Персональный аттестат,мгновенная доставка,гарантии. ICQ - 603388454 или Skype - Kansas655
-	"золото.*i[сc]+q.*skype", --GOLD 25p per 1k , without intermediaries. Personal passport, instant delivery, warrantys. ICQ - 603388454 or Skype - Kansas655
-	--Пoкупaeшь больше - получаешь еще больше! Теперь до 30% бонус золота (31.5р / 1к)   - Nigmаz.сom
-	"получаешь.*золота.*nigm[аa]+z", --Buy more - get more! Now up to 30% bonus gold (31.5r / 1k)   - Nigmaz.com
-	--[orange] 23р за 1к , без посредников . Персональный аттестат,мгновенная доставка,гарантии. ICQ - 603388454 или Skype - Kansas655
-	"доставка.*i[сc]+q.*skype", --[orange] 23r per 1k, without intermediaries. Personal passport,instant delivery,warrantys. ICQ - 603388454 or Skype - Kansas655
-	--[orange]Монетки[orange] от 22. Аттестат продавца Webmoney BL100. Моментальная выдача, безопасная передача. Все виды оплат. ICQ 440-048-760; скайп: Ruszun; или пм
-	"продавца.*i[сc]+q.*скайп", --[orange]Coins[orange] from 22. Certificate seller Webmoney BL100. Instant delivery, secure transmission. All types of payments. ICQ 440-048-760; skype: Ruszun; or pm
-	--[orange] от 23.99 руб/к | [MMO-SHOP.RU] | Все виды оплат | BL WM 392+ | ICQ 94-94-70, skype: [mmo-shop.ru]  | Скупаем [orange] | ТК за 61 k [orange] | Крылатый страж в продаже
-	"mmo%-shop%.ru.*i[сc]+q.*skype", --[orange] from £ 23.99 rub/k | [MMO-SHOP.RU] | all kinds of payments | BL WM 392 + | ICQ 94-94-70, skype: [mmo-shop.ru ] | We buy [orange] | TC for 61 k [orange]| Winged Guard for sale
-	-->>> Nigmаz.сom - Золoтo всегда в наличии! Бoнус дo 30%!
-	"nigm[aа]+z%.[сc]+.*наличии", -->>> Nigmaz.som - Zoloto always in stock! Bonus to 30%!
-	--КупитьГолд.РФ [1k от 27р] Любые виды оплат, Быстрая доставка [BL 145+] Консультант на сайте. Ася: 238021. Skype: Scorpufas. Ищем поставщиков. +Прокачка, Маунты.
-	"доставка.*ася.*skype", --BuyGold.RF [1k from 27R] Any type of payments, fast delivery [BL 145 +] Consultant on the site. Icq: 238 021. Skype: Scorpufas. We are looking for suppliers. + Leveling, Mounts.
-	"night%-money%.ru.*i[сc]+q", --Mоnеты по цeнe пoстaвщиков. Пoкyпaйте у нaс - нe пeрeплачивaйтe. Всe виды oплaт. || Night-Money. Ru || Пoдaрки. ICQ 83-93-75. [70 BL WM] Аттeстат прoдaвцa. Онline-сhaт.
-	"ollyvs%.ru.*i[сc]+q", --[ollyvs.ru] [От 37p до 27р за 1000г] [Webmоney,Kиви,Яндеkс,Visa,MC,На Моб счет и др.] BL200+ ICQ: 309765 Skурe: ollуvs или в личку
-	--Маунты Огненный ястреб и Феникс пепел Ал'ара поступили в продажу в магазине-- [eubattlenet.vipshop.ru]
-	"продажу.*eubattlenet%.vipshop%.ru", --Mount Fire Hawk and Phoenix Al'ara ashes are on sale at the store--[eubattlenet.vipshop.ru]
-	--Купи ЗОЛОТО на -=MMOMONEYru=- Быстро и надежно. В наличии. ТК за золото!
-	"золото.*mmomoney", --Buy Gold at -= MMOMONEYru =- quickly and reliably. In stock. TC for the gold!
-	--сайт [RPGBOX.RU]  ВЫГОДНО БЫСТРО БЕЗОПАСНО   - НИЗКИЕ ЦЕНЫ-  /ТК60=45К/Покупка/все в наличии выдача сразу  все виды оплаты + visa  asя 819-207 sкайп-RPGBOX.RU asя 819-207
-	"rpgbox.*цены.*наличии", --site [RPGBOX.RU] BENEFITS FAST SECURE - LOWEST PRICES-/ = TK60 45K/Purchase/all in stock delivery immediately all kinds of payments + visa icq 819-207 skype-RPGBOX.RU icq 819 - 207
+	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
+	"{.*}.*oвoщeвик%.рф.*{.*}", --[skull]Овощевик.рф[skull] продолжает, на зло врагaм, радовaть вас свежими [circle]oвoщaми! Бл 450. oператoры девyшки ждyт вaс!
 
 	--Chinese
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
@@ -409,7 +334,7 @@ local IsSpam = function(msg)
 end
 
 --[[ Chat Scanning ]]--
-local orig, prevReportTime, prevLineId, result, prevMsg, prevPlayer = COMPLAINT_ADDED, 0, 0, nil, nil, nil
+local gsub, orig, prevReportTime, prevLineId, result, prevMsg, prevPlayer = gsub, COMPLAINT_ADDED, 0, 0, nil, nil, nil
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -437,6 +362,11 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = gsub(msg, " ", "") --Remove spaces
+	--They like to interchange Russian and English letters to avoid detection
+	msg = gsub(msg, "а", "a") --\208\176 > \97
+	msg = gsub(msg, "с", "c") --\209\129 > \99
+	msg = gsub(msg, "е", "e") --\208\181 > \101
+	msg = gsub(msg, "о", "o") --\208\190 > \111
 	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
