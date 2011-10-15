@@ -70,7 +70,7 @@ local commonList = {
 	"大家好", --hello everyone
 
 	--Russian
-	"зoлoтa", --gold
+	"зoлoтo", --gold
 	"дocтaвкa", --delivery
 	"oплaты", --payment
 	"прoдaжa", --sale
@@ -79,6 +79,7 @@ local commonList = {
 	"пoкупкe", --buy/buying/purchase [russian]
 	"купи", --buy [serbian]
 	"быcтрo", --fast/quickly
+	"ищeмпocтaвщикoв", --ищем поставщиков --looking for suppliers
 	"[%.,]ru", --really can't risk any more TLDs for 2 points (Heavy Strict) until Blizz implements my requests to reduce FPs, which will probably be never
 }
 
@@ -300,37 +301,42 @@ local IsSpam = function(msg)
 		if fnd(msg, whiteList[i]) then
 			points = points - 2
 			phishPoints = phishPoints - 2 --Remove points for safe words
+			if myDebug then print(whiteList[i], points, phishPoints) end
 		end
 	end
 	for i=1, #commonList do
 		if fnd(msg, commonList[i]) then
 			points = points + 1
+			if myDebug then print(commonList[i], points, phishPoints) end
 		end
 	end
 	for i=1, #heavyList do
 		if fnd(msg, heavyList[i]) then
 			points = points + 2 --Heavy section gets 2 points
+			if myDebug then print(heavyList[i], points, phishPoints) end
 		end
 	end
 	for i=1, #heavyRestrictedList do
 		if fnd(msg, heavyRestrictedList[i]) then
 			points = points + 2
 			phishPoints = phishPoints + 1
+			if myDebug then print(heavyRestrictedList[i], points, phishPoints) end
 			break --Only 1 trigger can get points in the strict section
 		end
 	end
 	for i=1, #restrictedIcons do
 		if fnd(msg, restrictedIcons[i]) then
 			points = points + 1
+			if myDebug then print(restrictedIcons[i], points, phishPoints) end
 			break --Only 1 trigger can get points in the icons section
 		end
 	end
 	for i=1, #phishingList do
 		if fnd(msg, phishingList[i]) then
 			phishPoints = phishPoints + 1
+			if myDebug then print(phishingList[i], points, phishPoints) end
 		end
 	end
-	if myDebug then print(triggers[i], points, phishPoints) end
 	if points > 3 or phishPoints > 3 then
 		return true
 	end
