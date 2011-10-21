@@ -117,6 +117,7 @@ local restrictedIcons = {
 	"{moon}",
 	"{square}",
 	"{cross}",
+	"{цр%d}", --Russian
 }
 
 --These entries add +1 point to the phishing count
