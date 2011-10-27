@@ -70,10 +70,11 @@ local commonList = {
 	"大家好", --hello everyone
 
 	--Russian
-	"зoлoт[ao]", --gold
+	"з[o0]л[o0]т[ao0]", --gold
 	"дocтaвкa", --delivery
-	"oплaты", --payment
-	"прoдaжa", --sale
+	"cкидкa", --discount [russian]
+	"oплaт", --payment [russian]
+	"прoдaжa", --sale [serbian]
 	"нaличии", --stock/presence
 	"цeнe", --price [serbian]
 	"пoкупкe", --buy/buying/purchase [russian]
@@ -95,6 +96,7 @@ local heavyList = {
 	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
+	"%d+%.?%d*кзa%d+%.?%d*р", --14к за 21р
 }
 
 --These entries add +2 points, but only 1 entry will count
@@ -286,7 +288,7 @@ local instantReportList = {
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
 	"wts.*mount.*rocket.*gift", --WTS 2 seat flying mount the X-53 Touring rocket , you can also get a gift--one month game , PST 
 	"k{.*}4%.?{.*}g{.*}[o0]{.*}l{.*}d", --{star}.W{star}.W{star}W {square} k{triangle}.4{triangle}g{triangle}o{triangle}l{triangle}d {square} c{star}o{star}m -------{square}- c{star}o{star}d{star}e : CF \ CO \ CK
-	"kb8gold.*%d+.*stock", --KB8GOLD com 8.5EUR = 10000,269K IN STOCK NOW!
+	"kb8g[o0]ld.*%d+.*st[o0]ck", --KB8GOLD com 8.5EUR = 10000,269K IN STOCK NOW!
 	"reins.*vial.*%d+.*rocket", --WTS [Reins of the Crimson Deathcharger] [Vial of the Sands] [Reins of Poseidus],170usd=100k+a rocket for free 
 }
 
