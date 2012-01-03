@@ -319,7 +319,7 @@ local instantReportList = {
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
 	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>. 
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
-	"g[öo]+ld4rpg.*%d+k", --! vv w vv .Göld4RPG. c ö m Chóosë thè lêgal wëbsîte Chëapest Gôld,10K=13 USD,500K în Stôck> Dëlivëry in 7mins,--Chëap pôwer lëveling- Welcöme tö w vv w .Göld4RPG. c ö m disc?unt cöde : MEITBX *
+	"g[öōo]+ld4rpg.*%d+k", --! vv w vv .Göld4RPG. c ö m Chóosë thè lêgal wëbsîte Chëapest Gôld,10K=13 USD,500K în Stôck> Dëlivëry in 7mins,--Chëap pôwer lëveling- Welcöme tö w vv w .Göld4RPG. c ö m disc?unt cöde : MEITBX *
 	"%d+k.*deliver.*kk4g", --revelry of christmas present10% code =Lucky11.5k=8.27GBP=9.53EUR=13.04USDdelivery within 5-10mins KK4g. COM
 }
 
