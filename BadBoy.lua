@@ -321,7 +321,9 @@ local instantReportList = {
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
 	"g[òóöōo]+ld4rpg.*%d+k", --! vv w vv .Göld4RPG. c ö m Chóosë thè lêgal wëbsîte Chëapest Gôld,10K=13 USD,500K în Stôck> Dëlivëry in 7mins,--Chëap pôwer lëveling- Welcöme tö w vv w .Göld4RPG. c ö m disc?unt cöde : MEITBX *
 	"%d+k.*deliver.*kk4g", --revelry of christmas present10% code =Lucky11.5k=8.27GBP=9.53EUR=13.04USDdelivery within 5-10mins KK4g. COM
-	"%d+k.*g[òóöōo]+ld85%.", --Chèápèst Gòld,10k=12 úsd,Dèlìvèry ìn 7 mìns,5% èxtrá fòr 15k+ òrdèr.Chèápèst wów Pòwèr Lèvèlìng --- Wèlcòmè tò w w w. Gòld85.cóm 
+	"%d+k.*g[òóöōo]+ld85%.", --Chèápèst Gòld,10k=12 úsd,Dèlìvèry ìn 7 mìns,5% èxtrá fòr 15k+ òrdèr.Chèápèst wów Pòwèr Lèvèlìng --- Wèlcòmè tò w w w. Gòld85.cóm
+	"%d+k.*s[áa]+f[èe]+4g[òóöōo]+ld", --Grèatèst Salè ónly 10k=10ùsd, Bùy Safèst,Fastèst,Chèapèst wòw gòld fróm safè4gòld .(dèlivery in5mins)Welcóme tovvwvv,safè4gòld ,còmanytime
+	"k{.*}k{.*}4{.*}g%.c", --revelry of christmas present<circle>10% code =Lucky<circle>11.5k =7.58GBP=8.85EUR=12.11USD<circle>delivery within 5-10mins <triangle><triangle><triangle> K<cross>K<cross>4<cross>g. C<cross>O<cross>M
 }
 
 local fnd = string.find
