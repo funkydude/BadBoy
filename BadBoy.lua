@@ -324,6 +324,7 @@ local instantReportList = {
 	"%d+k.*g[òóöōo]+ld85%.", --Chèápèst Gòld,10k=12 úsd,Dèlìvèry ìn 7 mìns,5% èxtrá fòr 15k+ òrdèr.Chèápèst wów Pòwèr Lèvèlìng --- Wèlcòmè tò w w w. Gòld85.cóm
 	"%d+k.*s[áa]+f[èe]+4g[òóöōo]+ld", --Grèatèst Salè ónly 10k=10ùsd, Bùy Safèst,Fastèst,Chèapèst wòw gòld fróm safè4gòld .(dèlivery in5mins)Welcóme tovvwvv,safè4gòld ,còmanytime
 	"k{.*}k{.*}4{.*}g%.c", --revelry of christmas present<circle>10% code =Lucky<circle>11.5k =7.58GBP=8.85EUR=12.11USD<circle>delivery within 5-10mins <triangle><triangle><triangle> K<cross>K<cross>4<cross>g. C<cross>O<cross>M
+	"wts.*%[.*%].*good4game", --WTS[Blazing Hippogryph][Amani Dragonhawk][Big Battle Bear]buy TCG Mounts on good4game.c{circle}m
 }
 
 local fnd = string.find
