@@ -303,7 +303,8 @@ local instantReportList = {
 	"wts.*rocket.*gametime", --WTS{rt3}"[X-53 Touring Rocket]&[Winged Guardian]&Celestial Steed&xt,kt,mo nk,cen.rag.moonkin and game time"{rt3}pst for more info.
 	"$%d+=%d+k.*deliver.*item", --$20=10K, $100=57k,$200=115k with instant delivery,all lvl378 items,pst
 	"money.*gold.*gold2sell", --Ingame gold for real money! Real gold for Ingame gold! Ingame gold for a account key! If you're intrested, then check out: "gold2sell.org" now!
-	"kb8gold.*sale.*deliver", --KB8GOLD C0M 7.9€->10K Hot sales and Fast delivery 
+	--w*w*w KB8G0LD c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins
+	"kb8g[o0]ld.*%d+.*deliver", --KB8GOLD C0M 7.9€->10K Hot sales and Fast delivery 
 	"pet.*rag.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest 
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz 
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
@@ -326,6 +327,8 @@ local instantReportList = {
 	"%d+k.*s[áa]+f[èe]+4g[òóöōo]+ld", --Grèatèst Salè ónly 10k=10ùsd, Bùy Safèst,Fastèst,Chèapèst wòw gòld fróm safè4gòld .(dèlivery in5mins)Welcóme tovvwvv,safè4gòld ,còmanytime
 	"k{.*}k{.*}4{.*}g%.c", --revelry of christmas present<circle>10% code =Lucky<circle>11.5k =7.58GBP=8.85EUR=12.11USD<circle>delivery within 5-10mins <triangle><triangle><triangle> K<cross>K<cross>4<cross>g. C<cross>O<cross>M
 	"wts.*%[.*%].*good4game", --WTS[Blazing Hippogryph][Amani Dragonhawk][Big Battle Bear]buy TCG Mounts on good4game.c{circle}m
+	--{triangle}{triangle}Chèapèst and safè Góld. 10K for $12 , with the discóunt códe:"GPS".10% èxtra góld of the órdèr 50K+. Wèlcome to <{star}w w w.mmóp.c ó m{star}>
+	"g[òóöōo]+ld.*{.*}.*mm[òóöōo]+p%.", --{moon}{moon}Dear friend,need gold ? Focus on <{star} WW W.mmop.C oM{star} > 10K only for 12USD,with the discount code:"GPS".
 }
 
 local fnd = string.find
