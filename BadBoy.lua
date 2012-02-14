@@ -318,7 +318,8 @@ local instantReportList = {
 	"wts.*%[.*%].*$%d+.*%[.*%].*$%d+", --wts[Blauvelt's Family Crest]$34.00[Gilnean Ring of Ruination]$34.99[Signet of High Arcanist Savor]$34.90pst
 	--@@@@@@ only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@www luckygolds c@m @@@@@@
 	"%d+k.*luckygolds", --@@@@@@@@@ www  luckygolds  c@m   only 10K=6.99EURO 100K+10K=65.99EUROwww  luckygolds  c@m @@@@@@@@@
-	"luckygolds.*%d+k", --@@@@@@@ www luckygolds c@m only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@@ 
+	--@@@@@@ (www luckyg@lds c@m) @nl y_10K=5.99EUR@_100K+10K=55.99EUR(@=O) 
+	"luckyg[o@]lds.*%d+k", --@@@@@@@ www luckygolds c@m only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@@ 
 	"k4p[o0]wer.*%d+k", --WWW K4POWER C0M {Code:Xmas}->>Xmas Promotions{18th Dec-26th Dec}->35% Free,0rder 50k More->X-53 Rocket Mount For Free!
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
 	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>. 
