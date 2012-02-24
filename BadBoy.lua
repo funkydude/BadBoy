@@ -337,7 +337,8 @@ local instantReportList = {
 	"{.*}.*%.mm[òóöōo]+p%..*{.*}", --{moon}{moon}Dear friend,need gold ? Focus on <{star} WW W.mmop.C oM{star} > 10K only for 12USD,with the discount code:"GPS".
 	"wts.*%[.*%].*%[.*%].*wealso.*cheapestg", --WTS [Reins of the Crimson Deathcharger] [Mechano-Hog] [Big Battle Bear]and we also have the cheapest G
 	"happygolds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
-	"wow4wpw.*deliver", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
+	--@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
+	"wow4w[po]w.*deliver", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
 }
 
 local fnd = string.find
