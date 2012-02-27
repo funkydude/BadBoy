@@ -3,7 +3,7 @@
 		or let me fetch if the player is in a guild or not from the given guid (spammers never guilded)
 		or both!
 
-		I can then, 1) only scan chat from guilded WoW players, 2) only scan chat from
+		I can then, 1) only scan chat from unguilded WoW players, 2) only scan chat from
 		players below level 10 (55-60 for DKs), this would near enough eliminate any chance of false positives.
 
 		You haven't implemented anything to help filtering gold spam since ComplainChat(), that was years ago, please show us you care.
@@ -343,6 +343,7 @@ local instantReportList = {
 	"gold2store.*deliver", --vv vv vv gold2store c@m only 1OK=9.59 U S D 1OO K=99.99 U S D fast delivery (@=O)
 	"discount.*order.*c[0o]m", -- we offer big discount on all orders[Essence of Destruction]<gòldгμns dot c0m>, your best shopping mall
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
+	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!! 
 }
 
 local fnd = string.find
