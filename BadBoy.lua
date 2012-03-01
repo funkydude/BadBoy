@@ -344,7 +344,8 @@ local instantReportList = {
 	"mount.*sale.*c[0o]m", --New material and EPIC mount[Lavaquake Legwraps][Amani Dragonhawk]for sale on <gòldгμns dot c0m>, ome select what you want and enjoy generous bonus
 	"discount.*order.*c[0o]m", -- we offer big discount on all orders[Essence of Destruction]<gòldгμns dot c0m>, your best shopping mall
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
-	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!! 
+	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
+	"ourgamecenter.*cheap.*fast", --WWW OurGameCenter C0M {diamond}{diamond} SAVE UP 30%, 10000=6.46 {diamond}{diamond} AND NEW MEMBER CAN GET 10% BONUS, GIVE YOU THE CHEAPEST & FASTEST!!! HAVE A GOOD TIME EVERYONE!!!
 }
 
 local fnd = string.find
