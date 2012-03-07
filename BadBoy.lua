@@ -249,7 +249,6 @@ local instantReportList = {
 	"okgolds.*only.*%d+.*euro", --WWW.okgolds.COM,10000G+2000G.only.15.99EURO}/2
 	"mmo4store.*%d+[kg].*good.*choice", --{square}MMO4STORE.C0M{square}14/10000G{square}Good Choice{square}
 	"^%W+.*mmoggg", -->>> MMOGGG is recruiting now!
-	"%d+.*items.*deliver.*k4gg", --10K=13.98For more items and for fast delivery,come toWWW.K4gg.C@M
 	"customer.*promotion.*cost.*gold", --Dear customer: This is kyla from promotion site : mmowin ^_^Long time no see , how is going? Been miss ya :)As the cataclysm coming and the market cost line for gold and boe item has been down a lot recently , we will send present if ya get 30k or 50k
 	--40$ for 10k gold or 45$ for  10k gold + 1 rocket  + one month  time card  .   25$ for  a  rocket .  we have  all boe items and 264 gears selled . if u r interested in .  plz whsiper me . :) ty
 	--$45=10k + one X-53 Touring Rocket, $107=30K + X-53 Touring Rocket, the promotion will be done in 10 minutes, if you like it, plz whisper me :) ty
@@ -304,8 +303,9 @@ local instantReportList = {
 	"$%d+=%d+k.*deliver.*item", --$20=10K, $100=57k,$200=115k with instant delivery,all lvl378 items,pst
 	"money.*gold.*gold2sell", --Ingame gold for real money! Real gold for Ingame gold! Ingame gold for a account key! If you're intrested, then check out: "gold2sell.org" now!
 	--w*w*w KB8G0LD c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins
-	"kb8g[o0]ld.*%d+.*deliver", --KB8GOLD C0M 7.9€->10K Hot sales and Fast delivery 
-	"k4guild.*%d+.*deliver", --w*w*w K4Guild c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins 
+	"kb8g[o0]ld.*%d+.*deliver", --KB8GOLD C0M 7.9€->10K Hot sales and Fast delivery
+	--===3W K4Guild c0m 4.5 êúró=10k + 1O% Discóünt Fàst Délìvèry==== 
+	"k4guild.*%d+.*d[éèe]+liv[éèe]+r", --w*w*w K4Guild c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins 
 	"pet.*rag.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest 
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz 
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
@@ -329,7 +329,8 @@ local instantReportList = {
 	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>. 
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
 	"g[o@òóöōô]+ld4rpg.*%d+k", --! vv w vv .Göld4RPG. c ö m Chóosë thè lêgal wëbsîte Chëapest Gôld,10K=13 USD,500K în Stôck> Dëlivëry in 7mins,--Chëap pôwer lëveling- Welcöme tö w vv w .Göld4RPG. c ö m disc?unt cöde : MEITBX *
-	"%d+k.*deliver.*kk4g", --revelry of christmas present10% code =Lucky11.5k=8.27GBP=9.53EUR=13.04USDdelivery within 5-10mins KK4g. COM
+	--10K=13.98For more items and for fast delivery,come toWWW.K4gg.C@M
+	"%d+k.*deliver.*kk?4g", --revelry of christmas present10% code =Lucky11.5k=8.27GBP=9.53EUR=13.04USDdelivery within 5-10mins KK4g. COM
 	"%d+k.*g[o@òóöōô]+ld85%.", --Chèápèst Gòld,10k=12 úsd,Dèlìvèry ìn 7 mìns,5% èxtrá fòr 15k+ òrdèr.Chèápèst wów Pòwèr Lèvèlìng --- Wèlcòmè tò w w w. Gòld85.cóm
 	"%d+k.*s[áa]+f[èe]+4g[o@òóöōô]+ld", --Grèatèst Salè ónly 10k=10ùsd, Bùy Safèst,Fastèst,Chèapèst wòw gòld fróm safè4gòld .(dèlivery in5mins)Welcóme tovvwvv,safè4gòld ,còmanytime
 	"k{.*}k{.*}4{.*}g%.c", --revelry of christmas present<circle>10% code =Lucky<circle>11.5k =7.58GBP=8.85EUR=12.11USD<circle>delivery within 5-10mins <triangle><triangle><triangle> K<cross>K<cross>4<cross>g. C<cross>O<cross>M
@@ -342,7 +343,7 @@ local instantReportList = {
 	"happyg[o@òóöōô]+lds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
 	--@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
 	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O) 
-	"w[o@òóöōô]+w4w[op@òóöōô]+w.*d[eè]+liv[eè]+r", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
+	"w[o@òóöōô]+w4w[op@òóöōô]+w.*d[éèe]+liv[éèe]+r", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
 	"gold2store.*deliver", --vv vv vv gold2store c@m only 1OK=9.59 U S D 1OO K=99.99 U S D fast delivery (@=O)
 	"mount.*sale.*c[0o]m", --New material and EPIC mount[Lavaquake Legwraps][Amani Dragonhawk]for sale on <gòldгμns dot c0m>, ome select what you want and enjoy generous bonus
 	"discount.*order.*c[0o]m", -- we offer big discount on all orders[Essence of Destruction]<gòldгμns dot c0m>, your best shopping mall
