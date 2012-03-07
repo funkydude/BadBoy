@@ -305,7 +305,7 @@ local instantReportList = {
 	--w*w*w KB8G0LD c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins
 	"kb8g[o0]ld.*%d+.*deliver", --KB8GOLD C0M 7.9€->10K Hot sales and Fast delivery
 	--===3W K4Guild c0m 4.5 êúró=10k + 1O% Discóünt Fàst Délìvèry==== 
-	"k4guild.*%d+.*d[éèe]+liv[éèe]+r", --w*w*w K4Guild c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins 
+	"k4guild.*d[éèe]+liv[éèe]+r", --w*w*w K4Guild c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins 
 	"pet.*rag.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest 
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz 
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
