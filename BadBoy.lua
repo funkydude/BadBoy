@@ -341,7 +341,8 @@ local instantReportList = {
 	--@@@@@@@@@www.happygôlds.c@m.côm@@@@www.happygôlds.c@m.côm@<o=ô>@@@@10000G.ônly6.99EURô@@@@@@Lvl 397 items are on sale
 	"happyg[o@òóöōô]+lds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
 	--@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
-	"wow4w[po]w.*deliver", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
+	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O) 
+	"w[o@òóöōô]+w4w[op@òóöōô]+w.*d[eè]+liv[eè]+r", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
 	"gold2store.*deliver", --vv vv vv gold2store c@m only 1OK=9.59 U S D 1OO K=99.99 U S D fast delivery (@=O)
 	"mount.*sale.*c[0o]m", --New material and EPIC mount[Lavaquake Legwraps][Amani Dragonhawk]for sale on <gòldгμns dot c0m>, ome select what you want and enjoy generous bonus
 	"discount.*order.*c[0o]m", -- we offer big discount on all orders[Essence of Destruction]<gòldгμns dot c0m>, your best shopping mall
