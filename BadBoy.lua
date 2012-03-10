@@ -96,17 +96,20 @@ local heavyList = {
 	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
+	--"[%do]+[kg][/\\=]%d+%.?%d*usd", --1OK=9.59 U S D
+	"%d[%do]k=%d+", --10K=13.98 --XXX
 	"%d+%.?%d*кзa%d+%.?%d*р", --14к за 21р
 }
 
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
 	"www[%.,{]",
-	"[%.,]c%-?[o0@]%-?m",
+	"[%.,]c[o0@]m",
 	"[%.,]c{circle}m",
 	"[%.,]c{rt2}m",
 	"[%.,]cqm",
 	"[%.,]net",
+	"dotc[o0@]m",
 }
 
 --These entries add +1 point, but only 1 entry will count
@@ -305,7 +308,7 @@ local instantReportList = {
 	--w*w*w KB8G0LD c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins
 	"kb8g[o0]ld.*%d+.*deliver", --KB8GOLD C0M 7.9€->10K Hot sales and Fast delivery
 	--===3W K4Guild c0m 4.5 êúró=10k + 1O% Discóünt Fàst Délìvèry====
-	"k4guild.*d[éèe]+l[iì]+v[éèe]+r", --w*w*w K4Guild c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins 
+	"k4guild.*deliver", --w*w*w K4Guild c@m 6.99Eur0=10000G+10% Discount.Delivery 5Mins 
 	"pet.*rag.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest 
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz 
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
@@ -322,35 +325,36 @@ local instantReportList = {
 	--@@@@@__www luckyg@lds c@m @nly_1oK=5.99EURO 1ooK+1oK=55.99EUR (@=o) 
 	--vv vv vv  luckyg@lds  c@m  only l0K=5.99 � 1OO K+1O K=55.99 � (@=O)
 	--vv vv vv  lùckygólds cóm  ónly  1O K=4.99 éùr    1OO K+1O K=45.99 éùr   10 mìn délìvéry (ó=O)(ù=U)
-	"l[ùu]+ckyg[o@òóöōô]+lds.*[%do]+k", --@@@@@@@ www luckygolds c@m only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@@ 
+	--{Diamond}vv~vv~vv lùckygòlds còm ònly lò K=3.49èù?> lòò K+lò K=34.99èù? 1ò mìn délìvéry (ò=O=0){Diamond} 
+	"luckyg[o@]lds.*[%do]k", --@@@@@@@ www luckygolds c@m only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@@ 
 	--www K4power c@m.Lowest Price + 10% Free G.{Code:4Power}--
 	"k4p[o0]wer.*%d+", --WWW K4POWER C0M {Code:Xmas}->>Xmas Promotions{18th Dec-26th Dec}->35% Free,0rder 50k More->X-53 Rocket Mount For Free!
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
 	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>. 
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
-	"g[o@òóöōô]+ld4rpg.*%d+k", --! vv w vv .Göld4RPG. c ö m Chóosë thè lêgal wëbsîte Chëapest Gôld,10K=13 USD,500K în Stôck> Dëlivëry in 7mins,--Chëap pôwer lëveling- Welcöme tö w vv w .Göld4RPG. c ö m disc?unt cöde : MEITBX *
+	--"g[o@òóöōô]+ld4rpg.*%d+k", --! vv w vv .Göld4RPG. c ö m Chóosë thè lêgal wëbsîte Chëapest Gôld,10K=13 USD,500K în Stôck> Dëlivëry in 7mins,--Chëap pôwer lëveling- Welcöme tö w vv w .Göld4RPG. c ö m disc?unt cöde : MEITBX *
 	--10K=13.98For more items and for fast delivery,come toWWW.K4gg.C@M
-	"%d+k.*deliver.*kk?4g", --revelry of christmas present10% code =Lucky11.5k=8.27GBP=9.53EUR=13.04USDdelivery within 5-10mins KK4g. COM
-	"%d+k.*g[o@òóöōô]+ld85%.", --Chèápèst Gòld,10k=12 úsd,Dèlìvèry ìn 7 mìns,5% èxtrá fòr 15k+ òrdèr.Chèápèst wów Pòwèr Lèvèlìng --- Wèlcòmè tò w w w. Gòld85.cóm
-	"%d+k.*s[áa]+f[èe]+4g[o@òóöōô]+ld", --Grèatèst Salè ónly 10k=10ùsd, Bùy Safèst,Fastèst,Chèapèst wòw gòld fróm safè4gòld .(dèlivery in5mins)Welcóme tovvwvv,safè4gòld ,còmanytime
-	"k{.*}k{.*}4{.*}g%.c", --revelry of christmas present<circle>10% code =Lucky<circle>11.5k =7.58GBP=8.85EUR=12.11USD<circle>delivery within 5-10mins <triangle><triangle><triangle> K<cross>K<cross>4<cross>g. C<cross>O<cross>M
+	--"%d+k.*deliver.*kk?4g", --revelry of christmas present10% code =Lucky11.5k=8.27GBP=9.53EUR=13.04USDdelivery within 5-10mins KK4g. COM
+	--"%d+k.*g[o@òóöōô]+ld85%.", --Chèápèst Gòld,10k=12 úsd,Dèlìvèry ìn 7 mìns,5% èxtrá fòr 15k+ òrdèr.Chèápèst wów Pòwèr Lèvèlìng --- Wèlcòmè tò w w w. Gòld85.cóm
+	--"%d+k.*s[áa]+f[èe]+4g[o@òóöōô]+ld", --Grèatèst Salè ónly 10k=10ùsd, Bùy Safèst,Fastèst,Chèapèst wòw gòld fróm safè4gòld .(dèlivery in5mins)Welcóme tovvwvv,safè4gòld ,còmanytime
+	--"k{.*}k{.*}4{.*}g%.c", --revelry of christmas present<circle>10% code =Lucky<circle>11.5k =7.58GBP=8.85EUR=12.11USD<circle>delivery within 5-10mins <triangle><triangle><triangle> K<cross>K<cross>4<cross>g. C<cross>O<cross>M
 	"wts.*%[.*%].*good4game", --WTS[Blazing Hippogryph][Amani Dragonhawk][Big Battle Bear]buy TCG Mounts on good4game.c{circle}m
 	--{triangle}{triangle}Chèapèst and safè Góld. 10K for $12 , with the discóunt códe:"GPS".10% èxtra góld of the órdèr 50K+. Wèlcome to <{star}w w w.mmóp.c ó m{star}>
 	--{star}Dèàr èvèryonè,w w w.mmóp.c ó m{star}Chèàp and sàfè Góld,with thè discóunt códè:"gps",10K only for $ 14. 10% èxtra góld fór thè órdèr 50K+.{triangle} 
-	"{.*}.*%.mm[o@òóöōô]+p%..*{.*}", --{moon}{moon}Dear friend,need gold ? Focus on <{star} WW W.mmop.C oM{star} > 10K only for 12USD,with the discount code:"GPS".
+	--"{.*}.*%.mm[o@òóöōô]+p%..*{.*}", --{moon}{moon}Dear friend,need gold ? Focus on <{star} WW W.mmop.C oM{star} > 10K only for 12USD,with the discount code:"GPS".
 	"wts.*%[.*%].*%[.*%].*wealso.*cheapestg", --WTS [Reins of the Crimson Deathcharger] [Mechano-Hog] [Big Battle Bear]and we also have the cheapest G
 	--@@@@@@@@@www.happygôlds.c@m.côm@@@@www.happygôlds.c@m.côm@<o=ô>@@@@10000G.ônly6.99EURô@@@@@@Lvl 397 items are on sale
-	"happyg[o@òóöōô]+lds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
+	"happygolds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
 	--@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
 	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O) 
-	"w[o@òóöōô]+w4w[op@òóöōô]+w.*d[éèe]+liv[éèe]+r", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
-	"gold2store.*deliver", --vv vv vv gold2store c@m only 1OK=9.59 U S D 1OO K=99.99 U S D fast delivery (@=O)
-	"mount.*sale.*c[0o]m", --New material and EPIC mount[Lavaquake Legwraps][Amani Dragonhawk]for sale on <gòldгμns dot c0m>, ome select what you want and enjoy generous bonus
-	"discount.*order.*c[0o]m", -- we offer big discount on all orders[Essence of Destruction]<gòldгμns dot c0m>, your best shopping mall
+	"wow4wow.*deliver", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
+	--"gold2store.*deliver", --vv vv vv gold2store c@m only 1OK=9.59 U S D 1OO K=99.99 U S D fast delivery (@=O)
+	--"mount.*sale.*c[0o]m", --New material and EPIC mount[Lavaquake Legwraps][Amani Dragonhawk]for sale on <gòldгμns dot c0m>, ome select what you want and enjoy generous bonus
+	--"discount.*order.*c[0o]m", -- we offer big discount on all orders[Essence of Destruction]<gòldгμns dot c0m>, your best shopping mall
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"ourgamecenter.*cheap.*fast", --WWW OurGameCenter C0M {diamond}{diamond} SAVE UP 30%, 10000=6.46 {diamond}{diamond} AND NEW MEMBER CAN GET 10% BONUS, GIVE YOU THE CHEAPEST & FASTEST!!! HAVE A GOOD TIME EVERYONE!!!
-	"k4g[oòóöōô]+ld.*%d+k=", --[Blue square][Blue square] www.k4góld.cóm 10K = 7éúr [Blue square][Blue square] 110K = 67éúr [Blue square][Blue square]
+	--"k4g[oòóöōô]+ld.*%d+k=", --[Blue square][Blue square] www.k4góld.cóm 10K = 7éúr [Blue square][Blue square] 110K = 67éúr [Blue square][Blue square]
 }
 
 local fnd = string.find
@@ -437,11 +441,13 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = gsub(msg, " ", "") --Remove spaces
-	--They like to interchange Russian and English letters to avoid detection
-	msg = gsub(msg, "а", "a") --\208\176 > \97
+	--They like to replace English letters with Russian/etc letters to avoid detection
+	msg = gsub(msg, "[аà]+", "a") --\208\176,etc > \97
 	msg = gsub(msg, "с", "c") --\209\129 > \99
-	msg = gsub(msg, "е", "e") --\208\181 > \101
-	msg = gsub(msg, "о", "o") --\208\190 > \111
+	msg = gsub(msg, "[еéèê]+", "e") --\208\181,etc > \101
+	msg = gsub(msg, "ì", "i")
+	msg = gsub(msg, "[оòóöōô]+", "o") --\208\190,etc > \111
+	msg = gsub(msg, "[úü]+", "u")
 	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
