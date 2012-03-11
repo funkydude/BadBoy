@@ -442,12 +442,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = gsub(msg, " ", "") --Remove spaces
 	--They like to replace English letters with Russian/etc letters to avoid detection
-	msg = gsub(msg, "[аà]+", "a") --\208\176,etc > \97
-	msg = gsub(msg, "с", "c") --\209\129 > \99
-	msg = gsub(msg, "[еéèê]+", "e") --\208\181,etc > \101
-	msg = gsub(msg, "ì", "i")
-	msg = gsub(msg, "[оòóöōô]+", "o") --\208\190,etc > \111
-	msg = gsub(msg, "[úü]+", "u")
+	msg = gsub(msg, "[аàáäâã]+", "a") --\208\176,etc > \97
+	msg = gsub(msg, "[сç]+", "c") --\209\129,etc > \99
+	msg = gsub(msg, "[еèéëê]+", "e") --\208\181,etc > \101
+	msg = gsub(msg, "[ìíïî]+", "i")
+	msg = gsub(msg, "[оòóöōôõ]+", "o") --\208\190,etc > \111
+	msg = gsub(msg, "[ùúüû]+", "u")
 	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
