@@ -61,7 +61,7 @@ local commonList = {
 	--Spanish
 	"barato", --cheap
 	"gratuito", --free
-	"r[\195\161a]+pido", --fast
+	"rapido", --fast
 	"seguro", --safe/secure
 	"servicio", --service
 
@@ -93,11 +93,10 @@ local heavyList = {
 	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+",
 	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+",
 	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu",
+	"%d+o?[kg][/\\=]%d+%.%d+", --1OK=9.59
 	"%d+%.?%d*eur?o?s?[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
-	--"[%do]+[kg][/\\=]%d+%.?%d*usd", --1OK=9.59 U S D
-	"%d[%do]k=%d+", --10K=13.98 --XXX
 	"%d+%.?%d*кзa%d+%.?%d*р", --14к за 21р
 }
 
@@ -275,9 +274,9 @@ local instantReportList = {
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 	"meingd[%.,]de.*eur.*gold", --[MeinGD.de] - 0,7 Euro - 1000 Gold - [MeinGD.de]
+	--The Cheapest,10K=15,{moon} 'www' OurGameCenter 'com' {moon}Fast Delivery
+	--surprise!!11K~15.99 {square} 'www' OurGameCenter 'com' {square}
 	"{.*}.*ourgamecenter.*{.*}", --Off 30% {square} 'www' OurGameCenter 'com' {square}100K=142$ !!
-	--"cheap.*ourgamecenter.*deliver", --The Cheapest,10K=15,{moon} 'www' OurGameCenter 'com' {moon}Fast Delivery
-	--"surprise.*%d+k.*ourgamecenter", --surprise!!11K~15.99 {square} 'www' OurGameCenter 'com' {square}
 	--Sorry for disturb{diamond}(cyrillic sha sha sha) OurGameCenter (cyrillic c o m){diamond}10K=15,have stock.
 	"ourgamecenter.*%d+k.*stock", --OurGameCenter com 10K~14K,full stock,fulfill 10 Mins.
 	"ourgamecenter.*deliver", --www OurGameCenter com not only ensure prompt delivery but that your order remains secure every timewe guarantee it! 
@@ -321,7 +320,6 @@ local instantReportList = {
 	"wts.*%[.*%].*$%d+.*%[.*%].*$%d+", --wts[Blauvelt's Family Crest]$34.00[Gilnean Ring of Ruination]$34.99[Signet of High Arcanist Savor]$34.90pst
 	--@@@@@@ only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@www luckygolds c@m @@@@@@
 	"%d+k.*luckygolds", --@@@@@@@@@ www  luckygolds  c@m   only 10K=6.99EURO 100K+10K=65.99EUROwww  luckygolds  c@m @@@@@@@@@
-	--@@@@@@ (www luckyg@lds c@m) @nl y_10K=5.99EUR@_100K+10K=55.99EUR(@=O)
 	--@@@@@__www luckyg@lds c@m @nly_1oK=5.99EURO 1ooK+1oK=55.99EUR (@=o) 
 	--vv vv vv  luckyg@lds  c@m  only l0K=5.99 � 1OO K+1O K=55.99 � (@=O)
 	--vv vv vv  lùckygólds cóm  ónly  1O K=4.99 éùr    1OO K+1O K=45.99 éùr   10 mìn délìvéry (ó=O)(ù=U)
@@ -332,29 +330,16 @@ local instantReportList = {
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
 	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>. 
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
-	--"g[o@òóöōô]+ld4rpg.*%d+k", --! vv w vv .Göld4RPG. c ö m Chóosë thè lêgal wëbsîte Chëapest Gôld,10K=13 USD,500K în Stôck> Dëlivëry in 7mins,--Chëap pôwer lëveling- Welcöme tö w vv w .Göld4RPG. c ö m disc?unt cöde : MEITBX *
-	--10K=13.98For more items and for fast delivery,come toWWW.K4gg.C@M
-	--"%d+k.*deliver.*kk?4g", --revelry of christmas present10% code =Lucky11.5k=8.27GBP=9.53EUR=13.04USDdelivery within 5-10mins KK4g. COM
-	--"%d+k.*g[o@òóöōô]+ld85%.", --Chèápèst Gòld,10k=12 úsd,Dèlìvèry ìn 7 mìns,5% èxtrá fòr 15k+ òrdèr.Chèápèst wów Pòwèr Lèvèlìng --- Wèlcòmè tò w w w. Gòld85.cóm
-	--"%d+k.*s[áa]+f[èe]+4g[o@òóöōô]+ld", --Grèatèst Salè ónly 10k=10ùsd, Bùy Safèst,Fastèst,Chèapèst wòw gòld fróm safè4gòld .(dèlivery in5mins)Welcóme tovvwvv,safè4gòld ,còmanytime
-	--"k{.*}k{.*}4{.*}g%.c", --revelry of christmas present<circle>10% code =Lucky<circle>11.5k =7.58GBP=8.85EUR=12.11USD<circle>delivery within 5-10mins <triangle><triangle><triangle> K<cross>K<cross>4<cross>g. C<cross>O<cross>M
 	"wts.*%[.*%].*good4game", --WTS[Blazing Hippogryph][Amani Dragonhawk][Big Battle Bear]buy TCG Mounts on good4game.c{circle}m
-	--{triangle}{triangle}Chèapèst and safè Góld. 10K for $12 , with the discóunt códe:"GPS".10% èxtra góld of the órdèr 50K+. Wèlcome to <{star}w w w.mmóp.c ó m{star}>
-	--{star}Dèàr èvèryonè,w w w.mmóp.c ó m{star}Chèàp and sàfè Góld,with thè discóunt códè:"gps",10K only for $ 14. 10% èxtra góld fór thè órdèr 50K+.{triangle} 
-	--"{.*}.*%.mm[o@òóöōô]+p%..*{.*}", --{moon}{moon}Dear friend,need gold ? Focus on <{star} WW W.mmop.C oM{star} > 10K only for 12USD,with the discount code:"GPS".
 	"wts.*%[.*%].*%[.*%].*wealso.*cheapestg", --WTS [Reins of the Crimson Deathcharger] [Mechano-Hog] [Big Battle Bear]and we also have the cheapest G
 	--@@@@@@@@@www.happygôlds.c@m.côm@@@@www.happygôlds.c@m.côm@<o=ô>@@@@10000G.ônly6.99EURô@@@@@@Lvl 397 items are on sale
 	"happygolds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
 	--@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
 	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O) 
-	"wow4wow.*deliver", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
-	--"gold2store.*deliver", --vv vv vv gold2store c@m only 1OK=9.59 U S D 1OO K=99.99 U S D fast delivery (@=O)
-	--"mount.*sale.*c[0o]m", --New material and EPIC mount[Lavaquake Legwraps][Amani Dragonhawk]for sale on <gòldгμns dot c0m>, ome select what you want and enjoy generous bonus
-	--"discount.*order.*c[0o]m", -- we offer big discount on all orders[Essence of Destruction]<gòldгμns dot c0m>, your best shopping mall
+	"wow4w[op]w.*deliver", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"ourgamecenter.*cheap.*fast", --WWW OurGameCenter C0M {diamond}{diamond} SAVE UP 30%, 10000=6.46 {diamond}{diamond} AND NEW MEMBER CAN GET 10% BONUS, GIVE YOU THE CHEAPEST & FASTEST!!! HAVE A GOOD TIME EVERYONE!!!
-	--"k4g[oòóöōô]+ld.*%d+k=", --[Blue square][Blue square] www.k4góld.cóm 10K = 7éúr [Blue square][Blue square] 110K = 67éúr [Blue square][Blue square]
 }
 
 local fnd = string.find
