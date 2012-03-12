@@ -1,7 +1,16 @@
 ## Interface: 40300
-## Version: v6.999
+## Version: v7.000
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
+## Notes-deDE: A light, automatic spam blocker & reporter.
+## Notes-ruRU: A light, automatic spam blocker & reporter.
+## Notes-zhCN: A light, automatic spam blocker & reporter.
+## Notes-zhTW: A light, automatic spam blocker & reporter.
+## Notes-koKR: A light, automatic spam blocker & reporter.
+## Notes-frFR: A light, automatic spam blocker & reporter.
+## Notes-esES: A light, automatic spam blocker & reporter.
+## Notes-esMX: A light, automatic spam blocker & reporter.
+## Notes-ptBR: A light, automatic spam blocker & reporter.
 ## Author: Funkydude
 ## SavedVariables: BADBOY_POPUP, BADBOY_SILENT
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)
