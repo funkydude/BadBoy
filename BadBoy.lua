@@ -395,6 +395,14 @@ end
 
 --[[ Chat Scanning ]]--
 local gsub, orig, prevReportTime, prevLineId, result, prevMsg, prevPlayer = gsub, COMPLAINT_ADDED, 0, 0, nil, nil, nil
+local repTbl = {
+	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", --\208\176,etc > \97
+	["с"]="c", ["ç"]="c", --\209\129,etc > \99
+	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ê"]="e", --\208\181,etc > \101
+	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i",
+	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", --\208\190,etc > \111
+	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u",
+}
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -422,13 +430,14 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = gsub(msg, " ", "") --Remove spaces
-	--They like to replace English letters with Russian/etc letters to avoid detection
-	msg = gsub(msg, "[аàáäâãå]+", "a") --\208\176,etc > \97
-	msg = gsub(msg, "[сç]+", "c") --\209\129,etc > \99
-	msg = gsub(msg, "[еèéëê]+", "e") --\208\181,etc > \101
-	msg = gsub(msg, "[ìíïî]+", "i")
-	msg = gsub(msg, "[оòóöōôõ]+", "o") --\208\190,etc > \111
-	msg = gsub(msg, "[ùúüû]+", "u")
+	--They like to replace English letters with UTF-8 'equivalents' to avoid detection
+	if fnd(msg, "[аàáäâãåсçеèéëêìíïîоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has strings that need replaced
+		--This is actually no where near as resource intensive as I originally thought, it barely uses any CPU
+		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
+			msg = gsub(msg, k, v)
+		end
+		if myDebug then print("Running replacements") end
+	end
 	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
