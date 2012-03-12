@@ -338,6 +338,16 @@ local instantReportList = {
 	"ourgamecenter.*cheap.*fast", --WWW OurGameCenter C0M {diamond}{diamond} SAVE UP 30%, 10000=6.46 {diamond}{diamond} AND NEW MEMBER CAN GET 10% BONUS, GIVE YOU THE CHEAPEST & FASTEST!!! HAVE A GOOD TIME EVERYONE!!!
 }
 
+--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
+local repTbl = {
+	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
+	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
+	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ê"]="e", --First letter is Russian "\208\181". Convert > \101
+	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", --Convert > \105
+	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", --First letter is Russian "\208\190". Convert > \111
+	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
+}
+
 local fnd = string.find
 local IsSpam = function(msg)
 	for i=1, #instantReportList do
@@ -395,14 +405,6 @@ end
 
 --[[ Chat Scanning ]]--
 local gsub, orig, prevReportTime, prevLineId, result, prevMsg, prevPlayer = gsub, COMPLAINT_ADDED, 0, 0, nil, nil, nil
-local repTbl = {
-	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", --\208\176,etc > \97
-	["с"]="c", ["ç"]="c", --\209\129,etc > \99
-	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ê"]="e", --\208\181,etc > \101
-	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i",
-	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", --\208\190,etc > \111
-	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u",
-}
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -430,7 +432,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = gsub(msg, " ", "") --Remove spaces
-	--They like to replace English letters with UTF-8 'equivalents' to avoid detection
+	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if fnd(msg, "[аàáäâãåсçеèéëêìíïîоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has strings that need replaced
 		--This is actually no where near as resource intensive as I originally thought, it barely uses any CPU
 		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
