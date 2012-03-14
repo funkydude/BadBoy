@@ -94,7 +94,7 @@ local heavyList = {
 	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+",
 	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu",
 	"%d+o?[kg][/\\=]%d+%.%d+", --1OK=9.59
-	"%d+%.?%d*eur?[o0]?s?[/\\=]%d+%.?%d*[kg]",
+	"%d+%.?%d*eur?[o0]?s?[/\\=]%d+%.?[%do]*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
 	"%d+%.?%d*кзa%d+%.?%d*р", --14к за 21р
@@ -433,8 +433,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = gsub(msg, " ", "") --Remove spaces
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-	if fnd(msg, "[аàáäâãåсçеèéëêìíïîоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has strings that need replaced
-		--This is actually no where near as resource intensive as I originally thought, it barely uses any CPU
+	if fnd(msg, "[аàáäâãåсçеèéëêìíïîоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
+		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
 		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
 			msg = gsub(msg, k, v)
 		end
