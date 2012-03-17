@@ -10,7 +10,7 @@
 ## Notes-frFR: A light, automatic spam blocker & reporter.
 ## Notes-esES: Ligero bloqueador y reportador de spam automático.
 ## Notes-esMX: A light, automatic spam blocker & reporter.
-## Notes-ptBR: A light, automatic spam blocker & reporter.
+## Notes-ptBR: Um leve bloqueador automático de spam e reportador.
 ## Author: Funkydude
 ## SavedVariables: BADBOY_POPUP, BADBOY_SILENT
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)

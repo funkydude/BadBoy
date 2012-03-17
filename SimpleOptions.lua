@@ -34,8 +34,8 @@ do
 		locNoReportMsg = "'%s' 메시지 숨기기"
 		locManualReport = "스팸 자동신고 중지 (확인창을 띄움)"
 	elseif L == "ptBR" then
-		--locNoReportMsg = "Hide '%s' message"
-		--locManualReport = "Disable Automatic Spam Report (Show popup)"
+		locNoReportMsg = "Esconder mensagem: '%s'"
+		locManualReport = "Desativar Relatório Automático de Spam (Mostrar popup)"
 	end
 
 	--[[ Main Panel ]]--
