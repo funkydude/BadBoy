@@ -345,8 +345,9 @@ local instantReportList = {
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"ourgamecenter.*cheap.*fast", --WWW OurGameCenter C0M {diamond}{diamond} SAVE UP 30%, 10000=6.46 {diamond}{diamond} AND NEW MEMBER CAN GET 10% BONUS, GIVE YOU THE CHEAPEST & FASTEST!!! HAVE A GOOD TIME EVERYONE!!!
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
-	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y 
-	"l[`%.]?u[`%.]?c[`%.]?k[`%.]?y[`%.]?g[`%.]?o[`%.]?l[`%.]?d[`%.]?s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --"l`u`c`k`y`g`o`l`d`s" . "c`o`m" 3.99 "Eu?o"=1O K 1O min Delivery
+	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
+	--.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
+	"[hl][`%.]?[au][`%.]?[pc][`%.]?[pk][`%.]?y[`%.]?g[`%.]?o[`%.]?l[`%.]?d[`%.]?s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --"l`u`c`k`y`g`o`l`d`s" . "c`o`m" 3.99 "Eu?o"=1O K 1O min Delivery
 	"w[`%.]?o[`%.]?w[`%.]?4[`%.]?w[`%.]?o[`%.]?w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
 }
 
