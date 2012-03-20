@@ -205,6 +205,7 @@ local instantReportList = {
 	--WTS RUNESCAPE GOLD !~!~!~ PST
 	--WTB RUNESCAPE GOLD WITH WOW GOLD PST
 	"wt[bs]runescrapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
+	"exchangingrsgold", --Exchanging RS gold for WoW gold. I have 400m PST
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
