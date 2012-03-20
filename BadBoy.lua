@@ -93,6 +93,7 @@ local heavyList = {
 	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+",
 	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+",
 	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu",
+	"%d+%.?%d*[kg]%.?only%d+[%.,]?%d*eu",
 	"%d+o?[kg][/\\=]%d+%.%d+", --1OK=9.59
 	"%d+%.?%d*eur?[o0]?s?[/\\=]%d+%.?[%do]*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
@@ -102,12 +103,11 @@ local heavyList = {
 
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
-	"www[%.,{]",
-	"[%.,]c[o0@]m",
-	"[%.,]c{circle}m",
-	"[%.,]c{rt2}m",
-	"[%.,]cqm",
-	"[%.,]net",
+	"www[%.,{●]+",
+	"[%.,●]+c[o0@]m",
+	"[%.,●]+c{circle}m",
+	"[%.,●]+c{rt2}m",
+	"[%.,●]+net",
 	"dot%)?c[o0@]m",
 }
 
@@ -358,6 +358,7 @@ local repTbl = {
 	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
 	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ê"]="e", --First letter is Russian "\208\181". Convert > \101
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", --Convert > \105
+	["Μ"]="m", --First letter is capital Greek μ "\206\156". Convert > \109
 	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", --First letter is Russian "\208\190". Convert > \111
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 }
@@ -447,7 +448,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	msg = (msg):lower() --Lower all text, remove capitals
 	msg = gsub(msg, " ", "") --Remove spaces
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-	if fnd(msg, "[аàáäâãåсçеèéëêìíïîоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
+	if fnd(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
 		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
 		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
 			msg = gsub(msg, k, v)
