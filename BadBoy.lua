@@ -201,7 +201,8 @@ local instantReportList = {
 	"roll.*%d+.*roll.*%d+.*bet", --Roll 63+ x2 , Roll 100 x3, Roll 1 x4 NO MAX BETS
 
 	--[[  Runescape Trading  ]]--
-	"wt[bs]rsgoldtradingwowgold", --WTB rs gold trading wow gold PST
+	--WTB RS gold paying WoW GOLD
+	"wt[bs]rsgold.*wowgold", --WTB rs gold trading wow gold PST
 	--WTS RUNESCAPE GOLD !~!~!~ PST
 	--WTB RUNESCAPE GOLD WITH WOW GOLD PST
 	"wt[bs]runescrapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
