@@ -51,6 +51,8 @@ local commonList = {
 
 	--French
 	"livraison", --delivery
+	"prix", --price
+	"vendons", --sell
 
 	--German
 	"billigster", --cheapest
@@ -103,7 +105,7 @@ local heavyList = {
 
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
-	"www[%.,{●]+",
+	"www[%.,●]+",
 	"[%.,●]+c[o0@]m",
 	"[%.,●]+c{circle}m",
 	"[%.,●]+c{rt2}m",
@@ -207,6 +209,7 @@ local instantReportList = {
 	--WTB RUNESCAPE GOLD WITH WOW GOLD PST
 	"wt[bs]runescrapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
 	"exchangingrsgold", --Exchanging RS gold for WoW gold. I have 400m PST
+	"exchangingwowgoldforrunescapegold", --Exchanging WoW gold for Runescape gold pst me better price for higher amount.
 	"buying?runescapeg", --buyin runescape g
 
 	--[[  Russian  ]]--
@@ -352,6 +355,7 @@ local instantReportList = {
 	--.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
 	"[hl][`%.]?[au][`%.]?[pc][`%.]?[pk][`%.]?y[`%.]?g[`%.]?o[`%.]?l[`%.]?d[`%.]?s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --"l`u`c`k`y`g`o`l`d`s" . "c`o`m" 3.99 "Eu?o"=1O K 1O min Delivery
 	"w[`%.]?o[`%.]?w[`%.]?4[`%.]?w[`%.]?o[`%.]?w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
+	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
