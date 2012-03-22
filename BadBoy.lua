@@ -106,7 +106,7 @@ local heavyList = {
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
 	"www[%.,●]+",
-	"[%.,●]+c[o0@]m",
+	"[%.,●]+c%.?[o0@]%.?m",
 	"[%.,●]+c{circle}m",
 	"[%.,●]+c{rt2}m",
 	"[%.,●]+net",
@@ -355,6 +355,8 @@ local instantReportList = {
 	--.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
 	"[hl][`%.]?[au][`%.]?[pc][`%.]?[pk][`%.]?y[`%.]?g[`%.]?o[`%.]?l[`%.]?d[`%.]?s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --"l`u`c`k`y`g`o`l`d`s" . "c`o`m" 3.99 "Eu?o"=1O K 1O min Delivery
 	"w[`%.]?o[`%.]?w[`%.]?4[`%.]?w[`%.]?o[`%.]?w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
+	--"k[`%.]?4[`%.]?g[`%.]?u[`%.]?i[`%.]?l[`%.]?d.*deliver", --3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
+	"g{.*}o{.*}l{.*}d{.*}s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --{diamond}L{diamond}u{diamond}c{diamond}k{diamond}y{diamond}g{diamond}o{diamond}l{diamond}d{diamond}s . c{diamond}o{diamond}M 3.99 =l0 K  10 M.i.n D.e.l.i.v.e.r.y94891840
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 }
 
