@@ -7,7 +7,7 @@
 ## Notes-zhCN: A light, automatic spam blocker & reporter.
 ## Notes-zhTW: A light, automatic spam blocker & reporter.
 ## Notes-koKR: A light, automatic spam blocker & reporter.
-## Notes-frFR: A light, automatic spam blocker & reporter.
+## Notes-frFR: Un simple anti-spam & signalement des abus.
 ## Notes-esES: Ligero bloqueador y reportador de spam automático.
 ## Notes-esMX: A light, automatic spam blocker & reporter.
 ## Notes-ptBR: Um leve bloqueador automático de spam e reportador.
