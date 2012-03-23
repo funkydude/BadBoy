@@ -357,6 +357,7 @@ local instantReportList = {
 	"w[`%.]?o[`%.]?w[`%.]?4[`%.]?w[`%.]?o[`%.]?w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
 	--"k[`%.]?4[`%.]?g[`%.]?u[`%.]?i[`%.]?l[`%.]?d.*deliver", --3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"g{.*}o{.*}l{.*}d{.*}s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --{diamond}L{diamond}u{diamond}c{diamond}k{diamond}y{diamond}g{diamond}o{diamond}l{diamond}d{diamond}s . c{diamond}o{diamond}M 3.99 =l0 K  10 M.i.n D.e.l.i.v.e.r.y94891840
+	"w{.*}o{.*}w{.*}4{.*}w{.*}o{.*}w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --{diamond}w{diamond}o{diamond}w{diamond}4{diamond}w{diamond}o{diamond}w . c{diamond}o{diamond}M 3.99 =l0 K 10 M.i.n D.e.l.i.v.e.r.y76337397
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!! 
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 }
