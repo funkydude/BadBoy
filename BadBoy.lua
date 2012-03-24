@@ -207,7 +207,7 @@ local instantReportList = {
 	"wt[bs]rsgold.*wowgold", --WTB rs gold trading wow gold PST
 	--WTS RUNESCAPE GOLD !~!~!~ PST
 	--WTB RUNESCAPE GOLD WITH WOW GOLD PST
-	"wt[bs]runescrapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
+	"wt[bs]runescapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
 	"exchangingrsgold", --Exchanging RS gold for WoW gold. I have 400m PST
 	"exchangingwowgoldforrunescapegold", --Exchanging WoW gold for Runescape gold pst me better price for higher amount.
 	"buying?runescapeg", --buyin runescape g
@@ -354,7 +354,7 @@ local instantReportList = {
 	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
 	--.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
 	"[hl][`%.]?[au][`%.]?[pc][`%.]?[pk][`%.]?y[`%.]?g[`%.]?o[`%.]?l[`%.]?d[`%.]?s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --"l`u`c`k`y`g`o`l`d`s" . "c`o`m" 3.99 "Eu?o"=1O K 1O min Delivery
-	"w[`%.]?o[`%.]?w[`%.]?4[`%.]?w[`%.]?o[`%.]?w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
+	"w[`%.]?o[`%.]?w[`%.]?4[`%.]?w[`%.]?o[`%.]?w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
 	--"k[`%.]?4[`%.]?g[`%.]?u[`%.]?i[`%.]?l[`%.]?d.*deliver", --3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"g{.*}o{.*}l{.*}d{.*}s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --{diamond}L{diamond}u{diamond}c{diamond}k{diamond}y{diamond}g{diamond}o{diamond}l{diamond}d{diamond}s . c{diamond}o{diamond}M 3.99 =l0 K  10 M.i.n D.e.l.i.v.e.r.y94891840
 	"w{.*}o{.*}w{.*}4{.*}w{.*}o{.*}w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --{diamond}w{diamond}o{diamond}w{diamond}4{diamond}w{diamond}o{diamond}w . c{diamond}o{diamond}M 3.99 =l0 K 10 M.i.n D.e.l.i.v.e.r.y76337397
