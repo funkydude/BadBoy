@@ -115,7 +115,8 @@ local heavyRestrictedList = {
 
 --These entries add +1 point, but only 1 entry will count
 local restrictedIcons = {
-	"{rt%d}",
+	"{%l%l%d}",
+	"{цр%d}",
 	"{star}",
 	"{circle}",
 	"{diamond}",
@@ -124,7 +125,7 @@ local restrictedIcons = {
 	"{square}",
 	"{cross}",
 	"{x}",
-	"{цр%d}", --Russian
+	"{skull}",
 }
 
 --These entries add +1 point to the phishing count
@@ -468,7 +469,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 				icon = 1
 			end
 		end
-		if myDebug then print("Removing icons, adding 1 point.") end
+		if myDebug and icon == 1 then print("Removing icons, adding 1 point.") end
 	end
 	--End icon removal
 
