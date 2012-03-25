@@ -73,6 +73,7 @@ local commonList = {
 
 	--Russian
 	"з[o0]л[o0]т[ao0]", --gold
+	"гoлд", --gold
 	"дocтaвкa", --delivery
 	"cкидкa", --discount [russian]
 	"oплaт", --payment [russian]
@@ -100,7 +101,7 @@ local heavyList = {
 	"%d+%.?%d*eur?[o0]?s?[/\\=]%d+%.?[%do]*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
-	"%d+%.?%d*кзa%d+%.?%d*р", --14к за 21р
+	"%d+%.?%d*[кр]+зa%d+%.?%d*[рк]+", --14к за 21р / 17р за 1к
 }
 
 --These entries add +2 points, but only 1 entry will count
@@ -425,6 +426,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
+		if not lineId then print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data I need to work properly :(") return end
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not CanComplainChat(lineId) or UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't scan ourself/friends/GMs/guildies or raid/party members
