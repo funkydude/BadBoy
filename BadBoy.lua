@@ -123,6 +123,7 @@ local restrictedIcons = {
 	"{moon}",
 	"{square}",
 	"{cross}",
+	"{x}",
 	"{цр%d}", --Russian
 }
 
@@ -345,19 +346,15 @@ local instantReportList = {
 	--@@@@@@@@@www.happygôlds.c@m.côm@@@@www.happygôlds.c@m.côm@<o=ô>@@@@10000G.ônly6.99EURô@@@@@@Lvl 397 items are on sale
 	"happygolds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
 	--@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
-	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O) 
-	"wow4w[op]w.*deliver", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
+	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O)
+	--................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e
+	"w%.?o%.?w%.?4%.?w%.?o%.?w.*d%.?e%.?l%.?i%.?v%.?e", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"ourgamecenter.*cheap.*fast", --WWW OurGameCenter C0M {diamond}{diamond} SAVE UP 30%, 10000=6.46 {diamond}{diamond} AND NEW MEMBER CAN GET 10% BONUS, GIVE YOU THE CHEAPEST & FASTEST!!! HAVE A GOOD TIME EVERYONE!!!
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
 	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
-	--.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
-	"[hl][`%.]?[au][`%.]?[pc][`%.]?[pk][`%.]?y[`%.]?g[`%.]?o[`%.]?l[`%.]?d[`%.]?s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --"l`u`c`k`y`g`o`l`d`s" . "c`o`m" 3.99 "Eu?o"=1O K 1O min Delivery
-	"w[`%.]?o[`%.]?w[`%.]?4[`%.]?w[`%.]?o[`%.]?w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
-	--"k[`%.]?4[`%.]?g[`%.]?u[`%.]?i[`%.]?l[`%.]?d.*deliver", --3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
-	"g{.*}o{.*}l{.*}d{.*}s.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --{diamond}L{diamond}u{diamond}c{diamond}k{diamond}y{diamond}g{diamond}o{diamond}l{diamond}d{diamond}s . c{diamond}o{diamond}M 3.99 =l0 K  10 M.i.n D.e.l.i.v.e.r.y94891840
-	"w{.*}o{.*}w{.*}4{.*}w{.*}o{.*}w.*d[`%.]?e[`%.]?l[`%.]?i[`%.]?v[`%.]?e[`%.]?r", --{diamond}w{diamond}o{diamond}w{diamond}4{diamond}w{diamond}o{diamond}w . c{diamond}o{diamond}M 3.99 =l0 K 10 M.i.n D.e.l.i.v.e.r.y76337397
+	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?l%.?i%.?v%.?e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!! 
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 }
@@ -374,7 +371,7 @@ local repTbl = {
 }
 
 local fnd = string.find
-local IsSpam = function(msg)
+local IsSpam = function(msg, num)
 	for i=1, #instantReportList do
 		if fnd(msg, instantReportList[i]) then
 			if myDebug then print("Instant", instantReportList[i]) end
@@ -382,7 +379,7 @@ local IsSpam = function(msg)
 		end
 	end
 
-	local points, phishPoints = 0, 0
+	local points, phishPoints = num, num
 	for i=1, #whiteList do
 		if fnd(msg, whiteList[i]) then
 			points = points - 2
@@ -408,13 +405,6 @@ local IsSpam = function(msg)
 			phishPoints = phishPoints + 1
 			if myDebug then print(heavyRestrictedList[i], points, phishPoints) end
 			break --Only 1 trigger can get points in the strict section
-		end
-	end
-	for i=1, #restrictedIcons do
-		if fnd(msg, restrictedIcons[i]) then
-			points = points + 1
-			if myDebug then print(restrictedIcons[i], points, phishPoints) end
-			break --Only 1 trigger can get points in the icons section
 		end
 	end
 	for i=1, #phishingList do
@@ -456,7 +446,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, " ", "") --Remove spaces
+	msg = gsub(msg, "[\"` ]", "") --Remove spaces, etc
+
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if fnd(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
 		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
@@ -465,11 +456,28 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		end
 		if myDebug then print("Running replacements") end
 	end
+	--End string replacements
+
+	--They like to use raid icons to avoid detection
+	local icon = 0
+	if fnd(msg, "{") then --Only run the icon removal code if the chat line has raid icons that need removed
+		local found = 0
+		for i=1, #restrictedIcons do
+			msg, found = gsub(msg, restrictedIcons[i], "")
+			if found > 0 then
+				icon = 1
+			end
+		end
+		if myDebug then print("Removing icons, adding 1 point.") end
+	end
+	--End icon removal
+
 	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
 	if msg == prevMsg and player == prevPlayer then result = true return true end
 	prevMsg = msg prevPlayer = player
 	--end check
-	if IsSpam(msg) then
+
+	if IsSpam(msg, icon) then
 		if BadBoyLogger and not myDebug then BadBoyLogger("BadBoy", event, player, debug) end
 		local time = GetTime()
 		if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
