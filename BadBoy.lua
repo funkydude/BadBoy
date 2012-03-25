@@ -89,6 +89,7 @@ local commonList = {
 
 --These entries add +2 points
 local heavyList = {
+	"ourgamecenterc[o0]m",
 	"[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]+%d+%.?%d*[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]",
@@ -107,11 +108,9 @@ local heavyList = {
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
 	"www[%.,●]+",
-	"[%.,●]+c%.?[o0@]%.?m",
-	"[%.,●]+c{circle}m",
-	"[%.,●]+c{rt2}m",
+	"[%.,●]+c[o0@]?m",
 	"[%.,●]+net",
-	"dot%)?c[o0@]m",
+	"dotc[o0@]m",
 }
 
 --These entries add +1 point, but only 1 entry will count
@@ -217,13 +216,13 @@ local instantReportList = {
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
-	"{.*}.*oвoщeвик%.рф.*{.*}", --[skull]Овощевик.рф[skull] продолжает, на зло врагaм, радовaть вас свежими [circle]oвoщaми! Бл 450. oператoры девyшки ждyт вaс!
+	"oвoщeвик%.рф.*cвeжими", --[skull]Овощевик.рф[skull] продолжает, на зло врагaм, радовaть вас свежими [circle]oвoщaми! Бл 450. oператoры девyшки ждyт вaс!
 	-- [[MMOSHOP.RU]] [circle] ot23r] real price [WM BL:270] [ICQ:192625006 Skype:MMOSHOP.RU, chat on the site] [Webmoney,Yandex,other]
 	"mmoshop%.ru.*цeнa.*skype", -- [ [MMOSHOP.RU]] [circle] от23р] реальная цена [WM BL:270] [ICQ:192625006 Skype:MMOSHOP.RU, Чат на сайте] [Вебмани,Яндекс,другие]
 	--[square] [RPGdealer.ru] [square] gives you quick access to wealth. Always on top!
-	--[square] [RPGdealer.ru] [square] предоставит Вам быстрый доступ к богатству. Всегда на высоте!
+	"rpgdealer%.ru.*бoгaтcтву", --[square] [RPGdealer.ru] [square] предоставит Вам быстрый доступ к богатству. Всегда на высоте!
 	--GOLD WOW + SATELLITE PRESENT EACH! Lotteries 2 times a month of valuable prizes [circle] Site : [RPGdealer.ru] [circle] ICQ: 485552474. BL 360 Info on the site.
-	"rpgdealer%.ru.*{.*}", --ЗОЛОТО WOW + СПУТНИК В ПОДАРОК КАЖДОМУ! Розыгрыши 2 раза в мес ценных призов [circle] Сайт: [RPGdealer.ru] [circle] ICQ: 485552474. BL 360 Инфа на сайте.
+	"з[o0]л[o0]т[ao0].*rpgdealer%.ru", --ЗОЛОТО WOW + СПУТНИК В ПОДАРОК КАЖДОМУ! Розыгрыши 2 раза в мес ценных призов [circle] Сайт: [RPGdealer.ru] [circle] ICQ: 485552474. BL 360 Инфа на сайте.
 	--Buy MERRY COINS on the funny-money.rf Funny price:)
 	--Купи ВЕСЕЛЫЕ МОНЕТКИ на фани-мани.рф Смешные цены:)
 	--Buy GOLD at [circle]funny-money.rf[circle] Price Calculator on the site.
@@ -274,30 +273,17 @@ local instantReportList = {
 	--WTS [X-53 Touring Rocket], the only 2seats flying mount, PST
 	"wts.*touringrocket.*mount.*pst", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
 	"wts.*touringrocket.*%d+k", --WTS[Celestial Steed],[X-53 Touring Rocket],Race,Xfer 15K,TimeCard 6K,[Cenarion Hatchling]*Rag*KT*XT*Moonk*Panda 5K
-	"{.*}.*mm4ss.*{.*}", --{triangle}www.mm4ss.com{triangle} --multi
 	"promotion.*serve.*%d+k", --Special promotion in this serve now, 21$ for 10k
 	"pkpkg.*gear.*pet", --WWW.PkPkg.C{circle}M more gears,mount,pet and items on
 	"euro.*gold.*safer.*trade", --Only 1.66 Euros per 1000 gold, More safer trade model.
 	--WWW.PVPBank.C{circle}MCODE=itempvp(20% price off)
 	"www[%.,]pvpbank[%.,]c.*%d+", --Wir haben mehr Ausr?stungen, Mounts und Items, die Sie mochten. Professionelles Team fuer 300 Personen sind 24 Stunde fuer Sie da.Wenn Sie Fragen haben,wenden Sie an uns bitteWWW.PVPBank.C{circle}M7 Tage 24 Uhr Service.
-	"^%W+mm[0o]%[?yy[%.,]c[0o]m%W+$", --May 10
-	"^%W+diymm[0o]game[%.,]c[0o]m%W+$", --June 10
 	"sell.*safe.*fast.*site.*gold2wow", --()()Hot selling:safest and fastest trade,reliable site gold2wow()() --June 10
-	"^%W+m+oggg[%.,][cd][oe]m?%W+$", --April 10
-	"%W+mmo4store[%.,]c[0o]m%W+", --June 10
 	"wts.*boeitems.*sale.*ignah", --wts [Lightning-Infused Leggings] [Carapace of Forgotten Kings] we have all the Boe items,mats and t10/t10.5 for sale .<www.ignah.com>!!
 	"mmoarm2teeth.*wanna.*gear.*season.*wowgold", --hey,this is [3w.mmoarm2teeth.com](3w=www).do you wanna get heroic ICC gear,season8 gear and wow gold?
 	"skillcopper.*wow.*mount.*gold", --skillcopper.eu Oldalunk ujabb termekekel bovult WoWTCG Loot Card-okal pl.:(Mount: Spectral Tiger, pet: Tuskarr Kite, Spectral Kitten Fun cuccok: Papa Hummel es meg sok mas) Gold, GC, CD kulcsok Akcio! Latogass el oldalunkra skillcopper.eu
 	"meingd[%.,]de.*eur.*gold", --[MeinGD.de] - 0,7 Euro - 1000 Gold - [MeinGD.de]
-	--The Cheapest,10K=15,{moon} 'www' OurGameCenter 'com' {moon}Fast Delivery
-	--surprise!!11K~15.99 {square} 'www' OurGameCenter 'com' {square}
-	"{.*}.*ourgamecenter.*{.*}", --Off 30% {square} 'www' OurGameCenter 'com' {square}100K=142$ !!
-	--Sorry for disturb{diamond}(cyrillic sha sha sha) OurGameCenter (cyrillic c o m){diamond}10K=15,have stock.
-	"ourgamecenter.*%d+k.*stock", --OurGameCenter com 10K~14K,full stock,fulfill 10 Mins.
-	"ourgamecenter.*deliver", --www OurGameCenter com not only ensure prompt delivery but that your order remains secure every timewe guarantee it! 
-	"secure.*gamecenter.*discount", --Sorry for disturb you We are a secure website 'www' OurGameCenter 'com' 11K~15.99!(EASY TO GET 10% DISCOUNT  GET ANOTHER 5% FOR INTRODUCING FRIENDS TO US)
 	"%$.*boe.*deliver.*interest", --{rt3}{rt1} WTS WOW G for $$. 10k for 20$, 52k for 100$. 105k for 199$. all item level 359 BOE gear. instant delivery! PST if ya have insterest in it. ^_^
-	"gold.*trading.*ourgamecenter", --A WoW Gold Professional trading siteшшш OurGameCenter сом
 	--WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection]and others pls go <buyboe dot com> 
 	--WTS [Heaving Plates of Protection] [Vial of the Sands] [Theresa's Booklight], best service on<buyboe dot com> 
 	--WTS[Krol Decapitator][Vitreous Beak of Julak-Doom][Pauldrons of Edward the Odd]cheapest on <buyboe dot com>
@@ -325,7 +311,7 @@ local instantReportList = {
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz 
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
 	"wts.*mount.*rocket.*gift", --WTS 2 seat flying mount the X-53 Touring rocket , you can also get a gift--one month game , PST 
-	"k{.*}4%.?{.*}g{.*}[o0]{.*}l{.*}d", --{star}.W{star}.W{star}W {square} k{triangle}.4{triangle}g{triangle}o{triangle}l{triangle}d {square} c{star}o{star}m -------{square}- c{star}o{star}d{star}e : CF \ CO \ CK
+	"k%.?4g[o0]ldcom.*code", --{star}.W{star}.W{star}W {square} k{triangle}.4{triangle}g{triangle}o{triangle}l{triangle}d {square} c{star}o{star}m -------{square}- c{star}o{star}d{star}e : CF \ CO \ CK
 	"kb8g[o0]ld.*%d+.*st[o0]ck", --KB8GOLD com 8.5EUR = 10000,269K IN STOCK NOW!
 	"reins.*vial.*%d+.*rocket", --WTS [Reins of the Crimson Deathcharger] [Vial of the Sands] [Reins of Poseidus],170usd=100k+a rocket for free
 	"boe.*sale.*upitems", --wts [Krol Decapitator] we have all the Boe items,mats and 378 items for sale .<www.upitems.com>!!
@@ -353,10 +339,10 @@ local instantReportList = {
 	"w%.?o%.?w%.?4%.?w%.?o%.?w.*d%.?e%.?l%.?i%.?v%.?e", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
-	"ourgamecenter.*cheap.*fast", --WWW OurGameCenter C0M {diamond}{diamond} SAVE UP 30%, 10000=6.46 {diamond}{diamond} AND NEW MEMBER CAN GET 10% BONUS, GIVE YOU THE CHEAPEST & FASTEST!!! HAVE A GOOD TIME EVERYONE!!!
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
 	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
 	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?l%.?i%.?v%.?e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
+	"k%.?4%.?g%.?u%.?i%.?l%.?d.*d%.?e%.?l%.?i%.?v%.?e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!! 
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 }
@@ -449,7 +435,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[\"` ]", "") --Remove spaces, etc
+	msg = gsub(msg, "[%)\"`' ]", "") --Remove spaces, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if fnd(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
