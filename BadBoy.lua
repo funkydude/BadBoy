@@ -211,7 +211,8 @@ local instantReportList = {
 	--WTB RUNESCAPE GOLD WITH WOW GOLD PST
 	"wt[bs]runescapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
 	"exchangingrsgold", --Exchanging RS gold for WoW gold. I have 400m PST
-	"exchangingwowgoldforrunescapegold", --Exchanging WoW gold for Runescape gold pst me better price for higher amount.
+	--WTS level 25 guild with 80k gold for runescape gold
+	"goldforrunescapegold", --Exchanging WoW gold for Runescape gold pst me better price for higher amount.
 	"buying?runescapeg", --buyin runescape g
 
 	--[[  Russian  ]]--
