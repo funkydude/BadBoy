@@ -98,7 +98,7 @@ local heavyList = {
 	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+",
 	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu",
 	"%d+%.?%d*[kg]%.?only%d+[%.,]?%d*eu",
-	"%d+o?[kg][/\\=]%d+%.%d+", --1OK=9.59
+	"%d+o?[kg][/\\=]%$?%d+%.%d+", --1OK=9.59
 	"%d+%.?%d*eur?[o0]?s?[/\\=]%d+%.?[%do]*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
@@ -402,7 +402,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, orig, prevReportTime, prevLineId, result, prevMsg, prevPlayer = gsub, COMPLAINT_ADDED, 0, 0, nil, nil, nil
+local gsub, orig, prevLineId, result, prevMsg, prevPlayer = gsub, COMPLAINT_ADDED, 0, nil, nil, nil
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -462,22 +462,20 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	--end check
 
 	if IsSpam(msg, icon) then
-		if BadBoyLogger and not myDebug then BadBoyLogger("BadBoy", event, player, debug) end
-		local time = GetTime()
-		if (time - prevReportTime) > 0.5 then --Timer to prevent spamming reported messages on multi line spam
-			prevReportTime = time
+		if BadBoyLogger and not myDebug then
+			BadBoyLogger("BadBoy", event, player, debug)
+		end
+		if myDebug then
+			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
+		else
 			COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-			if myDebug then
-				print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
+			if BADBOY_POPUP then --Manual reporting via popup
+				--Add original spam line to Blizzard popup message
+				StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = "BadBoy: ".. REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%%", "%%%%")
+				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+				dialog.data = lineId
 			else
-				if BADBOY_POPUP then --Manual reporting via popup
-					--Add original spam line to Blizzard popup message
-					StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%%", "%%%%")
-					local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
-					dialog.data = lineId
-				else
-					ComplainChat(lineId) --Automatically report
-				end
+				ComplainChat(lineId) --Automatically report
 			end
 		end
 		result = true
@@ -486,6 +484,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	result = nil
 end
 
+--[[ Configure manual reporting ]]--
+StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].OnHide = function(self)
+	self.text:SetText(REPORT_SPAM_CONFIRMATION) --Reset popup message to default for manual reporting
+end
+
+--[[ Add Filters ]]--
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
@@ -498,12 +502,8 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 	--Function for disabling BadBoy reports and misc required functions
 	if msg == orig then
 		return --Manual spam report, back down
-	elseif msg == COMPLAINT_ADDED then
+	elseif fnd(msg, COMPLAINT_ADDED) then
 		COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
-		if BADBOY_POPUP then
-			--Reset popup message to default for manual reporting
-			StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION
-		end
 		if BADBOY_SILENT then
 			return true --Filter out the report if enabled
 		end
