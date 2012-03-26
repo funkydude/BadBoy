@@ -403,12 +403,19 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, orig, prevLineId, result, prevMsg, prevPlayer = gsub, COMPLAINT_ADDED, 0, nil, nil, nil
+local gsub, orig, prevLineId, result, prevMsg, prevPlayer, prevWarn = gsub, COMPLAINT_ADDED, 0, nil, nil, nil, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
-		if not lineId then print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data I need to work properly :(") return end
+		if not lineId then --Still some addons floating around breaking stuff :-/
+			local t = GetTime()
+			if t-prevWarn > 5 then --Throttle this warning as I imagine it could get quite spammy
+				prevWarn = t
+				print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data I need to work properly :(")
+				return
+			end
+		end
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
 		if not CanComplainChat(lineId) or UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't scan ourself/friends/GMs/guildies or raid/party members
