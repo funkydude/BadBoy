@@ -509,7 +509,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 	--Function for disabling BadBoy reports and misc required functions
 	if msg == orig then
 		return --Manual spam report, back down
-	elseif fnd(msg, orig) then
+	elseif fnd(msg, "BadBoy") then
 		COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
 		if BADBOY_SILENT then
 			return true --Filter out the report if enabled
