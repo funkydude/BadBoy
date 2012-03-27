@@ -51,6 +51,7 @@ local commonList = {
 
 	--French
 	"livraison", --delivery
+	"moinscher", --least expensive
 	"prix", --price
 	"vendons", --sell
 
@@ -63,7 +64,7 @@ local commonList = {
 	--Spanish
 	"barato", --cheap
 	"gratuito", --free
-	"rapido", --fast
+	"rapid[oe]", --fast [[ esES:rapido / frFR:rapide ]]
 	"seguro", --safe/secure
 	"servicio", --service
 
