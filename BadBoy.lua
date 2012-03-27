@@ -328,18 +328,17 @@ local instantReportList = {
 	"wts.*%[.*%].*%[.*%].*wealso.*cheapestg", --WTS [Reins of the Crimson Deathcharger] [Mechano-Hog] [Big Battle Bear]and we also have the cheapest G
 	--@@@@@@@@@www.happygôlds.c@m.côm@@@@www.happygôlds.c@m.côm@<o=ô>@@@@10000G.ônly6.99EURô@@@@@@Lvl 397 items are on sale
 	"happygolds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
-	--@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
 	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O)
 	--................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e
-	"w%.?o%.?w%.?4%.?w%.?o%.?w.*d%.?e%.?l%.?i%.?v%.?e", --@@@@@@@@ @nly 10K=5.99EUR@1OOK=55.99EUR@ www wow4wpw c@m` 10 min delivery
+	"w%.?o%.?w%.?4%.?w%.?o%.?w.*d%.?e%.?[l1]%.?i%.?v%.?e", --@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
 	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
-	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?l%.?i%.?v%.?e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
-	"k%.?4%.?g%.?u%.?i%.?l%.?d.*d%.?e%.?l%.?i%.?v%.?e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
+	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?[l1]%.?i%.?v%.?e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
+	"k%.?4%.?g%.?u%.?i%.?l%.?d.*d%.?e%.?[l1]%.?i%.?v%.?e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!! 
-	"k%.?4%.?p%.?[o0]%.?w%.?e%.?r.*d%.?e%.?l%.?i%.?v%.?e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
+	"k%.?4%.?p%.?[o0]%.?w%.?e%.?r.*d%.?e%.?[l1]%.?i%.?v%.?e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 }
 
@@ -510,7 +509,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
 	--Function for disabling BadBoy reports and misc required functions
 	if msg == orig then
 		return --Manual spam report, back down
-	elseif fnd(msg, COMPLAINT_ADDED) then
+	elseif fnd(msg, orig) then
 		COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
 		if BADBOY_SILENT then
 			return true --Filter out the report if enabled
