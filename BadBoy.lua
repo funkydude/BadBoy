@@ -91,16 +91,16 @@ local commonList = {
 --These entries add +2 points
 local heavyList = {
 	"ourgamecenterc[o0]m", --March 12
-	"[\226\130\172%$\194\163]+%d+[%.%-]?%d*[fp][oe]r%d+%.?%d*[kg]", --Add separate line if they start approx prices
+	"[\226\130\172%$\194\163]+%d+.?%d*[fp][oe]r%d+%.?%d*[kg]", --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]+%d+%.?%d*[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*eur?o?s?[fp][oe]r%d+%.?%d*[kg]",
-	"%d+%.?%d*[\226\130\172%$\194\163]+[/\\=%-]>?%d+%.?%d*[kg]",
+	"%d+%.?%d*[\226\130\172%$\194\163]+[/\\=>]+%d+%.?%d*[kg]",
 	"%d+%.?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+",
 	"%d+%.?%d*[kg][/\\=]%d+%.?%d*[\226\130\172%$\194\163]+",
 	"%d+%.?%d*[kg][/\\=]%d+[%.,]?%d*eu",
 	"%d+%.?%d*[kg]%.?only%d+[%.,]?%d*eu",
 	"%d+o?[kg][/\\=]%$?%d+%.%d+", --1OK=9.59
-	"%d+%.?%d*eur?[o0]?s?[/\\=]%d+%.?[%do]*[kg]",
+	"%d+%.?%d*eur?[o0]?s?[/\\=>]+%d+%.?[%do]*[kg]",
 	"%d+%.?%d*usd[/\\=]%d+%.?%d*[kg]",
 	"%d+%.?%d*usd[fp][oe]r%d+%.?%d*[kg]",
 	"%d+%.?%d*[кр]+зa%d+%.?%d*[рк]+", --14к за 21р / 17р за 1к
@@ -196,13 +196,12 @@ local instantReportList = {
 	"may.*ask.*whether.*interest.*ing.*boe.*stuff.*rocket", --hmm, may i ask whether u r interested in g or boe stuffs such as X-53 Touring Rocket:P
 
 	--[[  Casino  ]]--
-	"%d+%-%d+.*d[ou][ub]ble.*%d+%-%d+.*trip", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
+	"%d+.*d[ou][ub]ble.*%d+.*trip", --10 minimum 400 max\roll\61-97 double, 98-100 triple, come roll,
 	"casino.*%d+x2.*%d+x3", --{star} CASINO {star} roll 64-99x2 your wager roll 100x3 your wager min bet 50g max 10k will show gold 100% legit (no inbetween rolls plz){diamond} good luck {diamond}
 	"casino.*%d+.*double.*%d+.*tripp?le", --The Golden Casino is offering 60+ Doubles, and 80+ Tripples!
 	"casino.*whisper.*info", --<RollReno's Casino> <Whisper for more information!>
-	"d[ou][ub]ble.*%d+%-%d+.*%d+%-%d+.*tripp?le", --come too the Free Roller  gaming house!  and have ur luck of winning gold! :) pst me for invite:)  double is  62-96 97-100 tripple we also play blackjack---- u win double if you beat the host in blackjack
-	"d[ou][ub]ble.*%d+%-%d+.*tripp?le.*%d+%-%d+", --come to free roller gaming house! and have u luck of winning gold :) pst for invite :) double is 62-96 triple is 97-100. we also play blacjack---u win doubleif u beat host in blacjack
-	"casino.*bet.*%d+%-%d+", --Casino time. You give me your bet, Than You roll from 1-11 unlimited times.Your rolls add up. If you go over 21 you lose.You can stop before 21.When you stop I do the same, and if your closer to 21 than me than you get back 2 times your bet
+	"d[ou][ub]ble.*%d+.*tripp?le", --come too the Free Roller  gaming house!  and have ur luck of winning gold! :) pst me for invite:)  double is  62-96 97-100 tripple we also play blackjack---- u win double if you beat the host in blackjack
+	"casino.*bet.*%d+", --Casino time. You give me your bet, Than You roll from 1-11 unlimited times.Your rolls add up. If you go over 21 you lose.You can stop before 21.When you stop I do the same, and if your closer to 21 than me than you get back 2 times your bet
 	"roll.*%d+.*roll.*%d+.*bet", --Roll 63+ x2 , Roll 100 x3, Roll 1 x4 NO MAX BETS
 
 	--[[  Runescape Trading  ]]--
@@ -293,12 +292,13 @@ local instantReportList = {
 	"%d%d+[kg].*g4pgold@com.*discount", --Speedy!10=5000G,g4pgold@com,discount code:Manager
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
 	"wts.*pets.*card.*mount", --WTS 6PETS [Cenarion Hatchling],Lil'Rag,XT,KT,Moonkin,Panda 8K each;Prepaid gametimecard 10K;Flying Mounts[Winged Guardian],[Celestial Steed]20K each.
-	"wts.*pets.*mount.*card", --wts 6pets .mounts .rocket. gametimecard .Change camp. variable race. turn area. change a name. ^_^!
+	--if you want buy pets/ mounts/gametimecard/ Spectral Tiger/whisper me!^^
+	"pets.*mount.*gametimecard", --wts 6pets .mounts .rocket. gametimecard .Change camp. variable race. turn area. change a name. ^_^!
 	"wts.*gametime.*mount.*pet", --WTS Prepaid gametime code 8k per month. the mount [Winged Guardian]'[Celestial Steed] 15K each and the pets 6k each, if u are interested,PST
 	"wts.*monthgametime.*%d+k", --WTS 1 Month Gametime 10k. 3 Month Gameitme 25k. 6 Month Gametime 40k
 	--WTS Blizzard Store Mounts (25k) and Blizzard Store Pets (10k)
 	"wts.*mount.*pet.*%d+k", --WTS {star}flying mounts:[Celestial Steed] and [Winged Guardian]30k each {star}PETS:Lil'Ragnaros/Lil'XT/Lil'K.T./Moonkin/Pandaren/Cenarion Hatchling 12k each,{star}prepaid timecards 15k each.{star}
-	"wowhelp%.1%-click%.hu", --{square}Have a nice day, enjoy the game!{square} - {star} [http://wowhelp.1-click.hu/] - One click for all WoW help! {star}
+	"wowhelp%.1click%.hu", --{square}Have a nice day, enjoy the game!{square} - {star} [http://wowhelp.1-click.hu/] - One click for all WoW help! {star}
 	"g4p.*gold.*discount", --Saray Daily Greetings ? thanks for your previous support on G4P,here I am reminding you of our info, you may need it again :web:G4Pgold,Discount code:saray,introducer ID:saray 
 	"wts.*rocket.*gametime", --WTS{rt3}"[X-53 Touring Rocket]&[Winged Guardian]&Celestial Steed&xt,kt,mo nk,cen.rag.moonkin and game time"{rt3}pst for more info.
 	"%d+k.*deliver.*item", --$20=10K, $100=57k,$200=115k with instant delivery,all lvl378 items,pst
@@ -438,7 +438,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[%)\"`' ]", "") --Remove spaces, etc
+	msg = gsub(msg, "[%-%)\"`' ]", "") --Remove spaces, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if fnd(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
