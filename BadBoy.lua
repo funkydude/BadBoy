@@ -413,8 +413,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			if t-prevWarn > 5 then --Throttle this warning as I imagine it could get quite spammy
 				prevWarn = t
 				print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data I need to work properly :(")
-				return
 			end
+			return
 		end
 		prevLineId = lineId
 		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
@@ -483,7 +483,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 				dialog.data = lineId
 			else
-				ComplainChat(lineId) --Automatically report
+				--Automatically report
+				if ReportPlayer then
+					ReportPlayer("spam", lineID) --Patch 4.3.4
+				else
+					ComplainChat(lineId)
+				end
 			end
 		end
 		result = true
@@ -507,10 +512,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
-	--Function for disabling BadBoy reports and misc required functions
-	if msg == orig then
-		return --Manual spam report, back down
-	elseif fnd(msg, "BadBoy") then
+	if fnd(msg, "BadBoy") then
 		COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
 		if BADBOY_SILENT then
 			return true --Filter out the report if enabled
