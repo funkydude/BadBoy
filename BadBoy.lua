@@ -9,7 +9,7 @@
 		You haven't implemented anything to help filtering gold spam since ComplainChat(), that was years ago, please show us you care.
 ]]--
 
--- GLOBALS: print, SetCVar, GetTime, pairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
+-- GLOBALS: print, SetCVar, GetTime, pairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
 local myDebug = nil
 
 --These entries remove -2 points
@@ -305,6 +305,7 @@ local instantReportList = {
 	"money.*gold.*gold2sell", --Ingame gold for real money! Real gold for Ingame gold! Ingame gold for a account key! If you're intrested, then check out: "gold2sell.org" now!
 	"pet.*rag.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest 
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz 
+	"wts.*%[.*%].*%[.*%].*cheap.*safe", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer] [Magic Rooster Egg]Cheapest & Safest Online Trad
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
 	"wts.*mount.*rocket.*gift", --WTS 2 seat flying mount the X-53 Touring rocket , you can also get a gift--one month game , PST 
 	"k%.?4g[o0]ldcom.*code", --{star}.W{star}.W{star}W {square} k{triangle}.4{triangle}g{triangle}o{triangle}l{triangle}d {square} c{star}o{star}m -------{square}- c{star}o{star}d{star}e : CF \ CO \ CK
@@ -484,8 +485,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 				dialog.data = lineId
 			else
 				--Automatically report
-				if ReportPlayer then
-					ReportPlayer("spam", lineID) --Patch 4.3.4
+				if ReportPlayer then --Patch 4.3.4 compat
+					ReportPlayer("spam", lineId)
 				else
 					ComplainChat(lineId)
 				end
