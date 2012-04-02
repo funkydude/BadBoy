@@ -92,6 +92,8 @@ local commonList = {
 local heavyList = {
 	"ourgamecenterc[o0@]m", --March 12
 	"wow4wowc[o0@]m", --April 12
+	"happygoldsc[o0@]m", --April 12
+	"luckygoldsc[o0@]m", --April 12
 	"[\226\130\172%$\194\163]+%d+.?%d*[fp][oe]r%d+[%.,]?%d*[kg]", --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]+%d+[%.,]?%d*[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*eur?o?s?[fp][oe]r%d+[%.,]?%d*[kg]",
