@@ -102,8 +102,8 @@ local heavyList = {
 	"%d+[%.,]?%d*[kg][%.,]?only%d+[%.,]?%d*eu",
 	"%d+o?[kg][/\\=]%$?%d+[%.,]%d+", --1OK=9.59
 	"%d+[%.,]?%d*[/\\=]%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?%d*eur?[o0]?s?[/\\=>]+%d+[%.,]?[%do]*[kg]",
-	"%d+[%.,]?%d*eur?[o0]?s?[/\\=>]+l[0o]+[kg]",
+	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+%d+[%.,]?[%do]*[kg]",
+	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+l[0o]+[kg]",
 	"%d+[%.,]?%d*usd[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*usd[fp][oe]r%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*[кр]+зa%d+[%.,]?%d*[рк]+", --14к за 21р / 17р за 1к
@@ -112,7 +112,7 @@ local heavyList = {
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
 	"www[%.,●]+",
-	"[%.,●]+c[o0@]m",
+	"[%.,●]+c%.?[o0@]%.?m",
 	"[%.,●]+net",
 	"dotc[o0@]m",
 }
@@ -443,7 +443,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[%-%)\"`' ]", "") --Remove spaces, etc
+	msg = gsub(msg, "[%*%-%)\"`' ]", "") --Remove spaces, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if fnd(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
