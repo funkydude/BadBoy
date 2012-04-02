@@ -92,8 +92,6 @@ local commonList = {
 local heavyList = {
 	"ourgamecenterc[o0@]m", --March 12
 	"wow4wowc[o0@]m", --April 12
-	"happygoldsc[o0@]m", --April 12
-	"luckygoldsc[o0@]m", --April 12
 	"[\226\130\172%$\194\163]+%d+.?%d*[fp][oe]r%d+[%.,]?%d*[kg]", --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]+%d+[%.,]?%d*[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*eur?o?s?[fp][oe]r%d+[%.,]?%d*[kg]",
@@ -343,6 +341,8 @@ local instantReportList = {
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
 	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
 	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?[l1]%.?i%.?v%.?e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
+	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*%d+[%.,]?%d*[/\\=>]+%d+[%.,]?%d*[kg]", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
+	"w%.?o%.?w%.?4%.?w%.?o%.?w.*%d+[%.,]?%d*[/\\=>]+%d+[%.,]?%d*[kg]",
 	"k%.?4%.?g%.?u%.?i%.?l%.?d.*d%.?e%.?[l1]%.?i%.?v%.?e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!!
 	"g[0o][l1]dsdepot.*%d+k.*st[0o][l1]en", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
