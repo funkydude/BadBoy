@@ -315,15 +315,8 @@ local instantReportList = {
 	"kb8g[o0]ld.*%d+.*st[o0]ck", --KB8GOLD com 8.5EUR = 10000,269K IN STOCK NOW!
 	"reins.*vial.*%d+.*rocket", --WTS [Reins of the Crimson Deathcharger] [Vial of the Sands] [Reins of Poseidus],170usd=100k+a rocket for free
 	"boe.*sale.*upitems", --wts [Krol Decapitator] we have all the Boe items,mats and 378 items for sale .<www.upitems.com>!!
-	"wts.*rocket.*deliver", --WTSx-53 touring rocketinstant delivery,pst！！！！！
+	"wts.*rocket.*deliver", --WTSx-53 touring rocketinstant delivery,pst
 	"wts.*%[.*%].*$%d+.*%[.*%].*$%d+", --wts[Blauvelt's Family Crest]$34.00[Gilnean Ring of Ruination]$34.99[Signet of High Arcanist Savor]$34.90pst
-	--@@@@@@ only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@www luckygolds c@m @@@@@@
-	"%d+k.*luckygolds", --@@@@@@@@@ www  luckygolds  c@m   only 10K=6.99EURO 100K+10K=65.99EUROwww  luckygolds  c@m @@@@@@@@@
-	--@@@@@__www luckyg@lds c@m @nly_1oK=5.99EURO 1ooK+1oK=55.99EUR (@=o) 
-	--vv vv vv  luckyg@lds  c@m  only l0K=5.99 � 1OO K+1O K=55.99 � (@=O)
-	--vv vv vv  lùckygólds cóm  ónly  1O K=4.99 éùr    1OO K+1O K=45.99 éùr   10 mìn délìvéry (ó=O)(ù=U)
-	--{Diamond}vv~vv~vv lùckygòlds còm ònly lò K=3.49èù?> lòò K+lò K=34.99èù? 1ò mìn délìvéry (ò=O=0){Diamond} 
-	"luckyg[o@]lds.*[%do]k", --@@@@@@@ www luckygolds c@m only 10K=5.99EURO 100K+10K=55.99EURO @@@@@@@ 
 	--www K4power c@m.Lowest Price + 10% Free G.{Code:4Power}--
 	"k4p[o0]wer.*%d+", --WWW K4POWER C0M {Code:Xmas}->>Xmas Promotions{18th Dec-26th Dec}->35% Free,0rder 50k More->X-53 Rocket Mount For Free!
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
@@ -331,22 +324,19 @@ local instantReportList = {
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
 	"wts.*%[.*%].*good4game", --WTS[Blazing Hippogryph][Amani Dragonhawk][Big Battle Bear]buy TCG Mounts on good4game.c{circle}m
 	"wts.*%[.*%].*%[.*%].*wealso.*cheapestg", --WTS [Reins of the Crimson Deathcharger] [Mechano-Hog] [Big Battle Bear]and we also have the cheapest G
-	--@@@@@@@@@www.happygôlds.c@m.côm@@@@www.happygôlds.c@m.côm@<o=ô>@@@@10000G.ônly6.99EURô@@@@@@Lvl 397 items are on sale
-	"happygolds.*%d+[gk]", --@@@@@@@@@ www happygolds c@m @@@@@@@@@ www happygolds c@m @@@@@@@@@ 10000G.only 7.99 EUR @@@@@@@@@
-	--vv~vv~vv wòw4wòw còm ónly 1O K=4.99èùr 1OO K=45.99èùr 1O min dèlivèry(ò=O)
-	--................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e
-	"w%.?o%.?w%.?4%.?w%.?o%.?w.*d%.?e%.?[l1]%.?i%.?v%.?e", --@@@@@@vvvvvv wow4wow c@m only 1OK=4.99EUR 1OOK=45.99EUR 10 min delivery
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
-	--{Diamond}................l.u.c.k.y.g.o.l.d.s. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e.r.y
-	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?[l1]%.?i%.?v%.?e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
-	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*%d+[%.,]?%d*[/\\=>]+%d+[%.,]?%d*[kg]", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
-	"w%.?o%.?w%.?4%.?w%.?o%.?w.*%d+[%.,]?%d*[/\\=>]+%d+[%.,]?%d*[kg]",
-	"k%.?4%.?g%.?u%.?i%.?l%.?d.*d%.?e%.?[l1]%.?i%.?v%.?e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!!
 	"g[0o][l1]dsdepot.*%d+k.*st[0o][l1]en", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
+	"w%.?o%.?w%.?4%.?w%.?o%.?w.*d%.?e%.?[l1]%.?i%.?v%.?e", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e
+	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?[l1]%.?i%.?v%.?e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
+	"k%.?4%.?g%.?u%.?i%.?l%.?d.*d%.?e%.?[l1]%.?i%.?v%.?e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"k%.?4%.?p%.?[o0]%.?w%.?e%.?r.*d%.?e%.?[l1]%.?i%.?v%.?e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
+	"o%.?k%.?g%.?o%.?l%.?d%.?s.*d%.?e%.?[l1]%.?i%.?v%.?e".
+	"[hl]%.?[au]%.?[pc]%.?[pk]%.?y%.?g%.?o%.?l%.?d%.?s.*%d[%do]%.?[kg]", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
+	"o%.?k%.?g%.?o%.?l%.?d%.?s.*%d[%do]%.?[kg]", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
+	"w%.?o%.?w%.?4%.?w%.?o%.?w.*%d[%do]%.?[kg]",
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 }
 
