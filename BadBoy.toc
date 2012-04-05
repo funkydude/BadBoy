@@ -1,5 +1,5 @@
 ## Interface: 40300
-## Version: v8.015
+## Version: v8.016
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Notes-deDE: A light, automatic spam blocker & reporter.
