@@ -339,7 +339,8 @@ local instantReportList = {
 	"o%.*k%.*g%.*o%.*l%.*d%.*s.*d%.*e%.*[l1]%.*i%.*v%.*e",
 	"[hl]%.*[au]%.*[pc]%.*[pk]%.*y%.*g%.*[o0]%.*l%.*d%.*s.*%d[%do]%.*[kg]", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
 	"o%.*k%.*g%.*o%.*l%.*d%.*s.*%d[%do]%.*[kg]", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
-	"w%.*o%.*w%.*4%.*w%.*o%.*w.*%d[%do]%.*[kg]", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
+	--{diamond} vv o vv 4 vv o vv ,c_m3,99-1Ok {diamond}
+	"[wv]%.*o%.*[wv]v?%.*4%.*[wv]v?%.*o%.*[wv]v?.*%d[%do]%.*[kg]", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 }
