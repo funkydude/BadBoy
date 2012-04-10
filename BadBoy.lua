@@ -338,7 +338,7 @@ local instantReportList = {
 	"k%.*4%.*g%.*u%.*i%.*l%.*d.*d%.*e%.*[l1]%.*i%.*v%.*e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"k%.*4%.*p%.*[o0]%.*w%.*e%.*r.*d%.*e%.*[l1]%.*i%.*v%.*e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
 	"o%.*k%.*g%.*o%.*l%.*d%.*s.*d%.*e%.*[l1]%.*i%.*v%.*e",
-	"[hl]%.*[au]%.*[pc]%.*[pk]%.*y%.*g%.*[o0]%.*l%.*d%.*s.*%d[%do]%.*[kg]", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
+	"[hl]%.*[au]%.*[pc]%.*[pk]%.*y%.*g%.*[o0]%.*l%.*d%.*s.*%d[%do]+%.*[kg]", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
 	"o%.*k%.*g%.*o%.*l%.*d%.*s.*%d[%do]%.*[kg]", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
 	--{diamond} vv o vv 4 vv o vv ,c_m3,99-1Ok {diamond}
 	"[wv]%.*o%.*[wv]v?%.*4%.*[wv]v?%.*o%.*[wv]v?.*%d[%do]%.*[kg]", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
