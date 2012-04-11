@@ -331,7 +331,7 @@ local instantReportList = {
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!!
 	--{square}G0lDSDEP0T C..0..M {square}{star}10mns.. {star}{diamond} 10k=5.99 {diamond}
-	"g%.*[0o]%.*[l1]%.*d%.*s%.*d%.*e%.*p%.*[o0]%.*t.*%d[%do]%.*[kg]", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
+	"g%.*[0o]%.*[l1]%.*d%.*s%.*d%.*e%.*p%.*[o0]%.*t.*%d[%do]+%.*[kg]", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
 	"g%.*[0o]%.*[l1]%.*d%.*s%.*d%.*e%.*p%.*[o0]%.*t.*d%.*e?%.*[l1]%.*i%.*v%.*e?%.*r", --{diamond} G.0.l.d.s.d.e.p.o.t,C,o,m {diamond}10m,in Dlivry,10000=5.99, 10% Extra G for Easter
 	"w%.*o%.*w%.*4%.*w%.*o%.*w.*d%.*e%.*[l1]%.*i%.*v%.*e", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e
 	"[hl]%.*[au]%.*[pc]%.*[pk]%.*y%.*g%.*o%.*l%.*d%.*s.*d%.*e%.*[l1]%.*i%.*v%.*e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
@@ -339,9 +339,9 @@ local instantReportList = {
 	"k%.*4%.*p%.*[o0]%.*w%.*e%.*r.*d%.*e%.*[l1]%.*i%.*v%.*e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
 	"o%.*k%.*g%.*o%.*l%.*d%.*s.*d%.*e%.*[l1]%.*i%.*v%.*e",
 	"[hl]%.*[au]%.*[pc]%.*[pk]%.*y%.*g%.*[o0]%.*l%.*d%.*s.*%d[%do]+%.*[kg]", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
-	"o%.*k%.*g%.*o%.*l%.*d%.*s.*%d[%do]%.*[kg]", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
+	"[o0]%.*k%.*g%.*[o0]%.*l%.*d%.*s.*%d[%do]+%.*[kg]", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
 	--{diamond} vv o vv 4 vv o vv ,c_m3,99-1Ok {diamond}
-	"[wv]%.*o%.*[wv]v?%.*4%.*[wv]v?%.*o%.*[wv]v?.*%d[%do]%.*[kg]", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
+	"[wv]%.*o%.*[wv]v?%.*4%.*[wv]v?%.*o%.*[wv]v?.*%d[%do]+%.*[kg]", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 }
@@ -357,10 +357,10 @@ local repTbl = {
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 }
 
-local fnd = string.find
+local strfind = string.find
 local IsSpam = function(msg, num)
 	for i=1, #instantReportList do
-		if fnd(msg, instantReportList[i]) then
+		if strfind(msg, instantReportList[i]) then
 			if myDebug then print("Instant", instantReportList[i]) end
 			return true
 		end
@@ -368,26 +368,26 @@ local IsSpam = function(msg, num)
 
 	local points, phishPoints = num, num
 	for i=1, #whiteList do
-		if fnd(msg, whiteList[i]) then
+		if strfind(msg, whiteList[i]) then
 			points = points - 2
 			phishPoints = phishPoints - 2 --Remove points for safe words
 			if myDebug then print(whiteList[i], points, phishPoints) end
 		end
 	end
 	for i=1, #commonList do
-		if fnd(msg, commonList[i]) then
+		if strfind(msg, commonList[i]) then
 			points = points + 1
 			if myDebug then print(commonList[i], points, phishPoints) end
 		end
 	end
 	for i=1, #heavyList do
-		if fnd(msg, heavyList[i]) then
+		if strfind(msg, heavyList[i]) then
 			points = points + 2 --Heavy section gets 2 points
 			if myDebug then print(heavyList[i], points, phishPoints) end
 		end
 	end
 	for i=1, #heavyRestrictedList do
-		if fnd(msg, heavyRestrictedList[i]) then
+		if strfind(msg, heavyRestrictedList[i]) then
 			points = points + 2
 			phishPoints = phishPoints + 1
 			if myDebug then print(heavyRestrictedList[i], points, phishPoints) end
@@ -395,7 +395,7 @@ local IsSpam = function(msg, num)
 		end
 	end
 	for i=1, #phishingList do
-		if fnd(msg, phishingList[i]) then
+		if strfind(msg, phishingList[i]) then
 			phishPoints = phishPoints + 1
 			if myDebug then print(phishingList[i], points, phishPoints) end
 		end
@@ -444,7 +444,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	msg = gsub(msg, "[“”%*%-%)\"`' ]+", "") --Remove spaces, symbols, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-	if fnd(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
+	if strfind(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
 		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
 		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
 			msg = gsub(msg, k, v)
@@ -455,7 +455,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 
 	--They like to use raid icons to avoid detection
 	local icon = 0
-	if fnd(msg, "{") then --Only run the icon removal code if the chat line has raid icons that need removed
+	if strfind(msg, "{") then --Only run the icon removal code if the chat line has raid icons that need removed
 		local found = 0
 		for i=1, #restrictedIcons do
 			msg, found = gsub(msg, restrictedIcons[i], "")
@@ -515,7 +515,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
-	if fnd(msg, "BadBoy") then
+	if strfind(msg, "BadBoy") then
 		COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
 		if BADBOY_SILENT then
 			return true --Filter out the report if enabled
