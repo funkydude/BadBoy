@@ -35,7 +35,7 @@ local commonList = {
 	"deliver",
 	"discount",
 	"express",
-	"gold",
+	"g[0o]ld",
 	"lowest",
 	"order",
 	"powerle?ve?l",
@@ -112,7 +112,7 @@ local heavyList = {
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
 	"www[%.,●]+",
-	"[%.,●]+c%.?[o0@]%.?m",
+	"[%.,●]+c[%.,]*[o0@][%.,]*m",
 	"[%.,●]+net",
 	"dotc[o0@]m",
 }
