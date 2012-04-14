@@ -331,19 +331,20 @@ local instantReportList = {
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!!
 	--{square}G0lDSDEP0T C..0..M {square}{star}10mns.. {star}{diamond} 10k=5.99 {diamond}
-	"g%.*[0o]%.*[l1]%.*d%.*s%.*d%.*e%.*p%.*[o0]%.*t.*%d[%do]+%.*[kg]", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
-	"g%.*[0o]%.*[l1]%.*d%.*s%.*d%.*e%.*p%.*[o0]%.*t.*d%.*e?%.*[l1]%.*i%.*v%.*e?%.*r", --{diamond} G.0.l.d.s.d.e.p.o.t,C,o,m {diamond}10m,in Dlivry,10000=5.99, 10% Extra G for Easter
-	"w%.*o%.*w%.*4%.*w%.*o%.*w.*d%.*e%.*[l1]%.*i%.*v%.*e", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e
-	"[hl]%.*[au]%.*[pc]%.*[pk]%.*y%.*g%.*o%.*l%.*d%.*s.*d%.*e%.*[l1]%.*i%.*v%.*e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
-	"k%.*4%.*g%.*u%.*i%.*l%.*d.*d%.*e%.*[l1]%.*i%.*v%.*e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
-	"k%.*4%.*p%.*[o0]%.*w%.*e%.*r.*d%.*e%.*[l1]%.*i%.*v%.*e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
-	"o%.*k%.*g%.*o%.*l%.*d%.*s.*d%.*e%.*[l1]%.*i%.*v%.*e",
+	"g[%.,]*[0o][%.,]*[l1][%.,]*d[%.,]*s[%.,]*d[%.,]*e[%.,]*p[%.,]*[o0][%.,]*t.*%d[%do]+[%.,]*[kg]", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
+	"g[%.,]*[0o][%.,]*[l1][%.,]*d[%.,]*s[%.,]*d[%.,]*e[%.,]*p[%.,]*[o0][%.,]*t.*d[%.,]*e?[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e?[%.,]*r", --{diamond} G.0.l.d.s.d.e.p.o.t,C,o,m {diamond}10m,in Dlivry,10000=5.99, 10% Extra G for Easter
+	"w[%.,]*o[%.,]*w[%.,]*4[%.,]*w[%.,]*o[%.,]*w.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e", --................w.o.w4.w.o.w. c.o.m 3.99 E.u.r.o=1O K 1O m.i.n D.e.l.i.v.e
+	"[hl][%.,]*[au][%.,]*[pc][%.,]*[pk][%.,]*y[%.,]*g[%.,]*o[%.,]*l[%.,]*d[%.,]*s.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e", --.....H.a.p.p.y.g.o.l.d.s...C.ô.M..........4.99.E. U.R.O.=10.K 10.M.i.n.De.l.i.v.e.r.y..2172
+	"k[%.,]*4[%.,]*g[%.,]*u[%.,]*i[%.,]*l[%.,]*d.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
+	"k[%.,]*4[%.,]*p[%.,]*[o0][%.,]*w[%.,]*e[%.,]*r.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
+	"o[%.,]*k[%.,]*g[%.,]*o[%.,]*l[%.,]*d[%.,]*s.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e",
 	--{Diamond}L.U.c.k.y.g.0.l.d.s,C,o,m{Diamond}10000=3.99
-	"[hl]%.*[au]%.*[pc]%.*[pk]%.*y%.*g%.*[o0]%.*l%.*d%.*s.*%d[%do]+", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
-	"[o0]%.*k%.*g%.*[o0]%.*l%.*d%.*s.*%d[%do]+", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
+	--<diamond> L,u,C,k,Y,g,0,l,d,S,C,0,m <diamond> 10000 / 3.99
+	"[hl][%.,]*[au][%.,]*[pc][%.,]*[pk][%.,]*y[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s.*%d[%do]+", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
+	"[o0][%.,]*k[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s.*%d[%do]+", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
 	--{diamond} vv o vv 4 vv o vv ,c_m3,99-1Ok {diamond}
 	--{diamond} W.O.w.4.w.o.w,C,o,m {diamond} 10000=3.99
-	"[wv]%.*o%.*[wv]v?%.*4%.*[wv]v?%.*o%.*[wv]v?.*%d[%do]+", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
+	"[wv][%.,]*o[%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*o[%.,]*[wv]v?.*%d[%do]+", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 }
