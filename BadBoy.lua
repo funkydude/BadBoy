@@ -106,6 +106,7 @@ local heavyList = {
 	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+l[0o]+[kg]",
 	"%d+[%.,]?%d*usd[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*usd[fp][oe]r%d+[%.,]?%d*[kg]",
+	"%d+[%.,]?[o%d]*[kg]%+%d+%%bonus[/\\=]%d+[%.,]?%d*eu",
 	"%d+[%.,]?%d*[кр]+зa%d+[%.,]?%d*[рк]+", --14к за 21р / 17р за 1к
 }
 
@@ -344,7 +345,8 @@ local instantReportList = {
 	"[o0][%.,]*k[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s.*%d[%do]+", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
 	--{diamond} vv o vv 4 vv o vv ,c_m3,99-1Ok {diamond}
 	--{diamond} W.O.w.4.w.o.w,C,o,m {diamond} 10000=3.99
-	"[wv][%.,]*o[%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*o[%.,]*[wv]v?.*%d[%do]+", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
+	--{diamond} W,0,w,4,w,0,W,C,0,m {diamond} 10000 / 3.99
+	"[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?.*%d[%do]+", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 }
@@ -444,7 +446,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[“”%*%-%)\"`' ]+", "") --Remove spaces, symbols, etc
+	msg = gsub(msg, "[“”%*%-%)\"`'_ ]+", "") --Remove spaces, symbols, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if strfind(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
