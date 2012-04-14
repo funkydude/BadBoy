@@ -418,7 +418,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	else
 		if not lineId then --Still some addons floating around breaking stuff :-/
 			local t = GetTime()
-			if t-prevWarn > 5 then --Throttle this warning as I imagine it could get quite spammy
+			if t-prevWarn > 60 then --Throttle this warning as I imagine it could get quite spammy
 				prevWarn = t
 				print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data I need to work properly :(")
 			end
