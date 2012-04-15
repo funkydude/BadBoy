@@ -92,6 +92,7 @@ local commonList = {
 local heavyList = {
 	"ourgamecenterc[o0@]m", --March 12
 	"wow4wowc[o0@]m", --April 12
+	"cicigamec[o0@]m", --April 12
 	"[\226\130\172%$\194\163]+%d+.?%d*[fp][oe]r%d+[%.,]?%d*[kg]", --Add separate line if they start approx prices
 	"[\226\130\172%$\194\163]+%d+[%.,]?%d*[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*eur?o?s?[fp][oe]r%d+[%.,]?%d*[kg]",
@@ -106,7 +107,7 @@ local heavyList = {
 	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+l[0o]+[kg]",
 	"%d+[%.,]?%d*usd[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*usd[fp][oe]r%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?[o%d]*[kg]%d+%%bonus[/\\=]%d+[%.,]?%d*eu",
+	"%d+[%.,]?[o%d]*[kg]%d+%%bonus[/\\=]%d+[%.,]?[o%d]+",
 	"%d+[%.,]?%d*[кр]+зa%d+[%.,]?%d*[рк]+", --14к за 21р / 17р за 1к
 }
 
