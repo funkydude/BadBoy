@@ -106,7 +106,7 @@ local heavyList = {
 	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+l[0o]+[kg]",
 	"%d+[%.,]?%d*usd[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*usd[fp][oe]r%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?[o%d]*[kg]%+%d+%%bonus[/\\=]%d+[%.,]?%d*eu",
+	"%d+[%.,]?[o%d]*[kg]%d+%%bonus[/\\=]%d+[%.,]?%d*eu",
 	"%d+[%.,]?%d*[кр]+зa%d+[%.,]?%d*[рк]+", --14к за 21р / 17р за 1к
 }
 
@@ -297,7 +297,8 @@ local instantReportList = {
 	"%d+k.*card.*rocket.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
 	"%d%d+[kg].*g4pgold@com.*discount", --Speedy!10=5000G,g4pgold@com,discount code:Manager
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
-	"wts.*pets.*card.*mount", --WTS 6PETS [Cenarion Hatchling],Lil'Rag,XT,KT,Moonkin,Panda 8K each;Prepaid gametimecard 10K;Flying Mounts[Winged Guardian],[Celestial Steed]20K each.
+	--WTS 6PETS [Cenarion Hatchling],Lil'Rag,XT,KT,Moonkin,Panda 8K each;Prepaid gametimecard 10K;Flying Mounts[Winged Guardian],[Celestial Steed]20K each.
+	"wts.*gamet?i?m?e?card.*mount", --WTS 90 Day Pre-Paid Game Card 35K Also selling mount from BLZ STORE,25k for golden dragon/lion
 	--if you want buy pets/ mounts/gametimecard/ Spectral Tiger/whisper me!^^
 	"pets.*mount.*gametimecard", --wts 6pets .mounts .rocket. gametimecard .Change camp. variable race. turn area. change a name. ^_^!
 	"wts.*gametime.*mount.*pet", --WTS Prepaid gametime code 8k per month. the mount [Winged Guardian]'[Celestial Steed] 15K each and the pets 6k each, if u are interested,PST
@@ -448,7 +449,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[“”%*%-%)\"`'_ ]+", "") --Remove spaces, symbols, etc
+	msg = gsub(msg, "[“”%*%-%)\"`'_%+ ]+", "") --Remove spaces, symbols, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if strfind(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
