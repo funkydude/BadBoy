@@ -356,6 +356,7 @@ local instantReportList = {
 	"%d[%do]+.*[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?", --{diamond} 3.9/ 1O0O0 {diamond} W,0,W,4,w,o,w,C,o,m
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
+	"vend.*prix.*livraison.*wow%.po", --Vend Po à prix interessant Livraison instantanée. Paiement par SMS/Tel ou Paypal, me contacter Skype: wow.po 
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
