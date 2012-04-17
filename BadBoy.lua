@@ -492,19 +492,19 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
 		else
 			COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-			if BADBOY_POPUP then --Manual reporting via popup
+			--if BADBOY_POPUP then --Manual reporting via popup
 				--Add original spam line to Blizzard popup message
 				StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = "BadBoy: ".. REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%%", "%%%%")
 				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 				dialog.data = lineId
-			else
+			--[[else
 				--Automatically report
 				if ReportPlayer then --Patch 4.3.4 compat
 					ReportPlayer("spam", lineId)
 				else
 					ComplainChat(lineId)
 				end
-			end
+			end]]
 		end
 		result = true
 		return true
