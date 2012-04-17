@@ -338,6 +338,7 @@ local instantReportList = {
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
 	"msn.*salliaes7587.*%d[%do]+", --1K 1TL ! MSN Adresi salliaes7587@hotmail.c@m !isteyene referans gosterilir :)MSNden eklemeniz yeterli!1OOk 9O TL :)
+	"wts.*g[o0][1l]d.*tcgmounts.*tabard", --WTS gO1d and TCG mounts and Tabard of the Lightbringer and maig rooster egg^^/w me:)
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!!
 	--{square}G0lDSDEP0T C..0..M {square}{star}10mns.. {star}{diamond} 10k=5.99 {diamond}
 	"g[%.,]*[0o][%.,]*[l1][%.,]*d[%.,]*s[%.,]*d[%.,]*e[%.,]*p[%.,]*[o0][%.,]*t.*%d[%do]+[%.,]*[kg]", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
