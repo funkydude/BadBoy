@@ -304,6 +304,7 @@ local instantReportList = {
 	"pets.*mount.*gametimecard", --wts 6pets .mounts .rocket. gametimecard .Change camp. variable race. turn area. change a name. ^_^!
 	"wts.*gametime.*mount.*pet", --WTS Prepaid gametime code 8k per month. the mount [Winged Guardian]'[Celestial Steed] 15K each and the pets 6k each, if u are interested,PST
 	"wts.*monthgametime.*%d+k", --WTS 1 Month Gametime 10k. 3 Month Gameitme 25k. 6 Month Gametime 40k
+	"wts.*gamet?i?m?e?card.*gold", --wts 60days gamecard for gold /w for more info.
 	--WTS [Heart of the Aspects]25K [Winged Guardian]25K [Celestial Steed]20K AND prepaid gametimecard
 	"wts.*guardian.*steed.*gamet?i?m?e?card", --{skull} WTS Winged Guardian 15K.Heart of the Aspects 15K Celestial Steed 15K 90 Day Pre-Paid Game Card 35K {skull}
 	--WTS Blizzard Store Mounts (25k) and Blizzard Store Pets (10k)
@@ -335,6 +336,7 @@ local instantReportList = {
 	"deliver.*g[@o]ldw[@o]w2012", --$$ Lv 1-85=127EUR+7days $$ 397-410 professional equipment,TCG Loot card,rare mount $$ fast delivery within 24 horus $$ g@ldW@W2012 C@M $$
 	"wts.*%[.*%].*cheap.*gold.*%d+%$", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer]{rt3}{rt3}cheapest gold,110$=100k,pst with more offer,plz!!!!
 	"wts.*euro.*boe.*deliver", --WTS RBG 2400 RATING, 3.88 "euro"=10 K,Also kinds of BOE 11in store.fast delivery,Pst me for detail
+	"msn.*salliaes7587.*%d[%do]+", --1K 1TL ! MSN Adresi salliaes7587@hotmail.c@m !isteyene referans gosterilir :)MSNden eklemeniz yeterli!1OOk 9O TL :)
 	"g[0o]ld.*deliver.*bonus", --3WG0ldsDepot C0M SAVE UP 40% 15Mins DELIVERY 10000=5.99 NEW MEMEBER CAN GET 10% BONUS,NICE CUST0MER ASSISTANT say “NO” to “ ST0LEN G0LD “!!!
 	--{square}G0lDSDEP0T C..0..M {square}{star}10mns.. {star}{diamond} 10k=5.99 {diamond}
 	"g[%.,]*[0o][%.,]*[l1][%.,]*d[%.,]*s[%.,]*d[%.,]*e[%.,]*p[%.,]*[o0][%.,]*t.*%d[%do]+[%.,]*[kg]", --{square}G01dsDepot{square}c..0..m {square}10k=5.99{square}Refuse St01en G01d{square}
@@ -344,14 +346,12 @@ local instantReportList = {
 	"k[%.,]*4[%.,]*g[%.,]*u[%.,]*i[%.,]*l[%.,]*d.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e", ----3.W,K.4.G.U.I.L.D,C.@.m 4.5 Êürõ--10k+1O%Disçòünt, Délìvèry 6 M.i.n.s
 	"k[%.,]*4[%.,]*p[%.,]*[o0][%.,]*w[%.,]*e[%.,]*r.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e", --3.w,K.4.P.0.W.E.R,c.@.m 4 èü // 1Ok,Délìvèry 6 M.i.n.s
 	"o[%.,]*k[%.,]*g[%.,]*o[%.,]*l[%.,]*d[%.,]*s.*d[%.,]*e[%.,]*[l1][%.,]*i[%.,]*v[%.,]*e",
-	--{Diamond}L.U.c.k.y.g.0.l.d.s,C,o,m{Diamond}10000=3.99
-	--<diamond> L,u,C,k,Y,g,0,l,d,S,C,0,m <diamond> 10000 / 3.99
 	"[hl][%.,]*[au][%.,]*[pc][%.,]*[pk][%.,]*y[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s.*%d[%do]+", --....H.a.p.p.y.g.ô.l.d.s C.ô.M..........<o=ô>4.99 =10.K
+	"%d[%do]+.*[hl][%.,]*[au][%.,]*[pc][%.,]*[pk][%.,]*y[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s",
 	"[o0][%.,]*k[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s.*%d[%do]+", --....o.k.g.ô.l.d.s C.ô.M{circle}4.99e.u.r.o.=10.k
-	--{diamond} vv o vv 4 vv o vv ,c_m3,99-1Ok {diamond}
-	--{diamond} W.O.w.4.w.o.w,C,o,m {diamond} 10000=3.99
-	--{diamond} W,0,w,4,w,0,W,C,0,m {diamond} 10000 / 3.99
+	"%d[%do]+.*[o0][%.,]*k[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s",
 	"[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?.*%d[%do]+", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
+	"%d[%do]+.*[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?", --{diamond} 3.9/ 1O0O0 {diamond} W,0,W,4,w,o,w,C,o,m
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 }
