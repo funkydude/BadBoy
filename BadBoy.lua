@@ -499,7 +499,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 				dialog.data = lineId
 			else
 				--Show block message
-				ChatFrame1:AddMessage("** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:"..player.."|h["..player.."]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:"..player..":"..lineId.."|h[here]|h|r **", 1, 0.7, 0)
+				ChatFrame1:AddMessage("** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:"..player.."|h["..player.."]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:"..lineId.."|h[here]|h|r **", 1, 0.7, 0)
 			end
 		end
 		result = true
@@ -510,10 +510,13 @@ end
 
 local oldShow = ChatFrame_OnHyperlinkShow
 ChatFrame_OnHyperlinkShow = function(self, data, ...)
-	local badboy, player, id = string.split(":", data)
+	local badboy, lineId = string.split(":", data)
 	if badboy and badboy == "badboy" then
-		local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
-		dialog.data = id
+		if ReportPlayer then --Patch 4.3.4 compat
+			ReportPlayer("spam", lineId)
+		else
+			ComplainChat(lineId)
+		end
 		return
 	end
 	oldShow(self, data, ...)
