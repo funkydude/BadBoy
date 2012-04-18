@@ -356,7 +356,7 @@ local instantReportList = {
 	"%d[%do]+.*[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?", --{diamond} 3.9/ 1O0O0 {diamond} W,0,W,4,w,o,w,C,o,m
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
-	"vend.*prix.*livraison.*wow%.po", --Vend Po à prix interessant Livraison instantanée. Paiement par SMS/Tel ou Paypal, me contacter Skype: wow.po 
+	"vend.*prix.*livraison.*wow%.po", --Vend Po à prix interessant Livraison instantanée. Paiement par SMS/Tel ou Paypal, me contacter Skype: wow.po
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
@@ -492,25 +492,31 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		if myDebug then
 			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
 		else
-			COMPLAINT_ADDED = "|cFF33FF99BadBoy|r: "..orig.." |Hplayer:"..player.."|h["..player.."]|h" --Add name to reported message
-			--if BADBOY_POPUP then --Manual reporting via popup
+			if BADBOY_POPUP then --Manual reporting via popup
 				--Add original spam line to Blizzard popup message
 				StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = "BadBoy: ".. REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%%", "%%%%")
 				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
 				dialog.data = lineId
-			--[[else
-				--Automatically report
-				if ReportPlayer then --Patch 4.3.4 compat
-					ReportPlayer("spam", lineId)
-				else
-					ComplainChat(lineId)
-				end
-			end]]
+			else
+				--Show block message
+				ChatFrame1:AddMessage("** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:"..player.."|h["..player.."]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:"..player..":"..lineId.."|h[here]|h|r **", 1, 0.7, 0)
+			end
 		end
 		result = true
 		return true
 	end
 	result = nil
+end
+
+local oldShow = ChatFrame_OnHyperlinkShow
+ChatFrame_OnHyperlinkShow = function(self, data, ...)
+	local badboy, player, id = string.split(":", data)
+	if badboy and badboy == "badboy" then
+		local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
+		dialog.data = id
+		return
+	end
+	oldShow(self, data, ...)
 end
 
 --[[ Configure manual reporting ]]--
@@ -527,16 +533,5 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
-ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(_, _, msg)
-	if strfind(msg, "BadBoy") then
-		COMPLAINT_ADDED = orig --Reset reported message to default for manual reporting
-		if BADBOY_SILENT then
-			return true --Filter out the report if enabled
-		end
-	else
-		--Ninja this in here to prevent creating a login function & frame
-		--We force this on so we don't have spam that would have been filtered, reported on the forums
-		SetCVar("spamFilter", 1)
-	end
-end)
+SetCVar("spamFilter", 1)
 
