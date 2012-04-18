@@ -12,6 +12,30 @@
 -- GLOBALS: print, SetCVar, GetTime, pairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
 local myDebug = nil
 
+local reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+--[[do
+	local L = GetLocale()
+	if L == "frFR" then
+		reportMsg = 
+	elseif L == "deDE" then
+		reportMsg
+	elseif L == "zhTW" then
+		reportMsg
+	elseif L == "zhCN" then
+		reportMsg
+	elseif L == "esES" then
+		reportMsg
+	elseif L == "esMX" then
+		reportMsg
+	elseif L == "ruRU" then
+		reportMsg
+	elseif L == "koKR" then
+		reportMsg
+	elseif L == "ptBR" then
+		reportMsg
+	end
+end]]
+
 --These entries remove -2 points
 local whiteList = {
 	"recruit",
@@ -419,7 +443,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, orig, prevLineId, result, prevMsg, prevPlayer, prevWarn = gsub, COMPLAINT_ADDED, 0, nil, nil, nil, 0
+local gsub, prevLineId, result, prevMsg, prevPlayer, prevWarn = gsub, 0, nil, nil, nil, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -499,7 +523,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 				dialog.data = lineId
 			else
 				--Show block message
-				ChatFrame1:AddMessage("** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:"..player.."|h["..player.."]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:"..lineId.."|h[here]|h|r **", 1, 0.7, 0)
+				ChatFrame1:AddMessage(reportMsg:format(player, player, lineId), 1, 0.7, 0)
 			end
 		end
 		result = true
@@ -513,9 +537,9 @@ ChatFrame_OnHyperlinkShow = function(self, data, ...)
 	local badboy, lineId = string.split(":", data)
 	if badboy and badboy == "badboy" then
 		if ReportPlayer then --Patch 4.3.4 compat
-			ReportPlayer("spam", lineId)
+			ReportPlayer("spam", tonumber(lineId))
 		else
-			ComplainChat(lineId)
+			ComplainChat(tonumber(lineId))
 		end
 		return
 	end
