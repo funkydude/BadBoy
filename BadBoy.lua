@@ -236,6 +236,7 @@ local instantReportList = {
 	--[[  Runescape Trading  ]]--
 	--WTB RS gold paying WoW GOLD
 	"wt[bs]rsgold.*wowgold", --WTB rs gold trading wow gold PST
+	"wt[bs]wowgold.*rsgold", --WTS Wow gold for rs gold
 	--WTS RUNESCAPE GOLD !~!~!~ PST
 	--WTB RUNESCAPE GOLD WITH WOW GOLD PST
 	"wt[bs]runescapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
