@@ -13,28 +13,30 @@
 local myDebug = nil
 
 local reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
---[[do
+do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = 
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "deDE" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "zhTW" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "zhCN" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "esES" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "esMX" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "ruRU" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "koKR" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "ptBR" then
-		reportMsg
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+	elseif L == "itIT" then
+		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	end
-end]]
+end
 
 --These entries remove -2 points
 local whiteList = {
@@ -237,6 +239,7 @@ local instantReportList = {
 	--WTB RS gold paying WoW GOLD
 	"wt[bs]rsgold.*wowgold", --WTB rs gold trading wow gold PST
 	"wt[bs]wowgold.*rsgold", --WTS Wow gold for rs gold
+	"wt[bs]wowgold.*rscoint?s", --WTS Wow gold for rs coints
 	--WTS RUNESCAPE GOLD !~!~!~ PST
 	--WTB RUNESCAPE GOLD WITH WOW GOLD PST
 	"wt[bs]runescapegold", --WTB Runescape Gold, Trading WOW Gold, PST -- I will trade first.
