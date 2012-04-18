@@ -9,7 +9,7 @@
 		You haven't implemented anything to help filtering gold spam since ComplainChat(), that was years ago, please show us you care.
 ]]--
 
--- GLOBALS: print, SetCVar, GetTime, pairs, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
+-- GLOBALS: print, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
 local myDebug = nil
 
 local reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
@@ -532,14 +532,19 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	result = nil
 end
 
+local reportTbl = {}
 local oldShow = ChatFrame_OnHyperlinkShow
 ChatFrame_OnHyperlinkShow = function(self, data, ...)
-	local badboy, lineId = string.split(":", data)
+	local badboy, lineId = strsplit(":", data)
+	lineId = tonumber(lineId)
 	if badboy and badboy == "badboy" then
-		if ReportPlayer then --Patch 4.3.4 compat
-			ReportPlayer("spam", tonumber(lineId))
-		else
-			ComplainChat(tonumber(lineId))
+		if CanComplainChat(lineId) and not reportTbl[lineId] then
+			reportTbl[lineId] = true
+			if ReportPlayer then --Patch 4.3.4 compat
+				ReportPlayer("spam", lineId)
+			else
+				ComplainChat(lineId)
+			end
 		end
 		return
 	end
