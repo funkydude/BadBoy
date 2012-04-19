@@ -5,7 +5,7 @@
 ## Notes-deDE: Automatischer Spam Blocker & Reporter.
 ## Notes-ruRU: A light, automatic spam blocker & reporter.
 ## Notes-zhCN: A light, automatic spam blocker & reporter.
-## Notes-zhTW: A light, automatic spam blocker & reporter.
+## Notes-zhTW: 一個輕量級，自動阻擋垃圾訊息與舉報的插件。
 ## Notes-koKR: A light, automatic spam blocker & reporter.
 ## Notes-frFR: Un simple anti-spam & signalement des abus.
 ## Notes-esES: Ligero bloqueador y reportador de spam automático.

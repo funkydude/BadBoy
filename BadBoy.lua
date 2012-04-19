@@ -20,7 +20,7 @@ do
 	elseif L == "deDE" then
 		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "zhTW" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "** |cFF33FF99BadBoy|r: 從 |Hplayer:%s|h[%s]|h 發出的垃圾訊息已被阻擋，請做一個大好人點擊|cfffe2ec8|Hbadboy:%d|h[here]|h|r來舉報 **"
 	elseif L == "zhCN" then
 		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "esES" then
