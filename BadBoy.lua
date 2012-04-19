@@ -1,22 +1,12 @@
---[[	BLIZZARD IF YOU'RE READING THIS I'M BEGGING FOR YOUR HELP.
-		Please let me fetch either player level from the given guid (will also help BadBoy_Levels)
-		or let me fetch if the player is in a guild or not from the given guid (spammers never guilded)
-		or both!
 
-		I can then, 1) only scan chat from unguilded WoW players, 2) only scan chat from
-		players below level 10 (55-60 for DKs), this would near enough eliminate any chance of false positives.
-
-		You haven't implemented anything to help filtering gold spam since ComplainChat(), that was years ago, please show us you care.
-]]--
-
--- GLOBALS: print, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
+-- GLOBALS: print, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
 local reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "** |cFF33FF99BadBoy|r: Le spam de |Hplayer:%s|h[%s]|h a été bloqué, soyez une honnête personne et signalez-le en cliquant |cfffe2ec8|Hbadboy:%d|h[ici]|h|r **"
 	elseif L == "deDE" then
 		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "zhTW" then
