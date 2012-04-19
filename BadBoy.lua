@@ -382,6 +382,9 @@ local instantReportList = {
 	"%d[%do]+.*[o0][%.,]*k[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s",
 	"[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?.*%d[%do]+", --=====w..o..w..4..w..o..w , c..@..m=====3,99=10k 48491615
 	"%d[%do]+.*[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?", --{diamond} 3.9/ 1O0O0 {diamond} W,0,W,4,w,o,w,C,o,m
+	"^[wv][%.,]*[o0][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0][%.,]*[wv]v?[%.,]*c[%.,]*[o0][%.,]*m$", --{square} W.0.vv.4.vv.0.W.C.0.m {square}
+	"^[hl][%.,]*[au][%.,]*[pc][%.,]*[pk][%.,]*y[%.,]*g[%.,]*[o0][%.,]*l[%.,]*d[%.,]*s[%.,]*c[%.,]*[o0][%.,]*m$",
+	"^o[%.,]*k[%.,]*g[%.,]*o[%.,]*l[%.,]*d[%.,]*s[%.,]*c[%.,]*[o0][%.,]*m$",
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 	"vend.*prix.*livraison.*wow%.po", --Vend Po à prix interessant Livraison instantanée. Paiement par SMS/Tel ou Paypal, me contacter Skype: wow.po
@@ -540,8 +543,8 @@ local reportTbl = {}
 local oldShow = ChatFrame_OnHyperlinkShow
 ChatFrame_OnHyperlinkShow = function(self, data, ...)
 	local badboy, lineId = strsplit(":", data)
-	lineId = tonumber(lineId)
 	if badboy and badboy == "badboy" then
+		lineId = tonumber(lineId)
 		if CanComplainChat(lineId) and not reportTbl[lineId] then
 			reportTbl[lineId] = true
 			if ReportPlayer then --Patch 4.3.4 compat
