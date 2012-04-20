@@ -1,5 +1,5 @@
 
--- GLOBALS: print, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
+-- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
 local reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
@@ -440,7 +440,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, prevLineId, result, prevMsg, prevPlayer, prevWarn = gsub, 0, nil, nil, nil, 0
+local gsub, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, 0, nil, {}, {}, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -501,10 +501,15 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	--End icon removal
 
-	--Simple 'previous-line' anti-spam, check the previous line, filter if duplicate
-	if msg == prevMsg and player == prevPlayer then result = true return true end
-	prevMsg = msg prevPlayer = player
-	--end check
+	--15 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 15
+	for i=1, #chatLines do
+		if chatLines[i] == msg and chatPlayers[i] == player then --If message same as one in previous 15 and from the same person...
+			result = true return true --...filter!
+		end
+		if i == 15 then tremove(chatLines, 1) tremove(chatPlayers, 1) end
+	end
+	tinsert(chatLines, msg) tinsert(chatPlayers, player)
+	--End text buffer
 
 	if IsSpam(msg, icon) then
 		if BadBoyLogger and not myDebug then
