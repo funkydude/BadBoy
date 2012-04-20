@@ -123,7 +123,7 @@ local heavyList = {
 	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+l[0o]+[kg]",
 	"%d+[%.,]?%d*usd[/\\=]%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*usd[fp][oe]r%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?[o%d]*[kg]%d+%%bonus[/\\=]%d+[%.,]?[o%d]+",
+	"%d+[%.,]?[o%d]*[kg]%d+bonus[/\\=]%d+[%.,]?[o%d]+",
 	"%d+[%.,]?%d*[кр]+зa%d+[%.,]?%d*[рк]+", --14к за 21р / 17р за 1к
 }
 
@@ -477,7 +477,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[“”%*%-%)\"`'_%+ ]+", "") --Remove spaces, symbols, etc
+	msg = gsub(msg, "[“”%*%-%)\"`'_%+#%%%^& ]+", "") --Remove spaces, symbols, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if strfind(msg, "[аàáäâãåсçеèéëêìíïîΜоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
