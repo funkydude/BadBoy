@@ -1,5 +1,5 @@
 ## Interface: 40300
-## Version: v8.203
+## Version: v9.000
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Notes-deDE: Automatischer Spam Blocker & Reporter.
@@ -12,7 +12,7 @@
 ## Notes-esMX: A light, automatic spam blocker & reporter.
 ## Notes-ptBR: Um leve bloqueador automático de spam e reportador.
 ## Author: Funkydude
-## SavedVariables: BADBOY_POPUP, BADBOY_SILENT
+## SavedVariables: BADBOY_POPUP, BADBOY_NOREPORT
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved

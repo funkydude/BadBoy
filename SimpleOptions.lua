@@ -6,36 +6,50 @@ do
 	SLASH_BADBOY1 = "/badboy"
 
 	--[[ Localization ]]--
-	local locNoReportMsg = "Hide '%s' message"
-	local locManualReport = "Disable Automatic Spam Report (Show popup)"
+	local locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+	local locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+	local locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	local L = GetLocale()
 	if L == "frFR" then
-		locNoReportMsg = "Cacher le message '%s'"
-		locManualReport = "Désactiver le signalement auto. du spam (affiche un popup)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "deDE" then
-		locNoReportMsg = "'%s' Meldung verbergen"
-		locManualReport = "Automatische Spam-Meldungen deaktivieren (Pop-Up anzeigen)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "zhTW" then
-		locNoReportMsg = "隱藏 '%s' 信息"
-		locManualReport = "禁用信息自動過濾系統(顯示彈出)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "zhCN" then
-		locNoReportMsg = "隐藏 '%s' 信息"
-		locManualReport = "禁用信息自动过滤系统(显示弹出)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "esES" then
-		locNoReportMsg = "Ocultar el mensaje '%s'"
-		locManualReport = "Desactivar Reporte Automático de Spam (Mostrar popup)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "esMX" then
-		locNoReportMsg = "Ocultar el mensaje '%s'"
-		locManualReport = "Desactivar el reporte automático (Mostrar popup)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "ruRU" then
-		locNoReportMsg = "Прятать сообщение '%s'"
-		locManualReport = "Отключить автоматическую жалобу на спам (показывать подтверждение)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "koKR" then
-		locNoReportMsg = "'%s' 메시지 숨기기"
-		locManualReport = "스팸 자동신고 중지 (확인창을 띄움)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "ptBR" then
-		locNoReportMsg = "Esconder mensagem: '%s'"
-		locManualReport = "Desativar Relatório Automático de Spam (Mostrar popup)"
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+	elseif L == "itIT" then
+		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	end
 
 	--[[ Main Panel ]]--
@@ -58,19 +72,24 @@ do
 	btnNoReportMsg:SetScript("OnClick", function(frame)
 		if frame:GetChecked() then
 			PlaySound("igMainMenuOptionCheckBoxOn")
-			BADBOY_SILENT = true
+			BADBOY_NOREPORT = true
 		else
 			PlaySound("igMainMenuOptionCheckBoxOff")
-			BADBOY_SILENT = nil
+			BADBOY_NOREPORT = nil
 		end
 	end)
 	local btnNoReportMsgText = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
 	btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
-	btnNoReportMsgText:SetText((locNoReportMsg):format(COMPLAINT_ADDED))
+	btnNoReportMsgText:SetText(locNoReportMsg)
+	local btnNoReportMsgDesc = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+	btnNoReportMsgDesc:SetPoint("TOPLEFT", btnNoReportMsgText, "BOTTOMLEFT", 0, -5)
+	btnNoReportMsgDesc:SetJustifyH("LEFT")
+	btnNoReportMsgDesc:SetWordWrap(true)
+	btnNoReportMsgDesc:SetText(locNoReportDesc)
 
 	--[[ No Automatic Report Checkbox ]]--
 	local btnManualReport = CreateFrame("CheckButton", "BadBoyConfigPopupButton", badboy, "OptionsBaseCheckButtonTemplate")
-	btnManualReport:SetPoint("TOPLEFT", 16, -57)
+	btnManualReport:SetPoint("TOPLEFT", 16, -112)
 	btnManualReport:SetScript("OnClick", function(frame)
 		if frame:GetChecked() then
 			PlaySound("igMainMenuOptionCheckBoxOn")
@@ -89,9 +108,14 @@ do
 	levelsTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -3)
 	levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
 
+	--[[ BadBoy_Guilded Title ]]--
+	local guildedTitle = badboy:CreateFontString("BadBoyGuildedConfigTitle", "ARTWORK", "GameFontNormalLarge")
+	guildedTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -48)
+	guildedTitle:SetText("BadBoy_Guilded ["..ADDON_MISSING.."]")
+
 	--[[ BadBoy_CCleaner Title ]]--
 	local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	ccleanerTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -48)
+	ccleanerTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -93)
 	ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 end
 

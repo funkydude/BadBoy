@@ -330,6 +330,7 @@ local instantReportList = {
 	--WTS [Heart of the Aspects]25K [Winged Guardian]25K [Celestial Steed]20K AND prepaid gametimecard
 	--WTS [Celestial Steed]  [Winged Guardian]  [Heart of the Aspects] and prepaid gametimecard / 60k for half year
 	"wts.*steed.*gamet?i?m?e?card", --{skull} WTS Winged Guardian 15K.Heart of the Aspects 15K Celestial Steed 15K 90 Day Pre-Paid Game Card 35K {skull}
+	"^wtscheapergold/whisper$", --{square} WTS CHeaper gold /whisper {square}
 	--WTS Blizzard Store Mounts (25k) and Blizzard Store Pets (10k)
 	"wts.*mount.*pet.*%d+k", --WTS {star}flying mounts:[Celestial Steed] and [Winged Guardian]30k each {star}PETS:Lil'Ragnaros/Lil'XT/Lil'K.T./Moonkin/Pandaren/Cenarion Hatchling 12k each,{star}prepaid timecards 15k each.{star}
 	"wowhelp%.1click%.hu", --{square}Have a nice day, enjoy the game!{square} - {star} [http://wowhelp.1-click.hu/] - One click for all WoW help! {star}
@@ -353,6 +354,7 @@ local instantReportList = {
 	--www K4power c@m.Lowest Price + 10% Free G.{Code:4Power}--
 	--~~K.4.p.0.W.e.r,C,o,m~~ 4.€.~1O0O0
 	"k[%.,]*4[%.,]*p[%.,]*[o0][%.,]*w[%.,]*e[%.,]*r.*%d[%do]+", --WWW K4POWER C0M {Code:Xmas}->>Xmas Promotions{18th Dec-26th Dec}->35% Free,0rder 50k More->X-53 Rocket Mount For Free!
+	"%d[%do]+.*k[%.,]*4[%.,]*p[%.,]*[o0][%.,]*w[%.,]*e[%.,]*r", --4e<> 10O0O @ k4põwér C'Q'M @
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
 	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>.
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
@@ -531,7 +533,9 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 				dialog.data = lineId
 			else
 				--Show block message
-				ChatFrame1:AddMessage(reportMsg:format(player, player, lineId), 1, 0.7, 0)
+				if not BADBOY_NOREPORT then
+					ChatFrame1:AddMessage(reportMsg:format(player, player, lineId), 1, 0.7, 0)
+				end
 			end
 		end
 		result = true
@@ -540,26 +544,29 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	result = nil
 end
 
-local reportTbl = {}
-local oldShow = ChatFrame_OnHyperlinkShow
-ChatFrame_OnHyperlinkShow = function(self, data, ...)
-	local badboy, lineId = strsplit(":", data)
-	if badboy and badboy == "badboy" then
-		lineId = tonumber(lineId)
-		if CanComplainChat(lineId) and not reportTbl[lineId] then
-			reportTbl[lineId] = true
-			if ReportPlayer then --Patch 4.3.4 compat
-				ReportPlayer("spam", lineId)
-			else
-				ComplainChat(lineId)
+--[[ Configure report links ]]--
+do
+	local reportTbl = {}
+	local oldShow = ChatFrame_OnHyperlinkShow
+	ChatFrame_OnHyperlinkShow = function(self, data, ...)
+		local badboy, lineId = strsplit(":", data)
+		if badboy and badboy == "badboy" then
+			lineId = tonumber(lineId)
+			if CanComplainChat(lineId) and not reportTbl[lineId] then
+				reportTbl[lineId] = true
+				if ReportPlayer then --Patch 4.3.4 compat
+					ReportPlayer("spam", lineId)
+				else
+					ComplainChat(lineId)
+				end
 			end
+			return
 		end
-		return
+		oldShow(self, data, ...)
 	end
-	oldShow(self, data, ...)
 end
 
---[[ Configure manual reporting ]]--
+--[[ Configure popup reporting ]]--
 StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].OnHide = function(self)
 	self.text:SetText(REPORT_SPAM_CONFIRMATION) --Reset popup message to default for manual reporting
 end
