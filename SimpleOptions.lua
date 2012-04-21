@@ -6,14 +6,14 @@ do
 	SLASH_BADBOY1 = "/badboy"
 
 	--[[ Localization ]]--
-	local locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+	local locNoReportMsg = "Hide the 'spam blocked' message asking you to report"
 	local locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-	local locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+	local locManualReport = "Show a report player popup (showing the spam) instead of printing in chat"
 	local L = GetLocale()
 	if L == "frFR" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+		locNoReportMsg = "Cacher le message 'spam bloqué' vous demandant de signaler le spam"
+		locNoReportDesc = "Veuillez ne PAS utiliser ceci. Le signalement du spam permet aux comptes piratés utilisés\npar les spammeurs d'être fermés et de nettoyer les royaumes. De plus, si beaucoup de\njoueurs signalent un spammeur, ce dernier perd la possibilité de discuter et donc de\nspammer, ce qui est bénéfique pour tous, en particulier pour ceux qui n'utilisent pas BadBoy."
+		locManualReport = "Afficher un popup de signalement du joueur au lieu de l'indiquer dans la fenêtre de chat"
 	elseif L == "deDE" then
 		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
 		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."

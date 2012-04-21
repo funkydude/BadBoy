@@ -6,7 +6,7 @@ local reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Le spam de |Hplayer:%s|h[%s]|h a été bloqué, soyez une honnête personne et signalez-le en cliquant |cfffe2ec8|Hbadboy:%d|h[ici]|h|r **"
+		reportMsg = "** |cFF33FF99BadBoy|r: Le spam |2 |Hplayer:%s|h[%s]|h a été bloqué. Soyez un joueur responsable et signalez-le en cliquant |cfffe2ec8|Hbadboy:%d|h[ici]|h|r **"
 	elseif L == "deDE" then
 		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
 	elseif L == "zhTW" then
