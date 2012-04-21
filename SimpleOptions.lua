@@ -58,7 +58,7 @@ do
 	badboy:Hide()
 	badboy.name = name
 	badboy:SetScript("OnShow", function()
-		BadBoyConfigSilenceButton:SetChecked(BADBOY_SILENT)
+		BadBoyConfigSilenceButton:SetChecked(BADBOY_NOREPORT)
 		BadBoyConfigPopupButton:SetChecked(BADBOY_POPUP)
 	end)
 	local title = badboy:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
