@@ -2,29 +2,29 @@
 -- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
-local reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+local reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Le spam |2 |Hplayer:%s|h[%s]|h a été bloqué. Soyez un joueur responsable et signalez-le en cliquant |cfffe2ec8|Hbadboy:%d|h[ici]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "deDE" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "zhTW" then
-		reportMsg = "** |cFF33FF99BadBoy|r: 從 |Hplayer:%s|h[%s]|h 發出的垃圾訊息已被阻擋，請做一個大好人點擊|cfffe2ec8|Hbadboy:%d|h[here]|h|r來舉報 **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "zhCN" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "esES" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "esMX" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "ruRU" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "koKR" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "ptBR" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "itIT" then
-		reportMsg = "** |cFF33FF99BadBoy|r: Spam was blocked from |Hplayer:%s|h[%s]|h, please be an awesome person and report it by clicking |cfffe2ec8|Hbadboy:%d|h[here]|h|r **"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	end
 end
 
