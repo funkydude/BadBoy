@@ -12,7 +12,7 @@ do
 	elseif L == "zhTW" then
 		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "zhCN" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: 從 |Hplayer:%s|h[%s]|h 發出的垃圾訊息已被阻擋, |cfffe2ec8|Hbadboy:%d|h[點擊以舉報 !]|h|r"
 	elseif L == "esES" then
 		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "esMX" then
