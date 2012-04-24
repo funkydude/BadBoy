@@ -10,9 +10,9 @@ do
 	elseif L == "deDE" then
 		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "zhTW" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
-	elseif L == "zhCN" then
 		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: 從 |Hplayer:%s|h[%s]|h 發出的垃圾訊息已被阻擋, |cfffe2ec8|Hbadboy:%d|h[點擊以舉報 !]|h|r"
+	elseif L == "zhCN" then
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "esES" then
 		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	elseif L == "esMX" then
@@ -27,23 +27,6 @@ do
 		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
 	end
 end
-
---These entries remove -2 points
-local whiteList = {
-	"recruit",
-	"dkp",
-	"lookin?g", --guild
-	"lf[gm]",
-	"|cff",
-	"raid",
-	"roleplay",
-	"enjin",
-	"guildlaunch",
-	"wowstead",
-	"social",
-	"fortunecard",
-	"house",
-}
 
 --These entries add +1 point
 local commonList = {
@@ -186,6 +169,29 @@ local phishingList = {
 	"konto", --acount
 	"kostenlos", --free
 	"qualifiziert", --qualified
+}
+
+--These entries remove -2 points
+local whiteList = {
+	"recruit",
+	"dkp",
+	"lookin?g", --guild
+	"lf[gm]",
+	"|cff",
+	"raid",
+	"roleplay",
+	"enjin",
+	"guildlaunch",
+	"wowstead",
+	"social",
+	"fortunecard",
+	"house",
+	"sucht", --de
+	"gilde", --de
+	"rekryt", --se
+	"kilta", --fi
+	"etsii", --fi
+	"sosyal", --tr
 }
 
 --Any entry here will instantly report/block
@@ -345,6 +351,9 @@ local instantReportList = {
 	"wts.*%[.*%].*%[.*%].*cheap.*stock", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Vial of the Sands],cheapst ,in stock ,pst 
 	"wts.*%[.*%].*%[.*%].*cheap.*safe", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer] [Magic Rooster Egg]Cheapest & Safest Online Trad
 	"^wts.*spectraltiger.*alsootheritems$", --WTS [Magic Rooster Egg] [Reins of the Spectral Tiger] [Reins of the Swift Spectral Tiger] Also other items
+	"wtslvl%d+charallclass", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
+	"wtsgold.*mount.*tar?bard.*acc", --WTS gold and some TCG mounts and Tarbard of the lightbringer and 80lvl acc
+	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
 	"wts.*mount.*rocket.*gift", --WTS 2 seat flying mount the X-53 Touring rocket , you can also get a gift--one month game , PST
 	"k%.?4g[o0]ldcom.*code", --{star}.W{star}.W{star}W {square} k{triangle}.4{triangle}g{triangle}o{triangle}l{triangle}d {square} c{star}o{star}m -------{square}- c{star}o{star}d{star}e : CF \ CO \ CK
@@ -388,7 +397,6 @@ local instantReportList = {
 	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 	"vend.*prix.*livraison.*wow%.po", --Vend Po à prix interessant Livraison instantanée. Paiement par SMS/Tel ou Paypal, me contacter Skype: wow.po
-	"wtslvl%d+charallclass", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
@@ -557,11 +565,7 @@ do
 			lineId = tonumber(lineId)
 			if CanComplainChat(lineId) and not reportTbl[lineId] then
 				reportTbl[lineId] = true
-				if ReportPlayer then --Patch 4.3.4 compat
-					ReportPlayer("spam", lineId)
-				else
-					ComplainChat(lineId)
-				end
+				ReportPlayer("spam", lineId)
 			end
 			return
 		end
