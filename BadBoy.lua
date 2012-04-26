@@ -58,7 +58,7 @@ local commonList = {
 	"livraison", --delivery
 	"moinscher", --least expensive
 	"prix", --price
-	"vendons", --sell
+	"commande", --order
 
 	--German
 	"billigster", --cheapest
@@ -398,7 +398,6 @@ local instantReportList = {
 	"[wv][%.,]*[o0q][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0q][%.,]*[wv]v?.*s[%.,]*a[%.,]*[l!][%.,]*e", 
 	"s[%.,]*a[%.,]*[l!][%.,]*e.*[hl!][%.,]*[au][%.,]*[pc][%.,]*[pk][%.,]*y[%.,]*g[%.,]*[o0q][%.,]*[l!][%.,]*d[%.,]*s",
 	"s[%.,]*a[%.,]*[l!][%.,]*e.*[wv][%.,]*[o0q][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0q][%.,]*[wv]v?", 
-	--[Gamepowa.net] 3.49e.u.r=5000p.o, le meilleur prix possible ! Recevez votre commande en 5mins. Nous vendons des po depuis plus de 3 ans, plus de 10000 personnes nous ont déjà fait confiance, merci.
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 	"vend.*prix.*livraison.*wow%.po", --Vend Po à prix interessant Livraison instantanée. Paiement par SMS/Tel ou Paypal, me contacter Skype: wow.po
 }
@@ -498,7 +497,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[“”%*%-%)\"`'_%+#%%%^&;: ]+", "") --Remove spaces, symbols, etc
+	msg = gsub(msg, "[“”%*%-%)\"`'_%+#%%%^&;:~ ]+", "") --Remove spaces, symbols, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
