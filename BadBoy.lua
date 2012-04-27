@@ -173,7 +173,7 @@ local phishingList = {
 
 --These entries remove -2 points
 local whiteList = {
-	"recruit",
+	"recrui?t",
 	"dkp",
 	"lookin?g", --guild
 	"lf[gm]",
@@ -335,6 +335,7 @@ local instantReportList = {
 	"wts.*gametime.*mount.*pet", --WTS Prepaid gametime code 8k per month. the mount [Winged Guardian]'[Celestial Steed] 15K each and the pets 6k each, if u are interested,PST
 	"wts.*monthgametime.*%d+k", --WTS 1 Month Gametime 10k. 3 Month Gameitme 25k. 6 Month Gametime 40k
 	"wts.*gamet?i?m?e?card.*gold", --wts 60days gamecard for gold /w for more info.
+	"wts.*guardian.*gamet?i?m?e?card", --wts [Heart of the Aspects]25k [Winged Guardian]25k and prepaid gametimecard
 	--WTS [Heart of the Aspects]25K [Winged Guardian]25K [Celestial Steed]20K AND prepaid gametimecard
 	--WTS [Celestial Steed]  [Winged Guardian]  [Heart of the Aspects] and prepaid gametimecard / 60k for half year
 	"wts.*steed.*gamet?i?m?e?card", --{skull} WTS Winged Guardian 15K.Heart of the Aspects 15K Celestial Steed 15K 90 Day Pre-Paid Game Card 35K {skull}
