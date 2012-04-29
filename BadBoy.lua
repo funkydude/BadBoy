@@ -180,6 +180,7 @@ local whiteList = {
 	"|cff",
 	"raid",
 	"roleplay",
+	"apply",
 	"enjin",
 	"guildlaunch",
 	"wowstead",
@@ -499,17 +500,6 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	local debug = msg --Save original message format
 	msg = (msg):lower() --Lower all text, remove capitals
-	msg = gsub(msg, "[“”%*%-%)\"`'_%+#%%%^&;:~ ]+", "") --Remove spaces, symbols, etc
-
-	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
-		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
-		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
-			msg = gsub(msg, k, v)
-		end
-		if myDebug then print("Running replacements") end
-	end
-	--End string replacements
 
 	--They like to use raid icons to avoid detection
 	local icon = 0
@@ -524,6 +514,17 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		if myDebug and icon == 1 then print("Removing icons, adding 1 point.") end
 	end
 	--End icon removal
+	msg = gsub(msg, "[“”%*%-%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
+
+	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
+	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
+		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
+		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
+			msg = gsub(msg, k, v)
+		end
+		if myDebug then print("Running replacements") end
+	end
+	--End string replacements
 
 	--15 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 15
 	for i=1, #chatLines do
