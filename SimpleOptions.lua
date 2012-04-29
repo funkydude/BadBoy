@@ -15,9 +15,9 @@ do
 		locNoReportDesc = "Veuillez ne PAS utiliser ceci. Le signalement du spam permet aux comptes piratés utilisés\npar les spammeurs d'être fermés et de nettoyer les royaumes. De plus, si beaucoup de\njoueurs signalent un spammeur, ce dernier perd la possibilité de discuter et donc de\nspammer, ce qui est bénéfique pour tous, en particulier pour ceux qui n'utilisent pas BadBoy."
 		locManualReport = "Afficher un popup de signalement du joueur au lieu de l'indiquer dans la fenêtre de chat"
 	elseif L == "deDE" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+		locNoReportMsg = "Verstecke die \"Spam geblockt\" Meldung die dich bittet den Spam zu melden"
+		locNoReportDesc = "Bitte NICHT nutzen. Spam zu melden hilft die Anzahl der gehackten Accounts die\nSpammer nutzen zu reduzieren und säubert die Server. Wenn viele Leute einen Spammer\nmelden, verlieren diese ihre Möglichkeit den Chat zu nutzen. Davon profitieren alle,\nvor allem Leute die BadBoy nicht nutzen."
+		locManualReport = "Zeige ein PopUp (zeigt den Spam) anstatt es im Chatfenster anzuzeigen"
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏要你舉報的 '垃圾阻擋' 訊息"
 		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
