@@ -187,6 +187,8 @@ local whiteList = {
 	"fortunecard",
 	"house",
 	"progres",
+	"arena",
+	"[235]v[235]",
 	"sucht", --de
 	"gilde", --de
 	"rekryt", --se
@@ -501,11 +503,11 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		end
 	end
 	local debug = msg --Save original message format
-	msg = (msg):lower() --Lower all text, remove capitals
+	msg = msg:lower() --Lower all text, remove capitals
 
 	--They like to use raid icons to avoid detection
 	local icon = 0
-	if strfind(msg, "{") then --Only run the icon removal code if the chat line has raid icons that need removed
+	if strfind(msg, "{", nil, true) then --Only run the icon removal code if the chat line has raid icons that need removed
 		local found = 0
 		for i=1, #restrictedIcons do
 			msg, found = gsub(msg, restrictedIcons[i], "")
