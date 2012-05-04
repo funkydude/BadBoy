@@ -253,6 +253,8 @@ local instantReportList = {
 	--WTS level 25 guild with 80k gold for runescape gold
 	"goldforrunescapegold", --Exchanging WoW gold for Runescape gold pst me better price for higher amount.
 	"buying?runescapeg", --buyin runescape g
+	"wt[bs]runescapeaccount", --WTB runescape accounts ( pure only ) or money! i pay with wow gold. GOT 170k gold atm.
+	"wt[bs]runescapepure.*%$", --WTB runescape pure ( STR PURE IS A $$ PAYING EXTRA FOR STR PURE )!
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -359,6 +361,7 @@ local instantReportList = {
 	"^wts.*spectraltiger.*alsootheritems$", --WTS [Magic Rooster Egg] [Reins of the Spectral Tiger] [Reins of the Swift Spectral Tiger] Also other items
 	--^{square} WTS lv80 char all class ! if you wanna get a lv80 char in 30 mins /w me for more info{square}^
 	"wtslvl?%d+charallclass", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
+	"wtsnone%-mergeacc.*lvl?%d+.*info", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
 	"wtsgold.*mount.*tar?bard.*acc", --WTS gold and some TCG mounts and Tarbard of the lightbringer and 80lvl acc
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 	"%d+[/\\=]%d+.*gold4power", --?90=5oK Google:Gold4Power, Introducer ID:saray
@@ -531,12 +534,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	--End string replacements
 
-	--15 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 15
+	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 15
 	for i=1, #chatLines do
 		if chatLines[i] == msg and chatPlayers[i] == player then --If message same as one in previous 15 and from the same person...
 			result = true return true --...filter!
 		end
-		if i == 15 then tremove(chatLines, 1) tremove(chatPlayers, 1) end
+		if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end
 	end
 	tinsert(chatLines, msg) tinsert(chatPlayers, player)
 	--End text buffer
