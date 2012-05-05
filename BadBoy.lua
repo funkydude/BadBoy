@@ -2,29 +2,29 @@
 -- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
-local reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+local reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Spam |2 |Hplayer:%s|h[%s]|h bloqué, |cfffe2ec8|Hbadboy:%d|h[Cliquez pour signaler !]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Spam |2 |Hplayer:%s|h[%s]|h bloqué, |cfffe2ec8|Hbadboy:%d:%s|h[Cliquez pour signaler !]|h|r"
 	elseif L == "deDE" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Spam von |Hplayer:%s|h[%s]|h geblockt, |cfffe2ec8|Hbadboy:%d|h[Zum Melden klicken!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Spam von |Hplayer:%s|h[%s]|h geblockt, |cfffe2ec8|Hbadboy:%d:%s|h[Zum Melden klicken!]|h|r"
 	elseif L == "zhTW" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: 從 |Hplayer:%s|h[%s]|h 發出的垃圾訊息已被阻擋, |cfffe2ec8|Hbadboy:%d|h[點擊以舉報 !]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: 從 |Hplayer:%s|h[%s]|h 發出的垃圾訊息已被阻擋, |cfffe2ec8|Hbadboy:%d:%s|h[點擊以舉報 !]|h|r"
 	elseif L == "zhCN" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	elseif L == "esES" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	elseif L == "esMX" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	elseif L == "ruRU" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	elseif L == "koKR" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	elseif L == "ptBR" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	elseif L == "itIT" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d|h[Click to report!]|h|r"
+		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	end
 end
 
@@ -255,12 +255,10 @@ local instantReportList = {
 	"buying?runescapeg", --buyin runescape g
 	"wt[bs]runescapeaccount", --WTB runescape accounts ( pure only ) or money! i pay with wow gold. GOT 170k gold atm.
 	"wt[bs]runescapepure.*%$", --WTB runescape pure ( STR PURE IS A $$ PAYING EXTRA FOR STR PURE )!
+	"wt[bs]runescapemoney", --WTB runescape money. 3mil = 1k in wow! easy money making.
 
 	--[[  League of Legends  ]]--
 	"^wt[bs]lolacco?u?n?t?$", --WTB LoL acc
-
-	--[[  Guild Buy/Sell  ]]--
-	--{star}{star}WTB Level 25 Guild, Paying Good {star} EVEN if its DEAD! {star} Buying from a different severs too ! {star}{star} Also buying 20 Guild + {star} 10 + Guilds too {star}
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+.*info", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
@@ -282,14 +280,14 @@ local instantReportList = {
 	"wts.*steed.*gamet?i?m?e?card", --{skull} WTS Winged Guardian 15K.Heart of the Aspects 15K Celestial Steed 15K 90 Day Pre-Paid Game Card 35K {skull}
 	--VK [Phiole der Sande][Theresas Leselampe][Maldos Shwertstock],25 Minuten Lieferung auf <buyboe(dot)de>
 	"%[.*%].*buyboe.*dot.*[fcd][ro0e]", --WTS [Theresa's Booklight] [Vial of the Sands] [Heaving Plates of Protection] 15mins delivery on<buyboe dot com>
-	"code.*hatchling.*card.*%d%d+[kg]", --WTS Codes redeem:6PETS [Cenarion Hatchling],Lil Rag,KT,XT,Moonkin,Pandaren 5k each;Prepaid gametimecard 6K;Flying mount[Celestial Steed] 15K.PST
-	"%d+k.*card.*rocket.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
+	"code.*hatchling.*gamet?i?m?e?card", --WTS Codes redeem:6PETS [Cenarion Hatchling],Lil Rag,KT,XT,Moonkin,Pandaren 5k each;Prepaid gametimecard 6K;Flying mount[Celestial Steed] 15K.PST
+	"gamet?i?m?e?card.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
 	--40$ for 10k gold or 45$ for  10k gold + 1 rocket  + one month  time card  .   25$ for  a  rocket .  we have  all boe items and 264 gears selled . if u r interested in .  plz whsiper me . :) ty
 	--$45=10k + one X-53 Touring Rocket, $107=30K + X-53 Touring Rocket, the promotion will be done in 10 minutes, if you like it, plz whisper me :) ty
 	"%$.*rocket.*%$.*rocket.*ple?a?[sz]", --$45 for 10k with a rocket {star} and 110$ for 30k with a Rocket{moon},if you like,plz pst
 	--WTS X-53 Touring Rocket.( the only 2 seat flying mount you can aslo get a free month game time) .. pst
 	--WTS [X-53 Touring Rocket], the only 2seats flying mount, PST
-	"wts.*touringrocket.*mount.*pst", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
+	"wts.*touringrocket.*mount", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
 	"wts.*touringrocket.*%d+k", --WTS[Celestial Steed],[X-53 Touring Rocket],Race,Xfer 15K,TimeCard 6K,[Cenarion Hatchling]*Rag*KT*XT*Moonk*Panda 5K
 	"wts.*g[o0][1l]d.*tcgmounts.*tabard", --WTS gO1d and TCG mounts and Tabard of the Lightbringer and maig rooster egg^^/w me:)
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
@@ -297,12 +295,12 @@ local instantReportList = {
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
 	"wts.*%[.*%].*good4game", --WTS[Blazing Hippogryph][Amani Dragonhawk][Big Battle Bear]buy TCG Mounts on good4game.c{circle}m
 	"wts.*%[.*%].*%[.*%].*wealso.*cheapestg", --WTS [Reins of the Crimson Deathcharger] [Mechano-Hog] [Big Battle Bear]and we also have the cheapest G
-	"reins.*vial.*%d+.*rocket", --WTS [Reins of the Crimson Deathcharger] [Vial of the Sands] [Reins of Poseidus],170usd=100k+a rocket for free
+	"wts.*%[.*%].*%d+usd.*%d+k", --WTS [Reins of the Crimson Deathcharger] [Vial of the Sands] [Reins of Poseidus],170usd=100k+a rocket for free
 	"boe.*sale.*upitems", --wts [Krol Decapitator] we have all the Boe items,mats and 378 items for sale .<www.upitems.com>!!
 	"wts.*rocket.*deliver", --WTSx-53 touring rocketinstant delivery,pst
 	"wts.*%[.*%].*$%d+.*%[.*%].*$%d+", --wts[Blauvelt's Family Crest]$34.00[Gilnean Ring of Ruination]$34.99[Signet of High Arcanist Savor]$34.90pst
 	"wts.*mount.*rocket.*gift", --WTS 2 seat flying mount the X-53 Touring rocket , you can also get a gift--one month game , PST
-	"pet.*rag.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest
+	"pet.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz
 	"wts.*touringrocket.*playingtime", --WTS {moon}{star} X-53 TOURING ROCKET (2 seater flying mount) {moon}{star} with 30 days playing time
 	"wts.*%[.*%].*%[.*%].*cheap.*stock", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Vial of the Sands],cheapst ,in stock ,pst
@@ -311,6 +309,7 @@ local instantReportList = {
 	--WTS Blizzard Store Mounts (25k) and Blizzard Store Pets (10k)
 	"wts.*mount.*pet.*%d+k", --WTS {star}flying mounts:[Celestial Steed] and [Winged Guardian]30k each {star}PETS:Lil'Ragnaros/Lil'XT/Lil'K.T./Moonkin/Pandaren/Cenarion Hatchling 12k each,{star}prepaid timecards 15k each.{star}
 	"wts.*rocket.*gametime", --WTS{rt3}"[X-53 Touring Rocket]&[Winged Guardian]&Celestial Steed&xt,kt,mo nk,cen.rag.moonkin and game time"{rt3}pst for more info.
+	"wts.*%[.*%].*powerle?ve?l.*chea", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Wooly White Rhino],and g ,powerlvling ,chea
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -562,7 +561,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			else
 				--Show block message
 				if not BADBOY_NOREPORT then
-					ChatFrame1:AddMessage(reportMsg:format(player, player, lineId), 1, 0.7, 0)
+					ChatFrame1:AddMessage(reportMsg:format(player, player, lineId, player), 1, 0.7, 0)
 				end
 			end
 		end
@@ -577,11 +576,11 @@ do
 	local reportTbl = {}
 	local oldShow = ChatFrame_OnHyperlinkShow
 	ChatFrame_OnHyperlinkShow = function(self, data, ...)
-		local badboy, lineId = strsplit(":", data)
+		local badboy, lineId, player = strsplit(":", data)
 		if badboy and badboy == "badboy" then
 			lineId = tonumber(lineId)
-			if CanComplainChat(lineId) and not reportTbl[lineId] then
-				reportTbl[lineId] = true
+			if CanComplainChat(lineId) and not reportTbl[player] then
+				reportTbl[player] = true
 				ReportPlayer("spam", lineId)
 			end
 			return
