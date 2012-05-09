@@ -254,14 +254,15 @@ local instantReportList = {
 	"goldforrunescapegold", --Exchanging WoW gold for Runescape gold pst me better price for higher amount.
 	"buying?runescapeg", --buyin runescape g
 	"wt[bs]runescapeaccount", --WTB runescape accounts ( pure only ) or money! i pay with wow gold. GOT 170k gold atm.
-	"wt[bs]runescapepure.*%$", --WTB runescape pure ( STR PURE IS A $$ PAYING EXTRA FOR STR PURE )!
-	"wt[bs]runescapemoney", --WTB runescape money. 3mil = 1k in wow! easy money making.
+	"wt[bs]runescapepure", --WTB runescape pure ( STR PURE IS A $$ PAYING EXTRA FOR STR PURE )!
+	--WTB big amount of runescape money. 2mil = 1k gold. ONLY LEGIT PEOPLE.
+	"wt[bs].*runescapemoney.*%d+k", --WTB runescape money. 3mil = 1k in wow! easy money making.
 
 	--[[  League of Legends  ]]--
 	"^wt[bs]lolacco?u?n?t?$", --WTB LoL acc
 
 	--[[  Account Buy/Sell  ]]--
-	"wtsnonemergeacc.*lvl?%d+.*info", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
+	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
 	"wtslvl?%d+charallclass", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 
@@ -527,7 +528,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		if myDebug and icon == 1 then print("Removing icons, adding 1 point.") end
 	end
 	--End icon removal
-	msg = gsub(msg, "[“”%*%-%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
+	msg = gsub(msg, "[“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
