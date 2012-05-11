@@ -47,9 +47,9 @@ do
 		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
 		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "itIT" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportMsg = "Nascondi il messaggio \"Spam bloccata\" che ti chiede di riportare"
 		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+		locManualReport = "Visualizza un messaggio che mostra la spam al posto di scrivere sulla chat"
 	end
 
 	--[[ Main Panel ]]--

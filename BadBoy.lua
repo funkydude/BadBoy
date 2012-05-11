@@ -24,7 +24,7 @@ do
 	elseif L == "ptBR" then
 		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
 	elseif L == "itIT" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+		reportMsg = "Spam bloccata di |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d%s|h[Clic qui per riportare!]|h|r "
 	end
 end
 
@@ -189,6 +189,7 @@ local whiteList = {
 	"house",
 	"progres",
 	"arena",
+	"boost",
 	"[235]v[235]",
 	"sucht", --de
 	"gilde", --de
