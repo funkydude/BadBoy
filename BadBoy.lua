@@ -2,29 +2,29 @@
 -- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
-local reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Spam |2 |Hplayer:%s|h[%s]|h bloqué, |cfffe2ec8|Hbadboy:%d:%s|h[Cliquez pour signaler !]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
 	elseif L == "deDE" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Spam von |Hplayer:%s|h[%s]|h geblockt, |cfffe2ec8|Hbadboy:%d:%s|h[Zum Melden klicken!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam geblockt, zum melden klicken!]|h|r <<<"
 	elseif L == "zhTW" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: 從 |Hplayer:%s|h[%s]|h 發出的垃圾訊息已被阻擋, |cfffe2ec8|Hbadboy:%d:%s|h[點擊以舉報 !]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
 	elseif L == "zhCN" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esES" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esMX" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ruRU" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "koKR" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ptBR" then
-		reportMsg = "|cFF000000>>>|r |cFF33FF99BadBoy|r: Blocked spam from |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d:%s|h[Click to report!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "itIT" then
-		reportMsg = "Spam bloccata di |Hplayer:%s|h[%s]|h, |cfffe2ec8|Hbadboy:%d%s|h[Clic qui per riportare!]|h|r "
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
 	end
 end
 
@@ -422,6 +422,7 @@ local instantReportList = {
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
 	"vend.*prix.*livraison.*wow%.po", --Vend Po à prix interessant Livraison instantanée. Paiement par SMS/Tel ou Paypal, me contacter Skype: wow.po
 	"verkauf.*hotgolds.*%d+g", --Gréat Vérkauf! .Hôtgôlds.côrn10000G.only.2.éUR.Hôtgôlds.côrnWWWé habén 783k spéichért und k?nnén Sié érhaltén innérhalb von 5-10 Minutén.wénn Sié kaufén ,  4403
+	"%d[%do]+=%d+%.?%d*e.*bonus.*skype", --@1òòòO=5.52ё.5% BòNuS.5-15mins can Gёt./w me for skype@
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
@@ -570,7 +571,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			else
 				--Show block message
 				if not BADBOY_NOREPORT then
-					ChatFrame1:AddMessage(reportMsg:format(player, player, lineId, player), 1, 0.7, 0)
+					ChatFrame1:AddMessage(reportMsg:format(lineId, player), 0.2, 1, 0.6)
 				end
 			end
 		end
