@@ -2,29 +2,29 @@
 -- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
-local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam geblockt, zum melden klicken!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam geblockt, zum melden klicken!]|h|r <<<"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esES" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esMX" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "koKR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
 	end
 end
 
@@ -415,8 +415,8 @@ local instantReportList = {
 	"[wv][%.,]*[o0q][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0q][%.,]*[wv]v?.*s[%.,]*[ae][%.,]*[l!|][%.,]*[l!|e]",
 	"s[%.,]*[ae][%.,]*[l!|][%.,]*[l!|e].*[hl!|][%.,]*[au][%.,]*[pc][%.,]*[pk][%.,]*y[%.,]*g[%.,]*[o0q][%.,]*[l!|][%.,]*d[%.,]*s",
 	"s[%.,]*[ae][%.,]*[l!|][%.,]*[l!|e].*[wv][%.,]*[o0q][%.,]*[wv]v?[%.,]*4[%.,]*[wv]v?[%.,]*[o0q][%.,]*[wv]v?",
-	"\\/\\/[o0]\\/\\/4\\/\\/[o0]\\/\\/.*%d[%do]+",
-	"%d[%do]+.*\\/\\/[o0]\\/\\/4\\/\\/[o0]\\/\\/",
+	"\\/\\/[o0]\\/\\/4\\/\\/[o0]\\/\\/.*%d[%dqo]+",
+	"%d[%dqo]+.*\\/\\/[o0]\\/\\/4\\/\\/[o0]\\/\\/",
 	"\\/\\/[o0]\\/\\/4\\/\\/[o0]\\/\\/.*s[%.,]*[ae][%.,]*[l!|][%.,]*[l!|e]",
 	"s[%.,]*[ae][%.,]*[l!|][%.,]*[l!|e].*\\/\\/[o0]\\/\\/4\\/\\/[o0]\\/\\/",
 	--Vend RBG 2400{star} 3.88“euro”=10k{moon}rapide et sûre.{star}D'autres types de BOE est également en vente.
@@ -485,7 +485,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, 0, nil, {}, {}, 0
+local gsub, prevLineId, result, chatLines, chatPlayers, prevWarn, addMsg = gsub, 0, nil, {}, {}, 0, ChatFrame1.AddMessage
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -571,7 +571,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			else
 				--Show block message
 				if not BADBOY_NOREPORT then
-					ChatFrame1:AddMessage(reportMsg:format(lineId, player), 0.2, 1, 0.6)
+					ChatFrame1:AddMessage(reportMsg:format(player, lineId), 0.2, 1, 0.6)
 				end
 			end
 		end
@@ -583,15 +583,41 @@ end
 
 --[[ Configure report links ]]--
 do
-	local reportTbl = {}
 	local oldShow = ChatFrame_OnHyperlinkShow
 	ChatFrame_OnHyperlinkShow = function(self, data, ...)
-		local badboy, lineId, player = strsplit(":", data)
+		local badboy, player, lineId = strsplit(":", data)
 		if badboy and badboy == "badboy" then
 			lineId = tonumber(lineId)
-			if CanComplainChat(lineId) and not reportTbl[player] then
-				reportTbl[player] = true
+			if CanComplainChat(lineId) then
 				ReportPlayer("spam", lineId)
+
+				--Let's remove the chat line(s) asking to report that player
+				local f, tbl, msg = ChatFrame1, {}, COMPLAINT_ADDED
+				--Save all chat
+				local _, size = f:GetFont()
+				FCF_SetChatWindowFontSize(f, f, 0.01)
+				for i = select("#", f:GetRegions()), 1, -1 do
+					local region = select(i, f:GetRegions())
+					if region:GetObjectType() == "FontString" then
+						local text = region:GetText()
+						--Skip the complaint registered message and the BadBoy report player message
+						if text ~= msg and not strfind(text, msg, nil, true) and not strfind(text, "badboy:"..player..":", nil, true) then
+							tinsert(tbl, {text, region:GetTextColor()})
+						end
+					end
+				end
+				FCF_SetChatWindowFontSize(f, f, size)
+
+				--Clear the chat window of all text
+				f:Clear()
+
+				--Restore all chat
+				for _,w in pairs(tbl) do
+					addMsg(f, unpack(w))
+					wipe(w)
+				end
+				wipe(tbl)
+				tbl=nil
 			end
 			return
 		end
