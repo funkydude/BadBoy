@@ -267,7 +267,8 @@ local instantReportList = {
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
-	"wtslvl?%d+charallclass", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
+	--^{diamond}lv80 char all class./w me for more info if you WTB^
+	"lvl?%d+charallclass.*info", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 
 	--[[  Illegal Items ]]--
@@ -485,7 +486,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, prevLineId, result, chatLines, chatPlayers, prevWarn, addMsg = gsub, 0, nil, {}, {}, 0, ChatFrame1.AddMessage
+local gsub, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, 0, nil, {}, {}, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -584,6 +585,7 @@ end
 --[[ Configure report links ]]--
 do
 	local oldShow = ChatFrame_OnHyperlinkShow
+	local addMsg = ChatFrame1.AddMessage
 	ChatFrame_OnHyperlinkShow = function(self, data, ...)
 		local badboy, player, lineId = strsplit(":", data)
 		if badboy and badboy == "badboy" then
