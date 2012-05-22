@@ -425,6 +425,8 @@ local instantReportList = {
 	"verkauf.*hotgolds.*%d+g", --Gréat Vérkauf! .Hôtgôlds.côrn10000G.only.2.éUR.Hôtgôlds.côrnWWWé habén 783k spéichért und k?nnén Sié érhaltén innérhalb von 5-10 Minutén.wénn Sié kaufén ,  4403
 	"%d[%do]+=%d+%.?%d*e.*bonus.*skype", --@1òòòO=5.52ё.5% BòNuS.5-15mins can Gёt./w me for skype@
 	"hotg01ds.*%d[%do]+k", --Hôtg01ds. côrn 1Ok=2.99 8081
+	--{star}www.OurGameCenter.com{star} 10000=4.69 WTS Smoldering Egg of Millagazor and all 410/416 items droped from DS {star} including achieve,mount,legendary dagger,etc.( 8/8H DS &7/7H FL)
+	"ourgamecenter.*wts.*legendary", --www.OurGameCenter.com10K=4.69 we have 8/8H DS 25m raid team ,WTS 410/416lvl BOP items,achiev,mount,legendary dagger,etc. {star} Smoldering Egg of Millagazor
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
