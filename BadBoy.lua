@@ -270,6 +270,10 @@ local instantReportList = {
 	--^{diamond}lv80 char all class./w me for more info if you WTB^
 	"lvl?%d+charallclass.*info", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
+	"wtswowaccount.*epic", --y WTS WOW ACCOUNT 401 ITEM LEVEL ROGUES WITH FIRST STAGE LEGENDARY FULL CATA!! WITH 1X VIAL OF SANDS/CRIMSON DEATHCHARGER FULL EPIC GEMED 1X ROGUE 1 X WARRIOR PVP AIMED ADD SKYPE * AND I ALSO HAVE FULL HIERLOOM FOR EVER SINGLE CHARACTER A
+
+	--[[  Diablo 3  ]]--
+	"wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
