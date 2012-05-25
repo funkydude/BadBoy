@@ -273,7 +273,9 @@ local instantReportList = {
 	"wtswowaccount.*epic", --y WTS WOW ACCOUNT 401 ITEM LEVEL ROGUES WITH FIRST STAGE LEGENDARY FULL CATA!! WITH 1X VIAL OF SANDS/CRIMSON DEATHCHARGER FULL EPIC GEMED 1X ROGUE 1 X WARRIOR PVP AIMED ADD SKYPE * AND I ALSO HAVE FULL HIERLOOM FOR EVER SINGLE CHARACTER A
 
 	--[[  Diablo 3  ]]--
-	"wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
+	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
+	"^wtsdiablo3cdkey", --WTS Diablo 3 CD KEY
+	"^sellingdiablo3cdkey", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
@@ -322,6 +324,7 @@ local instantReportList = {
 	"^wts%d+days?gamecard", --wts 60 days game card /w me
 	"wts.*steed.*prepaidgame", --WTS [Winged Guardian]25K [Heart of the Aspects]25K [Celestial Steed]20K prepaid game
 	"gamecard.*gold.*money.*info", -- I am offer Game Card for gold or money, for more info /w me
+	"^wtsgametimesubsc", --WTS Gametime-Subscribtion /w me
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
