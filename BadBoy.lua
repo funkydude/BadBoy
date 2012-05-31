@@ -639,8 +639,8 @@ do
 end
 
 --[[ Configure popup reporting ]]--
-StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].OnHide = function(self)
-	self.text:SetText(REPORT_SPAM_CONFIRMATION) --Reset popup message to default for manual reporting
+StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].OnHide = function()
+	StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION --Reset popup message to default for manual reporting
 end
 
 --[[ Add Filters ]]--
