@@ -267,6 +267,7 @@ local instantReportList = {
 
 	--[[  League of Legends  ]]--
 	"^wt[bs]lolacco?u?n?t?$", --WTB LoL acc
+	"^wt[bs]%d?x?leagueoflegends?account", --WTS 2x League of Legend accounts for 1 price !
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
@@ -278,11 +279,12 @@ local instantReportList = {
 
 	--[[  Diablo 3  ]]--
 	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
-	"^wtsdiablo3cdkey", --WTS Diablo 3 CD KEY
+	"^wt[bs]diablo3cdkey", --WTS Diablo 3 CD KEY
 	"^wtbd3forgold", --WTB D3 for gold!
-	"^wtbdiablo3key", --WTB Diablo 3 key cheap
+	"^wt[bs]diablo3key", --WTB Diablo 3 key cheap
 	"^sellingdiablo3cdkey", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
 	"^wtscheapfastd3g", --*WTS cheap fast D3 G,/W for skype*
+	"^wt[bs]diablo3goldforwowgold", --WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
