@@ -272,11 +272,13 @@ local instantReportList = {
 	"lvl?%d+charallclass.*info", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 	"wtswowaccount.*epic", --y WTS WOW ACCOUNT 401 ITEM LEVEL ROGUES WITH FIRST STAGE LEGENDARY FULL CATA!! WITH 1X VIAL OF SANDS/CRIMSON DEATHCHARGER FULL EPIC GEMED 1X ROGUE 1 X WARRIOR PVP AIMED ADD SKYPE * AND I ALSO HAVE FULL HIERLOOM FOR EVER SINGLE CHARACTER A
+	"^wanttotradeaccount", --Want to trade account full cata rogue on * with full epic 50 agil gems(vial of the sands and crimson dk and warrior with 1 cata and mechanohog it is on * wt t for a class with full cata on * /w me!!!!!
 
 	--[[  Diablo 3  ]]--
 	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
 	"^wtsdiablo3cdkey", --WTS Diablo 3 CD KEY
 	"^sellingdiablo3cdkey", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
+	"^wtscheapfastd3g", --*WTS cheap fast D3 G,/W for skype*
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
@@ -317,6 +319,7 @@ local instantReportList = {
 	"wts.*%[.*%].*%[.*%].*cheap.*stock", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Vial of the Sands],cheapst ,in stock ,pst
 	"wts.*%[.*%].*%[.*%].*cheap.*safe", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer] [Magic Rooster Egg]Cheapest & Safest Online Trad
 	"^wts.*spectraltiger.*alsootheritems$", --WTS [Magic Rooster Egg] [Reins of the Spectral Tiger] [Reins of the Swift Spectral Tiger] Also other items
+	"^wts.*spectraltiger.*cheapmountgold", --WTS [Magic Rooster Egg] [Reins of the Spectral Tiger]  [Reins of the Swift Spectral Tiger]cheap mount&gold
 	--WTS Blizzard Store Mounts (25k) and Blizzard Store Pets (10k)
 	"wts.*mount.*pet.*%d+k", --WTS {star}flying mounts:[Celestial Steed] and [Winged Guardian]30k each {star}PETS:Lil'Ragnaros/Lil'XT/Lil'K.T./Moonkin/Pandaren/Cenarion Hatchling 12k each,{star}prepaid timecards 15k each.{star}
 	"wts.*%[.*%].*powerle?ve?l.*chea", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Wooly White Rhino],and g ,powerlvling ,chea
@@ -558,12 +561,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	end
 	--End string replacements
 
-	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 15
+	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 20
 	for i=1, #chatLines do
-		if chatLines[i] == msg and chatPlayers[i] == player then --If message same as one in previous 15 and from the same person...
+		if chatLines[i] == msg and chatPlayers[i] == player then --If message same as one in previous 20 and from the same person...
 			result = true return true --...filter!
 		end
-		if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end
+		if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
 	end
 	tinsert(chatLines, msg) tinsert(chatPlayers, player)
 	--End text buffer
