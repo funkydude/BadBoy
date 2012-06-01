@@ -280,6 +280,7 @@ local instantReportList = {
 	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
 	"^wtsdiablo3cdkey", --WTS Diablo 3 CD KEY
 	"^wtbd3forgold", --WTB D3 for gold!
+	"^wtbdiablo3key", --WTB Diablo 3 key cheap
 	"^sellingdiablo3cdkey", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
 	"^wtscheapfastd3g", --*WTS cheap fast D3 G,/W for skype*
 
