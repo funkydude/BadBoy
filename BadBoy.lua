@@ -192,6 +192,8 @@ local whiteList = {
 	"arena",
 	"boost",
 	"player",
+	"portal",
+	"town",
 	"[235]v[235]",
 	"sucht", --de
 	"gilde", --de
@@ -277,6 +279,7 @@ local instantReportList = {
 	--[[  Diablo 3  ]]--
 	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
 	"^wtsdiablo3cdkey", --WTS Diablo 3 CD KEY
+	"^wtbd3forgold", --WTB D3 for gold!
 	"^sellingdiablo3cdkey", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
 	"^wtscheapfastd3g", --*WTS cheap fast D3 G,/W for skype*
 
