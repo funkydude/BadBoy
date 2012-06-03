@@ -516,17 +516,17 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	else
 		if not lineId then --Still some addons floating around breaking stuff :-/
 			local t = GetTime()
-			if t-prevWarn > 60 then --Throttle this warning as I imagine it could get quite spammy
+			if t-prevWarn > 30 then --Throttle this warning as I imagine it could get quite spammy
 				prevWarn = t
 				print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data I need to work properly :(")
 			end
 			return
 		end
-		prevLineId = lineId
-		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-		if not CanComplainChat(lineId) or UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then result = nil return end --Don't scan ourself/friends/GMs/guildies or raid/party members
+		prevLineId, result = lineId, nil
+		if event == "CHAT_MSG_CHANNEL" and channelId == 0 then return end --Only scan official custom channels (gen/trade)
+		if not CanComplainChat(lineId) or UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
 		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
-			if flag == "GM" then result = nil return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
+			if flag == "GM" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
 			--RealID support, don't scan people that whisper us via their character instead of RealID
 			--that aren't on our friends list, but are on our RealID list. CanComplainChat should really support this...
 			for i=1, select(2, BNGetNumFriends()) do
@@ -536,7 +536,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 					--don't bother checking server anymore as bnet has been bugging up a lot lately
 					--returning "" as server/location (probably other things too) making the check useless
 					if rName == player and rGame == "WoW" then
-						result = nil return
+						return
 					end
 				end
 			end
@@ -581,8 +581,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	--End text buffer
 
 	if IsSpam(msg, icon) then
-		if BadBoyLogger and not myDebug then
-			BadBoyLogger("BadBoy", event, player, debug)
+		if BadBoyLog and not myDebug then
+			BadBoyLog("BadBoy", event, player, debug)
 		end
 		if myDebug then
 			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
@@ -602,7 +602,6 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		result = true
 		return true
 	end
-	result = nil
 end
 
 --[[ Configure report links ]]--
