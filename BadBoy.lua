@@ -287,6 +287,7 @@ local instantReportList = {
 	"^wt[bs]diablo3goldforwowgold", --WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
 	"^wt[bs]d3key", --WTs D3 key Wisp me for info and price!
 	"^wts.*%d+day.*diablo.*account", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 22k gc90days=30Kdiablo III Account for=70k
+	"tradediablo3?goldforwowgold", --anyone want to trade diablo gold for wow gold?
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
