@@ -271,8 +271,9 @@ local instantReportList = {
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
+	--! WTS lvl 80 char.{all class}.Diablo3 g0ld /W me for more info !
 	--^{diamond}lv80 char all class./w me for more info if you WTB^
-	"lvl?%d+charallclass.*info", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
+	"lvl?%d+char%.?allclass.*info", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 	"wtswowaccount.*epic", --y WTS WOW ACCOUNT 401 ITEM LEVEL ROGUES WITH FIRST STAGE LEGENDARY FULL CATA!! WITH 1X VIAL OF SANDS/CRIMSON DEATHCHARGER FULL EPIC GEMED 1X ROGUE 1 X WARRIOR PVP AIMED ADD SKYPE * AND I ALSO HAVE FULL HIERLOOM FOR EVER SINGLE CHARACTER A
 	"^wanttotradeaccount", --Want to trade account full cata rogue on * with full epic 50 agil gems(vial of the sands and crimson dk and warrior with 1 cata and mechanohog it is on * wt t for a class with full cata on * /w me!!!!!
@@ -282,7 +283,8 @@ local instantReportList = {
 	"^wt[bs]diablo3cdkey", --WTS Diablo 3 CD KEY
 	"^wtbd3forgold", --WTB D3 for gold!
 	"^wt[bs]diablo3key", --WTB Diablo 3 key cheap
-	"^sellingdiablo3cdkey", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
+	--SELLING DIABLO 3 / 60 DAYS PREPAIDGAMECARD - PRICES IN DND!! CHEAP
+	"^sellingdiablo3", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
 	"^wtscheapfastd3g", --*WTS cheap fast D3 G,/W for skype*
 	"^wt[bs]diablo3goldforwowgold", --WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
 	"^wt[bs]d3key", --WTs D3 key Wisp me for info and price!
