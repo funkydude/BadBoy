@@ -2,29 +2,29 @@
 -- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
-local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+local reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam geblockt, zum melden klicken!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam geblockt, zum melden klicken!]|h|r <<<"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esES" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esMX" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "koKR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
+		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
 	end
 end
 
@@ -52,6 +52,7 @@ local commonList = {
 	"server",
 	"service",
 	"stock",
+	"trusted",
 	"well?come",
 
 	--French
@@ -105,6 +106,7 @@ local heavyList = {
 	"%d+[%.,]?%d*[kg][/\\=]%d+[%.,]?%d*[\226\130\172%$\194\163]+",
 	"%d+[%.,]?%d*[kg][/\\=]%d+[%.,]?%d*e[uv]",
 	"%d+[%.,]?%d*[kg][%.,]?only%d+[%.,]?%d*eu",
+	"%d+[%.,]?%d*[kg]for%d+[%.,]?%d*eu",
 	"%d+o?[kg][/\\=]%$?%d+[%.,]%d+", --1OK=9.59
 	"%d+[%.,]?[%do]*[/\\=]%d+[%.,]?%d*[kge]",
 	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+%d+[%.,]?[%do]*[kg]",
@@ -246,6 +248,7 @@ local instantReportList = {
 	"casino.*bet.*%d+", --Casino time. You give me your bet, Than You roll from 1-11 unlimited times.Your rolls add up. If you go over 21 you lose.You can stop before 21.When you stop I do the same, and if your closer to 21 than me than you get back 2 times your bet
 	"roll.*%d+.*roll.*%d+.*bet", --Roll 63+ x2 , Roll 100 x3, Roll 1 x4 NO MAX BETS
 	"casino.*roll.*double", --CASINO IS BACK IN TOWN COME PAY ME ROLL +65 AND GET DOUBLE
+	"casino.*roll.*%d+.*roll.*%d+", --Casino is back in town !! Roll over 65 + and get your gold back 2X !!  Roll 100 and get your gold back 3X !!
 
 	--[[  Runescape Trading  ]]--
 	--WTB RS gold paying WoW GOLD
@@ -277,19 +280,22 @@ local instantReportList = {
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 	"wtswowaccount.*epic", --y WTS WOW ACCOUNT 401 ITEM LEVEL ROGUES WITH FIRST STAGE LEGENDARY FULL CATA!! WITH 1X VIAL OF SANDS/CRIMSON DEATHCHARGER FULL EPIC GEMED 1X ROGUE 1 X WARRIOR PVP AIMED ADD SKYPE * AND I ALSO HAVE FULL HIERLOOM FOR EVER SINGLE CHARACTER A
 	"^wanttotradeaccount", --Want to trade account full cata rogue on * with full epic 50 agil gems(vial of the sands and crimson dk and warrior with 1 cata and mechanohog it is on * wt t for a class with full cata on * /w me!!!!!
+	"^wttaccount.*gear.*char", --WTT Acount Resto/Enha shaman / Resto / Balance druid / Prot warr / Mage / Paladin for just one full cata geared pvp character /w me with info 
 
 	--[[  Diablo 3  ]]--
 	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
-	"^wt[bs]diablo3cdkey", --WTS Diablo 3 CD KEY
 	"^wtbd3forgold", --WTB D3 for gold!
-	"^wt[bs]diablo3key", --WTB Diablo 3 key cheap
 	--SELLING DIABLO 3 / 60 DAYS PREPAIDGAMECARD - PRICES IN DND!! CHEAP
 	"^sellingdiablo3", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
 	"^wtscheapfastd3g", --*WTS cheap fast D3 G,/W for skype*
-	"^wt[bs]diablo3goldforwowgold", --WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
 	"^wt[bs]d3key", --WTs D3 key Wisp me for info and price!
 	"^wts.*%d+day.*diablo.*account", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 22k gc90days=30Kdiablo III Account for=70k
 	"tradediablo3?goldforwowgold", --anyone want to trade diablo gold for wow gold?
+	--WTS Diablo 3 code 30 K !!
+	--WTS Diablo 3 CD KEY
+	--WTB Diablo 3 key cheap
+	--WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
+	"^wt[bs]diablo3", --WTB Diablo 3 Gold!
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
@@ -609,42 +615,47 @@ end
 
 --[[ Configure report links ]]--
 do
-	local oldShow = ChatFrame_OnHyperlinkShow
-	local addMsg = ChatFrame1.AddMessage
+	local oldShow, addMsg, prevReport = ChatFrame_OnHyperlinkShow, ChatFrame1.AddMessage, 0
 	ChatFrame_OnHyperlinkShow = function(self, data, ...)
 		local badboy, player, lineId = strsplit(":", data)
 		if badboy and badboy == "badboy" then
-			lineId = tonumber(lineId)
-			if CanComplainChat(lineId) then
-				ReportPlayer("spam", lineId)
+			local t = GetTime()
+			if (t-prevReport) > 4 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
+				prevReport = t
+				lineId = tonumber(lineId)
+				if CanComplainChat(lineId) then
+					ReportPlayer("spam", lineId)
 
-				--Let's remove the chat line(s) asking to report that player
-				local f, tbl, msg = ChatFrame1, {}, COMPLAINT_ADDED
-				--Save all chat
-				local _, size = f:GetFont()
-				FCF_SetChatWindowFontSize(f, f, 0.01)
-				for i = select("#", f:GetRegions()), 1, -1 do
-					local region = select(i, f:GetRegions())
-					if region:GetObjectType() == "FontString" then
-						local text = region:GetText()
-						--Skip the complaint registered message and the BadBoy report player message
-						if text ~= msg and not strfind(text, msg, nil, true) and not strfind(text, "badboy:"..player..":", nil, true) then
-							tinsert(tbl, {text, region:GetTextColor()})
+					--Let's remove the chat line(s) asking to report that player
+					local f, tbl, msg = ChatFrame1, {}, COMPLAINT_ADDED
+					--Save all chat
+					local _, size = f:GetFont()
+					FCF_SetChatWindowFontSize(f, f, 0.01)
+					for i = select("#", f:GetRegions()), 1, -1 do
+						local region = select(i, f:GetRegions())
+						if region:GetObjectType() == "FontString" then
+							local text = region:GetText()
+							--Skip the complaint registered message and the BadBoy report player message
+							if text ~= msg and not strfind(text, msg, nil, true) and not strfind(text, "BadBoy|", nil, true) then
+								tinsert(tbl, {text, region:GetTextColor()})
+							end
 						end
 					end
-				end
-				FCF_SetChatWindowFontSize(f, f, size)
+					FCF_SetChatWindowFontSize(f, f, size)
 
-				--Clear the chat window of all text
-				f:Clear()
+					--Clear the chat window of all text
+					f:Clear()
 
-				--Restore all chat
-				for _,w in pairs(tbl) do
-					addMsg(f, unpack(w))
-					wipe(w)
+					--Restore all chat
+					for _,w in pairs(tbl) do
+						addMsg(f, unpack(w))
+						wipe(w)
+					end
+					wipe(tbl)
+					tbl=nil
 				end
-				wipe(tbl)
-				tbl=nil
+			else
+				print("|cFF33FF99BadBoy|r: Please wait ~4 seconds between reports to prevent being disconnected (Blizzard bug)")
 			end
 			return
 		end
