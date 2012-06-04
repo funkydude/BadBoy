@@ -291,6 +291,7 @@ local instantReportList = {
 	"^wt[bs]d3key", --WTs D3 key Wisp me for info and price!
 	"^wts.*%d+day.*diablo.*account", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 22k gc90days=30Kdiablo III Account for=70k
 	"tradediablo3?goldforwowgold", --anyone want to trade diablo gold for wow gold?
+	"^selling.*gamecard.*diablo3", --SELLING 60 DAY GAMECARDS & DIABLO 3!!!!
 	--WTS Diablo 3 code 30 K !!
 	--WTS Diablo 3 CD KEY
 	--WTB Diablo 3 key cheap
