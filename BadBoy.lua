@@ -2,29 +2,29 @@
 -- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ChatFrame_OnHyperlinkShow
 local myDebug = nil
 
-local reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam geblockt, zum melden klicken!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam geblockt, zum melden klicken!]|h|r <<<"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esES" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "esMX" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "koKR" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy| >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
 	end
 end
 
@@ -636,7 +636,7 @@ do
 						if region:GetObjectType() == "FontString" then
 							local text = region:GetText()
 							--Skip the complaint registered message and the BadBoy report player message
-							if text ~= msg and not strfind(text, msg, nil, true) and not strfind(text, "BadBoy|", nil, true) then
+							if text ~= msg and not strfind(text, msg, nil, true) and not strfind(text, "badboy:"..player..":", nil, true) and not strfind(text, "BadBoy|", nil, true) then
 								tinsert(tbl, {text, region:GetTextColor()})
 							end
 						end
