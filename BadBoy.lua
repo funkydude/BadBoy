@@ -288,6 +288,7 @@ local instantReportList = {
 	--! WTS lvl 80 char.{all class}.Diablo3 g0ld /W me for more info !
 	--^{diamond}lv80 char all class./w me for more info if you WTB^
 	"lvl?%d+char%.?allclass.*info", --^{Square} WTS lvl 80 char all class ! /w me for more info{square}^
+	"lvl?%d+char.*fast.*g[o0]ld", --# WTS lvl 80 char .TCG mount.cheap fast D3 g0ld/w me for more #
 	"%d+lvloldaccounts?tosell", --80lvl old account to sell
 	"wtswowaccount.*epic", --y WTS WOW ACCOUNT 401 ITEM LEVEL ROGUES WITH FIRST STAGE LEGENDARY FULL CATA!! WITH 1X VIAL OF SANDS/CRIMSON DEATHCHARGER FULL EPIC GEMED 1X ROGUE 1 X WARRIOR PVP AIMED ADD SKYPE * AND I ALSO HAVE FULL HIERLOOM FOR EVER SINGLE CHARACTER A
 	"^wanttotradeaccount", --Want to trade account full cata rogue on * with full epic 50 agil gems(vial of the sands and crimson dk and warrior with 1 cata and mechanohog it is on * wt t for a class with full cata on * /w me!!!!!
@@ -302,7 +303,8 @@ local instantReportList = {
 	"^wt[bs]d3key", --WTs D3 key Wisp me for info and price!
 	"^wts.*%d+day.*diablo.*account", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 22k gc90days=30Kdiablo III Account for=70k
 	"tradediablo3?goldforwowgold", --anyone want to trade diablo gold for wow gold?
-	"^selling.*gamecard.*diablo3", --SELLING 60 DAY GAMECARDS & DIABLO 3!!!!
+	--SELLING 60 DAYS GAMECARD - VERY CHEAP - ALSO SELL DIABLO ! -SAFE
+	"^selling.*gamecard.*diablo", --SELLING 60 DAY GAMECARDS & DIABLO 3!!!!
 	--WTS Diablo 3 code 30 K !!
 	--WTS Diablo 3 CD KEY
 	--WTB Diablo 3 key cheap
