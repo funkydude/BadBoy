@@ -308,6 +308,7 @@ local instantReportList = {
 	"tradediablo3?goldforwowgold", --anyone want to trade diablo gold for wow gold?
 	--SELLING 60 DAYS GAMECARD - VERY CHEAP - ALSO SELL DIABLO ! -SAFE
 	"^selling.*gamecard.*diablo", --SELLING 60 DAY GAMECARDS & DIABLO 3!!!!
+	"^wt[bs]d3account", --WTS D3 account /w for more !
 	--WTS Diablo 3 code 30 K !!
 	--WTS Diablo 3 CD KEY
 	--WTB Diablo 3 key cheap
