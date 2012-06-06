@@ -365,6 +365,8 @@ local instantReportList = {
 	"wts.*steed.*prepaidgame", --WTS [Winged Guardian]25K [Heart of the Aspects]25K [Celestial Steed]20K prepaid game
 	"gamecard.*gold.*money.*info", -- I am offer Game Card for gold or money, for more info /w me
 	"^wtsgametimesubsc", --WTS Gametime-Subscribtion /w me
+	--WTB Game Time CODE Buy gold
+	"wtb.*gametimecode.*gold", --WTB 1 Month Game Time CODE Buy gold
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
