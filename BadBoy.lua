@@ -279,6 +279,9 @@ local instantReportList = {
 	"wt[bs].*runescapemoney.*%d+k", --WTB runescape money. 3mil = 1k in wow! easy money making.
 	"^wt[bs]rsaccount", --wts rs acount 10k .... lvl 95 with items for over 15 mil with 6 year old holiday
 
+	--[[  Steam  ]]--
+	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
+
 	--[[  League of Legends  ]]--
 	"^wt[bs]lolacco?u?n?t?$", --WTB LoL acc
 	"^wt[bs]%d?x?leagueoflegends?account", --WTS 2x League of Legend accounts for 1 price !
