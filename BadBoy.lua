@@ -207,6 +207,7 @@ local whiteList = {
 	"player",
 	"portal",
 	"town",
+	"vialofthe",
 	"[235]v[235]",
 	"sucht", --de
 	"gilde", --de
