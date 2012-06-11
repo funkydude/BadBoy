@@ -304,6 +304,7 @@ local instantReportList = {
 	"^wtbd3forgold", --WTB D3 for gold!
 	--SELLING DIABLO 3 / 60 DAYS PREPAIDGAMECARD - PRICES IN DND!! CHEAP
 	"^sellingdiablo3", --Selling Diablo 3 CD Key.Fast & Smooth Deal.
+	"^sellingd3account", --Selling D3 account cheap /w for more !
 	"^wtscheapfastd3g", --*WTS cheap fast D3 G,/W for skype*
 	"^wt[bs]d3key", --WTs D3 key Wisp me for info and price!
 	"^wts.*%d+day.*diablo.*account", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 22k gc90days=30Kdiablo III Account for=70k
@@ -369,6 +370,7 @@ local instantReportList = {
 	"^wtsgametimesubsc", --WTS Gametime-Subscribtion /w me
 	--WTB Game Time CODE Buy gold
 	"wtb.*gametimecode.*gold", --WTB 1 Month Game Time CODE Buy gold
+	"^wt[bs]gametime.*/w", --WTS G A M E T I M E /W
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
