@@ -312,6 +312,7 @@ local instantReportList = {
 	--SELLING 60 DAYS GAMECARD - VERY CHEAP - ALSO SELL DIABLO ! -SAFE
 	"^selling.*gamecard.*diablo", --SELLING 60 DAY GAMECARDS & DIABLO 3!!!!
 	"^wt[bs]d3account", --WTS D3 account /w for more !
+	"^wtsd3.*transfer.*item", --WTS D3/faction/race change server transfer and other items!
 	--WTS Diablo 3 code 30 K !!
 	--WTS Diablo 3 CD KEY
 	--WTB Diablo 3 key cheap
