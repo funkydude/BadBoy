@@ -261,6 +261,7 @@ local instantReportList = {
 	"roll.*%d+.*roll.*%d+.*bet", --Roll 63+ x2 , Roll 100 x3, Roll 1 x4 NO MAX BETS
 	"casino.*roll.*double", --CASINO IS BACK IN TOWN COME PAY ME ROLL +65 AND GET DOUBLE
 	"casino.*roll.*%d+.*roll.*%d+", --Casino is back in town !! Roll over 65 + and get your gold back 2X !!  Roll 100 and get your gold back 3X !!
+	"double.*tripp?le.*casino", --Hey there wanna double your money in casino? or triple or even quad it? give me a whisp if you want to join my casino :)
 
 	--[[  Runescape Trading  ]]--
 	--WTB RS gold paying WoW GOLD
@@ -644,11 +645,11 @@ do
 	ChatFrame_OnHyperlinkShow = function(self, data, ...)
 		local badboy, player, lineId = strsplit(":", data)
 		if badboy and badboy == "badboy" then
-			local t = GetTime()
-			if (t-prevReport) > 4 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
-				prevReport = t
-				lineId = tonumber(lineId)
-				if CanComplainChat(lineId) then
+			lineId = tonumber(lineId)
+			if CanComplainChat(lineId) then
+				local t = GetTime()
+				if (t-prevReport) > 4 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
+					prevReport = t
 					ReportPlayer("spam", lineId)
 
 					--Let's remove the chat line(s) asking to report that player
@@ -678,9 +679,9 @@ do
 					end
 					wipe(tbl)
 					tbl=nil
+				else
+					print(throttleMsg)
 				end
-			else
-				print(throttleMsg)
 			end
 			return
 		end
