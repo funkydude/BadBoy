@@ -376,6 +376,7 @@ local instantReportList = {
 	--WTS Game time/Diablo and Unmarged accounts for gold!
 	"wt[bs].*gametime.*gold", --WTB 1 Month Game Time CODE Buy gold
 	"^wt[bs]gametime.*/w", --WTS G A M E T I M E /W
+	"steed.*gc%d+day.*sale", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 15k gc90days=25KPet sales
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
