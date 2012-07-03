@@ -301,6 +301,7 @@ local instantReportList = {
 	"^wttacc?ount.*gear.*char", --WTT Acount Resto/Enha shaman / Resto / Balance druid / Prot warr / Mage / Paladin for just one full cata geared pvp character /w me with info
 	--WTS wow account 85human Rogue with LEGENDARIES + JC BS.  u pay with gold./w me for more info
 	"^wt[st]wowaccount", --WTT Wow account /w me for more info
+	"^wtsaccount.*gametime", --WTS Account with free lvl 80 And GAME  TIME!! /w me
 
 	--[[  Diablo 3  ]]--
 	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
