@@ -23,9 +23,9 @@ do
 		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
 		locManualReport = "顯示彈出的玩家舉報(顯示垃圾訊息)而不是發佈在聊天中"
 	elseif L == "zhCN" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
+		locNoReportMsg = "隐藏你要举报的“阻挡的垃圾信息"
 		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+		locManualReport = "显示弹出的玩家举报（显示垃圾信息）而不是显示在聊天中"
 	elseif L == "esES" then
 		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
 		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."

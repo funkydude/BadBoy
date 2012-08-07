@@ -1,10 +1,10 @@
 ## Interface: 40300
-## Version: 10.014
+## Version: 10.015
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Notes-deDE: Automatischer Spam Blocker & Reporter.
 ## Notes-ruRU: A light, automatic spam blocker & reporter.
-## Notes-zhCN: A light, automatic spam blocker & reporter.
+## Notes-zhCN: 一个轻巧，自动阻挡和举报垃圾信息的插件。
 ## Notes-zhTW: 一個輕量級，自動阻擋垃圾訊息與舉報的插件。
 ## Notes-koKR: A light, automatic spam blocker & reporter.
 ## Notes-frFR: Un simple anti-spam & signalement des abus.

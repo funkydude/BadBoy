@@ -14,10 +14,10 @@ do
 		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. 4 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
 	elseif L == "zhTW" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~4 seconds between reports to prevent being disconnected (Blizzard bug)"
+		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~4秒在回報時，為了防止斷線(暴雪的bug)"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~4 seconds between reports to prevent being disconnected (Blizzard bug)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[垃圾信息已被阻挡，点击举报!]|h|r"
+		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~4 秒以防断线（暴雪的bug）"
 	elseif L == "esES" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~4 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
@@ -380,6 +380,7 @@ local instantReportList = {
 	"^wt[bs]gametime.*/w", --WTS G A M E T I M E /W
 	"steed.*gc%d+day.*sale", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 15k gc90days=25KPet sales
 	"wts.*mount.*gametimecard", --WTS Mounts[Heart of the Aspects] and Pets/ GameTimecard
+	"raiditems.*buy.*email.*price.*wowpve%.c", --{rt1}{rt1}T{rt1}{rt1}S raid items ，397/410/416 token ，achive dragon (ICC,ULD,CATA,FL),416 weapons and so on.If u want to buy,our team will carry u to the instance to get it. U can email me anytime,I will give u a price. [wowpve.com]
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
