@@ -202,6 +202,7 @@ local whiteList = {
 	"fortunecard",
 	"house",
 	"progres",
+	"transmor?g",
 	"arena",
 	"boost",
 	"player",
