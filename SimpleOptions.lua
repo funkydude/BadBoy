@@ -48,7 +48,7 @@ do
 		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "itIT" then
 		locNoReportMsg = "Nascondi il messaggio \"Spam bloccata\" che ti chiede di riportare"
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locNoReportDesc = "Prego NON usare questo. Riportare le spam è ciò che permette di bloccare account rubati usati dagli\nspammers. Inoltre se tanti riportano uno spammer, questi non può più scrivere nella chat e ciò va a vantaggio di tutti,\n anche di coloro che non usano questo addon."
 		locManualReport = "Visualizza un messaggio che mostra la spam al posto di scrivere sulla chat"
 	end
 

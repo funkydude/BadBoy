@@ -35,7 +35,7 @@ do
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~4 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
 	elseif L == "itIT" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~4 seconds between reports to prevent being disconnected (Blizzard bug)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta 4 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
 	end
 end
 
