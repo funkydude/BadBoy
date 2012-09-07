@@ -1,5 +1,5 @@
 ## Interface: 50001
-## Version: 10.016
+## Version: 11.000
 ## Title: BadBoy
 ## Notes: A light, automatic spam blocker & reporter.
 ## Notes-deDE: Automatischer Spam Blocker & Reporter.

@@ -4,6 +4,7 @@ local myDebug = nil
 
 local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
 local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~4 seconds between reports to prevent being disconnected (Blizzard bug)"
+local reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net invite blocked from |cffffff00%s|r|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
@@ -28,8 +29,7 @@ do
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~4 секунды между отчетами, чтобы избежать попадания отключен (ошибка Blizzard)"
 	elseif L == "koKR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~4 seconds between reports to prevent being disconnected (Blizzard bug)"
+		
 	elseif L == "ptBR" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~4 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
@@ -610,7 +610,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
 			msg = gsub(msg, k, v)
 		end
-		if myDebug then print("Running replacements") end
+		if myDebug then print("Running replacements for chat") end
 	end
 	--End string replacements
 
@@ -713,4 +713,48 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
 SetCVar("spamFilter", 1)
+
+--[[ BNet Invites ]]--
+do
+	local f = CreateFrame("Frame")
+	f:RegisterEvent("PLAYER_LOGIN")
+	f:SetScript("OnEvent", function(frame,event,bnEvent)
+		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_PENDING" then
+			if not frame:IsEventRegistered("CHAT_MSG_BN_INLINE_TOAST_ALERT") then
+				frame:RegisterEvent("CHAT_MSG_BN_INLINE_TOAST_ALERT")
+				frame:UnregisterEvent("PLAYER_LOGIN")
+			end
+			for i=1, BNGetNumFriendInvites() do
+				local id, player, _, msg = BNGetFriendInviteInfo(i)
+				if type(msg) == "string" then
+					local debug = msg
+					msg = msg:lower() --Lower all text, remove capitals
+					msg = gsub(msg, "[“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
+
+					--They like to replace English letters with UTF-8 "equivalents" to avoid detection
+					if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
+						--This is no where near as resource intensive as I originally thought, it barely uses any CPU
+						for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
+							msg = gsub(msg, k, v)
+						end
+						if myDebug then print("Running replacements for BNET") end
+					end
+					--End string replacements
+
+					if IsSpam(msg, 0) then
+						if myDebug then
+							print("BNET invite", i, "is spam from player:", player)
+						else
+							ChatFrame1:AddMessage(reportBnet:format(player), 0.2, 1, 0.6)
+							if BadBoyLog then
+								BadBoyLog("BadBoy", "CHAT_MSG_BNET_INVITE", player, debug)
+							end
+							BNReportFriendInvite(id, "SPAM", "")
+						end
+					end
+				end
+			end
+		end
+	end)
+end
 
