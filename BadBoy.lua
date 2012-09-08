@@ -381,6 +381,7 @@ local instantReportList = {
 	"^wt[bs]gametime.*/w", --WTS G A M E T I M E /W
 	"steed.*gc%d+day.*sale", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 15k gc90days=25KPet sales
 	"wts.*mount.*gametimecard", --WTS Mounts[Heart of the Aspects] and Pets/ GameTimecard
+	"mount.*account.*sell.*discount", --Get every single rare mount on your own account now! (including incredibly rare & unobtainables) Also selling all PvP achievies: Gladiator, Hero of Ally, 2200/2400 arenas/RBGs and more! Great discounts for MoP preorders! Message me! Skype: Baddieisboss
 	"raiditems.*buy.*email.*price.*wowpve%.c", --{rt1}{rt1}T{rt1}{rt1}S raid items ，397/410/416 token ，achive dragon (ICC,ULD,CATA,FL),416 weapons and so on.If u want to buy,our team will carry u to the instance to get it. U can email me anytime,I will give u a price. [wowpve.com]
 
 	--[[  Russian  ]]--
@@ -720,7 +721,7 @@ do
 	f:RegisterEvent("PLAYER_LOGIN")
 	f:SetScript("OnEvent", function(frame,event,bnEvent)
 		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_PENDING" then
-			if not frame:IsEventRegistered("CHAT_MSG_BN_INLINE_TOAST_ALERT") then
+			if event == "PLAYER_LOGIN" then
 				frame:RegisterEvent("CHAT_MSG_BN_INLINE_TOAST_ALERT")
 				frame:UnregisterEvent("PLAYER_LOGIN")
 			end
