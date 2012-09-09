@@ -283,7 +283,8 @@ local instantReportList = {
 	"^wt[bs]rsaccount", --wts rs acount 10k .... lvl 95 with items for over 15 mil with 6 year old holiday
 	"^wt[bs]%d+rsaccount", --WTS 137 RS ACCOUNT /W ME
 	--WTS awesome rs account with 99's /w me
-	"^wt[bs]awesomersaccount", --wts awesome rs account /w me
+	--WTS an awesome rs account /w me details
+	"^wt[bs]a?n?awesomersaccount", --wts awesome rs account /w me
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
