@@ -307,6 +307,7 @@ local instantReportList = {
 	--WTS wow account 85human Rogue with LEGENDARIES + JC BS.  u pay with gold./w me for more info
 	"^wt[st]wowaccount", --WTT Wow account /w me for more info
 	"^wtsaccount.*gametime", --WTS Account with free lvl 80 And GAME  TIME!! /w me
+	"^wt[bs]mopcode", --WTS MoP Code /w me for info
 
 	--[[  Diablo 3  ]]--
 	"^wttrade%d+kgold.*diablo", --WT trade 6k gol;d for 300k in diablo 3. /w me
