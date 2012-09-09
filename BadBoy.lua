@@ -29,7 +29,7 @@ do
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~4 секунды между отчетами, чтобы избежать попадания отключен (ошибка Blizzard)"
 	elseif L == "koKR" then
-		
+
 	elseif L == "ptBR" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~4 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
@@ -281,6 +281,9 @@ local instantReportList = {
 	--WTB big amount of runescape money. 2mil = 1k gold. ONLY LEGIT PEOPLE.
 	"wt[bs].*runescapemoney.*%d+k", --WTB runescape money. 3mil = 1k in wow! easy money making.
 	"^wt[bs]rsaccount", --wts rs acount 10k .... lvl 95 with items for over 15 mil with 6 year old holiday
+	"^wt[bs]%d+rsaccount", --WTS 137 RS ACCOUNT /W ME
+	--WTS awesome rs account with 99's /w me
+	"^wt[bs]awesomersaccount", --wts awesome rs account /w me
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
