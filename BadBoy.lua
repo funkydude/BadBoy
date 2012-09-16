@@ -658,8 +658,8 @@ end
 
 --[[ Configure report links ]]--
 do
-	local oldShow, addMsg, prevReport = ChatFrame_OnHyperlinkShow, ChatFrame1.AddMessage, 0
-	ChatFrame_OnHyperlinkShow = function(self, data, ...)
+	local SetHyperlink, addMsg, prevReport = ItemRefTooltip.SetHyperlink, ChatFrame1.AddMessage, 0
+	function ItemRefTooltip:SetHyperlink(link, ...)
 		local badboy, player, lineId = strsplit(":", data)
 		if badboy and badboy == "badboy" then
 			lineId = tonumber(lineId)
@@ -700,9 +700,9 @@ do
 					print(throttleMsg)
 				end
 			end
-			return
+		else
+			SetHyperlink(self, link, ...)
 		end
-		oldShow(self, data, ...)
 	end
 end
 
