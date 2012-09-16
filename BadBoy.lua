@@ -661,7 +661,7 @@ end
 do
 	local SetHyperlink, addMsg, prevReport = ItemRefTooltip.SetHyperlink, ChatFrame1.AddMessage, 0
 	function ItemRefTooltip:SetHyperlink(link, ...)
-		local badboy, player, lineId = strsplit(":", data)
+		local badboy, player, lineId = strsplit(":", link)
 		if badboy and badboy == "badboy" then
 			lineId = tonumber(lineId)
 			if CanComplainChat(lineId) then
