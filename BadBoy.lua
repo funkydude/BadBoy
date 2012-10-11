@@ -502,6 +502,7 @@ local instantReportList = {
 	--{star}www.OurGameCenter.com{star} 10000=4.69 WTS Smoldering Egg of Millagazor and all 410/416 items droped from DS {star} including achieve,mount,legendary dagger,etc.( 8/8H DS &7/7H FL)
 	"ourgamecenter.*wts.*legendary", --www.OurGameCenter.com10K=4.69 we have 8/8H DS 25m raid team ,WTS 410/416lvl BOP items,achiev,mount,legendary dagger,etc. {star} Smoldering Egg of Millagazor
 	"billiggull.*koster.*skype", --{star} Interessert i billig GULL? 100k koster 700 NOK (7 NOK pr 1k) – Bet: Pay Pal og nettbank. Bare nor,swe,dk kunder! Lei av kineserene? Jeg er mye sikrere, instant gull etter bet, online ofte og billig! Add meg på SKYPE for mer info: Nolixz1 {star}
+	"order.*nightwing.*%d+k.*stock", --WTS{star}50K Order can get <heart of the nightwing> for free,100k Order can get it for free,500k in stock,pst{square}
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
@@ -735,7 +736,7 @@ do
 				frame:RegisterEvent("CHAT_MSG_BN_INLINE_TOAST_ALERT")
 				frame:UnregisterEvent("PLAYER_LOGIN")
 			end
-			for i=1, BNGetNumFriendInvites() do
+			for i=BNGetNumFriendInvites(), 1, -1 do
 				local id, player, _, msg = BNGetFriendInviteInfo(i)
 				if type(msg) == "string" then
 					local debug = msg
