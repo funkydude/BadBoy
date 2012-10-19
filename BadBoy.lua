@@ -383,6 +383,7 @@ local instantReportList = {
 	"wts.*steed.*prepaidgame", --WTS [Winged Guardian]25K [Heart of the Aspects]25K [Celestial Steed]20K prepaid game
 	"gamecard.*gold.*money.*info", -- I am offer Game Card for gold or money, for more info /w me
 	"^wtsgametimesubsc", --WTS Gametime-Subscribtion /w me
+	"^wtsgamecard%d+.*cheap", --Wts gamecard 60days very cheap
 	--WTB Game Time CODE Buy gold
 	--WTS Game time/Diablo and Unmarged accounts for gold!
 	"wt[bs].*gametime.*gold", --WTB 1 Month Game Time CODE Buy gold
