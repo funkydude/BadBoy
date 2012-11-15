@@ -406,6 +406,7 @@ local instantReportList = {
 	"rating.*paypal.*john%.saunder", --{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3300 conquest points per week. Mount, 16+ achivements and 14 titles. Access to elite gear. We have website and business paypal! Skype - john.saunder {rt8} 
 	"sale.*mount.*wowpvpcarry", --Gladiator, 2200/2400/2700 Arena & RBG, Hero of the Horde, Malevolent Gladiator (rank 1!), and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord)! Skype: wowpvpcarry
 	"rating.*mount.*baddieisboss", --Are you interested in becoming a Gladiator or achieving 2400 rating in RBGs/Arenas? How about being one of the first to get full elite gear this season? What about getting rare & unobtainable mounts? Message me for more info! Skype: Baddieisboss
+	"boost.*account.*nucleear1986", --RBG BOOST (1 day) in MoP started!Get 2.2/2.4/HERO!NO share acc! We're 1 in world do not take account!Cap 3200+ every week.Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service!Skype: nucleear1986_26
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
