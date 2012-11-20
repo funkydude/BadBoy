@@ -4,40 +4,40 @@
 local myDebug = nil
 
 local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
-local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~4 seconds between reports to prevent being disconnected (Blizzard bug)"
+local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~5 seconds between reports to prevent being disconnected (Blizzard bug)"
 local reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net invite blocked from |cffffff00%s|r|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~4 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~5 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
 		reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net inviter bloqué à partir de |cffffff00%s|r|r <<<"
 	elseif L == "deDE" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam geblockt, zum Melden klicken!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. 4 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. ~5 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
 	elseif L == "zhTW" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~4秒在回報時，為了防止斷線(暴雪的bug)"
+		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~5秒在回報時，為了防止斷線(暴雪的bug)"
 	elseif L == "zhCN" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[垃圾信息已被阻挡，点击举报!]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~4 秒以防断线（暴雪的bug）"
+		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~5 秒以防断线（暴雪的bug）"
 	elseif L == "esES" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~4 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~5 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "esMX" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~4 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~5 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "ruRU" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~4 секунды между отчетами, чтобы избежать попадания отключен (ошибка Blizzard)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~5 секунды между отчетами, чтобы избежать попадания отключен (ошибка Blizzard)"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~4 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~5 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
 	elseif L == "itIT" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta 4 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~5 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
 	end
 end
 
@@ -398,6 +398,9 @@ local instantReportList = {
 	"wts.*mount.*gametimecard", --WTS Mounts[Heart of the Aspects] and Pets/ GameTimecard
 	"mount.*account.*sell.*discount", --Get every single rare mount on your own account now! (including incredibly rare & unobtainables) Also selling all PvP achievies: Gladiator, Hero of Ally, 2200/2400 arenas/RBGs and more! Great discounts for MoP preorders! Message me! Skype: Baddieisboss
 	"raiditems.*buy.*email.*price.*wowpve%.c", --{rt1}{rt1}T{rt1}{rt1}S raid items ，397/410/416 token ，achive dragon (ICC,ULD,CATA,FL),416 weapons and so on.If u want to buy,our team will carry u to the instance to get it. U can email me anytime,I will give u a price. [wowpve.com]
+	--WTS cheap gold /w me for more info ( no chineese website etc...)
+	"^wtscheapgold", --WTS cheap gold /w me for more info 
+	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -405,10 +408,16 @@ local instantReportList = {
 	--{rt1} Get your Rated BG rating today! We can boost you really fast rating to 2.2k/2.4k/2.6k(depends on your wish).No account sharing,you play your character,so its 100% legally. You will get for sure best Elite PVP Gear+extended CP cap!1 game free. /w
 	--{rt1}Get your Rated BG rating boosted up to 2.2k|2.4k|2.6k fast and for near to nothing. No account sharing, you play your character, so its 100% legit.  You get extended Conquest Points cap, best PvP gear, and other benefits.trial games!Pm me
 	"rating.*fast.*account.*playyour", --{rt2} Get your RBG rating fast and safe! 2200/2400/Hero/CP Cap! No account sharing, you play your character, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today. Autumn discount!!! {rt2}
-	"rating.*paypal.*john%.saunder", --{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3300 conquest points per week. Mount, 16+ achivements and 14 titles. Access to elite gear. We have website and business paypal! Skype - john.saunder {rt8} 
+	"account.*playyour.*legit.*paypal", --{rt2} RBG BOOST! 2200/2400/Hero/CP CAP! No account sharing, you play your character, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today. Autumn discount!!! {rt2}
+	--{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3850 conquest points per week. Mount, 16+ achievements and 14 titles. Access to elite gear and t2 weapon. Get your rating today! Skype - john.saunder {rt8}
+	"rating.*account.*john%.saunder", --{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3300 conquest points per week. Mount, 16+ achivements and 14 titles. Access to elite gear. We have website and business paypal! Skype - john.saunder {rt8}
 	"sale.*mount.*wowpvpcarry", --Gladiator, 2200/2400/2700 Arena & RBG, Hero of the Horde, Malevolent Gladiator (rank 1!), and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord)! Skype: wowpvpcarry
 	"rating.*mount.*baddieisboss", --Are you interested in becoming a Gladiator or achieving 2400 rating in RBGs/Arenas? How about being one of the first to get full elite gear this season? What about getting rare & unobtainable mounts? Message me for more info! Skype: Baddieisboss
 	"boost.*account.*nucleear1986", --RBG BOOST (1 day) in MoP started!Get 2.2/2.4/HERO!NO share acc! We're 1 in world do not take account!Cap 3200+ every week.Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service!Skype: nucleear1986_26
+	"boost.*rating.*legal.*price", --{rt8} WTS RBG [BOOST.Any]rating:2200,2400,Hero. Absolutely legal - you play yourself, no account sharing. Best prices in Europe. Boost's provided in a very short space of [time.Be]the first to obtain great titles and elite gear!
+	"boost.*share.*account.*legal", --{rt1}RBG BOOST help! Get 2.2/2.4/HERO/CAP only in few hours!NO share acc! We're 1 in world do not take account!Cap 3800+ every week.21 rbg achievs. Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service! /w
+	"boost.*cheap.*rbgmarko", --{rt1} Best RBG boosting service!{rt1} 2200|2400|HERO. 2950-3300 conquest point per week + access to elite gear, 16+ achievments | 14 titles. Fast and secure boost,no account sharing with cheapest prices! {rt1} Skype: RBGmarko {rt1}
+	"boost.*discount.*unkwn", --{rt8}WTS RBG Boost! Easily 0-2.2, 2.4, 2.65. Be the best with T2 weapon+ elite gear. Fast, SAFE. You play urself. PRIVATE games only. Pm for info. Test game included.{rt8}Autumn Discounts!{rt1}We have Proofs!{rt1}Skype: Unkwn-
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -521,7 +530,7 @@ local instantReportList = {
 	"ourgamecenter.*wts.*legendary", --www.OurGameCenter.com10K=4.69 we have 8/8H DS 25m raid team ,WTS 410/416lvl BOP items,achiev,mount,legendary dagger,etc. {star} Smoldering Egg of Millagazor
 	"billiggull.*koster.*skype", --{star} Interessert i billig GULL? 100k koster 700 NOK (7 NOK pr 1k) – Bet: Pay Pal og nettbank. Bare nor,swe,dk kunder! Lei av kineserene? Jeg er mye sikrere, instant gull etter bet, online ofte og billig! Add meg på SKYPE for mer info: Nolixz1 {star}
 	"order.*nightwing.*%d+k.*stock", --WTS{star}50K Order can get <heart of the nightwing> for free,100k Order can get it for free,500k in stock,pst{square}
-	"kb8g[0o][1l]d.*deliver", --1OK // 7.9 E { www,Kb8G01d,Com } <5Mins Delivery> 
+	"kb8g[0o][1l]d.*deliver", --1OK // 7.9 E { www,Kb8G01d,Com } <5Mins Delivery>
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
@@ -688,7 +697,7 @@ do
 			lineId = tonumber(lineId)
 			if CanComplainChat(lineId) then
 				local t = GetTime()
-				if (t-prevReport) > 4 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
+				if (t-prevReport) > 5 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
 					prevReport = t
 					ReportPlayer("spam", lineId)
 
