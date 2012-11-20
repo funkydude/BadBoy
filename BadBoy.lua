@@ -197,6 +197,7 @@ local whiteList = {
 	"raid",
 	"roleplay",
 	"apply",
+	"contender", --Contender's Silk
 	"enjin",
 	"guildlaunch",
 	"wowstead",
@@ -335,6 +336,7 @@ local instantReportList = {
 	--WTB Diablo 3 key cheap
 	--WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
 	"^wt[bs]diablo3", --WTB Diablo 3 Gold!
+	"^wttwowgold.*d3gold", --WTT Wow Gold For D3 Gold! /w me with your price!
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
