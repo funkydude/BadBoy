@@ -288,6 +288,7 @@ local instantReportList = {
 	--WTS awesome rs account with 99's /w me
 	--WTS an awesome rs account /w me details
 	"^wt[bs]a?n?awesomersaccount", --wts awesome rs account /w me
+	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
