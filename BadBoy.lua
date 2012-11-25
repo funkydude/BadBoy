@@ -133,9 +133,9 @@ local heavyList = {
 
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
-	"www[%.,●]+",
-	"[%.,●]+c[%.,]*[o0@][%.,]*m",
-	"[%.,●]+net",
+	"www[%.,]",
+	"[%.,]c[%.,]*[o0@][%.,]*m",
+	"[%.,]net",
 	"dotc[o0@]m",
 }
 
@@ -294,8 +294,9 @@ local instantReportList = {
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
 
 	--[[  League of Legends  ]]--
-	"^wt[bs]lolacco?u?n?t?$", --WTB LoL acc
+	"^wt[bs]lolacc$", --WTB LoL acc
 	"^wt[bs]%d?x?leagueoflegends?account", --WTS 2x League of Legend accounts for 1 price !
+	"^wt[bs]lolaccount", --WTS LOL ACCOUNT LEVEL 30 with 27 SKINS and 14k IP
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
@@ -312,6 +313,8 @@ local instantReportList = {
 	"^wt[st]wowaccount", --WTT Wow account /w me for more info
 	"^wtsaccount.*gametime", --WTS Account with free lvl 80 And GAME  TIME!! /w me
 	"^wt[bs]mopcode", --WTS MoP Code /w me for info
+	"^wttaccountfor.*youget.*tier", --WTT Account for a 90 tier 1 ROGUE, you get 90mage(tier1)90druid (tier1) 85 priest, 85 rogue, 85 warrior /wme
+	"^wttaccountwith.*90.*tier", --WTT ACCOUNT with 90 mage(TIER1) 90 Feral (TIER1) 85 priest, 85 warrior, 85 rogue for 90 ROGUE with TIER 1/wme
 
 	--[[  Brazzers, yes, really...  ]]--
 	"sell.*brazzersaccount.*info", --Hey there! I'm here to sell you Brazzers account /w me for more info!
@@ -343,6 +346,7 @@ local instantReportList = {
 	--Trading My WoW gold for Diablo 3 gold
 	"wowgold.*fordiablo3?gold", --T> My WoW gold (15,000g) for Diablo 3 gold
 	"tradediablo3?gold.*wowgold", --LF someone that wants to trade diablo 3 gold for my wow gold
+	"^wt[bs]diablogold", --wtb diablo gold for wow gold!
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
@@ -651,7 +655,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		if myDebug and icon == 1 then print("Removing icons, adding 1 point.") end
 	end
 	--End icon removal
-	msg = gsub(msg, "[“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
+	msg = gsub(msg, "[¨“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
@@ -778,7 +782,7 @@ do
 				if type(msg) == "string" then
 					local debug = msg
 					msg = msg:lower() --Lower all text, remove capitals
-					msg = gsub(msg, "[“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
+					msg = gsub(msg, "[¨“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
 
 					--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 					if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
