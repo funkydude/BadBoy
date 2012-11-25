@@ -337,6 +337,11 @@ local instantReportList = {
 	--WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
 	"^wt[bs]diablo3", --WTB Diablo 3 Gold!
 	"^wttwowgold.*d3gold", --WTT Wow Gold For D3 Gold! /w me with your price!
+	"wowgoldford3gold", --T> My WoW gold for D3 gold
+	--T> My WoW gold for Diablo 3 gold
+	--Trading My WoW gold for Diablo 3 gold
+	"wowgold.*fordiablo3?gold", --T> My WoW gold (15,000g) for Diablo 3 gold
+	"tradediablo3?gold.*wowgold", --LF someone that wants to trade diablo 3 gold for my wow gold
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
@@ -401,6 +406,7 @@ local instantReportList = {
 	--WTS cheap gold /w me for more info ( no chineese website etc...)
 	"^wtscheapgold", --WTS cheap gold /w me for more info 
 	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
+	"^wtsgametime.*cheap", --WTS gametime card 60days Very cheap 
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -418,6 +424,8 @@ local instantReportList = {
 	"boost.*share.*account.*legal", --{rt1}RBG BOOST help! Get 2.2/2.4/HERO/CAP only in few hours!NO share acc! We're 1 in world do not take account!Cap 3800+ every week.21 rbg achievs. Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service! /w
 	"boost.*cheap.*rbgmarko", --{rt1} Best RBG boosting service!{rt1} 2200|2400|HERO. 2950-3300 conquest point per week + access to elite gear, 16+ achievments | 14 titles. Fast and secure boost,no account sharing with cheapest prices! {rt1} Skype: RBGmarko {rt1}
 	"boost.*discount.*unkwn", --{rt8}WTS RBG Boost! Easily 0-2.2, 2.4, 2.65. Be the best with T2 weapon+ elite gear. Fast, SAFE. You play urself. PRIVATE games only. Pm for info. Test game included.{rt8}Autumn Discounts!{rt1}We have Proofs!{rt1}Skype: Unkwn-
+	"rating.*gear.*rgboost", --Get the RBG rating you need! 2200|2400|HERO. 2950-3300 conquest point per week, access to elite gear,16+ achievments and 14 titles. Do easy and safe and fair, no account sharing. Hurry to catch Test and discount! Skype: RGBoost
+	--{rt1}New pvp Guild will help you with RBG. No account sharing, you play your character, so its 100% legit. 2.2\2.4\2.6k{rt1}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
