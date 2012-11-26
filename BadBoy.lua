@@ -295,6 +295,9 @@ local instantReportList = {
 	"^wt[bs]a?n?awesomersaccount", --wts awesome rs account /w me
 	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
 
+	--[[  Dota 2 ]]--
+	"^wtsdota2.*key", --wts dota 2beta key 10k
+
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
 
@@ -345,7 +348,8 @@ local instantReportList = {
 	--WTB Diablo 3 key cheap
 	--WTB Diablo3 Gold for WoW Gold! /w me D3Gold per WoWGold!
 	"^wt[bs]diablo3", --WTB Diablo 3 Gold!
-	"^wttwowgold.*d3gold", --WTT Wow Gold For D3 Gold! /w me with your price!
+	--WTB WOW GOLDS WITH D3 GOLDS ASAP
+	"^wt[bst]wowgold.*d3gold", --WTT Wow Gold For D3 Gold! /w me with your price!
 	"wowgoldford3gold", --T> My WoW gold for D3 gold
 	--T> My WoW gold for Diablo 3 gold
 	--Trading My WoW gold for Diablo 3 gold
