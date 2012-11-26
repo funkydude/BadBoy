@@ -220,6 +220,11 @@ local whiteList = {
 	"kilta", --fi
 	"etsii", --fi
 	"sosyal", --tr
+	"дкп", --ru, dkp
+	"рeкрут", --ru, recruit
+	"нoвoбрaн", --ru, recruits
+	"лфг", --ru, lfg
+	"рeйд", --ru, raid
 }
 
 --Any entry here will instantly report/block
@@ -426,11 +431,12 @@ local instantReportList = {
 	"rating.*mount.*baddieisboss", --Are you interested in becoming a Gladiator or achieving 2400 rating in RBGs/Arenas? How about being one of the first to get full elite gear this season? What about getting rare & unobtainable mounts? Message me for more info! Skype: Baddieisboss
 	"boost.*account.*nucleear1986", --RBG BOOST (1 day) in MoP started!Get 2.2/2.4/HERO!NO share acc! We're 1 in world do not take account!Cap 3200+ every week.Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service!Skype: nucleear1986_26
 	"boost.*rating.*legal.*price", --{rt8} WTS RBG [BOOST.Any]rating:2200,2400,Hero. Absolutely legal - you play yourself, no account sharing. Best prices in Europe. Boost's provided in a very short space of [time.Be]the first to obtain great titles and elite gear!
-	"boost.*share.*account.*legal", --{rt1}RBG BOOST help! Get 2.2/2.4/HERO/CAP only in few hours!NO share acc! We're 1 in world do not take account!Cap 3800+ every week.21 rbg achievs. Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service! /w
+	--{rt1}RBG help! Get 2.2/2.4/HERO/CAP only in few hours!NO share acc! We're 1 in world do not take account!Cap 3800+ every week.21 rbg achievs. Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees! For more info /w me
+	"rbg.*share.*account.*legal", --{rt1}RBG BOOST help! Get 2.2/2.4/HERO/CAP only in few hours!NO share acc! We're 1 in world do not take account!Cap 3800+ every week.21 rbg achievs. Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service! /w
 	"boost.*cheap.*rbgmarko", --{rt1} Best RBG boosting service!{rt1} 2200|2400|HERO. 2950-3300 conquest point per week + access to elite gear, 16+ achievments | 14 titles. Fast and secure boost,no account sharing with cheapest prices! {rt1} Skype: RBGmarko {rt1}
 	"boost.*discount.*unkwn", --{rt8}WTS RBG Boost! Easily 0-2.2, 2.4, 2.65. Be the best with T2 weapon+ elite gear. Fast, SAFE. You play urself. PRIVATE games only. Pm for info. Test game included.{rt8}Autumn Discounts!{rt1}We have Proofs!{rt1}Skype: Unkwn-
 	"rating.*gear.*rgboost", --Get the RBG rating you need! 2200|2400|HERO. 2950-3300 conquest point per week, access to elite gear,16+ achievments and 14 titles. Do easy and safe and fair, no account sharing. Hurry to catch Test and discount! Skype: RGBoost
-	--{rt1}New pvp Guild will help you with RBG. No account sharing, you play your character, so its 100% legit. 2.2\2.4\2.6k{rt1}
+	"rbg.*account.*playyour.*legit", --{rt1}New pvp Guild will help you with RBG. No account sharing, you play your character, so its 100% legit. 2.2\2.4\2.6k{rt1}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
