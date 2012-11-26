@@ -417,6 +417,8 @@ local instantReportList = {
 	"^wtscheapgold", --WTS cheap gold /w me for more info 
 	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
 	"^wtsgametime.*cheap", --WTS gametime card 60days Very cheap 
+	"^wtbgold.*gametime", --WTB GOLD, OR TRADE GOLD FOR GAMETIME!!
+	"honorbuddy.*bot.*gold.*skype", --WTS 1 sessions and 3 sessions of HONORBUDDY (WoW bot) For golds....It rly good way to earn golds,if you are interested contact me on skype : Stimar12
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -437,6 +439,9 @@ local instantReportList = {
 	"boost.*discount.*unkwn", --{rt8}WTS RBG Boost! Easily 0-2.2, 2.4, 2.65. Be the best with T2 weapon+ elite gear. Fast, SAFE. You play urself. PRIVATE games only. Pm for info. Test game included.{rt8}Autumn Discounts!{rt1}We have Proofs!{rt1}Skype: Unkwn-
 	"rating.*gear.*rgboost", --Get the RBG rating you need! 2200|2400|HERO. 2950-3300 conquest point per week, access to elite gear,16+ achievments and 14 titles. Do easy and safe and fair, no account sharing. Hurry to catch Test and discount! Skype: RGBoost
 	"rbg.*account.*playyour.*legit", --{rt1}New pvp Guild will help you with RBG. No account sharing, you play your character, so its 100% legit. 2.2\2.4\2.6k{rt1}
+	"rbg.*playyour.*account.*legit", --{star} new pvp guild <all stars>. we are helping with rbg. you play yourself, without account sharing. 100% legit, you can see it yourself. 3800+ cp per week. helping with 2200/2400/hero. access to t2 weapons and more. wisp me for more information. /w
+	"cheap.*arenaboost.*rating.*discount.*service", --{rt1} *now providing the cheapest Arena boosting*, Boosting all from 0-2,700 rating, example: 1,5-2k rating, EVERYTHING, NOW 20% DISCOUNT FOR ALL HEALERS, The Boosting Service is atm Available for all classes! {rt1}
+	"rbg.*playyour.*mount.*gear.*rating", --{skull} new guild <get your rbg rate>.we are helping with 2200||2400||hero.you play yourself in our group!3850 cp a week,mount,16+achievements and 14 titles. access to elite gear and t2 weapon.get your rating today!wisp me for more information! {skull}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
