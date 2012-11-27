@@ -448,6 +448,7 @@ local instantReportList = {
 	"cheap.*arenaboost.*rating.*discount.*service", --{rt1} *now providing the cheapest Arena boosting*, Boosting all from 0-2,700 rating, example: 1,5-2k rating, EVERYTHING, NOW 20% DISCOUNT FOR ALL HEALERS, The Boosting Service is atm Available for all classes! {rt1}
 	--{star} new pvp guild {star}get your rbg{star} will help you with 2200||2400||hero. 3850 cp a week, access to elite gear and t2 weapon. get your rating today! {star} /w me for more information! {star}
 	"rbg.*help.*%d%d%d%d.*elitegear.*rating", --{skull} new guild <get your rbg rate>.we are helping with 2200||2400||hero.you play yourself in our group!3850 cp a week,mount,16+achievements and 14 titles. access to elite gear and t2 weapon.get your rating today!wisp me for more information! {skull}
+	"safe.*paypal.*romaboost", --RGB Help. {square} 2200 - 2400 - 2600, CAP {square}. Fast and safe. The lowest prices in Europe. No sharing Account. You play yourself. Bussines PayPal. 100% legally. Skype: Romaboost
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
