@@ -713,10 +713,9 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
 		else
 			if BADBOY_POPUP then --Manual reporting via popup
-				--Add original spam line to Blizzard popup message
-				StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = "BadBoy: ".. REPORT_SPAM_CONFIRMATION .."\n\n".. gsub(debug, "%%", "%%%%")
-				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player)
-				dialog.data = lineId
+				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player, nil, lineId)
+				dialog.text:SetFormattedText("BadBoy: %s \n\n %s", REPORT_SPAM_CONFIRMATION:format(player), debug) --Add original spam line to Blizzard popup message
+				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
 			else
 				--Show block message
 				if not BADBOY_NOREPORT then
@@ -777,11 +776,6 @@ do
 			SetHyperlink(self, link, ...)
 		end
 	end
-end
-
---[[ Configure popup reporting ]]--
-StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].OnHide = function()
-	StaticPopupDialogs["CONFIRM_REPORT_SPAM_CHAT"].text = REPORT_SPAM_CONFIRMATION --Reset popup message to default for manual reporting
 end
 
 --[[ Add Filters ]]--
