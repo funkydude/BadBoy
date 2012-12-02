@@ -1,6 +1,7 @@
 
--- GLOBALS: print, tinsert, tremove, strsplit, SetCVar, GetTime, pairs, tonumber, UnitInParty, UnitInRaid, BNGetNumFriendInvites, BNGetFriendInviteInfo, BNReportFriendInvite
--- GLOBALS: UnitIsInMyGuild, ReportPlayer, ComplainChat, CanComplainChat, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, ItemRefTooltip.SetHyperlink, ChatFrame1
+-- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, BadBoyLog, BNGetFriendInviteInfo, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, BNGetNumFriendInvites, BNReportFriendInvite
+-- GLOBALS: CanComplainChat, ChatFrame1, COMPLAINT_ADDED, FCF_SetChatWindowFontSize, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, select, StaticPopup_Show, StaticPopup_Resize
+-- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, UnitIsInMyGuild, wipe
 local myDebug = nil
 
 local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
@@ -104,7 +105,6 @@ local commonList = {
 	"купи", --buy [serbian]
 	"быcтрo", --fast/quickly
 	"ищemпocтaвщикoв", --ищем поставщиков --looking for suppliers
-	"[%.,]ru", --really can't risk any more TLDs for 2 points (Heavy Strict) until Blizz implements my requests to reduce FPs, which will probably be never
 }
 
 --These entries add +2 points
@@ -198,9 +198,17 @@ local whiteList = {
 	"roleplay",
 	"apply",
 	"contender", --Contender's Silk
-	"enjin",
-	"guildlaunch",
-	"wowstead",
+	"enjin%.com",
+	"guildlaunch%.com",
+	"corplaunch%.com",
+	"wowstead%.com",
+	"guildportal%.com",
+	"guildomatic%.com",
+	"shivtr%.com",
+	"own3d%.tv",
+	"ustream%.tv",
+	"twitch%.tv",
+	"justin%.tv",
 	"social",
 	"fortunecard",
 	"house",
@@ -449,6 +457,7 @@ local instantReportList = {
 	--{star} new pvp guild {star}get your rbg{star} will help you with 2200||2400||hero. 3850 cp a week, access to elite gear and t2 weapon. get your rating today! {star} /w me for more information! {star}
 	"rbg.*help.*%d%d%d%d.*elitegear.*rating", --{skull} new guild <get your rbg rate>.we are helping with 2200||2400||hero.you play yourself in our group!3850 cp a week,mount,16+achievements and 14 titles. access to elite gear and t2 weapon.get your rating today!wisp me for more information! {skull}
 	"safe.*paypal.*romaboost", --RGB Help. {square} 2200 - 2400 - 2600, CAP {square}. Fast and safe. The lowest prices in Europe. No sharing Account. You play yourself. Bussines PayPal. 100% legally. Skype: Romaboost
+	"boost.*legit.*lemonlee9", --WTS:{rt3}{rt3}{rt3}RBG/ Arena Master BOOST!2200/2400/Hero/CP CAP!Get your RBG/Arena boost today with extended CP cap! Most legit RBG boosting! Fast and safe! We have a website {rt3}{rt3} skype me:lemonlee9 or QQ:249202110 {rt1} for m
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -636,7 +645,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, 0, nil, {}, {}, 0
+local gsub, pairs, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, pairs, tremove, 0, nil, {}, {}, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -656,7 +665,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
 			--RealID support, don't scan people that whisper us via their character instead of RealID
 			--that aren't on our friends list, but are on our RealID list. CanComplainChat should really support this...
-			for i=1, select(2, BNGetNumFriends()) do
+			local _, num = BNGetNumFriends()
+			for i=1, num do
 				local toon = BNGetNumFriendToons(i)
 				for j=1, toon do
 					local _, rName, rGame = BNGetFriendToonInfo(i, j)
@@ -704,7 +714,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		end
 		if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
 	end
-	tinsert(chatLines, msg) tinsert(chatPlayers, player)
+	chatLines[#chatLines+1] = msg
+	chatPlayers[#chatPlayers+1] = player
 	--End text buffer
 
 	if IsSpam(msg, icon) then
@@ -754,7 +765,7 @@ do
 							local text = region:GetText()
 							--Skip the complaint registered message and the BadBoy report player message
 							if text ~= msg and not strfind(text, msg, nil, true) and not strfind(text, "badboy:"..player..":", nil, true) and not strfind(text, "BadBoy|", nil, true) then
-								tinsert(tbl, {text, region:GetTextColor()})
+								tbl[#tbl+1] = {text, region:GetTextColor()}
 							end
 						end
 					end
@@ -765,7 +776,7 @@ do
 
 					--Restore all chat
 					for _,w in pairs(tbl) do
-						addMsg(f, unpack(w))
+						addMsg(f, w[1], w[2], w[3], w[4]) --Frame, Text, R, G, B
 						wipe(w)
 					end
 					wipe(tbl)

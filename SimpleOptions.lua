@@ -1,4 +1,5 @@
 
+-- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, InterfaceOptionsFrame_OpenToCategory, PlaySound, SLASH_BADBOY1
 local name = ...
 do
 	--[[ Slash Handler ]]--
@@ -57,10 +58,6 @@ do
 	--badboy:SetScript("OnEvent", function(self, event, ...) self[event](self, event, ...) end)
 	badboy:Hide()
 	badboy.name = name
-	badboy:SetScript("OnShow", function()
-		BadBoyConfigSilenceButton:SetChecked(BADBOY_NOREPORT)
-		BadBoyConfigPopupButton:SetChecked(BADBOY_POPUP)
-	end)
 	local title = badboy:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 	title:SetPoint("TOPLEFT", 16, -16)
 	title:SetText("BadBoy @project-version@") --wowace magic, replaced with tag version
@@ -77,6 +74,9 @@ do
 			PlaySound("igMainMenuOptionCheckBoxOff")
 			BADBOY_NOREPORT = nil
 		end
+	end)
+	btnNoReportMsg:SetScript("OnShow", function(frame)
+		frame:SetChecked(BADBOY_NOREPORT)
 	end)
 	local btnNoReportMsgText = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
 	btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
@@ -98,6 +98,9 @@ do
 			PlaySound("igMainMenuOptionCheckBoxOff")
 			BADBOY_POPUP = nil
 		end
+	end)
+	btnManualReport:SetScript("OnShow", function(frame)
+		frame:SetChecked(BADBOY_POPUP)
 	end)
 	local btnManualReportText = btnManualReport:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
 	btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
