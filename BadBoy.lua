@@ -432,6 +432,7 @@ local instantReportList = {
 	"^wtbgold.*gametime", --WTB GOLD, OR TRADE GOLD FOR GAMETIME!!
 	"honorbuddy.*bot.*gold.*skype", --WTS 1 sessions and 3 sessions of HONORBUDDY (WoW bot) For golds....It rly good way to earn golds,if you are interested contact me on skype : Stimar12
 	"^wts%d+day.*gametime.*cheap", --wts  180days gametime card  {rt1} {rt2}\ cheaps\
+	"^wtsgametime.*upgrade", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
