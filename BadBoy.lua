@@ -491,7 +491,7 @@ local instantReportList = {
 	--Seling [G[circle]LD], Fast, reliably, any kind of payments. Attestat of seller's. Looking for supplier's details to pm.
 	"g{.*}ld.*быcтрo.*oплaты.*пocтaвщикoв", --Продам [G[circle]LD], Быстро, надежно, различные способы оплаты. Аттестат продовца. Ищем поставщиков подробности в пм.
 	--selling [circle] 1k at 13 rub
-	"^прoдaм.*{.*}.*%d+кзa%d+руб", --продам [circle] 1к за 13 руб
+	"^прoдam.*{.*}.*%d+кзa%d+руб", --продам [circle] 1к за 13 руб
 
 	--[[  Chinese  ]]--
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
@@ -695,7 +695,13 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 		if myDebug and icon == 1 then print("Removing icons, adding 1 point.") end
 	end
 	--End icon removal
-	msg = gsub(msg, "[¨“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
+
+	--Symbol & space removal
+	msg = gsub(msg, "[%*%-%(%)\"`'_%+#%%%^&;:~{} ]", "")
+	msg = gsub(msg, "¨", "")
+	msg = gsub(msg, "”", "")
+	msg = gsub(msg, "“", "")
+	--End symbol & space removal
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
