@@ -291,7 +291,8 @@ local instantReportList = {
 	"exchangingrsgold", --Exchanging RS gold for WoW gold. I have 400m PST
 	--WTS level 25 guild with 80k gold for runescape gold
 	"goldforrunescapegold", --Exchanging WoW gold for Runescape gold pst me better price for higher amount.
-	"buying?runescapeg", --buyin runescape g
+	--Buying runescape account! :D Add me on skype "*"
+	"buying?runescape[ag]", --buyin runescape g
 	"wt[bs]runescapeaccount", --WTB runescape accounts ( pure only ) or money! i pay with wow gold. GOT 170k gold atm.
 	"wt[bs]runescapepure", --WTB runescape pure ( STR PURE IS A $$ PAYING EXTRA FOR STR PURE )!
 	--WTB big amount of runescape money. 2mil = 1k gold. ONLY LEGIT PEOPLE.
@@ -590,6 +591,7 @@ local instantReportList = {
 	"billiggull.*koster.*skype", --{star} Interessert i billig GULL? 100k koster 700 NOK (7 NOK pr 1k) – Bet: Pay Pal og nettbank. Bare nor,swe,dk kunder! Lei av kineserene? Jeg er mye sikrere, instant gull etter bet, online ofte og billig! Add meg på SKYPE for mer info: Nolixz1 {star}
 	"order.*nightwing.*%d+k.*stock", --WTS{star}50K Order can get <heart of the nightwing> for free,100k Order can get it for free,500k in stock,pst{square}
 	"kb8g[0o][1l]d.*deliver", --1OK // 7.9 E { www,Kb8G01d,Com } <5Mins Delivery>
+	"mmomarket.*gold.*boost", --{rt1}{rt1} We are [MMO-market.com]!!! WE are all you ever going to NEED: GOLD / CHARACTERS(from 150$ char to 5000$ char)/ BOOSTs in PvE or ARENA BOOSTs in PvP! FULLY PROFESSIONAL. Come and check us! [MMO-MARKET.COM]{rt1}{rt1}
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
