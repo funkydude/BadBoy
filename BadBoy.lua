@@ -830,7 +830,13 @@ do
 				if type(msg) == "string" then
 					local debug = msg
 					msg = msg:lower() --Lower all text, remove capitals
-					msg = gsub(msg, "[¨“”%*%-%(%)\"`'_%+#%%%^&;:~{} ]+", "") --Remove spaces, symbols, etc
+
+					--Symbol & space removal
+					msg = gsub(msg, "[%*%-%(%)\"`'_%+#%%%^&;:~{} ]", "")
+					msg = gsub(msg, "¨", "")
+					msg = gsub(msg, "”", "")
+					msg = gsub(msg, "“", "")
+					--End symbol & space removal
 
 					--They like to replace English letters with UTF-8 "equivalents" to avoid detection
 					if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
