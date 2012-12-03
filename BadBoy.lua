@@ -437,13 +437,15 @@ local instantReportList = {
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
-	"rating.*account.*mark%.addington", --{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3300 conquest points per week. Mount, 16+ achivements and 14 titles. Access to elite gear. We have website and business paypal! Skype - mark.addington23 {rt8}
+	--{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles. Access to elite gear & T2 weap. We have website and business PayPal! Skype - Deni1189 {rt8}
+	--{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles. Access to elite gear & T2 weap. We have website and business PayPal! Skype - Chris.Jenkins60 {rt8}
+	--{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3300 conquest points per week. Mount, 16+ achivements and 14 titles. Access to elite gear. We have website and business paypal! Skype - mark.addington23 {rt8}
+	--{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3850 conquest points per week. Mount, 16+ achievements and 14 titles. Access to elite gear and t2 weapon. Get your rating today! Skype - john.saunder {rt8}
+	"rbgrating.*hero.*account.*gear.*skype", --{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3300 conquest points per week. Mount, 16+ achivements and 14 titles. Access to elite gear. We have website and business paypal! Skype - john.saunder {rt8}
 	--{rt1} Get your Rated BG rating today! We can boost you really fast rating to 2.2k/2.4k/2.6k(depends on your wish).No account sharing,you play your character,so its 100% legally. You will get for sure best Elite PVP Gear+extended CP cap!1 game free. /w
 	--{rt1}Get your Rated BG rating boosted up to 2.2k|2.4k|2.6k fast and for near to nothing. No account sharing, you play your character, so its 100% legit.  You get extended Conquest Points cap, best PvP gear, and other benefits.trial games!Pm me
 	"rating.*fast.*account.*playyour", --{rt2} Get your RBG rating fast and safe! 2200/2400/Hero/CP Cap! No account sharing, you play your character, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today. Autumn discount!!! {rt2}
 	"account.*playyour.*legit.*paypal", --{rt2} RBG BOOST! 2200/2400/Hero/CP CAP! No account sharing, you play your character, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today. Autumn discount!!! {rt2}
-	--{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3850 conquest points per week. Mount, 16+ achievements and 14 titles. Access to elite gear and t2 weapon. Get your rating today! Skype - john.saunder {rt8}
-	"rating.*account.*john%.saunder", --{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3300 conquest points per week. Mount, 16+ achivements and 14 titles. Access to elite gear. We have website and business paypal! Skype - john.saunder {rt8}
 	"sale.*mount.*wowpvpcarry", --Gladiator, 2200/2400/2700 Arena & RBG, Hero of the Horde, Malevolent Gladiator (rank 1!), and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord)! Skype: wowpvpcarry
 	"rating.*mount.*baddieisboss", --Are you interested in becoming a Gladiator or achieving 2400 rating in RBGs/Arenas? How about being one of the first to get full elite gear this season? What about getting rare & unobtainable mounts? Message me for more info! Skype: Baddieisboss
 	"boost.*account.*nucleear1986", --RBG BOOST (1 day) in MoP started!Get 2.2/2.4/HERO!NO share acc! We're 1 in world do not take account!Cap 3200+ every week.Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service!Skype: nucleear1986_26
@@ -462,6 +464,7 @@ local instantReportList = {
 	"safe.*paypal.*romaboost", --RGB Help. {square} 2200 - 2400 - 2600, CAP {square}. Fast and safe. The lowest prices in Europe. No sharing Account. You play yourself. Bussines PayPal. 100% legally. Skype: Romaboost
 	"boost.*legit.*lemonlee9", --WTS:{rt3}{rt3}{rt3}RBG/ Arena Master BOOST!2200/2400/Hero/CP CAP!Get your RBG/Arena boost today with extended CP cap! Most legit RBG boosting! Fast and safe! We have a website {rt3}{rt3} skype me:lemonlee9 or QQ:249202110 {rt1} for m
 	"rbgassist.*gear.*achiev.*secure.*account", --{rt1}RBG Assist{rt1} help in gaining 2200|2400|HERO. 3850+ CP per week, access to elite gear, t2 weapon, 16+ achievements and 14 titles, everything you've ever dreamed. Fast, secure, and without account sharing. {rt1}For more info /w to me {rt1}
+	"^wts%dv%dboost.*weapon.*gear.*rbg", --WTS 3v3 BOOST to 2200 to ALL CLASSES, GET your tier 2 weapons + elite gear, also selling RBG BOOSTS to SHAMANS
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
