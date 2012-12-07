@@ -1,17 +1,17 @@
 ## Interface: 50100
 ## Version: 11.300
 ## Title: BadBoy
-## Notes: A light, automatic spam blocker & reporter.
-## Notes-deDE: Automatischer Spam Blocker & Reporter.
-## Notes-ruRU: A light, automatic spam blocker & reporter.
-## Notes-zhCN: 一个轻巧，自动阻挡和举报垃圾信息的插件。
-## Notes-zhTW: 一個輕量級，自動阻擋垃圾訊息與舉報的插件。
-## Notes-koKR: A light, automatic spam blocker & reporter.
-## Notes-frFR: Un simple anti-spam & signalement des abus.
-## Notes-esES: Ligero bloqueador y reportador de spam automático.
-## Notes-esMX: A light, automatic spam blocker & reporter.
-## Notes-ptBR: Um leve bloqueador automático de spam e reportador.
-## Notes-itIT: Un blocco spam automatico e leggero.
+## Notes: A simple spam blocker & reporter.
+## Notes-deDE: A simple spam blocker & reporter.
+## Notes-ruRU: A simple spam blocker & reporter.
+## Notes-zhCN: A simple spam blocker & reporter.
+## Notes-zhTW: A simple spam blocker & reporter.
+## Notes-koKR: A simple spam blocker & reporter.
+## Notes-frFR: A simple spam blocker & reporter.
+## Notes-esES: A simple spam blocker & reporter.
+## Notes-esMX: A simple spam blocker & reporter.
+## Notes-ptBR: A simple spam blocker & reporter.
+## Notes-itIT: A simple spam blocker & reporter.
 ## Author: Funkydude
 ## SavedVariables: BADBOY_POPUP, BADBOY_NOREPORT
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)

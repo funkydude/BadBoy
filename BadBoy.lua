@@ -31,6 +31,7 @@ do
 	elseif L == "ruRU" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~5 секунды между отчетами, чтобы избежать попадания отключен (ошибка Blizzard)"
+		reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net приглашаем их от |cffffff00%s|r|r <<<"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then

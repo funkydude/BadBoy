@@ -21,35 +21,27 @@ do
 		locManualReport = "Zeige ein PopUp (zeigt den Spam) anstatt es im Chatfenster anzuzeigen"
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏要你舉報的 '垃圾阻擋' 訊息"
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locNoReportDesc = "請不要使用此。報告的垃圾郵件是什麼讓黑客攻擊的垃圾郵件發送者使用的帳戶\n關閉和領域的清理。此外，如果很多人報告垃圾郵件發送者，然後，垃圾郵件發送者\n失去的能力，這意味著他們可以不再垃圾郵件\n這樣的好處大家，特別是非BADBOY用戶聊天。"
 		locManualReport = "顯示彈出的玩家舉報(顯示垃圾訊息)而不是發佈在聊天中"
 	elseif L == "zhCN" then
 		locNoReportMsg = "隐藏你要举报的“阻挡的垃圾信息"
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locNoReportDesc = "请不要使用此。报告的垃圾邮件是什么让黑客攻击的垃圾邮件发送者使用的帐户\n关闭和领域的清理。此外，如果很多人报告垃圾邮件发送者，然后，\n垃圾邮件发送者失去的能力，这意味着他们可以不再垃圾邮件，这样的好处大家，\n特别是非BADBOY用户聊天。"
 		locManualReport = "显示弹出的玩家举报（显示垃圾信息）而不是显示在聊天中"
 	elseif L == "esES" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+
 	elseif L == "esMX" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+
 	elseif L == "ruRU" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+		locNoReportMsg = "Прятать сообщение \"спам блокирован\", спрашивающее Вас о доносе на игрока."
+		locNoReportDesc = "Пожалуйста, не используйте это. Отчетный спама является то, что получает взломали учетные\nзаписи, используемые спамерами закрыты и сферы очищены. Кроме того, если многие люди\nсообщают спамера, то, что спамеры теряют способность общаться означает, что они не\nмогут больше спама, это приносит пользу всем, особенно не-BadBoy пользователей."
 		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
 	elseif L == "koKR" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+
 	elseif L == "ptBR" then
-		locNoReportMsg = "Hide the 'spam blocked' message asking you to report."
-		locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+
 	elseif L == "itIT" then
 		locNoReportMsg = "Nascondi il messaggio \"Spam bloccata\" che ti chiede di riportare"
-		locNoReportDesc = "Prego NON usare questo. Riportare le spam è ciò che permette di bloccare account rubati usati dagli\nspammers. Inoltre se tanti riportano uno spammer, questi non può più scrivere nella chat e ciò va a vantaggio di tutti,\n anche di coloro che non usano questo addon."
+		locNoReportDesc = "Prego NON usare questo. Riportare le spam è ciò che permette di bloccare\naccount rubati usati dagli spammers. Inoltre se tanti riportano uno spammer,\nquesti non può più scrivere nella chat e ciò va a vantaggio di tutti, anche di coloro\nche non usano questo addon."
 		locManualReport = "Visualizza un messaggio che mostra la spam al posto di scrivere sulla chat"
 	end
 
