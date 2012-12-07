@@ -306,7 +306,8 @@ local instantReportList = {
 	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
 
 	--[[  Dota 2 ]]--
-	"^wtsdota2.*key", --wts dota 2beta key 10k
+	"^wt[bs]dota2.*key", --wts dota 2beta key 10k
+	"^wt[bs]dota2.*store", --WTB Dota 2 hero/store items,/W me what you have
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
@@ -417,12 +418,10 @@ local instantReportList = {
 	"^wts%d+days?gamecard", --wts 60 days game card /w me
 	"wts.*steed.*prepaidgame", --WTS [Winged Guardian]25K [Heart of the Aspects]25K [Celestial Steed]20K prepaid game
 	"gamecard.*gold.*money.*info", -- I am offer Game Card for gold or money, for more info /w me
-	"^wtsgametimesubsc", --WTS Gametime-Subscribtion /w me
 	"^wtsgamecard%d+.*cheap", --Wts gamecard 60days very cheap
 	--WTB Game Time CODE Buy gold
 	--WTS Game time/Diablo and Unmarged accounts for gold!
 	"wt[bs].*gametime.*gold", --WTB 1 Month Game Time CODE Buy gold
-	"^wt[bs]gametime.*/w", --WTS G A M E T I M E /W
 	"steed.*gc%d+day.*sale", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 15k gc90days=25KPet sales
 	"wts.*mount.*gametimecard", --WTS Mounts[Heart of the Aspects] and Pets/ GameTimecard
 	"mount.*account.*sell.*discount", --Get every single rare mount on your own account now! (including incredibly rare & unobtainables) Also selling all PvP achievies: Gladiator, Hero of Ally, 2200/2400 arenas/RBGs and more! Great discounts for MoP preorders! Message me! Skype: Baddieisboss
@@ -430,12 +429,16 @@ local instantReportList = {
 	--WTS cheap gold /w me for more info ( no chineese website etc...)
 	"^wtscheapgold", --WTS cheap gold /w me for more info
 	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
-	"^wtsgametime.*cheap", --WTS gametime card 60days Very cheap
 	"^wtbgold.*gametime", --WTB GOLD, OR TRADE GOLD FOR GAMETIME!!
 	"honorbuddy.*bot.*gold.*skype", --WTS 1 sessions and 3 sessions of HONORBUDDY (WoW bot) For golds....It rly good way to earn golds,if you are interested contact me on skype : Stimar12
 	"^wts%d+day.*gametime.*cheap", --wts  180days gametime card  {rt1} {rt2}\ cheaps\
-	"^wtsgametime.*upgrade", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
+	--WTS G A M E T I M E /W
+	--WTS {rt1} GAMETIME {rt1}
+	--WTS gametime card 60days Very cheap
+	--WTS Gametime-Subscribtion /w me
+	"^wtsgametime", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
 	"month.*gametime.*cdkey", --WTS 1 MONTH RAF - 2 MONTHS GAME TIME - MOP CD KEY - CATA CD KEY. WISP ME FOR MORE INFO
+	"sell.*gamecard.*day.*whisp", --Greetings! Currently im selling two different kinds of gamecards! {star} The one with 30 days! And the other one with 60 days! Don't be shy to /whisper me! {skull}
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
