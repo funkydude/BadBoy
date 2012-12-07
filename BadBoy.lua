@@ -98,12 +98,12 @@ local commonList = {
 	"дocтaвкa", --delivery
 	"cкидкa", --discount [russian]
 	"oплaт", --payment [russian]
-	"прoдaжa", --sale [serbian]
+	"пpoдaжa", --sale [serbian]
 	"нaличии", --stock/presence
 	"цeнe", --price [serbian]
 	"пoкупкe", --buy/buying/purchase [russian]
 	"купи", --buy [serbian]
-	"быcтрo", --fast/quickly
+	"быcтpo", --fast/quickly
 	"ищemпocтaвщикoв", --ищем поставщиков --looking for suppliers
 }
 
@@ -128,7 +128,7 @@ local heavyList = {
 	"%d+[%.,]?%d*usd[fp][oe]r%d+[%.,]?%d*[kg]",
 	"%d+[%.,]?%d*[kg][/\\=]%d+[%.,]?%d*usd",
 	"%d+[%.,]?[o%d]*[kg]%d+bonus[/\\=]%d+[%.,]?[o%d]+",
-	"%d+[%.,]?%d*[кр]+зa%d+[%.,]?%d*[рк]+", --14к за 21р / 17р за 1к
+	"%d+[%.,]?%d*[кp]+зa%d+[%.,]?%d*[pк]+", --14к за 21р / 17р за 1к
 }
 
 --These entries add +2 points, but only 1 entry will count
@@ -142,7 +142,7 @@ local heavyRestrictedList = {
 --These entries add +1 point, but only 1 entry will count
 local restrictedIcons = {
 	"{%l%l%d}",
-	"{цр%d}",
+	"{цp%d}",
 	"{star}",
 	"{circle}",
 	"{diamond}",
@@ -229,10 +229,10 @@ local whiteList = {
 	"etsii", --fi
 	"sosyal", --tr
 	"дкп", --ru, dkp
-	"рeкрут", --ru, recruit
-	"нoвoбрaн", --ru, recruits
+	"peкpут", --ru, recruit
+	"нoвoбpaн", --ru, recruits
 	"лфг", --ru, lfg
-	"рeйд", --ru, raid
+	"peйд", --ru, raid
 }
 
 --Any entry here will instantly report/block
@@ -469,7 +469,7 @@ local instantReportList = {
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
-	"oвoщeвик%.рф.*cвeжиmи", --[skull]Овощевик.рф[skull] продолжает, на зло врагaм, радовaть вас свежими [circle]oвoщaми! Бл 450. oператoры девyшки ждyт вaс!
+	"oвoщeвик%.pф.*cвeжиmи", --[skull]Овощевик.рф[skull] продолжает, на зло врагaм, радовaть вас свежими [circle]oвoщaми! Бл 450. oператoры девyшки ждyт вaс!
 	-- [[MMOSHOP.RU]] [circle] ot23r] real price [WM BL:270] [ICQ:192625006 Skype:MMOSHOP.RU, chat on the site] [Webmoney,Yandex,other]
 	"mmoshop%.ru.*цeнa.*skype", -- [ [MMOSHOP.RU]] [circle] от23р] реальная цена [WM BL:270] [ICQ:192625006 Skype:MMOSHOP.RU, Чат на сайте] [Вебмани,Яндекс,другие]
 	--[square] [RPGdealer.ru] [square] gives you quick access to wealth. Always on top!
@@ -479,27 +479,33 @@ local instantReportList = {
 	--Buy MERRY COINS on the funny-money.rf Funny price:)
 	--Купи ВЕСЕЛЫЕ МОНЕТКИ на фани-мани.рф Смешные цены:)
 	--Buy GOLD at [circle]funny-money.rf[circle] Price Calculator on the site.
-	"купи.*фaни-maни%.рф", --Купи ЗОЛОТО на [circle]фани-мани.рф[circle] Калькулятор цен на сайте.
+	"купи.*фaни-maни%.pф", --Купи ЗОЛОТО на [circle]фани-мани.рф[circle] Калькулятор цен на сайте.
 	--[COINS] of 23 per 1OOO | website | INGMONEY. RU | | SALE + Super Award - Spectral Tiger! ICQ 77-21-87 | | Skype INGMONEY. RU
 	"ingmoney%.ru.*skype", --[МОНЕТЫ]  от 23 за 1OOO | сайт | INGMONEY. RU ||АКЦИЯ + Супер Приз - Спектральный Тигр! ICQ 77-21-87 || Skype INGMONEY. RU
 	--Sell 55kg of potatoes at a low price quickly! Skype v_techno_delo [circle] 8 = 1kg
-	"прoдam.*кaртoшки.*cрoчнo.*cкaйп", --Продам 55кг картошки по дешевке  срочно! скайп v_techno_delo  [circle] 8 = 1кг
+	"пpoдam.*кapтoшки.*cpoчнo.*cкaйп", --Продам 55кг картошки по дешевке  срочно! скайп v_techno_delo  [circle] 8 = 1кг
 	--Gold Exchange Invitation to participate suppliers and shops. With our more than 800 suppliers and 100 stores. GexDex.ru
 	"з[o0]л[o0]т[ao0].*gexdex%.ru", --[skull][skull][skull] Биржа золота приглaшaет к учaстию постaвщиков и магазины. С нами болee 800 постaвщиков и 100 магaзинов. GеxDеx.ru
 	--Cheapest price only here! Price 1000 gold-20R, from 40k-18r on, from-60k to 17p! Website [playwowtime.vipshop.ru]! ICQ 196-353-353, skype nickname playwowtime2011!
 	"vipshop%.ru.*skype", --Самые дешевые цены только у нас! Цены 1000 золотых- 20р , от 40к -по 18р , от 60к-по 17р ! Сайт [playwowtime.vipshop.ru] ! ICQ 196-353-353 , skype ник playwowtime2011!
 	--we are help with RAITING BATTLE GROUND -2200-2400-2650 /admission of cap/PVP set for honor points/mount/leveling 1-90/ skype - [RPGBOX.RU] icq  819-207 site [rpgbox.ru]
-	"рeйтинг.*cкaйп.*rpgbox%.ru", --поможем РЕЙТИНГ ПОЛЕ БОЯ -2200-2400-2650 /набор капа/ПВП сет за очки чести/маунт/прокачка 1-90/ скайп - [RPGBOX.RU] ася  819-207 сайт [rpgbox.ru]
+	"peйтинг.*cкaйп.*rpgbox%.ru", --поможем РЕЙТИНГ ПОЛЕ БОЯ -2200-2400-2650 /набор капа/ПВП сет за очки чести/маунт/прокачка 1-90/ скайп - [RPGBOX.RU] ася  819-207 сайт [rpgbox.ru]
 	--Selling [GOLD]! 16r-1k Instant delivery any quantatys. Levelling characters, prof, honor. Attestat WM BL 350 ICQ 406-8878-55 Skype wow-crabbs
 	--Продам [GOLD]! 16р-1к Моментальная доставка любых количеств. Прокачка персонажей, проф, хонора. Аттестат WM BL 350 ICQ 406-8878-55 Скайп wow-crabbs
 	--Buying gold!looking for suppliers.Leveling characters, proffesions, honor TimeCards60days-80k gold Game payment 1month-45k gold. Attestat [BL 350] ICQ 406-8878-55 Skype wow-crabbs
-	"хoнoрa.*cкaйп.*wowcrabbs", --Скупаю голд!ищу поставщиков.Прокачка персонажей, профессий, хонора ТК60дн-80к Проплата 1мес-45к. Аттестат [BL 350] ICQ 406-8878-55 Скайп wow-crabbs
+	"хoнopa.*cкaйп.*wowcrabbs", --Скупаю голд!ищу поставщиков.Прокачка персонажей, профессий, хонора ТК60дн-80к Проплата 1мес-45к. Аттестат [BL 350] ICQ 406-8878-55 Скайп wow-crabbs
 	--[MMOah.ru]  [circle] Gold at competitive prices [circle] BL85+ IСQ  49-48-48 , online chat on the site, we are accepted any kind of payments WM/YM/Visa/qiwi/Robokassa/SMS, we are produce recruitment of suppl
 	"mmoah%.ru.*зoлoтo.*icq", --[MMOah.ru]  [circle] Золото по выгодным ценам [circle] BL85+ IСQ  49-48-48 , на сайте онлайн чат, принимаем все виды оплат WM/ЯД/Visa/qiwi/Robokassa/SMS, производим набор пост
 	--Seling [G[circle]LD], Fast, reliably, any kind of payments. Attestat of seller's. Looking for supplier's details to pm.
-	"g{.*}ld.*быcтрo.*oплaты.*пocтaвщикoв", --Продам [G[circle]LD], Быстро, надежно, различные способы оплаты. Аттестат продовца. Ищем поставщиков подробности в пм.
+	"g{.*}ld.*быcтpo.*oплaты.*пocтaвщикoв", --Продам [G[circle]LD], Быстро, надежно, различные способы оплаты. Аттестат продовца. Ищем поставщиков подробности в пм.
 	--selling [circle] 1k at 13 rub
-	"^прoдam.*{.*}.*%d+кзa%d+руб", --продам [circle] 1к за 13 руб
+	"^пpoдam.*{.*}.*%d+кзa%d+pуб", --продам [circle] 1к за 13 руб
+	--Help with RPBБ. [blue square] 2200 - 2400 - 2600. CAP [blue square]. Fast and safe. Best service. Without share of your account. You are play yourself. Site, BL 320+. Skype: R
+	"быcтpo.*бeзoпacнo.*cepвиc.*aккaунтa.*cкaйп", --Помощь с РПБ. [blue square] 2200 - 2400 - 2600. КАП [blue square]. Быстро и безопасно. Лучший сервис. Без передачи аккаунта. Вы играете сами. Сайт, БЛ 320+. Скайп: R
+	--Help with RBG raiting  2200.2400.2600. Cap. Detail in skype Axelretreem
+	"пomoжem.*pбгpeйтингom.*%d%d%d%d.*cкaйп", --Поможем с РБГ рейтингом  2200.2400.2600. Кап. Подробнее в скайп Axelretreem
+	--[PLAY-START_RU] G[circle]l0d0 from 14,8r, any kind of payment, delivery 5-15min. Reiiably. Attestat of seller's. We are looking for suppliers details in pm.
+	"playstartru.*oплaты.*дocтaвкa", --[PLAY-START_RU] З[circle]л0т0 от 14,8р, различные способы оплаты, доставка 5-15мин. Надежно. Аттестат продовца. Ищем поставщиков подробности в пм.
 
 	--[[  Chinese  ]]--
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
@@ -602,6 +608,7 @@ local repTbl = {
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", --Convert > \105
 	["Μ"]="m", ["м"]="m",--First letter is capital Greek μ "\206\156". Convert > \109
 	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", --First letter is Russian "\208\190". Convert > \111
+	["р"]="p", --First letter is Russian "\209\128". Convert > \112
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 }
 
@@ -713,7 +720,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 	--End symbol & space removal
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
+	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõрùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
 		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
 		for k,v in pairs(repTbl) do --Parse over the 'repTbl' table and replace strings
 			msg = gsub(msg, k, v)
