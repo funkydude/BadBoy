@@ -306,8 +306,9 @@ local instantReportList = {
 	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
 
 	--[[  Dota 2 ]]--
-	"^wt[bs]dota2.*key", --wts dota 2beta key 10k
-	"^wt[bs]dota2.*store", --WTB Dota 2 hero/store items,/W me what you have
+	--wtt dota 2 keys w
+	"^wt[bst]dota2.*key", --wts dota 2beta key 10k
+	"^wt[bst]dota2.*store", --WTB Dota 2 hero/store items,/W me what you have
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
@@ -361,12 +362,14 @@ local instantReportList = {
 	"^wt[bs]diablo3", --WTB Diablo 3 Gold!
 	--WTB WOW GOLDS WITH D3 GOLDS ASAP
 	"^wt[bst]wowgold.*d3gold", --WTT Wow Gold For D3 Gold! /w me with your price!
-	"wowgoldford3gold", --T> My WoW gold for D3 gold
+	--{rt1}{rt1}{rt1}WTT my WoW gold for your D3 gold. EU softcore. MSG.
+	"wowgoldfory?o?u?r?d3gold", --T> My WoW gold for D3 gold
 	--T> My WoW gold for Diablo 3 gold
 	--Trading My WoW gold for Diablo 3 gold
 	"wowgold.*fordiablo3?gold", --T> My WoW gold (15,000g) for Diablo 3 gold
 	"tradediablo3?gold.*wowgold", --LF someone that wants to trade diablo 3 gold for my wow gold
 	"^wt[bs]diablogold", --wtb diablo gold for wow gold!
+	"trading.*fordiablo3?gold", --TRADING LVL 25 GUILD FOR DIABLO GOLD!!!!!!!!!!!!!
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
@@ -439,6 +442,7 @@ local instantReportList = {
 	"^wtsgametime", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
 	"month.*gametime.*cdkey", --WTS 1 MONTH RAF - 2 MONTHS GAME TIME - MOP CD KEY - CATA CD KEY. WISP ME FOR MORE INFO
 	"sell.*gamecard.*day.*whisp", --Greetings! Currently im selling two different kinds of gamecards! {star} The one with 30 days! And the other one with 60 days! Don't be shy to /whisper me! {skull}
+	"^wts.*blizzstoremount.*%d+k", --WTS Any of the Blizz Store mounts 20k
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -472,6 +476,8 @@ local instantReportList = {
 	"rbgassist.*gear.*achiev.*secure.*account", --{rt1}RBG Assist{rt1} help in gaining 2200|2400|HERO. 3850+ CP per week, access to elite gear, t2 weapon, 16+ achievements and 14 titles, everything you've ever dreamed. Fast, secure, and without account sharing. {rt1}For more info /w to me {rt1}
 	"^wts%dv%dboost.*weapon.*gear.*rbg", --WTS 3v3 BOOST to 2200 to ALL CLASSES, GET your tier 2 weapons + elite gear, also selling RBG BOOSTS to SHAMANS
 	"rating.*powerle?ve?l.*gold.*diablo", --{rt1}{rt1}{rt1}WTS 2200/2400/2700 RBG Rating, finish in 8 hours{rt1}{rt1}Achievement Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3  {rt1} {rt1} {rt1}
+	"interest.*conquest.*gear.*mount.*detail", --{rt8} Are you interesting in becoming *?Do you want to have big conquest cap and access to elite gear? How about being one of the first to get full elite gear this season?What about getting rare mounts? Message me for details! {rt8}
+	"rating.*account.*character.*paypal", --Get ur rbg rating boosted up to  2200 2400 2600+  , no account sharing.u play ur character,so its 100% safe. we have website and business paypal! 
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
