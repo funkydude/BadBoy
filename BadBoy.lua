@@ -331,10 +331,11 @@ local instantReportList = {
 	"^wttacc?ount.*gear.*char", --WTT Acount Resto/Enha shaman / Resto / Balance druid / Prot warr / Mage / Paladin for just one full cata geared pvp character /w me with info
 	--WTS wow account 85human Rogue with LEGENDARIES + JC BS.  u pay with gold./w me for more info
 	"^wt[st]wowaccount", --WTT Wow account /w me for more info
-	"^wtsaccount.*gametime", --WTS Account with free lvl 80 And GAME  TIME!! /w me
 	"^wt[bs]mopcode", --WTS MoP Code /w me for info
 	"^wttaccountfor.*youget.*tier", --WTT Account for a 90 tier 1 ROGUE, you get 90mage(tier1)90druid (tier1) 85 priest, 85 rogue, 85 warrior /wme
-	"^wttaccountwith.*90.*tier", --WTT ACCOUNT with 90 mage(TIER1) 90 Feral (TIER1) 85 priest, 85 warrior, 85 rogue for 90 ROGUE with TIER 1/wme
+	--WTS ACCOUNT with 90 rogue, and 90 priest for gold /wme
+	--WTS Account with free lvl 80 And GAME  TIME!! /w me
+	"^wt[st]accountwith", --WTT ACCOUNT with 90 mage(TIER1) 90 Feral (TIER1) 85 priest, 85 warrior, 85 rogue for 90 ROGUE with TIER 1/wme
 
 	--[[  Brazzers, yes, really...  ]]--
 	"sell.*brazzersaccount.*info", --Hey there! I'm here to sell you Brazzers account /w me for more info!
