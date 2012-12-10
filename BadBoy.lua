@@ -422,7 +422,8 @@ local instantReportList = {
 	--WTS 60days game time card very checp
 	--wts 60days gamecard for gold /w for more info.
 	--wts  180days gametime card  {rt1} {rt2}\ cheaps\
-	"^wts%d+days?gamet?i?m?e?card", --wts 60 days game card /w me
+	--wts  90days gametime code  {rt2}{rt2}{rt2}
+	"^wts%d+days?gamet?i?m?e?c[ao][rd][de]", --wts 60 days game card /w me
 	"wts.*steed.*prepaidgame", --WTS [Winged Guardian]25K [Heart of the Aspects]25K [Celestial Steed]20K prepaid game
 	"gamecard.*gold.*money.*info", -- I am offer Game Card for gold or money, for more info /w me
 	--WTB Game Time CODE Buy gold
@@ -452,6 +453,7 @@ local instantReportList = {
 	"rafmount.*mopkey.*g[o0]ld.*char", --{rt1}WTS RAF mount(Heart of the Nightwing) and MOP KEY{rt6}lvl80 char for g0ld,if you wanna get a  lv80 char in 30mins /w me for more info{rt6}
 	"looking.*ebay.*sale.*skype", --Looking for someone that has LOADS of EBAY Experienced! )Come and earn 20% of your Sale Products! )Skype = Donz.Gold (dot between the donz.gold) ADD SKYPE
 	"^wtsmopkey", --{rt1} WTS MoP Key 1x /w me {rt1}
+	"wtsrafmount.*nightwing", --wts  raf mount   [Heart of the Nightwing] w/m
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -484,7 +486,8 @@ local instantReportList = {
 	"boost.*legit.*lemonlee9", --WTS:{rt3}{rt3}{rt3}RBG/ Arena Master BOOST!2200/2400/Hero/CP CAP!Get your RBG/Arena boost today with extended CP cap! Most legit RBG boosting! Fast and safe! We have a website {rt3}{rt3} skype me:lemonlee9 or QQ:249202110 {rt1} for m
 	"rbgassist.*gear.*achiev.*secure.*account", --{rt1}RBG Assist{rt1} help in gaining 2200|2400|HERO. 3850+ CP per week, access to elite gear, t2 weapon, 16+ achievements and 14 titles, everything you've ever dreamed. Fast, secure, and without account sharing. {rt1}For more info /w to me {rt1}
 	"^wts%dv%dboost.*weapon.*gear.*rbg", --WTS 3v3 BOOST to 2200 to ALL CLASSES, GET your tier 2 weapons + elite gear, also selling RBG BOOSTS to SHAMANS
-	"rating.*powerle?ve?l.*gold.*diablo", --{rt1}{rt1}{rt1}WTS 2200/2400/2700 RBG Rating, finish in 8 hours{rt1}{rt1}Achievement Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3  {rt1} {rt1} {rt1}
+	--{rt1}{rt1}{rt1}WTS: WOW & D3 Gold {rt1}{rt1}2200/2400/2700 RBG {rt1}{rt1}Achievement/Level Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3 {rt1} {rt1} {rt1}
+	"rbg.*powerle?ve?l.*gold.*diablo", --{rt1}{rt1}{rt1}WTS 2200/2400/2700 RBG Rating, finish in 8 hours{rt1}{rt1}Achievement Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3  {rt1} {rt1} {rt1}
 	"interest.*conquest.*gear.*mount.*detail", --{rt8} Are you interesting in becoming *?Do you want to have big conquest cap and access to elite gear? How about being one of the first to get full elite gear this season?What about getting rare mounts? Message me for details! {rt8}
 	"rating.*account.*character.*paypal", --Get ur rbg rating boosted up to  2200 2400 2600+  , no account sharing.u play ur character,so its 100% safe. we have website and business paypal! 
 	"rbg.*mount.*discount.*skype", --WTS:{rt5}{rt1}{rt5}RBG2650/2400/2200---75/150/300wins Achievement+mounts!{rt5}{rt1}{rt5}Gold Challenge Conqueror{rt1}{rt5}{rt1}DISCOUNT on skype: Jasminelingling1{rt5}{rt1}{rt5}QQ:1046224892
