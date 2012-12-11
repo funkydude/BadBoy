@@ -496,6 +496,7 @@ local instantReportList = {
 	"sellingboost.*account.*elitegear.*cheap", --SELLING BOOST TO 2.2, 2.4k & HERO! NO ACCOUNT SHARING - GET YOUR ELITE GEAR TODAY!-  - VERY FAST GAMES & CHEAP!! CAN BOOST WHENEVER YOU GOT TIME!
 	"rbgboost.*account.*legit.*website", --{rt1}Selling Rbg Boost {rt1} , No account Sharing ,100% legit , Get your Rating in few Hours , 2200,2400, hero , 3850+ Conquest Cap , We accept Gold offers , We have website {rt1}
 	"rbg.*title.*account.*safe.*boost", --provide RBG1800+ 2000+ 2200+ 2400+ 2600+ boost (High warlord  title)No account sharing!100%safety and fast . wishpe me for more infor^^ to join our RBG BOOST TODAY!!    
+	"^wtsrbgrating.*cheapfastg.*skype", --WTS RBG Ratings 0-2400 & Cheap Fast G pst or add skype jessguo328:)
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
