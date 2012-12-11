@@ -4,41 +4,41 @@
 -- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, UnitIsInMyGuild, wipe
 local myDebug = nil
 
-local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam blocked, click to report!]|h|r <<<"
+local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam blocked, click to report!]|h|r <<<"
 local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~5 seconds between reports to prevent being disconnected (Blizzard bug)"
 local reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net invite blocked from |cffffff00%s|r|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~5 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
 		reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net inviter bloqué à partir de |cffffff00%s|r|r <<<"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam geblockt, zum Melden klicken!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam geblockt, zum Melden klicken!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. ~5 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~5秒在回報時，為了防止斷線(暴雪的bug)"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[垃圾信息已被阻挡，点击举报!]|h|r"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[垃圾信息已被阻挡，点击举报!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~5 秒以防断线（暴雪的bug）"
 	elseif L == "esES" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~5 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "esMX" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~5 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~5 секунды между отчетами, чтобы избежать попадания отключен (ошибка Blizzard)"
 		reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net приглашаем их от |cffffff00%s|r|r <<<"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~5 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~5 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
 	end
 end
@@ -690,7 +690,7 @@ end
 
 --[[ Chat Scanning ]]--
 local gsub, pairs, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, pairs, tremove, 0, nil, {}, {}, 0
-local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId)
+local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid, arg13)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
@@ -782,7 +782,21 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _
 			else
 				--Show block message
 				if not BADBOY_NOREPORT then
-					ChatFrame1:AddMessage(reportMsg:format(player, lineId), 0.2, 1, 0.6)
+					-- This code is replicated from Blizzard's ChatFrame.lua code.
+					-- The intention here is to add the "extraData" flag to our AddMessage,
+					-- the same way Blizz adds that data to normal messages. Then we can use the
+					-- RemoveMessagesByExtraData functionality later.
+					local eventType = event:sub(10) -- Trim down to CHANNEL, WHISPER, etc.
+					local chatTarget
+					if eventType == "CHANNEL" then
+						eventType = eventType .. channelNum -- Set to CHANNEL1, CHANNEL2, etc, to separate General from Trade, etc.
+						chatTarget = channelNum
+					elseif eventType == "WHISPER" or eventType == "AFK" or eventType == "DND" then
+						chatTarget = player:upper() -- Set to PLAYERNAME
+					end
+					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid == "" and arg13 or guid)
+					-- Finally, add the message
+					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData), 0.2, 1, 0.6, nil, nil, nil, extraData)
 				end
 			end
 		end
@@ -793,46 +807,20 @@ end
 
 --[[ Configure report links ]]--
 do
-	local SetHyperlink, addMsg, prevReport = ItemRefTooltip.SetHyperlink, ChatFrame1.AddMessage, 0
+	local SetHyperlink, prevReport = ItemRefTooltip.SetHyperlink, 0
 	function ItemRefTooltip:SetHyperlink(link, ...)
-		local badboy, player, lineId = strsplit(":", link)
+		local badboy, player, lineId, extraData = strsplit(":", link)
 		if badboy and badboy == "badboy" then
 			lineId = tonumber(lineId)
+			extraData = tonumber(extraData)
 			if CanComplainChat(lineId) then
 				local t = GetTime()
 				if (t-prevReport) > 5 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
 					prevReport = t
 					ReportPlayer("spam", lineId)
-
-					--Let's remove the chat line(s) asking to report that player
-					local f, tbl, msg = ChatFrame1, {}, COMPLAINT_ADDED
-					--Save all chat
-					local _, size = f:GetFont()
-					FCF_SetChatWindowFontSize(f, f, 0.01)
-					for i = select("#", f:GetRegions()), 1, -1 do
-						local region = select(i, f:GetRegions())
-						if region:GetObjectType() == "FontString" then
-							local text = region:GetText()
-							--Skip the complaint registered message and the BadBoy report player message
-							if text ~= msg and not strfind(text, msg, nil, true) and not strfind(text, "badboy:"..player..":", nil, true) and not strfind(text, "BadBoy|", nil, true) then
-								tbl[#tbl+1] = {text, region:GetTextColor()}
-							end
-						end
-					end
-					FCF_SetChatWindowFontSize(f, f, size)
-
-					--Clear the chat window of all text
-					f:Clear()
-
-					--Restore all chat
-					for _,w in pairs(tbl) do
-						addMsg(f, w[1], w[2], w[3], w[4]) --Frame, Text, R, G, B
-						wipe(w)
-					end
-					wipe(tbl)
-					tbl=nil
+					ChatFrame1:RemoveMessagesByExtraData(extraData)
 				else
-					print(throttleMsg)
+					ChatFrame1:AddMessage(throttleMsg, 1, 1, 1, nil, nil, nil, extraData)
 				end
 			end
 		else
