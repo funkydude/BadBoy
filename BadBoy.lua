@@ -306,9 +306,10 @@ local instantReportList = {
 	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
 
 	--[[  Dota 2 ]]--
+	"^sellingdota2", --Selling 2 Dota2 for wow gold! /W me
 	--wtt dota 2 keys w
-	"^wt[bst]dota2.*key", --wts dota 2beta key 10k
-	"^wt[bst]dota2.*store", --WTB Dota 2 hero/store items,/W me what you have
+	--wts dota 2beta key 10k
+	"^wt[bst]dota2", --WTB Dota 2 hero/store items,/W me what you have
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
@@ -372,6 +373,7 @@ local instantReportList = {
 	"^wt[bs]diablogold", --wtb diablo gold for wow gold!
 	"trading.*fordiablo3?gold", --TRADING LVL 25 GUILD FOR DIABLO GOLD!!!!!!!!!!!!!
 	"diablogoldforwowgold", --WTT my diablo gold for wow gold
+	"d3golds?forwowgold", --WTB d3 golds for wow golds !
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
