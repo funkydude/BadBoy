@@ -32,9 +32,9 @@ do
 	elseif L == "esMX" then
 
 	elseif L == "ruRU" then
-		locNoReportMsg = "Прятать сообщение \"спам блокирован\", спрашивающее Вас о доносе на игрока."
-		locNoReportDesc = "Пожалуйста, не используйте это. Отчетный спама является то, что получает взломали учетные\nзаписи, используемые спамерами закрыты и сферы очищены. Кроме того, если многие люди\nсообщают спамера, то, что спамеры теряют способность общаться означает, что они не\nмогут больше спама, это приносит пользу всем, особенно не-BadBoy пользователей."
-		locManualReport = "Show a report player popup (showing the spam) instead of printing in chat."
+		locNoReportMsg = "Прятать сообщение \"спам блокирован\", спрашивающее Вас о донесении на игрока."
+		locNoReportDesc = "Пожалуйста, не используйте это. Донесения о спаме это то, что заставляет закрыть взломанные \nспамерами аккаунты и очистить игровой мир. Также, если многие люди будут сообщать \nо спамерах, то спамеры теряют возможность писать в чат, что выгодно \nвсем, особенно людям не использующим BadBoy."
+		locManualReport = "Показать всплывающее окно с отчетом о игроке (показывающее собственно спам) вместо показа сообщения в чате."
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
@@ -74,7 +74,7 @@ do
 	btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
 	btnNoReportMsgText:SetText(locNoReportMsg)
 	local btnNoReportMsgDesc = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-	btnNoReportMsgDesc:SetPoint("TOPLEFT", btnNoReportMsgText, "BOTTOMLEFT", 0, -5)
+	btnNoReportMsgDesc:SetPoint("TOPLEFT", btnNoReportMsgText, "BOTTOMLEFT", 0, -2)
 	btnNoReportMsgDesc:SetJustifyH("LEFT")
 	btnNoReportMsgDesc:SetWordWrap(true)
 	btnNoReportMsgDesc:SetText(locNoReportDesc)
