@@ -8,40 +8,40 @@ do
 
 	--[[ Localization ]]--
 	local locNoReportMsg = "Hide the 'spam blocked' message asking you to report"
-	local locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by\nthe spammers closed down and realms cleaned up. Also, if many people report a spammer,\nthen that spammer looses the ability to chat meaning they can no longer spam, this benefits\neveryone, especially non-BadBoy users."
+	local locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by the spammers closed down and realms cleaned up. Also, if many people report a spammer, then that spammer looses the ability to chat meaning they can no longer spam, this benefits everyone, especially non-BadBoy users."
 	local locManualReport = "Show a report player popup (showing the spam) instead of printing in chat"
 	local L = GetLocale()
 	if L == "frFR" then
 		locNoReportMsg = "Cacher le message 'spam bloqué' vous demandant de signaler le spam"
-		locNoReportDesc = "Veuillez ne PAS utiliser ceci. Le signalement du spam permet aux comptes piratés utilisés\npar les spammeurs d'être fermés et de nettoyer les royaumes. De plus, si beaucoup de\njoueurs signalent un spammeur, ce dernier perd la possibilité de discuter et donc de\nspammer, ce qui est bénéfique pour tous, en particulier pour ceux qui n'utilisent pas BadBoy."
+		locNoReportDesc = "Veuillez ne PAS utiliser ceci. Le signalement du spam permet aux comptes piratés utilisés par les spammeurs d'être fermés et de nettoyer les royaumes. De plus, si beaucoup de joueurs signalent un spammeur, ce dernier perd la possibilité de discuter et donc de spammer, ce qui est bénéfique pour tous, en particulier pour ceux qui n'utilisent pas BadBoy."
 		locManualReport = "Afficher un popup de signalement du joueur au lieu de l'indiquer dans la fenêtre de chat"
 	elseif L == "deDE" then
-		locNoReportMsg = "Verstecke die \"Spam geblockt\" Meldung die dich bittet den Spam zu melden"
-		locNoReportDesc = "Bitte NICHT nutzen. Spam zu melden hilft die Anzahl der gehackten Accounts die\nSpammer nutzen zu reduzieren und säubert die Server. Wenn viele Leute einen Spammer\nmelden, verlieren diese ihre Möglichkeit den Chat zu nutzen. Davon profitieren alle,\nvor allem Leute die BadBoy nicht nutzen."
+		locNoReportMsg = "Verstecke die 'Spam geblockt' Meldung die dich bittet den Spam zu melden"
+		locNoReportDesc = "Bitte NICHT nutzen. Spam zu melden hilft die Anzahl der gehackten Accounts die Spammer nutzen zu reduzieren und säubert die Server. Wenn viele Leute einen Spammer melden, verlieren diese ihre Möglichkeit den Chat zu nutzen. Davon profitieren alle, vor allem Leute die BadBoy nicht nutzen."
 		locManualReport = "Zeige ein PopUp (zeigt den Spam) anstatt es im Chatfenster anzuzeigen"
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏要你舉報的 '垃圾阻擋' 訊息"
-		locNoReportDesc = "請不要使用此。報告的垃圾郵件是什麼讓黑客攻擊的垃圾郵件發送者使用的帳戶\n關閉和領域的清理。此外，如果很多人報告垃圾郵件發送者，然後，垃圾郵件發送者\n失去的能力，這意味著他們可以不再垃圾郵件\n這樣的好處大家，特別是非BADBOY用戶聊天。"
+		locNoReportDesc = "請不要使用此。報告的垃圾郵件是什麼讓黑客攻擊的垃圾郵件發送者使用的帳戶關閉和領域的清理。此外，如果很多人報告垃圾郵件發送者，然後，垃圾郵件發送者失去的能力，這意味著他們可以不再垃圾郵件這樣的好處大家，特別是非BADBOY用戶聊天。"
 		locManualReport = "顯示彈出的玩家舉報(顯示垃圾訊息)而不是發佈在聊天中"
 	elseif L == "zhCN" then
-		locNoReportMsg = "隐藏你要举报的“阻挡的垃圾信息"
-		locNoReportDesc = "请不要使用此。报告的垃圾邮件是什么让黑客攻击的垃圾邮件发送者使用的帐户\n关闭和领域的清理。此外，如果很多人报告垃圾邮件发送者，然后，\n垃圾邮件发送者失去的能力，这意味着他们可以不再垃圾邮件，这样的好处大家，\n特别是非BADBOY用户聊天。"
+		locNoReportMsg = "隐藏你要举报的“阻挡的垃圾信息”"
+		locNoReportDesc = "请不要使用此。报告的垃圾邮件是什么让黑客攻击的垃圾邮件发送者使用的帐户关闭和领域的清理。此外，如果很多人报告垃圾邮件发送者，然后，垃圾邮件发送者失去的能力，这意味着他们可以不再垃圾邮件，这样的好处大家，特别是非BADBOY用户聊天。"
 		locManualReport = "显示弹出的玩家举报（显示垃圾信息）而不是显示在聊天中"
 	elseif L == "esES" then
 
 	elseif L == "esMX" then
 
 	elseif L == "ruRU" then
-		locNoReportMsg = "Прятать сообщение \"спам блокирован\", спрашивающее Вас о донесении на игрока."
-		locNoReportDesc = "Пожалуйста, не используйте это. Донесения о спаме это то, что заставляет закрыть взломанные \nспамерами аккаунты и очистить игровой мир. Также, если многие люди будут сообщать \nо спамерах, то спамеры теряют возможность писать в чат, что выгодно \nвсем, особенно людям не использующим BadBoy."
+		locNoReportMsg = "Прятать сообщение 'Cпам блокирован', спрашивающее Вас о донесении на игрока."
+		locNoReportDesc = "Пожалуйста, не используйте эту функцию. Донесения о спаме это то, что заставляет ГМ закрывать взломанные спамерами аккаунты и очищать игровой мир. Также, если многие люди смогут сообщать о спамерах, то спамеры теряют возможность писать в чат, что выгодно всем, особенно людям не использующим BadBoy."
 		locManualReport = "Показать всплывающее окно с отчетом о игроке (показывающее собственно спам) вместо показа сообщения в чате."
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
 
 	elseif L == "itIT" then
-		locNoReportMsg = "Nascondi il messaggio \"Spam bloccata\" che ti chiede di riportare"
-		locNoReportDesc = "Prego NON usare questo. Riportare le spam è ciò che permette di bloccare\naccount rubati usati dagli spammers. Inoltre se tanti riportano uno spammer,\nquesti non può più scrivere nella chat e ciò va a vantaggio di tutti, anche di coloro\nche non usano questo addon."
+		locNoReportMsg = "Nascondi il messaggio 'Spam bloccata' che ti chiede di riportare"
+		locNoReportDesc = "Prego NON usare questo. Riportare le spam è ciò che permette di bloccare account rubati usati dagli spammers. Inoltre se tanti riportano uno spammer, questi non può più scrivere nella chat e ciò va a vantaggio di tutti, anche di coloro che non usano questo addon."
 		locManualReport = "Visualizza un messaggio che mostra la spam al posto di scrivere sulla chat"
 	end
 
@@ -77,6 +77,7 @@ do
 	btnNoReportMsgDesc:SetPoint("TOPLEFT", btnNoReportMsgText, "BOTTOMLEFT", 0, -2)
 	btnNoReportMsgDesc:SetJustifyH("LEFT")
 	btnNoReportMsgDesc:SetWordWrap(true)
+	btnNoReportMsgDesc:SetWidth(560)
 	btnNoReportMsgDesc:SetText(locNoReportDesc)
 
 	--[[ No Automatic Report Checkbox ]]--
@@ -96,6 +97,9 @@ do
 	end)
 	local btnManualReportText = btnManualReport:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
 	btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
+	btnManualReportText:SetJustifyH("LEFT")
+	btnManualReportText:SetWordWrap(true)
+	btnManualReportText:SetWidth(560)
 	btnManualReportText:SetText(locManualReport)
 
 	--[[ BadBoy_Levels Title ]]--

@@ -3,7 +3,7 @@
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
 ## Notes-deDE: A simple spam blocker & reporter.
-## Notes-ruRU: Простой блокировщик и осведомитель администрации о спаме.
+## Notes-ruRU: Простой блокировщик и осведомитель ГМ о спаме.
 ## Notes-zhCN: A simple spam blocker & reporter.
 ## Notes-zhTW: A simple spam blocker & reporter.
 ## Notes-koKR: A simple spam blocker & reporter.
