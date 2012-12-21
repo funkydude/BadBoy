@@ -1,15 +1,15 @@
 
 -- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, InterfaceOptionsFrame_OpenToCategory, PlaySound, SLASH_BADBOY1
-local name = ...
-do
-	--[[ Slash Handler ]]--
-	SlashCmdList["BADBOY"] = function() InterfaceOptionsFrame_OpenToCategory(name) end
-	SLASH_BADBOY1 = "/badboy"
 
-	--[[ Localization ]]--
-	local locNoReportMsg = "Hide the 'spam blocked' message asking you to report"
-	local locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by the spammers closed down and realms cleaned up. Also, if many people report a spammer, then that spammer looses the ability to chat meaning they can no longer spam, this benefits everyone, especially non-BadBoy users."
-	local locManualReport = "Show a report player popup (showing the spam) instead of printing in chat"
+--[[ Slash Handler ]]--
+SlashCmdList["BADBOY"] = function() InterfaceOptionsFrame_OpenToCategory("BadBoy") end
+SLASH_BADBOY1 = "/badboy"
+
+--[[ Localization ]]--
+local locNoReportMsg = "Hide the 'spam blocked' message asking you to report"
+local locNoReportDesc = "Please DON'T use this. Reporting the spam is what gets the hacked accounts used by the spammers closed down and realms cleaned up. Also, if many people report a spammer, then that spammer looses the ability to chat meaning they can no longer spam, this benefits everyone, especially non-BadBoy users."
+local locManualReport = "Show a report player popup (showing the spam) instead of printing in chat"
+do
 	local L = GetLocale()
 	if L == "frFR" then
 		locNoReportMsg = "Cacher le message 'spam bloqué' vous demandant de signaler le spam"
@@ -44,77 +44,76 @@ do
 		locNoReportDesc = "Prego NON usare questo. Riportare le spam è ciò che permette di bloccare account rubati usati dagli spammers. Inoltre se tanti riportano uno spammer, questi non può più scrivere nella chat e ciò va a vantaggio di tutti, anche di coloro che non usano questo addon."
 		locManualReport = "Visualizza un messaggio che mostra la spam al posto di scrivere sulla chat"
 	end
-
-	--[[ Main Panel ]]--
-	local badboy = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
-	--badboy:SetScript("OnEvent", function(self, event, ...) self[event](self, event, ...) end)
-	badboy:Hide()
-	badboy.name = name
-	local title = badboy:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-	title:SetPoint("TOPLEFT", 16, -16)
-	title:SetText("BadBoy @project-version@") --wowace magic, replaced with tag version
-	InterfaceOptions_AddCategory(badboy)
-
-	--[[ No Report Chat Message Checkbox ]]--
-	local btnNoReportMsg = CreateFrame("CheckButton", "BadBoyConfigSilenceButton", badboy, "OptionsBaseCheckButtonTemplate")
-	btnNoReportMsg:SetPoint("TOPLEFT", 16, -35)
-	btnNoReportMsg:SetScript("OnClick", function(frame)
-		if frame:GetChecked() then
-			PlaySound("igMainMenuOptionCheckBoxOn")
-			BADBOY_NOREPORT = true
-		else
-			PlaySound("igMainMenuOptionCheckBoxOff")
-			BADBOY_NOREPORT = nil
-		end
-	end)
-	btnNoReportMsg:SetScript("OnShow", function(frame)
-		frame:SetChecked(BADBOY_NOREPORT)
-	end)
-	local btnNoReportMsgText = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-	btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
-	btnNoReportMsgText:SetText(locNoReportMsg)
-	local btnNoReportMsgDesc = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-	btnNoReportMsgDesc:SetPoint("TOPLEFT", btnNoReportMsgText, "BOTTOMLEFT", 0, -2)
-	btnNoReportMsgDesc:SetJustifyH("LEFT")
-	btnNoReportMsgDesc:SetWordWrap(true)
-	btnNoReportMsgDesc:SetWidth(560)
-	btnNoReportMsgDesc:SetText(locNoReportDesc)
-
-	--[[ No Automatic Report Checkbox ]]--
-	local btnManualReport = CreateFrame("CheckButton", "BadBoyConfigPopupButton", badboy, "OptionsBaseCheckButtonTemplate")
-	btnManualReport:SetPoint("TOPLEFT", 16, -112)
-	btnManualReport:SetScript("OnClick", function(frame)
-		if frame:GetChecked() then
-			PlaySound("igMainMenuOptionCheckBoxOn")
-			BADBOY_POPUP = true
-		else
-			PlaySound("igMainMenuOptionCheckBoxOff")
-			BADBOY_POPUP = nil
-		end
-	end)
-	btnManualReport:SetScript("OnShow", function(frame)
-		frame:SetChecked(BADBOY_POPUP)
-	end)
-	local btnManualReportText = btnManualReport:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-	btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
-	btnManualReportText:SetJustifyH("LEFT")
-	btnManualReportText:SetWordWrap(true)
-	btnManualReportText:SetWidth(560)
-	btnManualReportText:SetText(locManualReport)
-
-	--[[ BadBoy_Levels Title ]]--
-	local levelsTitle = badboy:CreateFontString("BadBoyLevelsConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	levelsTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -3)
-	levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
-
-	--[[ BadBoy_Guilded Title ]]--
-	local guildedTitle = badboy:CreateFontString("BadBoyGuildedConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	guildedTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -48)
-	guildedTitle:SetText("BadBoy_Guilded ["..ADDON_MISSING.."]")
-
-	--[[ BadBoy_CCleaner Title ]]--
-	local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
-	ccleanerTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -116)
-	ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 end
+
+--[[ Main Panel ]]--
+local badboy = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
+badboy:Hide()
+badboy.name = "BadBoy"
+local title = badboy:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+title:SetPoint("TOPLEFT", 16, -16)
+title:SetText("BadBoy @project-version@") --wowace magic, replaced with tag version
+InterfaceOptions_AddCategory(badboy)
+
+--[[ No Report Chat Message Checkbox ]]--
+local btnNoReportMsg = CreateFrame("CheckButton", "BadBoyConfigSilenceButton", badboy, "OptionsBaseCheckButtonTemplate")
+btnNoReportMsg:SetPoint("TOPLEFT", 16, -35)
+btnNoReportMsg:SetScript("OnClick", function(frame)
+	if frame:GetChecked() then
+		PlaySound("igMainMenuOptionCheckBoxOn")
+		BADBOY_NOREPORT = true
+	else
+		PlaySound("igMainMenuOptionCheckBoxOff")
+		BADBOY_NOREPORT = nil
+	end
+end)
+btnNoReportMsg:SetScript("OnShow", function(frame)
+	frame:SetChecked(BADBOY_NOREPORT)
+end)
+local btnNoReportMsgText = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
+btnNoReportMsgText:SetText(locNoReportMsg)
+local btnNoReportMsgDesc = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+btnNoReportMsgDesc:SetPoint("TOPLEFT", btnNoReportMsgText, "BOTTOMLEFT", 0, -2)
+btnNoReportMsgDesc:SetJustifyH("LEFT")
+btnNoReportMsgDesc:SetWordWrap(true)
+btnNoReportMsgDesc:SetWidth(560)
+btnNoReportMsgDesc:SetText(locNoReportDesc)
+
+--[[ No Automatic Report Checkbox ]]--
+local btnManualReport = CreateFrame("CheckButton", "BadBoyConfigPopupButton", badboy, "OptionsBaseCheckButtonTemplate")
+btnManualReport:SetPoint("TOPLEFT", 16, -112)
+btnManualReport:SetScript("OnClick", function(frame)
+	if frame:GetChecked() then
+		PlaySound("igMainMenuOptionCheckBoxOn")
+		BADBOY_POPUP = true
+	else
+		PlaySound("igMainMenuOptionCheckBoxOff")
+		BADBOY_POPUP = nil
+	end
+end)
+btnManualReport:SetScript("OnShow", function(frame)
+	frame:SetChecked(BADBOY_POPUP)
+end)
+local btnManualReportText = btnManualReport:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+btnManualReportText:SetPoint("LEFT", btnManualReport, "RIGHT", 0, 1)
+btnManualReportText:SetJustifyH("LEFT")
+btnManualReportText:SetWordWrap(true)
+btnManualReportText:SetWidth(560)
+btnManualReportText:SetText(locManualReport)
+
+--[[ BadBoy_Levels Title ]]--
+local levelsTitle = badboy:CreateFontString("BadBoyLevelsConfigTitle", "ARTWORK", "GameFontNormalLarge")
+levelsTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -3)
+levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
+
+--[[ BadBoy_Guilded Title ]]--
+local guildedTitle = badboy:CreateFontString("BadBoyGuildedConfigTitle", "ARTWORK", "GameFontNormalLarge")
+guildedTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -48)
+guildedTitle:SetText("BadBoy_Guilded ["..ADDON_MISSING.."]")
+
+--[[ BadBoy_CCleaner Title ]]--
+local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTWORK", "GameFontNormalLarge")
+ccleanerTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -116)
+ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 
