@@ -459,6 +459,8 @@ local instantReportList = {
 	"^wtsmopc?d?key", --{rt1} WTS MoP Key 1x /w me {rt1}
 	"wtsrafmount.*nightwing", --wts  raf mount   [Heart of the Nightwing] w/m
 	"^selling%d+.*gamecard", --Selling 60time gamecard!
+	"%d+day.*gametimecard.*cheap", --{diamond} {diamond} {diamond} {diamond} WTS TWO last 180 days game time card, cheaper! {diamond} {diamond} {diamond} {diamond}
+	"^wts.*website.*paypal.*deliver", --WTS Custom Guild Website + 12 months of maintenance + hosting + seo ($100 paypal of 100kg in game) (1-3 days to deliver custom guild website) 
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -505,7 +507,7 @@ local instantReportList = {
 	--{rt1} Rated Battleground help, experienced team will help to get 2200, 2400 and Hero. {rt1} All achievements and titles, any amount of conquest points per week, t2 weapon, access to elite gear. For more info whisp (/w) to me {rt1}
 	--{star} assisting in rated battleground, our guild will help in gaining 2200, 2400 and hero.{star} 3000+ conquest points per week, access to elite gear, t2 weapon, all achievements and titles, everything you wanted. for more info whisp (/w) to me {star}
 	--{star} rbg assisting, our guild will help to gain 2200, 2400 and hero. {star}also 3000+ conquest points per week, access to elite gear, t2 weapon, all achievements and titles, everything you ever dreamed. for more info pls whisp (/w) to me {star}
-	"2200.*2400.*hero.*conquest.*elitegear.*wh?isp", --{rt1} Help in rated battleground, our team will help in gaining 2200, 2400 and Hero. Weekly Conquest points (3000+), t2 weapon, access to elite gear, all titles and achievements, everything you wanted. {rt1} For more info whisp (/w) to me {rt1}
+	"2200.*hero.*conquest.*elitegear.*wh?isp", --{rt1} Help in rated battleground, our team will help in gaining 2200, 2400 and Hero. Weekly Conquest points (3000+), t2 weapon, access to elite gear, all titles and achievements, everything you wanted. {rt1} For more info whisp (/w) to me {rt1}
 	"areyoutoo?weak.*enemies.*l[ao]ughing.*loo?sing.*info", --{rt1}Are you to weak to kill all your enemies? Do all loughing on you in durator or elven forest when you loosing the pvp? We will help you!!! all info in pm {rt1}
 	"pvpguild.*help.*rbg.*2200.*skype.*icq", -- ---------PVP guild will help you with RBG 2200/2400/hero....... all questions on Skype alexooo46 icq 477788799---------
 	"helpyou.*rbg.*character.*fast.*safe", --{rt1}We will help you to get 2.2 - 2.6k on RBG. You playing your character. All is very fast,safe and confidence.{rt1}
@@ -514,6 +516,7 @@ local instantReportList = {
 	"rbgboost.*2200.*test.*safe.*price", --RBG boost GET U'R T2,obtain rare titles, weapons and unique equip at 2 hrs! 2200/2400/2700, weekly CAP, TEST GAMES included! SAFE ,You play yourself!Best prices in Europe.[ skype - nikolya_90 ]
 	--Guild "RBG BOOST" Wir helfen Sie mit der Rating von 2200 - 2400 - 2650, fur alle Fraktionen. Schnell  und risikofrei. Ohne Sharing des Accounts. Deutsch/Englisch Support. Weinachts Discounts. Unser Webseite: [RBGBOOSTING.COM]
 	"rbgboost.*2200.*account.*discount", --Guild "RBG BOOST" will help with the ratings of 2200 - 2400 - 2650, all fractions. Fast and safe. No sharing account. All legally. Deutsch/English Support. Christmas discounts. Our site: [RBGBOOSTING.COM]
+	"rbg.*2200.*discount.*skype", --WTS:RBG2560/2400/2200/Caps per weekGold Challenge ConquerorNever scam, trustworthy website!!DISCOUNT on skype: Jasminelingling1QQ:1046224892 
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
