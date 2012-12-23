@@ -400,7 +400,8 @@ local instantReportList = {
 	--WTS [X-53 Touring Rocket], the only 2seats flying mount, PST
 	"wts.*touringrocket.*mount", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
 	"^wts.*x53touringrocket", --WTS[Celestial Steed],[X-53 Touring Rocket],Race,Xfer 15K,TimeCard 6K,[Cenarion Hatchling]*Rag*KT*XT*Moonk*Panda 5K
-	"wts.*g[o0][1l]d.*tcgmounts.*tabard", --WTS gO1d and TCG mounts and Tabard of the Lightbringer and maig rooster egg^^/w me:)
+	--{rt1}WTS TCG mount and g01d {rt6}. {Reins of the Swift Spectral Tiger} {Reins of the Spectral Tiger} Tabard of the Lightbringer {Magic Rooster Egg} {rt6}lvl80 char . if you wanna get a lv80 char in 30mins /w me for more info{rt6}
+	"wts.*g[o0][1l]d.*tabard.*rooster", --WTS gO1d and TCG mounts and Tabard of the Lightbringer and maig rooster egg^^/w me:)
 	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
 	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>.
 	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
@@ -423,10 +424,11 @@ local instantReportList = {
 	"selling%d+.*prepaidtimecard", --selling 60 day prepaid time card /w me for the price
 	"need.*gametime.*rocket.*info", --Does someone need WoW Gametime & X53 Rocket's Mount  /w me for more info
 	--WTS 60days game time card very checp
-	--wts 60days gamecard for gold /w for more info.
 	--wts  180days gametime card  {rt1} {rt2}\ cheaps\
 	--wts  90days gametime code  {rt2}{rt2}{rt2}
-	"^wts%d+days?gamet?i?m?e?c[ao][rd][de]", --wts 60 days game card /w me
+	"^wts%d+days?gametime", --wts 60 days gametime cde. and more stuff from blizzstore
+	--wts 60days gamecard for gold /w for more info.
+	"^wts%d+days?gamecard", --wts 60 days game card /w me
 	"wts.*steed.*prepaidgame", --WTS [Winged Guardian]25K [Heart of the Aspects]25K [Celestial Steed]20K prepaid game
 	"gamecard.*gold.*money.*info", -- I am offer Game Card for gold or money, for more info /w me
 	--WTB Game Time CODE Buy gold
