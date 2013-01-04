@@ -459,12 +459,14 @@ local instantReportList = {
 	"rafmount.*mopkey.*g[o0]ld.*char", --{rt1}WTS RAF mount(Heart of the Nightwing) and MOP KEY{rt6}lvl80 char for g0ld,if you wanna get a  lv80 char in 30mins /w me for more info{rt6}
 	"looking.*ebay.*sale.*skype", --Looking for someone that has LOADS of EBAY Experienced! )Come and earn 20% of your Sale Products! )Skype = Donz.Gold (dot between the donz.gold) ADD SKYPE
 	--WTS: MoP cd keys (cheap) ! and faction change, tranfer, [GC.!] / skype : atmetheskill
-	"^wtsmopc?d?key", --{rt1} WTS MoP Key 1x /w me {rt1}
+	--{rt8} WTB MoP Cd key {rt8}
+	"^wt[bs]mopc?d?key", --{rt1} WTS MoP Key 1x /w me {rt1}
 	"wtsrafmount.*nightwing", --wts  raf mount   [Heart of the Nightwing] w/m
 	"^selling%d+.*gamecard", --Selling 60time gamecard!
 	"%d+day.*gametimecard.*cheap", --{diamond} {diamond} {diamond} {diamond} WTS TWO last 180 days game time card, cheaper! {diamond} {diamond} {diamond} {diamond}
 	"^wts.*website.*paypal.*deliver", --WTS Custom Guild Website + 12 months of maintenance + hosting + seo ($100 paypal of 100kg in game) (1-3 days to deliver custom guild website)
 	"^wts.*prepaid.*wowingamecurrency", --WTS Rchange/Transfer/Prepaid for WoW ingame currency! {rt4}
+	"^wts.*tiger.*rooster.*timecard", --WTS  [Reins of the Swift Spectral Tiger]240k[Magic Rooster Egg]120k and Prepaid Timecard,Panda [MOP.Faction] change and Race change Pst.
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -495,7 +497,8 @@ local instantReportList = {
 	--RBG Help. {rt6} 2200 - 2400 - 2650, CAP {rt6}. Fast and safe. The best prices in Europe. No sharing account. 17 Titles, 3850+ conquest points per week. Access Elite Gear & T2 weap. Bussines PayPal. Skype: Skelet8888
 	"rbghelp.*account.*paypal", --RGB Help. {square} 2200 - 2400 - 2600, CAP {square}. Fast and safe. The lowest prices in Europe. No sharing Account. You play yourself. Bussines PayPal. 100% legally. Skype: Romaboost
 	"boost.*legit.*lemonlee9", --WTS:{rt3}{rt3}{rt3}RBG/ Arena Master BOOST!2200/2400/Hero/CP CAP!Get your RBG/Arena boost today with extended CP cap! Most legit RBG boosting! Fast and safe! We have a website {rt3}{rt3} skype me:lemonlee9 or QQ:249202110 {rt1} for m
-	"rbgassist.*gear.*achiev.*secure.*account", --{rt1}RBG Assist{rt1} help in gaining 2200|2400|HERO. 3850+ CP per week, access to elite gear, t2 weapon, 16+ achievements and 14 titles, everything you've ever dreamed. Fast, secure, and without account sharing. {rt1}For more info /w to me {rt1}
+	--{star}rbg assist{star} our guild will help to get 2200||2400||hero. 3850+ cp per week, access to elite gear, t2 weapon, all achievements and titles, everything you wished. {star}for more info /w to me {star}
+	"rbgassist.*2200.*gear.*achiev.*info", --{rt1}RBG Assist{rt1} help in gaining 2200|2400|HERO. 3850+ CP per week, access to elite gear, t2 weapon, 16+ achievements and 14 titles, everything you've ever dreamed. Fast, secure, and without account sharing. {rt1}For more info /w to me {rt1}
 	"^wts%dv%dboost.*weapon.*gear.*rbg", --WTS 3v3 BOOST to 2200 to ALL CLASSES, GET your tier 2 weapons + elite gear, also selling RBG BOOSTS to SHAMANS
 	--{rt1}{rt1}{rt1}WTS: WOW & D3 Gold {rt1}{rt1}2200/2400/2700 RBG {rt1}{rt1}Achievement/Level Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3 {rt1} {rt1} {rt1}
 	"rbg.*powerle?ve?l.*gold.*diablo", --{rt1}{rt1}{rt1}WTS 2200/2400/2700 RBG Rating, finish in 8 hours{rt1}{rt1}Achievement Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3  {rt1} {rt1} {rt1}
@@ -523,6 +526,8 @@ local instantReportList = {
 	"rbg.*2200.*discount.*skype", --WTS:RBG2560/2400/2200/Caps per weekGold Challenge ConquerorNever scam, trustworthy website!!DISCOUNT on skype: Jasminelingling1QQ:1046224892
 	"pvpguild.*helpyou.*rbg.*fast.*whisp.*info", --{skull} pvp guild will help you with rbg rating! we do everything fast and smooth. whisper me for additional information {skull}
 	"sell.*boost.*2200.*gold.*cheap.*price", --{rt1}Selling boost to 2200{rt1} rbg tier 2 3600 cap /w me not accepting gold! GUARANTEED TIER 2 FOR CHEAPEST PRICES 
+	"rbgboost.*purchase.*rating.*gear.*sharing", --{rt2}{rt2} RBG Boosting is Back!! Be ready to purchase rating, titles, conquest cap of 3k and of course new PVP GEAR and Weapons! You play yourself, no acc sharing. skype RBGcarryBoost
+	"rbg.*2200.*bonus.*mount.*fast", --Hi everyone! We can help you RBG with your ratings! 2200/2400/2700/bonus free 1-3 weekly cap/Mount for 75/cap 4-10 win/fast game 1-3 hour(2200)/ pm
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
