@@ -469,6 +469,9 @@ local instantReportList = {
 	"^wts.*website.*paypal.*deliver", --WTS Custom Guild Website + 12 months of maintenance + hosting + seo ($100 paypal of 100kg in game) (1-3 days to deliver custom guild website)
 	"^wts.*prepaid.*wowingamecurrency", --WTS Rchange/Transfer/Prepaid for WoW ingame currency! {rt4}
 	"^wts.*tiger.*rooster.*timecard", --WTS  [Reins of the Swift Spectral Tiger]240k[Magic Rooster Egg]120k and Prepaid Timecard,Panda [MOP.Faction] change and Race change Pst.
+	--Any achievements for you(skype: DvingHelp)
+	--Help you with 2200/2400/2600(hero) skype: DvingHelp
+	"you.*skype.*dvinghelp", --Help you with The Bloodthirsty(72 hours), Sun Horde/Ally(48hours) skype: DvingHelp
 
 	--[[  RBG  ]]--
 	"boost.*rating.*wowbooster666", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -531,6 +534,7 @@ local instantReportList = {
 	"rbgboost.*purchase.*rating.*gear.*sharing", --{rt2}{rt2} RBG Boosting is Back!! Be ready to purchase rating, titles, conquest cap of 3k and of course new PVP GEAR and Weapons! You play yourself, no acc sharing. skype RBGcarryBoost
 	"rbg.*2200.*bonus.*mount.*fast", --Hi everyone! We can help you RBG with your ratings! 2200/2400/2700/bonus free 1-3 weekly cap/Mount for 75/cap 4-10 win/fast game 1-3 hour(2200)/ pm
 	"rbg.*2%.2.*website.*paypal.*skype", --{rt1}{rt1}{rt1}RBG: 2.2/2.4/2.7. Guarantees: Website, Bussines PayPal, Test Game. [Skype: Romaboost]
+	"rbgboost.*gear.*account.*paypal", --{rt2} WTS RBG BOOST! Obtain great titles and elite gear! NO ACCOUNT SHARING, you play youself! We have website and business paypal! /w me for information to join your rbg boost today. Winter discouts!!! {rt2}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
