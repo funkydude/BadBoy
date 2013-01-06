@@ -530,6 +530,7 @@ local instantReportList = {
 	"sell.*boost.*2200.*gold.*cheap.*price", --{rt1}Selling boost to 2200{rt1} rbg tier 2 3600 cap /w me not accepting gold! GUARANTEED TIER 2 FOR CHEAPEST PRICES 
 	"rbgboost.*purchase.*rating.*gear.*sharing", --{rt2}{rt2} RBG Boosting is Back!! Be ready to purchase rating, titles, conquest cap of 3k and of course new PVP GEAR and Weapons! You play yourself, no acc sharing. skype RBGcarryBoost
 	"rbg.*2200.*bonus.*mount.*fast", --Hi everyone! We can help you RBG with your ratings! 2200/2400/2700/bonus free 1-3 weekly cap/Mount for 75/cap 4-10 win/fast game 1-3 hour(2200)/ pm
+	"rbg.*2%.2.*website.*paypal.*skype", --{rt1}{rt1}{rt1}RBG: 2.2/2.4/2.7. Guarantees: Website, Bussines PayPal, Test Game. [Skype: Romaboost]
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
