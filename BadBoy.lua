@@ -529,6 +529,7 @@ local instantReportList = {
 	"sell.*rbg.*2%.4.*quick.*quality", --{rt1} Selling RBG boost up to 2.4k. Quick and reliable. Quality comes first, if you have any requests or questions. Ask us! /w me more info {rt1}
 	"rbg.*free.*rating.*2%.2.*skype", --{rt8}WTS RBG Boost! Test game for FREE!!! ANY Rating (2.2,2.4,2.7,3k and more!) {rt8} Details on skype {rt1}wtspvp{rt1}
 	"sell.*2%.2.*rbg.*gear.*sale", --Selling 2.2k/2.4k and hota boost on rbg!tired of getting scrub groups all the time?Get ur elite gear and +3850 cap now!We do accept gold!Xmas sale is up for few days only.Fast and cheap!
+	"rbg.*2200.*paypal.*skype", --{rt1}RBG: 2200 - 100euro, 2400 - 140euro, 2700 - 180euro. Guarantees: Website, Bussines PayPal, Test Game. [Skype: Romaboost]
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
