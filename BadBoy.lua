@@ -310,6 +310,7 @@ local instantReportList = {
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
+	"^sellingborderlands2", --Selling Borderlands 2 cd-key cheap for gold (I bought it twice by mistake. Can send pictures of both confirmations emails without the cd-keys, if you dont trust me)
 
 	--[[  League of Legends  ]]--
 	"^wt[bs]lolacc$", --WTB LoL acc
