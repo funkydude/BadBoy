@@ -592,8 +592,8 @@ local instantReportList = {
 		--Продадим Славу Героя Пандарии [Dving.ru]
 	--Personal service and individual orders for [Dving.ru]
 	"д.*dving%.ru$", --Персональное обслуживание и индивидуальные заказы на [Dving.ru]
-	--[square][skull][Gold] at 14r for 1000 on site [WHISPERS.RU].Raids,BG,Arena,levelling,professions,mounts and pets.Windsteed and timecard for gold Skype [Whispers.ru] ICQ634-810-845[star]
-	"whispers%.ru.*гoлд.*cкaйп", --[square][skull][Золото] от l4p за l ООО на [WHISPERS.RU].Рейды,БГ,Арена,прокачка,профессии,маунты и петы.Ветророг и тk за голд Скайп [Whispers.ru] ICQ634-810-845[star]
+	--[square][skull][Gold] at 14r for 1000 on site [WHISPERS RU].Raids,BG,Arena,levelling,professions,mounts and pets.Windsteed and timecard for gold Skype [Whispers.ru] ICQ634-810-845[star]
+	"whispers%.?ru.*гoлд.*cкaйп", --[square][skull][Золото] от l4p за l ООО на [WHISPERS RU].Рейды,БГ,Арена,прокачка,профессии,маунты и петы.Ветророг и тk за голд Скайп [Whispers.ru] ICQ634-810-845[star]
 
 	--[[  Chinese  ]]--
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
