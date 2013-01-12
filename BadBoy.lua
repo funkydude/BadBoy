@@ -375,6 +375,7 @@ local instantReportList = {
 	"diablogoldforwowgold", --WTT my diablo gold for wow gold
 	"d3golds?forwowgold", --WTB d3 golds for wow golds !
 	"^wtt.*mygold.*diablo3gold", --WTT all my gold, 8783g for about 30m Diablo 3 gold, any takers?
+	"wowgoldforyourdiablo3?gold", --{rt1}Looking to trade my 10k wow gold for your diablo 3 gold, we can do in trades as low as 0.5k wow gold at a time for safety reasons{rt1}
 
 	--[[  Illegal Items ]]--
 	"%[.*%].*%[.*%].*facebook.com/buyboe", --Win Free[Volcano][Spire of Scarlet Pain][Obsidium Cleaver]from a simple contest, go www.facebook.com/buyboe now!
@@ -591,6 +592,8 @@ local instantReportList = {
 		--Продадим Славу Героя Пандарии [Dving.ru]
 	--Personal service and individual orders for [Dving.ru]
 	"д.*dving%.ru$", --Персональное обслуживание и индивидуальные заказы на [Dving.ru]
+	--[square][skull][Gold] at 14r for 1000 on site [WHISPERS.RU].Raids,BG,Arena,levelling,professions,mounts and pets.Windsteed and timecard for gold Skype [Whispers.ru] ICQ634-810-845[star]
+	"whispers%.ru.*гoлд.*cкaйп", --[square][skull][Золото] от l4p за l ООО на [WHISPERS.RU].Рейды,БГ,Арена,прокачка,профессии,маунты и петы.Ветророг и тk за голд Скайп [Whispers.ru] ICQ634-810-845[star]
 
 	--[[  Chinese  ]]--
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
