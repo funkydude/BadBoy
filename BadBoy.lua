@@ -452,6 +452,7 @@ local instantReportList = {
 	"^wt[bs]gametime", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
 	--Wts gamecard 60days very cheap
 	"^wt[bs]gamecard", --WTB GAME CARD
+	"^wt[bs]gamecode", --wtb game codes
 	"^wt[bs]%d+month.*gametime", --WTS 2 Month(60Days) Gametime-Cards w/ me ! {rt1}
 	"month.*gametime.*cdkey", --WTS 1 MONTH RAF - 2 MONTHS GAME TIME - MOP CD KEY - CATA CD KEY. WISP ME FOR MORE INFO
 	"sell.*gameca?rd.*month.*whisp", --Selling GameC*rd - 2 months! Whisper for skype and Price
@@ -534,6 +535,8 @@ local instantReportList = {
 	"2[%.,]2.*rbg.*account.*cheap", --Selling 2.2k/2.4k hota boost on rbg! NO account sharing!We also do it for gold now!Cheap and fast!Get ur great rewards now!
 	"rbg.*2200.*cheap.*fast", --WTS RBG BOOST TO 2200/2400 GOING NOW CHEAP AND FAST /W ME!
 	"rbg.*2200.*elitegear.*skype", --{rt1} RBG Boosting all classes from 0-2200 tonight! Get your T2 Elite gear + 3500 conquest cap each week! Skype: Marcz-90 for info. {rt1}
+	"2200.*rbg.*account.*skype", --{rt1} Want 2200/2400/2700+ on RBG? Get it fast n safe! CAP support 3800+ every week! No share account! Elite gear and 21 RBG achievements! Test game! add skype: nucleear1986_26 {rt1}
+	"rbg.*22[0o][0o].*rating.*info", --WTs RBG B00ST 22OO & 24OO Rating, /w for more info!
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
