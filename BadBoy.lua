@@ -521,7 +521,7 @@ local instantReportList = {
 	--WTS:{rt5}{rt1}{rt5}RBG2650/2400/2200---75/150/300wins Achievement+mounts!{rt5}{rt1}{rt5}Gold Challenge Conqueror{rt1}{rt5}{rt1}DISCOUNT on skype: Jasminelingling1{rt5}{rt1}{rt5}QQ:1046224892
 	"rbg.*2200.*discount.*skype", --WTS:RBG2560/2400/2200/Caps per weekGold Challenge ConquerorNever scam, trustworthy website!!DISCOUNT on skype: Jasminelingling1QQ:1046224892
 	"pvpguild.*helpyou.*rbg.*fast.*whisp.*info", --{skull} pvp guild will help you with rbg rating! we do everything fast and smooth. whisper me for additional information {skull}
-	"boost.*2200.*cheap.*price", --{rt1}Selling boost to 2200{rt1} rbg tier 2 3600 cap /w me not accepting gold! GUARANTEED TIER 2 FOR CHEAPEST PRICES 
+	"boost.*2200.*cheap.*price", --{rt1}Selling boost to 2200{rt1} rbg tier 2 3600 cap /w me not accepting gold! GUARANTEED TIER 2 FOR CHEAPEST PRICES
 	"rbg.*purchase.*rating.*acc", --{rt2}{rt2} RBG Boosting is Back!! Be ready to purchase rating, titles, conquest cap of 3k and of course new PVP GEAR and Weapons! You play yourself, no acc sharing. skype RBGcarryBoost
 	"rbg.*2200.*bonus.*mount", --Hi everyone! We can help you RBG with your ratings! 2200/2400/2700/bonus free 1-3 weekly cap/Mount for 75/cap 4-10 win/fast game 1-3 hour(2200)/ pm
 	"rbg.*2%.2.*paypal.*skype", --{rt1}{rt1}{rt1}RBG: 2.2/2.4/2.7. Guarantees: Website, Bussines PayPal, Test Game. [Skype: Romaboost]
@@ -537,6 +537,8 @@ local instantReportList = {
 	"rbg.*2200.*elitegear.*skype", --{rt1} RBG Boosting all classes from 0-2200 tonight! Get your T2 Elite gear + 3500 conquest cap each week! Skype: Marcz-90 for info. {rt1}
 	"2200.*rbg.*account.*skype", --{rt1} Want 2200/2400/2700+ on RBG? Get it fast n safe! CAP support 3800+ every week! No share account! Elite gear and 21 RBG achievements! Test game! add skype: nucleear1986_26 {rt1}
 	"rbg.*22[0o][0o].*rating.*info", --WTs RBG B00ST 22OO & 24OO Rating, /w for more info!
+	"rbg.*2%.2.*account.*info", --{rt1}Fastest RBG boost in the world. 2.2k, 2.4k, 2.6k for some hours. You play your character, no account sharing. Test game. For more info pm{rt1}
+	"rbg.*2%.2.*legal.*info", --Selling RBG BOOST - 2 k // 2.2 k // 2.4 k ++ Hero of the Alliance/ CHEEP AND EASY. 100 % win games ( RUSSIAN GAMING SYSTEM )    Legal and quick. Information given. GET you elite T2 gear TODAY.
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
