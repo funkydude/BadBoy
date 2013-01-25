@@ -1,5 +1,5 @@
 ## Interface: 50100
-## Version: 11.527
+## Version: 11.528
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
 ## Notes-deDE: A simple spam blocker & reporter.
