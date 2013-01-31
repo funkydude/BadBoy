@@ -318,6 +318,7 @@ local instantReportList = {
 	"^wt[bs]%d?x?leagueoflegends?account", --WTS 2x League of Legend accounts for 1 price !
 	"^wt[bs]lolaccount", --WTS LOL ACCOUNT LEVEL 30 with 27 SKINS and 14k IP
 	"^sellingloleuw?acc.*info", --Selling LOL EUW acc pm for more info
+	"^wt[bs].*leagueoflegends.*points.*pay", --WTB 100 DOLLARS OF LEAGUE OF LEGENDS RIOT POINTS PST. YOU PAY WITH YOUR PHONE. PST PAYING A LOT. 
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
