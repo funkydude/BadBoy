@@ -1,1 +1,4 @@
 package-as: BadBoy
+
+externals:
+    LibChatAnims: svn://svn.wowace.com/wow/libchatanims/mainline/trunk/LibChatAnims/LibChatAnims.lua
