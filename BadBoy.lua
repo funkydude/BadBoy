@@ -374,7 +374,8 @@ local instantReportList = {
 	"^wt[bs]diablogold", --wtb diablo gold for wow gold!
 	"trading.*fordiablo3?gold", --TRADING LVL 25 GUILD FOR DIABLO GOLD!!!!!!!!!!!!!
 	"diablogoldforwowgold", --WTT my diablo gold for wow gold
-	"d3golds?forwowgold", --WTB d3 golds for wow golds !
+	--WTT D3 gold to WoW gold! /w me!
+	"^wt[bst]d3gold.*wowgold", --WTB d3 golds for wow golds !
 	"^wtt.*mygold.*diablo3gold", --WTT all my gold, 8783g for about 30m Diablo 3 gold, any takers?
 	"wowgoldforyourdiablo3?gold", --{rt1}Looking to trade my 10k wow gold for your diablo 3 gold, we can do in trades as low as 0.5k wow gold at a time for safety reasons{rt1}
 	"wts.*diablo3goldfor%d+", --wts 150 mill Diablo 3 gold for 50k
