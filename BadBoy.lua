@@ -316,9 +316,10 @@ local instantReportList = {
 	--[[  League of Legends  ]]--
 	"^wt[bs]lolacc$", --WTB LoL acc
 	"^wt[bs]%d?x?leagueoflegends?account", --WTS 2x League of Legend accounts for 1 price !
-	"^wt[bs]lolaccount", --WTS LOL ACCOUNT LEVEL 30 with 27 SKINS and 14k IP
+	--WTT My LoL Account for WoW gold, Its a platiunum almost diamond ranked account atm on EUW if u want more information /w me
+	"^wt[bst]m?y?lolaccount", --WTS LOL ACCOUNT LEVEL 30 with 27 SKINS and 14k IP
 	"^sellingloleuw?acc.*info", --Selling LOL EUW acc pm for more info
-	"^wt[bs].*leagueoflegends.*points.*pay", --WTB 100 DOLLARS OF LEAGUE OF LEGENDS RIOT POINTS PST. YOU PAY WITH YOUR PHONE. PST PAYING A LOT. 
+	"^wt[bs].*leagueoflegends.*points.*pay", --WTB 100 DOLLARS OF LEAGUE OF LEGENDS RIOT POINTS PST. YOU PAY WITH YOUR PHONE. PST PAYING A LOT.
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
@@ -375,7 +376,8 @@ local instantReportList = {
 	"trading.*fordiablo3?gold", --TRADING LVL 25 GUILD FOR DIABLO GOLD!!!!!!!!!!!!!
 	"diablogoldforwowgold", --WTT my diablo gold for wow gold
 	--WTT D3 gold to WoW gold! /w me!
-	"^wt[bst]d3gold.*wowgold", --WTB d3 golds for wow golds !
+	--WTT 270mil D3 gold to WoW gold! /w me!
+	"^wt[bst].*d3gold.*wowgold", --WTB d3 golds for wow golds !
 	"^wtt.*mygold.*diablo3gold", --WTT all my gold, 8783g for about 30m Diablo 3 gold, any takers?
 	"wowgoldforyourdiablo3?gold", --{rt1}Looking to trade my 10k wow gold for your diablo 3 gold, we can do in trades as low as 0.5k wow gold at a time for safety reasons{rt1}
 	"wts.*diablo3goldfor%d+", --wts 150 mill Diablo 3 gold for 50k
@@ -534,12 +536,13 @@ local instantReportList = {
 	"rbg.*2[%.,]2.*legal.*info", --Selling RBG BOOST - 2 k // 2.2 k // 2.4 k ++ Hero of the Alliance/ CHEEP AND EASY. 100 % win games ( RUSSIAN GAMING SYSTEM )    Legal and quick. Information given. GET you elite T2 gear TODAY.
 	"russian.*team.*rbg.*2200", --The best Russian team will help you with RBG rating 2200/2400/2700+!
 	"%d+k.*powerle?ve?l.*skype", --also: 100k-250k hk and power leveling! Guarantees, if you're really interested then Add Skype: Mmoboostpro
-	"rbg.*2200.*paypal.*info", --WTS RBG BOOST! 2200/2400/Hero/CP CAP! You play yourself, no acc sharing, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today! 
+	"rbg.*2200.*paypal.*info", --WTS RBG BOOST! 2200/2400/Hero/CP CAP! You play yourself, no acc sharing, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today!
 	"rbg.*cap.*rating.*portal.*gear", --WTS RBG CARRY - Marshal, Grand Marshal and higher. Cap games, Any [Ratings.we'll] Rise your Progres on RBG + achievs. Your "portal" to new Gear, weapon. /w me
 	"rbg.*2%.?200.*gear.*skype", --{rt1}WTS- RBG boost 2.200+2.400+.2.650+ .. No gear requirements. if your interested please add me on Skype: nickonexz.{rt1}
 	"rbg.*2[%.,]2.*achie?v.*legit", --{rt7}{rt1}WTS RBG Boost for all classes! We offer you 2,2k, 2,4k and Glad achievement! You play yourself, 100% legit!(accept gold){rt1}{rt7}
 	"rbg.*2200.*account.*achie?v", --/2 Hi dude u wanna fast boost 2.2/2.4/Hero(aliance/horde) ,fast work right now =) skype BGboost up you RBG ratings! 2200/2400/HERO /cap/no sharing account /Dungeon challenges -gold/glory hero-raider-guild raider all achivemets /pm
 	"rbg.*2200.*legit.*paypal", --WTS RBG CARRY! 0-2200,2400,2750,CAP! No acc sharing, 100% legit. Our boost costs less than anyones' else in EU. We have business Paypal and website! /w me
+	"2[%.,]2.*legit.*rbg.*price", --WTS 2.2/2.4k Legit RBG [Boost.Cheapest] prices [EU.PST] for info!
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -604,7 +607,7 @@ local instantReportList = {
 	"whispers%.?ru.*гoлд.*cкaйп", --[square][skull][Золото] от l4p за l ООО на [WHISPERS RU].Рейды,БГ,Арена,прокачка,профессии,маунты и петы.Ветророг и тk за голд Скайп [Whispers.ru] ICQ634-810-845[star]
 	--[circle]15 for 1000! Website [Gann-money.ru]! All kinds of payments! Gifts wholesalers! High BL! ICQ 9937937 skype Gann-money or operator on the site!
 	"gannmoney%.ru.*skype", --[circle]по 15 за 1000! Сайт [Gann-money.ru] ! Все виды оплат! Подарки оптовикам! Высокий БЛ! ICQ 9937937 skype Gann-money или оператору на сайте!
-	--{квадрат} Продаём баклажаны от 16р за 1к.  Bcе виды оплат. BL245+. Сайт WoWMoney.гu. Связь через icq З84829 или cкайп wowmoneyally .{квадрат} 
+	--{квадрат} Продаём баклажаны от 16р за 1к.  Bcе виды оплат. BL245+. Сайт WoWMoney.гu. Связь через icq З84829 или cкайп wowmoneyally .{квадрат}
 	--{треугольник} Продаём {круг} от 16р за 1к.  Сайт WoWMoney.гu. BL245+. Bсe виды оплат. Связь чeрeз скайп wowmoneyally или icq З84829 {треугольник}
 	"пpoдaem.*wowmoney%..*icq", --{звезда} Пpодaём голдец от 16p зa 1к.  BL245+. Bсe виды оплaт. Caйт WoWMoney.гu. Cвязь чepeз скaйп wowmoneyally или icq З8-48-29 .{звезда}
 
