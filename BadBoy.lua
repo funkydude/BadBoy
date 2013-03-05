@@ -856,7 +856,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 					elseif eventType == "WHISPER" or eventType == "AFK" or eventType == "DND" then
 						chatTarget = player:upper() -- Set to PLAYERNAME
 					end
-					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid == "" and arg13 or guid)
+					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid or arg13)
 					-- Finally, add the message
 					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData), 0.2, 1, 0.6, nil, nil, nil, extraData)
 				end
