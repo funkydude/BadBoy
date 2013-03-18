@@ -859,7 +859,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
 			else
 				--Show block message
-				if not BADBOY_NOREPORT then
+				if not BADBOY_NOREPORT and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[player]) then
 					-- This code is replicated from Blizzard's ChatFrame.lua code.
 					-- The intention here is to add the "extraData" flag to our AddMessage,
 					-- the same way Blizz adds that data to normal messages. Then we can use the
@@ -896,6 +896,7 @@ do
 				if (t-prevReport) > 5 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
 					prevReport = t
 					ReportPlayer("spam", lineId)
+					BADBOY_BLACKLIST[player] = true
 					--ChatFrame1:RemoveMessagesByExtraData(extraData) -- ReportPlayer already runs this
 				else
 					ChatFrame1:AddMessage(throttleMsg, 1, 1, 1, nil, nil, nil, extraData)
@@ -925,6 +926,12 @@ do
 	f:SetScript("OnEvent", function(frame,event,bnEvent)
 		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_PENDING" then
 			if event == "PLAYER_LOGIN" then
+				-- Throw blacklist DB setup in here
+				if not BADBOY_BLACKLIST then BADBOY_BLACKLIST = {} end
+				local _, _, day = CalendarGetDate()
+				if BADBOY_BLACKLIST.dayFromCal ~= day then wipe(BADBOY_BLACKLIST) end
+				BADBOY_BLACKLIST.dayFromCal = day
+
 				frame:RegisterEvent("CHAT_MSG_BN_INLINE_TOAST_ALERT")
 				frame:UnregisterEvent("PLAYER_LOGIN")
 			end
