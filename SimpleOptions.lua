@@ -28,9 +28,13 @@ do
 		locNoReportDesc = "请不要使用此。报告的垃圾邮件是什么让黑客攻击的垃圾邮件发送者使用的帐户关闭和领域的清理。此外，如果很多人报告垃圾邮件发送者，然后，垃圾邮件发送者失去的能力，这意味着他们可以不再垃圾邮件，这样的好处大家，特别是非BADBOY用户聊天。"
 		locManualReport = "显示弹出的玩家举报（显示垃圾信息）而不是显示在聊天中"
 	elseif L == "esES" then
-
+		locNoReportMsg = "Ocultar los mensajes 'spam bloqueado' que te piden informar"
+		locNoReportDesc = "Por favor, no use esta! Informes de spam son cómo las malas cuentas se bloquean, y los reinos se limpian. Además, si muchas personas informan el spam, el remitente del spam es bloqueado el uso del chat, y no puede enviar más spam. Esto beneficia a todos, especialmente los jugadores sin BadBoy."
+		locManualReport = "Mostrar popup de informar (mostrando el spam) en lugar de mensaje en chat"
 	elseif L == "esMX" then
-
+		locNoReportMsg = "Ocultar los mensajes 'spam bloqueado' que te piden informar"
+		locNoReportDesc = "Por favor, no use esta! Informes de spam son cómo las malas cuentas se bloquean, y los reinos se limpian. Además, si muchas personas informan el spam, el remitente del spam es bloqueado el uso del chat, y no puede enviar más spam. Esto beneficia a todos, especialmente los jugadores sin BadBoy."
+		locManualReport = "Mostrar popup de informar (mostrando el spam) en lugar de mensaje en chat"
 	elseif L == "ruRU" then
 		locNoReportMsg = "Прятать сообщение 'Cпам блокирован', спрашивающее Вас о донесении на игрока."
 		locNoReportDesc = "Пожалуйста, не используйте эту функцию. Донесения о спаме это то, что заставляет ГМ закрывать взломанные спамерами аккаунты и очищать игровой мир. Также, если многие люди смогут сообщать о спамерах, то спамеры теряют возможность писать в чат, что выгодно всем, особенно людям не использующим BadBoy."

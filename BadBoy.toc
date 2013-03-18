@@ -8,8 +8,8 @@
 ## Notes-zhTW: A simple spam blocker & reporter.
 ## Notes-koKR: A simple spam blocker & reporter.
 ## Notes-frFR: A simple spam blocker & reporter.
-## Notes-esES: A simple spam blocker & reporter.
-## Notes-esMX: A simple spam blocker & reporter.
+## Notes-esES: Un bloqueador y un informador para spam.
+## Notes-esMX: Un bloqueador y un informador para spam.
 ## Notes-ptBR: A simple spam blocker & reporter.
 ## Notes-itIT: A simple spam blocker & reporter.
 ## Author: Funkydude
