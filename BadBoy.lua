@@ -485,6 +485,7 @@ local instantReportList = {
 	"^wtsmount.*blizzardstore.*safe.*info", --{rt1} WTS mounts from Blizzard Store, 10k each, safe trade! /w for more info. {rt1}
 	--WTS GIFT-codes  [Swift Windsteed] [Winged Guardian] 10k /w me
 	"^wtsgiftcode", --WTS GIFT-codes  [Heart of the Aspects] [Celestial Steed] 10k /w me
+	"^wtscheapergold.*boost", --{rt6}{rt1} wts cheaper gold and LFM RBG boost service  run!! ! {rt1}{rt6}
 
 	--[[  RBG  ]]--
 	"rbg.*2[%.,]2.*quick.*skype", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -554,6 +555,7 @@ local instantReportList = {
 	"rbg.*2[%.,]2.*legit.*paypal", --WTS RBG BOOST! Any rating and CAP 2.2k,2.4k & Hero of the Horde/Alliance! No acc sharing, 100% legit, you play youself. Our boost costs less than anyones' else in [EU.We] have website + Paypal verified, OwnedCore verified. /w me
 	"quickest.*safi?est.*rbg.*legit.*account", --The 13th season has just started! And we're ready to provide you the quickest and safiest RBG PUSH! Any Rating! 100% legit - no account sharing required. Be the first to obtain elite gear, lots of achievements, titles and mounts! PM ME FOR MORE INFO.
 	"pvpforce.*professional.*2200.*skype", --{rt1}{rt1}{rt1} Become a part of new PvP force. Play with professionals to be among the first to get 2200/2400/HERO. 3850+ cp per week, T2 in Only 7 weeks! Skype: [***] {rt1}{rt1}{rt1}
+	"rbg.*2200.*site.*mount", --{rt6}Get your RBG rating right now! 2000/2200/2400/HERO.{rt6}without acc share..  Site.. {rt6}3850+cp per [week.mount,16+] and /w me for more info.
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
