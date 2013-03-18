@@ -320,6 +320,7 @@ local instantReportList = {
 	"^wt[bst]m?y?lolaccount", --WTS LOL ACCOUNT LEVEL 30 with 27 SKINS and 14k IP
 	"^sellingloleuw?acc.*info", --Selling LOL EUW acc pm for more info
 	"^wt[bs].*leagueoflegends.*points.*pay", --WTB 100 DOLLARS OF LEAGUE OF LEGENDS RIOT POINTS PST. YOU PAY WITH YOUR PHONE. PST PAYING A LOT.
+	"wts.*leagueoflegends.*acc.*info", --{rt1}wts golden{rt1} League of Legends{rt1} acc /w me for more info{rt1}
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
@@ -480,6 +481,10 @@ local instantReportList = {
 	--Help you with 2200/2400/2600(hero) skype: DvingHelp
 	"you.*skype.*dvinghelp", --Help you with The Bloodthirsty(72 hours), Sun Horde/Ally(48hours) skype: DvingHelp
 	"wts.*rbg.*challenge.*powerle?ve?l.*diablo", --{star}{star}{star}WTS Iphone game: Clash of Clans Gems ---- Cheap {star}{star}2200/2400/2700 RBG,finish within 12 hours {star}{star}Challenge Mode, finish in 1-2 days{star}{star}Achievement/Level Powerlvling{star}{star}Paragon lvling on Diablo3 {star}{star}
+	"^wtswowgold.*mount", --WTS wow gold...order 100k give u [Heart of the Nightwing] mount for free 
+	"^wtsmount.*blizzardstore.*safe.*info", --{rt1} WTS mounts from Blizzard Store, 10k each, safe trade! /w for more info. {rt1}
+	--WTS GIFT-codes  [Swift Windsteed] [Winged Guardian] 10k /w me
+	"^wtsgiftcode", --WTS GIFT-codes  [Heart of the Aspects] [Celestial Steed] 10k /w me
 
 	--[[  RBG  ]]--
 	"rbg.*2[%.,]2.*quick.*skype", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -547,6 +552,8 @@ local instantReportList = {
 	"2200.*accoun?t.*paypal.*skype", --ASSISTANCE: 2000-2200-2400 No sharing accout. Site, Bussines PayPal, Test Game.  Skype: Mike222eu{rt1}
 	"rbg.*2[24]00.*sale.*skype", --Help with RBG rat/cap, the best prices!2400/hero we are working 5th season. SALE RIGHT NOW. skype: kkboosting
 	"rbg.*2[%.,]2.*legit.*paypal", --WTS RBG BOOST! Any rating and CAP 2.2k,2.4k & Hero of the Horde/Alliance! No acc sharing, 100% legit, you play youself. Our boost costs less than anyones' else in [EU.We] have website + Paypal verified, OwnedCore verified. /w me
+	"quickest.*safi?est.*rbg.*legit.*account", --The 13th season has just started! And we're ready to provide you the quickest and safiest RBG PUSH! Any Rating! 100% legit - no account sharing required. Be the first to obtain elite gear, lots of achievements, titles and mounts! PM ME FOR MORE INFO.
+	"pvpforce.*professional.*2200.*skype", --{rt1}{rt1}{rt1} Become a part of new PvP force. Play with professionals to be among the first to get 2200/2400/HERO. 3850+ cp per week, T2 in Only 7 weeks! Skype: [***] {rt1}{rt1}{rt1}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
