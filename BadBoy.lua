@@ -4,42 +4,42 @@
 -- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, UnitIsInMyGuild, ChatHistory_GetAccessID, BNGetNumFriendInvites
 local myDebug = nil
 
-local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam blocked, click to report!]|h|r <<<"
-local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~5 seconds between reports to prevent being disconnected (Blizzard bug)"
+local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~7 seconds between reports to prevent being disconnected (Blizzard bug)"
 local reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net invite blocked from |cffffff00%s|r|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~5 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~7 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
 		reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net inviter bloqué à partir de |cffffff00%s|r|r <<<"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam geblockt, zum Melden klicken!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. ~5 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam geblockt, zum Melden klicken!]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. ~7 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~5秒在回報時，為了防止斷線(暴雪的bug)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~7秒在回報時，為了防止斷線(暴雪的bug)"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[垃圾信息已被阻挡，点击举报!]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~5 秒以防断线（暴雪的bug）"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[垃圾信息已被阻挡，点击举报!]|h|r"
+		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~7 秒以防断线（暴雪的bug）"
 	elseif L == "esES" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~5 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado. Clic para informar!]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~7 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "esMX" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqueado. Clic para informar!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~5 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado. Clic para informar!]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~7 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~5 секунды между донесениями, чтобы избежать отключения (ошибка Blizzard)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~7 секунды между донесениями, чтобы избежать отключения (ошибка Blizzard)"
 		reportBnet = "BadBoy: >>> |cfffe2ec8приглашение Battle.net от |cffffff00%s|r блокировано|r <<<"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~5 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~7 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~5 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
+		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
+		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~7 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
 	end
 end
 
@@ -481,12 +481,14 @@ local instantReportList = {
 	--Help you with 2200/2400/2600(hero) skype: DvingHelp
 	"you.*skype.*dvinghelp", --Help you with The Bloodthirsty(72 hours), Sun Horde/Ally(48hours) skype: DvingHelp
 	"wts.*rbg.*challenge.*powerle?ve?l.*diablo", --{star}{star}{star}WTS Iphone game: Clash of Clans Gems ---- Cheap {star}{star}2200/2400/2700 RBG,finish within 12 hours {star}{star}Challenge Mode, finish in 1-2 days{star}{star}Achievement/Level Powerlvling{star}{star}Paragon lvling on Diablo3 {star}{star}
-	"^wtswowgold.*mount", --WTS wow gold...order 100k give u [Heart of the Nightwing] mount for free 
+	"^wtswowgold.*mount", --WTS wow gold...order 100k give u [Heart of the Nightwing] mount for free
 	"^wtsmount.*blizzardstore.*safe.*info", --{rt1} WTS mounts from Blizzard Store, 10k each, safe trade! /w for more info. {rt1}
 	--WTS GIFT-codes  [Swift Windsteed] [Winged Guardian] 10k /w me
 	"^wtsgiftcode", --WTS GIFT-codes  [Heart of the Aspects] [Celestial Steed] 10k /w me
-	"^wtscheapergold.*boost", --{rt6}{rt1} wts cheaper gold and LFM RBG boost service  run!! ! {rt1}{rt6}
+	"^wtscheape?r?gold.*boost", --{rt6}{rt1} wts cheaper gold and LFM RBG boost service  run!! ! {rt1}{rt6}
 	"^wts.*gold.*day.*gametime", --WTS [Heart of the Nightwing]for gold!  And 30 days game time for 20K!pst!
+	"cheap.*mounts.*rbg.*boost", --{rt6}{rt1} wts cheaper TCG mounts and LFM RBG boost service  run!! ! {rt1}{rt6}
+	"rbg.*boost.*cheap.*mounts", --{rt6}{rt1} LFM RBG boost service run!! and wts cheaper TCG mounts {rt1}{rt6}
 
 	--[[  RBG  ]]--
 	"rbg.*2[%.,]2.*quick.*skype", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -646,7 +648,7 @@ local instantReportList = {
 	"出售.*成就.*欢迎.*qq", --WOW龙魂8H美金消费团出售橙匕+WOW各版本橙武。 397/403/410/416装备。带刷成就龙(ICC,ULD,CATA,FL)。低价出售帅气坐骑.死翼坐骑/火鹰/等。带刷RBG荣誉.1-85手工代练欢迎咨询QQ: 1416781477
 	"wts.*nightwing.*order.*gametime", --WTS[Heart of the Nightwing]order 50k will get a free one plus 30days game time{star}买金送招募坐骑,炼金龙和DK马,大小幽灵虎特价出售,另有各种代练和账号{diamond}QQ：1933089703
 	"freemount.*[0o]rder.*stock.*skype", --get free mount with 50k 0rder,300k in stock, skype: sue861029,24/7 online。金币14刀一W，纯手工做任务专业代练，85-90仅需一天，价格优惠。更有稀有坐骑10只打包特卖，大小幽灵虎，白犀牛，大战熊，魔法公鸡쾰
-	"^wts.*challenge.*transmog.*mount.*qq%d+", --wts challenge mode:transmog set and mount qq:498890740 
+	"^wts.*challenge.*transmog.*mount.*qq%d+", --wts challenge mode:transmog set and mount qq:498890740
 
 	--[[  Advanced URL's/Misc  ]]--
 	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
@@ -859,7 +861,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
 			else
 				--Show block message
-				if not BADBOY_NOREPORT and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[player]) then
+				if not BADBOY_NOREPORT and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) then
 					-- This code is replicated from Blizzard's ChatFrame.lua code.
 					-- The intention here is to add the "extraData" flag to our AddMessage,
 					-- the same way Blizz adds that data to normal messages. Then we can use the
@@ -874,7 +876,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 					end
 					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid or arg13)
 					-- Finally, add the message
-					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData), 0.2, 1, 0.6, nil, nil, nil, extraData)
+					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData, guid), 0.2, 1, 0.6, nil, nil, nil, extraData)
 				end
 			end
 		end
@@ -887,16 +889,16 @@ end
 do
 	local SetHyperlink, prevReport = ItemRefTooltip.SetHyperlink, 0
 	function ItemRefTooltip:SetHyperlink(link, ...)
-		local badboy, player, lineId, extraData = strsplit(":", link)
+		local badboy, player, lineId, extraData, guid = strsplit(":", link)
 		if badboy and badboy == "badboy" then
 			lineId = tonumber(lineId)
 			extraData = tonumber(extraData)
 			if CanComplainChat(lineId) then
 				local t = GetTime()
-				if (t-prevReport) > 5 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
+				if (t-prevReport) > 7 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
 					prevReport = t
 					ReportPlayer("spam", lineId)
-					BADBOY_BLACKLIST[player] = true
+					BADBOY_BLACKLIST[guid] = true
 					--ChatFrame1:RemoveMessagesByExtraData(extraData) -- ReportPlayer already runs this
 				else
 					ChatFrame1:AddMessage(throttleMsg, 1, 1, 1, nil, nil, nil, extraData)
