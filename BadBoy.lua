@@ -280,6 +280,7 @@ local instantReportList = {
 	"casino.*roll.*%d+.*roll.*%d+", --Casino is back in town !! Roll over 65 + and get your gold back 2X !!  Roll 100 and get your gold back 3X !!
 	"double.*tripp?le.*casino", --Hey there wanna double your money in casino? or triple or even quad it? give me a whisp if you want to join my casino :)
 	"casino.*legit.*safe.*casino", --LEGIT CASINO IN TRADE DESTRICT! /w * for a legit and safe casino!
+	"luck.*roll.*%d+k.*minutes.*pst", --test your luck. all you gotta do is roll. make 1-100k+ in minutes. pst for details.
 
 	--[[  Runescape Trading  ]]--
 	--WTB RS gold paying WoW GOLD
@@ -304,6 +305,9 @@ local instantReportList = {
 	--WTS an awesome rs account /w me details
 	"^wt[bs]a?n?awesomersaccount", --wts awesome rs account /w me
 	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
+
+	--[[  SC 2 ]]--
+	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
 
 	--[[  Dota 2 ]]--
 	"^sellingdota2", --Selling 2 Dota2 for wow gold! /W me
@@ -483,7 +487,8 @@ local instantReportList = {
 	--Help you with 2200/2400/2600(hero) skype: DvingHelp
 	"you.*skype.*dvinghelp", --Help you with The Bloodthirsty(72 hours), Sun Horde/Ally(48hours) skype: DvingHelp
 	"wts.*rbg.*challenge.*powerle?ve?l.*diablo", --{star}{star}{star}WTS Iphone game: Clash of Clans Gems ---- Cheap {star}{star}2200/2400/2700 RBG,finish within 12 hours {star}{star}Challenge Mode, finish in 1-2 days{star}{star}Achievement/Level Powerlvling{star}{star}Paragon lvling on Diablo3 {star}{star}
-	"^wtswowgold.*mount", --WTS wow gold...order 100k give u [Heart of the Nightwing] mount for free
+	--wtswow gold. tier 15 set,weapons and trinket tot,toes,hof and msv full clearpst now, skype:zl8579888
+	"^wtswowgold.*%d+", --WTS wow gold...order 100k give u [Heart of the Nightwing] mount for free
 	"^wtsmount.*blizzardstore.*safe.*info", --{rt1} WTS mounts from Blizzard Store, 10k each, safe trade! /w for more info. {rt1}
 	--WTS GIFT-codes  [Swift Windsteed] [Winged Guardian] 10k /w me
 	"^wtsgiftcode", --WTS GIFT-codes  [Heart of the Aspects] [Celestial Steed] 10k /w me
@@ -491,6 +496,8 @@ local instantReportList = {
 	"^wts.*gold.*day.*gametime", --WTS [Heart of the Nightwing]for gold!  And 30 days game time for 20K!pst!
 	"cheap.*mounts.*rbg.*boost", --{rt6}{rt1} wts cheaper TCG mounts and LFM RBG boost service  run!! ! {rt1}{rt6}
 	"rbg.*boost.*cheap.*mounts", --{rt6}{rt1} LFM RBG boost service run!! and wts cheaper TCG mounts {rt1}{rt6}
+	"wts.*%[.*%].*xbox.*points", --WTS [Reins of the Swift Spectral Tiger] for XBOX Live Points Card
+	"wts.*%[.*%].*[0o]rder.*gear.*cheap", --wts [obsidian nightwing],0rder 50k will get one for free,wts t15 set and t15.5 set,ilvl522 gears/weapons/trinkets,cheaptest price pst! q 1506040674
 
 	--[[  RBG  ]]--
 	"rbg.*2[%.,]2.*quick.*skype", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -565,6 +572,9 @@ local instantReportList = {
 	"safe.*rbg.*elitegear.*skype", --{rt8} Offering extremely safe and qualified RBG boosting to ANY rating you want. NO ACCOUNT SHARING. 3850+ conquest points per week. Epic titles and elite gear are waiting for you! For more info contact me on skype: iboosting {rt8}
 	"2200.*gold.*sale.*skype", --Gladiator, 2200-2700 Arena & RBG, Malevolent Gladiator (rank 1!), gold challenge modes and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord)! Skype: wowpvpcarry
 	"visit.*pvp.*elitegear.*skype", --Visit ArenaCarry DotCom for all of your PvP needs! Gladiator, hero of ally/horde, fastest elite gear, highest CP cap, and much more! Skype: Baddieisboss
+	"rbg.*2200.*challenge.*transmog", --wts:rbg 2200/2400/2700cp capschallenge mode: transmog setitem upgrade 463/470/495/503 no transfer!---pst
+	"wts.*account.*cap.*conquest.*elitegear", --WTS [General] or high, you play with us, no account share. Runing them right now. Increase your cap to over 3500+ conquest. Get your elite gear. /w info
+	"rbg.*2[%.,][24].*account.*skype", --the fastest rbg boost in the world. 2.k, 2.4k, 2.6k for some hours. you play your character, no acount sharing. 3850+ conquest points per week.mount, 16+ achievements and 14 titles. add skype premium_boost
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
