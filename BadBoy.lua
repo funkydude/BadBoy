@@ -577,6 +577,7 @@ local instantReportList = {
 	"rbg.*2[%.,][24].*account.*skype", --the fastest rbg boost in the world. 2.k, 2.4k, 2.6k for some hours. you play your character, no acount sharing. 3850+ conquest points per week.mount, 16+ achievements and 14 titles. add skype premium_boost
 	"2200.*account.*rbg.*skype", --Cap/2200/2400/Hero only in few hours! We don't need your account, you play with us! We make your RBG Cap every week. We offer access to elite gear and 21 rbg achievs. Test game! Guarantees. Add SKYPE for more info: rbgsupport
 	"elitegear.*rbg.*legit.*skype", --{rt8} Be first with ELITE gear, get RBG Boosting in this season. No account sharing, 100% legit and bonuses with high rating order. Any rating available, for lowrated characters TEST GAME for free! {rt8} Details on skype {rt1}wtspvp{rt1}
+	"rating.*professional.*2200.*skype", --{rt1}{rt1}{rt1} Get your rating to where you want it to be. Play with professionals to be among the first to get 2200/2400/HERO. 3850+ cp per week, T2 in under 7 weeks! Skype: [Ryan.Lotten] {rt1}{rt1}{rt1}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
