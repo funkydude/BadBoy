@@ -579,6 +579,7 @@ local instantReportList = {
 	"elitegear.*rbg.*legit.*skype", --{rt8} Be first with ELITE gear, get RBG Boosting in this season. No account sharing, 100% legit and bonuses with high rating order. Any rating available, for lowrated characters TEST GAME for free! {rt8} Details on skype {rt1}wtspvp{rt1}
 	"rating.*professional.*2200.*skype", --{rt1}{rt1}{rt1} Get your rating to where you want it to be. Play with professionals to be among the first to get 2200/2400/HERO. 3850+ cp per week, T2 in under 7 weeks! Skype: [Ryan.Lotten] {rt1}{rt1}{rt1}
 	"wts.*character.*account.*rating.*test", --WTS [Marshal] and [High Warlord]. We also sell weekly caps. You play on your character,no account share. Get rating - increase your cap to 3800+ conq. Write me and set up your run right now! Test game. For more info /w.
+	"rbg.*2200.*legit.*boost.*test", --{rt8}WTS RBG BOOST! EU & US. 2200/2400/Hero/CP CAP! You play yourself, no acc sharing, so its 100% legit. /w me for information to join your rbg boost today! + proofs + test games + Im VERIFIED!
 	"rpgbox.*price.*skype", --{circle} site [RPGBOX.ORG] don't wait for the season end! Put on the best pvp item now! any reting in the Rated Battleground ! 5 seasons of experience! best price ! start today !/skype BGboost 
 	"1800.*acc?ount.*elite.*achiev.*test", --{star} W.T.S Ratted BGs: 1800-2650+/Conq.points only in few hours! NO share acount! You play on toon! 3800+ points per week.Acces to elite gear and 21 achievs.1 Test game! We.b.si.te. 3 years we play! A.d.d S.K.Y.P.E to know more: Robert_rbg {star} 
 
