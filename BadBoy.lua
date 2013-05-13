@@ -281,6 +281,7 @@ local instantReportList = {
 	"double.*tripp?le.*casino", --Hey there wanna double your money in casino? or triple or even quad it? give me a whisp if you want to join my casino :)
 	"casino.*legit.*safe.*casino", --LEGIT CASINO IN TRADE DESTRICT! /w * for a legit and safe casino!
 	"luck.*roll.*%d+k.*minutes.*pst", --test your luck. all you gotta do is roll. make 1-100k+ in minutes. pst for details.
+	"roll.*win.*double.*min.*max", --Game 2 Roll Wars. Trade wager then roll. We both rol. Highest Roll wins. If you win ill double your wager 500g Minimum 5k Maximum
 
 	--[[  Runescape Trading  ]]--
 	--WTB RS gold paying WoW GOLD
@@ -499,6 +500,7 @@ local instantReportList = {
 	"wts.*%[.*%].*xbox.*points", --WTS [Reins of the Swift Spectral Tiger] for XBOX Live Points Card
 	"wts.*%[.*%].*[0o]rder.*gear.*cheap", --wts [obsidian nightwing],0rder 50k will get one for free,wts t15 set and t15.5 set,ilvl522 gears/weapons/trinkets,cheaptest price pst! q 1506040674
 	"wts.*%[.*%].*boefans.*deliver", --wts[Magic Rooster Egg][Falling Blossom Cowl]{rt6}{rt6}on boefans.c{rt2}m,4 years Exp,fast and safe delivery{rt6}
+	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
 
 	--[[  RBG  ]]--
 	"rbg.*2[%.,]2.*quick.*skype", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -557,7 +559,8 @@ local instantReportList = {
 	"%d+k.*powerle?ve?l.*skype", --also: 100k-250k hk and power leveling! Guarantees, if you're really interested then Add Skype: Mmoboostpro
 	"rbg.*2200.*paypal.*info", --WTS RBG BOOST! 2200/2400/Hero/CP CAP! You play yourself, no acc sharing, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today!
 	"rbg.*cap.*rating.*portal.*gear", --WTS RBG CARRY - Marshal, Grand Marshal and higher. Cap games, Any [Ratings.we'll] Rise your Progres on RBG + achievs. Your "portal" to new Gear, weapon. /w me
-	"rbg.*2%.?200.*gear.*skype", --{rt1}WTS- RBG boost 2.200+2.400+.2.650+ .. No gear requirements. if your interested please add me on Skype: nickonexz.{rt1}
+	--{star} Increase your ranking on R&B&G to 2OOO~22OO~24OO or higher.+385O cp capp.+ELITE gear and other titles and achieves. Need minimal of your time. Waiting for you on s*k*y*p*e : Grafus123 {star}
+	"rbg.*2%.?2[o0][o0].*gear.*skype", --{rt1}WTS- RBG boost 2.200+2.400+.2.650+ .. No gear requirements. if your interested please add me on Skype: nickonexz.{rt1}
 	"rbg.*2[%.,]2.*achie?v.*legit", --{rt7}{rt1}WTS RBG Boost for all classes! We offer you 2,2k, 2,4k and Glad achievement! You play yourself, 100% legit!(accept gold){rt1}{rt7}
 	"rbg.*2200.*account.*achie?v", --/2 Hi dude u wanna fast boost 2.2/2.4/Hero(aliance/horde) ,fast work right now =) skype BGboost up you RBG ratings! 2200/2400/HERO /cap/no sharing account /Dungeon challenges -gold/glory hero-raider-guild raider all achivemets /pm
 	"rbg.*2200.*legit.*paypal", --WTS RBG CARRY! 0-2200,2400,2750,CAP! No acc sharing, 100% legit. Our boost costs less than anyones' else in EU. We have business Paypal and website! /w me
@@ -731,6 +734,7 @@ local instantReportList = {
 	"complete.*gold.*challenge.*$%d+.*hurry", --complete all the Gold dungeon challenge (\n?) achievements now only $200 (\n?) paladin(tank) (\n?) shaman), Hurry contact me, you will complete all the Gold dungeon challenge quickly.
 	"cheap.*fast.*gold.*item.*skype", --{rt3}{rt3}To get cheap,fast gold and hot items in a great deal, please add my skype {rt3} linda871230 {rt3}for more information!{rt3}{rt3}
 	"rbg.*challenge.*mount.*boost", --WTS Iphone game: Clash of Clans  Gems----much cheaper than APP store2200/2400/2700 RGB,get your cool titles todayChallenge Mode, fast get ur Xmogs and mountT14.5 set boosted by 16/16H raid group
+	"goldpreise.*server.*skype", --Bieten Top Goldpreise auf allen deutschen Servern! an /w me bei Interesse oder add hambulaa/Skype!!! 55k
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
