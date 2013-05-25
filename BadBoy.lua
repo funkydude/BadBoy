@@ -589,6 +589,9 @@ local instantReportList = {
 	"2200.*achiev.*test.*website", --{star} Raise your RatedBG rating to 2000|2200|2400|Hero! Play your own toon! 3850+ conquest points per week. +Achieves and titles. Take a Test Run to check everything out! Website! S.kype: kekcique {star}
 	"rbg.*boost.*paypal.*skype", --{rt1}Best RBG boosting team ready for action!{rt1} | We sell boost to ANY rating AND cap games! | Get Grand Marshal/High Warlord Title+Gear! | 110% SAFE using business PayPal! | 1250+ orders done! | {rt6} Add me on Skype for info: [chef.fred1] {rt6}
 	"rbg.*2200.*hero.*gladiator.*trusted", --Get your {rt6}RBG RATING{rt6} today! CAP/2000/2200/2400/2500/HERO. Arena 2200/2400/Gladiator/R1.Got the BEST & MOST TRUSTED WOW players ADVERTISING for us. Whisper ME and get in touch with US!
+	"1800.*acc?ount.*tess?t.*s%.?k%.?y%.?p%.?e", --{rt1} W.T.S Ratted BGs: 1800-2750+/HER0/ Conq.points/ NEW Enchants & NEW Tabard! only in few hours! NO share acount! You play on toon! 1 Tesst game! We.b.si.te. + guarantees! A.d.d  S.K.Y.P.E to know more: Robert_rbg {rt1}
+	"2200.*toon.*test.*s%.?k%.?y%.?p%.?e", --{rt1}WTS Rated BG services: 1800||2000||2200||2400||HER0 title||WINS for conquest points. You play your own toon!  Take a Test Run to check everything out! We have Web5site! 2 years expirience! S.kype: kekcique{rt1}
+	"2200.*rbg.*skype.*pric[ie]", --{rt6} Multi glads now offering 2200/2400. Arena/Crossrealm Rbgs. Message me on Skype for more details- soft.nchewy{rt1} Competitive Pricing! :D
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -680,6 +683,7 @@ local instantReportList = {
 	"freemount.*[0o]rder.*stock.*skype", --get free mount with 50k 0rder,300k in stock, skype: sue861029,24/7 online。金币14刀一W，纯手工做任务专业代练，85-90仅需一天，价格优惠。更有稀有坐骑10只打包特卖，大小幽灵虎，白犀牛，大战熊，魔法公鸡쾰
 	"^wts.*challenge.*transmog.*mount.*qq%d+", --wts challenge mode:transmog set and mount qq:498890740
 	"金币.*服包团.*便宜卖.*QQ", --{rt3}金币100刀10w,15w送幽灵坐骑哦{rt3}金牌挑战特价，当天完成{rt3}TOT 全通，lvl522武器饰品，t15套装特价，无需转服{rt3}MSV/HOF/TOES跨服包团，各等级，专业代练便宜卖{rt3}{rt3}QQ：1933089703
+	"gold.*powerlvl?ing.*fast.*best.*skype", --WTS{rt3}{rt3}Gold Challenge Conqueror{rt3}{rt3}Powerlving1-90/85-90/1-85{rt3}{rt5}{rt3}Fast & Best services{rt1}{rt1}Pst for details--Skype:tessg4p--{rt1}{rt1}金牌挑战模式，等级代练，请Q：2584052418--
 
 	--[[  Advanced URL's/Misc  ]]--
 	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
@@ -738,6 +742,7 @@ local instantReportList = {
 	"cheap.*fast.*gold.*item.*skype", --{rt3}{rt3}To get cheap,fast gold and hot items in a great deal, please add my skype {rt3} linda871230 {rt3}for more information!{rt3}{rt3}
 	"rbg.*challenge.*mount.*boost", --WTS Iphone game: Clash of Clans  Gems----much cheaper than APP store2200/2400/2700 RGB,get your cool titles todayChallenge Mode, fast get ur Xmogs and mountT14.5 set boosted by 16/16H raid group
 	"goldpreise.*server.*skype", --Bieten Top Goldpreise auf allen deutschen Servern! an /w me bei Interesse oder add hambulaa/Skype!!! 55k
+	"gold.*challenge.*achiev.*%$%d+.*sk[py][yp]e", --{rt5}{rt5}spots open for Complete all the Gold dungeon challenge achievements， only $79, lvl522 item $100 each piece ,  raid progress TOT12/12,offer t15set, lvl522 lvl535 weapons,trinket etc,  PST to get more info or add skpye jolinvipservice
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
