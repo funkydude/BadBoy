@@ -592,6 +592,7 @@ local instantReportList = {
 	"1800.*acc?ount.*tess?t.*s%.?k%.?y%.?p%.?e", --{rt1} W.T.S Ratted BGs: 1800-2750+/HER0/ Conq.points/ NEW Enchants & NEW Tabard! only in few hours! NO share acount! You play on toon! 1 Tesst game! We.b.si.te. + guarantees! A.d.d  S.K.Y.P.E to know more: Robert_rbg {rt1}
 	"2200.*toon.*test.*s%.?k%.?y%.?p%.?e", --{rt1}WTS Rated BG services: 1800||2000||2200||2400||HER0 title||WINS for conquest points. You play your own toon!  Take a Test Run to check everything out! We have Web5site! 2 years expirience! S.kype: kekcique{rt1}
 	"2200.*rbg.*skype.*pric[ie]", --{rt6} Multi glads now offering 2200/2400. Arena/Crossrealm Rbgs. Message me on Skype for more details- soft.nchewy{rt1} Competitive Pricing! :D
+	"blastboost%.com.*2200.*skype", --{rt8} [BlastBoost.com] Offers You service on RBG. 0-2200, 0-2400, 0-3000 and CAP. You play youself. Test game. Time of increasing: 1-4 hours. Payment can made in several parts. Add us on Skype: [BlastBoost.com] (Wien, Austria) {rt8}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
