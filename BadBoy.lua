@@ -596,6 +596,7 @@ local instantReportList = {
 	"rbg.*boost.*2[%.,]2.*skype", --{rt1}{rt4}{rt3}{rt8} Selling RBG Boost to 2k/2.2k/2.3k / Game Time Cards / Realm/Faction change / Blizzard Store Pets/Mounts for gold! Add my skype for more information: RBGService11 {rt4}{rt2}{rt3}{rt5}
 	"safe.*rbg.*account.*skype", --{rt8} Offering extremely safe and qualified RBG boosting to ANY rating you want. NO ACCOUNT SHARING. Epic titles, cap games, pve boosts, powerleveling, gold !  For more info contact me on skype: MatBoosting {rt8}
 	"rbg.*2200.*hero.*arena.*whisper", --Get your {rt6} RBG RATING {rt6} today! CAP/2000/2200/2400/2500/HERO. ARENA 2200/2400/Gladiator/R1.Whisper ME and get in touch with US! You Won't regret it{rt6}
+	"challenge.*gold.*fast.*cheap.*character", --Looking for someone to help you get [CHALLENGE CONQUEROR:GOLD] fast ? Our team is  fastest (2.5h for all 9 ) and cheapest . You play your own character ofc.
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
