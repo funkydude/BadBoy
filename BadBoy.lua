@@ -599,10 +599,12 @@ local instantReportList = {
 	"challenge.*gold.*fast.*cheap.*character", --Looking for someone to help you get [CHALLENGE CONQUEROR:GOLD] fast ? Our team is  fastest (2.5h for all 9 ) and cheapest . You play your own character ofc.
 	"elitegear.*achiev.*toon.*skype", --The squad will aid to purchase  a high ranking on R&B&Gs. Also propose 35OO - 385O c0nq.capp. A few hours of your time. Your path to elite gear and achievements. You play your toon. Don't be shy, for more inf0 add on SK*Y*PE - Grafus123
 	"selling.*gladiator.*achiev.*rbg.*arena.*gold.*coaching", --Selling Gladiator/R1, every achieve in RBG/Arena, Challenge Mode: Gold, T15.5, and more! Elo/Coaching in LoL too
+	"2200.*account.*points.*skype", --{rt2} SUPER OFFER ! 2200|2400|HERO. NO ACCOUNT SHARING. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles/skype BGboost{rt2}
 	--prommote.me will help you gain any RBG rating (2200, 2400 an higher), fill the weekly cap, acquire T2 weapons and become the Gladiator and Hero of the Horde/Alliance Good pricing, no transfer/account sharing required
 	--prommote.me will help you get any PVE/PVP and other achievements, mounts, titles and top raid gear, and help you gain 20300 achievement points. PM for details. 
 	"prommote%.me.*helpyou", --prommote.me will help you gear up in T15 HM raids and get 13/13 progress.
-	"prommote%.me.*service.*price", --prommote.me, fast service and modest prices for the [Challenge Conqueror: Gold]
+	--prommote.me now offers special summer prices for the [Glory of the Pandaria Raider]
+	"prommote%.me.*prices?forthe", --prommote.me, fast service and modest prices for the [Challenge Conqueror: Gold]
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
