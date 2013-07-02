@@ -608,6 +608,7 @@ local instantReportList = {
 	"prommote%.me.*prices?forthe", --prommote.me, fast service and modest prices for the [Challenge Conqueror: Gold]
 	"2200.*account.*mount.*skype", --{circle} SUPER OFFER ! 2200|2400|HERO. NO ACCOUNT SHARING. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles/skype BGboost{circle}
 	"rbg.*challenge.*arena.*glad.*info", --WTS Rbg boost / challenge mode boost / arena v2/ v3 /v 5 boost and glad /w for more information
+	"powerle?ve?l.*honor.*arena.*ownedcore", --{rt6}|Powerleveling |{rt6} Powerleveling , Honor Farming , Or Arena cap , Many other Service , Our team work for you !Trusted on OwnedCore and Epicnpc ! /w me
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
