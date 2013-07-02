@@ -502,6 +502,7 @@ local instantReportList = {
 	"wts.*%[.*%].*[0o]rder.*gear.*cheap", --wts [obsidian nightwing],0rder 50k will get one for free,wts t15 set and t15.5 set,ilvl522 gears/weapons/trinkets,cheaptest price pst! q 1506040674
 	"wts.*%[.*%].*boefans.*deliver", --wts[Magic Rooster Egg][Falling Blossom Cowl]{rt6}{rt6}on boefans.c{rt2}m,4 years Exp,fast and safe delivery{rt6}
 	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
+	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
 
 	--[[  RBG  ]]--
 	"rbg.*2[%.,]2.*quick.*skype", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
@@ -609,6 +610,7 @@ local instantReportList = {
 	"2200.*account.*mount.*skype", --{circle} SUPER OFFER ! 2200|2400|HERO. NO ACCOUNT SHARING. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles/skype BGboost{circle}
 	"rbg.*challenge.*arena.*glad.*info", --WTS Rbg boost / challenge mode boost / arena v2/ v3 /v 5 boost and glad /w for more information
 	"powerle?ve?l.*honor.*arena.*ownedcore", --{rt6}|Powerleveling |{rt6} Powerleveling , Honor Farming , Or Arena cap , Many other Service , Our team work for you !Trusted on OwnedCore and Epicnpc ! /w me
+	"help.*rbg.*rating.*gold.*skype", --We can help you with ANY RBG rating for GOLD(partial payments accepted) skype: battleboost1337
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
