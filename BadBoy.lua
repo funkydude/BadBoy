@@ -607,6 +607,7 @@ local instantReportList = {
 	--prommote.me now offers special summer prices for the [Glory of the Pandaria Raider]
 	"prommote%.me.*prices?forthe", --prommote.me, fast service and modest prices for the [Challenge Conqueror: Gold]
 	"2200.*account.*mount.*skype", --{circle} SUPER OFFER ! 2200|2400|HERO. NO ACCOUNT SHARING. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles/skype BGboost{circle}
+	"rbg.*challenge.*arena.*glad.*info", --WTS Rbg boost / challenge mode boost / arena v2/ v3 /v 5 boost and glad /w for more information
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -760,6 +761,7 @@ local instantReportList = {
 	"goldpreise.*server.*skype", --Bieten Top Goldpreise auf allen deutschen Servern! an /w me bei Interesse oder add hambulaa/Skype!!! 55k
 	"gold.*challenge.*achiev.*%$%d+.*sk[py][yp]e", --{rt5}{rt5}spots open for Complete all the Gold dungeon challenge achievements， only $79, lvl522 item $100 each piece ,  raid progress TOT12/12,offer t15set, lvl522 lvl535 weapons,trinket etc,  PST to get more info or add skpye jolinvipservice
 	"fast4gold.*%d+k.*stock", --[Blazefury, Reborn]Feldrakefast4gold,Cô.mWE HAVE 800K in stock and you can receive within 5-10minutes fast4gold,Cô.mE--------------7286
+	"skype.*chefboosting[%.,]com", --{rt6}| WTS RBG Boost|{rt6}, Challenge Mode boost, Power leveling & SoR accounts // Must trusted boosting website in the world, supported by top Twitch Streamers!  contact skype :  chef-xtrem or [www.chefboosting.com]
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
