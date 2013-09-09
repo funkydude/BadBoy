@@ -42,6 +42,7 @@ do
 	elseif L == "itIT" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~7 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
+		reportBnet = "BadBoy: >>> |cfffe2ec8Invito Battle.net bloccato da |cffffff00%s|r|r <<<"
 	end
 end
 

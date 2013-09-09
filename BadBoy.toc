@@ -11,7 +11,7 @@
 ## Notes-esES: Un bloqueador y un informador para spam.
 ## Notes-esMX: Un bloqueador y un informador para spam.
 ## Notes-ptBR: A simple spam blocker & reporter.
-## Notes-itIT: A simple spam blocker & reporter.
+## Notes-itIT: Un semplice blocco spam che segnala le spam alla Blizzard.
 ## Author: Funkydude
 ## SavedVariables: BADBOY_POPUP, BADBOY_NOREPORT, BADBOY_BLACKLIST
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)
