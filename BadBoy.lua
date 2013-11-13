@@ -617,6 +617,7 @@ local instantReportList = {
 	"rbg.*2200.*payment.*skype", --{rt8} RBG BOOST: 1800-2000-2200-2400-Hero, NEW MOUNT(40 WINS). Test game. Partial payments. Very quickly. Skype: PRO_RATING {rt8}
 	"rbg.*2000.*test.*skype", --{rt8}RBG RATING.1800-2000-2200-2400-HERO. Test Game. Fastest. Skype:RBG-SUPPORT{rt8}
 	"rbg.*sale.*2200.*skype", --{rt1} The best EU/RU RBGboosting without sharing acc! 6th season in work! Lowest prices! Good sales! cap/2200/2400/3000 Our skype: kkboosting
+	"selling.*arena.*boost.*rbg.*skype", --{rt8} {rt8}  {rt8} Selling 5v5,3v3 ArenaBoost. You playing your character. Also any 2v2 raiting with acc sharing, and 3v3 coaching. RBG/3v3 Arena cap games. 250.000k HKs just in 2 days!| skype: alex_flame2 (Nederland){rt8}  {rt8} {rt8}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -991,7 +992,7 @@ do
 	local f = CreateFrame("Frame")
 	f:RegisterEvent("PLAYER_LOGIN")
 	f:SetScript("OnEvent", function(frame,event,bnEvent)
-		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_PENDING" then
+		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_REQUEST" then
 			if event == "PLAYER_LOGIN" then
 				-- Throw blacklist DB setup in here
 				if not BADBOY_BLACKLIST then BADBOY_BLACKLIST = {} end
