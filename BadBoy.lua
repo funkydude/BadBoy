@@ -19,6 +19,7 @@ do
 	elseif L == "zhTW" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~7秒在回報時，為了防止斷線(暴雪的bug)"
+		reportBnet = "BadBoy: >>> |cfffe2ec8已忽略來自 |cffffff00%s|r 的Battle.net邀請|r <<<"
 	elseif L == "zhCN" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[垃圾信息已被阻挡，点击举报!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~7 秒以防断线（暴雪的bug）"
