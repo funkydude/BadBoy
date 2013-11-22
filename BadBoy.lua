@@ -991,8 +991,6 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 
-SetCVar("spamFilter", 1)
-
 --[[ BNet Invites ]]--
 do
 	local f = CreateFrame("Frame")
@@ -1000,6 +998,8 @@ do
 	f:SetScript("OnEvent", function(frame,event,bnEvent)
 		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_REQUEST" then
 			if event == "PLAYER_LOGIN" then
+				SetCVar("spamFilter", 1)
+
 				-- Throw blacklist DB setup in here
 				if not BADBOY_BLACKLIST then BADBOY_BLACKLIST = {} end
 				local _, _, day = CalendarGetDate()
