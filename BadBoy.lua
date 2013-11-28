@@ -996,7 +996,7 @@ do
 	local f = CreateFrame("Frame")
 	f:RegisterEvent("PLAYER_LOGIN")
 	f:SetScript("OnEvent", function(frame,event,bnEvent)
-		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_REQUEST" then
+		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_REQUEST" or bnEvent == "FRIEND_PENDING" then
 			if event == "PLAYER_LOGIN" then
 				SetCVar("spamFilter", 1)
 
