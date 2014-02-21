@@ -3,6 +3,7 @@
 <!--@no-lib-strip@-->
 <Script file="Libs\LibStub\LibStub.lua"/>
 <Include file="Libs\LibChatAnims\LibChatAnims.xml"/>
+<Include file="Libs\LibChatAmbiguate\LibChatAmbiguate.xml"/>
 <!--@end-no-lib-strip@-->
 
 </Ui>

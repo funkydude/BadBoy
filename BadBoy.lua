@@ -850,7 +850,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, next, tremove, Ambiguate, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, next, tremove, Ambiguate, 0, nil, {}, {}, 0
+local gsub, next, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, next, tremove, 0, nil, {}, {}, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid, arg13)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -865,7 +865,6 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 		end
 		prevLineId, result = lineId, nil
 		if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
-		player = Ambiguate(player, "none") -- Unit events don't support PlayerName-MyServer
 		if not CanComplainChat(lineId) or UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
 		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
 			if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
