@@ -865,7 +865,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 		end
 		prevLineId, result = lineId, nil
 		if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
-		if not myDebug and (not CanComplainChat(lineId) or UnitIsInMyGuild(player) or UnitInRaid(player) or UnitInParty(player)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
+		if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(player) or UnitInParty(player)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
 		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
 			if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
 			--RealID support, don't scan people that whisper us via their character instead of RealID
