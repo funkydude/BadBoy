@@ -1,7 +1,7 @@
 
--- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, BadBoyLog, BNGetFriendInviteInfo, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, BNReportFriendInvite
--- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
--- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, UnitIsInMyGuild, ChatHistory_GetAccessID, BNGetNumFriendInvites
+-- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetFriendInviteInfo, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, BNReportFriendInvite
+-- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, wipe, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
+-- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, BNGetNumFriendInvites, CalendarGetDate, SetCVar
 local myDebug = nil
 
 local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
