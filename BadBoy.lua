@@ -632,6 +632,10 @@ local instantReportList = {
 	"selling.*arena.*boost.*rbg.*skype", --{rt8} {rt8}  {rt8} Selling 5v5,3v3 ArenaBoost. You playing your character. Also any 2v2 raiting with acc sharing, and 3v3 coaching. RBG/3v3 Arena cap games. 250.000k HKs just in 2 days!| skype: alex_flame2 (Nederland){rt8}  {rt8} {rt8}
 	"rbg.*mount.*payment.*skype", --{rt8} {rt8}WTS RBG BOOST! Any rating, CAP Games, Wins. Get the mount, 21+achievements,16 titles, top gear, tabard with us. Test game, partial payments, self playing. For more info add me in skype AltisRBG
 	"rbg.*mount.*discount.*skype", --{rt1}WTS RBG CAP/40wins/75wins{rt1} || SELF PLAY || RBG achivements and MOUNTS! || 100% positive feedback on the ownedcore || FLEXIBLE DISCOUNTS || challenge modes || {rt1} Add Skype: Azpirox {rt1}
+	"selling.*gold.*rating.*top", --Elitist-gaming,com Selling SoO runs in heroic or normal. CM: gold, reins of galakras, Kor'kron Juggernaut. Any 3v3/5v5 rating including Glad and Rank 1. Our suppliers are top 30 U.S. guilds and top level pvp players. Check us out!largest in the US
+	"selling.*boost.*gold.*skype", --Selling CM Boost 9/9Gold, Flex 1-4, you self play! accept gold payment, preorder for New season RBG 22OO! have proofs skype FBOOSTX
+	"selling.*service.*2400.*mount", --Selling basically every PvP & PvE service! 2400+ Arena/RBG/Gladiator/Rank 1/Arena Master | T16/Gold Challenges/Mounts/Pets. Pst!
+	"selling.*achiev.*rbg.*discount", --Selling Gladiator/R1, every achieve in RBG/Arena, Challenge Mode: Gold, T16, and more! Preorder for discounts!
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
