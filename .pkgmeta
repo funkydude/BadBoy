@@ -2,4 +2,3 @@ package-as: BadBoy
 
 externals:
     Libs/LibChatAnims: svn://svn.wowace.com/wow/libchatanims/mainline/trunk/LibChatAnims
-    Libs/LibChatAmbiguate: git://git.wowace.com/wow/libchatambiguate/mainline.git

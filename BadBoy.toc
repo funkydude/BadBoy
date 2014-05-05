@@ -18,8 +18,8 @@
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved
 
-## OptionalDeps: LibChatAnims, LibChatAmbiguate
-## X-Embeds: LibChatAnims, LibChatAmbiguate
+## OptionalDeps: LibChatAnims
+## X-Embeds: LibChatAnims
 
 embeds.xml
 
