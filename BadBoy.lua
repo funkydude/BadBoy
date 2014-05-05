@@ -858,6 +858,7 @@ end
 --[[ Chat Scanning ]]--
 local Ambiguate, gsub, next, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = Ambiguate, gsub, next, tremove, 0, nil, {}, {}, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid, arg13)
+	local trimmedPlayer
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
 	else
@@ -870,7 +871,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 			return
 		end
 		prevLineId, result = lineId, nil
-		local trimmedPlayer = Ambiguate(player, "none")
+		trimmedPlayer = Ambiguate(player, "none")
 		if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 		if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
 		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
