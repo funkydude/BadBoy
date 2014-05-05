@@ -856,7 +856,7 @@ local IsSpam = function(msg, num)
 end
 
 --[[ Chat Scanning ]]--
-local gsub, next, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = gsub, next, tremove, 0, nil, {}, {}, 0
+local Ambiguate, gsub, next, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = Ambiguate, gsub, next, tremove, 0, nil, {}, {}, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid, arg13)
 	if lineId == prevLineId then
 		return result --Incase a message is sent more than once (registered to more than 1 chatframe)
@@ -870,8 +870,9 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 			return
 		end
 		prevLineId, result = lineId, nil
+		local trimmedPlayer = Ambiguate(player, "none")
 		if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
-		if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(player) or UnitInParty(player)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
+		if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
 		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
 			if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
 			--RealID support, don't scan people that whisper us via their character instead of RealID
@@ -883,7 +884,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 					local _, rName, rGame = BNGetFriendToonInfo(i, j)
 					--don't bother checking server anymore as bnet has been bugging up a lot lately
 					--returning "" as server/location (probably other things too) making the check useless
-					if rName == player and rGame == "WoW" then
+					if rName == trimmedPlayer and rGame == "WoW" then
 						return
 					end
 				end
@@ -926,25 +927,25 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 
 	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 20
 	for i=1, #chatLines do
-		if chatLines[i] == msg and chatPlayers[i] == player then --If message same as one in previous 20 and from the same person...
+		if chatLines[i] == msg and chatPlayers[i] == trimmedPlayer then --If message same as one in previous 20 and from the same person...
 			result = true return true --...filter!
 		end
 		if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
 	end
 	chatLines[#chatLines+1] = msg
-	chatPlayers[#chatPlayers+1] = player
+	chatPlayers[#chatPlayers+1] = trimmedPlayer
 	--End text buffer
 
 	if IsSpam(msg, icon) then
 		if BadBoyLog and not myDebug then
-			BadBoyLog("BadBoy", event, player, debug)
+			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
 		if myDebug then
-			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", player)
+			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", trimmedPlayer)
 		else
 			if BADBOY_POPUP then --Manual reporting via popup
-				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", player, nil, lineId)
-				dialog.text:SetFormattedText("BadBoy: %s \n\n %s", REPORT_SPAM_CONFIRMATION:format(player), debug) --Add original spam line to Blizzard popup message
+				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", trimmedPlayer, nil, lineId)
+				dialog.text:SetFormattedText("BadBoy: %s \n\n %s", REPORT_SPAM_CONFIRMATION:format(trimmedPlayer), debug) --Add original spam line to Blizzard popup message
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
 			else
 				--Show block message
