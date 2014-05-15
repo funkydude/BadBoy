@@ -2,7 +2,7 @@
 -- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetFriendInviteInfo, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, BNReportFriendInvite
 -- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, wipe, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
 -- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, BNGetNumFriendInvites, CalendarGetDate, SetCVar
-local myDebug = nil
+local myDebug = false
 
 local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~7 seconds between reports to prevent being disconnected (Blizzard bug)"
@@ -479,6 +479,8 @@ local instantReportList = {
 	--WTS Gametime-Subscribtion /w me
 	"^wt[bs]gametime", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
 	"^wts%d+days?gc$", --WTS 60days GC
+	"^anyonesellinggametime", --anyone selling game time
+	"^lookingforgametime", --LOOKING FOR GAME TIME
 	--Wts gamecard 60days very cheap
 	"^wt[bs]gamecard", --WTB GAME CARD
 	"^wt[bs]gamecode", --wtb game codes
@@ -522,6 +524,13 @@ local instantReportList = {
 	"wts.*%[.*%].*boefans.*deliver", --wts[Magic Rooster Egg][Falling Blossom Cowl]{rt6}{rt6}on boefans.c{rt2}m,4 years Exp,fast and safe delivery{rt6}
 	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
 	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
+	"feat.*mount.*koroboost", --Get feat of strength [Cutting Edge: Garrosh Hellscream (25 player)] - Heroic mount as GIFT at Koroboost.com
+	--Any pve runs . normal 25 180 euro. flex from 65 euro, heroic 25 hc  LOOT runs With LOOT GUARANTEED , all tier pack in single run.  Cheapest mount from Garrosh Heroic 170 eu. Also have D3 boost. Koroboost.com {rt1}
+	"cheap.*koroboost[%.,]com", --Cheapest [Challenge Conqueror: Gold] in 2-3hours. 44 eu. Selfplay possible. Take it before enf of season. Koroboost.com
+	"wts.*account.*mount.*skype", --{rt1} {rt1}  WTS Old Unmerged WoW Accounts {rt1}  Get old achivements/mounts/pets/titles from Vanilla/TBC/WOTLK on your main {rt1} Already seen: Scarab Lord, Old Gladiators etc Skype: kubadoman11 (only skype name) Site:
+	"wts.*drake.*skype.*discount", --WTS BOP[Reins of the Time-Lost Proto-Drake][Reins of the Phosphorescent Stone Drake]Pst Skype:tlpd.bop super discount{rt1}
+	"rbg.*gold.*sale.*mount", --Gladiator, Rank 1, 2200-2700 Arena & RBG, CM: Gold and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord) - Pst!
+	"wts.*%[.*%].*gametime.*days", --WTS [Armored Bloodwing] [Enchanted Fey Dragon] [Iron Skyreaver] and gametime30-60-90-180days{star}WOD{rt1}
 
 	--[[  RBG  ]]--
 	"gold.*boost.*service.*skype", --[Challenge Conqueror: Gold] Boosting Service. We can start right now! Fastest(2hours), Really good conditions. Skype: CMGBOOST
@@ -642,8 +651,13 @@ local instantReportList = {
 	"selling.*boost.*gold.*skype", --Selling CM Boost 9/9Gold, Flex 1-4, you self play! accept gold payment, preorder for New season RBG 22OO! have proofs skype FBOOSTX
 	"selling.*service.*2400.*mount", --Selling basically every PvP & PvE service! 2400+ Arena/RBG/Gladiator/Rank 1/Arena Master | T16/Gold Challenges/Mounts/Pets. Pst!
 	"selling.*achiev.*rbg.*discount", --Selling Gladiator/R1, every achieve in RBG/Arena, Challenge Mode: Gold, T16, and more! Preorder for discounts!
+	"selling.*service.*rbg.*mount", --Selling PvP services: Gladiator, 2700 Arena & RBG, Rank 1! Also selling rare mounts (including scarab lord!) and many PvE services. Msg me!
+	"boost.*safe.*paypal.*skype", --WTS BOOST RBG/ARENA,CAP/WINS GAMES,GOLD CHALLENGE MODE,PVE:SoO HC/N/Flex 14/14+loot(mount)! Best prices in Europe! FAST AND SAFE! It's the 7th season of our work. We have website+business Paypal.SKYPE: BLLIZZIK
 	"boosting[%.,]pro.*discount", --[H] <DND>[Jedrict]: {skull}{skull}{skull} [www.Boosting.Pro] - Premium Arena boosting - {circle} SUPER DISCOUNTS ON ALL RATINGS {circle} Over 50 successful Gladiator orders in season 14! {skull}{skull}{skull}
 	"boosting[%.,]pro.*sale", --[H] <DND>[Jedrict]: {square}{square}{square} [www.Boosting.Pro] - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
+	"rating.*rbg.*epiccarry[%.,]com", --{rt2} Arena rating\Rbg wins\Arena wins on epiccarry.com {rt1}
+	"flex.*realm.*epiccarry[%.,]com", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
+	"arenahelp[%.,]eu.*boost.*skype", --{rt1} Arenahelp.eu - Offering LEGIT boosts in RBG and Arena by the top players!!!  Check website or Skype: [arenahelp.eu.] Ownedcore verified. Consider our prices.
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
