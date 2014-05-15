@@ -531,6 +531,7 @@ local instantReportList = {
 	"wts.*drake.*skype.*discount", --WTS BOP[Reins of the Time-Lost Proto-Drake][Reins of the Phosphorescent Stone Drake]Pst Skype:tlpd.bop super discount{rt1}
 	"rbg.*gold.*sale.*mount", --Gladiator, Rank 1, 2200-2700 Arena & RBG, CM: Gold and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord) - Pst!
 	"wts.*%[.*%].*gametime.*days", --WTS [Armored Bloodwing] [Enchanted Fey Dragon] [Iron Skyreaver] and gametime30-60-90-180days{star}WOD{rt1}
+	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
 
 	--[[  RBG  ]]--
 	"gold.*boost.*service.*skype", --[Challenge Conqueror: Gold] Boosting Service. We can start right now! Fastest(2hours), Really good conditions. Skype: CMGBOOST
