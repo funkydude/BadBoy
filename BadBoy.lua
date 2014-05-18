@@ -202,7 +202,7 @@ local whiteList = {
 	"|cff",
 	"raid",
 	"roleplay",
-	"apply",
+	"appl[iy]", --apply/application
 	"contender", --Contender's Silk
 	"enjin%.com",
 	"guildlaunch%.com",
@@ -815,6 +815,7 @@ local instantReportList = {
 	"fast4gold.*%d+k.*stock", --[Blazefury, Reborn]Feldrakefast4gold,Cô.mWE HAVE 800K in stock and you can receive within 5-10minutes fast4gold,Cô.mE--------------7286
 	"skype.*chefboosting[%.,]com", --{rt6}| WTS RBG Boost|{rt6}, Challenge Mode boost, Power leveling & SoR accounts // Must trusted boosting website in the world, supported by top Twitch Streamers!  contact skype :  chef-xtrem or [www.chefboosting.com]
 	"sellgold.*only%d+euro", --{rt1}Sell GOLD! 10.000 GOLD Only 5 Euro!{rt1}
+	"mia911[%.,]c.*skype", --{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}[www.mia911.cQm]{rt4}{rt4}{rt4}{rt4}{rt4}{rt4}800K G in sotck{rt5}{rt5}10000=8USD{rt5}{rt5}pl add skype;mia9116{rt5}{rt5}mia911.cQm{rt5}{rt5}{RT
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
@@ -1006,7 +1007,7 @@ do
 			extraData = tonumber(extraData)
 			if CanComplainChat(lineId) then
 				local t = GetTime()
-				if (t-prevReport) > 7 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
+				if (t-prevReport) > 8 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
 					prevReport = t
 					ReportPlayer("spam", lineId)
 					BADBOY_BLACKLIST[guid] = true
