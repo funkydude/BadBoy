@@ -664,6 +664,8 @@ local instantReportList = {
 	"arenahelp[%.,]eu.*boost.*skype", --{rt1} Arenahelp.eu - Offering LEGIT boosts in RBG and Arena by the top players!!!  Check website or Skype: [arenahelp.eu.] Ownedcore verified. Consider our prices.
 	"gold.*cheap.*fast.*safe", --Need help getting [Challenge Conqueror: Gold]before they remove it?Get mount,title,transmorg gear,achivements contact the cheapest,fastest 2h and safest team.Special offer end is near
 	"boost.*service.*fast.*skype", --{rt4}{rt6}{rt4}  Boosting Service. Right now available! Fastest(2hours), Really good conditions. Skype: CMGBOOST {rt4}{rt6}{rt4}
+	"leprestore.*arena.*mount", --{rt5}{rt5} Autumn Sale on Leprestore.com! RBG&Arena(2200, 2400, glad, R1, Hero - selfplay possible), cap games(40 RBG|100 arena wins for ahiev and mount) and more! Best deals on full conquest cap. Many feedbacks on Leprestore.com{rt5}{rt5}
+	"prommote[%.,]me.*arena.*boost", --{rt3} {rt8} www.prommote.me - safe Arena boosting. Over 50 positive feedbacks! Ask on website for details! {rt4}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
