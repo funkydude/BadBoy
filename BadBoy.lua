@@ -507,7 +507,8 @@ local instantReportList = {
 	"mount.*code.*dving[%.,]net", --Achievements, Mounts, Loot-Codes, PVE / PVP - Dving.net
 	"sale.*loot.*dving[%.,]net", --5.4 content on sale! Hardmodes and Loot Raids for Siege of Orgrimmar! - Dving.net
 	"arena.*help.*dving[%.,]net", --Offering arena/RBG help. Season 14. 2200/2400/2650 - Dving.net
-	"gold.*heroic.*dving[%.,]net", --Challenge Conqueror: Gold. Itemlevel of 560 or 570! Garrosh Heroic! Glory of the raider! - [Dving.net] {rt8}
+	"gold.*heroic.*dving[%.,]net", --Challenge Conqueror: Gold. Itemlevel of 560 or 570! Garrosh Heroic! Glory of the raider! - Dving.net {rt8}
+	"boost.*account.*dving[%.,]net", --{skull} 5.4 content boosting! HC and loot-raids SOO HC! No accounts share - dving.net {skull}
 	--Any achievements for you(skype: DvingHelp)
 	--Help you with 2200/2400/2600(hero) skype: DvingHelp
 	"you.*skype.*dvinghelp", --Help you with The Bloodthirsty(72 hours), Sun Horde/Ally(48hours) skype: DvingHelp
@@ -666,6 +667,7 @@ local instantReportList = {
 	"boost.*service.*fast.*skype", --{rt4}{rt6}{rt4}  Boosting Service. Right now available! Fastest(2hours), Really good conditions. Skype: CMGBOOST {rt4}{rt6}{rt4}
 	"leprestore.*arena.*mount", --{rt5}{rt5} Autumn Sale on Leprestore.com! RBG&Arena(2200, 2400, glad, R1, Hero - selfplay possible), cap games(40 RBG|100 arena wins for ahiev and mount) and more! Best deals on full conquest cap. Many feedbacks on Leprestore.com{rt5}{rt5}
 	"prommote[%.,]me.*arena.*boost", --{rt3} {rt8} www.prommote.me - safe Arena boosting. Over 50 positive feedbacks! Ask on website for details! {rt4}
+	"jenkinstore.*arena.*mount", --{star}{star}JenkinStore.com - RBG, ARENA, CM Gold Boost! CAP GAMES! New RBG Mount(40 WINS), Hero, Gladiator, Vanilla Transmog, Elite Gear , Tabard! Website and Business PayPal. - JenkinStore.com{star}{star}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
