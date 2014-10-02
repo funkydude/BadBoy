@@ -537,7 +537,7 @@ local instantReportList = {
 	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
 	"rbg.*selling.*mount.*scarablord", --Gladiator, Rank 1, 2200-2700 Arena & RBG, CM: Gold and more! Also selling rare & unobtainable mounts/titles (including scarab lord) - Pst!
 
-	--[[  RBG  ]]--
+	--[[  RBG/boosting  ]]--
 	"gold.*boost.*service.*skype", --[Challenge Conqueror: Gold] Boosting Service. We can start right now! Fastest(2hours), Really good conditions. Skype: CMGBOOST
 	"rbg.*2[%.,]2.*quick.*skype", --{rt8}WTS RBG Boost! We boosts any rating 2.2, 2.4, 2.7(HERO), 3k and more! Cap games also! Quickly, efficiently, safely! Test game included.{rt8} Details on skype {rt1}wowbooster666{rt1}
 	--{rt8} Get your RBG rating fast and safe! 2200|2400|HERO. No account sharing. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles. Access to elite gear & T2 weap. We have website and business PayPal! Skype - Deni1189 {rt8}
@@ -641,6 +641,7 @@ local instantReportList = {
 	"prommote%.me.*helpyou", --prommote.me will help you gear up in T15 HM raids and get 13/13 progress.
 	--prommote.me now offers special summer prices for the [Glory of the Pandaria Raider]
 	"prommote%.me.*prices?forthe", --prommote.me, fast service and modest prices for the [Challenge Conqueror: Gold]
+	"prommote%.me.*boost", --{rt6} {rt3} www.prommote.me - Challenge mode boosting to Gold or Challenge Master. Tons of feedbacks, done in 3 hours! {rt3} {rt4}
 	"2200.*account.*mount.*skype", --{circle} SUPER OFFER ! 2200|2400|HERO. NO ACCOUNT SHARING. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles/skype BGboost{circle}
 	"rbg.*challenge.*arena.*glad.*info", --WTS Rbg boost / challenge mode boost / arena v2/ v3 /v 5 boost and glad /w for more information
 	"powerle?ve?l.*honor.*arena.*ownedcore", --{rt6}|Powerleveling |{rt6} Powerleveling , Honor Farming , Or Arena cap , Many other Service , Our team work for you !Trusted on OwnedCore and Epicnpc ! /w me
@@ -668,6 +669,8 @@ local instantReportList = {
 	"leprestore.*arena.*mount", --{rt5}{rt5} Autumn Sale on Leprestore.com! RBG&Arena(2200, 2400, glad, R1, Hero - selfplay possible), cap games(40 RBG|100 arena wins for ahiev and mount) and more! Best deals on full conquest cap. Many feedbacks on Leprestore.com{rt5}{rt5}
 	"prommote[%.,]me.*arena.*boost", --{rt3} {rt8} www.prommote.me - safe Arena boosting. Over 50 positive feedbacks! Ask on website for details! {rt4}
 	"jenkinstore.*arena.*mount", --{star}{star}JenkinStore.com - RBG, ARENA, CM Gold Boost! CAP GAMES! New RBG Mount(40 WINS), Hero, Gladiator, Vanilla Transmog, Elite Gear , Tabard! Website and Business PayPal. - JenkinStore.com{star}{star}
+	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
+	"gold.*boost.*chiefboost", --Glory of Raider, Challenge Gold, RBG and Arena boosting, Gladiator and Hero titles for a reasonable price. skype: chiefboost
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
