@@ -314,6 +314,7 @@ local instantReportList = {
 	"^wt[bs]somecsgoskin.*info", --WTB some CSGO skins and sell some /w for more info
 	--WTS CS:GO Skins
 	"^wt[bs]csgoskin", --WTB CS GO skins /w for more infomation
+	"^wt[bs]csgokey", --{rt1} WTB CS:GO KEYS & SKINS FOR GOLD {rt1}
 
 	--[[ Hearthstone ]]--
 	"^sellinghearthstonebeta", --SELLING HEARTHSTONE BETA KEY FOR GOLD /w ME YOUR PRICE
@@ -341,6 +342,7 @@ local instantReportList = {
 	"^wt[bs].*leagueoflegends.*points.*pay", --WTB 100 DOLLARS OF LEAGUE OF LEGENDS RIOT POINTS PST. YOU PAY WITH YOUR PHONE. PST PAYING A LOT.
 	"wts.*leagueoflegends.*acc.*info", --{rt1}wts golden{rt1} League of Legends{rt1} acc /w me for more info{rt1}
 	"sellingm?y?leagueoflegends", --Selling my league of legends account, 100 champs 40 skins 2-3 legendary 4 runepage, gold. /EUW /W
+	"^wt[bs]lolacc.*cheap", --WTS LOL ACC PLAT 4 1600 NORMAL WINS, EUW 40 SKINS, 106 CHAMPS  CHEAP!!
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
@@ -671,6 +673,9 @@ local instantReportList = {
 	"jenkinstore.*arena.*mount", --{star}{star}JenkinStore.com - RBG, ARENA, CM Gold Boost! CAP GAMES! New RBG Mount(40 WINS), Hero, Gladiator, Vanilla Transmog, Elite Gear , Tabard! Website and Business PayPal. - JenkinStore.com{star}{star}
 	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
 	"gold.*boost.*chiefboost", --Glory of Raider, Challenge Gold, RBG and Arena boosting, Gladiator and Hero titles for a reasonable price. skype: chiefboost
+	"boost.*safe.*rpgmasters[%.,]net", --{rt6}{rt6}{rt6} 3v3 SELFPLAY ARENA BOOST to GLADIATOR / PRIDEFUL GLADIATOR . Fast and safe! GOOD DISCOUNTS (add me in skype for info: alex_flame2) RPGMASTERS,NET{rt6}{rt6}{rt6}
+	"service.*rbg.*2200.*payment", --BOOM-BOOST.c0m All pvp services ARENA and RBG 2200/2400/2700/Gladiator, big cap conquest (selfplay or with gladiators), CHALLENGE MODES, possible no pre-payment, live sterams and selfplay possible!
+	"starboosting[%.,]com.*pro.*help", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
