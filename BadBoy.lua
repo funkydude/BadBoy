@@ -538,6 +538,7 @@ local instantReportList = {
 	"wts.*%[.*%].*gametime.*days", --WTS [Armored Bloodwing] [Enchanted Fey Dragon] [Iron Skyreaver] and gametime30-60-90-180days{star}WOD{rt1}
 	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
 	"rbg.*selling.*mount.*scarablord", --Gladiator, Rank 1, 2200-2700 Arena & RBG, CM: Gold and more! Also selling rare & unobtainable mounts/titles (including scarab lord) - Pst!
+	"guarantee.*speed.*mount.*skype", --{rt4} {rt6} Invincible, Ashes of Al’ar, Mimiron’s Head in just a month, GUARANTEED! Speed farming of any mount! Skype: mmo-support3 {rt3}
 
 	--[[  RBG/boosting  ]]--
 	"gold.*boost.*service.*skype", --[Challenge Conqueror: Gold] Boosting Service. We can start right now! Fastest(2hours), Really good conditions. Skype: CMGBOOST
@@ -626,7 +627,6 @@ local instantReportList = {
 	--W.T.S Ratted BGs: 1800-2750+/HER0/ Conq.points/ NEW Enchants & NEW Tabard! only in few hours! NO share acount! You play on toon! 1 Tesst game! [We.b.si].te. + guarantees! A.d.d S.K.Y.P.E to know more: Robert_rbg
 	"1800.*acc?ount.*tess?t.*s%.?k%.?y%.?p%.?e", --{star} W.T.S Ratted BGs: 1800-2650+/Conq.points only in few hours! NO share acount! You play on toon! 3800+ points per week.Acces to elite gear and 21 achievs.1 Test game! We.b.si.te. 3 years we play! A.d.d S.K.Y.P.E to know more: Robert_rbg {star}
 	"2200.*achiev.*test.*website", --{star} Raise your RatedBG rating to 2000|2200|2400|Hero! Play your own toon! 3850+ conquest points per week. +Achieves and titles. Take a Test Run to check everything out! Website! S.kype: kekcique {star}
-	"rbg.*boost.*paypal.*skype", --{rt1}Best RBG boosting team ready for action!{rt1} | We sell boost to ANY rating AND cap games! | Get Grand Marshal/High Warlord Title+Gear! | 110% SAFE using business PayPal! | 1250+ orders done! | {rt6} Add me on Skype for info: [chef.fred1] {rt6}
 	"rbg.*2200.*hero.*gladiator.*trusted", --Get your {rt6}RBG RATING{rt6} today! CAP/2000/2200/2400/2500/HERO. Arena 2200/2400/Gladiator/R1.Got the BEST & MOST TRUSTED WOW players ADVERTISING for us. Whisper ME and get in touch with US!
 	"2200.*toon.*test.*s%.?k%.?y%.?p%.?e", --{rt1}WTS Rated BG services: 1800||2000||2200||2400||HER0 title||WINS for conquest points. You play your own toon!  Take a Test Run to check everything out! We have Web5site! 2 years expirience! S.kype: kekcique{rt1}
 	"2200.*rbg.*skype.*pric[ie]", --{rt6} Multi glads now offering 2200/2400. Arena/Crossrealm Rbgs. Message me on Skype for more details- soft.nchewy{rt1} Competitive Pricing! :D
@@ -660,7 +660,8 @@ local instantReportList = {
 	"selling.*service.*2400.*mount", --Selling basically every PvP & PvE service! 2400+ Arena/RBG/Gladiator/Rank 1/Arena Master | T16/Gold Challenges/Mounts/Pets. Pst!
 	"selling.*achiev.*rbg.*discount", --Selling Gladiator/R1, every achieve in RBG/Arena, Challenge Mode: Gold, T16, and more! Preorder for discounts!
 	"selling.*service.*rbg.*mount", --Selling PvP services: Gladiator, 2700 Arena & RBG, Rank 1! Also selling rare mounts (including scarab lord!) and many PvE services. Msg me!
-	"boost.*safe.*paypal.*skype", --WTS BOOST RBG/ARENA,CAP/WINS GAMES,GOLD CHALLENGE MODE,PVE:SoO HC/N/Flex 14/14+loot(mount)! Best prices in Europe! FAST AND SAFE! It's the 7th season of our work. We have website+business Paypal.SKYPE: BLLIZZIK
+	--WTS Boosting SoO 25hc14\14 + loot & mount \ flex \ normal, RBG[2200+hota], Arena (2200,2400,2700+ ,{star}/w for info [have website and business paypal)
+	"boost.*arena.*paypal", --WTS BOOST RBG/ARENA,CAP/WINS GAMES,GOLD CHALLENGE MODE,PVE:SoO HC/N/Flex 14/14+loot(mount)! Best prices in Europe! FAST AND SAFE! It's the 7th season of our work. We have website+business Paypal.SKYPE: BLLIZZIK
 	"boosting[%.,]pro.*discount", --[H] <DND>[Jedrict]: {skull}{skull}{skull} [www.Boosting.Pro] - Premium Arena boosting - {circle} SUPER DISCOUNTS ON ALL RATINGS {circle} Over 50 successful Gladiator orders in season 14! {skull}{skull}{skull}
 	"boosting[%.,]pro.*sale", --[H] <DND>[Jedrict]: {square}{square}{square} [www.Boosting.Pro] - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
 	"rbg.*epiccarry[%.,]com", --{rt2} Arena rating\Rbg wins\Arena wins on epiccarry.com {rt1}
@@ -670,12 +671,14 @@ local instantReportList = {
 	"boost.*service.*fast.*skype", --{rt4}{rt6}{rt4}  Boosting Service. Right now available! Fastest(2hours), Really good conditions. Skype: CMGBOOST {rt4}{rt6}{rt4}
 	"leprestore.*arena.*mount", --{rt5}{rt5} Autumn Sale on Leprestore.com! RBG&Arena(2200, 2400, glad, R1, Hero - selfplay possible), cap games(40 RBG|100 arena wins for ahiev and mount) and more! Best deals on full conquest cap. Many feedbacks on Leprestore.com{rt5}{rt5}
 	"prommote[%.,]me.*arena.*boost", --{rt3} {rt8} www.prommote.me - safe Arena boosting. Over 50 positive feedbacks! Ask on website for details! {rt4}
-	"jenkinstore.*arena.*mount", --{star}{star}JenkinStore.com - RBG, ARENA, CM Gold Boost! CAP GAMES! New RBG Mount(40 WINS), Hero, Gladiator, Vanilla Transmog, Elite Gear , Tabard! Website and Business PayPal. - JenkinStore.com{star}{star}
+	"arena.*boost.*paypal", --{star}{star}JenkinStore.com - RBG, ARENA, CM Gold Boost! CAP GAMES! New RBG Mount(40 WINS), Hero, Gladiator, Vanilla Transmog, Elite Gear , Tabard! Website and Business PayPal. - JenkinStore.com{star}{star}
 	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
 	"gold.*boost.*chiefboost", --Glory of Raider, Challenge Gold, RBG and Arena boosting, Gladiator and Hero titles for a reasonable price. skype: chiefboost
 	"boost.*safe.*rpgmasters[%.,]net", --{rt6}{rt6}{rt6} 3v3 SELFPLAY ARENA BOOST to GLADIATOR / PRIDEFUL GLADIATOR . Fast and safe! GOOD DISCOUNTS (add me in skype for info: alex_flame2) RPGMASTERS,NET{rt6}{rt6}{rt6}
 	"service.*rbg.*2200.*payment", --BOOM-BOOST.c0m All pvp services ARENA and RBG 2200/2400/2700/Gladiator, big cap conquest (selfplay or with gladiators), CHALLENGE MODES, possible no pre-payment, live sterams and selfplay possible!
 	"starboosting[%.,]com.*pro.*help", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
+	"season.*arena.*boost.*skype", --{rt6}{rt6}{rt6} The end of the season is soon!!! Hurry up! ARENAboost (5s and 3s) WITHOUT ACCSHARING!! SKYPE: SH-BOOST (Norway) {rt6}{rt6}{rt6}
+	"sale.*arena.*gold.*skype", --{square} END-SEASON SALE! {square} || ARENA Gladiator/R1/Achivements || SELF PLAY Challenge Mode: Gold and MASTER(Fos) || ?Mists of Pandaria CMs will become Feats of Strength in 6.0 patch? {square} Add Skype: Azpirox {square}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
