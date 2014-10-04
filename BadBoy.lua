@@ -986,7 +986,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				print("|cFF33FF99BadBoy|r: (Experimental) Detected the following line as RBG/boosting spam, tell the BadBoy authors if it's NOT spam!")
 				print("|cFF33FF99BadBoy|r: ", debug)
 			end
-			return
+			return true
 		end
 		if BadBoyLog and not myDebug then
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
