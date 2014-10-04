@@ -198,9 +198,11 @@ local boostingList = {
 	"arena",
 	"rbg",
 	"service",
+	"cheap",
 	"gold",
 	"fast",
 	"safe",
+	"price",
 	"account",
 	"rating",
 	"test",
@@ -209,6 +211,7 @@ local boostingList = {
 	"mount",
 	"sale",
 	"season",
+	"professional",
 }
 
 --These entries remove -2 points
@@ -575,6 +578,11 @@ local instantReportList = {
 	"starboosting[%.,]com.*pro", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
 	"season.*arena.*boost.*skype", --{rt6}{rt6}{rt6} The end of the season is soon!!! Hurry up! ARENAboost (5s and 3s) WITHOUT ACCSHARING!! SKYPE: SH-BOOST (Norway) {rt6}{rt6}{rt6}
 	"arena.*2200.*skype", --arena ratings for (rdruid, mage, rogue,warlock,priest,warrior,shaman) 2200/2400/2600 add skype for more info - Dezleit
+	--
+	"gift.*buy.*price.*play", --14/14 Hc/Normal SOO.Whole gear as a gift. Hurry to buy at the best price without intermediaries.It’s possible to self-play
+	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
+	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3 
+	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
