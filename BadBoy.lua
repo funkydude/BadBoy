@@ -207,6 +207,8 @@ local boostingList = {
 	"legal",
 	"guarantee",
 	"mount",
+	"sale",
+	"season",
 }
 
 --These entries remove -2 points
@@ -548,99 +550,13 @@ local instantReportList = {
 	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
 	"feat.*mount.*koroboost", --Get feat of strength [Cutting Edge: Garrosh Hellscream (25 player)] - Heroic mount as GIFT at Koroboost.com
 	--Any pve runs . normal 25 180 euro. flex from 65 euro, heroic 25 hc  LOOT runs With LOOT GUARANTEED , all tier pack in single run.  Cheapest mount from Garrosh Heroic 170 eu. Also have D3 boost. Koroboost.com {rt1}
-	"cheap.*koroboost[%.,]com", --Cheapest [Challenge Conqueror: Gold] in 2-3hours. 44 eu. Selfplay possible. Take it before enf of season. Koroboost.com
 	"wts.*account.*mount.*skype", --{rt1} {rt1}  WTS Old Unmerged WoW Accounts {rt1}  Get old achivements/mounts/pets/titles from Vanilla/TBC/WOTLK on your main {rt1} Already seen: Scarab Lord, Old Gladiators etc Skype: kubadoman11 (only skype name) Site:
 	"wts.*drake.*skype.*discount", --WTS BOP[Reins of the Time-Lost Proto-Drake][Reins of the Phosphorescent Stone Drake]Pst Skype:tlpd.bop super discount{rt1}
-	"rbg.*gold.*sale.*mount", --Gladiator, Rank 1, 2200-2700 Arena & RBG, CM: Gold and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord) - Pst!
 	"wts.*%[.*%].*gametime.*days", --WTS [Armored Bloodwing] [Enchanted Fey Dragon] [Iron Skyreaver] and gametime30-60-90-180days{star}WOD{rt1}
 	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
-	"rbg.*selling.*mount.*scarablord", --Gladiator, Rank 1, 2200-2700 Arena & RBG, CM: Gold and more! Also selling rare & unobtainable mounts/titles (including scarab lord) - Pst!
 	"guarantee.*speed.*mount.*skype", --{rt4} {rt6} Invincible, Ashes of Al’ar, Mimiron’s Head in just a month, GUARANTEED! Speed farming of any mount! Skype: mmo-support3 {rt3}
 
 	--[[  RBG/boosting  ]]--
-	--"rbg.*share.*account.*legal", --{rt1}RBG BOOST help! Get 2.2/2.4/HERO/CAP only in few hours!NO share acc! We're 1 in world do not take account!Cap 3800+ every week.21 rbg achievs. Access to Elite gear!All legally! 1 Test game!Website - 100% guarantees!Cheapest & Fastest service! /w
-	----{star} new pvp guild {star}get your rbg{star} will help you with 2200||2400||hero. 3850 cp a week, access to elite gear and t2 weapon. get your rating today! {star} /w me for more information! {star}
-	--"rbg.*2200.*elitegear.*rating", --{skull} new guild <get your rbg rate>.we are helping with 2200||2400||hero.you play yourself in our group!3850 cp a week,mount,16+achievements and 14 titles. access to elite gear and t2 weapon.get your rating today!wisp me for more information! {skull}
-	----{rt1}{rt1}{rt1}WTS: WOW & D3 Gold {rt1}{rt1}2200/2400/2700 RBG {rt1}{rt1}Achievement/Level Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3 {rt1} {rt1} {rt1}
-	--"rbg.*powerle?ve?l.*gold.*diablo", --{rt1}{rt1}{rt1}WTS 2200/2400/2700 RBG Rating, finish in 8 hours{rt1}{rt1}Achievement Powerlvling{rt1}{rt1}Challenge Mode--Gold{rt1}{rt1}{rt1}paragon lvling on diablo3  {rt1} {rt1} {rt1}
-	--"interest.*conquest.*gear.*mount.*detail", --{rt8} Are you interesting in becoming *?Do you want to have big conquest cap and access to elite gear? How about being one of the first to get full elite gear this season?What about getting rare mounts? Message me for details! {rt8}
-	--"rating.*account.*character.*paypal", --Get ur rbg rating boosted up to  2200 2400 2600+  , no account sharing.u play ur character,so its 100% safe. we have website and business paypal!
-	--"sellingboost.*account.*elitegear.*cheap", --SELLING BOOST TO 2.2, 2.4k & HERO! NO ACCOUNT SHARING - GET YOUR ELITE GEAR TODAY!-  - VERY FAST GAMES & CHEAP!! CAN BOOST WHENEVER YOU GOT TIME!
-	--"rbg.*account.*legit.*website", --{rt1}Selling Rbg Boost {rt1} , No account Sharing ,100% legit , Get your Rating in few Hours , 2200,2400, hero , 3850+ Conquest Cap , We accept Gold offers , We have website {rt1}
-	--"rbghelp.*achie?v.*gear.*safe", --{rt1}Rbg help any rbg achivements and t2 gear. You play yourself and all is safe and fast. all info in pm {rt1}
-	----{rt1} Rated Battleground help, experienced team will help to get 2200, 2400 and Hero. {rt1} All achievements and titles, any amount of conquest points per week, t2 weapon, access to elite gear. For more info whisp (/w) to me {rt1}
-	----{star} assisting in rated battleground, our guild will help in gaining 2200, 2400 and hero.{star} 3000+ conquest points per week, access to elite gear, t2 weapon, all achievements and titles, everything you wanted. for more info whisp (/w) to me {star}
-	----{star} rbg assisting, our guild will help to gain 2200, 2400 and hero. {star}also 3000+ conquest points per week, access to elite gear, t2 weapon, all achievements and titles, everything you ever dreamed. for more info pls whisp (/w) to me {star}
-	--"2200.*hero.*conquest.*elitegear.*wh?isp", --{rt1} Help in rated battleground, our team will help in gaining 2200, 2400 and Hero. Weekly Conquest points (3000+), t2 weapon, access to elite gear, all titles and achievements, everything you wanted. {rt1} For more info whisp (/w) to me {rt1}
-	--"pvpguild.*rbg.*2200.*skype.*icq", -- ---------PVP guild will help you with RBG 2200/2400/hero....... all questions on Skype alexooo46 icq 477788799---------
-	--"helpyou.*rbg.*character.*fast.*safe", --{rt1}We will help you to get 2.2 - 2.6k on RBG. You playing your character. All is very fast,safe and confidence.{rt1}
-	--"battleground.*2200.*account.*skype", --SUPER OFFER in RATED BATTLEGROUND /2200/2400/VIP-HERO2650 bonus FREE CAP/farm win/no sharing account/up 1-90  / skype [help.exclusiwe.rbg]
-	----provide RBG1800+ 2000+ 2200+ 2400+ 2600+ boost (High warlord  title)No account sharing!100%safety and fast . wishpe me for more infor^^ to join our RBG BOOST TODAY!!
-	----{rt1}RBG Assist{rt1} help in gaining 2200|2400|HERO. 3850+ CP per week, access to elite gear, t2 weapon, 16+ achievements and 14 titles, everything you've ever dreamed. Fast, secure, and without account sharing. {rt1}For more info /w to me {rt1}
-	--"rbg.*2200.*account.*info", --{rt1}Fastest RBG boost in the world. 2.2k, 2.4k, 2.6k for some hours. You play your character, no account sharing. Test game. For more info pm{rt1}
-	--"rbg.*price.*skype", --RBG boost GET U'R T2,obtain rare titles, weapons and unique equip at 2 hrs! 2200/2400/2700, weekly CAP, TEST GAMES included! SAFE ,You play yourself!Best prices in Europe.[ skype - nikolya_90 ]
-	----WTS:{rt5}{rt1}{rt5}RBG2650/2400/2200---75/150/300wins Achievement+mounts!{rt5}{rt1}{rt5}Gold Challenge Conqueror{rt1}{rt5}{rt1}DISCOUNT on skype: Jasminelingling1{rt5}{rt1}{rt5}QQ:1046224892
-	--"rbg.*discount.*skype", --WTS:RBG2560/2400/2200/Caps per weekGold Challenge ConquerorNever scam, trustworthy website!!DISCOUNT on skype: Jasminelingling1QQ:1046224892
-	--"boost.*2200.*cheap.*price", --{rt1}Selling boost to 2200{rt1} rbg tier 2 3600 cap /w me not accepting gold! GUARANTEED TIER 2 FOR CHEAPEST PRICES
-	--"rbg.*purchase.*rating.*acc", --{rt2}{rt2} RBG Boosting is Back!! Be ready to purchase rating, titles, conquest cap of 3k and of course new PVP GEAR and Weapons! You play yourself, no acc sharing. skype RBGcarryBoost
-	--"rbg.*2200.*bonus.*mount", --Hi everyone! We can help you RBG with your ratings! 2200/2400/2700/bonus free 1-3 weekly cap/Mount for 75/cap 4-10 win/fast game 1-3 hour(2200)/ pm
-	--"rbg.*paypal.*boost", --{rt2} WTS RBG BOOST! Obtain great titles and elite gear! NO ACCOUNT SHARING, you play youself! We have website and business paypal! /w me for information to join your rbg boost today. Winter discouts!!! {rt2}
-	--"rbg.*2[%.,]2.*order.*contact.*price", --{rt1}{rt1}WTS RBG Boosts! We're boosting your char to 2.2k 2.4k 2.8k which is Hero of the alliance! All oders done in 72hours! You play your own Char! Contact us now for prices and more. We are also verrified on ownedcore {rt1}{rt1}
-	--"sell.*rbg.*2%.4.*quick.*quality", --{rt1} Selling RBG boost up to 2.4k. Quick and reliable. Quality comes first, if you have any requests or questions. Ask us! /w me more info {rt1}
-	--"sell.*2[%.,]2.*rbg.*gear.*sale", --Selling 2.2k/2.4k and hota boost on rbg!tired of getting scrub groups all the time?Get ur elite gear and +3850 cap now!We do accept gold!Xmas sale is up for few days only.Fast and cheap!
-	--"rbg.*2200.*paypal.*skype", --{rt1}RBG: 2200 - 100euro, 2400 - 140euro, 2700 - 180euro. Guarantees: Website, Bussines PayPal, Test Game. [Skype: Romaboost]
-	--"rbgboost.*2[%.,]2.*achie?vement.*character", --{rt1} {rt7}WTS arena-RBG Boost for gold. 3v3-5v5 and RBG  2k 2,2k 2.4k and HERO achivement, 100%legit. you play on your own character{rt1} {rt7}
-	--"2[%.,]2.*rbg.*account.*cheap", --Selling 2.2k/2.4k hota boost on rbg! NO account sharing!We also do it for gold now!Cheap and fast!Get ur great rewards now!
-	--"rbg.*2200.*cheap.*fast", --WTS RBG BOOST TO 2200/2400 GOING NOW CHEAP AND FAST /W ME!
-	--"rbg.*2200.*elitegear.*skype", --{rt1} RBG Boosting all classes from 0-2200 tonight! Get your T2 Elite gear + 3500 conquest cap each week! Skype: Marcz-90 for info. {rt1}
-	--"2200.*rbg.*account.*skype", --{rt1} Want 2200/2400/2700+ on RBG? Get it fast n safe! CAP support 3800+ every week! No share account! Elite gear and 21 RBG achievements! Test game! add skype: nucleear1986_26 {rt1}
-	--"rbg.*22[0o][0o].*rating.*info", --WTs RBG B00ST 22OO & 24OO Rating, /w for more info!
-	--"rbg.*2[%.,]2.*account.*info", --{rt1}Fastest RBG boost in the world. 2.2k, 2.4k, 2.6k for some hours. You play your character, no account sharing. Test game. For more info pm{rt1}
-	--"rbg.*2[%.,]2.*legal.*info", --Selling RBG BOOST - 2 k // 2.2 k // 2.4 k ++ Hero of the Alliance/ CHEEP AND EASY. 100 % win games ( RUSSIAN GAMING SYSTEM )    Legal and quick. Information given. GET you elite T2 gear TODAY.
-	--"russian.*team.*rbg.*2200", --The best Russian team will help you with RBG rating 2200/2400/2700+!
-	--"%d+k.*powerle?ve?l.*skype", --also: 100k-250k hk and power leveling! Guarantees, if you're really interested then Add Skype: Mmoboostpro
-	--"rbg.*2200.*paypal.*info", --WTS RBG BOOST! 2200/2400/Hero/CP CAP! You play yourself, no acc sharing, so its 100% legit. We have website and business paypal! /w me for information to join your rbg boost today!
-	--"rbg.*cap.*rating.*portal.*gear", --WTS RBG CARRY - Marshal, Grand Marshal and higher. Cap games, Any [Ratings.we'll] Rise your Progres on RBG + achievs. Your "portal" to new Gear, weapon. /w me
-	----{star} Increase your ranking on R&B&G to 2OOO~22OO~24OO or higher.+385O cp capp.+ELITE gear and other titles and achieves. Need minimal of your time. Waiting for you on s*k*y*p*e : Grafus123 {star}
-	--"rbg.*2%.?2[o0][o0].*gear.*skype", --{rt1}WTS- RBG boost 2.200+2.400+.2.650+ .. No gear requirements. if your interested please add me on Skype: nickonexz.{rt1}
-	--"rbg.*2[%.,]2.*achie?v.*legit", --{rt7}{rt1}WTS RBG Boost for all classes! We offer you 2,2k, 2,4k and Glad achievement! You play yourself, 100% legit!(accept gold){rt1}{rt7}
-	--"rbg.*2200.*account.*achie?v", --/2 Hi dude u wanna fast boost 2.2/2.4/Hero(aliance/horde) ,fast work right now =) skype BGboost up you RBG ratings! 2200/2400/HERO /cap/no sharing account /Dungeon challenges -gold/glory hero-raider-guild raider all achivemets /pm
-	--"rbg.*2200.*legit.*paypal", --WTS RBG CARRY! 0-2200,2400,2750,CAP! No acc sharing, 100% legit. Our boost costs less than anyones' else in EU. We have business Paypal and website! /w me
-	--"2[%.,]2.*legit.*rbg.*price", --WTS 2.2/2.4k Legit RBG [Boost.Cheapest] prices [EU.PST] for info!
-	--"rbg.*2200.*boost.*skype", --{rt2} RBG Super Offer  new season!  fast T13/ RBG 2200/2400/HERO - /cap 3850/ boost today /skype BGboost
-	--"2200.*accoun?t.*paypal.*skype", --ASSISTANCE: 2000-2200-2400 No sharing accout. Site, Bussines PayPal, Test Game.  Skype: Mike222eu{rt1}
-	--"rbg.*2[24]00.*sale.*skype", --Help with RBG rat/cap, the best prices!2400/hero we are working 5th season. SALE RIGHT NOW. skype: kkboosting
-	--"rbg.*2[%.,]2.*legit.*paypal", --WTS RBG BOOST! Any rating and CAP 2.2k,2.4k & Hero of the Horde/Alliance! No acc sharing, 100% legit, you play youself. Our boost costs less than anyones' else in [EU.We] have website + Paypal verified, OwnedCore verified. /w me
-	--"quickest.*safi?est.*rbg.*legit.*account", --The 13th season has just started! And we're ready to provide you the quickest and safiest RBG PUSH! Any Rating! 100% legit - no account sharing required. Be the first to obtain elite gear, lots of achievements, titles and mounts! PM ME FOR MORE INFO.
-	--"pvpforce.*professional.*2200.*skype", --{rt1}{rt1}{rt1} Become a part of new PvP force. Play with professionals to be among the first to get 2200/2400/HERO. 3850+ cp per week, T2 in Only 7 weeks! Skype: [***] {rt1}{rt1}{rt1}
-	--"rbg.*2200.*site.*mount", --{rt6}Get your RBG rating right now! 2000/2200/2400/HERO.{rt6}without acc share..  Site.. {rt6}3850+cp per [week.mount,16+] and /w me for more info.
-	--"rbg.*2200.*character.*mount", --{rt6}Get your RBG rating today! 2000/2200/2400/HERO.{rt6}You play your own character. {rt6}3850+cp per [week.mount,16+] and /w me for more info.
-	--"safe.*rbg.*elitegear.*skype", --{rt8} Offering extremely safe and qualified RBG boosting to ANY rating you want. NO ACCOUNT SHARING. 3850+ conquest points per week. Epic titles and elite gear are waiting for you! For more info contact me on skype: iboosting {rt8}
-	--"2200.*gold.*sale.*skype", --Gladiator, 2200-2700 Arena & RBG, Malevolent Gladiator (rank 1!), gold challenge modes and much more for sale! Also selling rare & unobtainable mounts/titles (including scarab lord)! Skype: wowpvpcarry
-	--"visit.*pvp.*elitegear.*skype", --Visit ArenaCarry DotCom for all of your PvP needs! Gladiator, hero of ally/horde, fastest elite gear, highest CP cap, and much more! Skype: Baddieisboss
-	--"rbg.*2200.*challenge.*transmog", --wts:rbg 2200/2400/2700cp capschallenge mode: transmog setitem upgrade 463/470/495/503 no transfer!---pst
-	--"wts.*account.*cap.*conquest.*elitegear", --WTS [General] or high, you play with us, no account share. Runing them right now. Increase your cap to over 3500+ conquest. Get your elite gear. /w info
-	--"rbg.*2[%.,][24].*account.*skype", --the fastest rbg boost in the world. 2.k, 2.4k, 2.6k for some hours. you play your character, no acount sharing. 3850+ conquest points per week.mount, 16+ achievements and 14 titles. add skype premium_boost
-	--"2200.*account.*rbg.*skype", --Cap/2200/2400/Hero only in few hours! We don't need your account, you play with us! We make your RBG Cap every week. We offer access to elite gear and 21 rbg achievs. Test game! Guarantees. Add SKYPE for more info: rbgsupport
-	--"elitegear.*rbg.*legit.*skype", --{rt8} Be first with ELITE gear, get RBG Boosting in this season. No account sharing, 100% legit and bonuses with high rating order. Any rating available, for lowrated characters TEST GAME for free! {rt8} Details on skype {rt1}wtspvp{rt1}
-	--"rating.*professional.*2200.*skype", --{rt1}{rt1}{rt1} Get your rating to where you want it to be. Play with professionals to be among the first to get 2200/2400/HERO. 3850+ cp per week, T2 in under 7 weeks! Skype: [Ryan.Lotten] {rt1}{rt1}{rt1}
-	--"wts.*character.*account.*rating.*test", --WTS [Marshal] and [High Warlord]. We also sell weekly caps. You play on your character,no account share. Get rating - increase your cap to 3800+ conq. Write me and set up your run right now! Test game. For more info /w.
-	--"rbg.*2200.*legit.*boost.*test", --{rt8}WTS RBG BOOST! EU & US. 2200/2400/Hero/CP CAP! You play yourself, no acc sharing, so its 100% legit. /w me for information to join your rbg boost today! + proofs + test games + Im VERIFIED!
-	--"rpgbox.*price.*skype", --{circle} site [RPGBOX.ORG] don't wait for the season end! Put on the best pvp item now! any reting in the Rated Battleground ! 5 seasons of experience! best price ! start today !/skype BGboost
-	----W.T.S Ratted BGs: 1800-2750+/HER0/ Conq.points/ NEW Enchants & NEW Tabard! only in few hours! NO share acount! You play on toon! 1 Tesst game! [We.b.si].te. + guarantees! A.d.d S.K.Y.P.E to know more: Robert_rbg
-	--"1800.*acc?ount.*tess?t.*s%.?k%.?y%.?p%.?e", --{star} W.T.S Ratted BGs: 1800-2650+/Conq.points only in few hours! NO share acount! You play on toon! 3800+ points per week.Acces to elite gear and 21 achievs.1 Test game! We.b.si.te. 3 years we play! A.d.d S.K.Y.P.E to know more: Robert_rbg {star}
-	--"2200.*achiev.*test.*website", --{star} Raise your RatedBG rating to 2000|2200|2400|Hero! Play your own toon! 3850+ conquest points per week. +Achieves and titles. Take a Test Run to check everything out! Website! S.kype: kekcique {star}
-	--"rbg.*2200.*hero.*gladiator.*trusted", --Get your {rt6}RBG RATING{rt6} today! CAP/2000/2200/2400/2500/HERO. Arena 2200/2400/Gladiator/R1.Got the BEST & MOST TRUSTED WOW players ADVERTISING for us. Whisper ME and get in touch with US!
-	--"2200.*toon.*test.*s%.?k%.?y%.?p%.?e", --{rt1}WTS Rated BG services: 1800||2000||2200||2400||HER0 title||WINS for conquest points. You play your own toon!  Take a Test Run to check everything out! We have Web5site! 2 years expirience! S.kype: kekcique{rt1}
-	--"2200.*rbg.*skype.*pric[ie]", --{rt6} Multi glads now offering 2200/2400. Arena/Crossrealm Rbgs. Message me on Skype for more details- soft.nchewy{rt1} Competitive Pricing! :D
-	--"blastboost%.com.*2200.*skype", --{rt8} [BlastBoost.com] Offers You service on RBG. 0-2200, 0-2400, 0-3000 and CAP. You play youself. Test game. Time of increasing: 1-4 hours. Payment can made in several parts. Add us on Skype: [BlastBoost.com] (Wien, Austria) {rt8}
-	--"rbg.*boost.*2[%.,]2.*skype", --{rt1}{rt4}{rt3}{rt8} Selling RBG Boost to 2k/2.2k/2.3k / Game Time Cards / Realm/Faction change / Blizzard Store Pets/Mounts for gold! Add my skype for more information: RBGService11 {rt4}{rt2}{rt3}{rt5}
-	--"safe.*rbg.*account.*skype", --{rt8} Offering extremely safe and qualified RBG boosting to ANY rating you want. NO ACCOUNT SHARING. Epic titles, cap games, pve boosts, powerleveling, gold !  For more info contact me on skype: MatBoosting {rt8}
-	--"rbg.*2200.*hero.*arena.*whisper", --Get your {rt6} RBG RATING {rt6} today! CAP/2000/2200/2400/2500/HERO. ARENA 2200/2400/Gladiator/R1.Whisper ME and get in touch with US! You Won't regret it{rt6}
-	--"challenge.*gold.*fast.*cheap.*character", --Looking for someone to help you get [CHALLENGE CONQUEROR:GOLD] fast ? Our team is  fastest (2.5h for all 9 ) and cheapest . You play your own character ofc.
-	--"elitegear.*achiev.*toon.*skype", --The squad will aid to purchase  a high ranking on R&B&Gs. Also propose 35OO - 385O c0nq.capp. A few hours of your time. Your path to elite gear and achievements. You play your toon. Don't be shy, for more inf0 add on SK*Y*PE - Grafus123
-	--"selling.*gladiator.*achiev.*rbg.*arena.*gold.*coaching", --Selling Gladiator/R1, every achieve in RBG/Arena, Challenge Mode: Gold, T15.5, and more! Elo/Coaching in LoL too
-	--"2200.*account.*points.*skype", --{rt2} SUPER OFFER ! 2200|2400|HERO. NO ACCOUNT SHARING. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles/skype BGboost{rt2}
 	--prommote.me will help you gain any RBG rating (2200, 2400 an higher), fill the weekly cap, acquire T2 weapons and become the Gladiator and Hero of the Horde/Alliance Good pricing, no transfer/account sharing required
 	--prommote.me will help you get any PVE/PVP and other achievements, mounts, titles and top raid gear, and help you gain 20300 achievement points. PM for details.
 	"prommote%.me.*helpyou", --prommote.me will help you gear up in T15 HM raids and get 13/13 progress.
@@ -648,44 +564,17 @@ local instantReportList = {
 	"prommote%.me.*prices?forthe", --prommote.me, fast service and modest prices for the [Challenge Conqueror: Gold]
 	"prommote%.me.*boost", --{rt6} {rt3} www.prommote.me - Challenge mode boosting to Gold or Challenge Master. Tons of feedbacks, done in 3 hours! {rt3} {rt4}
 	"prommote[%.,]me.*arena.*boost", --{rt3} {rt8} www.prommote.me - safe Arena boosting. Over 50 positive feedbacks! Ask on website for details! {rt4}
-	--"2200.*account.*mount.*skype", --{circle} SUPER OFFER ! 2200|2400|HERO. NO ACCOUNT SHARING. 3850+ conquest points per week. Mount, 16+ achievements and 14 titles/skype BGboost{circle}
-	--"rbg.*challenge.*arena.*glad.*info", --WTS Rbg boost / challenge mode boost / arena v2/ v3 /v 5 boost and glad /w for more information
-	--"powerle?ve?l.*honor.*arena.*ownedcore", --{rt6}|Powerleveling |{rt6} Powerleveling , Honor Farming , Or Arena cap , Many other Service , Our team work for you !Trusted on OwnedCore and Epicnpc ! /w me
-	--"help.*rbg.*rating.*gold.*skype", --We can help you with ANY RBG rating for GOLD(partial payments accepted) skype: battleboost1337
-	--"rbg.*2200.*gold.*skype", --{rt6}{rt2}{rt2} ТНЕ Bеst PRICE  RBG 2200/2400/HЕRО/ Arеnа 2200/2400/Glad /Big cаp 3850+ / Pve /Gold challenge 9/9 / ALL INFO IN SKYPE -{rt8}   MAINBOOST   /w me {rt2}{rt2}
-	--"rbg.*2200.*payment.*skype", --{rt8} RBG BOOST: 1800-2000-2200-2400-Hero, NEW MOUNT(40 WINS). Test game. Partial payments. Very quickly. Skype: PRO_RATING {rt8}
-	--"rbg.*2000.*test.*skype", --{rt8}RBG RATING.1800-2000-2200-2400-HERO. Test Game. Fastest. Skype:RBG-SUPPORT{rt8}
-	--"rbg.*sale.*2200.*skype", --{rt1} The best EU/RU RBGboosting without sharing acc! 6th season in work! Lowest prices! Good sales! cap/2200/2400/3000 Our skype: kkboosting
-	--"selling.*arena.*boost.*rbg.*skype", --{rt8} {rt8}  {rt8} Selling 5v5,3v3 ArenaBoost. You playing your character. Also any 2v2 raiting with acc sharing, and 3v3 coaching. RBG/3v3 Arena cap games. 250.000k HKs just in 2 days!| skype: alex_flame2 (Nederland){rt8}  {rt8} {rt8}
-	--"rbg.*mount.*payment.*skype", --{rt8} {rt8}WTS RBG BOOST! Any rating, CAP Games, Wins. Get the mount, 21+achievements,16 titles, top gear, tabard with us. Test game, partial payments, self playing. For more info add me in skype AltisRBG
-	--"rbg.*mount.*discount.*skype", --{rt1}WTS RBG CAP/40wins/75wins{rt1} || SELF PLAY || RBG achivements and MOUNTS! || 100% positive feedback on the ownedcore || FLEXIBLE DISCOUNTS || challenge modes || {rt1} Add Skype: Azpirox {rt1}
-	--"selling.*gold.*rating.*top", --Elitist-gaming,com Selling SoO runs in heroic or normal. CM: gold, reins of galakras, Kor'kron Juggernaut. Any 3v3/5v5 rating including Glad and Rank 1. Our suppliers are top 30 U.S. guilds and top level pvp players. Check us out!largest in the US
-	--"selling.*boost.*gold.*skype", --Selling CM Boost 9/9Gold, Flex 1-4, you self play! accept gold payment, preorder for New season RBG 22OO! have proofs skype FBOOSTX
-	--"selling.*service.*2400.*mount", --Selling basically every PvP & PvE service! 2400+ Arena/RBG/Gladiator/Rank 1/Arena Master | T16/Gold Challenges/Mounts/Pets. Pst!
-	--"selling.*achiev.*rbg.*discount", --Selling Gladiator/R1, every achieve in RBG/Arena, Challenge Mode: Gold, T16, and more! Preorder for discounts!
-	--"selling.*service.*rbg.*mount", --Selling PvP services: Gladiator, 2700 Arena & RBG, Rank 1! Also selling rare mounts (including scarab lord!) and many PvE services. Msg me!
-	----WTS Boosting SoO 25hc14\14 + loot & mount \ flex \ normal, RBG[2200+hota], Arena (2200,2400,2700+ ,{star}/w for info [have website and business paypal)
-	--"boost.*arena.*paypal", --WTS BOOST RBG/ARENA,CAP/WINS GAMES,GOLD CHALLENGE MODE,PVE:SoO HC/N/Flex 14/14+loot(mount)! Best prices in Europe! FAST AND SAFE! It's the 7th season of our work. We have website+business Paypal.SKYPE: BLLIZZIK
 	"boosting[%.,]pro.*discount", --[H] <DND>[Jedrict]: {skull}{skull}{skull} www.Boosting.Pro - Premium Arena boosting - {circle} SUPER DISCOUNTS ON ALL RATINGS {circle} Over 50 successful Gladiator orders in season 14! {skull}{skull}{skull}
 	--{rt6}{rt6}{rt6} www.Boosting.Pro - Elite PvE Services: {rt2} GET FREE GARROSH MOUNT {rt2} today! Only 25 man raids, warforged loot, weapons and trinkets are included! {rt6}{rt6}{rt6}
 	"boosting[%.,]pro.*service", --[H] <DND>[Jedrict]: {square}{square}{square} www.Boosting.Pro - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
 	"boosting[%.,]pro.*sale", --{rt6}{rt6}{rt6} www.Boosting.Pro - Get all RAREST mounts from World of Warcraft: {rt2} MIMIRON'S HEAD and ASHES OF AL'AR {rt2} on Sale now! Any mount including Invincible in less than a month! {rt6}{rt6}{rt6}
 	"boosting[%.,]pro.*cheap", --{rt6}{rt6}{rt6} www.Boosting.Pro - REAL RBG boosting without wintrades! {rt2} ULTRA-CHEAP RBG WIN FARM {rt2} Check it out ;) {rt6}{rt6}{rt6}
-	--"rbg.*epiccarry[%.,]com", --{rt2} Arena rating\Rbg wins\Arena wins on epiccarry.com {rt1}
-	--"realm.*epiccarry[%.,]com", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
-	--"arenahelp[%.,]eu.*boost.*skype", --{rt1} Arenahelp.eu - Offering LEGIT boosts in RBG and Arena by the top players!!!  Check website or Skype: [arenahelp.eu.] Ownedcore verified. Consider our prices.
-	--"gold.*cheap.*fast.*safe", --Need help getting [Challenge Conqueror: Gold]before they remove it?Get mount,title,transmorg gear,achivements contact the cheapest,fastest 2h and safest team.Special offer end is near
-	--"boost.*service.*fast.*skype", --{rt4}{rt6}{rt4}  Boosting Service. Right now available! Fastest(2hours), Really good conditions. Skype: CMGBOOST {rt4}{rt6}{rt4}
-	"leprestore.*arena.*mount", --{rt5}{rt5} Autumn Sale on Leprestore.com! RBG&Arena(2200, 2400, glad, R1, Hero - selfplay possible), cap games(40 RBG|100 arena wins for ahiev and mount) and more! Best deals on full conquest cap. Many feedbacks on Leprestore.com{rt5}{rt5}
-	--"arena.*boost.*paypal", --{star}{star}JenkinStore.com - RBG, ARENA, CM Gold Boost! CAP GAMES! New RBG Mount(40 WINS), Hero, Gladiator, Vanilla Transmog, Elite Gear , Tabard! Website and Business PayPal. - JenkinStore.com{star}{star}
+	"rbg.*epiccarry[%.,]com", --{rt2} Arena rating\Rbg wins\Arena wins on epiccarry.com {rt1}
+	"realm.*epiccarry[%.,]com", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
 	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
-	--"gold.*boost.*chiefboost", --Glory of Raider, Challenge Gold, RBG and Arena boosting, Gladiator and Hero titles for a reasonable price. skype: chiefboost
-	--"boost.*safe.*rpgmasters[%.,]net", --{rt6}{rt6}{rt6} 3v3 SELFPLAY ARENA BOOST to GLADIATOR / PRIDEFUL GLADIATOR . Fast and safe! GOOD DISCOUNTS (add me in skype for info: alex_flame2) RPGMASTERS,NET{rt6}{rt6}{rt6}
-	--"service.*rbg.*2200.*payment", --BOOM-BOOST.c0m All pvp services ARENA and RBG 2200/2400/2700/Gladiator, big cap conquest (selfplay or with gladiators), CHALLENGE MODES, possible no pre-payment, live sterams and selfplay possible!
-	--"starboosting[%.,]com.*pro.*help", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
-	--"season.*arena.*boost.*skype", --{rt6}{rt6}{rt6} The end of the season is soon!!! Hurry up! ARENAboost (5s and 3s) WITHOUT ACCSHARING!! SKYPE: SH-BOOST (Norway) {rt6}{rt6}{rt6}
-	--"sale.*arena.*gold.*skype", --{square} END-SEASON SALE! {square} || ARENA Gladiator/R1/Achivements || SELF PLAY Challenge Mode: Gold and MASTER(Fos) || ?Mists of Pandaria CMs will become Feats of Strength in 6.0 patch? {square} Add Skype: Azpirox {square}
-	--"mount.*safe.*boostingheaven[%.,]com", --{rt1}Boostingheaven{rt1} 9/9 Challenge Modes in 1½ hour? 14/14 HC SoO runs in 2-3 hours w/ Mount, Gear - Any class, spec, self play or pilot. Fast, safe and easy! {rt1} www.boostingheaven.com {rt1}
+	"starboosting[%.,]com.*pro", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
+	"season.*arena.*boost.*skype", --{rt6}{rt6}{rt6} The end of the season is soon!!! Hurry up! ARENAboost (5s and 3s) WITHOUT ACCSHARING!! SKYPE: SH-BOOST (Norway) {rt6}{rt6}{rt6}
+	"arena.*2200.*skype", --arena ratings for (rdruid, mage, rogue,warlock,priest,warrior,shaman) 2200/2400/2600 add skype for more info - Dezleit
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
