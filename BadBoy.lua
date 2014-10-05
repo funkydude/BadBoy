@@ -216,6 +216,7 @@ local boostingList = {
 
 --These entries remove -2 points
 local whiteList = {
+	"%.battle%.net/",
 	"recrui?t",
 	"dkp",
 	"lookin?g", --guild
@@ -310,7 +311,8 @@ local instantReportList = {
 
 	--[[  Runescape Trading  ]]--
 	--WTB RS gold paying WoW GOLD
-	"wt[bs]rsgold.*wowgold", --WTB rs gold trading wow gold PST
+	--WTT RS3 Gold to Wow Gold (i want wow gold) pm for info
+	"wt[bst]rs3?gold.*wowgold", --WTB rs gold trading wow gold PST
 	"wt[bs]wowgold.*rsgold", --WTS Wow gold for rs gold
 	"wt[bs]wowgold.*rscoint?s", --WTS Wow gold for rs coints
 	--WTS RUNESCAPE GOLD !~!~!~ PST
@@ -337,7 +339,8 @@ local instantReportList = {
 	--WTS CS:GO Skins
 	"^wt[bs]csgoskin", --WTB CS GO skins /w for more infomation
 	"^wt[bs]csgokey", --{rt1} WTB CS:GO KEYS & SKINS FOR GOLD {rt1}
-	"^wt[bs]csgoacc", --WTS CS GO ACC UNRANK 
+	"^wt[bs]csgoacc", --WTS CS GO ACC UNRANK
+	"^wt[bs]csgoknife", --WTSCS GO knife M9 Bayonet Stained in (minimal wear) /w and give me offer 
 
 	--[[ Hearthstone ]]--
 	"^sellinghearthstonebeta", --SELLING HEARTHSTONE BETA KEY FOR GOLD /w ME YOUR PRICE
@@ -533,7 +536,7 @@ local instantReportList = {
 	"sale.*loot.*dving[%.,]net", --5.4 content on sale! Hardmodes and Loot Raids for Siege of Orgrimmar! - Dving.net
 	"arena.*help.*dving[%.,]net", --Offering arena/RBG help. Season 14. 2200/2400/2650 - Dving.net
 	"gold.*heroic.*dving[%.,]net", --Challenge Conqueror: Gold. Itemlevel of 560 or 570! Garrosh Heroic! Glory of the raider! - Dving.net {rt8}
-	--{rt8} Challenge Conqueror - really cheap! Boosting to 560/570 ilvl! Garrosh HC! Glory of the raider! Discounts and guaranties! - Dving.net {rt8} 
+	--{rt8} Challenge Conqueror - really cheap! Boosting to 560/570 ilvl! Garrosh HC! Glory of the raider! Discounts and guaranties! - Dving.net {rt8}
 	"boost.*dving[%.,]net", --{skull} 5.4 content boosting! HC and loot-raids SOO HC! No accounts share - dving.net {skull}
 	--Any achievements for you(skype: DvingHelp)
 	--Help you with 2200/2400/2600(hero) skype: DvingHelp
@@ -578,12 +581,12 @@ local instantReportList = {
 	"realm.*epiccarry[%.,]com", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
 	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
 	"starboosting[%.,]com.*pro", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
-	"season.*arena.*boost.*skype", --{rt6}{rt6}{rt6} The end of the season is soon!!! Hurry up! ARENAboost (5s and 3s) WITHOUT ACCSHARING!! SKYPE: SH-BOOST (Norway) {rt6}{rt6}{rt6}
 	"arena.*2200.*skype", --arena ratings for (rdruid, mage, rogue,warlock,priest,warrior,shaman) 2200/2400/2600 add skype for more info - Dezleit
+	"hurry.*season.*share.*acc.*pro", --Hurry up! The end of season is coming! Without share acc! Play with pro!
 	--
 	"gift.*buy.*price.*play", --14/14 Hc/Normal SOO.Whole gear as a gift. Hurry to buy at the best price without intermediaries.It’s possible to self-play
 	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
-	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3 
+	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3
 	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
 
 	--[[  Russian  ]]--
