@@ -212,6 +212,7 @@ local boostingList = {
 	"sale",
 	"season",
 	"professional",
+	"pvp",
 }
 
 --These entries remove -2 points
@@ -588,6 +589,7 @@ local instantReportList = {
 	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
 	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3
 	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
+	--{star} RBG CAP/2000/2200/2400/HEROS{star} || VOUS JOUEZ VOTRE COMPTE ||  ? Tous les Hauts Faits PVP, 15 Titres, MONTURES PvP?  || jeu d'essai || REDUCTIONS ET REMISES POSSIBLES || {star}Skype: Azpirox{star}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -751,7 +753,7 @@ local IsSpam = function(msg, num)
 		end
 	end
 
-	local points, phishPoints, boostingPoints = num, num, 0
+	local points, phishPoints, boostingPoints = num, num, num
 	for i=1, #whiteList do
 		if strfind(msg, whiteList[i]) then
 			points = points - 2
