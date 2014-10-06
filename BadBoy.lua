@@ -340,12 +340,12 @@ local instantReportList = {
 	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
 
 	--[[ CS:GO ]]--
-	"^wt[bs]somecsgoskin.*info", --WTB some CSGO skins and sell some /w for more info
+	"^wt[bs]somecsgoskin", --WTB some CSGO skins and sell some /w for more info
 	--WTS CS:GO Skins
 	"^wt[bs]csgoskin", --WTB CS GO skins /w for more infomation
 	"^wt[bs]csgokey", --{rt1} WTB CS:GO KEYS & SKINS FOR GOLD {rt1}
 	"^wt[bs]csgoacc", --WTS CS GO ACC UNRANK
-	"^wt[bs]csgoknife", --WTSCS GO knife M9 Bayonet Stained in (minimal wear) /w and give me offer 
+	"^wt[bs]csgoknife", --WTSCS GO knife M9 Bayonet Stained in (minimal wear) /w and give me offer
 	"^wt[bs]csgoitem", --WTB CS:GO Items for Gold! /W me your items!!
 
 	--[[ Hearthstone ]]--
@@ -590,6 +590,8 @@ local instantReportList = {
 	"arena.*2200.*skype", --arena ratings for (rdruid, mage, rogue,warlock,priest,warrior,shaman) 2200/2400/2600 add skype for more info - Dezleit
 	"hurry.*season.*share.*acc.*pro", --Hurry up! The end of season is coming! Without share acc! Play with pro!
 	"rbg.*2200.*compte.*skype", --{star} RBG CAP/2000/2200/2400/HEROS{star} || VOUS JOUEZ VOTRE COMPTE ||  ? Tous les Hauts Faits PVP, 15 Titres, MONTURES PvP?  || jeu d'essai || REDUCTIONS ET REMISES POSSIBLES || {star}Skype: Azpirox{star}
+	"wowst[o0]re[%.,]com.*pvp.*rbg", --wow-st0re.com Le n°1 du pl français depuis 2013 - SoO 25 NM/HM - PvP Arène / RBG côte - Bastonneurs - Armes Légendaires - [Défi d'or 9/9 à seulement 70k po!] http://wow-st0re.com 100% FR
+	"boost.*skype.*tridon", --WTS Big conquest cap Boost / Contact me Skype: Tridon.boosting
 	--
 	"gift.*buy.*price.*play", --14/14 Hc/Normal SOO.Whole gear as a gift. Hurry to buy at the best price without intermediaries.It’s possible to self-play
 	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
