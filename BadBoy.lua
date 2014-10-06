@@ -516,6 +516,7 @@ local instantReportList = {
 	"^wts%d+days?gc$", --WTS 60days GC
 	"^anyonesellinggametime", --anyone selling game time
 	"^lookingforgametime", --LOOKING FOR GAME TIME
+	"^wt[bs]prepaidcard", --WTS prepaid card (30,60,90 days), mounts
 	--Wts gamecard 60days very cheap
 	"^wt[bs]gamecard", --WTB GAME CARD
 	"^wt[bs]gamecode", --wtb game codes
