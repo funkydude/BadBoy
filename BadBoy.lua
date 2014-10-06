@@ -789,7 +789,7 @@ local IsSpam = function(msg, num)
 	for i=1, #phishingList do
 		if strfind(msg, phishingList[i]) then
 			phishPoints = phishPoints + 1
-			if myDebug then print("phishingList" phishingList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("phishingList", phishingList[i], points, phishPoints, boostingPoints) end
 		end
 	end
 
