@@ -735,6 +735,7 @@ local instantReportList = {
 	"mia911[%.,]c.*skype", --{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}[www.mia911.cQm]{rt4}{rt4}{rt4}{rt4}{rt4}{rt4}800K G in sotck{rt5}{rt5}10000=8USD{rt5}{rt5}pl add skype;mia9116{rt5}{rt5}mia911.cQm{rt5}{rt5}{RT
 	"game4ok[%.,]c.*livechat", --{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}{rt6}[www.game4ok.cQm]{rt4}{rt4}{rt4}[game4ok.cQm]{rt4}{rt4}800K G in sotck{rt5}{rt5}{rt5}traden in 10minutes{rt5}{[RT5game4ok.cQm]{rt5}{rt5}{rt5} [game4ok.cQm]{rt6}{rt6}{rt6}{rt6}[game4ok.cQm] contact by;Live Chat {rt4}{rt4}{rt4}{rt4}
 	"raidbroker[%.,]com.*skype", --Both Horde/Alliance teams! http://raidbroker.com ~ Jarvis.Dresden on Skype!!
+	"g@ld.*livraison.*exclusiv", --Envie de G@LD pour bien commencer WoD, livraison en moins de 5 min en exclusivité sur ysondre
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
