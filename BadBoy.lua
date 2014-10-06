@@ -342,6 +342,7 @@ local instantReportList = {
 	"^wt[bs]csgokey", --{rt1} WTB CS:GO KEYS & SKINS FOR GOLD {rt1}
 	"^wt[bs]csgoacc", --WTS CS GO ACC UNRANK
 	"^wt[bs]csgoknife", --WTSCS GO knife M9 Bayonet Stained in (minimal wear) /w and give me offer 
+	"^wt[bs]csgoitem", --WTB CS:GO Items for Gold! /W me your items!!
 
 	--[[ Hearthstone ]]--
 	"^sellinghearthstonebeta", --SELLING HEARTHSTONE BETA KEY FOR GOLD /w ME YOUR PRICE
