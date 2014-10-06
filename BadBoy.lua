@@ -212,7 +212,11 @@ local boostingList = {
 	"sale",
 	"season",
 	"professional",
-	"pvp",
+}
+local boostingWhiteList = {
+	"members",
+	"guild",
+	"social",
 }
 
 --These entries remove -2 points
@@ -585,12 +589,12 @@ local instantReportList = {
 	"starboosting[%.,]com.*pro", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
 	"arena.*2200.*skype", --arena ratings for (rdruid, mage, rogue,warlock,priest,warrior,shaman) 2200/2400/2600 add skype for more info - Dezleit
 	"hurry.*season.*share.*acc.*pro", --Hurry up! The end of season is coming! Without share acc! Play with pro!
+	"rbg.*2200.*compte.*skype", --{star} RBG CAP/2000/2200/2400/HEROS{star} || VOUS JOUEZ VOTRE COMPTE ||  ? Tous les Hauts Faits PVP, 15 Titres, MONTURES PvP?  || jeu d'essai || REDUCTIONS ET REMISES POSSIBLES || {star}Skype: Azpirox{star}
 	--
 	"gift.*buy.*price.*play", --14/14 Hc/Normal SOO.Whole gear as a gift. Hurry to buy at the best price without intermediaries.It’s possible to self-play
 	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
 	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3
 	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
-	--{star} RBG CAP/2000/2200/2400/HEROS{star} || VOUS JOUEZ VOTRE COMPTE ||  ? Tous les Hauts Faits PVP, 15 Titres, MONTURES PvP?  || jeu d'essai || REDUCTIONS ET REMISES POSSIBLES || {star}Skype: Azpirox{star}
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -759,41 +763,49 @@ local IsSpam = function(msg, num)
 		if strfind(msg, whiteList[i]) then
 			points = points - 2
 			phishPoints = phishPoints - 2 --Remove points for safe words
-			if myDebug then print(whiteList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("whiteList", whiteList[i], points, phishPoints, boostingPoints) end
 		end
 	end
 	for i=1, #commonList do
 		if strfind(msg, commonList[i]) then
 			points = points + 1
-			if myDebug then print(commonList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("commonList", commonList[i], points, phishPoints, boostingPoints) end
 		end
 	end
 	for i=1, #heavyList do
 		if strfind(msg, heavyList[i]) then
 			points = points + 2 --Heavy section gets 2 points
-			if myDebug then print(heavyList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("heavyList", heavyList[i], points, phishPoints, boostingPoints) end
 		end
 	end
 	for i=1, #heavyRestrictedList do
 		if strfind(msg, heavyRestrictedList[i]) then
 			points = points + 2
 			phishPoints = phishPoints + 1
-			if myDebug then print(heavyRestrictedList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("heavyRestrictedList", heavyRestrictedList[i], points, phishPoints, boostingPoints) end
 			break --Only 1 trigger can get points in the strict section
 		end
 	end
 	for i=1, #phishingList do
 		if strfind(msg, phishingList[i]) then
 			phishPoints = phishPoints + 1
-			if myDebug then print(phishingList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("phishingList" phishingList[i], points, phishPoints, boostingPoints) end
+		end
+	end
+
+	for i=1, #boostingWhiteList do
+		if strfind(msg, whiteList[i]) then
+			boostingPoints = boostingPoints - 1
+			if myDebug then print("boostingWhiteList", boostingWhiteList[i], points, phishPoints, boostingPoints) end
 		end
 	end
 	for i=1, #boostingList do
 		if strfind(msg, boostingList[i]) then
 			boostingPoints = boostingPoints + 1
-			if myDebug then print(boostingList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("boostingList", boostingList[i], points, phishPoints, boostingPoints) end
 		end
 	end
+
 	if points > 3 or phishPoints > 3 then
 		return true
 	elseif boostingPoints > 3 then
