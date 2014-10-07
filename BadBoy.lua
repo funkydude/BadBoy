@@ -508,6 +508,8 @@ local instantReportList = {
 	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
 	"^wtbgold.*gametime", --WTB GOLD, OR TRADE GOLD FOR GAMETIME!!
 	"honorbuddy.*bot.*gold.*skype", --WTS 1 sessions and 3 sessions of HONORBUDDY (WoW bot) For golds....It rly good way to earn golds,if you are interested contact me on skype : Stimar12
+	"^wt[bs][36]0days?gc", --wtb 60 days gc.ive got a mindblowing offer which u cant skip.whisper me for extra information if u seriously want to do this!
+	"^wt[bs]gamtime.*gold", --WTB gamtime for gold /w
 	--WTS G A M E T I M E /W
 	--WTS {rt1} GAMETIME {rt1}
 	--WTS gametime card 60days Very cheap
@@ -593,6 +595,7 @@ local instantReportList = {
 	"rbg.*2200.*compte.*skype", --{star} RBG CAP/2000/2200/2400/HEROS{star} || VOUS JOUEZ VOTRE COMPTE ||  ? Tous les Hauts Faits PVP, 15 Titres, MONTURES PvP?  || jeu d'essai || REDUCTIONS ET REMISES POSSIBLES || {star}Skype: Azpirox{star}
 	"wowst[o0]re[%.,]com.*pvp.*rbg", --wow-st0re.com Le n°1 du pl français depuis 2013 - SoO 25 NM/HM - PvP Arène / RBG côte - Bastonneurs - Armes Légendaires - [Défi d'or 9/9 à seulement 70k po!] http://wow-st0re.com 100% FR
 	"boost.*skype.*tridon", --WTS Big conquest cap Boost / Contact me Skype: Tridon.boosting
+	"help.*gold.*week.*skype", --{rt6}We help you with [Challenge Conqueror: Gold], CM's shutting down in less than a week. Right now available. Skype: CMhotBOOT{rt6}
 	--
 	"gift.*buy.*price.*play", --14/14 Hc/Normal SOO.Whole gear as a gift. Hurry to buy at the best price without intermediaries.It’s possible to self-play
 	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
@@ -798,7 +801,7 @@ local IsSpam = function(msg, num)
 	end
 
 	for i=1, #boostingWhiteList do
-		if strfind(msg, whiteList[i]) then
+		if strfind(msg, boostingWhiteList[i]) then
 			boostingPoints = boostingPoints - 1
 			if myDebug then print("boostingWhiteList", boostingWhiteList[i], points, phishPoints, boostingPoints) end
 		end
