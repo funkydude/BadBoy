@@ -217,6 +217,8 @@ local boostingWhiteList = {
 	"members",
 	"guild",
 	"social",
+	"%d+k", --10k/dungeon
+	"onlyacceptinggold",
 }
 
 --These entries remove -2 points
@@ -813,10 +815,8 @@ local IsSpam = function(msg, num)
 		end
 	end
 
-	if points > 3 or phishPoints > 3 then
+	if points > 3 or phishPoints > 3 or boostingPoints > 3 then
 		return true
-	elseif boostingPoints > 3 then
-		return true, true
 	end
 end
 
@@ -902,16 +902,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	chatPlayers[#chatPlayers+1] = trimmedPlayer
 	--End text buffer
 
-	local spamz, TEMP = IsSpam(msg, icon)
-	if spamz then
-		if TEMP then
-			if not BADBOY_BLACKLIST[guid] then
-				BADBOY_BLACKLIST[guid] = true
-				print("|cFF33FF99BadBoy|r: (Experimental) Detected the following line as RBG/boosting spam, tell the BadBoy authors if it's NOT spam!")
-				print("|cFF33FF99BadBoy|r: ", debug)
-			end
-			return true
-		end
+	if IsSpam(msg, icon) then
 		if BadBoyLog and not myDebug then
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
