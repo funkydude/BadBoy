@@ -219,6 +219,7 @@ local boostingWhiteList = {
 	"social",
 	"%d+k", --10k/dungeon
 	"onlyacceptinggold",
+	"goldprices",
 }
 
 --These entries remove -2 points
