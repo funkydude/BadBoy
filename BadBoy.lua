@@ -237,6 +237,7 @@ local whiteList = {
 	"enjin%.com",
 	"guildlaunch%.com",
 	"corplaunch%.com",
+	"wowlaunch%.com",
 	"wowstead%.com",
 	"guildwork.com",
 	"guildportal%.com",
