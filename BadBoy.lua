@@ -6,36 +6,29 @@ local myDebug = false
 
 local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
 local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~7 seconds between reports to prevent being disconnected (Blizzard bug)"
-local reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net invite blocked from |cffffff00%s|r|r <<<"
 do
 	local L = GetLocale()
 	if L == "frFR" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~7 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
-		reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net inviter bloqué à partir de |cffffff00%s|r|r <<<"
 	elseif L == "deDE" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam geblockt, zum Melden klicken!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. 7 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
-		reportBnet = "BadBoy: >>> |cfffe2ec8Battle.net-Freundschaftsanfrage von |cffffff00%s|r geblockt|r <<<"
 	elseif L == "zhTW" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[發出的垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: 請等候~7秒在回報時，為了防止斷線(暴雪的bug)"
-		reportBnet = "BadBoy: >>> |cfffe2ec8已忽略來自 |cffffff00%s|r 的Battle.net邀請|r <<<"
 	elseif L == "zhCN" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[垃圾信息已被阻挡，点击举报!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~7 秒以防断线（暴雪的bug）"
 	elseif L == "esES" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado. Clic para informar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~7 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
-		reportBnet = "BadBoy: >>> |cfffe2ec8Invitación de Battle.net bloqueado por|r |cffffff00%s|r <<<"
 	elseif L == "esMX" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado. Clic para informar!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~7 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
-		reportBnet = "BadBoy: >>> |cfffe2ec8Invitación de Battle.net bloqueado por|r |cffffff00%s|r <<<"
 	elseif L == "ruRU" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~7 секунды между донесениями, чтобы избежать отключения (ошибка Blizzard)"
-		reportBnet = "BadBoy: >>> |cfffe2ec8приглашение Battle.net от |cffffff00%s|r блокировано|r <<<"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
@@ -44,7 +37,6 @@ do
 	elseif L == "itIT" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
 		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~7 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
-		reportBnet = "BadBoy: >>> |cfffe2ec8Invito Battle.net bloccato da |cffffff00%s|r|r <<<"
 	end
 end
 
@@ -220,6 +212,9 @@ local boostingWhiteList = {
 	"%d+k", --10k/dungeon
 	"onlyacceptinggold",
 	"goldprices",
+	"tonight",
+	"gametime",
+	"servertime",
 }
 
 --These entries remove -2 points
