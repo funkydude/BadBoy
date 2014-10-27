@@ -897,7 +897,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	--End symbol & space removal
 
 	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõрùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
+	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîкΜмоòóöōôõрùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
 		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
 		for k,v in next, repTbl do --Parse over the 'repTbl' table and replace strings
 			msg = gsub(msg, k, v)
@@ -981,7 +981,6 @@ end
 
 --[[ Add Filters ]]--
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
@@ -992,57 +991,16 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 do
 	local f = CreateFrame("Frame")
 	f:RegisterEvent("PLAYER_LOGIN")
-	f:SetScript("OnEvent", function(frame,event,bnEvent)
-		if event == "PLAYER_LOGIN" or bnEvent == "FRIEND_REQUEST" or bnEvent == "FRIEND_PENDING" then
-			if event == "PLAYER_LOGIN" then
-				SetCVar("spamFilter", 1)
+	f:SetScript("OnEvent", function()
+		SetCVar("spamFilter", 1)
 
-				-- Throw blacklist DB setup in here
-				if not BADBOY_BLACKLIST then BADBOY_BLACKLIST = {} end
-				local _, _, day = CalendarGetDate()
-				if BADBOY_BLACKLIST.dayFromCal ~= day then wipe(BADBOY_BLACKLIST) end
-				BADBOY_BLACKLIST.dayFromCal = day
+		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
+		if not BADBOY_BLACKLIST then BADBOY_BLACKLIST = {} end
+		local _, _, day = CalendarGetDate()
+		if BADBOY_BLACKLIST.dayFromCal ~= day then wipe(BADBOY_BLACKLIST) end
+		BADBOY_BLACKLIST.dayFromCal = day
 
-				frame:RegisterEvent("CHAT_MSG_BN_INLINE_TOAST_ALERT")
-				frame:UnregisterEvent("PLAYER_LOGIN")
-			end
-			for i=BNGetNumFriendInvites(), 1, -1 do
-				local id, player, _, msg = BNGetFriendInviteInfo(i)
-				if type(msg) == "string" then
-					local debug = msg
-					msg = msg:lower() --Lower all text, remove capitals
-
-					--Symbol & space removal
-					msg = gsub(msg, "[%*%-%(%)\"`'_%+#%%%^&;:~{} ]", "")
-					msg = gsub(msg, "¨", "")
-					msg = gsub(msg, "”", "")
-					msg = gsub(msg, "“", "")
-					--End symbol & space removal
-
-					--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-					if strfind(msg, "[аàáäâãåсçеèéëёêìíïîΜмоòóöōôõùúüû]+") then --Only run the string replacement if the chat line has letters that need replaced
-						--This is no where near as resource intensive as I originally thought, it barely uses any CPU
-						for k,v in next, repTbl do --Parse over the 'repTbl' table and replace strings
-							msg = gsub(msg, k, v)
-						end
-						if myDebug then print("Running replacements for BNET") end
-					end
-					--End string replacements
-
-					if IsSpam(msg, 0) then
-						if myDebug then
-							print("BNET invite", i, "is spam from player:", player)
-						else
-							ChatFrame1:AddMessage(reportBnet:format(player), 0.2, 1, 0.6)
-							if BadBoyLog then
-								BadBoyLog("BadBoy", "CHAT_MSG_BNET_INVITE", "", debug)
-							end
-							BNReportFriendInvite(id, "SPAM", "")
-						end
-					end
-				end
-			end
-		end
+		frame:UnregisterEvent("PLAYER_LOGIN")
 	end)
 end
 
