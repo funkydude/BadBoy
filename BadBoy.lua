@@ -380,6 +380,7 @@ local instantReportList = {
 	"wts.*leagueoflegends.*acc.*info", --{rt1}wts golden{rt1} League of Legends{rt1} acc /w me for more info{rt1}
 	"sellingm?y?leagueoflegends", --Selling my league of legends account, 100 champs 40 skins 2-3 legendary 4 runepage, gold. /EUW /W
 	"^wt[bs]lolacc.*cheap", --WTS LOL ACC PLAT 4 1600 NORMAL WINS, EUW 40 SKINS, 106 CHAMPS  CHEAP!!
+	"^wt[bs]lolacc.*skins", --WTS LoL acc level 30 EUW name ** got about 50 skins /w me for info include 3200 RP!
 
 	--[[  Account Buy/Sell  ]]--
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
@@ -582,6 +583,11 @@ local instantReportList = {
 	"wts.*%[.*%].*gametime.*days", --WTS [Armored Bloodwing] [Enchanted Fey Dragon] [Iron Skyreaver] and gametime30-60-90-180days{star}WOD{rt1}
 	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
 	"guarantee.*speed.*mount.*skype", --{rt4} {rt6} Invincible, Ashes of Al’ar, Mimiron’s Head in just a month, GUARANTEED! Speed farming of any mount! Skype: mmo-support3 {rt3}
+	--
+	"wowpvpcarry.*promotion", --Preorder any service from WoWPvPCarry now to save! Gear, titles, achievements, mounts, we do it all! Contact me to take advantage of promotions now!
+	"bestgear.*messageus.*preorder.*promotion", --Do you want to get the best gear and achieves in the upcoming expansion before everyone else? Message us now to preorder and save! Order while the promotions are still on!
+	"selling.*services.*preorder.*savings", --Selling Gladiator/Rank 1/Challenge modes/BiS gear and more - Almost all PvP and PvE services! Preorder for the expansion now for huge savings!
+	--
 
 	--[[  RBG/boosting  ]]--
 	"prommote%.me.*mount.*loot", --{rt6} {rt8} www.prommote.me - Mythic Garrosh kills and Mount | Heroic and Mythic Loot | Over 90 feedbacks! {rt6}
@@ -991,7 +997,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
 do
 	local f = CreateFrame("Frame")
 	f:RegisterEvent("PLAYER_LOGIN")
-	f:SetScript("OnEvent", function()
+	f:SetScript("OnEvent", function(frame)
 		SetCVar("spamFilter", 1)
 
 		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
