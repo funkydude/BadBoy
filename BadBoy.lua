@@ -1,7 +1,7 @@
 
--- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetFriendInviteInfo, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo, BNReportFriendInvite
--- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, wipe, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
--- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, BNGetNumFriendInvites, CalendarGetDate, SetCVar
+-- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
+-- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
+-- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, CalendarGetDate, SetCVar
 local myDebug = false
 
 local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
@@ -996,10 +996,10 @@ do
 		SetCVar("spamFilter", 1)
 
 		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-		if not BADBOY_BLACKLIST then BADBOY_BLACKLIST = {} end
 		local _, _, day = CalendarGetDate()
-		if BADBOY_BLACKLIST.dayFromCal ~= day then wipe(BADBOY_BLACKLIST) end
-		BADBOY_BLACKLIST.dayFromCal = day
+		if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
+			BADBOY_BLACKLIST = {dayFromCal = day}
+		end
 
 		frame:UnregisterEvent("PLAYER_LOGIN")
 	end)
