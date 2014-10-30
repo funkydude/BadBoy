@@ -211,6 +211,7 @@ local boostingWhiteList = {
 	"social",
 	"%d+k", --10k/dungeon
 	"onlyacceptinggold",
+	"goldonly",
 	"goldprices",
 	"tonight",
 	"gametime",
