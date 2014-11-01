@@ -348,6 +348,9 @@ local instantReportList = {
 	"^wt[bs]csgoknife", --WTSCS GO knife M9 Bayonet Stained in (minimal wear) /w and give me offer
 	"^wt[bs]csgoitem", --WTB CS:GO Items for Gold! /W me your items!!
 	"^wt[bs]anycsgoskin", --{rt1} WTB ANY CS:GO SKINS FOR WOW GOLD {rt1}
+	"^buyingcsgoskin", --{rt1}{rt3} Buying CS:GO Skins & Keys for WoW Gold | Paying good  {rt3}{rt1}
+	"^sellingsomecsgocase", --Selling some CS:GO cases! PM ME!
+	"^sellingcsgocase", --Selling CS:GO cases! PM ME!
 
 	--[[ Hearthstone ]]--
 	"^sellinghearthstonebeta", --SELLING HEARTHSTONE BETA KEY FOR GOLD /w ME YOUR PRICE
@@ -586,6 +589,7 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"prommote%.me.*payment", --dnd Website: Prommote.me ; Skype: mmo-support3 ; E-mail: prommote@gmail.com ; Support work hours: 13:00 - 01:00 CET. Ingame whispers are ignored. Gold is not accepted as payment.
 	"prommote%.me.*mount.*loot", --{rt6} {rt8} www.prommote.me - Mythic Garrosh kills and Mount | Heroic and Mythic Loot | Over 90 feedbacks! {rt6}
 	--prommote.me will help you gain any RBG rating (2200, 2400 an higher), fill the weekly cap, acquire T2 weapons and become the Gladiator and Hero of the Horde/Alliance Good pricing, no transfer/account sharing required
 	--prommote.me will help you get any PVE/PVP and other achievements, mounts, titles and top raid gear, and help you gain 20300 achievement points. PM for details.
