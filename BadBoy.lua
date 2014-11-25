@@ -773,6 +773,7 @@ local instantReportList = {
 	"g@ld.*livraison.*exclusiv", --Envie de G@LD pour bien commencer WoD, livraison en moins de 5 min en exclusivité sur ysondre
 	--{rt1}VERKAUFE GOLD Sehr Billig. Skypename : betz-500{rt1}
 	"verkaufen?gold.*skype", --{rt7}Wir Verkaufen Gold sehr Günstig. Skypename : betz-210{rt7}
+	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
