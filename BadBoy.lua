@@ -893,7 +893,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	msg = msg:lower() --Lower all text, remove capitals
 
 	--|cffff8000|Hgarrfollower:178:5:100:690:130:131:127:0:78:186:201:79|h[|TInterface\PVPFrame\PVP-Banner-Emblem-1.png:70:70|t]|h|r
-	if msg:find("garrfollower", nil, true) and msg:find("tinterface", nil, true) then
+	--\124cffff8000\124Hgarrfollower:439:5:100:690:138:158:131:0:78:186:201:79\124h[Mila Kunis Leaked Photos CLICK!]\124h\124r
+	if msg:find("garrfollower", nil, true) and (msg:find("tinterface", nil, true) or msg:find("garrfollower:439", nil, true) then
 		result = true
 		return true
 	end
