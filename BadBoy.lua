@@ -239,6 +239,7 @@ local whiteList = {
 	"guildportal%.com",
 	"guildomatic%.com",
 	"guildhosting.org",
+	"%.wix%.com",
 	"shivtr%.com",
 	"own3d%.tv",
 	"ustream%.tv",
