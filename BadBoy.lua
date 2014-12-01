@@ -891,6 +891,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	local debug = msg --Save original message format
 	msg = msg:lower() --Lower all text, remove capitals
 
+	--|cffff8000|Hgarrfollower:178:5:100:690:130:131:127:0:78:186:201:79|h[|TInterface\PVPFrame\PVP-Banner-Emblem-1.png:70:70|t]|h|r
+	if msg:find("garrfollower", nil, true) and msg:find("tinterface", nil, true) then
+		result = true
+		return true
+	end
+
 	--They like to use raid icons to avoid detection
 	local icon = 0
 	if strfind(msg, "{", nil, true) then --Only run the icon removal code if the chat line has raid icons that need removed
