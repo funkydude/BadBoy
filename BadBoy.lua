@@ -893,18 +893,6 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	local debug = msg --Save original message format
 	msg = msg:lower() --Lower all text, remove capitals
 
-	--|cffff8000|Hgarrfollower:178:5:100:690:130:131:127:0:78:186:201:79|h[|TInterface\PVPFrame\PVP-Banner-Emblem-1.png:70:70|t]|h|r
-	--\124cffff8000\124Hgarrfollower:439:5:100:690:138:158:131:0:78:186:201:79\124h[Mila Kunis Leaked Photos CLICK!]\124h\124r
-	-- Trade chat image abuse filtering. Since we only filter public channels and followers aren't tradeable, just flat out filter it until Blizz fixes it.
-	-- Alternative would be an ever growing database and they keep changing the text for links that are just custom text with no image.
-	if msg:find("hgarrfollower:", nil, true) then
-		if BadBoyLog and not myDebug then
-			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
-		end
-		result = true
-		return true
-	end
-
 	--They like to use raid icons to avoid detection
 	local icon = 0
 	if strfind(msg, "{", nil, true) then --Only run the icon removal code if the chat line has raid icons that need removed
