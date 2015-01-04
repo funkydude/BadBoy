@@ -553,6 +553,7 @@ local instantReportList = {
 	"^wts.*website.*paypal.*deliver", --WTS Custom Guild Website + 12 months of maintenance + hosting + seo ($100 paypal of 100kg in game) (1-3 days to deliver custom guild website)
 	"^wts.*prepaid.*wowingamecurrency", --WTS Rchange/Transfer/Prepaid for WoW ingame currency! {rt4}
 	"^wts.*tiger.*rooster.*timecard", --WTS  [Reins of the Swift Spectral Tiger]240k[Magic Rooster Egg]120k and Prepaid Timecard,Panda [MOP.Faction] change and Race change Pst.
+	"highmaul.*edge.*dving[%.,]net", --{skull} Highmaul. Lootruns and achievments runs. Cutting Edge: Imperator's Fall. Be First! - Dving.net {skull}
 	"mount.*code.*dving[%.,]net", --Achievements, Mounts, Loot-Codes, PVE / PVP - Dving.net
 	"sale.*loot.*dving[%.,]net", --5.4 content on sale! Hardmodes and Loot Raids for Siege of Orgrimmar! - Dving.net
 	"arena.*help.*dving[%.,]net", --Offering arena/RBG help. Season 14. 2200/2400/2650 - Dving.net
@@ -587,6 +588,7 @@ local instantReportList = {
 	"wts.*%[.*%].*gametime.*days", --WTS [Armored Bloodwing] [Enchanted Fey Dragon] [Iron Skyreaver] and gametime30-60-90-180days{star}WOD{rt1}
 	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
 	"guarantee.*speed.*mount.*skype", --{rt4} {rt6} Invincible, Ashes of Al’ar, Mimiron’s Head in just a month, GUARANTEED! Speed farming of any mount! Skype: mmo-support3 {rt3}
+	"wts.*gold.*security.*powerlevel", --{MOON}WTS:655 Jewelry,Ring and Weapons{MOON} for all class! Moreover,{Star}WOD Challenge Mode:Gold{Star}is online,security and professional power_leveling for you.If you are interested in it please /w me!-XJIU
 	--
 	"wowpvpcarry.*promotion", --Preorder any service from WoWPvPCarry now to save! Gear, titles, achievements, mounts, we do it all! Contact me to take advantage of promotions now!
 	"bestgear.*messageus.*preorder.*promotion", --Do you want to get the best gear and achieves in the upcoming expansion before everyone else? Message us now to preorder and save! Order while the promotions are still on!
