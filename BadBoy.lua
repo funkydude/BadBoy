@@ -589,6 +589,7 @@ local instantReportList = {
 	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
 	"guarantee.*speed.*mount.*skype", --{rt4} {rt6} Invincible, Ashes of Al’ar, Mimiron’s Head in just a month, GUARANTEED! Speed farming of any mount! Skype: mmo-support3 {rt3}
 	"wts.*gold.*security.*powerlevel", --{MOON}WTS:655 Jewelry,Ring and Weapons{MOON} for all class! Moreover,{Star}WOD Challenge Mode:Gold{Star}is online,security and professional power_leveling for you.If you are interested in it please /w me!-XJIU
+	"^vk.*%[.*%].*gametime", --VK[Reins of the Swift Spectral Tiger][Enchanted Fey Dragon]{star}game time 90-180days{star}WOD{star}
 	--
 	"wowpvpcarry.*promotion", --Preorder any service from WoWPvPCarry now to save! Gear, titles, achievements, mounts, we do it all! Contact me to take advantage of promotions now!
 	"bestgear.*messageus.*preorder.*promotion", --Do you want to get the best gear and achieves in the upcoming expansion before everyone else? Message us now to preorder and save! Order while the promotions are still on!
