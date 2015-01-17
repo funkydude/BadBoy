@@ -4,10 +4,10 @@
 ## Notes: A simple spam blocker & reporter.
 ## Notes-deDE: A simple spam blocker & reporter.
 ## Notes-ruRU: Простой блокировщик и осведомитель ГМ о спаме.
-## Notes-zhCN: A simple spam blocker & reporter.
-## Notes-zhTW: 一個簡單的垃圾廣告訊息&報告的過濾器
+## Notes-zhCN: 一个简单的垃圾信息过滤和自动举报的插件
+## Notes-zhTW: 一個簡單的垃圾廣告訊息阻擋&舉報工具
 ## Notes-koKR: A simple spam blocker & reporter.
-## Notes-frFR: A simple spam blocker & reporter.
+## Notes-frFR: Un simple bloqueur et rapporteur de spam.
 ## Notes-esES: Un bloqueador y un informador para spam.
 ## Notes-esMX: Un bloqueador y un informador para spam.
 ## Notes-ptBR: A simple spam blocker & reporter.
