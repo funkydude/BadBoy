@@ -352,6 +352,7 @@ local instantReportList = {
 	"^sellingcsgocase", --Selling CS:GO cases! PM ME!
 	"^sellingcsgoitem", --{rt1} SELLING CS GO ITEMS FOR GOLD {rt1}
 	"^buyingcsgokey", --{rt3}Buying Cs:Go Key's for {rt4}4k{rt4} Per key! Buying high amount! Whisper for more information!{rt3}
+	"^wt[bst]keysincsgo", --WTB Keys in CS:GO for 3k each!
 
 	--[[ Hearthstone ]]--
 	"^sellinghearthstonebeta", --SELLING HEARTHSTONE BETA KEY FOR GOLD /w ME YOUR PRICE
@@ -781,6 +782,7 @@ local instantReportList = {
 	--{rt1}VERKAUFE GOLD Sehr Billig. Skypename : betz-500{rt1}
 	"verkaufen?gold.*skype", --{rt7}Wir Verkaufen Gold sehr Günstig. Skypename : betz-210{rt7}
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
+	"titaniumbay.*deliver", ---= TitaniumBay =- Get 40% gold Free! 15 minutes Delivery! Check Price!
 	"titaniumbay.*livraison", ---= TitaniumBay =- Obtenez 10% supplémentaire! Livraison rapide et sûr!
 }
 
