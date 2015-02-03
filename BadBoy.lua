@@ -785,6 +785,7 @@ local instantReportList = {
 	"titaniumbay.*deliver", ---= TitaniumBay =- Get 40% gold Free! 15 minutes Delivery! Check Price!
 	"titaniumbay.*livraison", ---= TitaniumBay =- Obtenez 10% supplémentaire! Livraison rapide et sûr!
 	"titaniumbay.*versand", ---= TitaniumBay =- Bekommen 40% gold Gratis! 15 minuten Versand! Preis prüfen!
+	"titaniumbay.*verifiez", ---= TitaniumBay =- Obtenez 40 % d'or Gratuit! Dans 15 Minutes! Verifiez le prix!
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
