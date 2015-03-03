@@ -46,7 +46,7 @@ local commonList = {
 	"code",
 	"coupon",
 	"customer",
-	"deliver",
+	"de[l1]iver",
 	"discount",
 	"express",
 	"g[0o]ld",
@@ -593,6 +593,7 @@ local instantReportList = {
 	"wts.*gold.*security.*powerlevel", --{MOON}WTS:655 Jewelry,Ring and Weapons{MOON} for all class! Moreover,{Star}WOD Challenge Mode:Gold{Star}is online,security and professional power_leveling for you.If you are interested in it please /w me!-XJIU
 	"^vk.*%[.*%].*gametime", --VK[Reins of the Swift Spectral Tiger][Enchanted Fey Dragon]{star}game time 90-180days{star}WOD{star}
 	"^bietengold.*mount.*skype", --{rt1}BIETEN GOLD/MOUNTS UND ITEMS. Skypename : mom-525{rt1}
+	"acc.*powerle?ve?l.*deliver", --WTS [Reins of the Ashhide Mushan Beast], only 30mins, no acc sharePower lvling90-100, only 30h 9oLD, 5-10mins, fast delivery /w if interested
 	--
 	"wowpvpcarry.*promotion", --Preorder any service from WoWPvPCarry now to save! Gear, titles, achievements, mounts, we do it all! Contact me to take advantage of promotions now!
 	"bestgear.*messageus.*preorder.*promotion", --Do you want to get the best gear and achieves in the upcoming expansion before everyone else? Message us now to preorder and save! Order while the promotions are still on!
@@ -642,6 +643,7 @@ local instantReportList = {
 	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
 	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3
 	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
+	"gamecarry.*arena.*self.*info", --Gamecarry Now offer up to RANK1 GLADIATOR ARENA,CMS,RAIDS,RBGSBoth Pilot & Self-Play Please message for more informations! ----
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
