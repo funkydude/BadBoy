@@ -25,7 +25,7 @@ do
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~8 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "ruRU" then
 		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
-		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~8 секунды между донесениями, чтобы избежать отключения (ошибка Blizzard)"
+		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~8 секунд между жалобами, чтобы избежать отключения от сервера (ошибка Blizzard)"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
@@ -186,6 +186,7 @@ local boostingList = {
 	"boost",
 	"arena",
 	"rbg",
+	"gladiator",
 	"service",
 	"cheap",
 	"gold",
@@ -194,7 +195,6 @@ local boostingList = {
 	"price",
 	"account",
 	"rating",
-	"test",
 	"legal",
 	"guarantee",
 	"m[o0]unt",
@@ -644,6 +644,7 @@ local instantReportList = {
 	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3
 	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
 	"gamecarry.*arena.*self.*info", --Gamecarry Now offer up to RANK1 GLADIATOR ARENA,CMS,RAIDS,RBGSBoth Pilot & Self-Play Please message for more informations! ----
+	"2200.*season.*playyourown.*cheap", --Wts 2200-2400 in all brackets Sold by 2700+ players this season. Quick 2-4 hr carries all done in one day and you play your own toon! Also do quick conquest caps for cheap also pst!
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -712,6 +713,8 @@ local instantReportList = {
 	--{треугольник} Продаём {круг} от 16р за 1к.  Сайт WoWMoney.гu. BL245+. Bсe виды оплат. Связь чeрeз скайп wowmoneyally или icq З84829 {треугольник}
 	"пpoдaem.*wowmoney%..*icq", --{звезда} Пpодaём голдец от 16p зa 1к.  BL245+. Bсe виды оплaт. Caйт WoWMoney.гu. Cвязь чepeз скaйп wowmoneyally или icq З8-48-29 .{звезда}
 	"wowmart%.ru.*зoлoтo", ---= WOWMART.RU =- Адекватные цены на Золото и товары за Золото.
+	"lvlmoney%.ru.*зoлoтo", --{крест} LvL-MoNeY.ru - СКУПКА / ОБМЕН {круг} >> игровой валюты(gold) +++ Продажа ТаймКарт игрового времени за золото {круг} / Контакты на сайте!
+	"lvlmoney%.ru.*зoлoтцe", --{квадрат} LvL-MoNeY.ru - быстро и качественно! {квадрат} Продаём {круг} ЗоЛоТцЕ - 12р.=1к >> PVE-PVP услуги / рейды и лут > арены и РБГ / испытания > маунты.
 
 	--[[  Chinese  ]]--
 	--嗨 大家好  团购金币送代练 炼金龙 还有各职业账号 详情请咨询 谢谢$18=10k;$90=50k+1000G free;$180=100k+2000g+月卡，也可用G 换月卡
@@ -802,7 +805,7 @@ local repTbl = {
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
 	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
 	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e",["ê"]="e", --First letter is Russian "\208\181". Convert > \101
-	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", --Convert > \105
+	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["İ"]="i", --Convert > \105
 	["к"]="k", -- First letter is Russian "\208\186". Convert > \107
 	["Μ"]="m", ["м"]="m",--First letter is capital Greek μ "\206\156". Convert > \109
 	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", --First letter is Russian "\208\190". Convert > \111

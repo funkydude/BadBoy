@@ -1,9 +1,9 @@
 ## Interface: 60100
-## Version: 12.524
+## Version: 12.529
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
 ## Notes-deDE: A simple spam blocker & reporter.
-## Notes-ruRU: Простой блокировщик и осведомитель ГМ о спаме.
+## Notes-ruRU: Простой блокировщик и осведомитель игровых мастеров о спаме.
 ## Notes-zhCN: 一个简单的垃圾信息过滤和自动举报的插件
 ## Notes-zhTW: 一個簡單的垃圾廣告訊息阻擋&舉報工具
 ## Notes-koKR: A simple spam blocker & reporter.
