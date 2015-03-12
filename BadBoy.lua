@@ -647,6 +647,14 @@ local instantReportList = {
 	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
 	"gamecarry.*arena.*self.*info", --Gamecarry Now offer up to RANK1 GLADIATOR ARENA,CMS,RAIDS,RBGSBoth Pilot & Self-Play Please message for more informations! ----
 	"2200.*season.*playyourown.*cheap", --Wts 2200-2400 in all brackets Sold by 2700+ players this season. Quick 2-4 hr carries all done in one day and you play your own toon! Also do quick conquest caps for cheap also pst!
+	"wts.*boost.*gear.*customer", --WTS full  arena cap boost (15k+ conq points) for only 3-5 hours, you dont need gear skill or anything else, over 200+ happy customers , boosting right now !
+	"wtsrbgmount.*share.*carry", --WTS RBG mounts[Vicious War Ram]and[Reins of the Vicious Warsaber]RBG 1-75 wins,no acc share,carry right now
+	--
+	"helpyou.*gold.*group.*highmaul.*wisp", --We will help you with [Challenge Warlord: Gold] -fastest group ever , Also Highmaul and Blackrock Foundry loot runs. Wisp for info ♫
+	"2400.*day.*pve.*loot.*info", --Want [Three's Company: 2400] in one day? Or PVE - Highmaul and Blackrock Foundry loot runs? Msg for info ♫
+	"tired.*wipes.*noobs.*ahead.*curve.*msg.*info", --Tired from wipes with noobs? [Ahead of the Curve: Blackhand's Crucible] in 30 min! Msg for info  ♫ ♫
+	"level100.*24h.*secure.*challenge.*wisp.*info", --→ Get [Level 100] in 24h and secure! Also 670 ilvl+, Wod Challenge modes and much more, Wisp for more info ► ► ►
+	--
 
 	--[[  Russian  ]]--
 	--[skull]Ovoschevik.rf[skull] continues to harm the enemy, to please you with fresh [circle]vegetables! BC 450. Operators of girls waiting for you!
@@ -792,6 +800,7 @@ local instantReportList = {
 	"raidbroker[%.,]com.*skype", --Both Horde/Alliance teams! http://raidbroker.com ~ Jarvis.Dresden on Skype!!
 	"g@ld.*livraison.*exclusiv", --Envie de G@LD pour bien commencer WoD, livraison en moins de 5 min en exclusivité sur ysondre
 	"gold.*price.*http", --Challenge Gold best price!PVE!Leveling Profession !And much more http://wow-warcraft.nethouse.ru/
+	"mmoprof.*gladiator.*gold", --{rt2} [mmo-prof.com] {rt2} BRF Heroic / Highmaul Heroic , Mystisch Lootruns !! Arena 2,2k - Gladiator .. Jegliche TCG Mounts , Play in a Pro Guild (Helfen euch einer absoluten Top Gilde beizutreten, alles für Gold !! Schau vorbei {rt2} [mmo-prof.com] {rt2}
 	--{rt1}VERKAUFE GOLD Sehr Billig. Skypename : betz-500{rt1}
 	"verkaufen?gold.*skype", --{rt7}Wir Verkaufen Gold sehr Günstig. Skypename : betz-210{rt7}
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
