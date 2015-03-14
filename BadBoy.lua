@@ -225,6 +225,7 @@ local whiteList = {
 	"lf[gm]",
 	"|cff",
 	"raid",
+	"scam",
 	"roleplay",
 	"appl[iy]", --apply/application
 	"contender", --Contender's Silk
@@ -615,9 +616,9 @@ local instantReportList = {
 	"elite.*services.*glory.*tinyurl", --{rt7}{rt5} Elite Warlords of Draenor services are up! Everything from Glory of the Draenor Hero and Raider to full Highmaul and Blackrock Foundry Mythic gear! tinyurl.com/mythicwarlord {rt5} || URL LINKS TO https://prommote.me/eu/60-content
 	"boosting[%.,]pro.*discount", --[H] <DND>[Jedrict]: {skull}{skull}{skull} www.Boosting.Pro - Premium Arena boosting - {circle} SUPER DISCOUNTS ON ALL RATINGS {circle} Over 50 successful Gladiator orders in season 14! {skull}{skull}{skull}
 	--{rt6}{rt6}{rt6} www.Boosting.Pro - Elite PvE Services: {rt2} GET FREE GARROSH MOUNT {rt2} today! Only 25 man raids, warforged loot, weapons and trinkets are included! {rt6}{rt6}{rt6}
-	"boosting[%.,]pro.*service", --[H] <DND>[Jedrict]: {square}{square}{square} www.Boosting.Pro - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
-	"boosting[%.,]pro.*sale", --{rt6}{rt6}{rt6} www.Boosting.Pro - Get all RAREST mounts from World of Warcraft: {rt2} MIMIRON'S HEAD and ASHES OF AL'AR {rt2} on Sale now! Any mount including Invincible in less than a month! {rt6}{rt6}{rt6}
-	"boosting[%.,]pro.*cheap", --{rt6}{rt6}{rt6} www.Boosting.Pro - REAL RBG boosting without wintrades! {rt2} ULTRA-CHEAP RBG WIN FARM {rt2} Check it out ;) {rt6}{rt6}{rt6}
+	"b[o0][o0]sting[%.,]pr[o0].*service", --[H] <DND>[Jedrict]: {square}{square}{square} www.Boosting.Pro - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
+	"b[o0][o0]sting[%.,]pr[o0].*sale", --{rt6}{rt6}{rt6} www.Boosting.Pro - Get all RAREST mounts from World of Warcraft: {rt2} MIMIRON'S HEAD and ASHES OF AL'AR {rt2} on Sale now! Any mount including Invincible in less than a month! {rt6}{rt6}{rt6}
+	"b[o0][o0]sting[%.,]pr[o0].*cheap", --{rt6}{rt6}{rt6} www.Boosting.Pro - REAL RBG boosting without wintrades! {rt2} ULTRA-CHEAP RBG WIN FARM {rt2} Check it out ;) {rt6}{rt6}{rt6}
 	"rbg.*epiccarry[%.,]c[0o]m", --{rt2} Arena rating\Rbg wins\Arena wins on epiccarry.com {rt1}
 	"realm.*epiccarry[%.,]c[0o]m", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
 	"gold.*epiccarry[%.,]c[0o]m", --{rt1} Highmaul & Blackrock Foundry NM/HC/Mythic SELF PLAY with loot! <> CM GOLD SELF PLAY <> Fast 90-100 in 24 hrs + bonus <> Glory of the Draenor Hero/Raider <> Epiccarry.c0m. {rt1}
@@ -958,14 +959,16 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	--End string replacements
 
 	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 20
-	for i=1, #chatLines do
-		if chatLines[i] == msg and chatPlayers[i] == trimmedPlayer then --If message same as one in previous 20 and from the same person...
-			result = true return true --...filter!
+	if event == "CHAT_MSG_CHANNEL" then
+		for i=1, #chatLines do
+			if chatLines[i] == msg and chatPlayers[i] == trimmedPlayer then --If message same as one in previous 20 and from the same person...
+				result = true return true --...filter!
+			end
+			if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
 		end
-		if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
+		chatLines[#chatLines+1] = msg
+		chatPlayers[#chatPlayers+1] = trimmedPlayer
 	end
-	chatLines[#chatLines+1] = msg
-	chatPlayers[#chatPlayers+1] = trimmedPlayer
 	--End text buffer
 
 	if IsSpam(msg, icon) then
