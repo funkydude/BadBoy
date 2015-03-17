@@ -357,10 +357,7 @@ local instantReportList = {
 	"^wt[bst]keysincsgo", --WTB Keys in CS:GO for 3k each!
 	"wanttobuy[/\\]sellcsgoitem", --Want to buy/sell CS:GO items whisper me for more information :)
 	"wanttosell[/\\]buycsgoitem", --Want to sell/buy CS:GO items for wow gold, whisper me for more information :)
-
-	--[[ Hearthstone ]]--
-	"^sellinghearthstonebeta", --SELLING HEARTHSTONE BETA KEY FOR GOLD /w ME YOUR PRICE
-	"^wtshearthstonebeta", --WTS Hearthstone beta, whisper offers people! :)
+	"wowgoldforcsgokey", --{rt6} Want to trade WoW Gold for CS:GO Keys  Whisper me for more info!! / Swish till svenskar {rt6}
 
 	--[[  SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
@@ -651,6 +648,8 @@ local instantReportList = {
 	"2200.*season.*playyourown.*cheap", --Wts 2200-2400 in all brackets Sold by 2700+ players this season. Quick 2-4 hr carries all done in one day and you play your own toon! Also do quick conquest caps for cheap also pst!
 	"wts.*boost.*gear.*customer", --WTS full  arena cap boost (15k+ conq points) for only 3-5 hours, you dont need gear skill or anything else, over 200+ happy customers , boosting right now !
 	"wtsrbgmount.*share.*carry", --WTS RBG mounts[Vicious War Ram]and[Reins of the Vicious Warsaber]RBG 1-75 wins,no acc share,carry right now
+	"help.*gold.*mount.*group.*pickus", --Need help getting the[Challenge Warlord: Gold]/gear/title/mount /achi? Do it with the group who had the most challenge modes completed in Mop, Pick us and find out why others did!!
+	"elitistgaming[%.,]com.*boost", --Elitist-gaming,com Selling CM:Gold 8/8 and normal,heroic,mythic Highmaul and Blackrock Foundry. Individual Blackhand kills. League of Legends Launcher X client enablment of 4 person soloq boost. Overall improved client
 	--
 	"helpyou.*gold.*group.*highmaul.*wisp", --We will help you with [Challenge Warlord: Gold] -fastest group ever , Also Highmaul and Blackrock Foundry loot runs. Wisp for info ♫
 	"2400.*day.*pve.*loot.*info", --Want [Three's Company: 2400] in one day? Or PVE - Highmaul and Blackrock Foundry loot runs? Msg for info ♫
