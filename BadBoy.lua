@@ -821,11 +821,13 @@ local instantReportList = {
 	"verkaufen?gold.*skype", --{rt7}Wir Verkaufen Gold sehr Günstig. Skypename : betz-210{rt7}
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
 	"titaniumbay.*deliver", ---= TitaniumBay =- Get 40% gold Free! 15 minutes Delivery! Check Price!
+	"titaniumbay.*coin", --TitaniumBay - Obtain 40% more coin in 15 minutes!  worthiest in town!
 	"titaniumbay.*livraison", ---= TitaniumBay =- Obtenez 10% supplémentaire! Livraison rapide et sûr!
 	"titaniumbay.*versand", ---= TitaniumBay =- Bekommen 40% gold Gratis! 15 minuten Versand! Preis prüfen!
 	"titaniumbay.*verifiez", ---= TitaniumBay =- Obtenez 40 % d'or Gratuit! Dans 15 Minutes! Verifiez le prix!
 	"titaniumbay.*preis", ---= TitaniumBay =- 40% gold bekommen sie Gratis! Versand dauert 15 Minuten! Sie haben die Möglichkeit den Preis zu prüfen!
 	"titaniumbay.*oro.*precio", ---= TitaniumBay =- Obtenga 40% de oro Gratis! dentro de 15 Minutos! Vea precio!
+	"titaniumbay.*dinero", --TitaniumBay - Obtenga 40% ms dinero en 15 minutos! digno de la ciudad!
 }
 
 --This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
