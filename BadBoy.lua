@@ -529,6 +529,7 @@ local instantReportList = {
 	--WTS Gametime-Subscribtion /w me
 	"^wt[bs]gametime", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
 	"^wts%d+days?gc$", --WTS 60days GC
+	"mount.*mystic.*%d+days?time%d+k", --sell shop mount[Mystic Runesaber]25k// 60days time 40K
 	"^anyonesellinggametime", --anyone selling game time
 	"^lookingforgametime", --LOOKING FOR GAME TIME
 	"^wt[bs]prepaidcard", --WTS prepaid card (30,60,90 days), mounts
@@ -587,6 +588,9 @@ local instantReportList = {
 	"koroboost.*skype", --Koroboost.com - best gaming service. Online support at page and thousand of reviewes. Skype Korsstart
 	"feat.*mount.*koroboost", --Get feat of strength [Cutting Edge: Garrosh Hellscream (25 player)] - Heroic mount as GIFT at Koroboost.com
 	"koroboost.*mount", --[Mythic: Blackhand's Crucible] -Get on кorobооst,c{rt2}m. Also full 685 or 700 gear, Mythic mount. Challenge modes. Best offers.
+	--◄◄ ♥ Want 20+ [Epic]s per run?Welcome to HFC or BRF 30 ppl raids- running daily!Also 710+ gear, Normal and Heroic HFC. [www.KoroBoost.com] ◄◄ ♥ ♫
+	--◄◄ ♥  [Challenge Warlord: Gold] -Selfplay! Also 6.2 Achievements, Draenor Flying pack, Mythic 5m dungeons! Also 710+ gear, Normal and Heroic HFC. www.KoroBoost.com ◄◄ ♥ ♫
+	"gear.*koroboost[%.,]c[0o]m", --◄◄ ♥  Guaranteed Coolest Blackhand Mythic Mount  [Ironhoof Destroyer]  - now without server transfer! want to Ride it tomorrow?  Also 710+ gear, Normal and Heroic HFC.www.KoroBoost.com
 	--
 	--Any pve runs . normal 25 180 euro. flex from 65 euro, heroic 25 hc  LOOT runs With LOOT GUARANTEED , all tier pack in single run.  Cheapest mount from Garrosh Heroic 170 eu. Also have D3 boost. Koroboost.com {rt1}
 	"wts.*account.*mount.*skype", --{rt1} {rt1}  WTS Old Unmerged WoW Accounts {rt1}  Get old achivements/mounts/pets/titles from Vanilla/TBC/WOTLK on your main {rt1} Already seen: Scarab Lord, Old Gladiators etc Skype: kubadoman11 (only skype name) Site:
@@ -623,6 +627,7 @@ local instantReportList = {
 	"b[o0][o0]sting[%.,]pr[o0].*service", --[H] <DND>[Jedrict]: {square}{square}{square} www.Boosting.Pro - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
 	"b[o0][o0]sting[%.,]pr[o0].*sale", --{rt6}{rt6}{rt6} www.Boosting.Pro - Get all RAREST mounts from World of Warcraft: {rt2} MIMIRON'S HEAD and ASHES OF AL'AR {rt2} on Sale now! Any mount including Invincible in less than a month! {rt6}{rt6}{rt6}
 	"b[o0][o0]sting[%.,]pr[o0].*cheap", --{rt6}{rt6}{rt6} www.Boosting.Pro - REAL RBG boosting without wintrades! {rt2} ULTRA-CHEAP RBG WIN FARM {rt2} Check it out ;) {rt6}{rt6}{rt6}
+	"euro.*epiccarry[%.,]c[0o]m", --WTS: HELLFIRE CITADEL NM/HC (99 euro for normal run!) <> SELF PLAY <> EVERYDAY RUNS <> BLACKROCK FOUNDRY HC/MYTHIC <> SELF PLAY <> ALL GLORIES, MOUNTS COACHING AND MORE ON {rt1} epiccarry.com {rt1}
 	"rbg.*epiccarry[%.,]c[0o]m", --{rt2} Arena rating\Rbg wins\Arena wins on epiccarry.com {rt1}
 	"realm.*epiccarry[%.,]c[0o]m", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
 	--{star}WTS: BLACKROCK FOUNDRY: 10/10 (HEROI?) ! MASTER LOOT, Selfplay! {circle} CM GOLD! LEVELING 90-100 + BONUS AND GLORY OF THE DRAENOR RAIDER HERO ! epiccarry . c{star}m
@@ -1040,15 +1045,15 @@ do
 			lineId = tonumber(lineId)
 			extraData = tonumber(extraData)
 			if CanComplainChat(lineId) then
-				local t = GetTime()
-				if (t-prevReport) > 8 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
-					prevReport = t
+				--local t = GetTime()
+				--if (t-prevReport) > 8 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
+				--	prevReport = t
 					ReportPlayer("spam", lineId)
-					BADBOY_BLACKLIST[guid] = true
+				--	BADBOY_BLACKLIST[guid] = true
 					--ChatFrame1:RemoveMessagesByExtraData(extraData) -- ReportPlayer already runs this
-				else
-					ChatFrame1:AddMessage(throttleMsg, 1, 1, 1, nil, nil, nil, extraData)
-				end
+				--else
+				--	ChatFrame1:AddMessage(throttleMsg, 1, 1, 1, nil, nil, nil, extraData)
+				--end
 			end
 		else
 			SetHyperlink(self, link, ...)
