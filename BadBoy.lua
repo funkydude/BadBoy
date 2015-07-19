@@ -1014,7 +1014,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
 			else
 				--Show block message
-				if not BADBOY_NOREPORT and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) then
+				--if not BADBOY_NOREPORT and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) then
 					-- This code is replicated from Blizzard's ChatFrame.lua code.
 					-- The intention here is to add the "extraData" flag to our AddMessage,
 					-- the same way Blizz adds that data to normal messages. Then we can use the
@@ -1030,7 +1030,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid or arg13)
 					-- Finally, add the message
 					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData, guid), 0.2, 1, 0.6, nil, nil, nil, extraData)
-				end
+				--end
 			end
 		end
 		result = true
