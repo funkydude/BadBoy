@@ -16,8 +16,8 @@ do
 		locNoReportDesc = "Veuillez ne PAS utiliser ceci. Le signalement du spam permet aux comptes piratés utilisés par les spammeurs d'être fermés et de nettoyer les royaumes. De plus, si beaucoup de joueurs signalent un spammeur, ce dernier perd la possibilité de discuter et donc de spammer, ce qui est bénéfique pour tous, en particulier pour ceux qui n'utilisent pas BadBoy."
 		locManualReport = "Afficher un popup de signalement du joueur au lieu de l'indiquer dans la fenêtre de chat"
 	elseif L == "deDE" then
-		locNoReportMsg = "Verstecke die 'Spam geblockt' Meldung die dich bittet den Spam zu melden"
-		locNoReportDesc = "Bitte NICHT nutzen. Spam zu melden hilft die Anzahl der gehackten Accounts die Spammer nutzen zu reduzieren und säubert die Server. Wenn viele Leute einen Spammer melden, verlieren diese ihre Möglichkeit den Chat zu nutzen. Davon profitieren alle, vor allem Leute die BadBoy nicht nutzen."
+		locNoReportMsg = "Verstecke die 'Spam geblockt' Meldung, die dich bittet, den Spam zu melden"
+		locNoReportDesc = "Bitte NICHT nutzen. Spam zu melden hilft die Anzahl der gehackten Accounts, die Spammer nutzen, zu reduzieren und säubert die Server. Wenn viele Leute einen Spammer melden, verlieren diese die Möglichkeit den Chat zu nutzen. Davon profitieren alle, vor allem Leute die BadBoy nicht nutzen."
 		locManualReport = "Zeige ein PopUp (zeigt den Spam) anstatt es im Chatfenster anzuzeigen"
 	elseif L == "zhTW" then
 		locNoReportMsg = "隱藏要你舉報的 '垃圾阻擋' 訊息"
