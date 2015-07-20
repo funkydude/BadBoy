@@ -358,6 +358,8 @@ local instantReportList = {
 	"wanttobuy[/\\]sellcsgoitem", --Want to buy/sell CS:GO items whisper me for more information :)
 	"wanttosell[/\\]buycsgoitem", --Want to sell/buy CS:GO items for wow gold, whisper me for more information :)
 	"wowgoldforcsgokey", --{rt6} Want to trade WoW Gold for CS:GO Keys  Whisper me for more info!! / Swish till svenskar {rt6}
+	"^wt[bst]csgocamo", --WTS CS:GO CAMOS
+	"^wt[bst]cheapcsgoskin", --WTB CHEAP CS:GO SKINS /W ME !
 
 	--[[  SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
@@ -655,6 +657,7 @@ local instantReportList = {
 	"raid.*selfplay.*discount.*skype", --WTS {rt6} Blackrock Foundry Heroic + all loot, NOW! raid await {rt6} Self-play, 25ppl+, tons of loot, master loot. DISCOUNT for cloth,leather and mail. skype: dozinor
 	"hordebank.*account.*euro", --[WWW.Hordebank.COM]{RT2Black Foundry HC Master Loot run 10/10,,Selfplay/Account Share available.Visit [WWW.Hordebank.COM]to talk to Live Chat for details Now!!5 spots available!200euro Now!q
 	"b[0o][0o]st.*goodtauren.*help", --{star}{star}NICE B00STING from {star}{star} GOODTAUREN.com - Powelevelling and help {star}{star}90-100 in 10 hours{star}{star}
+	"shar[ei].*boosting[%.,]expert", --WTS {rt1} Challenge mode {rt1} runs without account sharing! 3-5 full runs every day! Talk to online consultant at {rt8} www.boosting.expert {rt8} for more info!
 	--
 	"gboost.*mode.*master.*sale", --{square}{circle}[www.G-boost.net] - PVE Boost.challenge mode.{triangle}CHALLENGE MASTER{triangle}only 2 weeks on sales!{circle}{square}
 	"loot.*day.*skype:gboost", --{square}{circle}BRF H 10/10 loot run every day{cross}Skype:Gboost{circle}{square}
@@ -919,6 +922,7 @@ end
 
 --[[ Chat Scanning ]]--
 local Ambiguate, gsub, next, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = Ambiguate, gsub, next, tremove, 0, nil, {}, {}, 0
+local spamCollector, extraDataCollector, prevLink = {}, {}, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid, arg13)
 	local trimmedPlayer
 	if lineId == prevLineId then
@@ -1013,7 +1017,11 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				dialog.text:SetFormattedText("BadBoy: %s \n\n %s", REPORT_SPAM_CONFIRMATION:format(trimmedPlayer), debug) --Add original spam line to Blizzard popup message
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
 			else
+				spamCollector[guid] = lineId
 				--Show block message
+				local t = GetTime()
+				if t-prevLink > 60 then
+					prevLink = t
 				--if not BADBOY_NOREPORT and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) then
 					-- This code is replicated from Blizzard's ChatFrame.lua code.
 					-- The intention here is to add the "extraData" flag to our AddMessage,
@@ -1030,7 +1038,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid or arg13)
 					-- Finally, add the message
 					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData, guid), 0.2, 1, 0.6, nil, nil, nil, extraData)
-				--end
+					extraDataCollector[#extraDataCollector+1] = extraData
+				end
 			end
 		end
 		result = true
@@ -1044,19 +1053,17 @@ do
 	function ItemRefTooltip:SetHyperlink(link, ...)
 		local badboy, player, lineId, extraData, guid = strsplit(":", link)
 		if badboy and badboy == "badboy" then
-			lineId = tonumber(lineId)
-			extraData = tonumber(extraData)
-			if CanComplainChat(lineId) then
-				--local t = GetTime()
-				--if (t-prevReport) > 8 then --Throttle reports to try and prevent disconnects, please fix it Blizz.
-				--	prevReport = t
-					ReportPlayer("spam", lineId)
-				--	BADBOY_BLACKLIST[guid] = true
-					--ChatFrame1:RemoveMessagesByExtraData(extraData) -- ReportPlayer already runs this
-				--else
-				--	ChatFrame1:AddMessage(throttleMsg, 1, 1, 1, nil, nil, nil, extraData)
-				--end
+			for k, v in next, spamCollector do
+				if CanComplainChat(v) then
+					ReportPlayer("spam", v)
+				end
+				spamCollector[k] = nil
 			end
+			for i = 1, #extraDataCollector do
+				ChatFrame1:RemoveMessagesByExtraData(extraDataCollector[i])
+			end
+			wipe(extraDataCollector)
+			prevLink = 0
 		else
 			SetHyperlink(self, link, ...)
 		end
@@ -1079,10 +1086,10 @@ do
 		SetCVar("spamFilter", 1)
 
 		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-		local _, _, day = CalendarGetDate()
-		if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
-			BADBOY_BLACKLIST = {dayFromCal = day}
-		end
+		--local _, _, day = CalendarGetDate()
+		--if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
+		--	BADBOY_BLACKLIST = {dayFromCal = day}
+		--end
 
 		frame:UnregisterEvent("PLAYER_LOGIN")
 	end)
