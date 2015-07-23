@@ -4,35 +4,35 @@
 -- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, CalendarGetDate, SetCVar
 local myDebug = false
 
-local reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r <<<"
+local reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r"
 local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~8 seconds between reports to prevent being disconnected (Blizzard bug)"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy : >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqué, cliquez pour signaler !]|h|r <<<"
+		reportMsg = "BadBoy : |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloqué, cliquez pour signaler !]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~8 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam geblockt, zum Melden klicken!]|h|r <<<"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam geblockt, zum Melden klicken!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. 8 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[垃圾訊息已被阻擋, 點擊以舉報 !]|h|r <<<"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[垃圾訊息已被阻擋, 點擊以舉報 !]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: 為了防止斷線，舉報請至少間隔~8秒 (暴雪的bug)"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[垃圾信息已被拦截，点击举报！]|h|r <<<"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[垃圾信息已被拦截，点击举报！]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~8 秒以防断线（暴雪的bug）"
 	elseif L == "esES" or L == "esMX" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado. Clic para informar!]|h|r <<<"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado. Clic para informar!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~8 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r <<<"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~8 секунд между жалобами, чтобы избежать отключения от сервера (ошибка Blizzard)"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado, clique para denunciar!]|h|r <<<"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado, clique para denunciar!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~8 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy: >>> |cfffe2ec8|Hbadboy:%s:%d:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r <<<"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r"
 		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~8 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
 	end
 end
@@ -1016,13 +1016,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", trimmedPlayer, nil, lineId)
 				dialog.text:SetFormattedText("BadBoy: %s \n\n %s", REPORT_SPAM_CONFIRMATION:format(trimmedPlayer), debug) --Add original spam line to Blizzard popup message
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
-			else
+			elseif not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid] then
 				spamCollector[guid] = lineId
 				--Show block message
 				local t = GetTime()
 				if t-prevLink > 60 then
 					prevLink = t
-				--if not BADBOY_NOREPORT and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) then
 					-- This code is replicated from Blizzard's ChatFrame.lua code.
 					-- The intention here is to add the "extraData" flag to our AddMessage,
 					-- the same way Blizz adds that data to normal messages. Then we can use the
@@ -1037,7 +1036,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 					end
 					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid or arg13)
 					-- Finally, add the message
-					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData, guid), 0.2, 1, 0.6, nil, nil, nil, extraData)
+					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData, guid), 1, 1, 1, nil, nil, nil, extraData)
 					extraDataCollector[#extraDataCollector+1] = extraData
 				end
 			end
@@ -1055,6 +1054,7 @@ do
 		if badboy and badboy == "badboy" then
 			for k, v in next, spamCollector do
 				if CanComplainChat(v) then
+					BADBOY_BLACKLIST[guid] = true
 					ReportPlayer("spam", v)
 				end
 				spamCollector[k] = nil
@@ -1086,10 +1086,10 @@ do
 		SetCVar("spamFilter", 1)
 
 		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-		--local _, _, day = CalendarGetDate()
-		--if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
-		--	BADBOY_BLACKLIST = {dayFromCal = day}
-		--end
+		local _, _, day = CalendarGetDate()
+		if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
+			BADBOY_BLACKLIST = {dayFromCal = day}
+		end
 
 		frame:UnregisterEvent("PLAYER_LOGIN")
 	end)
