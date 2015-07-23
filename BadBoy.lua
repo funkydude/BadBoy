@@ -4,36 +4,27 @@
 -- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, CalendarGetDate, SetCVar
 local myDebug = false
 
-local reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam blocked, click to report!]|h|r"
-local throttleMsg = "|cFF33FF99BadBoy|r: Please wait ~8 seconds between reports to prevent being disconnected (Blizzard bug)"
+local reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam blocked, click to report!]|h|r"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy : |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloqué, cliquez pour signaler !]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: Veuillez patienter ~8 secondes entre les signalements afin d'éviter d'être déconnecté (bug de Blizzard)"
+		reportMsg = "BadBoy : |cff6BB247|Hbadboy|h[Spam bloqué, cliquez pour signaler !]|h|r"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam geblockt, zum Melden klicken!]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: Bitte warte ca. 8 Sekunden zwischen Meldungen um einen Disconnect zu verhindern (Blizzard Bug)"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam geblockt, zum Melden klicken!]|h|r"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[垃圾訊息已被阻擋, 點擊以舉報 !]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: 為了防止斷線，舉報請至少間隔~8秒 (暴雪的bug)"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[垃圾訊息已被阻擋, 點擊以舉報 !]|h|r"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[垃圾信息已被拦截，点击举报！]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: 请在举报时等待~8 秒以防断线（暴雪的bug）"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[垃圾信息已被拦截，点击举报！]|h|r"
 	elseif L == "esES" or L == "esMX" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado. Clic para informar!]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor espere ~8 segundos entre los informes para evitar que se desconecte (error de Blizzard)"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam bloqueado. Clic para informar!]|h|r"
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: Пожалуйста, подождите ~8 секунд между жалобами, чтобы избежать отключения от сервера (ошибка Blizzard)"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r"
 	elseif L == "koKR" then
 
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloqueado, clique para denunciar!]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: Por favor aguarde ~8 segundos entre denúncias para evitar ser desconectado (erro de Blizzard)"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam bloqueado, clique para denunciar!]|h|r"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy:%s:%d:%d:%s|h[Spam bloccata, clic qui per riportare!]|h|r"
-		throttleMsg = "|cFF33FF99BadBoy|r: Prego aspetta ~8 secondi tra una segnalazione e l'altra per far si che tu non venga disconnesso (bug della Blizzard)"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam bloccata, clic qui per riportare!]|h|r"
 	end
 end
 
@@ -922,7 +913,7 @@ end
 
 --[[ Chat Scanning ]]--
 local Ambiguate, gsub, next, tremove, prevLineId, result, chatLines, chatPlayers, prevWarn = Ambiguate, gsub, next, tremove, 0, nil, {}, {}, 0
-local spamCollector, extraDataCollector, prevLink = {}, {}, 0
+local spamCollector, prevLink, spamLineId = {}, 0, 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid, arg13)
 	local trimmedPlayer
 	if lineId == prevLineId then
@@ -1022,27 +1013,29 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				local t = GetTime()
 				if t-prevLink > 60 then
 					prevLink = t
-					-- This code is replicated from Blizzard's ChatFrame.lua code.
-					-- The intention here is to add the "extraData" flag to our AddMessage,
-					-- the same way Blizz adds that data to normal messages. Then we can use the
-					-- RemoveMessagesByExtraData functionality later.
-					local eventType = event:sub(10) -- Trim down to CHANNEL, WHISPER, etc.
-					local chatTarget
-					if eventType == "CHANNEL" then
-						eventType = eventType .. channelNum -- Set to CHANNEL1, CHANNEL2, etc, to separate General from Trade, etc.
-						chatTarget = channelNum
-					elseif eventType == "WHISPER" or eventType == "AFK" or eventType == "DND" then
-						chatTarget = player:upper() -- Set to PLAYERNAME
-					end
-					local extraData = ChatHistory_GetAccessID(eventType, chatTarget, guid or arg13)
-					-- Finally, add the message
-					ChatFrame1:AddMessage(reportMsg:format(player, lineId, extraData, guid), 1, 1, 1, nil, nil, nil, extraData)
-					extraDataCollector[#extraDataCollector+1] = extraData
+					spamLineId = lineId
+					ChatFrame1:AddMessage(reportMsg, 1, 1, 1, nil, nil, nil, -5678) -- Use -5678 as a unique signature
 				end
 			end
 		end
 		result = true
 		return true
+	elseif next(spamCollector) and GetTime() - prevLink > 90 and lineId - spamLineId > 15 then
+		local canReport = false
+		for k, v in next, spamCollector do
+			if CanComplainChat(v) then
+				canReport = true
+				break
+			end
+		end
+		if canReport then -- We have spam we can report, repeat message
+			prevLink = GetTime()
+			spamLineId = lineId
+			ChatFrame1:AddMessage(reportMsg, 1, 1, 1, nil, nil, nil, -5678) -- Use -5678 as a unique signature
+		else -- The spam has expired and we can no longer report it, wipe and remove the messages
+			wipe(spamCollector)
+			ChatFrame1:RemoveMessagesByExtraData(-5678) -- Remove messages from the chat frame with the -5678 signature
+		end
 	end
 end
 
@@ -1050,20 +1043,15 @@ end
 do
 	local SetHyperlink, prevReport = ItemRefTooltip.SetHyperlink, 0
 	function ItemRefTooltip:SetHyperlink(link, ...)
-		local badboy, player, lineId, extraData, guid = strsplit(":", link)
-		if badboy and badboy == "badboy" then
+		if link and link == "badboy" then
 			for k, v in next, spamCollector do
 				if CanComplainChat(v) then
-					BADBOY_BLACKLIST[guid] = true
+					BADBOY_BLACKLIST[k] = true
 					ReportPlayer("spam", v)
 				end
 				spamCollector[k] = nil
 			end
-			for i = 1, #extraDataCollector do
-				ChatFrame1:RemoveMessagesByExtraData(extraDataCollector[i])
-			end
-			wipe(extraDataCollector)
-			prevLink = 0
+			ChatFrame1:RemoveMessagesByExtraData(-5678) -- Remove messages from the chat frame with the -5678 signature
 		else
 			SetHyperlink(self, link, ...)
 		end
