@@ -1,5 +1,5 @@
 
--- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
+-- GLOBALS: BADBOY_NOLINK, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
 -- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
 -- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, CalendarGetDate, SetCVar
 local myDebug = false
@@ -440,6 +440,7 @@ local instantReportList = {
 	"wts.*diablo3goldfor%d+", --wts 150 mill Diablo 3 gold for 50k
 
 	--[[  Illegal Items ]]--
+	"skype.*woweugold", --{rt8} WTS  Spectral Tiger(blue+swift).Contact me on skype: woweugold19 {rt8}
 	"selling.*mount.*pet.*pvp.*purchase", --Selling all rare mounts, TGC pets, all PvP services, and much more! We offer great savings for combo purchases! Pst!
 	"wts.*timelost.*mount.*char", --WTS [Reins of the Time-Lost Proto-Drake] [Reins of the Phosphorescent Stone Drake]{rt1}World MOUNTS{rt6}non-sharing acc{rt4}transfer characters
 	"wts.*mounts.*sale.*skype", --{rt1}{rt3}WTS [Reins of the Spectral Tiger] [Reins of the Swift Spectral Tiger] {rt3}{rt2} cool mounts on sale!! {rt3}pst!!!~~~skype:ah4pgirl
@@ -584,6 +585,8 @@ local instantReportList = {
 	--◄◄ ♥ Want 20+ [Epic]s per run?Welcome to HFC or BRF 30 ppl raids- running daily!Also 710+ gear, Normal and Heroic HFC. [www.KoroBoost.com] ◄◄ ♥ ♫
 	--◄◄ ♥  [Challenge Warlord: Gold] -Selfplay! Also 6.2 Achievements, Draenor Flying pack, Mythic 5m dungeons! Also 710+ gear, Normal and Heroic HFC. www.KoroBoost.com ◄◄ ♥ ♫
 	"gear.*koroboost[%.,]c[0o]m", --◄◄ ♥  Guaranteed Coolest Blackhand Mythic Mount  [Ironhoof Destroyer]  - now without server transfer! want to Ride it tomorrow?  Also 710+ gear, Normal and Heroic HFC.www.KoroBoost.com
+	--◄◄ ♥  [Challenge Warlord: Gold] -Selfplay! Also 6.2 Achievements, Draenor Flying pack, 710+ gear, Normal and Heroic HFC. msg me or skype korsstart ◄◄ ♥ ♫
+	"gear.*skype.*korsstart", --◄◄ ♥ Want 20+ [Epic]s per run?Welcome to HFC or BRF 30 ppl raids- running daily!Also 710+ gear, Normal and Heroic HFC. msg me or skype korsstart ◄◄ ♥ ♫
 	--
 	--Any pve runs . normal 25 180 euro. flex from 65 euro, heroic 25 hc  LOOT runs With LOOT GUARANTEED , all tier pack in single run.  Cheapest mount from Garrosh Heroic 170 eu. Also have D3 boost. Koroboost.com {rt1}
 	"wts.*account.*mount.*skype", --{rt1} {rt1}  WTS Old Unmerged WoW Accounts {rt1}  Get old achivements/mounts/pets/titles from Vanilla/TBC/WOTLK on your main {rt1} Already seen: Scarab Lord, Old Gladiators etc Skype: kubadoman11 (only skype name) Site:
@@ -1007,7 +1010,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", trimmedPlayer, nil, lineId)
 				dialog.text:SetFormattedText("BadBoy: %s \n\n %s", REPORT_SPAM_CONFIRMATION:format(trimmedPlayer), debug) --Add original spam line to Blizzard popup message
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
-			elseif not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid] then
+			elseif not BADBOY_NOLINK and not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid] then
 				spamCollector[guid] = lineId
 				--Show block message
 				local t = GetTime()

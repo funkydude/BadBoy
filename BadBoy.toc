@@ -13,7 +13,7 @@
 ## Notes-ptBR: A simple spam blocker & reporter.
 ## Notes-itIT: Un semplice blocco spam che segnala le spam alla Blizzard.
 ## Author: Funkydude
-## SavedVariables: BADBOY_POPUP, BADBOY_NOREPORT, BADBOY_BLACKLIST
+## SavedVariables: BADBOY_POPUP, BADBOY_NOLINK, BADBOY_BLACKLIST
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved

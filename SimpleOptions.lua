@@ -1,5 +1,5 @@
 
--- GLOBALS: BADBOY_NOREPORT, BADBOY_POPUP, InterfaceOptionsFrame_OpenToCategory, PlaySound, SLASH_BADBOY1
+-- GLOBALS: BADBOY_NOLINK, BADBOY_POPUP, InterfaceOptionsFrame_OpenToCategory, PlaySound, SLASH_BADBOY1
 
 --[[ Slash Handler ]]--
 SlashCmdList["BADBOY"] = function() InterfaceOptionsFrame_OpenToCategory("BadBoy") end
@@ -65,14 +65,14 @@ btnNoReportMsg:SetPoint("TOPLEFT", 16, -35)
 btnNoReportMsg:SetScript("OnClick", function(frame)
 	if frame:GetChecked() then
 		PlaySound("igMainMenuOptionCheckBoxOn")
-		BADBOY_NOREPORT = true
+		BADBOY_NOLINK = true
 	else
 		PlaySound("igMainMenuOptionCheckBoxOff")
-		BADBOY_NOREPORT = nil
+		BADBOY_NOLINK = nil
 	end
 end)
 btnNoReportMsg:SetScript("OnShow", function(frame)
-	frame:SetChecked(BADBOY_NOREPORT)
+	frame:SetChecked(BADBOY_NOLINK)
 end)
 local btnNoReportMsgText = btnNoReportMsg:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
 btnNoReportMsgText:SetPoint("LEFT", btnNoReportMsg, "RIGHT", 0, 1)
