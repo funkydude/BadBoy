@@ -334,7 +334,8 @@ local instantReportList = {
 	--[[ CS:GO ]]--
 	"^wt[bst]somecsgoskin", --WTB some CSGO skins and sell some /w for more info
 	--WTS CS:GO Skins
-	"^wt[bst]csgoskin", --WTB CS GO skins /w for more infomation
+	--WTB CS.GO SKINS/KEYS FOR GOLD!
+	"^wt[bst]cs%.?goskin", --WTB CS GO skins /w for more infomation
 	"^wt[bst]csgokey", --{rt1} WTB CS:GO KEYS & SKINS FOR GOLD {rt1}
 	"^wt[bst]csgoacc", --WTS CS GO ACC UNRANK
 	"^wt[bst]csgoknife", --WTSCS GO knife M9 Bayonet Stained in (minimal wear) /w and give me offer
@@ -351,6 +352,7 @@ local instantReportList = {
 	"wowgoldforcsgokey", --{rt6} Want to trade WoW Gold for CS:GO Keys  Whisper me for more info!! / Swish till svenskar {rt6}
 	"^wt[bst]csgocamo", --WTS CS:GO CAMOS
 	"^wt[bst]cheapcsgoskin", --WTB CHEAP CS:GO SKINS /W ME !
+	"^wt[bst]csgocdkee?y", --WTB CS GO CD KEEY PAY GOLD AND GOOD WISP ME YOUR OFFER WTB CS GO KNIFE SKINS
 
 	--[[  SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
