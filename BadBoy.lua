@@ -1010,7 +1010,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				local dialog = StaticPopup_Show("CONFIRM_REPORT_SPAM_CHAT", trimmedPlayer, nil, lineId)
 				dialog.text:SetFormattedText("BadBoy: %s \n\n %s", REPORT_SPAM_CONFIRMATION:format(trimmedPlayer), debug) --Add original spam line to Blizzard popup message
 				StaticPopup_Resize(dialog, "CONFIRM_REPORT_SPAM_CHAT")
-			elseif not BADBOY_NOLINK and not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid] then
+			elseif not BADBOY_NOLINK and (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) then
 				spamCollector[guid] = lineId
 				--Show block message
 				local t = GetTime()
