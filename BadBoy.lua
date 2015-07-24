@@ -362,6 +362,9 @@ local instantReportList = {
 	--wtt dota 2 keys w
 	--wts dota 2beta key 10k
 	"^wt[bst]dota2", --WTB Dota 2 hero/store items,/W me what you have
+	"^buyingdotaitems", --buying dota items w/Me i got  [Ethereal Soul-Trader] [Jade Panther] :)
+	"^buyingdota2", --buying dota 2 skins w/me
+	"^wt[bst]alldota2", --WTB ALL DOTA 2 SKINS W/ME <3
 
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
@@ -586,7 +589,8 @@ local instantReportList = {
 	"koroboost.*mount", --[Mythic: Blackhand's Crucible] -Get on кorobооst,c{rt2}m. Also full 685 or 700 gear, Mythic mount. Challenge modes. Best offers.
 	--◄◄ ♥ Want 20+ [Epic]s per run?Welcome to HFC or BRF 30 ppl raids- running daily!Also 710+ gear, Normal and Heroic HFC. [www.KoroBoost.com] ◄◄ ♥ ♫
 	--◄◄ ♥  [Challenge Warlord: Gold] -Selfplay! Also 6.2 Achievements, Draenor Flying pack, Mythic 5m dungeons! Also 710+ gear, Normal and Heroic HFC. www.KoroBoost.com ◄◄ ♥ ♫
-	"gear.*koroboost[%.,]c[0o]m", --◄◄ ♥  Guaranteed Coolest Blackhand Mythic Mount  [Ironhoof Destroyer]  - now without server transfer! want to Ride it tomorrow?  Also 710+ gear, Normal and Heroic HFC.www.KoroBoost.com
+	--◄◄ ♥ Want 20+ EPICS per run? Welcome to HFC or BRF 30 ppl heroic/normal raids- running daily!Also 710+ gear, Normal and Heroic HFC. [КOROBOOST.С]{rt2}М - legal company, thousand of reviews. ◄◄ ♥ ♫
+	"gear.*koroboost[%.,]c[0o]?m", --◄◄ ♥  Guaranteed Coolest Blackhand Mythic Mount  [Ironhoof Destroyer]  - now without server transfer! want to Ride it tomorrow?  Also 710+ gear, Normal and Heroic HFC.www.KoroBoost.com
 	--◄◄ ♥  [Challenge Warlord: Gold] -Selfplay! Also 6.2 Achievements, Draenor Flying pack, 710+ gear, Normal and Heroic HFC. msg me or skype korsstart ◄◄ ♥ ♫
 	"gear.*skype.*korsstart", --◄◄ ♥ Want 20+ [Epic]s per run?Welcome to HFC or BRF 30 ppl raids- running daily!Also 710+ gear, Normal and Heroic HFC. msg me or skype korsstart ◄◄ ♥ ♫
 	--
@@ -1025,7 +1029,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 		end
 		result = true
 		return true
-	elseif next(spamCollector) and GetTime() - prevLink > 90 and lineId - spamLineId > 15 then
+	elseif not BADBOY_NOLINK and next(spamCollector) and GetTime() - prevLink > 90 and lineId - spamLineId > 15 then
 		local canReport = false
 		for k, v in next, spamCollector do
 			if CanComplainChat(v) then
