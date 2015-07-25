@@ -1,7 +1,7 @@
 
 -- GLOBALS: BADBOY_NOLINK, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendToons, BNGetFriendToonInfo
 -- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
--- GLOBALS: strsplit, tonumber, type, UnitInParty, UnitInRaid, ChatHistory_GetAccessID, CalendarGetDate, SetCVar
+-- GLOBALS: type, UnitInParty, UnitInRaid, CalendarGetDate, SetCVar
 local myDebug = false
 
 local reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam blocked, click to report!]|h|r"
@@ -212,14 +212,13 @@ local whiteList = {
 	"%.battle%.net/",
 	"recrui?t",
 	"dkp",
-	"lookin?g", --guild
+	"looking",
 	"lf[gm]",
 	"|cff",
 	"raid",
 	"scam",
 	"roleplay",
 	"appl[iy]", --apply/application
-	"contender", --Contender's Silk
 	"enjin%.com",
 	"guildlaunch%.com",
 	"corplaunch%.com",
@@ -237,6 +236,9 @@ local whiteList = {
 	"social",
 	"fortunecard",
 	"house",
+	"join",
+	"community",
+	"guild",
 	"progres",
 	"transmor?g",
 	"arena",
