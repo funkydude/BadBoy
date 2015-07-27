@@ -193,6 +193,8 @@ local boostingList = {
 	"season",
 	"professional",
 	"customer",
+	"discount",
+	"selfplay",
 }
 local boostingWhiteList = {
 	"members",
@@ -215,6 +217,7 @@ local whiteList = {
 	"looking",
 	"lf[gm]",
 	"|cff",
+	"cardofomen",
 	"raid",
 	"scam",
 	"roleplay",
@@ -355,6 +358,8 @@ local instantReportList = {
 	"^wt[bst]csgocamo", --WTS CS:GO CAMOS
 	"^wt[bst]cheapcsgoskin", --WTB CHEAP CS:GO SKINS /W ME !
 	"^wt[bst]csgocdkee?y", --WTB CS GO CD KEEY PAY GOLD AND GOOD WISP ME YOUR OFFER WTB CS GO KNIFE SKINS
+	"^tradingcsgo.*gold", --Trading Cs:GO Knife for Gold /w me for more information!!!
+	"^wt[bst]csgocheap", --WTB CS GO CHEAPS BELOW 5 EURO WITH WOW GOLD!
 
 	--[[  SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
@@ -386,6 +391,7 @@ local instantReportList = {
 	"^wt[bst]mygold%d*leagueoflegends", --WTT My Gold 3 League of Legends account for some sick CS:GO skins! 116 Champions, 158 Skins, 6 rune pages. /w me for more info/skype!
 
 	--[[  Account Buy/Sell  ]]--
+	"selling.*accounts?forgold", --Selling Spotify,Netflix Accounts for gold!!! /w me
 	"wtsnonemergeacc.*lvl?%d+char", --!WTS none-merge acc(can get a lv80 char)./W me for more info!
 	--! WTS lvl 80 char.{all class}.Diablo3 g0ld /W me for more info !
 	--^{diamond}lv80 char all class./w me for more info if you WTB^
@@ -496,6 +502,7 @@ local instantReportList = {
 	"wts.*mount.*pet[^%d].*%d+k", --WTS {star}flying mounts:[Celestial Steed] and [Winged Guardian]30k each {star}PETS:Lil'Ragnaros/Lil'XT/Lil'K.T./Moonkin/Pandaren/Cenarion Hatchling 12k each,{star}prepaid timecards 15k each.{star}
 	"wts.*%[.*%].*powerle?ve?l.*chea", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Wooly White Rhino],and g ,powerlvling ,chea
 	"selling.*%[.*%].*[36]0days?gametime", --Selling[Enchanted Fey Dragon][Heart of the Aspects][Iron Skyreaver]60daysgametime 20k [each,180days.WOD] boost
+	"selling.*%[.*%].*[36]0days?time", --Selling[Mystic Runesaber]30k[Warforged Nightmare]30k[Grinning Reaver]30k/60daystime40k 
 	"selling%d+.*prepaidtimecard", --selling 60 day prepaid time card /w me for the price
 	"need.*gametime.*rocket.*info", --Does someone need WoW Gametime & X53 Rocket's Mount  /w me for more info
 	"^wt[bs][36]0days?prepaidgametime", --WTS 60day Prepaid Gametime  Card and WOD
@@ -613,6 +620,7 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"boostingstore[%.,]com.*gear", --{rt1} V.I.P. BOOSTING AT: www.boostingstore.com - your persoonalny booster willing to do: HFC HC / 710 gear / PvP / CM and more!
 	"prommote[%.,]me.*payment", --dnd Website: Prommote.me ; Skype: mmo-support3 ; E-mail: prommote@gmail.com ; Support work hours: 13:00 - 01:00 CET. Ingame whispers are ignored. Gold is not accepted as payment.
 	-- W w w , Prоmmоtе , Ме —  Вlаckrоck Foundry МL Lооt Runs Аnd  Full Geаr: 6 New Items Minimum,  Tоkens, Wаrfоrgеd Аnd Sоckеtеd Lооt Included !  
 	"prommote[%.,]me.*loot", --{rt6} {rt8} www.prommote.me - Mythic Garrosh kills and Mount | Heroic and Mythic Loot | Over 90 feedbacks! {rt6}
