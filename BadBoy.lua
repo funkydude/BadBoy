@@ -224,6 +224,7 @@ local whiteList = {
 	"appl[iy]", --apply/application
 	"enjin%.com",
 	"guildlaunch%.com",
+	"gamerlaunch%.com",
 	"corplaunch%.com",
 	"wowlaunch%.com",
 	"wowstead%.com",
@@ -347,6 +348,7 @@ local instantReportList = {
 	"^wt[bst]csgoitem", --WTB CS:GO Items for Gold! /W me your items!!
 	"^wt[bst]anycsgoskin", --{rt1} WTB ANY CS:GO SKINS FOR WOW GOLD {rt1}
 	"^buyingcsgoskin", --{rt1}{rt3} Buying CS:GO Skins & Keys for WoW Gold | Paying good  {rt3}{rt1}
+	"^sellingcsgoskin", --Selling CS:GO skins for wow gold!
 	"^sellingsomecsgocase", --Selling some CS:GO cases! PM ME!
 	"^sellingcsgocase", --Selling CS:GO cases! PM ME!
 	"^sellingcsgoitem", --{rt1} SELLING CS GO ITEMS FOR GOLD {rt1}
