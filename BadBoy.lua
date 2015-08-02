@@ -348,11 +348,12 @@ local instantReportList = {
 	"^wt[bst]csgoitem", --WTB CS:GO Items for Gold! /W me your items!!
 	"^wt[bst]anycsgoskin", --{rt1} WTB ANY CS:GO SKINS FOR WOW GOLD {rt1}
 	"^buyingcsgoskin", --{rt1}{rt3} Buying CS:GO Skins & Keys for WoW Gold | Paying good  {rt3}{rt1}
+	"^buyingcheapcsgoskin", --Buying cheap CS:GO skins (1-5 eu each) I can go first!
+	"^buyingcsgokey", --{rt3}Buying Cs:Go Key's for {rt4}4k{rt4} Per key! Buying high amount! Whisper for more information!{rt3}
 	"^sellingcsgoskin", --Selling CS:GO skins for wow gold!
 	"^sellingsomecsgocase", --Selling some CS:GO cases! PM ME!
 	"^sellingcsgocase", --Selling CS:GO cases! PM ME!
 	"^sellingcsgoitem", --{rt1} SELLING CS GO ITEMS FOR GOLD {rt1}
-	"^buyingcsgokey", --{rt3}Buying Cs:Go Key's for {rt4}4k{rt4} Per key! Buying high amount! Whisper for more information!{rt3}
 	"^wt[bst]keysincsgo", --WTB Keys in CS:GO for 3k each!
 	"wanttobuy[/\\]sellcsgoitem", --Want to buy/sell CS:GO items whisper me for more information :)
 	"wanttosell[/\\]buycsgoitem", --Want to sell/buy CS:GO items for wow gold, whisper me for more information :)
@@ -1010,7 +1011,11 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	if event == "CHAT_MSG_CHANNEL" then
 		for i=1, #chatLines do
 			if chatLines[i] == msg and chatPlayers[i] == trimmedPlayer then --If message same as one in previous 20 and from the same person...
-				result = true return true --...filter!
+				result = true --...filter!
+				if spamCollector[guid] and IsSpam(msg, icon) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
+					spamCollector[guid] = lineId
+				end
+				return true
 			end
 			if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
 		end
@@ -1034,7 +1039,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				spamCollector[guid] = lineId
 				--Show block message
 				local t = GetTime()
-				if t-prevLink > 60 then
+				if t-prevLink > 90 then
 					prevLink = t
 					spamLineId = lineId
 					ChatFrame1:AddMessage(reportMsg, 1, 1, 1, nil, nil, nil, -5678) -- Use -5678 as a unique signature
@@ -1043,7 +1048,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 		end
 		result = true
 		return true
-	elseif not BADBOY_NOLINK and next(spamCollector) and GetTime() - prevLink > 90 and lineId - spamLineId > 15 then
+	elseif not BADBOY_NOLINK and next(spamCollector) and GetTime() - prevLink > 100 and lineId - spamLineId > 15 then
 		local canReport = false
 		for k, v in next, spamCollector do
 			if CanComplainChat(v) then
@@ -1074,6 +1079,7 @@ do
 				end
 				spamCollector[k] = nil
 			end
+			prevLink = GetTime() -- Refresh throttle so we don't risk showing another link straight after reporting
 			ChatFrame1:RemoveMessagesByExtraData(-5678) -- Remove messages from the chat frame with the -5678 signature
 		else
 			SetHyperlink(self, link, ...)
