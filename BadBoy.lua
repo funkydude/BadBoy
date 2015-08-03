@@ -346,6 +346,7 @@ local instantReportList = {
 	"^wt[bst]csgoacc", --WTS CS GO ACC UNRANK
 	"^wt[bst]csgoknife", --WTSCS GO knife M9 Bayonet Stained in (minimal wear) /w and give me offer
 	"^wt[bst]csgoitem", --WTB CS:GO Items for Gold! /W me your items!!
+	"^wt[bst]csgocase", --WTB Cs Go Case keys or a Knife . 
 	"^wt[bst]anycsgoskin", --{rt1} WTB ANY CS:GO SKINS FOR WOW GOLD {rt1}
 	"^buyingcsgoskin", --{rt1}{rt3} Buying CS:GO Skins & Keys for WoW Gold | Paying good  {rt3}{rt1}
 	"^buyingcheapcsgoskin", --Buying cheap CS:GO skins (1-5 eu each) I can go first!
@@ -623,6 +624,7 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"niceboost%.c.*welcome", --{rt1}{rt1}NICE-BOOST .C0M{rt1}{rt1} good price {rt1}{rt1} - Cool loot runs {rt1}{rt1}{rt1}{rt1} Heroic/Normal boosts - all included.Welcome to{rt1}{rt1}NICE-B00ST.c0m{rt1}{rt1}
 	"pveboost[%.,]com.*%d+e", --{rt1} WWW.PVEBOOST.COM <<<< BEST PVE BOOSTING, 169e only for 13/13 HFC HC! 79e for 13/13 normal!
 	"boostingstore[%.,]com.*gear", --{rt1} V.I.P. BOOSTING AT: www.boostingstore.com - your persoonalny booster willing to do: HFC HC / 710 gear / PvP / CM and more!
 	"prommote[%.,]me.*payment", --dnd Website: Prommote.me ; Skype: mmo-support3 ; E-mail: prommote@gmail.com ; Support work hours: 13:00 - 01:00 CET. Ingame whispers are ignored. Gold is not accepted as payment.
