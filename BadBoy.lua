@@ -457,6 +457,7 @@ local instantReportList = {
 	"wts.*diablo3goldfor%d+", --wts 150 mill Diablo 3 gold for 50k
 
 	--[[  Illegal Items ]]--
+	"shopmount.*%d+days?time", --sell shop mount[Enchanted Fey Dragon]25k/60days time 40K
 	"^wtbgold.*mount", --WTB Gold paying decent(also TCG pets,mounts)/w me!
 	"^wt[bst]gold.*csgoskin", --WTS GOLD{star}{star} WTS WOW ACCOUNT {star}{star} WTB CS GO SKINS {star}{star}
 	"skype.*woweugold", --{rt8} WTS  Spectral Tiger(blue+swift).Contact me on skype: woweugold19 {rt8}
@@ -592,7 +593,10 @@ local instantReportList = {
 	"rbg.*boost.*cheap.*mounts", --{rt6}{rt1} LFM RBG boost service run!! and wts cheaper TCG mounts {rt1}{rt6}
 	"wts.*%[.*%].*xbox.*points", --WTS [Reins of the Swift Spectral Tiger] for XBOX Live Points Card
 	"wts.*%[.*%].*[0o]rder.*gear.*cheap", --wts [obsidian nightwing],0rder 50k will get one for free,wts t15 set and t15.5 set,ilvl522 gears/weapons/trinkets,cheaptest price pst! q 1506040674
-	"wts.*%[.*%].*boefans.*deliver", --wts[Magic Rooster Egg][Falling Blossom Cowl]{rt6}{rt6}on boefans.c{rt2}m,4 years Exp,fast and safe delivery{rt6}
+	--Wts Cheaper 710-715 Armor and Weapons on BoeFans.com,3 hours delivery
+	--Wts Spectral Tiger and All TCG Mounts on BoeFans.com,24 Hours Livechat services
+	--Wts Cheaper Gold on BoeFans.com,Safe and Fast Delivery.Full refund policy
+	"^wts.*boefans[%.,]c", --wts[Magic Rooster Egg][Falling Blossom Cowl]{rt6}{rt6}on boefans.c{rt2}m,4 years Exp,fast and safe delivery{rt6}
 	"wts.*%[.*tiger.*%].*%[.*tiger.*%].*skype", --{rt2}{rt4}{rt3}WTS [Reins of the Spectral Tiger][Reins of the Swift Spectral Tiger]&all TCG,sell G skype: ah4p002{rt3}{rt4}{rt2}
 	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
 	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
