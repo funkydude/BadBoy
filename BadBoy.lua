@@ -660,6 +660,7 @@ local instantReportList = {
 	"realm.*epiccarry[%.,]c[0o]m", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
 	--{star}WTS: BLACKROCK FOUNDRY: 10/10 (HEROI?) ! MASTER LOOT, Selfplay! {circle} CM GOLD! LEVELING 90-100 + BONUS AND GLORY OF THE DRAENOR RAIDER HERO ! epiccarry . c{star}m
 	"gold.*epiccarry[%.,]c[0o]?m", --{rt1} Highmaul & Blackrock Foundry NM/HC/Mythic SELF PLAY with loot! <> CM GOLD SELF PLAY <> Fast 90-100 in 24 hrs + bonus <> Glory of the Draenor Hero/Raider <> Epiccarry.c0m. {rt1}
+	"loot.*chiefboost[%.,]com", --Get your HFC N/H/M Loot runs, Draenor flying, Archimonde N/H/M kills and more! Chiefboost.com
 	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
 	"skype.*chiefboost", --100% Heirloom weapons from SoO, Glory of Orgrimmar and WoD pre-orders for a reasonable price. skype: chiefboost
 	"service.*chiefboost[%.,]com", --Premium services from Top guilds without intermediaries! Chiefboost.com PvE/Challenge modes/PvP
@@ -684,6 +685,7 @@ local instantReportList = {
 	"raid.*selfplay.*discount.*skype", --WTS {rt6} Blackrock Foundry Heroic + all loot, NOW! raid await {rt6} Self-play, 25ppl+, tons of loot, master loot. DISCOUNT for cloth,leather and mail. skype: dozinor
 	"hordebank.*account.*euro", --[WWW.Hordebank.COM]{RT2Black Foundry HC Master Loot run 10/10,,Selfplay/Account Share available.Visit [WWW.Hordebank.COM]to talk to Live Chat for details Now!!5 spots available!200euro Now!q
 	"b[0o][0o]st.*goodtauren.*help", --{star}{star}NICE B00STING from {star}{star} GOODTAUREN.com - Powelevelling and help {star}{star}90-100 in 10 hours{star}{star}
+	"consult.*boosting[%.,]expert", --WTS {rt8} Challenge Mode Runs {rt8} ! Full run (8/8) takes 2~ hours! Possible to start NOW! Talk to online consultant at {rt5} [www.boosting.expert] {rt5} for more info!
 	"shar[ei].*boosting[%.,]expert", --WTS {rt1} Challenge mode {rt1} runs without account sharing! 3-5 full runs every day! Talk to online consultant at {rt8} www.boosting.expert {rt8} for more info!
 	--
 	"gboost.*mode.*master.*sale", --{square}{circle}[www.G-boost.net] - PVE Boost.challenge mode.{triangle}CHALLENGE MASTER{triangle}only 2 weeks on sales!{circle}{square}
