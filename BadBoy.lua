@@ -688,8 +688,9 @@ local instantReportList = {
 	"raid.*selfplay.*discount.*skype", --WTS {rt6} Blackrock Foundry Heroic + all loot, NOW! raid await {rt6} Self-play, 25ppl+, tons of loot, master loot. DISCOUNT for cloth,leather and mail. skype: dozinor
 	"hordebank.*account.*euro", --[WWW.Hordebank.COM]{RT2Black Foundry HC Master Loot run 10/10,,Selfplay/Account Share available.Visit [WWW.Hordebank.COM]to talk to Live Chat for details Now!!5 spots available!200euro Now!q
 	"b[0o][0o]st.*goodtauren.*help", --{star}{star}NICE B00STING from {star}{star} GOODTAUREN.com - Powelevelling and help {star}{star}90-100 in 10 hours{star}{star}
-	"consult.*boosting[%.,]expert", --WTS {rt8} Challenge Mode Runs {rt8} ! Full run (8/8) takes 2~ hours! Possible to start NOW! Talk to online consultant at {rt5} [www.boosting.expert] {rt5} for more info!
-	"shar[ei].*boosting[%.,]expert", --WTS {rt1} Challenge mode {rt1} runs without account sharing! 3-5 full runs every day! Talk to online consultant at {rt8} www.boosting.expert {rt8} for more info!
+	--WTS {rt8} Challenge Mode Runs {rt8} ! Full run (8/8) takes 2~ hours! Possible to start NOW! Talk to online consultant at {rt5} [www.boosting.expert] {rt5} for more info!
+	--WTS {rt1} Challenge mode {rt1} runs without account sharing! 3-5 full runs every day! Talk to online consultant at {rt8} www.boosting.expert {rt8} for more info!
+	"challenge.*boosting[%.,]expert", --WTS Challenge Mode Runs from Real Pros! (More than 6k instances completed since MoP!) 2~ hours for full run! More info at www.boosting.expert
 	--
 	"gboost.*mode.*master.*sale", --{square}{circle}[www.G-boost.net] - PVE Boost.challenge mode.{triangle}CHALLENGE MASTER{triangle}only 2 weeks on sales!{circle}{square}
 	"loot.*day.*skype:gboost", --{square}{circle}BRF H 10/10 loot run every day{cross}Skype:Gboost{circle}{square}
@@ -1098,6 +1099,7 @@ end
 --[[ Add Filters ]]--
 ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
+ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
 ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
