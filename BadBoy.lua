@@ -629,6 +629,7 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"korvano[%.,]com.*selfplay", -- Welcome to visit  www.KORVANO.com Raid will start today at 21:00 CET (HFC 13/13 HEROIC). British boost! Piloted: 99 eur! Selfplay: 149 eur! U WILL GET ALL LOOT U NEED!
 	"raidboost%.com.*sell.*smooth", --{rt8}[RaidBoost.com] - HellFire Citadel on Sell! Normal and Heroic boost. Fast and Smooth!{rt8}
 	"mount.*b[0o]?[0o]?sterking[%.,]c[0o]?m", --{rt1} Hello! WTS: PVE RAIDS LIKE HFC HC NORMAL OR EVEN MYTHIC SAME FOR BLACKROCK FOUNDRY! ANY ACHIEVEMENTS, GLORIES, MOUNTS etc. If you want more just check our website B{rt2}{rt2}ster-King.com {rt1} /w for more info
 	"hello.*offer.*pvpservices.*coaching", --{rt8}Hello guys let me offer you wide range of PVP services includes 2.2+/Glad/Coaching/CAP Games{rt8}
@@ -810,6 +811,8 @@ local instantReportList = {
 	"坐骑.*rbg.*2200.*skype", --{diamond}代打金牌挑战模式***各类职业。奖励。奖励一套拉风幻化装，凤凰坐骑一枚+等级代练，RBG2200/2400/2600/2700/...+每周混分-skype:tessg4p--幽灵虎团队 778587316
 
 	--[[  Advanced URL's/Misc  ]]--
+	"wts.*g[0o]ld.*mount.*price.*feedback", --WTS Your personal g0ld bank, Mounts, Followers, Leveling, Gear farm, Legendary weapons and more! Best conditions, friendly prices and a lot of feedbacks. Whisper me for info
+	"forpvp[%.,]com.*tiger", --WWW.FORPVP.COM .. 100000G==38E'ur.Swift Spectral Tiger=249E'uro .. WWW.FORPVP.COM..Have a good time!
 	"happygolds.*stock.*receive", --[Enchanted Elementium Bar]{RT3}{RT3}{RT2}Feldrake{RT3}hàppygôlds,Cô.m{RT4}{RT3}{RT2}WE HAVE 800K in stock and you can receive within 5-10minutes {RT3}{RT3}hàppygôlds,Cô.m{RT4}{RT3}E
 	"happygolds.*e[%.,]?u[%.,]?r[%.,]?o", --[Enchanted Elementium Bar]{diamond}{diamond}Happygôlds,C_M{diamond}10.K=4.99E.U.R.O{diamond}{diamond}{diamond}Happygôlds,C_M{diamond}10.K=4.99E.U.R.O{diamond}{diamond}{diamond}Happygôlds,C_M{diamond}10.K=4.99E.U.R.O{diamond} Lvl 510
 	"%d+eu.*deliver.*credible.*kcq[%.,]", --12.66EUR/10000G 10 minutes delivery.absolutely credible. K C Q .< 0 M
@@ -868,22 +871,27 @@ local instantReportList = {
 	--"titaniumbay.*dinero", --TitaniumBay - Obtenga 40% ms dinero en 15 minutos! digno de la ciudad!
 }
 
---This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
+
 local repTbl = {
+	--Symbol & space removal
+	["[%*%-%(%)\"`'_%+#%%%^&;:~{} ]"]="",
+	["¨"]="", ["”"]="", ["“"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="", ["♥"]="", ["♫"]="", ["●"]="",
+
+	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
 	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
 	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e",["ê"]="e", --First letter is Russian "\208\181". Convert > \101
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["İ"]="i", --Convert > \105
 	["к"]="k", -- First letter is Russian "\208\186". Convert > \107
 	["Μ"]="m", ["м"]="m",--First letter is capital Greek μ "\206\156". Convert > \109
-	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", --First letter is Russian "\208\190". Convert > \111
+	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111
 	["р"]="p", --First letter is Russian "\209\128". Convert > \112
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 	["ý"]="y", --First letter is "\195\189". Convert > \121
 }
 
 local strfind = string.find
-local IsSpam = function(msg, num)
+local IsSpam = function(msg)
 	for i=1, #instantReportList do
 		if strfind(msg, instantReportList[i]) then
 			if myDebug then print("Instant", instantReportList[i]) end
@@ -891,7 +899,7 @@ local IsSpam = function(msg, num)
 		end
 	end
 
-	local points, phishPoints, boostingPoints = num, num, num
+	local points, phishPoints, boostingPoints = 1, 1, 1
 	for i=1, #whiteList do
 		if strfind(msg, whiteList[i]) then
 			points = points - 2
@@ -985,34 +993,9 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	local debug = msg --Save original message format
 	msg = msg:lower() --Lower all text, remove capitals
 
-	--They like to use raid icons to avoid detection
-	local icon = 0
-	if strfind(msg, "{", nil, true) then --Only run the icon removal code if the chat line has raid icons that need removed
-		local found = 0
-		for i=1, #restrictedIcons do
-			msg, found = gsub(msg, restrictedIcons[i], "")
-			if found > 0 then
-				icon = 1
-			end
-		end
-		if myDebug and icon == 1 then print("Removing icons, adding 1 point.") end
-	end
-	--End icon removal
-
-	--Symbol & space removal
-	msg = gsub(msg, "[%*%-%(%)\"`'_%+#%%%^&;:~{} ]", "")
-	msg = gsub(msg, "¨", "")
-	msg = gsub(msg, "”", "")
-	msg = gsub(msg, "“", "")
-	--End symbol & space removal
-
-	--They like to replace English letters with UTF-8 "equivalents" to avoid detection
-	if strfind(msg, "[аàáäâãåсçеèéëёêìíïîİкΜмоòóöōôõőрùúüûý]+") then --Only run the string replacement if the chat line has letters that need replaced
-		--This is no where near as resource intensive as I originally thought, it barely uses any CPU
-		for k,v in next, repTbl do --Parse over the 'repTbl' table and replace strings
-			msg = gsub(msg, k, v)
-		end
-		if myDebug then print("Running replacements for chat") end
+	--Symbol & space removal. They also like to replace English letters with UTF-8 "equivalents" to avoid detection.
+	for k,v in next, repTbl do --Parse over the 'repTbl' table and replace strings
+		msg = gsub(msg, k, v)
 	end
 	--End string replacements
 
@@ -1021,7 +1004,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 		for i=1, #chatLines do
 			if chatLines[i] == msg and chatPlayers[i] == trimmedPlayer then --If message same as one in previous 20 and from the same person...
 				result = true --...filter!
-				if spamCollector[guid] and IsSpam(msg, icon) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
+				if spamCollector[guid] and IsSpam(msg) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
 					spamCollector[guid] = lineId
 				end
 				return true
@@ -1033,7 +1016,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	end
 	--End text buffer
 
-	if IsSpam(msg, icon) then
+	if IsSpam(msg) then
 		if BadBoyLog and not myDebug then
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
