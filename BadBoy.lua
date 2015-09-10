@@ -123,22 +123,6 @@ local heavyRestrictedList = {
 	"dotc[o0@]m",
 }
 
---These entries add +1 point, but only 1 entry will count
-local restrictedIcons = {
-	"{%l%l%d}",
-	"{цp%d}",
-	"{star}",
-	"{circle}",
-	"{diamond}",
-	"{triangle}",
-	"{moon}",
-	"{square}",
-	"{cross}",
-	"{x}",
-	"{skull}",
-	"{diamant}",
-}
-
 --These entries add +1 point to the phishing count
 local phishingList = {
 	--English
@@ -629,6 +613,8 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"wts.*arena.*rbg.*coaching.*info", --{skull} WTS Arena 2200/2400/2700/glad/r1, Rbg 2200/HotA, 100wins,Big CQ CAPS, Coaching(playing with glad){skull} /w for more info
+	"selfplay.*wingsboost[%.,]c", --{skull}WTS HEROIC HFC LOOTRUN 2SPOTS FOR NOW, SELFPLAY,MASTERLOOT wingsboost.c{circle}m /w {skull}
 	"korvano[%.,]com.*selfplay", -- Welcome to visit  www.KORVANO.com Raid will start today at 21:00 CET (HFC 13/13 HEROIC). British boost! Piloted: 99 eur! Selfplay: 149 eur! U WILL GET ALL LOOT U NEED!
 	"raidboost%.com.*sell.*smooth", --{rt8}[RaidBoost.com] - HellFire Citadel on Sell! Normal and Heroic boost. Fast and Smooth!{rt8}
 	"mount.*b[0o]?[0o]?sterking[%.,]c[0o]?m", --{rt1} Hello! WTS: PVE RAIDS LIKE HFC HC NORMAL OR EVEN MYTHIC SAME FOR BLACKROCK FOUNDRY! ANY ACHIEVEMENTS, GLORIES, MOUNTS etc. If you want more just check our website B{rt2}{rt2}ster-King.com {rt1} /w for more info
@@ -875,7 +861,7 @@ local instantReportList = {
 local repTbl = {
 	--Symbol & space removal
 	["[%*%-%(%)\"`'_%+#%%%^&;:~{} ]"]="",
-	["¨"]="", ["”"]="", ["“"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="", ["♥"]="", ["♫"]="", ["●"]="",
+	["¨"]="", ["”"]="", ["“"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
