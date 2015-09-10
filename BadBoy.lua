@@ -52,6 +52,7 @@ local commonList = {
 	"server",
 	"service",
 	"stock",
+	"store",
 	"trusted",
 	"well?come",
 
@@ -231,7 +232,7 @@ local whiteList = {
 	"transmor?g",
 	"arena",
 	"boost",
-	"player",
+	"players",
 	"portal",
 	"town",
 	"vialofthe",
@@ -442,6 +443,7 @@ local instantReportList = {
 	"wts.*diablo3goldfor%d+", --wts 150 mill Diablo 3 gold for 50k
 
 	--[[  Illegal Items ]]--
+	"paypal.*ownedcore", --WTS 150k FOR 30$ Webmoney/PayPal. 100% DECENCY, YOU CAN CHECK MY POSITIVE FEEDBACKS ON OWNEDCORE. SKYPE: ***
 	"shopmount.*%d+days?time", --sell shop mount[Enchanted Fey Dragon]25k/60days time 40K
 	"^wtbgold.*mount", --WTB Gold paying decent(also TCG pets,mounts)/w me!
 	"^wt[bst]gold.*csgoskin", --WTS GOLD{star}{star} WTS WOW ACCOUNT {star}{star} WTB CS GO SKINS {star}{star}
@@ -613,6 +615,8 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"rocketgaming.*glad.*challenge", --{rt3} ROCKETGAMING {rt3} Excellent players help you reach your 2k - #R1/ Gladiator achievement in 2s/3s/5s/Rbg! We also provide level-, honor-, capservice. Challenge Mode 8/8 Gold is going to be played everyday.
+	"pro.*boomboost[%.,]com", --Arena 2000/2400/Glad, Honor Gear, Leveling 90-100. Big cap with glads, Want to play with Pro? boom-boost,сoм
 	"wts.*arena.*rbg.*coaching.*info", --{skull} WTS Arena 2200/2400/2700/glad/r1, Rbg 2200/HotA, 100wins,Big CQ CAPS, Coaching(playing with glad){skull} /w for more info
 	"selfplay.*wingsboost[%.,]c", --{skull}WTS HEROIC HFC LOOTRUN 2SPOTS FOR NOW, SELFPLAY,MASTERLOOT wingsboost.c{circle}m /w {skull}
 	"korvano[%.,]com.*selfplay", -- Welcome to visit  www.KORVANO.com Raid will start today at 21:00 CET (HFC 13/13 HEROIC). British boost! Piloted: 99 eur! Selfplay: 149 eur! U WILL GET ALL LOOT U NEED!
@@ -678,6 +682,7 @@ local instantReportList = {
 	--WTS {rt8} Challenge Mode Runs {rt8} ! Full run (8/8) takes 2~ hours! Possible to start NOW! Talk to online consultant at {rt5} [www.boosting.expert] {rt5} for more info!
 	--WTS {rt1} Challenge mode {rt1} runs without account sharing! 3-5 full runs every day! Talk to online consultant at {rt8} www.boosting.expert {rt8} for more info!
 	"challenge.*boosting[%.,]expert", --WTS Challenge Mode Runs from Real Pros! (More than 6k instances completed since MoP!) 2~ hours for full run! More info at www.boosting.expert
+	"raid.*boosting[%.,]expert", --WTS Cheap CM and HFC heroic runs! Lots of groups and raids starting every day! Visit [www.boosting.expert] for more info!
 	--
 	"gboost.*mode.*master.*sale", --{square}{circle}[www.G-boost.net] - PVE Boost.challenge mode.{triangle}CHALLENGE MASTER{triangle}only 2 weeks on sales!{circle}{square}
 	"loot.*day.*skype:gboost", --{square}{circle}BRF H 10/10 loot run every day{cross}Skype:Gboost{circle}{square}
@@ -857,7 +862,6 @@ local instantReportList = {
 	--"titaniumbay.*dinero", --TitaniumBay - Obtenga 40% ms dinero en 15 minutos! digno de la ciudad!
 }
 
-
 local repTbl = {
 	--Symbol & space removal
 	["[%*%-%(%)\"`'_%+#%%%^&;:~{} ]"]="",
@@ -885,7 +889,7 @@ local IsSpam = function(msg)
 		end
 	end
 
-	local points, phishPoints, boostingPoints = 1, 1, 1
+	local points, phishPoints, boostingPoints = 0, 0, 0
 	for i=1, #whiteList do
 		if strfind(msg, whiteList[i]) then
 			points = points - 2
