@@ -616,6 +616,9 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"gold.*skype.*brbwow", --WTS [Challenge Warlord: Gold] . Skype: brbwow
+	"gift.*boostinglive", --Get the best gear in game, and receive a gift. All news on http://boostinglive.com
+	"buybooster.*discount", --buybooster.com - 30% discount on HFC mythic today! Also WTS HFC/BRF/HM. Raids everyday. Leveling/CM/Glories and more! skype: "buybooster"
 	"helping.*fast.*shadowboost[%.,]com", --Helping you with your PvE progress. HFC or BRF, it doesn't matter. Fast and smooth. Join us now and become more powerful than your friends. See us at shadowboost.com
 	--Arena Ratings 2200/2400/2700, selfplay, Big Conquest Cap, Honor gear, HFC normal/Herioc, /w me !
 	"arena.*2200.*selfplay.*conquest.*normal", --Arena Ratings 2200/2400/2700, selfplay, Conquest Cap, Coaching with pro, Honor gear, HFC normal/Herioc, /w me !
@@ -680,6 +683,7 @@ local instantReportList = {
 	--#Team PL FR Défis de donjon OR 8/8 || Cognefort HM || Fonderie NM/HM 10/10 || RBG & Arène 0-2400+ || Tigre Spectral Gangredrake Poulet Magique || CPP 60 jours / WOD || http://wow-st0re.com
 	"rbg.*wowst[o0]re[%.,]com", --#Team de pl FR | Défis de donjon Or 8/8 | Cognefort normal héroïque mythique | Boost Arène & RBG 0-2400+ | Tigre spectral rapide Gangredrake Poulet magique ... || http://wow-st0re.com
 	"wowst[o0]re[%.,]com.*rbg", --wow-st0re.com Le n°1 du pl français depuis 2013 - SoO 25 NM/HM - PvP Arène / RBG côte - Bastonneurs - Armes Légendaires - [Défi d'or 9/9 à seulement 70k po!] http://wow-st0re.com 100% FR
+	"encore.*wowst[o0]re[%.,]com", --Tigre Spectral Rapide - Poulet Magique - Annihilateur en Gangracier - Invincible - Al'ar - Yéti de guerre du prétendant - Destructeur Sabot-de-Fer - et plus encore sur www.wow-st0re.com Plateforme FR référence depuis 2013.
 	"boost.*skype.*tridon", --WTS Big conquest cap Boost / Contact me Skype: Tridon.boosting
 	"help.*gold.*week.*skype", --{rt6}We help you with [Challenge Conqueror: Gold], CM's shutting down in less than a week. Right now available. Skype: CMhotBOOT{rt6}
 	"hurry.*draenor.*loot.*mount.*price.*info", --{rt1}{rt1} Hurry up! Draenor is coming {rt1}{rt1} Loot-Raids, Mount and Heirloom from Garrosh! Low price!!! {rt1}{rt1} /w for info {rt1}{rt1}
@@ -875,6 +879,8 @@ local instantReportList = {
 	--"titaniumbay.*versand", ---= TitaniumBay =- Bekommen 40% gold Gratis! 15 minuten Versand! Preis prüfen!
 	--TitвaniumBay - Erhalten Sie 40% mehr Gold in 15 Minuten! Das beste Angebot in der Stadt!
 	"titaniumbay.*minut[eo]", --TitaniumBay - Erhalten Sie 40% mehr Gold in 15 Minuten! Das beste Angebot in der Stadt!
+	---= TitaniumBay =- Erhalten Sie 30% mehr Gold im Vergleich zu WoW-Marke
+	"titaniumbay.*gold", -- -= TitaniumBay =- Get up to 30% more gold compared to WoW Token
 	--"titaniumbay.*verifiez", ---= TitaniumBay =- Obtenez 40 % d'or Gratuit! Dans 15 Minutes! Verifiez le prix!
 	--"titaniumbay.*preis", ---= TitaniumBay =- 40% gold bekommen sie Gratis! Versand dauert 15 Minuten! Sie haben die Möglichkeit den Preis zu prüfen!
 	--"titaniumbay.*oro.*precio", ---= TitaniumBay =- Obtenga 40% de oro Gratis! dentro de 15 Minutos! Vea precio!
