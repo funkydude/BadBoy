@@ -367,6 +367,7 @@ local instantReportList = {
 	--[[  Steam  ]]--
 	"^wtssteamaccount", --WTS Steam account with 31 games (full valve pack+more) /w me with offers
 	"^sellingborderlands2", --Selling Borderlands 2 cd-key cheap for gold (I bought it twice by mistake. Can send pictures of both confirmations emails without the cd-keys, if you dont trust me)
+	"^wtssteamwalletcode", --WTS Steam wallet codes/CS GO skins /W
 
 	--[[  League of Legends  ]]--
 	"^wt[bs]lolacc$", --WTB LoL acc
@@ -616,6 +617,7 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
+	"gold.*shadowboost.*info", --▲Hello! We are helping with PVE RAIDS  Heroic Hellfire Citadel ▲ Huge amounts of Loot ▲ EVERYDAY RAIDS ▲ Challenge mode - GOLD ▲ ON https://shadowboost.com ▲ /w for more information▲
 	"gold.*skype.*brbwow", --WTS [Challenge Warlord: Gold] . Skype: brbwow
 	"gift.*boostinglive", --Get the best gear in game, and receive a gift. All news on http://boostinglive.com
 	"buybooster.*discount", --buybooster.com - 30% discount on HFC mythic today! Also WTS HFC/BRF/HM. Raids everyday. Leveling/CM/Glories and more! skype: "buybooster"
