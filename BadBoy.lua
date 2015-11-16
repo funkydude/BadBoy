@@ -693,13 +693,14 @@ local instantReportList = {
 	"^wts.*curve.*raid.*selfplay.*skype", --{square}{square} WTS[Ahead of the Curve: Imperator's Fall] {cross}Highmaul — Heroic Loot Run 7/7 {cross}. Raid today.SELFPLAY. Skype: ozyboost{square}
 	"gold.*skype.*ozyboost", --WTS [Challenge Warlord: Gold]. SKYPE - OZYBOOST
 	"rocketgaming.*service.*quality", --{rt3} ROCKETGAMING {rt3} Excellent players help you reach your 2k - #R1/ Gladiator success in RBG/2s/3s/5s! We offer you a serious service with quality as our priority!
+	"pro.*price.*feedback.*leprest[o0]re", --WTS Express hǿnor, apexis crystals and garrison resources fąrming by leprestǿre. Full gear in 24 hrs by prǿfessionals. Best prĭces and many feedbącķs on L Ę P R Ę S T Ǿ R Ę . C Ǿ M
 	"mount.*price.*leprest[o0]re", --{square}{square} Great RAID offers for you! Blackrock Foundry [Heroic] and [Mythic]! Play yourself with pro’s and get full gear and Ironhoof destroyer (mount from Blackhand). Awesome prices and tons of feedbacks - leprest0re.c0m {square}{square}
 	"leprestore.*gold.*sale", --{rt7}{rt7} Best deals on [Leprestore.com!] Blackrock Foundry and HighMaul. Challenge Modes:Gold. Raider glories and other achievements!Great {rt2} deals!Almost everything is on sale! More info and many feedbacks on [Leprestore.com] {rt7}{rt7}
 	"skype.*leprestore[%.,]c", --Thanks for your interest. Leprestore team greets you :) For more info and guarantees add me on Skype: support@leprestore.com or check our website – leprestore.com
 	--wts challenge modes: gold and challenge master, raider glories, proving grounds, brawler’s guild. play yourself with pro’s! lowest prices and plenty of feedbacks. whisper me for info
 	--WTS RBG cap games – 400CP per game and 700 ilvl gear for 3 wins. Full cap in 1 day! RBG rating [1800/2000/2200/HERO]. Play yourself with pro’s! Best prices and many feedbacks. Whisper me for info
 	--WTS Express honor, apexis crystals and garrison resources farming by leprestore. Full gear in 24 hrs by professionals. Best prices and many feedbacks. Whisper me for info
-	"pro.*prices.*feedback.*info", --WTS BRF and Hellfire Citadel! Play yourself with pro’s and get full gear and Ironhoof destroyer (mount from Blackhand). Wonderful prices and a lot of feedbacks. Whisper me for info
+	"pro.*price.*feedback.*info", --WTS BRF and Hellfire Citadel! Play yourself with pro’s and get full gear and Ironhoof destroyer (mount from Blackhand). Wonderful prices and a lot of feedbacks. Whisper me for info
 	"selfplay.*rbg.*test.*skype", --{rt6}{rt6}EXCLUSIVE SELFPLAY RBG B00ST{rt6}{rt6} RBG 0-1800:5h, 0-2000:7h, 0-2200:9h  ►START RIGHT NOW ◄  Get it today: NEW transmog set, 15 titles, NEW PvP Mounts, 21 achives  ►TEST GAME◄  {rt6}Skýpe: Azpirox{rt6}
 	"raid.*selfplay.*discount.*skype", --WTS {rt6} Blackrock Foundry Heroic + all loot, NOW! raid await {rt6} Self-play, 25ppl+, tons of loot, master loot. DISCOUNT for cloth,leather and mail. skype: dozinor
 	"hordebank.*account.*euro", --[WWW.Hordebank.COM]{RT2Black Foundry HC Master Loot run 10/10,,Selfplay/Account Share available.Visit [WWW.Hordebank.COM]to talk to Live Chat for details Now!!5 spots available!200euro Now!q
@@ -895,13 +896,13 @@ local repTbl = {
 	["¨"]="", ["”"]="", ["“"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
-	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
+	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["ą"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
 	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
-	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e",["ê"]="e", --First letter is Russian "\208\181". Convert > \101
-	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["İ"]="i", --Convert > \105
+	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e", ["ę"]="e", ["ê"]="e", --First letter is Russian "\208\181". Convert > \101
+	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["ĭ"]="i", ["İ"]="i", --Convert > \105
 	["к"]="k", -- First letter is Russian "\208\186". Convert > \107
 	["Μ"]="m", ["м"]="m",--First letter is capital Greek μ "\206\156". Convert > \109
-	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111
+	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["ǿ"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111
 	["р"]="p", --First letter is Russian "\209\128". Convert > \112
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 	["ý"]="y", --First letter is "\195\189". Convert > \121
