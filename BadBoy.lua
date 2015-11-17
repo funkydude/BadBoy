@@ -900,7 +900,7 @@ local repTbl = {
 	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
 	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e", ["ę"]="e", ["ê"]="e", --First letter is Russian "\208\181". Convert > \101
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["ĭ"]="i", ["İ"]="i", --Convert > \105
-	["к"]="k", -- First letter is Russian "\208\186". Convert > \107
+	["к"]="k", ["ķ"]="k", -- First letter is Russian "\208\186". Convert > \107
 	["Μ"]="m", ["м"]="m",--First letter is capital Greek μ "\206\156". Convert > \109
 	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["ǿ"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111
 	["р"]="p", --First letter is Russian "\209\128". Convert > \112
