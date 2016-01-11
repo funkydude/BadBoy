@@ -16,7 +16,7 @@ do
 	elseif L == "zhCN" then
 		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[垃圾信息已被拦截，点击举报！]|h|r"
 	elseif L == "esES" or L == "esMX" then
-		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam bloqueado. Clic para informar!]|h|r"
+		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam bloqueado, haz clic para reportarlo.]|h|r"
 	elseif L == "ruRU" then
 		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r"
 	elseif L == "koKR" then
