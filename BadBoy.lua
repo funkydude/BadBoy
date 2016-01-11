@@ -617,10 +617,19 @@ local instantReportList = {
 	--
 
 	--[[  RBG/boosting  ]]--
-	"gold.*shadowboost.*info", --▲Hello! We are helping with PVE RAIDS  Heroic Hellfire Citadel ▲ Huge amounts of Loot ▲ EVERYDAY RAIDS ▲ Challenge mode - GOLD ▲ ON https://shadowboost.com ▲ /w for more information▲
 	"gold.*skype.*brbwow", --WTS [Challenge Warlord: Gold] . Skype: brbwow
 	"gold.*skype.*cmwow222", --WTS [Challenge Warlord: Gold] . Skype: CMWOW222
+	"gold.*skype.*cmgwows", --WTS [Challenge Warlord: Gold] . Skype: СMGWOWS
 	"gold.*skype.*ozyboost", --WTS [Challenge Warlord: Gold]. SKYPE - OZYBOOST
+	"gold.*skype.*coldgold88", --WTS [Challenge Warlord: Gold] for more info skype: coldgold88
+	"rbgwin.*skype.*winsrbg", -- --- WTS RBG WINS/CAP. Get it right now! Skype: WinsRBG ---
+	--██WTS RBG weekly Caps/RBG 40&75wins for mount/WOD S3 Full honorgear/BOP mount. ●●without accshare,carry you right now  ██.PST me for price█
+	"wtsrbg.*cap.*mount.*accshare.*price", --●●WTS RBG weekly Caps.1-75win.4 Vicious mount[Vicious Saddle]Full honor(700)gear,BOP mount[Voidtalon of the Dark Star]no accshare█me for price
+	"wtsrbg.*cap.*mount.*accshare.*carry", --WTS RBG weekly Caps/RBG 40&75wins 4 mount[Vicious War Mechanostrider]and[Reins of the Vicious War Steed]no accshare,carry you right now, ?PST me for
+	"wts.*loot.*sale.*skype.*$", --WTS [Cutting Edge: The Black Gate] 13/13M w/ loot & [Felsteel Annihilator] - Add "Felsteelsale" skype - $300
+	--[04:03:52] [LFG] [Alfredjp]: ▲Hello! We are helping with PVE raids Hellfire Citadel(NMHCM)▲Huge amounts of Loot▲EVERYDAY RAIDS▲Challenge mode - GOLD▲And much more▲/W for more information▲
+	"huge.*loot.*challenge.*gold.*info", --▲Hello! We are helping with PVE RAIDS  Heroic Hellfire Citadel ▲ Huge amounts of Loot ▲ EVERYDAY RAIDS ▲ Challenge mode - GOLD ▲ ON https://shadowboost.com ▲ /w for more information▲
+	"skype.*support.*shadowboost", --▲Hello! Please check all info at skype: Support.ShadowBoost and site https://shadowboost.com
 	"cheapest.*boostinglive", --Cheapest Grove Warden Mount(moose), Mythic Dungeons Hellfire Citadell and other on http://boostinglive.com
 	"gift.*boostinglive", --Get the best gear in game, and receive a gift. All news on http://boostinglive.com
 	"buybooster.*discount", --buybooster.com - 30% discount on HFC mythic today! Also WTS HFC/BRF/HM. Raids everyday. Leveling/CM/Glories and more! skype: "buybooster"
@@ -830,6 +839,7 @@ local instantReportList = {
 	"金币.*服包团.*便宜卖.*QQ", --{rt3}金币100刀10w,15w送幽灵坐骑哦{rt3}金牌挑战特价，当天完成{rt3}TOT 全通，lvl522武器饰品，t15套装特价，无需转服{rt3}MSV/HOF/TOES跨服包团，各等级，专业代练便宜卖{rt3}{rt3}QQ：1933089703
 	"gold.*powerlvl?ing.*fast.*best.*skype", --WTS{rt3}{rt3}Gold Challenge Conqueror{rt3}{rt3}Powerlving1-90/85-90/1-85{rt3}{rt5}{rt3}Fast & Best services{rt1}{rt1}Pst for details--Skype:tessg4p--{rt1}{rt1}金牌挑战模式，等级代练，请Q：2584052418--
 	"坐骑.*rbg.*2200.*skype", --{diamond}代打金牌挑战模式***各类职业。奖励。奖励一套拉风幻化装，凤凰坐骑一枚+等级代练，RBG2200/2400/2600/2700/...+每周混分-skype:tessg4p--幽灵虎团队 778587316
+	"低价销售.*skype.*joywowitem", --欢度圣诞！魔钢火热预定中。地狱火英雄史诗13/13低价销售，包团单买都行，武器饰品套装散件降价销售一周多团，自己上号，德诺拉飞行解锁限时特价，咨询有惊喜Q1I42454725.skype:joywowitem
 
 	--[[  Advanced URL's/Misc  ]]--
 	"wts.*g[0o]ld.*mount.*price.*feedback", --WTS Your personal g0ld bank, Mounts, Followers, Leveling, Gear farm, Legendary weapons and more! Best conditions, friendly prices and a lot of feedbacks. Whisper me for info
