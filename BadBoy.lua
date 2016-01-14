@@ -351,6 +351,7 @@ local instantReportList = {
 	"^wt[bst]csgocdkee?y", --WTB CS GO CD KEEY PAY GOLD AND GOOD WISP ME YOUR OFFER WTB CS GO KNIFE SKINS
 	"^tradingcsgo.*gold", --Trading Cs:GO Knife for Gold /w me for more information!!!
 	"^wt[bst]csgocheap", --WTB CS GO CHEAPS BELOW 5 EURO WITH WOW GOLD!
+	"^wt[bst]mywowgold.*csgoskin", --WTT: My WOW Gold for your CSGO Skins. Offer 3k per 1€ skin value. No selling, Just trading! /w me for a chat.
 
 	--[[  SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
@@ -587,6 +588,9 @@ local instantReportList = {
 	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
 	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
 	--
+	"want.*fullymythic.*epic.*join.*raid.*today.*pm.*moreinfo", --WÀnt to be fÚlly mÿthicly [Epic]? JÖin Öur raid tÖday! PM mè for more info ♥ ♫
+	"dailyhfc.*mythic.*items.*guarantee.*pm.*enroll", --Dáily HFÇ herÖic/mýthic. Gèt ùp to 20 [Epic] itéms, 10 sløts güåranteed. PM me and enròll now! ♥ ♫
+	"get.*warden.*today.*cooloffer.*msgme", --Gèt yoùr [Grove Warden] tòday! Alsò many òthers còol òffers!  Just msg me ♫
 	"korobo?o?stcom.*legal", --Welcome to 30ppl HFC Heroic loot run! Get full gear one run! Raid Today from 99e only ! Also 710 + gear, BRF, CMS. PVP ratings - KOROB{rt2}{rt2}ST COM - legal company, tons of feedbacks. ◄◄ ♥ ♫
 	"fast.*help.*koroboost", --Fast and easy help with Mythic/Heroic 100% drop of heirloom weapon. Be [Ready for Raiding] in WoD. Кorоbооst.соm
 	"koroboost.*visit", --[Kor'kron Juggernaut] at Кorobооst.cоm. Get it while it's still 100% drop. Also any pve/pvp achievements. Just visit us.
@@ -623,6 +627,8 @@ local instantReportList = {
 	"gold.*skype.*ozyboost", --WTS [Challenge Warlord: Gold]. SKYPE - OZYBOOST
 	"gold.*skype.*coldgold88", --WTS [Challenge Warlord: Gold] for more info skype: coldgold88
 	"rbgwin.*skype.*winsrbg", -- --- WTS RBG WINS/CAP. Get it right now! Skype: WinsRBG ---
+	"service.*boosthive[%.,]eu", --WTS Hellfire Citadel Mythic & Heroic/ Challenges / PVE services and much more.  b o o s t h i v e . e u
+	"easyboost[%.,]com.*skype", --EASY-BOOST.COM | WE HELP WITH ANY PVP OR PVE ACHIEVMENTS, MOUNTS AND EVERYTHING! VISIT [EASY-BOOST.COM] OR CONTACT VIA SKYPE: EASY-BOOSTSUPPORT
 	"wts.*loots.*price.*mount.*account", --■■■■WTS Heroic HFC Full clear+loots tempting price[Calamity's Edge][Libram of Vindication]■■■ ■Archimonde Kill with mount/No account
 	"wts.*cool.*mount.*accshare.*price", --███WTS Full Honor Gears and Cool and rare mounts [Voidtalon of the Dark Star]and[Reins of the Time-Lost Proto-Drake]no acc share/w me price!
 	--██WTS RBG weekly Caps/RBG 40&75wins for mount/WOD S3 Full honorgear/BOP mount. ●●without accshare,carry you right now  ██.PST me for price█
@@ -652,6 +658,7 @@ local instantReportList = {
 	"wts.*arena.*rbg.*coaching.*info", --{skull} WTS Arena 2200/2400/2700/glad/r1, Rbg 2200/HotA, 100wins,Big CQ CAPS, Coaching(playing with glad){skull} /w for more info
 	"wingsb{circle}{circle}st.*info", --{skull}WTS Heroic HFC lootrun today 8pm realmtime, 2spots for now, more info wingsb{circle}{circle}st.com {skull}/w for more info
 	"selfplay.*wingsboost[%.,]c", --{skull}WTS HEROIC HFC LOOTRUN 2SPOTS FOR NOW, SELFPLAY,MASTERLOOT wingsboost.c{circle}m /w {skull}
+	"loot.*piloted.*safe.*superprice.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
 	"korvano[%.,]com.*selfplay", -- Welcome to visit  www.KORVANO.com Raid will start today at 21:00 CET (HFC 13/13 HEROIC). British boost! Piloted: 99 eur! Selfplay: 149 eur! U WILL GET ALL LOOT U NEED!
 	"raidboost%.com.*sell.*smooth", --{rt8}[RaidBoost.com] - HellFire Citadel on Sell! Normal and Heroic boost. Fast and Smooth!{rt8}
 	"mount.*b[0o]?[0o]?sterking[%.,]c[0o]?m", --{rt1} Hello! WTS: PVE RAIDS LIKE HFC HC NORMAL OR EVEN MYTHIC SAME FOR BLACKROCK FOUNDRY! ANY ACHIEVEMENTS, GLORIES, MOUNTS etc. If you want more just check our website B{rt2}{rt2}ster-King.com {rt1} /w for more info
@@ -681,6 +688,9 @@ local instantReportList = {
 	"b[o0][o0]sting[%.,]pr[o0].*service", --[H] <DND>[Jedrict]: {square}{square}{square} www.Boosting.Pro - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
 	"b[o0][o0]sting[%.,]pr[o0].*sale", --{rt6}{rt6}{rt6} www.Boosting.Pro - Get all RAREST mounts from World of Warcraft: {rt2} MIMIRON'S HEAD and ASHES OF AL'AR {rt2} on Sale now! Any mount including Invincible in less than a month! {rt6}{rt6}{rt6}
 	"b[o0][o0]sting[%.,]pr[o0].*cheap", --{rt6}{rt6}{rt6} www.Boosting.Pro - REAL RBG boosting without wintrades! {rt2} ULTRA-CHEAP RBG WIN FARM {rt2} Check it out ;) {rt6}{rt6}{rt6}
+	"rbg.*cap.*gear.*mount.*selfplay", --WTS: RBG CAP GÄMES ▲ FULL CØNQUEST CAP ▼ FULL CØNQUEST GEÁR + 2 PVP MOUNTS ▲ SÉLF PLÄY ▼  AND MORE ON ►►/w for more info ◄◄
+	"mythic.*glories.*mount.*gold.*selfplay", --WTS: HFC Mythic & Heroic mode ▲ GROVE WARDEN ▲ BRF MYTHIC/HC ▼ GLØRIES ▲ MØUNT FÁRM ▼ CHÁLLENGE MODE GOLD ▲ SÉLF PLÁY ▼ AND MORE ON ►/w for more info◄◄
+	"website.*epiccarry[%.,]?c[0o]?m", --Hello! If you need more info you can check our website - epiccarry.com. 24/7 live chat support!
 	"mount.*epiccarry[%.,]?c[0o]?m", --WTS: HFC HC/NM <> BRF MYTHIC/HC <> GLORIES <> MOUNT FARM <> ACHIEVEMENTS <> AND MORE ON EpicCarry c{rt2}m
 	"euro.*epiccarry[%.,]?c[0o]?m", --WTS: HELLFIRE CITADEL NM/HC (99 euro for normal run!) <> SELF PLAY <> EVERYDAY RUNS <> BLACKROCK FOUNDRY HC/MYTHIC <> SELF PLAY <> ALL GLORIES, MOUNTS COACHING AND MORE ON {rt1} epiccarry.com {rt1}
 	--WTS: RATED BG RATING/WINS, ARENA RATING/WINS, CONQUEST/HONOR GEAR AND MORE ON EpicCarry c{rt2}m
@@ -918,10 +928,11 @@ local repTbl = {
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["ĭ"]="i", ["İ"]="i", --Convert > \105
 	["к"]="k", ["ķ"]="k", -- First letter is Russian "\208\186". Convert > \107
 	["Μ"]="m", ["м"]="m",--First letter is capital Greek μ "\206\156". Convert > \109
-	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["ǿ"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111
+	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["ø"]="o", ["Ǿ"]="o", ["ǿ"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111. Note: Ǿ fails with strlower, include both.
 	["р"]="p", --First letter is Russian "\209\128". Convert > \112
+	["ř"]="r", --Convert > \114
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
-	["ý"]="y", --First letter is "\195\189". Convert > \121
+	["ý"]="y", ["ÿ"]="y", --Convert > \121
 }
 
 local strfind = string.find
