@@ -911,6 +911,7 @@ local instantReportList = {
 	--"titaniumbay.*versand", ---= TitaniumBay =- Bekommen 40% gold Gratis! 15 minuten Versand! Preis prüfen!
 	--TitвaniumBay - Erhalten Sie 40% mehr Gold in 15 Minuten! Das beste Angebot in der Stadt!
 	"titaniumbay.*minut[eo]", --TitaniumBay - Erhalten Sie 40% mehr Gold in 15 Minuten! Das beste Angebot in der Stadt!
+	"titaniumвbay.*gold", ---= TitaniumвBay =- Get up to 30% extra gold for Free! Fastest delivery on the market!
 	---= TitaniumBay =- Erhalten Sie 30% mehr Gold im Vergleich zu WoW-Marke
 	"titaniumbay.*gold", -- -= TitaniumBay =- Get up to 30% more gold compared to WoW Token
 	--"titaniumbay.*verifiez", ---= TitaniumBay =- Obtenez 40 % d'or Gratuit! Dans 15 Minutes! Verifiez le prix!
