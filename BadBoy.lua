@@ -588,7 +588,7 @@ local instantReportList = {
 	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
 	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
 	--
-	--top guild inviting you to best HEROIC/ MYTHIC raid everyday from 14:00 CET , get your [Epic]s ! msg me 
+	--top guild inviting you to best HEROIC/ MYTHIC raid everyday from 14:00 CET , get your [Epic]s ! msg me
 	"topguildinv.*best.*mythic.*everyday.*getyour.*msg", --top guild inviting you to best HEROIC/ MYTHIC raid everyday from 14:00 CET , get your [Felsteel Annihilator] ! msg me
 	"want.*fullymythic.*epic.*join.*raid.*today.*pm.*moreinfo", --WÀnt to be fÚlly mÿthicly [Epic]? JÖin Öur raid tÖday! PM mè for more info ♥ ♫
 	"dailyhfc.*mythic.*items.*guarantee.*pm.*enroll", --Dáily HFÇ herÖic/mýthic. Gèt ùp to 20 [Epic] itéms, 10 sløts güåranteed. PM me and enròll now! ♥ ♫
@@ -631,6 +631,9 @@ local instantReportList = {
 	"gold.*skype.*challengego", --WTS [Challenge Warlord: Gold]. Availible right now. We are experienced group!!! Add me on skype: "ChallengeGO"
 	"rbgwin.*skype.*winsrbg", -- --- WTS RBG WINS/CAP. Get it right now! Skype: WinsRBG ---
 	"conquest.*service.*gear.*skype", --\\\ WTS Conquest Cap Service. Get your gear right now! Skype: LConce ///
+	"service.*cyberstarlife%.ru", --Best prices and service at http://cyber-starlife.ru/ .PvE,PvP, Achievments,mounts etc with polite and friendly support!
+	"cyberstarlife%.ru.*skype", --Dont miss chance to get your Challange mode's WEAPON! Everything and more at http://cyber-starlife.ru/ or skype assortibg
+	"attention.*selfplay.*safe.*sale", --▓▓ ATTENTION! ▓▓ WTS: ▓▓ HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓ !!!SELFPLAY!!! MASTER LOOT! ▓▓ TODAY 20:00 SERVER TIME! ▓▓ 100% SAFE! ▓▓ SUPER SALE! ▓▓ Whisper me! ▓▓
 	"smooth.*join.*buyboost[%.,]pro", --|||| We are helping with your PvE progress. Any aspect of game. Fast and smooth. Join us now and become more powerful than your friends. |||| Buyboost.pro
 	"service.*boosthive[%.,]eu", --WTS Hellfire Citadel Mythic & Heroic/ Challenges / PVE services and much more.  b o o s t h i v e . e u
 	"rbg.*mount.*wins.*gear.*selfplay", --███WTS:RBG 40/75wins mounts [Vicious War Kodo] and  [Horn of the Vicious War Wolf]1-75wins,full honor gear,self play,Pst
