@@ -206,6 +206,7 @@ local whiteList = {
 	"raid",
 	"scam",
 	"roleplay",
+	"physical",
 	"appl[iy]", --apply/application
 	"enjin%.com",
 	"guildlaunch%.com",
