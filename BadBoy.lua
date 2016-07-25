@@ -560,6 +560,7 @@ local instantReportList = {
 	"^wts.*website.*paypal.*deliver", --WTS Custom Guild Website + 12 months of maintenance + hosting + seo ($100 paypal of 100kg in game) (1-3 days to deliver custom guild website)
 	"^wts.*prepaid.*wowingamecurrency", --WTS Rchange/Transfer/Prepaid for WoW ingame currency! {rt4}
 	"^wts.*tiger.*rooster.*timecard", --WTS  [Reins of the Swift Spectral Tiger]240k[Magic Rooster Egg]120k and Prepaid Timecard,Panda [MOP.Faction] change and Race change Pst.
+	"preorder.*dving[%.,]net", --►►► [DVING.NET] - HFC raids Heroic and Mythic with Masterloot TODAY. Powerleveling. LEGION PREORDERS AND MORE. [DVING.NET] ◄◄◄
 	"highmaul.*edge.*dving[%.,]net", --{skull} Highmaul. Lootruns and achievments runs. Cutting Edge: Imperator's Fall. Be First! - Dving.net {skull}
 	"mount.*code.*dving[%.,]net", --Achievements, Mounts, Loot-Codes, PVE / PVP - Dving.net
 	"sale.*loot.*dving[%.,]net", --5.4 content on sale! Hardmodes and Loot Raids for Siege of Orgrimmar! - Dving.net
@@ -1038,13 +1039,13 @@ end
 --[[ Chat Scanning ]]--
 local Ambiguate, gsub, next, tremove, prevLineId, result, chatLines, chatPlayers = Ambiguate, gsub, next, tremove, 0, nil, {}, {}
 local spamCollector, prevLink, spamLineId = {}, 0, 0
-local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid, arg13)
+local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
 	local trimmedPlayer
 	if lineId == prevLineId then
 		return result -- For messages that are registered to more than once chat frame
 	else
-		if not lineId then -- Still some addons floating around breaking stuff :-/
-			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (lineId) I need to work properly :(")
+		if not lineId or not guid then -- Still some addons floating around breaking stuff :-/
+			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (lineId/guid) I need to work properly :(")
 			return
 		end
 
