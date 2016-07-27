@@ -1044,8 +1044,11 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	if lineId == prevLineId then
 		return result -- For messages that are registered to more than once chat frame
 	else
-		if not lineId or not guid then -- Still some addons floating around breaking stuff :-/
-			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (lineId/guid) I need to work properly :(")
+		if not lineId then -- Still some addons floating around breaking stuff :-/
+			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (Line ID) I need to work properly :(")
+			return
+		elseif not guid and flag ~= "GM" and flag ~= "DEV" then -- Still some addons floating around breaking stuff :-/
+			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (GUID) I need to work properly :(")
 			return
 		end
 
