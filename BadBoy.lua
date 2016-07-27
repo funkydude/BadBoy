@@ -1,7 +1,7 @@
 
 -- GLOBALS: BADBOY_NOLINK, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendGameAccounts, BNGetFriendGameAccountInfo
 -- GLOBALS: CanComplainChat, ChatFrame1, GetRealmName, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
--- GLOBALS: type, UnitInParty, UnitInRaid, CalendarGetDate, SetCVar
+-- GLOBALS: UnitInParty, UnitInRaid, CalendarGetDate, SetCVar
 local myDebug = false
 
 local reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam blocked, click to report!]|h|r"
@@ -1037,18 +1037,16 @@ local IsSpam = function(msg)
 end
 
 --[[ Chat Scanning ]]--
-local Ambiguate, gsub, next, tremove, prevLineId, result, chatLines, chatPlayers = Ambiguate, gsub, next, tremove, 0, nil, {}, {}
+local Ambiguate, gsub, next, type, tremove, prevLineId, result, chatLines, chatPlayers = Ambiguate, gsub, next, type, tremove, 0, nil, {}, {}
 local spamCollector, prevLink, spamLineId = {}, 0, 0
+local prev = 0
 local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
 	local trimmedPlayer
 	if lineId == prevLineId then
 		return result -- For messages that are registered to more than once chat frame
 	else
-		if not lineId then -- Still some addons floating around breaking stuff :-/
+		if type(lineId) ~= "number" then -- Still some addons floating around breaking stuff :-/
 			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (Line ID) I need to work properly :(")
-			return
-		elseif not guid and flag ~= "GM" and flag ~= "DEV" then -- Still some addons floating around breaking stuff :-/
-			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (GUID) I need to work properly :(")
 			return
 		end
 
@@ -1080,6 +1078,12 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 		msg = gsub(msg, k, v)
 	end
 	--End string replacements
+
+	if type(guid) ~= "string" and flag ~= "GM" and flag ~= "DEV" and (GetTime()-prev) > 5 then -- Still some addons floating around breaking stuff :-/
+		prev = GetTime()
+		print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (GUID) I need to work properly :(")
+		return
+	end
 
 	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 20
 	if event == "CHAT_MSG_CHANNEL" then
