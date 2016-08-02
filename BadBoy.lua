@@ -746,7 +746,9 @@ local instantReportList = {
 	"gold.*p[rг]+ice.*leprest[o0]re", --Chąllenges: Ğold or Chąllenge Mąster (top 1 time) ◄►  Raider gloriēs ◄►all scenarios ◄► BEST pŕicēs on EU! play with TOP team! (done in 2,5 hrs)◄► ►►►L E P Ŕ E S T Θ Ŕ E . C Θ M ◄◄
 	-- WTS AŖENA ██ 2v2 3v3 5v5 - YOU PLAY youг chaгactěг! ██ any ŖĄTING - 2.2k/2.4k/Gladiątoг/R1 ██ COACHING by PŖO těam ██ tons of fěědbacks: ►►►L_Ě_P_R_E_S_T_O_Ŗ_Ě_._C_O_M◄◄◄
 	"p[rг]+o.*feedback.*leprest[o0]re", --WTS Express hǿnor, apexis crystals and garrison resources fąrming by leprestǿre. Full gear in 24 hrs by prǿfessionals. Best prĭces and many feedbącķs on L Ę P R Ę S T Ǿ R Ę . C Ǿ M
-	"mount.*p[rг]+ice.*leprest[o0]re", --{square}{square} Great RAID offers for you! Blackrock Foundry [Heroic] and [Mythic]! Play yourself with pro’s and get full gear and Ironhoof destroyer (mount from Blackhand). Awesome prices and tons of feedbacks - leprest0re.c0m {square}{square}
+	--WTS ██  Raideг gloгiĕs ██ MYTHIC DUNGEONS ██ all scĕnaгios ██ BEST PRICΈ on EU! play with TOP team! [►►►L_Έ_P_R_E_S_T_O_R_Έ_._C_O_M◄◄◄]
+	"raid.*p[rг]+ice.*leprest[o0]re", --{square}{square} Great RAID offers for you! Blackrock Foundry [Heroic] and [Mythic]! Play yourself with pro’s and get full gear and Ironhoof destroyer (mount from Blackhand). Awesome prices and tons of feedbacks - leprest0re.c0m {square}{square}
+	"mount.*deal.*leprest[o0]re", --Are you ready for LEGION invasion? ██ all new MOUNTS ██ 100-110 LΈVELLING ██ full GΈAR FARM ██ best dĕals for LEGION PRΈORDΈRS and a lot of FΈΈDBACKS: ►►►L_Έ_P_R_E_S_T_O_R_Έ_._C_O_M◄◄◄
 	"leprestore.*gold.*sale", --{rt7}{rt7} Best deals on [Leprestore.com!] Blackrock Foundry and HighMaul. Challenge Modes:Gold. Raider glories and other achievements!Great {rt2} deals!Almost everything is on sale! More info and many feedbacks on [Leprestore.com] {rt7}{rt7}
 	"skype.*leprestore[%.,]c", --Thanks for your interest. Leprestore team greets you :) For more info and guarantees add me on Skype: support@leprestore.com or check our website – leprestore.com
 	"mounts.*deals.*p[rг]+ice.*feedback", --GET  ██ elite MΘUNTS ██ LĒVELLING ██ GEAR FARM  ►►►PST me ◄◄◄ To receive Bēst deąls, super pŕicē and a check our fēēdbącks
@@ -961,7 +963,7 @@ local repTbl = {
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["ą"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
 	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
-	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e", ["ę"]="e", ["ė"]="e", ["ê"]="e", ["Ě"]="e", ["ě"]="e", ["Ē"]="e", ["ē"]="e", --First letter is Russian "\208\181". Convert > \101. Note: Ě, Ē fail with strlower, include both.
+	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e", ["ę"]="e", ["ė"]="e", ["ê"]="e", ["Ě"]="e", ["ě"]="e", ["Ē"]="e", ["ē"]="e", ["Έ"]="e", ["έ"]="e", ["Ĕ"]="e", ["ĕ"]="e", --First letter is Russian "\208\181". Convert > \101. Note: Ě, Ē, Έ, Ĕ fail with strlower, include both.
 	["Ğ"]="g", ["ğ"]="g", ["Ĝ"]="g", ["ĝ"]="g", -- Convert > \103. Note: Ğ, Ĝ fail with strlower, include both.
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["ĭ"]="i", ["İ"]="i", --Convert > \105
 	["к"]="k", ["ķ"]="k", -- First letter is Russian "\208\186". Convert > \107
@@ -1054,8 +1056,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 		trimmedPlayer = Ambiguate(player, "none")
 		if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 		if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
+		if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
 		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
-			if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
 			--RealID support, don't scan people that whisper us via their character instead of RealID
 			--that aren't on our friends list, but are on our RealID list. CanComplainChat should really support this...
 			local _, num = BNGetNumFriends()
@@ -1079,7 +1081,7 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	end
 	--End string replacements
 
-	if type(guid) ~= "string" and flag ~= "GM" and flag ~= "DEV" and (GetTime()-prev) > 5 then -- Still some addons floating around breaking stuff :-/
+	if type(guid) ~= "string" and (GetTime()-prev) > 5 then -- Still some addons floating around breaking stuff :-/
 		prev = GetTime()
 		print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (GUID) I need to work properly :(")
 		return
