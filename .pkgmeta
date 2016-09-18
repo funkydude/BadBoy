@@ -1,4 +1,10 @@
 package-as: BadBoy
+wowi-archive-previous: no
 
 externals:
     Libs/LibChatAnims: svn://svn.wowace.com/wow/libchatanims/mainline/trunk/LibChatAnims
+
+ignore:
+  - .travis.yml
+  - ISSUE_TEMPLATE.md
+  - README.md
