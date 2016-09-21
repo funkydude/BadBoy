@@ -532,6 +532,7 @@ local instantReportList = {
 	"^wt[bs][36]0days?gc", --wtb 60 days gc.ive got a mindblowing offer which u cant skip.whisper me for extra information if u seriously want to do this!
 	"^wt[bs]gamtime.*gold", --WTB gamtime for gold /w
 	"mount.*gametime%d+days?%d+k", -- sell[Grinning Reaver]30k store mount /gametime 60days 30k
+	"wts%d+kfor%d+euro", --WTS 650K FOR 30 EURO /w me (paypal)
 	"^wts%d+kfor%d+usd$", --WTS 100K for 33 usd
 	--WTS G A M E T I M E /W
 	--WTS {rt1} GAMETIME {rt1}
@@ -640,6 +641,7 @@ local instantReportList = {
 	"gold.*skype.*coldgold88", --WTS [Challenge Warlord: Gold] for more info skype: coldgold88
 	"gold.*skype.*challengego", --WTS [Challenge Warlord: Gold]. Availible right now. We are experienced group!!! Add me on skype: "ChallengeGO"
 	"mythic.*skype.*qreaperbst", --WTS 10/10 Mythic and Heroic all info in skype: qReaper_bst
+	"wts.*boost.*amazingprice.*gua?rantee.*only.*info", --Wts The emerald nightmare Heroic boost 7/7 clear for amazing price we gurantee you + 850 item level only today 17:00 server time w me for more infos.
 	"lootcloud.*paypal", --¥Lootcloud,com¥ presents new fresh offers for legion raid Emerald Nightmare and 5 man [dungeons.Paypal] support, livechat, discounts and crazy offers. Get more at our website, [lootcloud.com]
 	"boost.*price.*mmoguard[%.,]com", -- 6 top-rated CM boosting teams, fair prices and 100% protected deals. Get what you desire at [►mmoguard.com◄] ◄◄◄ ████
 	"gold.*pro.*mmoguard[%.,]com", --████ ►►► Every self-respecting WoW player wants the [Challenge Warlord: Gold] achievment - and professionals from [►MMOGUARD.COM◄] are here to help you to get it!
