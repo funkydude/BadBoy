@@ -645,6 +645,8 @@ local instantReportList = {
 	"lootcloud.*paypal", --¥Lootcloud,com¥ presents new fresh offers for legion raid Emerald Nightmare and 5 man [dungeons.Paypal] support, livechat, discounts and crazy offers. Get more at our website, [lootcloud.com]
 	"boost.*price.*mmoguard[%.,]com", -- 6 top-rated CM boosting teams, fair prices and 100% protected deals. Get what you desire at [►mmoguard.com◄] ◄◄◄ ████
 	"gold.*pro.*mmoguard[%.,]com", --████ ►►► Every self-respecting WoW player wants the [Challenge Warlord: Gold] achievment - and professionals from [►MMOGUARD.COM◄] are here to help you to get it!
+	"wtsemeraldnightmareheroicnormalboosting.*mythicdungeons?boost", --WTS Emerald Nightmare Heroic-Normal boosting, Mythic dungeons boost
+	"mmolvl[%.,]c[0o]m.*skype", --For details visit mmo-lvl . c0m or write to skype: geny.k2  or to email: genydocum@gmail.com
 	"mythic.*price.*perfectway[%.,]one", --WTS Dungeons Mythic, Dungeons Heroic in Legion everyday!!! New prices [(Perfectway.one)]
 	"mount.*achiev.*raidboost[%.,]com", --Farewell Draenor! Mounts/Glories/Achievements. Hurry up to all WoD bounties on [Raidboost.com]
 	"best.*market.*gamebion", --◄Need help in HFC? We have a best offers on the market from various guilds and teams! For more info visit GAMEBION com►
@@ -736,6 +738,7 @@ local instantReportList = {
 	"mythic.*glories.*mount.*gold.*selfplay", --WTS: HFC Mythic & Heroic mode ▲ GROVE WARDEN ▲ BRF MYTHIC/HC ▼ GLØRIES ▲ MØUNT FÁRM ▼ CHÁLLENGE MODE GOLD ▲ SÉLF PLÁY ▼ AND MORE ON ►/w for more info◄◄
 	"wts.*dungeon.*story.*levell?ing.*info", --►►►[WTS] Heroic & Mythic dungeons, Glory of the Legion hero and Suramar Story progress,reputation and access to Arcway and Court of Stars! Artifact, leveling!  /w me for info◄◄◄
 	"service.*pewpewshop[%.,]pro", --Hello, if you want to know more about our services, please visit our website - PewPewShop.pro  Our live chat support always ready to help you! :)
+	"wts.*lift.*dungeon.*pvp.*emerald.*info", --<<Character lift 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*boost.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character boost 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Runs and more. /W for more info
 	"wts.*levell?ing.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character leveling 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Soon Emerald Nightmare Runs and more. /W for more info.
 	"website.*epiccarry[%.,]?c[0o]?m", --Hello! If you need more info you can check our website - epiccarry.com. 24/7 live chat support!
