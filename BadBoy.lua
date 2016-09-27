@@ -563,6 +563,7 @@ local instantReportList = {
 	"^wt[bs]mopc?d?key", --{rt1} WTS MoP Key 1x /w me {rt1}
 	"wtsrafmount.*nightwing", --wts  raf mount   [Heart of the Nightwing] w/m
 	"^selling%d+.*gamecard", --Selling 60time gamecard!
+	"legion.*gametime.*day.*iranblizzard", --Legion 140T - Game Time 30Day 35T - 60Day 70Toman - www.iran-blizzard.com
 	"%d+day.*gametimecard.*cheap", --{diamond} {diamond} {diamond} {diamond} WTS TWO last 180 days game time card, cheaper! {diamond} {diamond} {diamond} {diamond}
 	"^wts.*website.*paypal.*deliver", --WTS Custom Guild Website + 12 months of maintenance + hosting + seo ($100 paypal of 100kg in game) (1-3 days to deliver custom guild website)
 	"^wts.*prepaid.*wowingamecurrency", --WTS Rchange/Transfer/Prepaid for WoW ingame currency! {rt4}
@@ -646,6 +647,7 @@ local instantReportList = {
 	"lootcloud.*paypal", --¥Lootcloud,com¥ presents new fresh offers for legion raid Emerald Nightmare and 5 man [dungeons.Paypal] support, livechat, discounts and crazy offers. Get more at our website, [lootcloud.com]
 	"boost.*price.*mmoguard[%.,]com", -- 6 top-rated CM boosting teams, fair prices and 100% protected deals. Get what you desire at [►mmoguard.com◄] ◄◄◄ ████
 	"gold.*pro.*mmoguard[%.,]com", --████ ►►► Every self-respecting WoW player wants the [Challenge Warlord: Gold] achievment - and professionals from [►MMOGUARD.COM◄] are here to help you to get it!
+	"wts.*nightmare.*loot.*selfplay.*master", --WTS: ▓▓ THE EMERALD NIGHTMARE 7/7 (Normal) LOOT RUN ▓▓SELFPLAY▓▓ MASTER LOOT▓▓ 
 	"wts.*mythic.*levell?ing.*artifact.*info", --WTS ▓▓ Heroic/Mythic Dungeons ▓ Emerald Nightmare ▓ Power Leveling ▓▓ World Quests  ▓▓ Artifactl ▓ Reputations /W me for more info
 	"wtsemeraldnightmareheroicnormalboosting.*mythicdungeons?boost", --WTS Emerald Nightmare Heroic-Normal boosting, Mythic dungeons boost
 	"mmolvl[%.,]c[0o]m.*skype", --For details visit mmo-lvl . c0m or write to skype: geny.k2  or to email: genydocum@gmail.com
@@ -694,7 +696,8 @@ local instantReportList = {
 	"helping.*arena.*selfplay.*challenge.*con[gq]uest", --Helping with Arena Rating, Selfplay, Challenge Modes, 100 wins, BIG conguest CAP! /w
 	"helping.*2200.*selfplay.*challenge.*con[gq]uest", --Helping with 1800/2000/2200/2400/2600! Selfplay, Challenge Modes, 100 wins,BIG CONQUEST POINTS CAP! /w
 	"info.*cubeboost[%.,]c", --Wanna more info?  -> http://cubeboost.com
-	"justboost[%.,]net.*glory.*mythic", --[JUSTBOOST.NET]  Legion services. Leveling 100-110, PVE equip 840+, 850+ Emerald Nightmare, Glory of the Legion Hero, Mythic Dungeons and MORE<<<<
+	-->>>[JUSTBOOST.NET]<<< EMERALD NIGHTMARE NORMAL/HC, MYTHIC+ RUNS, LEVELLING, ACHIEVEMENTS AND MORE<<< 
+	"justboost[%.,]net.*mythic", --[JUSTBOOST.NET]  Legion services. Leveling 100-110, PVE equip 840+, 850+ Emerald Nightmare, Glory of the Legion Hero, Mythic Dungeons and MORE<<<<
 	"company.*dantum[%.,]gg", --We are a new boosting company DANTUM! We will help you with Arena, RBGS, PVE. Come visit our website [DANTUM.GG] for more information
 	"rocketgaming.*challenge.*mount", --ROCKET GAMING PVE ♫OUR TOP DE Challenge Mode Team helps you by EU record time  getting your CM Mogg-Gear, Title and Mount. We have english and german TS-Support and can give u a lot of tips and tricks for our dayli CM-Runs. /w me
 	--♫ ROCKET GAMING PVP ♫ EU TOP 0.5 % Players help you become a Gladiator or #R1 and get all available PvP-Achievments. We play arenas every day - so all Ratings till 2.4 are played in 1-2 days. /w me for mor informations.
