@@ -644,6 +644,7 @@ local instantReportList = {
 	"gold.*skype.*challengego", --WTS [Challenge Warlord: Gold]. Availible right now. We are experienced group!!! Add me on skype: "ChallengeGO"
 	"mythic.*skype.*qreaperbst", --WTS 10/10 Mythic and Heroic all info in skype: qReaper_bst
 	"^wtsemeraldnightmarelootraids,heroic/mythicdungeons.*wisp", --WTS Emerald Nightmare lootraids, Heroic/Mythic Dungeons. Wisp!
+	"arena.*boost.*selfplay.*pro.*mythic", --Arena boost 2200/2400/2700, Live stream and selfplay possible, Coaching with pro, Mythic dungeons 10/10, TEN Heroic, /w me !
 	"arena.*help.*pro.*prestige.*mythic", --Arena help 1800-2400, play with Pro, leveling, PvP Prestige Farm, Mythic/Mythic+ dungeons, EN (normal) /w
 	"wts.*boost.*amazingprice.*gua?rantee.*only.*info", --Wts The emerald nightmare Heroic boost 7/7 clear for amazing price we gurantee you + 850 item level only today 17:00 server time w me for more infos.
 	"lootcloud.*paypal", --¥Lootcloud,com¥ presents new fresh offers for legion raid Emerald Nightmare and 5 man [dungeons.Paypal] support, livechat, discounts and crazy offers. Get more at our website, [lootcloud.com]
@@ -702,6 +703,8 @@ local instantReportList = {
 	"info.*cubeboost[%.,]c", --Wanna more info?  -> http://cubeboost.com
 	-->>>[JUSTBOOST.NET]<<< EMERALD NIGHTMARE NORMAL/HC, MYTHIC+ RUNS, LEVELLING, ACHIEVEMENTS AND MORE<<< 
 	"justboost[%.,]net.*mythic", --[JUSTBOOST.NET]  Legion services. Leveling 100-110, PVE equip 840+, 850+ Emerald Nightmare, Glory of the Legion Hero, Mythic Dungeons and MORE<<<<
+	--5% off just for today Emerald Nightmare Normal ML fast run. Start at 21:00 server time. [justboost.net]
+	"normal.*justboost[%.,]ne", --WTS Emerald Nightmare normal/heroic personal loot and other pvp/pve stuff more info [justboost.ne]
 	"company.*dantum[%.,]gg", --We are a new boosting company DANTUM! We will help you with Arena, RBGS, PVE. Come visit our website [DANTUM.GG] for more information
 	"rocketgaming.*challenge.*mount", --ROCKET GAMING PVE ♫OUR TOP DE Challenge Mode Team helps you by EU record time  getting your CM Mogg-Gear, Title and Mount. We have english and german TS-Support and can give u a lot of tips and tricks for our dayli CM-Runs. /w me
 	--♫ ROCKET GAMING PVP ♫ EU TOP 0.5 % Players help you become a Gladiator or #R1 and get all available PvP-Achievments. We play arenas every day - so all Ratings till 2.4 are played in 1-2 days. /w me for mor informations.
@@ -750,7 +753,7 @@ local instantReportList = {
 	"wts.*character.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character ↑↑ 100-110 ↑↑ lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*lift.*dungeon.*pvp.*emerald.*info", --<<Character lift 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*boost.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character boost 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Runs and more. /W for more info
-	"wts.*levell?ing.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character leveling 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Soon Emerald Nightmare Runs and more. /W for more info.
+	"wts.*le?ve?ll?ing.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character leveling 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Soon Emerald Nightmare Runs and more. /W for more info.
 	"website.*epiccarry[%.,]?c[0o]?m", --Hello! If you need more info you can check our website - epiccarry.com. 24/7 live chat support!
 	"mount.*epiccarry[%.,]?c[0o]?m", --WTS: HFC HC/NM <> BRF MYTHIC/HC <> GLORIES <> MOUNT FARM <> ACHIEVEMENTS <> AND MORE ON EpicCarry c{rt2}m
 	"euro.*epiccarry[%.,]?c[0o]?m", --WTS: HELLFIRE CITADEL NM/HC (99 euro for normal run!) <> SELF PLAY <> EVERYDAY RUNS <> BLACKROCK FOUNDRY HC/MYTHIC <> SELF PLAY <> ALL GLORIES, MOUNTS COACHING AND MORE ON {rt1} epiccarry.com {rt1}
