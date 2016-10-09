@@ -1,7 +1,7 @@
 
 -- GLOBALS: BADBOY_NOLINK, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendGameAccounts, BNGetFriendGameAccountInfo
 -- GLOBALS: CanComplainChat, ChatFrame1, GetRealmName, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
--- GLOBALS: UnitInParty, UnitInRaid, CalendarGetDate, SetCVar
+-- GLOBALS: UnitInParty, UnitInRaid, CalendarGetDate, SetCVar, wipe
 local myDebug = false
 
 local reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam blocked, click to report!]|h|r"
@@ -1094,35 +1094,27 @@ local IsSpam = function(msg)
 end
 
 --[[ Chat Scanning ]]--
-local Ambiguate, gsub, next, type, tremove, prevLineId, result, chatLines, chatPlayers = Ambiguate, gsub, next, type, tremove, 0, nil, {}, {}
+local Ambiguate, gsub, next, type, tremove = Ambiguate, gsub, next, type, tremove
+local blockedLineId, chatLines, chatPlayers = 0, {}, {}
 local spamCollector, prevLink, spamLineId = {}, 0, 0
-local prev = 0
-local filter = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
-	local trimmedPlayer
-	if lineId == prevLineId then
-		return result -- For messages that are registered to more than once chat frame
-	else
-		if type(lineId) ~= "number" then -- Still some addons floating around breaking stuff :-/
-			print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (Line ID) I need to work properly :(")
-			return
-		end
+local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
+	blockedLineId = 0
+	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
-		prevLineId, result = lineId, nil
-		trimmedPlayer = Ambiguate(player, "none")
-		if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
-		if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
-		if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
-		if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
-			--RealID support, don't scan people that whisper us via their character instead of RealID
-			--that aren't on our friends list, but are on our RealID list. CanComplainChat should really support this...
-			local _, num = BNGetNumFriends()
-			for i=1, num do
-				local gameAccs = BNGetNumFriendGameAccounts(i)
-				for j=1, gameAccs do
-					local _, rName, rGame, rServer = BNGetFriendGameAccountInfo(i, j)
-					if rName == trimmedPlayer and rGame == "WoW" and rServer == GetRealmName() then
-						return
-					end
+	local trimmedPlayer = Ambiguate(player, "none")
+	if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
+
+	if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
+	if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
+		--RealID support, don't scan people that whisper us via their character instead of RealID
+		--that aren't on our friends list, but are on our RealID list. CanComplainChat should really support this...
+		local _, num = BNGetNumFriends()
+		for i=1, num do
+			local gameAccs = BNGetNumFriendGameAccounts(i)
+			for j=1, gameAccs do
+				local _, rName, rGame, rServer = BNGetFriendGameAccountInfo(i, j)
+				if rName == trimmedPlayer and rGame == "WoW" and rServer == GetRealmName() then
+					return
 				end
 			end
 		end
@@ -1136,23 +1128,17 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 	end
 	--End string replacements
 
-	if type(guid) ~= "string" and (GetTime()-prev) > 5 then -- Still some addons floating around breaking stuff :-/
-		prev = GetTime()
-		print("|cFF33FF99BadBoy|r: One of your addons is breaking critical chat data (GUID) I need to work properly :(")
-		return
-	end
-
 	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 20
 	if event == "CHAT_MSG_CHANNEL" then
 		for i=1, #chatLines do
 			if chatLines[i] == msg and chatPlayers[i] == trimmedPlayer then --If message same as one in previous 20 and from the same person...
-				result = true --...filter!
+				blockedLineId = lineId
 				--
 				if spamCollector[guid] and IsSpam(msg) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
 					spamCollector[guid] = lineId
 				end
 				--
-				return true
+				return
 			end
 			if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
 		end
@@ -1183,8 +1169,8 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 				end
 			end
 		end
-		result = true
-		return true
+		blockedLineId = lineId
+		return
 	-- If chat links are enabled, and we have spam, and it's been longer than 100sec since the previous link, and there's been 15 chat entries since the previous link
 	elseif not BADBOY_NOLINK and next(spamCollector) and GetTime() - prevLink > 100 and lineId - spamLineId > 15 then
 		local canReport = false
@@ -1202,6 +1188,11 @@ local filter = function(_, event, msg, player, _, _, _, flag, channelId, channel
 			wipe(spamCollector)
 			ChatFrame1:RemoveMessagesByExtraData(-5678) -- Remove messages from the chat frame with the -5678 signature
 		end
+	end
+end
+local filter = function(_, _, _, _, _, _, _, _, _, _, _, _, lineId)
+	if blockedLineId == lineId then
+		return true
 	end
 end
 
@@ -1226,29 +1217,49 @@ do
 end
 
 --[[ Add Filters ]]--
-ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", filter)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", filter)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", filter)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", filter)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", filter)
+do
+	local f = CreateFrame("Frame")
+	f:SetScript("OnEvent", eventFunc)
+	local tbl = {
+		"CHAT_MSG_CHANNEL",
+		"CHAT_MSG_YELL",
+		"CHAT_MSG_SAY",
+		"CHAT_MSG_WHISPER",
+		"CHAT_MSG_EMOTE",
+		"CHAT_MSG_DND",
+		"CHAT_MSG_AFK",
+	}
+	for i = 1, #tbl do
+		local event = tbl[i]
+		f:RegisterEvent(event)
+		ChatFrame_AddMessageEventFilter(event, filter)
+		for i = 1, 10 do
+			local cf = _G[("ChatFrame%d"):format(i)]
+			if cf:IsEventRegistered(event) then
+				cf:UnregisterEvent(event)
+				cf:RegisterEvent(event)
+			end
+		end
+	end
+end
 
 --[[ Blacklist ]]--
 do
 	local f = CreateFrame("Frame")
-	f:RegisterEvent("PLAYER_LOGIN")
-	f:SetScript("OnEvent", function(frame)
-		SetCVar("spamFilter", 1)
+	f:RegisterEvent("ADDON_LOADED")
+	f:SetScript("OnEvent", function(frame, event, addon)
+		if addon == "BadBoy" then
+			SetCVar("spamFilter", 1)
 
-		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-		local _, _, day = CalendarGetDate()
-		if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
-			BADBOY_BLACKLIST = {dayFromCal = day}
+			-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
+			local _, _, day = CalendarGetDate()
+			if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
+				BADBOY_BLACKLIST = {dayFromCal = day}
+			end
+
+			frame:UnregisterEvent(event)
+			frame:SetScript("OnEvent", nil)
 		end
-
-		frame:UnregisterEvent("PLAYER_LOGIN")
-		frame:SetScript("OnEvent", nil)
 	end)
 end
 
