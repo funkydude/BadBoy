@@ -645,6 +645,7 @@ local instantReportList = {
 	"gold.*skype.*coldgold88", --WTS [Challenge Warlord: Gold] for more info skype: coldgold88
 	"gold.*skype.*challengego", --WTS [Challenge Warlord: Gold]. Availible right now. We are experienced group!!! Add me on skype: "ChallengeGO"
 	"mythic.*skype.*qreaperbst", --WTS 10/10 Mythic and Heroic all info in skype: qReaper_bst
+	"wts.*coaching.*boost.*skype", --WTS COĄCHING Ąrena Bøøst frøm r1 EU Glâdiâtors in 2s/3s ▬► ŠELFPLĄY (Yøu plây wiTh Prø) ◄▬ ŠKYPĒ: FindGuys
 	"^wtsemeraldnightmarelootraids,heroic/mythicdungeons.*wisp", --WTS Emerald Nightmare lootraids, Heroic/Mythic Dungeons. Wisp!
 	"arena.*boost.*selfplay.*pro.*mythic", --Arena boost 2200/2400/2700, Live stream and selfplay possible, Coaching with pro, Mythic dungeons 10/10, TEN Heroic, /w me !
 	"arena.*help.*pro.*prestige.*mythic", --Arena help 1800-2400, play with Pro, leveling, PvP Prestige Farm, Mythic/Mythic+ dungeons, EN (normal) /w
@@ -727,8 +728,7 @@ local instantReportList = {
 	"wts.*heroic.*masterloot.*selfplay.*today.*superprice", --WTS: {rt7}{rt4}{rt4} HELLFIRE CITADEL: 13/13 (HEROIС)! MASTER LOOT, Selfplay! {rt4}{rt4}TODAY 21:00 CET{rt7} SUPER PRICE! Whisper me!{rt7} -- Verified real-money boosters not gold boosters
 	"wts.*heroic.*masterloot.*selfplay.*today.*discount", --WTS: {rt7}{rt4}{rt4} HELLFIRE CITADEL: 13/13 (HEROIС)! MASTER LOOT, Selfplay! {rt4}{rt4}TODAY 21:00 CET{rt7} DISCOUNT for CLOTH and LEATHER! Whisper me!{rt7} -- Verified real-money boosters not gold boosters
 	"niceboost%.c.*welcome", --{rt1}{rt1}NICE-BOOST .C0M{rt1}{rt1} good price {rt1}{rt1} - Cool loot runs {rt1}{rt1}{rt1}{rt1} Heroic/Normal boosts - all included.Welcome to{rt1}{rt1}NICE-B00ST.c0m{rt1}{rt1}
-	--\\\\\\\\\WWW. P V E B O O S T .COM\\\\\\\\\WWW. P V E B O O S T .COM\\\\\\\\\WWW. P V E B O O S T .COM\\\\\\\\\ - HFC HC / MYTHIC / FULL 725+ GEAR!
-	"pveboost[%.,]com.*hfc.*%d", --{rt1} WWW.PVEBOOST.COM <<<< BEST PVE BOOSTING, 169e only for 13/13 HFC HC! 79e for 13/13 normal!
+	"pveboost[%.,]com.*service", --►►► [PVEBOOST.COM] - 100-110 BOOST, MYTHIC AND MYTHIC+ DUNGEONS 10/10, THE EMERALD NIGHTMARE RAID ALL DIFFICULTIES, ARENA BOOST AND OTHER SERVICES [PVEBOOST.COM] ◄◄◄
 	"boostingstore[%.,]com.*gear", --{rt1} V.I.P. BOOSTING AT: www.boostingstore.com - your persoonalny booster willing to do: HFC HC / 710 gear / PvP / CM and more!
 	"prommote[%.,]me.*payment", --dnd Website: Prommote.me ; Skype: mmo-support3 ; E-mail: prommote@gmail.com ; Support work hours: 13:00 - 01:00 CET. Ingame whispers are ignored. Gold is not accepted as payment.
 	-- W w w , Prоmmоtе , Ме —  Вlаckrоck Foundry МL Lооt Runs Аnd  Full Geаr: 6 New Items Minimum,  Tоkens, Wаrfоrgеd Аnd Sоckеtеd Lооt Included !
@@ -752,6 +752,7 @@ local instantReportList = {
 	"mythic.*glories.*mount.*gold.*selfplay", --WTS: HFC Mythic & Heroic mode ▲ GROVE WARDEN ▲ BRF MYTHIC/HC ▼ GLØRIES ▲ MØUNT FÁRM ▼ CHÁLLENGE MODE GOLD ▲ SÉLF PLÁY ▼ AND MORE ON ►/w for more info◄◄
 	"wts.*dungeon.*story.*levell?ing.*info", --►►►[WTS] Heroic & Mythic dungeons, Glory of the Legion hero and Suramar Story progress,reputation and access to Arcway and Court of Stars! Artifact, leveling!  /w me for info◄◄◄
 	"service.*pewpewshop[%.,]pro", --Hello, if you want to know more about our services, please visit our website - PewPewShop.pro  Our live chat support always ready to help you! :)
+	"wts.*fast.*dungeon.*pvp.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*character.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character ↑↑ 100-110 ↑↑ lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*lift.*dungeon.*pvp.*emerald.*info", --<<Character lift 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*boost.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character boost 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Runs and more. /W for more info
@@ -935,6 +936,12 @@ local instantReportList = {
 	"osboosting[%.,]com.*tarifs.*remise", --☼ www.os-boosting.com ☼ Le meilleur du boosting WoW à des tarifs imbattables. Donjons mythique 10/10 - Raids Cauchemar d'Emeraude 7/7 Normal & Héroïque - Métiers 700-800 - Pack 12 Pets TCG - Réputations Legion - Gold   | Code remise 5%: OS5%
 	"wallgaming.*loot.*keystone", --¤ www.WallGaming.com ¤ Raids Cauchemar d'Emeraude HM 7/7 6 loots/+ | Gloire au héros de Legion | Donjons Mythique 10/10 +5keystone | Arène 2c2 3c3 2000 & 2200 | Honneur PvP niveau 50 | Pets & Montures TCG |  N°1 FR
 
+	--[[ German ]]--
+	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
+	--[mmo-prof.com] raffle: Hellfire Citadel (Difficulty level: Mythic) 13/13 including loot. Eligibility requirements to be found on [mmo-prof.com]; Heroic raids, CM GOLD, mounts, PVP and more can be found , too. We're looking forward to your visit!
+	"mmoprof.*loot.*gold", --{rt2} [mmo-prof.com] {rt2} BRF Heroic / Highmaul Heroic , Mystisch Lootruns !! Arena 2,2k - Gladiator .. Jegliche TCG Mounts , Play in a Pro Guild (Helfen euch einer absoluten Top Gilde beizutreten, alles für Gold !! Schau vorbei {rt2} [mmo-prof.com] {rt2}
+	"mythic.*coaching.*mmoprof", --Bieten Smaragdgrüner Alptraum Mythic/Heroic/Normal Lootruns. Mythic + Instanzen 2-10! Item-Level Push. Coaching für dich! Play with a Pro! Oder komm ich deine Traumgilde und erspiele dir mit Profis deine Erfolge! [mmo-prof.de]
+
 	--[[  Advanced URL's/Misc  ]]--
 	"wts.*g[0o]ld.*mount.*price.*feedback", --WTS Your personal g0ld bank, Mounts, Followers, Leveling, Gear farm, Legendary weapons and more! Best conditions, friendly prices and a lot of feedbacks. Whisper me for info
 	"forpvp[%.,]com.*tiger", --WWW.FORPVP.COM .. 100000G==38E'ur.Swift Spectral Tiger=249E'uro .. WWW.FORPVP.COM..Have a good time!
@@ -978,8 +985,6 @@ local instantReportList = {
 	"raidbroker[%.,]com.*skype", --Both Horde/Alliance teams! http://raidbroker.com ~ Jarvis.Dresden on Skype!!
 	"g@ld.*livraison.*exclusiv", --Envie de G@LD pour bien commencer WoD, livraison en moins de 5 min en exclusivité sur ysondre
 	"gold.*price.*http", --Challenge Gold best price!PVE!Leveling Profession !And much more http://wow-warcraft.nethouse.ru/
-	--[mmo-prof.com] raffle: Hellfire Citadel (Difficulty level: Mythic) 13/13 including loot. Eligibility requirements to be found on [mmo-prof.com]; Heroic raids, CM GOLD, mounts, PVP and more can be found , too. We're looking forward to your visit!
-	"mmoprof.*loot.*gold", --{rt2} [mmo-prof.com] {rt2} BRF Heroic / Highmaul Heroic , Mystisch Lootruns !! Arena 2,2k - Gladiator .. Jegliche TCG Mounts , Play in a Pro Guild (Helfen euch einer absoluten Top Gilde beizutreten, alles für Gold !! Schau vorbei {rt2} [mmo-prof.com] {rt2}
 	--{rt1}VERKAUFE GOLD Sehr Billig. Skypename : betz-500{rt1}
 	"verkaufen?gold.*skype", --{rt7}Wir Verkaufen Gold sehr Günstig. Skypename : betz-210{rt7}
 	"welcome.*safe.*paygolds", --100K=29USD,Welcome [towww.paygolds.com]800K in stock,we will finished your order in 10 mins,24/7 online service.fatest,cheapest,safest.please contact [uswww.paygolds.com]
@@ -1010,17 +1015,17 @@ local repTbl = {
 	["¨"]="", ["”"]="", ["“"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["↑"]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
-	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["ą"]="a", ["å"]="a", --First letter is Russian "\208\176". Convert > \97
+	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", ["Ą"]="a", ["ą"]="a", --First letter is Russian "\208\176". Convert > \97. Note: Ą fail with strlower, include both.
 	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
 	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e", ["ę"]="e", ["ė"]="e", ["ê"]="e", ["Ě"]="e", ["ě"]="e", ["Ē"]="e", ["ē"]="e", ["Έ"]="e", ["έ"]="e", ["Ĕ"]="e", ["ĕ"]="e", --First letter is Russian "\208\181". Convert > \101. Note: Ě, Ē, Έ, Ĕ fail with strlower, include both.
 	["Ğ"]="g", ["ğ"]="g", ["Ĝ"]="g", ["ĝ"]="g", -- Convert > \103. Note: Ğ, Ĝ fail with strlower, include both.
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["ĭ"]="i", ["İ"]="i", --Convert > \105
 	["к"]="k", ["ķ"]="k", -- First letter is Russian "\208\186". Convert > \107
-	["Μ"]="m", ["м"]="m",--First letter is capital Greek μ "\206\156". Convert > \109
+	["Μ"]="m", ["м"]="m", -- First letter is capital Greek μ "\206\156". Convert > \109
 	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["ø"]="o", ["Ǿ"]="o", ["ǿ"]="o", ["Θ"]="o", ["θ"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111. Note: Ǿ, Θ fail with strlower, include both.
 	["р"]="p", --First letter is Russian "\209\128". Convert > \112
 	["Ř"]="r", ["ř"]="r", ["Ŕ"]="r", ["ŕ"]="r", ["Ŗ"]="r", ["ŗ"]="r", --Convert > \114. -- Note: Ř, Ŕ, Ŗ fail with strlower, include both.
-	["Ş"]="s", ["ş"]="s", --Convert > \115. -- Note: Ş fail with strlower, include both.
+	["Ş"]="s", ["ş"]="s", ["Š"]="s", ["š"]="s", --Convert > \115. -- Note: Ş, Š fail with strlower, include both.
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 	["ý"]="y", ["ÿ"]="y", --Convert > \121
 }
