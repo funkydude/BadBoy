@@ -1195,7 +1195,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		end
 	end
 end
-local filter = function(_, _, _, _, _, _, _, _, _, _, _, _, lineId)
+local filterFunc = function(_, _, _, _, _, _, _, _, _, _, _, _, lineId)
 	if blockedLineId == lineId then
 		return true
 	end
@@ -1236,14 +1236,13 @@ do
 	}
 	for i = 1, #tbl do
 		local event = tbl[i]
+		local frames = {GetFramesRegisteredForEvent(event)}
 		f:RegisterEvent(event)
-		ChatFrame_AddMessageEventFilter(event, filter)
-		for i = 1, 10 do
-			local cf = _G[("ChatFrame%d"):format(i)]
-			if cf:IsEventRegistered(event) then
-				cf:UnregisterEvent(event)
-				cf:RegisterEvent(event)
-			end
+		ChatFrame_AddMessageEventFilter(event, filterFunc)
+		for i = 1, #frames do
+			local frame = frames[i]
+			frame:UnregisterEvent(event)
+			frame:RegisterEvent(event)
 		end
 	end
 end
@@ -1252,16 +1251,17 @@ end
 do
 	local f = CreateFrame("Frame")
 	f:RegisterEvent("ADDON_LOADED")
+	f:RegisterEvent("PLAYER_LOGIN")
 	f:SetScript("OnEvent", function(frame, event, addon)
 		if addon == "BadBoy" then
-			SetCVar("spamFilter", 1)
-
 			-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
 			local _, _, day = CalendarGetDate()
 			if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
 				BADBOY_BLACKLIST = {dayFromCal = day}
 			end
-
+			frame:UnregisterEvent(event)
+		elseif event == "PLAYER_LOGIN" then
+			SetCVar("spamFilter", 1)
 			frame:UnregisterEvent(event)
 			frame:SetScript("OnEvent", nil)
 		end
