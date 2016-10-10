@@ -354,6 +354,7 @@ local instantReportList = {
 	"^tradingcsgo.*gold", --Trading Cs:GO Knife for Gold /w me for more information!!!
 	"^wt[bst]csgocheap", --WTB CS GO CHEAPS BELOW 5 EURO WITH WOW GOLD!
 	"^wt[bst]mywowgold.*csgoskin", --WTT: My WOW Gold for your CSGO Skins. Offer 3k per 1€ skin value. No selling, Just trading! /w me for a chat.
+	"^sellinggolds?forcsgo", --Selling golds for CS:GO skins !!
 
 	--[[  SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
@@ -648,12 +649,19 @@ local instantReportList = {
 	"gold.*skype.*coldgold88", --WTS [Challenge Warlord: Gold] for more info skype: coldgold88
 	"gold.*skype.*challengego", --WTS [Challenge Warlord: Gold]. Availible right now. We are experienced group!!! Add me on skype: "ChallengeGO"
 	"mythic.*skype.*qreaperbst", --WTS 10/10 Mythic and Heroic all info in skype: qReaper_bst
+	"keystone.*skype.*landroshop", --WTS [Keystone Conqueror] (2-10 lvl), fast, smooth and fair. Details in skype: Landroshop
 	"wts.*coaching.*boost.*skype", --WTS COĄCHING Ąrena Bøøst frøm r1 EU Glâdiâtors in 2s/3s ▬► ŠELFPLĄY (Yøu plây wiTh Prø) ◄▬ ŠKYPĒ: FindGuys
 	"wts.*mythic.*boost.*pvp.*prestige.*price", --WTS Dungeons Mythic/ Mythic+ Chest Boost, EN normal/heroic, PvP PRESTIGE RANKS (we have the lowest prices on the euro-servers)! 
 	"^wtsemeraldnightmarelootraids,heroic/mythicdungeons.*wisp", --WTS Emerald Nightmare lootraids, Heroic/Mythic Dungeons. Wisp!
 	"arena.*boost.*pro.*prestige.*mythic", --Arena boost 1800-2400, play with Pro, leveling, PvP Prestige Farm, Mythic/Mythic+ dungeons, EN (normal) /w
+	"2400.*selfplay.*honor.*tenheroic", --{WTS} 1800/2000/2400 3s,2s, Selfplay possible, Honor gear, TEN Heroic, /w me !
+	"2400.*selfplay.*pro.*keystone", --{WTS} 1800/2000/2400 3s,2s, Gold, Try selfplay with pro, ythic Dungeons and Keystone run, Leveling 100-110, /w me !
+	"2400.*prestige.*tenheroic.*selfplay", --{WTS} 1800/2000/2400 3s,2s, Prestige Rank, Gold, Coaching, TEN Heroic, Selfplay possible /w me !
+	"2400.*selfplay.*pro.*mythic", --{WTS} 1800/2000/2400 3s,2s, Try SElfplay with pro, Gold, Mythic dungeons 10/10 /w me !
+	"2400.*selfplay.*pro.*livestream", --{WTS} 1800/2000/2400 3s,2s, Honor, Try selfplay with pro, Live stream and selfplay possible /w me !
 	--Arena boost 1800/2400/2700, Try selfplay 2k with pro, Prestige Rank, Live stream/selfplay possible, TEN Heroic, /w me !
-	"arena.*boost.*selfplay.*pro.*heroic", --Arena boost 2200/2400/2700, Live stream and selfplay possible, Coaching with pro, Mythic dungeons 10/10, TEN Heroic, /w me !
+	--{WTS} 1800/2000/2400 3s,2s, Try selfplay 2k with pro, Prestige Rank, Live stream/selfplay possible, TEN Heroic, /w me !
+	"2400.*selfplay.*pro.*tenheroic", --Arena boost 2200/2400/2700, Live stream and selfplay possible, Coaching with pro, Mythic dungeons 10/10, TEN Heroic, /w me !
 	"arena.*help.*pro.*prestige.*mythic", --Arena help 1800-2400, play with Pro, leveling, PvP Prestige Farm, Mythic/Mythic+ dungeons, EN (normal) /w
 	"pvp.*prestige.*mount.*accshare", --▓▓WTS Full PvP Talents 1-50▓Prestige Ranks▓Artiface Power farm▓all 6 vicious mounts[Vicious Saddle]right now,no accshare▓PST
 	"wts.*boost.*amazingprice.*gua?rantee.*only.*info", --Wts The emerald nightmare Heroic boost 7/7 clear for amazing price we gurantee you + 850 item level only today 17:00 server time w me for more infos.
