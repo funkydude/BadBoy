@@ -426,7 +426,6 @@ local instantReportList = {
 	"paypal.*ownedcore", --WTS 150k FOR 30$ Webmoney/PayPal. 100% DECENCY, YOU CAN CHECK MY POSITIVE FEEDBACKS ON OWNEDCORE. SKYPE: ***
 	"shopmount.*%d+days?time", --sell shop mount[Enchanted Fey Dragon]25k/60days time 40K
 	"^wtbgold.*mount", --WTB Gold paying decent(also TCG pets,mounts)/w me!
-	"^wt[bst]gold.*csgoskin", --WTS GOLD{star}{star} WTS WOW ACCOUNT {star}{star} WTB CS GO SKINS {star}{star}
 	"skype.*woweugold", --{rt8} WTS  Spectral Tiger(blue+swift).Contact me on skype: woweugold19 {rt8}
 	"battlechest.*token.*add.*telegram", --BattleChest 40T , Legion 140T , WoW Token 30T ,Tala 400T Har 1000 Ta ADD https://telegram.me/<snip>
 	"wts.*mount.*share.*cheap.*gold", --WTS all rare mounts ,include[Reins of the Time-Lost Proto-Drake]/[Reins of the Grey Riding Camel]},no acc share .also sell Cheaper wow gold !!!!./Pst
@@ -501,7 +500,6 @@ local instantReportList = {
 	--WTS BLIZZ MOUNTS PETS GAMERTIME OR ANY CODES FOR GOLD
 	"wts.*mount.*gamer?time", --WTS Mounts[Heart of the Aspects] and Pets/ GameTimecard
 	"mount.*account.*sell.*discount", --Get every single rare mount on your own account now! (including incredibly rare & unobtainables) Also selling all PvP achievies: Gladiator, Hero of Ally, 2200/2400 arenas/RBGs and more! Great discounts for MoP preorders! Message me! Skype: Baddieisboss
-	"raiditems.*buy.*email.*price.*wowpve%.c", --{rt1}{rt1}T{rt1}{rt1}S raid items ，397/410/416 token ，achive dragon (ICC,ULD,CATA,FL),416 weapons and so on.If u want to buy,our team will carry u to the instance to get it. U can email me anytime,I will give u a price. [wowpve.com]
 	--WTS cheap gold /w me for more info ( no chineese website etc...)
 	"^wtscheapgold", --WTS cheap gold /w me for more info
 	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
@@ -558,16 +556,11 @@ local instantReportList = {
 	--Any achievements for you(skype: DvingHelp)
 	--Help you with 2200/2400/2600(hero) skype: DvingHelp
 	"you.*skype.*dvinghelp", --Help you with The Bloodthirsty(72 hours), Sun Horde/Ally(48hours) skype: DvingHelp
-	"wts.*rbg.*challenge.*powerle?ve?l.*diablo", --{star}{star}{star}WTS Iphone game: Clash of Clans Gems ---- Cheap {star}{star}2200/2400/2700 RBG,finish within 12 hours {star}{star}Challenge Mode, finish in 1-2 days{star}{star}Achievement/Level Powerlvling{star}{star}Paragon lvling on Diablo3 {star}{star}
 	--wtswow gold. tier 15 set,weapons and trinket tot,toes,hof and msv full clearpst now, skype:zl8579888
 	"^wtswowgold.*%d+", --WTS wow gold...order 100k give u [Heart of the Nightwing] mount for free
 	"^wtsmount.*blizzardstore.*safe.*info", --{rt1} WTS mounts from Blizzard Store, 10k each, safe trade! /w for more info. {rt1}
 	--WTS GIFT-codes  [Swift Windsteed] [Winged Guardian] 10k /w me
 	"^wtsgiftcode", --WTS GIFT-codes  [Heart of the Aspects] [Celestial Steed] 10k /w me
-	"^wtscheape?r?gold.*boost", --{rt6}{rt1} wts cheaper gold and LFM RBG boost service  run!! ! {rt1}{rt6}
-	"^wts.*gold.*day.*gametime", --WTS [Heart of the Nightwing]for gold!  And 30 days game time for 20K!pst!
-	"cheap.*mounts.*rbg.*boost", --{rt6}{rt1} wts cheaper TCG mounts and LFM RBG boost service  run!! ! {rt1}{rt6}
-	"rbg.*boost.*cheap.*mounts", --{rt6}{rt1} LFM RBG boost service run!! and wts cheaper TCG mounts {rt1}{rt6}
 	"wts.*%[.*%].*[0o]rder.*gear.*cheap", --wts [obsidian nightwing],0rder 50k will get one for free,wts t15 set and t15.5 set,ilvl522 gears/weapons/trinkets,cheaptest price pst! q 1506040674
 	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
 	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
@@ -700,21 +693,12 @@ local instantReportList = {
 	"wts.*arena.*rbg.*coaching.*info", --{skull} WTS Arena 2200/2400/2700/glad/r1, Rbg 2200/HotA, 100wins,Big CQ CAPS, Coaching(playing with glad){skull} /w for more info
 	"wingsb{circle}{circle}st.*info", --{skull}WTS Heroic HFC lootrun today 8pm realmtime, 2spots for now, more info wingsb{circle}{circle}st.com {skull}/w for more info
 	"selfplay.*wingsboost[%.,]c", --{skull}WTS HEROIC HFC LOOTRUN 2SPOTS FOR NOW, SELFPLAY,MASTERLOOT wingsboost.c{circle}m /w {skull}
-	"loot.*piloted.*safe.*superprice.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
 	"korvano[%.,]com.*selfplay", -- Welcome to visit  www.KORVANO.com Raid will start today at 21:00 CET (HFC 13/13 HEROIC). British boost! Piloted: 99 eur! Selfplay: 149 eur! U WILL GET ALL LOOT U NEED!
 	"raidboost%.com.*sell.*smooth", --{rt8}[RaidBoost.com] - HellFire Citadel on Sell! Normal and Heroic boost. Fast and Smooth!{rt8}
 	"mount.*b[0o]?[0o]?sterking[%.,]c[0o]?m", --{rt1} Hello! WTS: PVE RAIDS LIKE HFC HC NORMAL OR EVEN MYTHIC SAME FOR BLACKROCK FOUNDRY! ANY ACHIEVEMENTS, GLORIES, MOUNTS etc. If you want more just check our website B{rt2}{rt2}ster-King.com {rt1} /w for more info
 	"hello.*offer.*pvpservices.*coaching", --{rt8}Hello guys let me offer you wide range of PVP services includes 2.2+/Glad/Coaching/CAP Games{rt8}
 	"pveboost[%.,]com.*service", --►►► [PVEBOOST.COM] - 100-110 BOOST, MYTHIC AND MYTHIC+ DUNGEONS 10/10, THE EMERALD NIGHTMARE RAID ALL DIFFICULTIES, ARENA BOOST AND OTHER SERVICES [PVEBOOST.COM] ◄◄◄
 	"prommote[%.,]me.*payment", --dnd Website: Prommote.me ; Skype: mmo-support3 ; E-mail: prommote@gmail.com ; Support work hours: 13:00 - 01:00 CET. Ingame whispers are ignored. Gold is not accepted as payment.
-	"gladiator.*preorder.*free.*tinyurl", --{rt8}{rt5} How can you be sure that your Gladiator boost won’t be disqualified? We can tell you! Pre-order a Gladiator and get a FREE PvP set at the start of WoD! tinyurl.com/s16glad {rt5} || URL LINKS TO https://prommote.me/eu/arena
-	"elite.*services.*glory.*tinyurl", --{rt7}{rt5} Elite Warlords of Draenor services are up! Everything from Glory of the Draenor Hero and Raider to full Highmaul and Blackrock Foundry Mythic gear! tinyurl.com/mythicwarlord {rt5} || URL LINKS TO https://prommote.me/eu/60-content
-	"sting[%.,]pr.*elite.*service", --B{circle}{circle}STING.PR{circle} - Elite PvE Services: {circle} BRF Heroic/MYTHIC {circle} today! 20 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
-	"boosting[%.,]pro.*discount", --[H] <DND>[Jedrict]: {skull}{skull}{skull} www.Boosting.Pro - Premium Arena boosting - {circle} SUPER DISCOUNTS ON ALL RATINGS {circle} Over 50 successful Gladiator orders in season 14! {skull}{skull}{skull}
-	--{rt6}{rt6}{rt6} www.Boosting.Pro - Elite PvE Services: {rt2} GET FREE GARROSH MOUNT {rt2} today! Only 25 man raids, warforged loot, weapons and trinkets are included! {rt6}{rt6}{rt6}
-	"b[o0][o0]sting[%.,]pr[o0].*service", --[H] <DND>[Jedrict]: {square}{square}{square} www.Boosting.Pro - Elite PvE Services: {circle} HC LOOT RUN + GARROSH MOUNT {circle} on Sale now! Only 25 man raids, warforged loot, weapons and trinkets are included! {square}{square}{square}
-	"b[o0][o0]sting[%.,]pr[o0].*sale", --{rt6}{rt6}{rt6} www.Boosting.Pro - Get all RAREST mounts from World of Warcraft: {rt2} MIMIRON'S HEAD and ASHES OF AL'AR {rt2} on Sale now! Any mount including Invincible in less than a month! {rt6}{rt6}{rt6}
-	"b[o0][o0]sting[%.,]pr[o0].*cheap", --{rt6}{rt6}{rt6} www.Boosting.Pro - REAL RBG boosting without wintrades! {rt2} ULTRA-CHEAP RBG WIN FARM {rt2} Check it out ;) {rt6}{rt6}{rt6}
 	"rbg.*cap.*gear.*mount.*selfplay", --WTS: RBG CAP GÄMES ▲ FULL CØNQUEST CAP ▼ FULL CØNQUEST GEÁR + 2 PVP MOUNTS ▲ SÉLF PLÄY ▼  AND MORE ON ►►/w for more info ◄◄
 	"mythic.*glories.*mount.*gold.*selfplay", --WTS: HFC Mythic & Heroic mode ▲ GROVE WARDEN ▲ BRF MYTHIC/HC ▼ GLØRIES ▲ MØUNT FÁRM ▼ CHÁLLENGE MODE GOLD ▲ SÉLF PLÁY ▼ AND MORE ON ►/w for more info◄◄
 	"wts.*dungeon.*story.*levell?ing.*info", --►►►[WTS] Heroic & Mythic dungeons, Glory of the Legion hero and Suramar Story progress,reputation and access to Arcway and Court of Stars! Artifact, leveling!  /w me for info◄◄◄
@@ -831,6 +815,8 @@ local instantReportList = {
 	"wts.*spot.*heroic.*raid.*loot.*spec.*invite", --█ WTS █ SPOTS in Emerald Nightmare Normal/Heroic raid next week, all loot for your spec is yours. /w to get invited!
 	"wts.*help.*honor.*prestige.*season.*info", --█ WTS █ Help with PvP Honor or Prestige levels and PvP Rewards today - season is starting soon! /w for info
 	"selling.*glory.*fast.*stress.*ilvl.*info", --█ Selling █ Glory of the Legion Hero - get your Leyfeather Hippogryph fast and with no stress! No ilvl requirements - /w for info
+	--WTS: ▓▓ XAVIUS (HEROIC) KILL ▓▓ PERSONAL LOOT ▓▓ SELFPLAY/PILOTED ▓▓ TODAY 00:00 CET ▓▓ SUPER PRICE! Whisper me! ▓▓ 
+	"loot.*piloted.*%d%d%d%d.*superprice.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
