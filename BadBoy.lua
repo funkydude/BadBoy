@@ -798,6 +798,7 @@ local instantReportList = {
 	"^skypekarasek824$", --skype-karasek824
 	"boost.*mythic.*also.*10lvl.*key", --Boost 8\8 10\10 mythic(mythic+),also we can do 10lvl(i have key) key at once
 	"keystone.*selfplay.*skype", --WTS [Keystone Conqueror] (2-10lvl) ►ŠELFPLĄY◄ Teâm Is Reâdy To Gø Right Nøw! ŠKYPĒ: FindGuys
+	"mythic.*loot.*bestboost[%.,]c", --WTS: EN 7/7| Mythic+2-10 |LVL 100-110| Loot Run | Selfplay/Piloted | Master loot | SSL | More info>>> Best-boost .c0m <<
 	"best.*gear.*achiev.*mythic.*visit", -->> Best Boost here! We will help u with full PVE and PVP gear, achievs, mythic, raids and more. Visit web: Best-boost .c0m <<
 	"keystone.*mythic.*boost.*skype", --WTS Mythic+ CHEST RUN, Mythic+ (up keystone), Mythic dungeons boost. SKYPE - fastchallenge
 	"helpyou.*heroic.*personal.*key.*info", -- ---Help you with  Emerald Nightmare Heroic\Normal (Master loot\ Personal loot)… Up your KEY 2+ 4+ 6+ 8+ 10+ for more info /W ---
@@ -817,6 +818,8 @@ local instantReportList = {
 	"selling.*glory.*fast.*stress.*ilvl.*info", --█ Selling █ Glory of the Legion Hero - get your Leyfeather Hippogryph fast and with no stress! No ilvl requirements - /w for info
 	--WTS: ▓▓ XAVIUS (HEROIC) KILL ▓▓ PERSONAL LOOT ▓▓ SELFPLAY/PILOTED ▓▓ TODAY 00:00 CET ▓▓ SUPER PRICE! Whisper me! ▓▓ 
 	"loot.*piloted.*%d%d%d%d.*superprice.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
+	"boost.*artifact.*mythic.*boostila", --[Boostila.com] BEST PRICE FOR BOOST on THE EMERALD NIGHTMARE (NM-HC),Artifact power quests farm, Mythic Dungeons, Character lvling and more!  SEE ON [Boostila.com]
+	"wts.*cheap.*fast.*loot.*mythic.*dungeon.*wisp.*everyday", --WTS cheap & fast Emerald Nightmare lootraids, Mythic15++ Dungeons. Wisp! Everyday!
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -827,6 +830,10 @@ local instantReportList = {
 
 	--[[ Danish ]]--
 	"verificeret.*levering.*skype", --Sælger guld 20k for 33kr og 100k for 149Kr, Nem-ID verificeret. Levering er Direkte! også på andre realms. Skype zumzumff  TILBYDER 500K TIL 650KR!
+
+	--[[ Swedish ]]--
+	"saljerguld.*swish.*skype", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
+	"saljerguld.*swish.*leverans", --Säljer guld via Swish! 130kr / 100k Leverans direkt!
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
