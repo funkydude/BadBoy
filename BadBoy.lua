@@ -682,8 +682,6 @@ local instantReportList = {
 	"info.*cubeboost[%.,]c", --Wanna more info?  -> http://cubeboost.com
 	"company.*dantum[%.,]gg", --We are a new boosting company DANTUM! We will help you with Arena, RBGS, PVE. Come visit our website [DANTUM.GG] for more information
 	"rocketgaming.*challenge.*mount", --ROCKET GAMING PVE ♫OUR TOP DE Challenge Mode Team helps you by EU record time  getting your CM Mogg-Gear, Title and Mount. We have english and german TS-Support and can give u a lot of tips and tricks for our dayli CM-Runs. /w me
-	--♫ ROCKET GAMING PVP ♫ EU TOP 0.5 % Players help you become a Gladiator or #R1 and get all available PvP-Achievments. We play arenas every day - so all Ratings till 2.4 are played in 1-2 days. /w me for mor informations.
-	"rocketgaming.*glad.*achieve?ment", --{rt3} ROCKETGAMING {rt3} Excellent players help you reach your 2k - #R1/ Gladiator achievement in 2s/3s/5s/Rbg! We also provide level-, honor-, capservice. Challenge Mode 8/8 Gold is going to be played everyday.
 	"boost.*today.*boomboost[%.,]com", --Boost Arena and HFC Heroic, have spots today, also conquest cap/honor/levelng boom-boost.com!
 	"client.*info.*boomboost[%.,]com", --525+ clients was happy, more info here -> boom-boost.com
 	"pro.*boomboost[%.,]com", --Arena 2000/2400/Glad, Honor Gear, Leveling 90-100. Big cap with glads, Want to play with Pro? boom-boost,сoм
@@ -703,19 +701,6 @@ local instantReportList = {
 	"mythic.*glories.*mount.*gold.*selfplay", --WTS: HFC Mythic & Heroic mode ▲ GROVE WARDEN ▲ BRF MYTHIC/HC ▼ GLØRIES ▲ MØUNT FÁRM ▼ CHÁLLENGE MODE GOLD ▲ SÉLF PLÁY ▼ AND MORE ON ►/w for more info◄◄
 	"wts.*dungeon.*story.*levell?ing.*info", --►►►[WTS] Heroic & Mythic dungeons, Glory of the Legion hero and Suramar Story progress,reputation and access to Arcway and Court of Stars! Artifact, leveling!  /w me for info◄◄◄
 	"service.*pewpewshop[%.,]pro", --Hello, if you want to know more about our services, please visit our website - PewPewShop.pro  Our live chat support always ready to help you! :)
-	"wts.*fast.*dungeon.*pvp.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
-	"wts.*character.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character ↑↑ 100-110 ↑↑ lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
-	"wts.*lift.*dungeon.*pvp.*emerald.*info", --<<Character lift 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
-	"wts.*boost.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character boost 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Runs and more. /W for more info
-	"wts.*le?ve?ll?i?n?g?.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character leveling 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Soon Emerald Nightmare Runs and more. /W for more info.
-	"website.*epiccarry[%.,]?c[0o]?m", --Hello! If you need more info you can check our website - epiccarry.com. 24/7 live chat support!
-	"mount.*epiccarry[%.,]?c[0o]?m", --WTS: HFC HC/NM <> BRF MYTHIC/HC <> GLORIES <> MOUNT FARM <> ACHIEVEMENTS <> AND MORE ON EpicCarry c{rt2}m
-	"euro.*epiccarry[%.,]?c[0o]?m", --WTS: HELLFIRE CITADEL NM/HC (99 euro for normal run!) <> SELF PLAY <> EVERYDAY RUNS <> BLACKROCK FOUNDRY HC/MYTHIC <> SELF PLAY <> ALL GLORIES, MOUNTS COACHING AND MORE ON {rt1} epiccarry.com {rt1}
-	--WTS: RATED BG RATING/WINS, ARENA RATING/WINS, CONQUEST/HONOR GEAR AND MORE ON EpicCarry c{rt2}m
-	"wins.*epiccarry[%.,]?c[0o]?m", --{rt2} Arena rating\Rbg wins\Arena wins on epiccarry.com {rt1}
-	"realm.*epiccarry[%.,]?c[0o]?m", --{rt2} SOO Flex\Normal\Heroic\Glory + T15+T14 contents selfplay, no realm transfer on epiccarry.com {rt1}
-	--{star}WTS: BLACKROCK FOUNDRY: 10/10 (HEROI?) ! MASTER LOOT, Selfplay! {circle} CM GOLD! LEVELING 90-100 + BONUS AND GLORY OF THE DRAENOR RAIDER HERO ! epiccarry . c{star}m
-	"gold.*epiccarry[%.,]c[0o]?m", --{rt1} Highmaul & Blackrock Foundry NM/HC/Mythic SELF PLAY with loot! <> CM GOLD SELF PLAY <> Fast 90-100 in 24 hrs + bonus <> Glory of the Draenor Hero/Raider <> Epiccarry.c0m. {rt1}
 	"loot.*chiefboost[%.,]com", --Get your HFC N/H/M Loot runs, Draenor flying, Archimonde N/H/M kills and more! Chiefboost.com
 	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
 	"skype.*chiefboost", --100% Heirloom weapons from SoO, Glory of Orgrimmar and WoD pre-orders for a reasonable price. skype: chiefboost
@@ -744,40 +729,6 @@ local instantReportList = {
 	"leprestore.*gold.*sale", --{rt7}{rt7} Best deals on [Leprestore.com!] Blackrock Foundry and HighMaul. Challenge Modes:Gold. Raider glories and other achievements!Great {rt2} deals!Almost everything is on sale! More info and many feedbacks on [Leprestore.com] {rt7}{rt7}
 	"skype.*leprestore[%.,]c", --Thanks for your interest. Leprestore team greets you :) For more info and guarantees add me on Skype: support@leprestore.com or check our website – leprestore.com
 	"mounts.*deals.*p[rг]+ice.*feedback", --GET  ██ elite MΘUNTS ██ LĒVELLING ██ GEAR FARM  ►►►PST me ◄◄◄ To receive Bēst deąls, super pŕicē and a check our fēēdbącks
-	--wts challenge modes: gold and challenge master, raider glories, proving grounds, brawler’s guild. play yourself with pro’s! lowest prices and plenty of feedbacks. whisper me for info
-	--WTS RBG cap games – 400CP per game and 700 ilvl gear for 3 wins. Full cap in 1 day! RBG rating [1800/2000/2200/HERO]. Play yourself with pro’s! Best prices and many feedbacks. Whisper me for info
-	--WTS Express honor, apexis crystals and garrison resources farming by leprestore. Full gear in 24 hrs by professionals. Best prices and many feedbacks. Whisper me for info
-	"pro.*price.*feedback.*info", --WTS BRF and Hellfire Citadel! Play yourself with pro’s and get full gear and Ironhoof destroyer (mount from Blackhand). Wonderful prices and a lot of feedbacks. Whisper me for info
-	"selfplay.*rbg.*test.*skype", --{rt6}{rt6}EXCLUSIVE SELFPLAY RBG B00ST{rt6}{rt6} RBG 0-1800:5h, 0-2000:7h, 0-2200:9h  ►START RIGHT NOW ◄  Get it today: NEW transmog set, 15 titles, NEW PvP Mounts, 21 achives  ►TEST GAME◄  {rt6}Skýpe: Azpirox{rt6}
-	"raid.*selfplay.*discount.*skype", --WTS {rt6} Blackrock Foundry Heroic + all loot, NOW! raid await {rt6} Self-play, 25ppl+, tons of loot, master loot. DISCOUNT for cloth,leather and mail. skype: dozinor
-	"hordebank.*account.*euro", --[WWW.Hordebank.COM]{RT2Black Foundry HC Master Loot run 10/10,,Selfplay/Account Share available.Visit [WWW.Hordebank.COM]to talk to Live Chat for details Now!!5 spots available!200euro Now!q
-	"b[0o][0o]st.*goodtauren.*help", --{star}{star}NICE B00STING from {star}{star} GOODTAUREN.com - Powelevelling and help {star}{star}90-100 in 10 hours{star}{star}
-	--WTS {rt8} Challenge Mode Runs {rt8} ! Full run (8/8) takes 2~ hours! Possible to start NOW! Talk to online consultant at {rt5} [www.boosting.expert] {rt5} for more info!
-	--WTS {rt1} Challenge mode {rt1} runs without account sharing! 3-5 full runs every day! Talk to online consultant at {rt8} www.boosting.expert {rt8} for more info!
-	"challenge.*boosting[%.,]expert", --WTS Challenge Mode Runs from Real Pros! (More than 6k instances completed since MoP!) 2~ hours for full run! More info at www.boosting.expert
-	"raid.*boosting[%.,]expert", --WTS Cheap CM and HFC heroic runs! Lots of groups and raids starting every day! Visit [www.boosting.expert] for more info!
-	--
-	"help.*2200.*fast.*pvp.*wisper.*info", --We will help you with  [Three's Company: 2200] . Fastest rating ever, up to 3 hours for geared pvp chars! Wisper for info.
-	"help.*gold.*challenge.*mount.*skype", --help with [Challenge Conqueror: Gold] from Challenge masters! get achiment. title, mount and xmog set for 2 hours! skype CMGoldMasters
-	"boost.*skype.*paypal", --WTS GLADIATOTR BOOST! PLAYING NOW! HAVE GEAR AND A BIT CR! HAVE SKYPE & PAYPAL!
-	--
-	"gift.*buy.*price.*play", --14/14 Hc/Normal SOO.Whole gear as a gift. Hurry to buy at the best price without intermediaries.It’s possible to self-play
-	"gold.*hours.*acc.*chance", --Challenge Gold. From 2 to 4 hours,without accsharing.Do not miss your chance.There are on;y 1 week!
-	"heroic.*price.*rbg.*arena", --T14,T15, Mv,HoF,ToeS,ToT Heroic.Self play,best price.All Pvp Achievement,RBG,Arena 2200 2vs2,3vs3
-	"garrosh.*order.*mount.*gift", --Garrosh Hc.Pre order now you will get the mount as a gift!Be geared to Draenor
-	"gamecarry.*arena.*self.*info", --Gamecarry Now offer up to RANK1 GLADIATOR ARENA,CMS,RAIDS,RBGSBoth Pilot & Self-Play Please message for more informations! ----
-	"2200.*season.*playyourown.*cheap", --Wts 2200-2400 in all brackets Sold by 2700+ players this season. Quick 2-4 hr carries all done in one day and you play your own toon! Also do quick conquest caps for cheap also pst!
-	"wts.*boost.*gear.*customer", --WTS full  arena cap boost (15k+ conq points) for only 3-5 hours, you dont need gear skill or anything else, over 200+ happy customers , boosting right now !
-	"wtsrbgmount.*share.*carry", --WTS RBG mounts[Vicious War Ram]and[Reins of the Vicious Warsaber]RBG 1-75 wins,no acc share,carry right now
-	"help.*gold.*mount.*group.*pickus", --Need help getting the[Challenge Warlord: Gold]/gear/title/mount /achi? Do it with the group who had the most challenge modes completed in Mop, Pick us and find out why others did!!
-	"elitistgaming[%.,]com.*boost", --Elitist-gaming,com Selling CM:Gold 8/8 and normal,heroic,mythic Highmaul and Blackrock Foundry. Individual Blackhand kills. League of Legends Launcher X client enablment of 4 person soloq boost. Overall improved client
-	"boost.*rbg.*2200.*glad.*skype", --Boosting 2s/3s/5s/RBG/Conq caps/Coachings 2200/2400/2700+/glad/rank1;any classes, Livestream possible,SKYPE: aklingsgarage
-	--
-	"helpyou.*gold.*group.*highmaul.*wisp", --We will help you with [Challenge Warlord: Gold] -fastest group ever , Also Highmaul and Blackrock Foundry loot runs. Wisp for info ♫
-	"2400.*day.*pve.*loot.*info", --Want [Three's Company: 2400] in one day? Or PVE - Highmaul and Blackrock Foundry loot runs? Msg for info ♫
-	"tired.*wipes.*noobs.*ahead.*curve.*msg.*info", --Tired from wipes with noobs? [Ahead of the Curve: Blackhand's Crucible] in 30 min! Msg for info  ♫ ♫
-	"level100.*24h.*secure.*challenge.*wisp.*info", --→ Get [Level 100] in 24h and secure! Also 670 ilvl+, Wod Challenge modes and much more, Wisp for more info ► ► ►
-	--
 
 	--[[  2016  ]]--
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
@@ -820,6 +771,13 @@ local instantReportList = {
 	"loot.*piloted.*%d%d%d%d.*superprice.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
 	"boost.*artifact.*mythic.*boostila", --[Boostila.com] BEST PRICE FOR BOOST on THE EMERALD NIGHTMARE (NM-HC),Artifact power quests farm, Mythic Dungeons, Character lvling and more!  SEE ON [Boostila.com]
 	"wts.*cheap.*fast.*loot.*mythic.*dungeon.*wisp.*everyday", --WTS cheap & fast Emerald Nightmare lootraids, Mythic15++ Dungeons. Wisp! Everyday!
+	"wts.*arena.*rbg.*rating.*loot.*info", --WTS Arena/Rbg ratings 1800-2400 , WTS 7/7HC emerald lootrun /w for info
+	"wts.*fast.*dungeon.*rbg.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Mythic+ Dungeons>> | <<Honor/Prestige leveling>> | <<RBG Wins> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
+	"wts.*fast.*dungeon.*pvp.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
+	"wts.*character.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character ↑↑ 100-110 ↑↑ lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
+	"wts.*lift.*dungeon.*pvp.*emerald.*info", --<<Character lift 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
+	"wts.*boost.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character boost 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Runs and more. /W for more info
+	"wts.*le?ve?ll?i?n?g?.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character leveling 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Soon Emerald Nightmare Runs and more. /W for more info.
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -834,6 +792,8 @@ local instantReportList = {
 	--[[ Swedish ]]--
 	"saljerguld.*swish.*skype", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
 	"saljerguld.*swish.*leverans", --Säljer guld via Swish! 130kr / 100k Leverans direkt!
+	"saljerguld.*swish.*snabbt", --Säljer guld via Swish. 1,3kr per 1k alltså 130kr för 100k. Snabbt och smidigt. /w för mer info.
+	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
