@@ -180,6 +180,7 @@ local boostingList = {
 	"customer",
 	"discount",
 	"selfplay",
+	"coaching",
 }
 local boostingWhiteList = {
 	"members",
@@ -357,6 +358,7 @@ local instantReportList = {
 	"^wt[bs]lolacc.*cheap", --WTS LOL ACC PLAT 4 1600 NORMAL WINS, EUW 40 SKINS, 106 CHAMPS  CHEAP!!
 	"^wt[bs]lolacc.*skins", --WTS LoL acc level 30 EUW name ** got about 50 skins /w me for info include 3200 RP!
 	"^wt[bst]mygold%d*leagueoflegends", --WTT My Gold 3 League of Legends account for some sick CS:GO skins! 116 Champions, 158 Skins, 6 rune pages. /w me for more info/skype!
+	"^sellingwowgoldforleagueoflegends", --SELLING WOW GOLD FOR LEAGUE OF LEGENDS RP! /W ME
 
 	--[[  Account Buy/Sell  ]]--
 	"selling.*accounts?forgold", --Selling Spotify,Netflix Accounts for gold!!! /w me
@@ -727,6 +729,7 @@ local instantReportList = {
 	"heroic.*amazingprice.*strong.*group.*gua?rantee.*drop.*spot", --Wts Emerald nightmare Heroic 7/7 clear for amazing price with strong guide groupe we gurantee you Full heroic loot that drop for your class on tonight 19:00 st only 2 spots ! w me for more infos.
 	--WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 key,write me for info.
 	"wtsmythic.*key.*%d/%d/%d.*write.*info", --WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 /Write me for info.
+	"wts.*tonight.*arena.*rbg.*mythic.*coaching", --WTS Emerald Nightmare 7/7 MYTHIC with ML tonight , 1 spot for now / Arena/RBG/Mythics/Coaching /w for info
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -748,13 +751,15 @@ local instantReportList = {
 	--Säljer Guld Via Swish! /w mig!
 	"^saljerguldviaswish", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
 	"guld.*salu.*swish.*info", --Guld finns till salu via SWISH, /w för mer info
+	"^saljerwowguld.*viaswish", --Säljer wow guld för 140kr per 100k, via Swish! /W
+	"^saljer%d+kguldfor.*viaswish", --Säljer 600k guld för 800kr, via swish! Nu eller aldrig
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
 	--[mmo-prof.com] raffle: Hellfire Citadel (Difficulty level: Mythic) 13/13 including loot. Eligibility requirements to be found on [mmo-prof.com]; Heroic raids, CM GOLD, mounts, PVP and more can be found , too. We're looking forward to your visit!
 	"mmoprof.*loot.*gold", --{rt2} [mmo-prof.com] {rt2} BRF Heroic / Highmaul Heroic , Mystisch Lootruns !! Arena 2,2k - Gladiator .. Jegliche TCG Mounts , Play in a Pro Guild (Helfen euch einer absoluten Top Gilde beizutreten, alles für Gold !! Schau vorbei {rt2} [mmo-prof.com] {rt2}
 	"mythic.*coaching.*mmoprof", --Bieten Smaragdgrüner Alptraum Mythic/Heroic/Normal Lootruns. Mythic + Instanzen 2-10! Item-Level Push. Coaching für dich! Play with a Pro! Oder komm ich deine Traumgilde und erspiele dir mit Profis deine Erfolge! [mmo-prof.de]
-	"wts.*lootrun.*selfplay.*masterlot.*heute.*gunstig", --WTS: ▓▓ Der smaragdgrüne Alptraum 7/7 (Heroisch) LOOTRUN▓▓SELFPLAY/PILOTED ▓▓ MASTER LOOT(Plündermeister )▓▓ HEUTE 21:00 CET▓▓ SEHR GÜNSTIG ▓▓ /w ▓▓
+	"wts.*lootrun.*selfplay.*masterloot.*heute.*gunstig", --WTS: ▓▓ Der smaragdgrüne Alptraum 7/7 (Heroisch) LOOTRUN▓▓SELFPLAY/PILOTED ▓▓ MASTER LOOT(Plündermeister )▓▓ HEUTE 21:00 CET▓▓ SEHR GÜNSTIG ▓▓ /w ▓▓
 }
 
 local repTbl = {
