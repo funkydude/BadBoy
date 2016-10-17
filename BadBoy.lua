@@ -432,10 +432,8 @@ local instantReportList = {
 	"selling.*mount.*pet.*pvp.*purchase", --Selling all rare mounts, TGC pets, all PvP services, and much more! We offer great savings for combo purchases! Pst!
 	"wts.*power.*levell?ing.*loot.*info", --WTS Artifact power and leveling, Mythic/Heroic Dungeons with additional loot,Fast leveling to 110!Write me for info.
 	"wts.*gear.*loot.*levell?ing.*info", --WTS 840+ ilvl gear, Mythic/Heroic Dungeons with additional loot! Fast leveling 100-110 in 9-12 hour! Write me for more info!
-	"wtsmythic.*%d/%d/%d.*key.*write.*info", --WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 key,write me for info.
 	"wts.*loot.*raid.*hurry.*best.*write", --♥WTS Emerald Nightmare Heroic/Normal with all loot for you! Raids run everyday!♥Hurry get best equipment!♥Write me for info!♥
 	"mythicstore[%.,]com.*skype", --For more details visit https://mythic-store.com , or write in skype: mythic-store
-	"wts.*timelost.*mount.*char", --WTS [Reins of the Time-Lost Proto-Drake] [Reins of the Phosphorescent Stone Drake]{rt1}World MOUNTS{rt6}non-sharing acc{rt4}transfer characters
 	"wts.*mounts.*sale.*skype", --{rt1}{rt3}WTS [Reins of the Spectral Tiger] [Reins of the Swift Spectral Tiger] {rt3}{rt2} cool mounts on sale!! {rt3}pst!!!~~~skype:ah4pgirl
 	--WTS 6PETS [Cenarion Hatchling],Lil'Rag,XT,KT,Moonkin,Panda 8K each;Prepaid gametimecard 10K;Flying Mounts[Winged Guardian],[Celestial Steed]20K each.
 	"wts.*gamet?i?m?e?card.*mount", --WTS 90 Day Pre-Paid Game Card 35K Also selling mount from BLZ STORE,25k for golden dragon/lion
@@ -450,24 +448,6 @@ local instantReportList = {
 	"wts.*steed.*gamet?i?m?e?card", --{skull} WTS Winged Guardian 15K.Heart of the Aspects 15K Celestial Steed 15K 90 Day Pre-Paid Game Card 35K {skull}
 	"code.*hatchling.*gamet?i?m?e?card", --WTS Codes redeem:6PETS [Cenarion Hatchling],Lil Rag,KT,XT,Moonkin,Pandaren 5k each;Prepaid gametimecard 6K;Flying mount[Celestial Steed] 15K.PST
 	"gamet?i?m?e?card.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
-	--40$ for 10k gold or 45$ for  10k gold + 1 rocket  + one month  time card  .   25$ for  a  rocket .  we have  all boe items and 264 gears selled . if u r interested in .  plz whsiper me . :) ty
-	--$45=10k + one X-53 Touring Rocket, $107=30K + X-53 Touring Rocket, the promotion will be done in 10 minutes, if you like it, plz whisper me :) ty
-	"%$.*rocket.*%$.*rocket.*ple?a?[sz]", --$45 for 10k with a rocket {star} and 110$ for 30k with a Rocket{moon},if you like,plz pst
-	--WTS X-53 Touring Rocket.( the only 2 seat flying mount you can aslo get a free month game time) .. pst
-	--WTS [X-53 Touring Rocket], the only 2seats flying mount, PST
-	"wts.*touringrocket.*mount", --!!!!!! WTS*X-53 TOURING ROCKET Mount(2seats)for 10000G (RAF things), you also can get a free month game time,PST me !!!
-	"^wts.*x53touringrocket", --WTS[Celestial Steed],[X-53 Touring Rocket],Race,Xfer 15K,TimeCard 6K,[Cenarion Hatchling]*Rag*KT*XT*Moonk*Panda 5K
-	--{rt1}WTS TCG mount and g01d {rt6}. {Reins of the Swift Spectral Tiger} {Reins of the Spectral Tiger} Tabard of the Lightbringer {Magic Rooster Egg} {rt6}lvl80 char . if you wanna get a lv80 char in 30mins /w me for more info{rt6}
-	"wts.*g[o0][1l]d.*tabard.*rooster", --WTS gO1d and TCG mounts and Tabard of the Lightbringer and maig rooster egg^^/w me:)
-	"sell.*rocket.*pet.*gametimecard", --sell  [X-53 Touring Rocket] &2mounts,6pets,gametimecard,CATA/WLK CD-key
-	--WTS[Bladeshatter Treads][Splinterfoot Sandals][Rooftop Griptoes]&all 397 epic boot on <g2500 dot com>.
-	"wts.*%[.*%].*g2500.*com", --WTS[Foundations of Courage][Leggings of Nature's Champion]Search for more wow items on <g2500 dot com>. With discount code G2500OKYO5097 to order now.
-	"wts.*%[.*%].*good4game", --WTS[Blazing Hippogryph][Amani Dragonhawk][Big Battle Bear]buy TCG Mounts on good4game.c{circle}m
-	"wts.*%[.*%].*%[.*%].*wealso.*cheapestg", --WTS [Reins of the Crimson Deathcharger] [Mechano-Hog] [Big Battle Bear]and we also have the cheapest G
-	"wts.*%[.*%].*%d+usd.*%d+k", --WTS [Reins of the Crimson Deathcharger] [Vial of the Sands] [Reins of Poseidus],170usd=100k+a rocket for free
-	"boe.*sale.*upitems", --wts [Krol Decapitator] we have all the Boe items,mats and 378 items for sale .<www.upitems.com>!!
-	"wts.*%[.*%].*$%d+.*%[.*%].*$%d+", --wts[Blauvelt's Family Crest]$34.00[Gilnean Ring of Ruination]$34.99[Signet of High Arcanist Savor]$34.90pst
-	"pet.*panda.*gametimecard", --Vends 6PETS [Bébé hippogriffe cénarien],Mini'Rag,XT,KT,Sélénien,Panda 12K each;payé d'avance gametimecard 15K;Bâtis volants[Gardien ailé],[Palefroi célest
 	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz
 	"wts.*%[.*%].*%[.*%].*cheap.*stock", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Vial of the Sands],cheapst ,in stock ,pst
 	"wts.*%[.*%].*%[.*%].*cheap.*safe", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer] [Magic Rooster Egg]Cheapest & Safest Online Trad
@@ -531,12 +511,6 @@ local instantReportList = {
 	"sell.*gamecard.*day.*whisp", --Greetings! Currently im selling two different kinds of gamecards! {star} The one with 30 days! And the other one with 60 days! Don't be shy to /whisper me! {skull}
 	"^wts.*blizzstoremount.*%d+k", --WTS Any of the Blizz Store mounts 20k
 	"rafmount.*gametime.*char", --{rt1}{rt6}WTS RAF mount(Heart of the Nightwing) for 16k ^^ {rt1} Game time for 60k/60days {rt1}{rt6}WTS lvl80 char all class in 30mins!!{rt1} etc{rt1}{rt6}}Whisper skype :nan072487
-	"rafmount.*mopkey.*g[o0]ld.*char", --{rt1}WTS RAF mount(Heart of the Nightwing) and MOP KEY{rt6}lvl80 char for g0ld,if you wanna get a  lv80 char in 30mins /w me for more info{rt6}
-	"looking.*ebay.*sale.*skype", --Looking for someone that has LOADS of EBAY Experienced! )Come and earn 20% of your Sale Products! )Skype = Donz.Gold (dot between the donz.gold) ADD SKYPE
-	--WTS: MoP cd keys (cheap) ! and faction change, tranfer, [GC.!] / skype : atmetheskill
-	--{rt8} WTB MoP Cd key {rt8}
-	"^wt[bs]mopc?d?key", --{rt1} WTS MoP Key 1x /w me {rt1}
-	"wtsrafmount.*nightwing", --wts  raf mount   [Heart of the Nightwing] w/m
 	"^selling%d+.*gamecard", --Selling 60time gamecard!
 	--Legion 139Toman Game Time 30Toman Gold har 1k 450Toman Level Up ham Anjam midim |Web: www.iran-blizzard.com  Tel: 000000000000
 	"legion.*gametime.*iranblizzard[%.,]com", --Legion 140T - Game Time 30Day 35T - 60Day 70Toman - www.iran-blizzard.com
@@ -688,9 +662,6 @@ local instantReportList = {
 	"raid.*heroic.*loot.*exping.*fast.*power.*info", --Emerald Raids Heroic/Noraml Masterloot/Personal loot Today , Exping 100-110 (fast 10 hours) Artefacts power, pm me for more info!
 	"contact.*bestboost[%.,]club", --please contact with operator on website »>BESTBOOST.CLUB«<
 	"cheap.*bestboost[%.,]club", --BOOST 100-110 (15-18 hours) very cheap >>>>>[http://bestboost.club]<<<<<<< , OTHER BOOST SERVICE TO
-	"wts.*arena.*rbg.*coaching.*info", --{skull} WTS Arena 2200/2400/2700/glad/r1, Rbg 2200/HotA, 100wins,Big CQ CAPS, Coaching(playing with glad){skull} /w for more info
-	"wingsb{circle}{circle}st.*info", --{skull}WTS Heroic HFC lootrun today 8pm realmtime, 2spots for now, more info wingsb{circle}{circle}st.com {skull}/w for more info
-	"selfplay.*wingsboost[%.,]c", --{skull}WTS HEROIC HFC LOOTRUN 2SPOTS FOR NOW, SELFPLAY,MASTERLOOT wingsboost.c{circle}m /w {skull}
 	"korvano[%.,]com.*selfplay", -- Welcome to visit  www.KORVANO.com Raid will start today at 21:00 CET (HFC 13/13 HEROIC). British boost! Piloted: 99 eur! Selfplay: 149 eur! U WILL GET ALL LOOT U NEED!
 	"raidboost%.com.*sell.*smooth", --{rt8}[RaidBoost.com] - HellFire Citadel on Sell! Normal and Heroic boost. Fast and Smooth!{rt8}
 	"mount.*b[0o]?[0o]?sterking[%.,]c[0o]?m", --{rt1} Hello! WTS: PVE RAIDS LIKE HFC HC NORMAL OR EVEN MYTHIC SAME FOR BLACKROCK FOUNDRY! ANY ACHIEVEMENTS, GLORIES, MOUNTS etc. If you want more just check our website B{rt2}{rt2}ster-King.com {rt1} /w for more info
@@ -701,34 +672,6 @@ local instantReportList = {
 	"mythic.*glories.*mount.*gold.*selfplay", --WTS: HFC Mythic & Heroic mode ▲ GROVE WARDEN ▲ BRF MYTHIC/HC ▼ GLØRIES ▲ MØUNT FÁRM ▼ CHÁLLENGE MODE GOLD ▲ SÉLF PLÁY ▼ AND MORE ON ►/w for more info◄◄
 	"wts.*dungeon.*story.*levell?ing.*info", --►►►[WTS] Heroic & Mythic dungeons, Glory of the Legion hero and Suramar Story progress,reputation and access to Arcway and Court of Stars! Artifact, leveling!  /w me for info◄◄◄
 	"service.*pewpewshop[%.,]pro", --Hello, if you want to know more about our services, please visit our website - PewPewShop.pro  Our live chat support always ready to help you! :)
-	"loot.*chiefboost[%.,]com", --Get your HFC N/H/M Loot runs, Draenor flying, Archimonde N/H/M kills and more! Chiefboost.com
-	"chiefboost[%.,]com.*service", --chiefboost.com - premium service from world top guilds without intermediaries! Siege of Orgrimmar 14/14 loot raids N/HM
-	"skype.*chiefboost", --100% Heirloom weapons from SoO, Glory of Orgrimmar and WoD pre-orders for a reasonable price. skype: chiefboost
-	"service.*chiefboost[%.,]com", --Premium services from Top guilds without intermediaries! Chiefboost.com PvE/Challenge modes/PvP
-	"starboosting[%.,]com.*pro", --{rt1} www.starboosting.com {rt1} Professional game help {rt1}
-	"arena.*2200.*skype", --arena ratings for (rdruid, mage, rogue,warlock,priest,warrior,shaman) 2200/2400/2600 add skype for more info - Dezleit
-	"hurry.*season.*share.*acc.*pro", --Hurry up! The end of season is coming! Without share acc! Play with pro!
-	"rbg.*2200.*compte.*skype", --{star} RBG CAP/2000/2200/2400/HEROS{star} || VOUS JOUEZ VOTRE COMPTE ||  ? Tous les Hauts Faits PVP, 15 Titres, MONTURES PvP?  || jeu d'essai || REDUCTIONS ET REMISES POSSIBLES || {star}Skype: Azpirox{star}
-	--#Team PL Wst0re Citadelle des Flammes infernales NM & HM 13/13 - Défis de donjon 8/8 Or - Arènes & RBG 0-2400+ - Guide de Draenor (monture exclu) - Stuff PvP S2 - www.wow-st0re.com 100% FR
-	--Team PL Wst0re Citadelle des Flammes infernales NM/HM 13/13 // Stuff PvE full 700ilvl & 715ilvl // Défis de donjon 8/8 Or // Donjons Mythique 8/8 // Guide de Draenor (monture) // Arène & RBG 0-2400+ | www.wow-st0re.com 100% FR
-	--#Team PL FR Défis de donjon OR 8/8 || Cognefort HM || Fonderie NM/HM 10/10 || RBG & Arène 0-2400+ || Tigre Spectral Gangredrake Poulet Magique || CPP 60 jours / WOD || http://wow-st0re.com
-	"rbg.*wowst[o0]re[%.,]com", --#Team de pl FR | Défis de donjon Or 8/8 | Cognefort normal héroïque mythique | Boost Arène & RBG 0-2400+ | Tigre spectral rapide Gangredrake Poulet magique ... || http://wow-st0re.com
-	"wowst[o0]re[%.,]com.*rbg", --wow-st0re.com Le n°1 du pl français depuis 2013 - SoO 25 NM/HM - PvP Arène / RBG côte - Bastonneurs - Armes Légendaires - [Défi d'or 9/9 à seulement 70k po!] http://wow-st0re.com 100% FR
-	"encore.*wowst[o0]re[%.,]com", --Tigre Spectral Rapide - Poulet Magique - Annihilateur en Gangracier - Invincible - Al'ar - Yéti de guerre du prétendant - Destructeur Sabot-de-Fer - et plus encore sur www.wow-st0re.com Plateforme FR référence depuis 2013.
-	"help.*gold.*week.*skype", --{rt6}We help you with [Challenge Conqueror: Gold], CM's shutting down in less than a week. Right now available. Skype: CMhotBOOT{rt6}
-	"elitistgaming[%.,]com.*gold.*best", --Elitist-gaming,com Selling CM:Gold 8/8 and normal,heroic,mythic Highmaul and Blackrock Foundry. Individual Blackhand kills or with the Ironhoof Destroyer mount! Done by some of the best players in the world! Everything is updated for Wod!
-	"preorder.*leprest[o0]re", --Are you ready for the upcoming raids?  ██  100-110 LΈVELLING ██ full GΈAR FARM  ██ best dĕals for EMERALD NIGHTMARE PRΈORDΈRS and a lot of FΈΈDBACKS: [►►►L_Έ_P_R_E_S_T_O_R_Έ_._C_O_M◄◄◄]
-	-- Youг PERSONAL ĝold vault ██ MOUNTŞ ██ LĚVELLING ██ GEAR FARM ██ Best děals, supeг pгicě and a lot of fěědbacks: ►►►L_Ě_P_R_E_S_T_O_Ŗ_Ě_._C_O_M◄◄◄
-	"gold.*p[rг]+ice.*leprest[o0]re", --Chąllenges: Ğold or Chąllenge Mąster (top 1 time) ◄►  Raider gloriēs ◄►all scenarios ◄► BEST pŕicēs on EU! play with TOP team! (done in 2,5 hrs)◄► ►►►L E P Ŕ E S T Θ Ŕ E . C Θ M ◄◄
-	-- WTS AŖENA ██ 2v2 3v3 5v5 - YOU PLAY youг chaгactěг! ██ any ŖĄTING - 2.2k/2.4k/Gladiątoг/R1 ██ COACHING by PŖO těam ██ tons of fěědbacks: ►►►L_Ě_P_R_E_S_T_O_Ŗ_Ě_._C_O_M◄◄◄
-	"p[rг]+o.*feedback.*leprest[o0]re", --WTS Express hǿnor, apexis crystals and garrison resources fąrming by leprestǿre. Full gear in 24 hrs by prǿfessionals. Best prĭces and many feedbącķs on L Ę P R Ę S T Ǿ R Ę . C Ǿ M
-	"loot.*team.*leprest[o0]re", --HEROIC oг MYTHIC loot гuns in HELLFIRE CITADEL, all loot foг youг spec! ██ Full geaг in 1 DAY? No pгoblem! ██ Join ouг EVERYDAY гaids at fгiendly team with: [►►►L_Έ_P_R_E_S_T_O_R_Έ_._C_O_M◄◄◄]
-	--WTS ██  Raideг gloгiĕs ██ MYTHIC DUNGEONS ██ all scĕnaгios ██ BEST PRICΈ on EU! play with TOP team! [►►►L_Έ_P_R_E_S_T_O_R_Έ_._C_O_M◄◄◄]
-	"raid.*p[rг]+ice.*leprest[o0]re", --{square}{square} Great RAID offers for you! Blackrock Foundry [Heroic] and [Mythic]! Play yourself with pro’s and get full gear and Ironhoof destroyer (mount from Blackhand). Awesome prices and tons of feedbacks - leprest0re.c0m {square}{square}
-	"mount.*deal.*leprest[o0]re", --Are you ready for LEGION invasion? ██ all new MOUNTS ██ 100-110 LΈVELLING ██ full GΈAR FARM ██ best dĕals for LEGION PRΈORDΈRS and a lot of FΈΈDBACKS: ►►►L_Έ_P_R_E_S_T_O_R_Έ_._C_O_M◄◄◄
-	"leprestore.*gold.*sale", --{rt7}{rt7} Best deals on [Leprestore.com!] Blackrock Foundry and HighMaul. Challenge Modes:Gold. Raider glories and other achievements!Great {rt2} deals!Almost everything is on sale! More info and many feedbacks on [Leprestore.com] {rt7}{rt7}
-	"skype.*leprestore[%.,]c", --Thanks for your interest. Leprestore team greets you :) For more info and guarantees add me on Skype: support@leprestore.com or check our website – leprestore.com
-	"mounts.*deals.*p[rг]+ice.*feedback", --GET  ██ elite MΘUNTS ██ LĒVELLING ██ GEAR FARM  ►►►PST me ◄◄◄ To receive Bēst deąls, super pŕicē and a check our fēēdbącks
 
 	--[[  2016  ]]--
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
@@ -778,6 +721,12 @@ local instantReportList = {
 	"wts.*lift.*dungeon.*pvp.*emerald.*info", --<<Character lift 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*boost.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character boost 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Runs and more. /W for more info
 	"wts.*le?ve?ll?i?n?g?.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character leveling 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Soon Emerald Nightmare Runs and more. /W for more info.
+	"selling.*rbg.*honor.*mount.*selfplay", --██Selling RBG 1-75wins(honor rank/Priestige),40/75wins mounts [Vicious War Trike] and  [Vicious Warstrider]self play,PST
+	"selling.*mount.*honor.*gear.*accshare.*", --selling 1-75winsEarn mount +honor rank+ priestige/legendary gears 6vicious mount  ;also selling[Vicious War Trike]and[Vicious Saddle]},no acc share .PST
+	"rbg.*artifact.*mount.*accshare", --▓▓WTS RBGs,1-75wins(get HR and artifact power and 6vicious mounts)[Vicious War Trike]and[Vicious Saddle]right now,no accshare▓PST
+	"heroic.*amazingprice.*strong.*group.*gua?rantee.*drop.*spot", --Wts Emerald nightmare Heroic 7/7 clear for amazing price with strong guide groupe we gurantee you Full heroic loot that drop for your class on tonight 19:00 st only 2 spots ! w me for more infos.
+	--WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 key,write me for info.
+	"wtsmythic.*key.*%d/%d/%d.*write.*info", --WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 /Write me for info.
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -788,12 +737,17 @@ local instantReportList = {
 
 	--[[ Danish ]]--
 	"verificeret.*levering.*skype", --Sælger guld 20k for 33kr og 100k for 149Kr, Nem-ID verificeret. Levering er Direkte! også på andre realms. Skype zumzumff  TILBYDER 500K TIL 650KR!
+	"^sælgerguldfor%d+", --sælger guld for 170kr pr. 100k (w for andre servere)
 
 	--[[ Swedish ]]--
-	"saljerguld.*swish.*skype", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
-	"saljerguld.*swish.*leverans", --Säljer guld via Swish! 130kr / 100k Leverans direkt!
-	"saljerguld.*swish.*snabbt", --Säljer guld via Swish. 1,3kr per 1k alltså 130kr för 100k. Snabbt och smidigt. /w för mer info.
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
+	-->>>>Säljer Guld Via Swish!<<<<
+	--Säljer guld via Swish! 130kr / 100k Leverans direkt!
+	--Säljer guld via Swish. 1,3kr per 1k alltså 130kr för 100k. Snabbt och smidigt. /w för mer info.
+	--Säljer guld via swish, /w vid intresse!!
+	--Säljer Guld Via Swish! /w mig!
+	"^saljerguldviaswish", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
+	"guld.*salu.*swish.*info", --Guld finns till salu via SWISH, /w för mer info
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
