@@ -20,7 +20,7 @@ do
 	elseif L == "ruRU" then
 		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Спам заблокирован. Нажмите, чтобы сообщить!]|h|r"
 	elseif L == "koKR" then
-
+		--reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam blocked, click to report!]|h|r"
 	elseif L == "ptBR" then
 		reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam bloqueado, clique para denunciar!]|h|r"
 	elseif L == "itIT" then
@@ -75,10 +75,6 @@ local commonList = {
 	"seguro", --safe/secure
 	"servicio", --service
 
-	--Chinese
-	"金币", --gold currency
-	"大家好", --hello everyone
-
 	--Russian
 	"з[o0]л[o0]т[ao0]", --gold
 	"гoлд", --gold
@@ -119,7 +115,7 @@ local heavyList = {
 --These entries add +2 points, but only 1 entry will count
 local heavyRestrictedList = {
 	"www[%.,]",
-	"[%.,]c[%.,]*[o0@][%.,]*m",
+	"[%.,]c[o0@]m",
 	"[%.,]net",
 	"dotc[o0@]m",
 }
@@ -181,6 +177,7 @@ local boostingList = {
 	"discount",
 	"selfplay",
 	"coaching",
+	"mythic",
 }
 local boostingWhiteList = {
 	"members",
@@ -514,68 +511,7 @@ local instantReportList = {
 	"^wts.*blizzstoremount.*%d+k", --WTS Any of the Blizz Store mounts 20k
 	"rafmount.*gametime.*char", --{rt1}{rt6}WTS RAF mount(Heart of the Nightwing) for 16k ^^ {rt1} Game time for 60k/60days {rt1}{rt6}WTS lvl80 char all class in 30mins!!{rt1} etc{rt1}{rt6}}Whisper skype :nan072487
 	"^selling%d+.*gamecard", --Selling 60time gamecard!
-	--Legion 139Toman Game Time 30Toman Gold har 1k 450Toman Level Up ham Anjam midim |Web: www.iran-blizzard.com  Tel: 000000000000
-	"legion.*gametime.*iranblizzard[%.,]com", --Legion 140T - Game Time 30Day 35T - 60Day 70Toman - www.iran-blizzard.com
 	"%d+day.*gametimecard.*cheap", --{diamond} {diamond} {diamond} {diamond} WTS TWO last 180 days game time card, cheaper! {diamond} {diamond} {diamond} {diamond}
-	"^wts.*website.*paypal.*deliver", --WTS Custom Guild Website + 12 months of maintenance + hosting + seo ($100 paypal of 100kg in game) (1-3 days to deliver custom guild website)
-	"^wts.*prepaid.*wowingamecurrency", --WTS Rchange/Transfer/Prepaid for WoW ingame currency! {rt4}
-	"^wts.*tiger.*rooster.*timecard", --WTS  [Reins of the Swift Spectral Tiger]240k[Magic Rooster Egg]120k and Prepaid Timecard,Panda [MOP.Faction] change and Race change Pst.
-	"preorder.*dving[%.,]net", --►►► [DVING.NET] - HFC raids Heroic and Mythic with Masterloot TODAY. Powerleveling. LEGION PREORDERS AND MORE. [DVING.NET] ◄◄◄
-	"highmaul.*edge.*dving[%.,]net", --{skull} Highmaul. Lootruns and achievments runs. Cutting Edge: Imperator's Fall. Be First! - Dving.net {skull}
-	"mount.*code.*dving[%.,]net", --Achievements, Mounts, Loot-Codes, PVE / PVP - Dving.net
-	"sale.*loot.*dving[%.,]net", --5.4 content on sale! Hardmodes and Loot Raids for Siege of Orgrimmar! - Dving.net
-	"arena.*help.*dving[%.,]net", --Offering arena/RBG help. Season 14. 2200/2400/2650 - Dving.net
-	"gold.*heroic.*dving[%.,]net", --Challenge Conqueror: Gold. Itemlevel of 560 or 570! Garrosh Heroic! Glory of the raider! - Dving.net {rt8}
-	--{rt8} Challenge Conqueror - really cheap! Boosting to 560/570 ilvl! Garrosh HC! Glory of the raider! Discounts and guaranties! - Dving.net {rt8}
-	"boost.*dving[%.,]net", --{skull} 5.4 content boosting! HC and loot-raids SOO HC! No accounts share - dving.net {skull}
-	"gold.*gear.*dving[%.,]net", --{skull} Gold, Leveling 90 - 100 1 day, 630+ item level gear. Glory of Draenor hero. Glory of Draenor Raider! Garrison services - Dving.net{skull}
-	--Any achievements for you(skype: DvingHelp)
-	--Help you with 2200/2400/2600(hero) skype: DvingHelp
-	"you.*skype.*dvinghelp", --Help you with The Bloodthirsty(72 hours), Sun Horde/Ally(48hours) skype: DvingHelp
-	--wtswow gold. tier 15 set,weapons and trinket tot,toes,hof and msv full clearpst now, skype:zl8579888
-	"^wtswowgold.*%d+", --WTS wow gold...order 100k give u [Heart of the Nightwing] mount for free
-	"^wtsmount.*blizzardstore.*safe.*info", --{rt1} WTS mounts from Blizzard Store, 10k each, safe trade! /w for more info. {rt1}
-	--WTS GIFT-codes  [Swift Windsteed] [Winged Guardian] 10k /w me
-	"^wtsgiftcode", --WTS GIFT-codes  [Heart of the Aspects] [Celestial Steed] 10k /w me
-	"wts.*%[.*%].*[0o]rder.*gear.*cheap", --wts [obsidian nightwing],0rder 50k will get one for free,wts t15 set and t15.5 set,ilvl522 gears/weapons/trinkets,cheaptest price pst! q 1506040674
-	"wts.*nightwing.*gametime", --WTS [Heart of the Nightwing] for 14k.wts 30day gametime for 10k.60k for 16k
-	"^wts%d+kgolds?.*euro.*paypal", --WTS 95K Golds for 25 euro! Transaction is done via paypal!
-	--
-	--top guild inviting you to best HEROIC/ MYTHIC raid everyday from 14:00 CET , get your [Epic]s ! msg me
-	"topguildinv.*best.*mythic.*everyday.*getyour.*msg", --top guild inviting you to best HEROIC/ MYTHIC raid everyday from 14:00 CET , get your [Felsteel Annihilator] ! msg me
-	"want.*fullymythic.*epic.*join.*raid.*today.*pm.*moreinfo", --WÀnt to be fÚlly mÿthicly [Epic]? JÖin Öur raid tÖday! PM mè for more info ♥ ♫
-	"dailyhfc.*mythic.*items.*guarantee.*pm.*enroll", --Dáily HFÇ herÖic/mýthic. Gèt ùp to 20 [Epic] itéms, 10 sløts güåranteed. PM me and enròll now! ♥ ♫
-	"get.*warden.*today.*cooloffer.*msgme", --Gèt yoùr [Grove Warden] tòday! Alsò many òthers còol òffers!  Just msg me ♫
-	"koroboost.*gear.*msg", --Top guild "Koroboost" will help you with [Level 110], full 815-850 gear. Suramar progress and more. Msg me ♥♥♥
-	"koroboost.*mythic.*msg", --Top guild "Koroboost" inviting you everyday to mythic/heroic dungeons. Get your[Brokenly Epic] ach today. msg me ♥♥
-	"korobo?o?stcom.*legal", --Welcome to 30ppl HFC Heroic loot run! Get full gear one run! Raid Today from 99e only ! Also 710 + gear, BRF, CMS. PVP ratings - KOROB{rt2}{rt2}ST COM - legal company, tons of feedbacks. ◄◄ ♥ ♫
-	"fast.*help.*koroboost", --Fast and easy help with Mythic/Heroic 100% drop of heirloom weapon. Be [Ready for Raiding] in WoD. Кorоbооst.соm
-	"koroboost.*visit", --[Kor'kron Juggernaut] at Кorobооst.cоm. Get it while it's still 100% drop. Also any pve/pvp achievements. Just visit us.
-	"koroboost.*skype", --Koroboost.com - best gaming service. Online support at page and thousand of reviewes. Skype Korsstart
-	"feat.*mount.*koroboost", --Get feat of strength [Cutting Edge: Garrosh Hellscream (25 player)] - Heroic mount as GIFT at Koroboost.com
-	"koroboost.*mount", --[Mythic: Blackhand's Crucible] -Get on кorobооst,c{rt2}m. Also full 685 or 700 gear, Mythic mount. Challenge modes. Best offers.
-	--◄◄ ♥ Want 20+ [Epic]s per run?Welcome to HFC or BRF 30 ppl raids- running daily!Also 710+ gear, Normal and Heroic HFC. [www.KoroBoost.com] ◄◄ ♥ ♫
-	--◄◄ ♥  [Challenge Warlord: Gold] -Selfplay! Also 6.2 Achievements, Draenor Flying pack, Mythic 5m dungeons! Also 710+ gear, Normal and Heroic HFC. www.KoroBoost.com ◄◄ ♥ ♫
-	--◄◄ ♥ Want 20+ EPICS per run? Welcome to HFC or BRF 30 ppl heroic/normal raids- running daily!Also 710+ gear, Normal and Heroic HFC. [КOROBOOST.С]{rt2}М - legal company, thousand of reviews. ◄◄ ♥ ♫
-	"gear.*koroboost[%.,]c[0o]?m", --◄◄ ♥  Guaranteed Coolest Blackhand Mythic Mount  [Ironhoof Destroyer]  - now without server transfer! want to Ride it tomorrow?  Also 710+ gear, Normal and Heroic HFC.www.KoroBoost.com
-	--◄◄ ♥  [Challenge Warlord: Gold] -Selfplay! Also 6.2 Achievements, Draenor Flying pack, 710+ gear, Normal and Heroic HFC. msg me or skype korsstart ◄◄ ♥ ♫
-	"gear.*skype.*korsstart", --◄◄ ♥ Want 20+ [Epic]s per run?Welcome to HFC or BRF 30 ppl raids- running daily!Also 710+ gear, Normal and Heroic HFC. msg me or skype korsstart ◄◄ ♥ ♫
-	--
-	--Any pve runs . normal 25 180 euro. flex from 65 euro, heroic 25 hc  LOOT runs With LOOT GUARANTEED , all tier pack in single run.  Cheapest mount from Garrosh Heroic 170 eu. Also have D3 boost. Koroboost.com {rt1}
-	"wts.*account.*mount.*skype", --{rt1} {rt1}  WTS Old Unmerged WoW Accounts {rt1}  Get old achivements/mounts/pets/titles from Vanilla/TBC/WOTLK on your main {rt1} Already seen: Scarab Lord, Old Gladiators etc Skype: kubadoman11 (only skype name) Site:
-	"wts.*drake.*skype.*discount", --WTS BOP[Reins of the Time-Lost Proto-Drake][Reins of the Phosphorescent Stone Drake]Pst Skype:tlpd.bop super discount{rt1}
-	"wts.*%[.*%].*gametime.*days", --WTS [Armored Bloodwing] [Enchanted Fey Dragon] [Iron Skyreaver] and gametime30-60-90-180days{star}WOD{rt1}
-	"boost.*mount.*euro.*skype", --BoostFull Heroic 14/14 SoO Clear (Siege of Orgrimmar Heroic) + Your Class Loot + Garrosh Mount + [Heroic: Garrosh Hellscream] 179.95 euro - MORE Info @ Skype: MRD BOOST
-	"guarantee.*speed.*mount.*skype", --{rt4} {rt6} Invincible, Ashes of Al’ar, Mimiron’s Head in just a month, GUARANTEED! Speed farming of any mount! Skype: mmo-support3 {rt3}
-	"wts.*gold.*security.*powerlevel", --{MOON}WTS:655 Jewelry,Ring and Weapons{MOON} for all class! Moreover,{Star}WOD Challenge Mode:Gold{Star}is online,security and professional power_leveling for you.If you are interested in it please /w me!-XJIU
-	"^vk.*%[.*%].*gametime", --VK[Reins of the Swift Spectral Tiger][Enchanted Fey Dragon]{star}game time 90-180days{star}WOD{star}
-	"^bietengold.*mount.*skype", --{rt1}BIETEN GOLD/MOUNTS UND ITEMS. Skypename : mom-525{rt1}
-	"acc.*powerle?ve?l.*deliver", --WTS [Reins of the Ashhide Mushan Beast], only 30mins, no acc sharePower lvling90-100, only 30h 9oLD, 5-10mins, fast delivery /w if interested
-	--
-	"wowpvpcarry.*promotion", --Preorder any service from WoWPvPCarry now to save! Gear, titles, achievements, mounts, we do it all! Contact me to take advantage of promotions now!
-	"bestgear.*messageus.*preorder.*promotion", --Do you want to get the best gear and achieves in the upcoming expansion before everyone else? Message us now to preorder and save! Order while the promotions are still on!
-	"selling.*services.*preorder.*savings", --Selling Gladiator/Rank 1/Challenge modes/BiS gear and more - Almost all PvP and PvE services! Preorder for the expansion now for huge savings!
-	--
 
 	--[[  RBG/boosting  ]]--
 	"gold.*skype.*brbwow", --WTS [Challenge Warlord: Gold] . Skype: brbwow
@@ -664,34 +600,14 @@ local instantReportList = {
 	"raid.*heroic.*loot.*exping.*fast.*power.*info", --Emerald Raids Heroic/Noraml Masterloot/Personal loot Today , Exping 100-110 (fast 10 hours) Artefacts power, pm me for more info!
 	"contact.*bestboost[%.,]club", --please contact with operator on website »>BESTBOOST.CLUB«<
 	"cheap.*bestboost[%.,]club", --BOOST 100-110 (15-18 hours) very cheap >>>>>[http://bestboost.club]<<<<<<< , OTHER BOOST SERVICE TO
-	"korvano[%.,]com.*selfplay", -- Welcome to visit  www.KORVANO.com Raid will start today at 21:00 CET (HFC 13/13 HEROIC). British boost! Piloted: 99 eur! Selfplay: 149 eur! U WILL GET ALL LOOT U NEED!
-	"raidboost%.com.*sell.*smooth", --{rt8}[RaidBoost.com] - HellFire Citadel on Sell! Normal and Heroic boost. Fast and Smooth!{rt8}
-	"mount.*b[0o]?[0o]?sterking[%.,]c[0o]?m", --{rt1} Hello! WTS: PVE RAIDS LIKE HFC HC NORMAL OR EVEN MYTHIC SAME FOR BLACKROCK FOUNDRY! ANY ACHIEVEMENTS, GLORIES, MOUNTS etc. If you want more just check our website B{rt2}{rt2}ster-King.com {rt1} /w for more info
-	"hello.*offer.*pvpservices.*coaching", --{rt8}Hello guys let me offer you wide range of PVP services includes 2.2+/Glad/Coaching/CAP Games{rt8}
-	"pveboost[%.,]com.*service", --►►► [PVEBOOST.COM] - 100-110 BOOST, MYTHIC AND MYTHIC+ DUNGEONS 10/10, THE EMERALD NIGHTMARE RAID ALL DIFFICULTIES, ARENA BOOST AND OTHER SERVICES [PVEBOOST.COM] ◄◄◄
-	"prommote[%.,]me.*payment", --dnd Website: Prommote.me ; Skype: mmo-support3 ; E-mail: prommote@gmail.com ; Support work hours: 13:00 - 01:00 CET. Ingame whispers are ignored. Gold is not accepted as payment.
-	"rbg.*cap.*gear.*mount.*selfplay", --WTS: RBG CAP GÄMES ▲ FULL CØNQUEST CAP ▼ FULL CØNQUEST GEÁR + 2 PVP MOUNTS ▲ SÉLF PLÄY ▼  AND MORE ON ►►/w for more info ◄◄
-	"mythic.*glories.*mount.*gold.*selfplay", --WTS: HFC Mythic & Heroic mode ▲ GROVE WARDEN ▲ BRF MYTHIC/HC ▼ GLØRIES ▲ MØUNT FÁRM ▼ CHÁLLENGE MODE GOLD ▲ SÉLF PLÁY ▼ AND MORE ON ►/w for more info◄◄
-	"wts.*dungeon.*story.*levell?ing.*info", --►►►[WTS] Heroic & Mythic dungeons, Glory of the Legion hero and Suramar Story progress,reputation and access to Arcway and Court of Stars! Artifact, leveling!  /w me for info◄◄◄
-	"service.*pewpewshop[%.,]pro", --Hello, if you want to know more about our services, please visit our website - PewPewShop.pro  Our live chat support always ready to help you! :)
 
 	--[[  2016  ]]--
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
-	--"titaniumbay.*deliver", ---= TitaniumBay =- Get 40% gold Free! 15 minutes Delivery! Check Price!
-	--"titaniumbay.*coin", --TitaniumBay - Obtain 40% more coin in 15 minutes!  worthiest in town!
 	"titaniumbay.*livraison", ---= TitaniumBay =- Obtenez 10% supplémentaire! Livraison rapide et sûr!
-	"tвitaniumbay.*obtenez", ---= TвitaniumBay =- Offre Limitée >> Obtenez 50% en plus d'or Gratuit!
 	"titaniumbay.*obtenez", --TitaniumBay - Obtenez 40% plus d'or en 15 min! le plus fameux et valeureux de la ville!
 	"titaniumbay.*minut[eo]", --TitaniumBay - Erhalten Sie 40% mehr Gold in 15 Minuten! Das beste Angebot in der Stadt!
-	"titaniвumbay.*gold", ---= TitaniвumBay =- Limited Offer >> Get 50% extra gold for Free!
-	"titaniumвbay.*gold", ---= TitaniumвBay =- Get up to 30% extra gold for Free! Fastest delivery on the market!
-	"titвaniumbay.*gold", --TitвaniumBay - Erhalten Sie 40% mehr Gold in 15 Minuten! Das beste Angebot in der Stadt!
-	---= TitaniumBay =- Erhalten Sie 30% mehr Gold im Vergleich zu WoW-Marke
 	"titaniumbay.*gold", -- -= TitaniumBay =- Get up to 30% more gold compared to WoW Token
 	"titaniumbay.*gratis", ---= TiвtaniumBay =- Oferta Limitada >> Obtenga el 50% extra oro Gratis!
-	"tiвtaniumbay.*gratis", ---= TiвtaniumBay =- Oferta Limitada >> Obtenga el 50% extra oro Gratis!
-	"titaniumbвay.*gratis", ---= TitaniumBвay =- Oferta Limitada >> Obtenga el 50% extra oro Gratis e GANA 1,000,000 de oro!
-	"^skypekarasek824$", --skype-karasek824
 	"boost.*mythic.*also.*10lvl.*key", --Boost 8\8 10\10 mythic(mythic+),also we can do 10lvl(i have key) key at once
 	"keystone.*selfplay.*skype", --WTS [Keystone Conqueror] (2-10lvl) ►ŠELFPLĄY◄ Teâm Is Reâdy To Gø Right Nøw! ŠKYPĒ: FindGuys
 	"mythic.*loot.*bestboost[%.,]c", --WTS: EN 7/7| Mythic+2-10 |LVL 100-110| Loot Run | Selfplay/Piloted | Master loot | SSL | More info>>> Best-boost .c0m <<
@@ -730,6 +646,11 @@ local instantReportList = {
 	--WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 key,write me for info.
 	"wtsmythic.*key.*%d/%d/%d.*write.*info", --WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 /Write me for info.
 	"wts.*tonight.*arena.*rbg.*mythic.*coaching", --WTS Emerald Nightmare 7/7 MYTHIC with ML tonight , 1 spot for now / Arena/RBG/Mythics/Coaching /w for info
+	--Legion 139Toman Game Time 30Toman Gold har 1k 450Toman Level Up ham Anjam midim |Web: www.iran-blizzard.com  Tel: 000000000000
+	"legion.*gametime.*iranblizzard[%.,]com", --Legion 140T - Game Time 30Day 35T - 60Day 70Toman - www.iran-blizzard.com
+	"trade.*cheapest.*sale.*buy", --=>>[www.bank4dh.com]<<=32U=100K. 5-15 mins Trade. More More cheapest   Gears for sale!<<skype:bank4dh>> LVL835-870 Classpackage  Hot Sale! Buy more than 200k will get 10%  or [Obliterum]*7 or  [Vial of the Sands]as bounes   [www.bank4dh.com]
+	"wts.*mythic.*powerle?ve?l.*glory.*info", --▲ WTS RUN in Emerald Nightmare (Normal or heroic) TODAY ▲ Mythic+ ▲ Power leveling 100-110 ▲ All Glory ▲ we have a lot runs every day ▲ and more other ▲ /W for more information ▲
+	"perfectway[%.,]one.*prestige", --(Perfectway.one) Dungeons Mythic/ Mythic+, EN normal/heroic, PvP PRESTIGE RANKS (Perfectway.one)
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -741,6 +662,7 @@ local instantReportList = {
 	--[[ Danish ]]--
 	"verificeret.*levering.*skype", --Sælger guld 20k for 33kr og 100k for 149Kr, Nem-ID verificeret. Levering er Direkte! også på andre realms. Skype zumzumff  TILBYDER 500K TIL 650KR!
 	"^sælgerguldfor%d+", --sælger guld for 170kr pr. 100k (w for andre servere)
+	"^sælgerguld.*mobilepay", --Sælger guld, forgår over mobile pay, 100k - 150 kr
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
@@ -750,6 +672,7 @@ local instantReportList = {
 	--Säljer guld via swish, /w vid intresse!!
 	--Säljer Guld Via Swish! /w mig!
 	"^saljerguldviaswish", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
+	"^saljergviaswish", --Säljer g via swish 1.7kr per 1k /w mig =D [minsta köp 50k]
 	"guld.*salu.*swish.*info", --Guld finns till salu via SWISH, /w för mer info
 	"^saljerwowguld.*viaswish", --Säljer wow guld för 140kr per 100k, via Swish! /W
 	"^saljer%d+kguldfor.*viaswish", --Säljer 600k guld för 800kr, via swish! Nu eller aldrig
