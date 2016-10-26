@@ -1,6 +1,5 @@
 
--- GLOBALS: BADBOY_BLACKLIST, BadBoyLog, CanComplainChat, ChatFrame1, GetTime, print, ReportPlayer
--- GLOBALS: UnitInParty, UnitInRaid, CalendarGetDate, SetCVar
+-- GLOBALS: BADBOY_BLACKLIST, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
 local myDebug = false
 
 local reportMsg = "BadBoy: Spam blocked, click to report!"
@@ -89,36 +88,6 @@ local commonList = {
 	"ищemпocтaвщикoв", --ищем поставщиков --looking for suppliers
 }
 
---These entries add +2 points
-local heavyList = {
-	"[\226\130\172%$\194\163]+%d+.?%d*[fp][oe]r%d+[%.,]?%d*[kg]", --Add separate line if they start approx prices
-	"[\226\130\172%$\194\163]+%d+[%.,]?%d*[/\\=]%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?%d*eur?o?s?[fp][oe]r%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?%d*[\226\130\172%$\194\163]+[/\\=>]+%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?%d*[kg][/\\=][\226\130\172%$\194\163]+%d+",
-	"%d+[%.,]?%d*[kg][/\\=]%d+[%.,]?%d*[\226\130\172%$\194\163]+",
-	"%d+[%.,]?%d*[kg][/\\=]%d+[%.,]?%d*e[uv]",
-	"%d+[%.,]?%d*[kg][%.,]?only%d+[%.,]?%d*eu",
-	"%d+[%.,]?%d*[kg]for%d+[%.,]?%d*eu",
-	"%d+o?[kg][/\\=]%$?%d+[%.,]%d+", --1OK=9.59
-	"%d+[%.,]?[%do]*[/\\=]%d+[%.,]?%d*[kge]",
-	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+%d+[%.,]?[%do]*[kg]",
-	"%d+[%.,]?%d*eur?[o0]?s?[/\\=<>]+l[0o]+[kg]",
-	"%d+[%.,]?%d*usd[/\\=]%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?%d*usd[fp][oe]r%d+[%.,]?%d*[kg]",
-	"%d+[%.,]?%d*[kg][/\\=]%d+[%.,]?%d*usd",
-	"%d+[%.,]?[o%d]*[kg]%d+bonus[/\\=]%d+[%.,]?[o%d]+",
-	"%d+[%.,]?%d*[кp]+зa%d+[%.,]?%d*[pк]+", --14к за 21р / 17р за 1к
-}
-
---These entries add +2 points, but only 1 entry will count
-local heavyRestrictedList = {
-	"www[%.,]",
-	"[%.,]c[o0@]m",
-	"[%.,]net",
-	"dotc[o0@]m",
-}
-
 --These entries add +1 point to the phishing count
 local phishingList = {
 	--English
@@ -187,6 +156,7 @@ local boostingWhiteList = {
 	"onlyacceptinggold",
 	"goldonly",
 	"goldprices",
+	"forgold",
 	"tonight",
 	"gametime",
 	"servertime",
@@ -739,20 +709,6 @@ local IsSpam = function(msg)
 		if strfind(msg, commonList[i]) then
 			points = points + 1
 			if myDebug then print("commonList", commonList[i], points, phishPoints, boostingPoints) end
-		end
-	end
-	for i=1, #heavyList do
-		if strfind(msg, heavyList[i]) then
-			points = points + 2 --Heavy section gets 2 points
-			if myDebug then print("heavyList", heavyList[i], points, phishPoints, boostingPoints) end
-		end
-	end
-	for i=1, #heavyRestrictedList do
-		if strfind(msg, heavyRestrictedList[i]) then
-			points = points + 2
-			phishPoints = phishPoints + 1
-			if myDebug then print("heavyRestrictedList", heavyRestrictedList[i], points, phishPoints, boostingPoints) end
-			break --Only 1 trigger can get points in the strict section
 		end
 	end
 	for i=1, #phishingList do
