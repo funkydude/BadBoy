@@ -780,18 +780,23 @@ local IsSpam = function(msg)
 end
 
 --[[ Chat Scanning ]]--
-local Ambiguate, SocialQueueUtil_GetNameAndColor, gsub, next, type, tremove = Ambiguate, SocialQueueUtil_GetNameAndColor, gsub, next, type, tremove
+local Ambiguate, BNGetGameAccountInfoByGUID, gsub, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, next, type, tremove
+local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
 local blockedLineId, chatLines, chatPlayers = 0, {}, {}
 local spamCollector, prevShow = {}, 0
 local btn
+local function BadBoyIsFriendly(name, flag, lineId, guid)
+	local _, characterName = BNGetGameAccountInfoByGUID(guid)
+	if characterName or not CanComplainChat(lineId) or IsGuildMember(guid) or IsCharacterFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
+		return true
+	end
+end
 local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
 	blockedLineId = 0
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
 	local trimmedPlayer = Ambiguate(player, "none")
-	local _, _, relationship = SocialQueueUtil_GetNameAndColor(guid)
-	if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer) or relationship) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
-	if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
+	if not myDebug and BadBoyIsFriendly(trimmedPlayer, flag, lineId, guid) then return end
 
 	local debug = msg --Save original message format
 	msg = msg:lower() --Lower all text, remove capitals
@@ -967,3 +972,4 @@ do
 	end)
 end
 
+_G.BadBoyIsFriendly = BadBoyIsFriendly
