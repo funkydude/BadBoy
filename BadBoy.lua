@@ -1,6 +1,6 @@
 
--- GLOBALS: BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendGameAccounts, BNGetFriendGameAccountInfo
--- GLOBALS: CanComplainChat, ChatFrame1, GetRealmName, GetTime, print, ReportPlayer
+-- GLOBALS: BADBOY_BLACKLIST, BadBoyLog
+-- GLOBALS: CanComplainChat, ChatFrame1, GetTime, print, ReportPlayer
 -- GLOBALS: UnitInParty, UnitInRaid, CalendarGetDate, SetCVar
 local myDebug = false
 
@@ -778,7 +778,7 @@ local IsSpam = function(msg)
 end
 
 --[[ Chat Scanning ]]--
-local Ambiguate, gsub, next, type, tremove = Ambiguate, gsub, next, type, tremove
+local Ambiguate, SocialQueueUtil_GetNameAndColor, gsub, next, type, tremove = Ambiguate, SocialQueueUtil_GetNameAndColor, gsub, next, type, tremove
 local blockedLineId, chatLines, chatPlayers = 0, {}, {}
 local spamCollector, prevShow = {}, 0
 local btn
@@ -787,23 +787,10 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
 	local trimmedPlayer = Ambiguate(player, "none")
-	if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer)) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
-
+	local _, _, isBNetFriend = SocialQueueUtil_GetNameAndColor(guid)
+	if not myDebug and (not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer) or isBNetFriend) then return end --Don't scan ourself/friends/GMs/guildies or raid/party members
 	if flag == "GM" or flag == "DEV" then return end --GM's can't get past the CanComplainChat call but "apparently" someone had a GM reported by the phishing filter which I don't believe, no harm in having this check I guess
-	if event == "CHAT_MSG_WHISPER" then --These scan prevention checks only apply to whispers, it would be too heavy to apply to all chat
-		--RealID support, don't scan people that whisper us via their character instead of RealID
-		--that aren't on our friends list, but are on our RealID list. CanComplainChat should really support this...
-		local _, num = BNGetNumFriends()
-		for i=1, num do
-			local gameAccs = BNGetNumFriendGameAccounts(i)
-			for j=1, gameAccs do
-				local _, rName, rGame, rServer = BNGetFriendGameAccountInfo(i, j)
-				if rName == trimmedPlayer and rGame == "WoW" and rServer == GetRealmName() then
-					return
-				end
-			end
-		end
-	end
+
 	local debug = msg --Save original message format
 	msg = msg:lower() --Lower all text, remove capitals
 
