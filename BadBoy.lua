@@ -633,6 +633,7 @@ local instantReportList = {
 	"boost.*artifact.*mythic.*boostila", --[Boostila.com] BEST PRICE FOR BOOST on THE EMERALD NIGHTMARE (NM-HC),Artifact power quests farm, Mythic Dungeons, Character lvling and more!  SEE ON [Boostila.com]
 	"wts.*cheap.*fast.*loot.*mythic.*dungeon.*wisp.*everyday", --WTS cheap & fast Emerald Nightmare lootraids, Mythic15++ Dungeons. Wisp! Everyday!
 	"wts.*arena.*rbg.*rating.*loot.*info", --WTS Arena/Rbg ratings 1800-2400 , WTS 7/7HC emerald lootrun /w for info
+	"wts.*dungeon.*fast.*le?ve?ling.*emerald.*info", --[WTS] <<New Mythic/Heroic Dungeons>> | <<Artifact farm>> | <<Fast 100-110>> | <<Honor & Prestige Leveling>> | Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*fast.*dungeon.*rbg.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Mythic+ Dungeons>> | <<Honor/Prestige leveling>> | <<RBG Wins> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*fast.*dungeon.*pvp.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*character.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character ↑↑ 100-110 ↑↑ lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
