@@ -655,6 +655,7 @@ local instantReportList = {
 	"perfectway[%.,]one.*prestige", --(Perfectway.one) Dungeons Mythic/ Mythic+, EN normal/heroic, PvP PRESTIGE RANKS (Perfectway.one)
 	"rbg.*mount.*prestige.*accshare", --███WTS RBG40&75wins/Vicious Saddle/all 6 vicious mounts/honor rank/prestige[Vicious War Trike]and[Vicious Warstrider]no acc share,carry right now/w me
 	"mythic.*boostinglive.*faster", --Mythic dungeons, Heroic raids, and more on [boostinglive.com] !Dress up your character faster than others!
+	"koroboost.*everyday.*mythic", --Top guild "Koroboost" inviting you everyday from 1:00 pm CET  to mythic/mythic + dungeons. Became [Brokenly Epic] within 4 hours. Msg me!
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -858,8 +859,8 @@ end
 
 do
 	btn = CreateFrame("Button", nil, ChatFrame1)
-	btn:SetWidth(25)
-	btn:SetHeight(25)
+	btn:SetWidth(32)
+	btn:SetHeight(32)
 	btn:SetPoint("BOTTOMLEFT", 10, 10)
 	btn:SetFrameStrata("DIALOG")
 	local tx = btn:CreateTexture()
@@ -872,16 +873,16 @@ do
 	alpha1Out:SetOrder(1)
 	alpha1Out:SetDuration(0.5)
 	alpha1Out:SetFromAlpha(0)
-	alpha1Out:SetToAlpha(1)
+	alpha1Out:SetToAlpha(0.8)
 	local alpha2Out = animGroup:CreateAnimation("Alpha")
 	alpha2Out:SetOrder(2)
 	alpha2Out:SetDuration(1)
-	alpha2Out:SetFromAlpha(1)
+	alpha2Out:SetFromAlpha(0.8)
 	alpha2Out:SetToAlpha(0)
 	local scaleOut = animGroup:CreateAnimation("Scale")
 	scaleOut:SetOrder(1)
-	scaleOut:SetFromScale(0.4,0.4)
-	scaleOut:SetToScale(1.3,1.3)
+	scaleOut:SetFromScale(0.3,0.3)
+	scaleOut:SetToScale(1,1)
 	scaleOut:SetDuration(1)
 	animGroup:Play()
 	btn:Hide()
