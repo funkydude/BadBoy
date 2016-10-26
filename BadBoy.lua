@@ -1,7 +1,7 @@
 
--- GLOBALS: BADBOY_NOLINK, BADBOY_POPUP, BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendGameAccounts, BNGetFriendGameAccountInfo
--- GLOBALS: CanComplainChat, ChatFrame1, GetRealmName, GetTime, print, REPORT_SPAM_CONFIRMATION, ReportPlayer, StaticPopup_Show, StaticPopup_Resize
--- GLOBALS: UnitInParty, UnitInRaid, CalendarGetDate, SetCVar, wipe
+-- GLOBALS: BADBOY_BLACKLIST, BadBoyLog, BNGetNumFriends, BNGetNumFriendGameAccounts, BNGetFriendGameAccountInfo
+-- GLOBALS: CanComplainChat, ChatFrame1, GetRealmName, GetTime, print, ReportPlayer
+-- GLOBALS: UnitInParty, UnitInRaid, CalendarGetDate, SetCVar
 local myDebug = false
 
 local reportMsg = "BadBoy: Spam blocked, click to report!"
@@ -20,7 +20,7 @@ do
 	elseif L == "ruRU" then
 		reportMsg = "BadBoy: Спам заблокирован. Нажмите, чтобы сообщить!"
 	elseif L == "koKR" then
-		--reportMsg = "BadBoy: |cff6BB247|Hbadboy|h[Spam blocked, click to report!]|h|r"
+		--reportMsg = "BadBoy: Spam blocked, click to report!"
 	elseif L == "ptBR" then
 		reportMsg = "BadBoy: Spam bloqueado, clique para denunciar!"
 	elseif L == "itIT" then
@@ -871,21 +871,21 @@ do
 	tx:SetTexture(132360) -- Interface/Icons/Ability_Warrior_ShieldMastery
 	local animGroup = btn:CreateAnimationGroup()
 	animGroup:SetLooping("REPEAT")
-	local alpha1Out = animGroup:CreateAnimation("Alpha")
-	alpha1Out:SetOrder(1)
-	alpha1Out:SetDuration(0.5)
-	alpha1Out:SetFromAlpha(0)
-	alpha1Out:SetToAlpha(0.8)
-	local alpha2Out = animGroup:CreateAnimation("Alpha")
-	alpha2Out:SetOrder(2)
-	alpha2Out:SetDuration(1)
-	alpha2Out:SetFromAlpha(0.8)
-	alpha2Out:SetToAlpha(0)
-	local scaleOut = animGroup:CreateAnimation("Scale")
-	scaleOut:SetOrder(1)
-	scaleOut:SetFromScale(0.3,0.3)
-	scaleOut:SetToScale(1,1)
-	scaleOut:SetDuration(1)
+	local alpha1 = animGroup:CreateAnimation("Alpha")
+	alpha1:SetOrder(1)
+	alpha1:SetDuration(0.5)
+	alpha1:SetFromAlpha(0)
+	alpha1:SetToAlpha(0.8)
+	local alpha2 = animGroup:CreateAnimation("Alpha")
+	alpha2:SetOrder(2)
+	alpha2:SetDuration(1)
+	alpha2:SetFromAlpha(0.8)
+	alpha2:SetToAlpha(0)
+	local scale = animGroup:CreateAnimation("Scale")
+	scale:SetOrder(1)
+	scale:SetFromScale(0.3,0.3)
+	scale:SetToScale(1,1)
+	scale:SetDuration(1)
 	animGroup:Play()
 	btn:Hide()
 
