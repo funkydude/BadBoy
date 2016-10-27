@@ -3,8 +3,14 @@
 
 --[[ Main Panel ]]--
 local badboy = CreateFrame("Frame", "BadBoyConfig", UIParent)
-badboy:SetSize(475, 570)
+badboy:SetSize(475, 420)
 badboy:SetPoint("CENTER")
+badboy:SetClampedToScreen(true)
+badboy:EnableMouse(true)
+badboy:SetMovable(true)
+badboy:RegisterForDrag("LeftButton")
+badboy:SetScript("OnDragStart", function(self) self:StartMoving() end)
+badboy:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
 badboy:Hide()
 local bg = badboy:CreateTexture()
 bg:SetAllPoints(badboy)
