@@ -129,7 +129,6 @@ local boostingList = {
 	"gladiator",
 	"service",
 	"cheap",
-	"gold",
 	"fast",
 	"safe",
 	"price",
@@ -146,6 +145,7 @@ local boostingList = {
 	"selfplay",
 	"coaching",
 	"mythic",
+	"leveling",
 	"accshare",
 }
 local boostingWhiteList = {
@@ -629,6 +629,8 @@ local instantReportList = {
 	"doyouwant.*level110.*12h.*noproblem.*msgme.*info", --Do you want [Level 110] within 12h? No problem, Msg me for info ♥♥
 	"gamesales[%.,]pro.*service.*arena", --[Gamesales.pro] - an assistance in PvP and PvE services: starting from training and ending with achievement of the highest ranks in the arena. [Gamesales.pro-] an opportunity to get the best in a short time. Find out more at [http://www.gamesales.pro]
 	"rbg.*artifact.*honor.*mount.*carry", --█░█WTS RBG 1-75wins(Artifact Power+Honor Rank)6Vicious mount[Vicious Saddle]also[Reins of the Long-Forgotten Hippogryph]carry u right now ▲PST
+	"^wtspowerleveling.*fast", --WTS Powerleveling (Fastest available)
+	"help.*le?ve?ling.*demonboost[%.,]com", --Helping with lvling 100-110. Emerald Nightmare, Return to Karazhan, Mythic+ dungeons. [Demon-Boost.com]
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -640,10 +642,10 @@ local instantReportList = {
 	"gold.*web.*prestigewow[%.,]fr", --Propose PL Honneur et Prestige ; Débloque tous les talents pvp, équipement 840-870 ilvl, monture, puissance d'artefact & nouveau skin pour l'arme artefact, gold et bien plus encore ! Visitez notre site web : www.prestige-wow.fr pour plus d'infos !
 
 	--[[ Danish ]]--
-	"verificeret.*levering.*skype", --Sælger guld 20k for 33kr og 100k for 149Kr, Nem-ID verificeret. Levering er Direkte! også på andre realms. Skype zumzumff  TILBYDER 500K TIL 650KR!
 	"^sælgerguldfor%d+", --sælger guld for 170kr pr. 100k (w for andre servere)
 	"^sælgerguld.*mobilepay", --Sælger guld, forgår over mobile pay, 100k - 150 kr
 	"tilbud.*sælger%d+k.*mobilepay", --Dagens tilbud: Sælger 200 K for blot 280 kr - whisper for mere info: Mobilepay & Swipp
+	"^sælgerguld.*skype", --Sælger guld 20k 33kr og 100k til 149kr, skype ...
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
