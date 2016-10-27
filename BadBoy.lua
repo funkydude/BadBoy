@@ -740,7 +740,7 @@ end
 local Ambiguate, BNGetGameAccountInfoByGUID, gsub, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, next, type, tremove
 local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
 local blockedLineId, chatLines, chatPlayers = 0, {}, {}
-local spamCollector, prevShow = {}, 0
+local spamCollector, spamLogger, prevShow = {}, {}, 0
 local btn
 local function BadBoyIsFriendly(name, flag, lineId, guid)
 	local _, characterName = BNGetGameAccountInfoByGUID(guid)
@@ -772,6 +772,9 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				--
 				if spamCollector[guid] and IsSpam(msg) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
 					spamCollector[guid] = lineId
+					if BADBOY_TOOLTIP then
+						spamLogger[guid] = debug
+					end
 				end
 				--
 				return
@@ -792,7 +795,9 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		else
 			if not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid] then
 				spamCollector[guid] = lineId
-				--Show block message
+				if BADBOY_TOOLTIP then
+					spamLogger[guid] = debug
+				end
 				local t = GetTime()
 				if t-prevShow > 90 then
 					prevShow = t
@@ -846,7 +851,9 @@ do
 		for k, v in next, spamCollector do
 			if CanComplainChat(v) then
 				canReport = true
-				break
+			else
+				spamCollector[k] = nil
+				spamLogger[k] = nil
 			end
 		end
 		if not canReport then
@@ -870,6 +877,7 @@ do
 				ReportPlayer("spam", v)
 			end
 			spamCollector[k] = nil
+			spamLogger[k] = nil
 		end
 		prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
 		self:Hide()
@@ -877,6 +885,12 @@ do
 	btn:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_TOP")
 		GameTooltip:AddLine(reportMsg, 0.5, 0.5, 1)
+		if next(spamLogger) then
+			GameTooltip:AddLine(" ", 0.5, 0.5, 1)
+			for k, v in next, spamLogger do
+				GameTooltip:AddLine(v, 0.2, 1, 0)
+			end
+		end
 		GameTooltip:Show()
 	end)
 	btn:SetScript("OnLeave", GameTooltip_Hide)
