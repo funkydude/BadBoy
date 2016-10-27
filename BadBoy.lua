@@ -927,21 +927,16 @@ end
 --[[ Blacklist ]]--
 do
 	local f = CreateFrame("Frame")
-	f:RegisterEvent("ADDON_LOADED")
-	f:RegisterEvent("PLAYER_LOGIN")
-	f:SetScript("OnEvent", function(frame, event, addon)
-		if addon == "BadBoy" then
-			-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-			local _, _, day = CalendarGetDate()
-			if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
-				BADBOY_BLACKLIST = {dayFromCal = day}
-			end
-			frame:UnregisterEvent(event)
-		elseif event == "PLAYER_LOGIN" then
-			SetCVar("spamFilter", 1)
-			frame:UnregisterEvent(event)
-			frame:SetScript("OnEvent", nil)
+	f:RegisterEvent("PLAYER_LOGIN") -- Can't use ADDON_LOADED as CalendarGetDate isn't always ready on very first login.
+	f:SetScript("OnEvent", function(frame, event)
+		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
+		local _, _, day = CalendarGetDate()
+		if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
+			BADBOY_BLACKLIST = {dayFromCal = day}
 		end
+		SetCVar("spamFilter", 1)
+		frame:UnregisterEvent(event)
+		frame:SetScript("OnEvent", nil)
 	end)
 end
 
