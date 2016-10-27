@@ -1,18 +1,20 @@
 
--- GLOBALS: BADBOY_NOLINK, BADBOY_POPUP, InterfaceOptionsFrame_OpenToCategory, PlaySound, SLASH_BADBOY1
-
---[[ Slash Handler ]]--
-SlashCmdList["BADBOY"] = function() InterfaceOptionsFrame_OpenToCategory("BadBoy") end
-SLASH_BADBOY1 = "/badboy"
+-- GLOBALS: PlaySound, SlashCmdList, SLASH_BADBOY1, SLASH_BADBOY2
 
 --[[ Main Panel ]]--
-local badboy = CreateFrame("Frame", "BadBoyConfig", InterfaceOptionsFramePanelContainer)
+local badboy = CreateFrame("Frame", "BadBoyConfig", UIParent)
+badboy:SetSize(475, 570)
+badboy:SetPoint("CENTER")
 badboy:Hide()
-badboy.name = "BadBoy"
+local bg = badboy:CreateTexture()
+bg:SetAllPoints(badboy)
+bg:SetColorTexture(0, 0, 0, 0.5)
+local close = CreateFrame("Button", nil, badboy, "UIPanelCloseButton")
+close:SetPoint("TOPRIGHT", badboy, "TOPRIGHT", -5, -5)
+
 local title = badboy:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 title:SetPoint("TOPLEFT", 16, -16)
 title:SetText("BadBoy @project-version@") -- packager magic, replaced with tag version
-InterfaceOptions_AddCategory(badboy)
 
 --[[ No Report Chat Message Checkbox ]]--
 local btnNoReportMsg = CreateFrame("CheckButton", "BadBoyConfigSilenceButton", badboy, "OptionsBaseCheckButtonTemplate")
@@ -39,3 +41,7 @@ local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", "ARTW
 ccleanerTitle:SetPoint("TOPLEFT", btnManualReport, "BOTTOMLEFT", 0, -116)
 ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 
+--[[ Slash Handler ]]--
+SlashCmdList["BADBOY"] = function() badboy:Show() end
+SLASH_BADBOY1 = "/badboy"
+SLASH_BADBOY2 = "/bb"
