@@ -744,6 +744,7 @@ local blockedLineId, chatLines, chatPlayers = 0, {}, {}
 local spamCollector, spamLogger, prevShow = {}, {}, 0
 local btn
 local function BadBoyIsFriendly(name, flag, lineId, guid)
+	if not guid then return true end -- LocalDefense automated prints
 	local _, characterName = BNGetGameAccountInfoByGUID(guid)
 	if characterName or not CanComplainChat(lineId) or IsGuildMember(guid) or IsCharacterFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
 		return true
