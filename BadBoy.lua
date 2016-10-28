@@ -824,17 +824,26 @@ do
 			ticker = nil
 		end
 	end)
-	reportFrame:SetScript("OnClick", function(self)
-		for k, v in next, spamCollector do
-			if CanComplainChat(v) then
-				BADBOY_BLACKLIST[k] = true
-				ReportPlayer("spam", v)
+	reportFrame:SetScript("OnClick", function(self, btn)
+		if btn == "LeftButton" then
+			for k, v in next, spamCollector do
+				if CanComplainChat(v) then
+					BADBOY_BLACKLIST[k] = true
+					ReportPlayer("spam", v)
+				end
+				spamCollector[k] = nil
+				spamLogger[k] = nil
 			end
-			spamCollector[k] = nil
-			spamLogger[k] = nil
+			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
+			self:GetParent():Hide()
+		elseif btn == "RightButton" then
+			for k, v in next, spamCollector do
+				spamCollector[k] = nil
+				spamLogger[k] = nil
+			end
+			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
+			self:GetParent():Hide()
 		end
-		prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
-		self:GetParent():Hide()
 	end)
 	reportFrame:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
