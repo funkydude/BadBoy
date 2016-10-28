@@ -147,12 +147,15 @@ local boostingList = {
 	"mythic",
 	"leveling",
 	"accshare",
+	"secure",
+	"delivery",
+	"store",
 }
 local boostingWhiteList = {
 	"members",
 	"guild",
 	"social",
-	"%d+k", --10k/dungeon
+	"%d+k[/\\]dungeon",
 	"onlyacceptinggold",
 	"goldonly",
 	"goldprices",
@@ -391,60 +394,23 @@ local instantReportList = {
 	"wowgoldforyourdiablo3?gold", --{rt1}Looking to trade my 10k wow gold for your diablo 3 gold, we can do in trades as low as 0.5k wow gold at a time for safety reasons{rt1}
 	"wts.*diablo3goldfor%d+", --wts 150 mill Diablo 3 gold for 50k
 
-	--[[  Illegal Items ]]--
-	"paypal.*ownedcore", --WTS 150k FOR 30$ Webmoney/PayPal. 100% DECENCY, YOU CAN CHECK MY POSITIVE FEEDBACKS ON OWNEDCORE. SKYPE: ***
-	"shopmount.*%d+days?time", --sell shop mount[Enchanted Fey Dragon]25k/60days time 40K
-	"^wtbgold.*mount", --WTB Gold paying decent(also TCG pets,mounts)/w me!
-	"skype.*woweugold", --{rt8} WTS  Spectral Tiger(blue+swift).Contact me on skype: woweugold19 {rt8}
-	"battlechest.*token.*add.*telegram", --BattleChest 40T , Legion 140T , WoW Token 30T ,Tala 400T Har 1000 Ta ADD https://telegram.me/<snip>
-	"wts.*mount.*share.*cheap.*gold", --WTS all rare mounts ,include[Reins of the Time-Lost Proto-Drake]/[Reins of the Grey Riding Camel]},no acc share .also sell Cheaper wow gold !!!!./Pst
-	"selling.*mount.*pet.*pvp.*purchase", --Selling all rare mounts, TGC pets, all PvP services, and much more! We offer great savings for combo purchases! Pst!
-	"wts.*power.*levell?ing.*loot.*info", --WTS Artifact power and leveling, Mythic/Heroic Dungeons with additional loot,Fast leveling to 110!Write me for info.
-	"wts.*gear.*loot.*levell?ing.*info", --WTS 840+ ilvl gear, Mythic/Heroic Dungeons with additional loot! Fast leveling 100-110 in 9-12 hour! Write me for more info!
-	"wts.*loot.*raid.*hurry.*best.*write", --♥WTS Emerald Nightmare Heroic/Normal with all loot for you! Raids run everyday!♥Hurry get best equipment!♥Write me for info!♥
-	"mythicstore[%.,]com.*skype", --For more details visit https://mythic-store.com , or write in skype: mythic-store
-	"wts.*mounts.*sale.*skype", --{rt1}{rt3}WTS [Reins of the Spectral Tiger] [Reins of the Swift Spectral Tiger] {rt3}{rt2} cool mounts on sale!! {rt3}pst!!!~~~skype:ah4pgirl
-	--WTS 6PETS [Cenarion Hatchling],Lil'Rag,XT,KT,Moonkin,Panda 8K each;Prepaid gametimecard 10K;Flying Mounts[Winged Guardian],[Celestial Steed]20K each.
-	"wts.*gamet?i?m?e?card.*mount", --WTS 90 Day Pre-Paid Game Card 35K Also selling mount from BLZ STORE,25k for golden dragon/lion
-	--if you want buy pets/ mounts/gametimecard/ Spectral Tiger/whisper me!^^
-	"pets.*mount.*gametimecard", --wts 6pets .mounts .rocket. gametimecard .Change camp. variable race. turn area. change a name. ^_^!
-	"wts.*gametime.*mount.*pet", --WTS Prepaid gametime code 8k per month. the mount [Winged Guardian]'[Celestial Steed] 15K each and the pets 6k each, if u are interested,PST
-	"wts.*monthgametime.*%d+k", --WTS 1 Month Gametime 10k. 3 Month Gameitme 25k. 6 Month Gametime 40k
-	"selling%d+.*prepaidtimecard", --selling 60 day prepaid time card /w me for the price
-	"^wt[bs][36]0days?prepaidgametime", --WTS 60day Prepaid Gametime  Card and WOD
-	--WTS 60days game time card very checp
-	--wts  180days gametime card  {rt1} {rt2}\ cheaps\
-	--wts  90days gametime code  {rt2}{rt2}{rt2}
-	"^wts%d+days?gametime", --wts 60 days gametime cde. and more stuff from blizzstore
-	--wts 60days gamecard for gold /w for more info.
-	"^wts%d+days?gamecard", --wts 60 days game card /w me
-	"wts.*steed.*prepaidgame", --WTS [Winged Guardian]25K [Heart of the Aspects]25K [Celestial Steed]20K prepaid game
-	"gamecard.*gold.*money.*info", -- I am offer Game Card for gold or money, for more info /w me
-	--WTB Game Time CODE Buy gold
-	--WTS Game time/Diablo and Unmarged accounts for gold!
-	"wt[bs].*gametime.*gold", --WTB 1 Month Game Time CODE Buy gold
-	--WTS BLIZZ MOUNTS PETS GAMERTIME OR ANY CODES FOR GOLD
-	"wts.*mount.*gamer?time", --WTS Mounts[Heart of the Aspects] and Pets/ GameTimecard
-	"mount.*account.*sell.*discount", --Get every single rare mount on your own account now! (including incredibly rare & unobtainables) Also selling all PvP achievies: Gladiator, Hero of Ally, 2200/2400 arenas/RBGs and more! Great discounts for MoP preorders! Message me! Skype: Baddieisboss
-	--WTS cheap gold /w me for more info ( no chineese website etc...)
+	--[[ Items ]]--
 	"^wtscheapgold", --WTS cheap gold /w me for more info
 	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
 	"^wtbgold.*gametime", --WTB GOLD, OR TRADE GOLD FOR GAMETIME!!
-	--WTS G A M E T I M E /W
-	--WTS {rt1} GAMETIME {rt1}
-	--WTS gametime card 60days Very cheap
-	--WTS Gametime-Subscribtion /w me
+	"^wtbgold.*mount", --WTB Gold paying decent(also TCG pets,mounts)/w me!
 	"^wt[bs]gametime", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
 	"^wt[bs]prepaidcard", --WTS prepaid card (30,60,90 days), mounts
-	--Wts gamecard 60days very cheap
 	"^wt[bs]gamecard", --WTB GAME CARD
 	"^wt[bs]gamecode", --wtb game codes
 	"^wt[bs]prepaidgamecard", --WTS *Pre-Paid Game Card 60 Days* - Can prove I've got loads in stock /w me offers
 	"^wt[bs]%d+day.*gamecard", --WTS 60 DAYS PREPAID GAMECARD
 	"^wt[bs]%d+month.*gametime", --WTS 2 Month(60Days) Gametime-Cards w/ me ! {rt1}
-	"^selling%d+.*gamecard", --Selling 60time gamecard!
+	"^wt[bs][36]0days?prepaidgametime", --WTS 60day Prepaid Gametime  Card and WOD
+	"^wts%d+days?gametime", --wts 60 days gametime cde. and more stuff from blizzstore
+	"^wts%d+days?gamecard", --wts 60 days game card /w me
 
-	--[[  RBG/boosting  ]]--
+	--[[  Misc  ]]--
 	"gold.*skype.*brbwow", --WTS [Challenge Warlord: Gold] . Skype: brbwow
 	"gold.*skype.*cmwow222", --WTS [Challenge Warlord: Gold] . Skype: CMWOW222
 	"gold.*skype.*cmgwows", --WTS [Challenge Warlord: Gold] . Skype: СMGWOWS
@@ -529,6 +495,12 @@ local instantReportList = {
 	"raid.*heroic.*loot.*exping.*fast.*power.*info", --Emerald Raids Heroic/Noraml Masterloot/Personal loot Today , Exping 100-110 (fast 10 hours) Artefacts power, pm me for more info!
 	"contact.*bestboost[%.,]club", --please contact with operator on website »>BESTBOOST.CLUB«<
 	"cheap.*bestboost[%.,]club", --BOOST 100-110 (15-18 hours) very cheap >>>>>[http://bestboost.club]<<<<<<< , OTHER BOOST SERVICE TO
+	"battlechest.*token.*add.*telegram", --BattleChest 40T , Legion 140T , WoW Token 30T ,Tala 400T Har 1000 Ta ADD https://telegram.me/<snip>
+	"wts.*mount.*share.*cheap.*gold", --WTS all rare mounts ,include[Reins of the Time-Lost Proto-Drake]/[Reins of the Grey Riding Camel]},no acc share .also sell Cheaper wow gold !!!!./Pst
+	"selling.*mount.*pet.*pvp.*purchase", --Selling all rare mounts, TGC pets, all PvP services, and much more! We offer great savings for combo purchases! Pst!
+	"wts.*power.*levell?ing.*loot.*info", --WTS Artifact power and leveling, Mythic/Heroic Dungeons with additional loot,Fast leveling to 110!Write me for info.
+	"wts.*gear.*loot.*levell?ing.*info", --WTS 840+ ilvl gear, Mythic/Heroic Dungeons with additional loot! Fast leveling 100-110 in 9-12 hour! Write me for more info!
+	"wts.*loot.*raid.*hurry.*best.*write", --♥WTS Emerald Nightmare Heroic/Normal with all loot for you! Raids run everyday!♥Hurry get best equipment!♥Write me for info!♥
 
 	--[[  2016  ]]--
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
@@ -539,6 +511,7 @@ local instantReportList = {
 	"titaniumbay.*gratis", ---= TiвtaniumBay =- Oferta Limitada >> Obtenga el 50% extra oro Gratis!
 	"boost.*mythic.*also.*10lvl.*key", --Boost 8\8 10\10 mythic(mythic+),also we can do 10lvl(i have key) key at once
 	"keystone.*selfplay.*skype", --WTS [Keystone Conqueror] (2-10lvl) ►ŠELFPLĄY◄ Teâm Is Reâdy To Gø Right Nøw! ŠKYPĒ: FindGuys
+	"price.*skype.*findguys", --Hello. Im sorry but I cant write here all prices. For all info and prices please add me in Skype: FindGuys
 	"mythic.*loot.*bestboost[%.,]c", --WTS: EN 7/7| Mythic+2-10 |LVL 100-110| Loot Run | Selfplay/Piloted | Master loot | SSL | More info>>> Best-boost .c0m <<
 	"best.*gear.*achiev.*mythic.*visit", -->> Best Boost here! We will help u with full PVE and PVP gear, achievs, mythic, raids and more. Visit web: Best-boost .c0m <<
 	"keystone.*mythic.*boost.*skype", --WTS Mythic+ CHEST RUN, Mythic+ (up keystone), Mythic dungeons boost. SKYPE - fastchallenge
@@ -547,6 +520,7 @@ local instantReportList = {
 	"wtsmythic.*runs.*gear.*anyilvl.*840", --WTS Mythic+, 10/10Mythic runs, gear you up from any ilvl to 840+/w
 	--WTS 10/10 Mythic and Heroic all info in skype: qReaper_bst
 	"skype.*qreaperbst", --Add skype: qReaper_bst foк price and info
+	"boost.*justboost[%.,]net", --EN Myth/HC LootRuns, Karazhan, Powerleveling, Mounts,  Myth+ Boosting and more>>> [JUSTBOOST.NET] <<<
 	"mythic.*justboost[%.,]net", --WTS MYTHIC EN,  chests run, levelin 100-110 - [JUSTBOOST.NET]
 	-->>>[JUSTBOOST.NET]<<< EMERALD NIGHTMARE NORMAL/HC, MYTHIC+ RUNS, LEVELLING, ACHIEVEMENTS AND MORE<<<
 	"justboost[%.,]net.*mythic", --[JUSTBOOST.NET]  Legion services. Leveling 100-110, PVE equip 840+, 850+ Emerald Nightmare, Glory of the Legion Hero, Mythic Dungeons and MORE<<<<
@@ -575,11 +549,13 @@ local instantReportList = {
 	"heroic.*amazingprice.*strong.*group.*gua?rantee.*drop.*spot", --Wts Emerald nightmare Heroic 7/7 clear for amazing price with strong guide groupe we gurantee you Full heroic loot that drop for your class on tonight 19:00 st only 2 spots ! w me for more infos.
 	--WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 key,write me for info.
 	"wtsmythic.*key.*%d/%d/%d.*write.*info", --WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 /Write me for info.
+	"mythicstore[%.,]com.*skype", --For more details visit https://mythic-store.com , or write in skype: mythic-store
 	"wts.*tonight.*arena.*rbg.*mythic.*coaching", --WTS Emerald Nightmare 7/7 MYTHIC with ML tonight , 1 spot for now / Arena/RBG/Mythics/Coaching /w for info
 	--Legion 139Toman Game Time 30Toman Gold har 1k 450Toman Level Up ham Anjam midim |Web: www.iran-blizzard.com  Tel: 000000000000
 	"legion.*gametime.*iranblizzard[%.,]com", --Legion 140T - Game Time 30Day 35T - 60Day 70Toman - www.iran-blizzard.com
 	--=>>[www.bank4dh.com]<<=19E=100K. 5-15 mins Trade. More L895   Gears for sale!<<skype:bank4dh>> LVL835-870 Classpackage  Hot Sale! /2 =>>[www.bank4dh.com]<<=
 	"bank4dh.*skype", --=>>[www.bank4dh.com]<<=32U=100K. 5-15 mins Trade. More More cheapest   Gears for sale!<<skype:bank4dh>> LVL835-870 Classpackage  Hot Sale! Buy more than 200k will get 10%  or [Obliterum]*7 or  [Vial of the Sands]as bounes   [www.bank4dh.com]
+	"bank4dh.*%d+k", --=>>[www.bank4dh.com]<<=19E=100K. 5-15 m
 	"wts.*mythic.*powerle?ve?l.*glory.*info", --▲ WTS RUN in Emerald Nightmare (Normal or heroic) TODAY ▲ Mythic+ ▲ Power leveling 100-110 ▲ All Glory ▲ we have a lot runs every day ▲ and more other ▲ /W for more information ▲
 	"perfectway[%.,]one.*prestige", --(Perfectway.one) Dungeons Mythic/ Mythic+, EN normal/heroic, PvP PRESTIGE RANKS (Perfectway.one)
 	"rbg.*mount.*prestige.*accshare", --███WTS RBG40&75wins/Vicious Saddle/all 6 vicious mounts/honor rank/prestige[Vicious War Trike]and[Vicious Warstrider]no acc share,carry right now/w me
@@ -591,6 +567,7 @@ local instantReportList = {
 	"^wtspowerleveling.*fast", --WTS Powerleveling (Fastest available)
 	"help.*le?ve?ling.*demonboost[%.,]com", --Helping with lvling 100-110. Emerald Nightmare, Return to Karazhan, Mythic+ dungeons. [Demon-Boost.com]
 	"fast.*leveling.*honor.*в[o0][o0]sт", -- ►►►Fastest leveling 100-110 (6-12 hours), 850+ gear, Honor Ranks and MUCH MORE on [RРD-В00SТ,С0М]◄◄◄
+	"^wtsmythickarazhandungeons[,.]*whispme", --WTS Mythić+ & Kârazhan Dungeøns. Whísp me.
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -616,6 +593,7 @@ local instantReportList = {
 	--Säljer Guld Via Swish! /w mig!
 	"^saljerguldviaswish", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
 	"^saljergviaswish", --Säljer g via swish 1.7kr per 1k /w mig =D [minsta köp 50k]
+	"^saljerguldsnabbtviaswish", --Säljer guld snabbt via Swish 100k=170SEK 1.7kr/1000g Billigare vid bulk  /Whispra mig och chilla på svar
 	"^koperguldviaswish", --Köper guld via swish
 	"guld.*salu.*swish.*info", --Guld finns till salu via SWISH, /w för mer info
 	"^saljerwowguld.*viaswish", --Säljer wow guld för 140kr per 100k, via Swish! /W
@@ -639,7 +617,7 @@ local repTbl = {
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", ["Ą"]="a", ["ą"]="a", --First letter is Russian "\208\176". Convert > \97. Note: Ą fail with strlower, include both.
-	["с"]="c", ["ç"]="c", --First letter is Russian "\209\129". Convert > \99
+	["с"]="c", ["ç"]="c", ["Ć"]="c", ["ć"]="c", --First letter is Russian "\209\129". Convert > \99. Note: Ć fail with strlower, include both.
 	["е"]="e", ["è"]="e", ["é"]="e", ["ë"]="e", ["ё"]="e", ["ę"]="e", ["ė"]="e", ["ê"]="e", ["Ě"]="e", ["ě"]="e", ["Ē"]="e", ["ē"]="e", ["Έ"]="e", ["έ"]="e", ["Ĕ"]="e", ["ĕ"]="e", --First letter is Russian "\208\181". Convert > \101. Note: Ě, Ē, Έ, Ĕ fail with strlower, include both.
 	["Ğ"]="g", ["ğ"]="g", ["Ĝ"]="g", ["ĝ"]="g", -- Convert > \103. Note: Ğ, Ĝ fail with strlower, include both.
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["ĭ"]="i", ["İ"]="i", --Convert > \105
