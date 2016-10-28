@@ -296,7 +296,7 @@ local instantReportList = {
 	"^wt[bst]mywowgold.*csgoskin", --WTT: My WOW Gold for your CSGO Skins. Offer 3k per 1€ skin value. No selling, Just trading! /w me for a chat.
 	"^sellinggolds?forcsgo", --Selling golds for CS:GO skins !!
 
-	--[[  SC 2 ]]--
+	--[[ SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
 
 	--[[  Dota 2 ]]--
@@ -410,30 +410,8 @@ local instantReportList = {
 	"pets.*mount.*gametimecard", --wts 6pets .mounts .rocket. gametimecard .Change camp. variable race. turn area. change a name. ^_^!
 	"wts.*gametime.*mount.*pet", --WTS Prepaid gametime code 8k per month. the mount [Winged Guardian]'[Celestial Steed] 15K each and the pets 6k each, if u are interested,PST
 	"wts.*monthgametime.*%d+k", --WTS 1 Month Gametime 10k. 3 Month Gameitme 25k. 6 Month Gametime 40k
-	--[Winged Guardian] 25k  [Heart of the Aspects]25k  [Celestial Steed]20k and prepaid gametimecard
-	"%[.*%].*%[.*%].*gamet?i?m?e?card", --wts [Heart of the Aspects]25k [Winged Guardian]25k and prepaid gametimecard
-	--WTS [Heart of the Aspects]25K [Winged Guardian]25K [Celestial Steed]20K AND prepaid gametimecard
-	--WTS [Celestial Steed]  [Winged Guardian]  [Heart of the Aspects] and prepaid gametimecard / 60k for half year
-	"wts.*steed.*gamet?i?m?e?card", --{skull} WTS Winged Guardian 15K.Heart of the Aspects 15K Celestial Steed 15K 90 Day Pre-Paid Game Card 35K {skull}
-	"code.*hatchling.*gamet?i?m?e?card", --WTS Codes redeem:6PETS [Cenarion Hatchling],Lil Rag,KT,XT,Moonkin,Pandaren 5k each;Prepaid gametimecard 6K;Flying mount[Celestial Steed] 15K.PST
-	"gamet?i?m?e?card.*deliver", --{rt6}{rt1} 19=10k,90=51K+gamecard+rocket? deliver10mins
-	"wts.*deliver.*cheap.*price", --WTS [Reins of Poseidus],deliver fast,cheaper price ,pst,plz
-	"wts.*%[.*%].*%[.*%].*cheap.*stock", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Vial of the Sands],cheapst ,in stock ,pst
-	"wts.*%[.*%].*%[.*%].*cheap.*safe", --WTS [Reins of the Swift Spectral Tiger] [Tabard of the Lightbringer] [Magic Rooster Egg]Cheapest & Safest Online Trad
-	"wts.*%[.*%].*order.*stock", --Wts [prestiges mount] order over 50k will get it free  250k in stock-------- (lots of random characters)
-	"^wts.*spectraltiger.*alsootheritems$", --WTS [Magic Rooster Egg] [Reins of the Spectral Tiger] [Reins of the Swift Spectral Tiger] Also other items
-	--WTS [Magic Rooster Egg] [Reins of the Spectral Tiger]  [Reins of the Swift Spectral Tiger]cheap mount and gold
-	"^wts.*%[.*%].*%[.*%].*cheapmounta?n?d?gold", --WTS [Magic Rooster Egg] [Reins of the Spectral Tiger]  [Reins of the Swift Spectral Tiger]cheap mount&gold
-	--WTS Blizzard Store Mounts (25k) and Blizzard Store Pets (10k)
-	"wts.*mount.*pet[^%d].*%d+k", --WTS {star}flying mounts:[Celestial Steed] and [Winged Guardian]30k each {star}PETS:Lil'Ragnaros/Lil'XT/Lil'K.T./Moonkin/Pandaren/Cenarion Hatchling 12k each,{star}prepaid timecards 15k each.{star}
-	"wts.*%[.*%].*powerle?ve?l.*chea", --wts [Reins of the Swift Spectral Tiger] [Reins of the Spectral Tiger] [Wooly White Rhino],and g ,powerlvling ,chea
-	--Selling[Mystic Runesaber][Warforged Nightmare][Grinning Reaver]30k each and 60days 4
-	--Selling[Mystic Runesaber]30k[Warforged Nightmare]30k[Grinning Reaver]30k/60daystime40k
-	"^selling.*%[.*%].*[36]0days", --Selling[Enchanted Fey Dragon][Heart of the Aspects][Iron Skyreaver]60daysgametime 20k [each,180days.WOD] boost
 	"selling%d+.*prepaidtimecard", --selling 60 day prepaid time card /w me for the price
-	"need.*gametime.*rocket.*info", --Does someone need WoW Gametime & X53 Rocket's Mount  /w me for more info
 	"^wt[bs][36]0days?prepaidgametime", --WTS 60day Prepaid Gametime  Card and WOD
-	"^wt[bs]wodor[36]0days?gc", --wts WOD or 60 Days GC for GOLD  /W ME FOR INFO
 	--WTS 60days game time card very checp
 	--wts  180days gametime card  {rt1} {rt2}\ cheaps\
 	--wts  90days gametime code  {rt2}{rt2}{rt2}
@@ -445,7 +423,6 @@ local instantReportList = {
 	--WTB Game Time CODE Buy gold
 	--WTS Game time/Diablo and Unmarged accounts for gold!
 	"wt[bs].*gametime.*gold", --WTB 1 Month Game Time CODE Buy gold
-	"steed.*gc%d+day.*sale", --WTS [Winged Guardian] [Heart of the Aspects] [Celestial Steed]Each 15k gc90days=25KPet sales
 	--WTS BLIZZ MOUNTS PETS GAMERTIME OR ANY CODES FOR GOLD
 	"wts.*mount.*gamer?time", --WTS Mounts[Heart of the Aspects] and Pets/ GameTimecard
 	"mount.*account.*sell.*discount", --Get every single rare mount on your own account now! (including incredibly rare & unobtainables) Also selling all PvP achievies: Gladiator, Hero of Ally, 2200/2400 arenas/RBGs and more! Great discounts for MoP preorders! Message me! Skype: Baddieisboss
@@ -453,21 +430,11 @@ local instantReportList = {
 	"^wtscheapgold", --WTS cheap gold /w me for more info
 	"^wtscheapandfastgold", --WTS cheap and fast gold ( no chineese website) /w me for more info
 	"^wtbgold.*gametime", --WTB GOLD, OR TRADE GOLD FOR GAMETIME!!
-	"honorbuddy.*bot.*gold.*skype", --WTS 1 sessions and 3 sessions of HONORBUDDY (WoW bot) For golds....It rly good way to earn golds,if you are interested contact me on skype : Stimar12
-	"^wt[bs][36]0days?gc", --wtb 60 days gc.ive got a mindblowing offer which u cant skip.whisper me for extra information if u seriously want to do this!
-	"^wt[bs]gamtime.*gold", --WTB gamtime for gold /w
-	"mount.*gametime%d+days?%d+k", -- sell[Grinning Reaver]30k store mount /gametime 60days 30k
-	"wts%d+kfor%d+euro", --WTS 650K FOR 30 EURO /w me (paypal)
-	"^wts%d+kfor%d+usd$", --WTS 100K for 33 usd
 	--WTS G A M E T I M E /W
 	--WTS {rt1} GAMETIME {rt1}
 	--WTS gametime card 60days Very cheap
 	--WTS Gametime-Subscribtion /w me
 	"^wt[bs]gametime", --WTS {rt1} GAMETIME {rt1} {rt8} MoP Upgrade{rt8}
-	"^wts%d+days?gc$", --WTS 60days GC
-	"mount.*mystic.*%d+days?time%d+k", --sell shop mount[Mystic Runesaber]25k// 60days time 40K
-	"^anyonesellinggametime", --anyone selling game time
-	"^lookingforgametime", --LOOKING FOR GAME TIME
 	"^wt[bs]prepaidcard", --WTS prepaid card (30,60,90 days), mounts
 	--Wts gamecard 60days very cheap
 	"^wt[bs]gamecard", --WTB GAME CARD
@@ -475,13 +442,7 @@ local instantReportList = {
 	"^wt[bs]prepaidgamecard", --WTS *Pre-Paid Game Card 60 Days* - Can prove I've got loads in stock /w me offers
 	"^wt[bs]%d+day.*gamecard", --WTS 60 DAYS PREPAID GAMECARD
 	"^wt[bs]%d+month.*gametime", --WTS 2 Month(60Days) Gametime-Cards w/ me ! {rt1}
-	"month.*gametime.*cdkey", --WTS 1 MONTH RAF - 2 MONTHS GAME TIME - MOP CD KEY - CATA CD KEY. WISP ME FOR MORE INFO
-	"sell.*gameca?rd.*month.*whisp", --Selling GameC*rd - 2 months! Whisper for skype and Price
-	"sell.*gamecard.*day.*whisp", --Greetings! Currently im selling two different kinds of gamecards! {star} The one with 30 days! And the other one with 60 days! Don't be shy to /whisper me! {skull}
-	"^wts.*blizzstoremount.*%d+k", --WTS Any of the Blizz Store mounts 20k
-	"rafmount.*gametime.*char", --{rt1}{rt6}WTS RAF mount(Heart of the Nightwing) for 16k ^^ {rt1} Game time for 60k/60days {rt1}{rt6}WTS lvl80 char all class in 30mins!!{rt1} etc{rt1}{rt6}}Whisper skype :nan072487
 	"^selling%d+.*gamecard", --Selling 60time gamecard!
-	"%d+day.*gametimecard.*cheap", --{diamond} {diamond} {diamond} {diamond} WTS TWO last 180 days game time card, cheaper! {diamond} {diamond} {diamond} {diamond}
 
 	--[[  RBG/boosting  ]]--
 	"gold.*skype.*brbwow", --WTS [Challenge Warlord: Gold] . Skype: brbwow
@@ -557,8 +518,6 @@ local instantReportList = {
 	"helping.*fast.*shadowboost[%.,]com", --Helping you with your PvE progress. HFC or BRF, it doesn't matter. Fast and smooth. Join us now and become more powerful than your friends. See us at shadowboost.com
 	--Arena Ratings 2200/2400/2700, selfplay, Big Conquest Cap, Honor gear, HFC normal/Herioc, /w me !
 	"arena.*2200.*selfplay.*conquest.*normal", --Arena Ratings 2200/2400/2700, selfplay, Conquest Cap, Coaching with pro, Honor gear, HFC normal/Herioc, /w me !
-	"gold.*fbmteam[%.,]c", --Challenge Warlord: Gold from pro team with great experience (more than 6000 dungeons) on fbmteam.com ;)
-	"selfplay.*feedback.*ownedcore", --WTS[Challenge Warlord: Gold]Get Awesome Weapon Xmog/Yeti Mount/Titul!Self-Play!Team Is Ready To Start!Many Feedbacks with Ownedcore{square}
 	"helping.*arena.*selfplay.*challenge.*con[gq]uest", --Helping with Arena Rating, Selfplay, Challenge Modes, 100 wins, BIG conguest CAP! /w
 	"helping.*2200.*selfplay.*challenge.*con[gq]uest", --Helping with 1800/2000/2200/2400/2600! Selfplay, Challenge Modes, 100 wins,BIG CONQUEST POINTS CAP! /w
 	"info.*cubeboost[%.,]c", --Wanna more info?  -> http://cubeboost.com
@@ -631,6 +590,7 @@ local instantReportList = {
 	"rbg.*artifact.*honor.*mount.*carry", --█░█WTS RBG 1-75wins(Artifact Power+Honor Rank)6Vicious mount[Vicious Saddle]also[Reins of the Long-Forgotten Hippogryph]carry u right now ▲PST
 	"^wtspowerleveling.*fast", --WTS Powerleveling (Fastest available)
 	"help.*le?ve?ling.*demonboost[%.,]com", --Helping with lvling 100-110. Emerald Nightmare, Return to Karazhan, Mythic+ dungeons. [Demon-Boost.com]
+	"fast.*leveling.*honor.*в[o0][o0]sт", -- ►►►Fastest leveling 100-110 (6-12 hours), 850+ gear, Honor Ranks and MUCH MORE on [RРD-В00SТ,С0М]◄◄◄
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -660,6 +620,7 @@ local instantReportList = {
 	"guld.*salu.*swish.*info", --Guld finns till salu via SWISH, /w för mer info
 	"^saljerwowguld.*viaswish", --Säljer wow guld för 140kr per 100k, via Swish! /W
 	"^saljer%d+kguldfor.*viaswish", --Säljer 600k guld för 800kr, via swish! Nu eller aldrig
+	"^saljerguld,swish", --Säljer guld, swish
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
