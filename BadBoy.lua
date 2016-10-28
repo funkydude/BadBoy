@@ -782,7 +782,7 @@ local filterFunc = function(_, _, _, _, _, _, _, _, _, _, _, _, lineId)
 end
 
 do
-	btn = CreateFrame("Button", nil, ChatFrame1)
+	btn = CreateFrame("Frame", nil, ChatFrame1)
 	btn:SetWidth(46)
 	btn:SetHeight(46)
 	btn:SetPoint("BOTTOMRIGHT", 18, -20)
@@ -818,6 +818,9 @@ do
 	animGroup:Play()
 	btn:Hide()
 
+	local reportFrame = CreateFrame("Button", nil, btn)
+	reportFrame:SetAllPoints(ChatFrame1)
+	reportFrame:SetFrameStrata("DIALOG")
 	local ticker = nil
 	local tickerFunc = function()
 		local canReport = false
@@ -843,7 +846,7 @@ do
 			ticker = nil
 		end
 	end)
-	btn:SetScript("OnClick", function(self)
+	reportFrame:SetScript("OnClick", function(self)
 		for k, v in next, spamCollector do
 			if CanComplainChat(v) then
 				BADBOY_BLACKLIST[k] = true
@@ -853,10 +856,10 @@ do
 			spamLogger[k] = nil
 		end
 		prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
-		self:Hide()
+		self:GetParent():Hide()
 	end)
-	btn:SetScript("OnEnter", function(self)
-		GameTooltip:SetOwner(self, "ANCHOR_TOP")
+	reportFrame:SetScript("OnEnter", function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
 		GameTooltip:AddLine(reportMsg, 0.5, 0.5, 1)
 		if next(spamLogger) then
 			GameTooltip:AddLine(" ", 0.5, 0.5, 1)
@@ -866,7 +869,7 @@ do
 		end
 		GameTooltip:Show()
 	end)
-	btn:SetScript("OnLeave", GameTooltip_Hide)
+	reportFrame:SetScript("OnLeave", GameTooltip_Hide)
 end
 
 --[[ Add Filters ]]--
