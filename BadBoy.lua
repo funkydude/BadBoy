@@ -2,27 +2,27 @@
 -- GLOBALS: BADBOY_BLACKLIST, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
 local myDebug = false
 
-local reportMsg = "BadBoy: Spam blocked, click to report!"
+local reportMsg = "Spam blocked, click to report!"
 do
 	local L = GetLocale()
 	if L == "frFR" then
-		reportMsg = "BadBoy : Spam bloqué, cliquez pour signaler !"
+		reportMsg = "Spam bloqué, cliquez pour signaler !"
 	elseif L == "deDE" then
-		reportMsg = "BadBoy: Spam geblockt, zum Melden klicken"
+		reportMsg = "Spam geblockt, zum Melden klicken"
 	elseif L == "zhTW" then
-		reportMsg = "BadBoy: 垃圾訊息已被阻擋, 點擊以舉報 !"
+		reportMsg = "垃圾訊息已被阻擋, 點擊以舉報 !"
 	elseif L == "zhCN" then
-		reportMsg = "BadBoy: 垃圾信息已被拦截，点击举报！"
+		reportMsg = "垃圾信息已被拦截，点击举报！"
 	elseif L == "esES" or L == "esMX" then
-		reportMsg = "BadBoy: Spam bloqueado, haz clic para reportarlo."
+		reportMsg = "Spam bloqueado, haz clic para reportarlo."
 	elseif L == "ruRU" then
-		reportMsg = "BadBoy: Спам заблокирован. Нажмите, чтобы сообщить!"
+		reportMsg = "Спам заблокирован. Нажмите, чтобы сообщить!"
 	elseif L == "koKR" then
-		--reportMsg = "BadBoy: Spam blocked, click to report!"
+		--reportMsg = "Spam blocked, click to report!"
 	elseif L == "ptBR" then
-		reportMsg = "BadBoy: Spam bloqueado, clique para denunciar!"
+		reportMsg = "Spam bloqueado, clique para denunciar!"
 	elseif L == "itIT" then
-		reportMsg = "BadBoy: Spam bloccata, clic qui per riportare!"
+		reportMsg = "Spam bloccata, clic qui per riportare!"
 	end
 end
 
@@ -855,7 +855,7 @@ do
 	end)
 	reportFrame:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
-		GameTooltip:AddLine(reportMsg, 0.5, 0.5, 1)
+		GameTooltip:AddDoubleLine("BadBoy:", reportMsg, 1, 1, 1, 1, 1, 1)
 		if next(spamLogger) then
 			GameTooltip:AddLine(" ", 0.5, 0.5, 1)
 			for k, v in next, spamLogger do
