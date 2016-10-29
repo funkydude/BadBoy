@@ -806,6 +806,7 @@ do
 	local reportFrame = CreateFrame("Button", nil, btn)
 	reportFrame:SetAllPoints(ChatFrame1)
 	reportFrame:SetFrameStrata("DIALOG")
+	reportFrame:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	local ticker = nil
 	local tickerFunc = function()
 		local canReport = false
@@ -834,6 +835,22 @@ do
 	end)
 	reportFrame:SetScript("OnClick", function(self, btn)
 		if btn == "LeftButton" then
+			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
+			self:GetParent():Hide()
+
+			local chat = ChatFrame1:IsEventRegistered("CHAT_MSG_SYSTEM")
+			if chat then
+				ChatFrame1:UnregisterEvent("CHAT_MSG_SYSTEM")
+			end
+			local err = UIErrorsFrame:IsEventRegistered("UI_INFO_MESSAGE")
+			if err then
+				UIErrorsFrame:UnregisterEvent("UI_INFO_MESSAGE")
+			end
+			local cal = CalendarFrame and CalendarFrame:IsEventRegistered("CALENDAR_UPDATE_ERROR")
+			if cal then
+				CalendarFrame:UnregisterEvent("CALENDAR_UPDATE_ERROR") -- Remove calendar error popup
+			end
+
 			for k, v in next, spamCollector do
 				if CanComplainChat(v) then
 					BADBOY_BLACKLIST[k] = true
@@ -842,15 +859,24 @@ do
 				spamCollector[k] = nil
 				spamLogger[k] = nil
 			end
+
+			if chat then
+				ChatFrame1:RegisterEvent("CHAT_MSG_SYSTEM")
+			end
+			if err then
+				UIErrorsFrame:RegisterEvent("UI_INFO_MESSAGE")
+			end
+			if cal then
+				-- There's a delay before the event fires
+				C_Timer.After(5, function() CalendarFrame:RegisterEvent("CALENDAR_UPDATE_ERROR") end)
+			end
+		elseif btn == "RightButton" then
 			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
 			self:GetParent():Hide()
-		elseif btn == "RightButton" then
 			for k, v in next, spamCollector do
 				spamCollector[k] = nil
 				spamLogger[k] = nil
 			end
-			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
-			self:GetParent():Hide()
 		end
 	end)
 	reportFrame:SetScript("OnEnter", function(self)
