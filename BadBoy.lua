@@ -703,7 +703,7 @@ local Ambiguate, BNGetGameAccountInfoByGUID, gsub, next, type, tremove = Ambigua
 local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
 local blockedLineId, chatLines, chatPlayers = 0, {}, {}
 local spamCollector, spamLogger, prevShow = {}, {}, 0
-local btn
+local btn, reportFrame
 local function BadBoyIsFriendly(name, flag, lineId, guid)
 	if not guid then return true end -- LocalDefense automated prints
 	local _, characterName = BNGetGameAccountInfoByGUID(guid)
@@ -760,7 +760,12 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				spamCollector[guid] = lineId
 				if BADBOY_TOOLTIP then
 					spamLogger[guid] = debug
+					if btn:IsShown() then
+						GameTooltip_Hide()
+						reportFrame:GetScript("OnEnter")(reportFrame) -- Add more spam to tooltip if shown
+					end
 				end
+
 				local t = GetTime()
 				if t-prevShow > 90 then
 					if prevShow == 0 then
@@ -821,7 +826,7 @@ do
 	animGroup:Play()
 	btn:Hide()
 
-	local reportFrame = CreateFrame("Button", nil, btn)
+	reportFrame = CreateFrame("Button", nil, btn)
 	reportFrame:SetAllPoints(ChatFrame1)
 	reportFrame:SetFrameStrata("DIALOG")
 	reportFrame:RegisterForClicks("LeftButtonUp", "RightButtonUp")
