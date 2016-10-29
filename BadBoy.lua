@@ -531,7 +531,7 @@ local instantReportList = {
 	"wts.*spot.*heroic.*raid.*loot.*spec.*invite", --█ WTS █ SPOTS in Emerald Nightmare Normal/Heroic raid next week, all loot for your spec is yours. /w to get invited!
 	"wts.*help.*honor.*prestige.*season.*info", --█ WTS █ Help with PvP Honor or Prestige levels and PvP Rewards today - season is starting soon! /w for info
 	"selling.*glory.*fast.*stress.*ilvl.*info", --█ Selling █ Glory of the Legion Hero - get your Leyfeather Hippogryph fast and with no stress! No ilvl requirements - /w for info
-	--WTS: ▓▓ XAVIUS (HEROIC) KILL ▓▓ PERSONAL LOOT ▓▓ SELFPLAY/PILOTED ▓▓ TODAY 00:00 CET ▓▓ SUPER PRICE! Whisper me! ▓▓ 
+	--WTS: ▓▓ XAVIUS (HEROIC) KILL ▓▓ PERSONAL LOOT ▓▓ SELFPLAY/PILOTED ▓▓ TODAY 00:00 CET ▓▓ SUPER PRICE! Whisper me! ▓▓
 	"loot.*piloted.*%d%d%d%d.*superprice.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
 	"boost.*artifact.*mythic.*boostila", --[Boostila.com] BEST PRICE FOR BOOST on THE EMERALD NIGHTMARE (NM-HC),Artifact power quests farm, Mythic Dungeons, Character lvling and more!  SEE ON [Boostila.com]
 	"wts.*cheap.*fast.*loot.*mythic.*dungeon.*wisp.*everyday", --WTS cheap & fast Emerald Nightmare lootraids, Mythic15++ Dungeons. Wisp! Everyday!
@@ -744,8 +744,14 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				end
 				local t = GetTime()
 				if t-prevShow > 90 then
-					prevShow = t
-					btn:Show()
+					if prevShow == 0 then
+						prevShow = t+25
+						-- Delay the first one to grab more spam on really bad realms
+						C_Timer.After(25, function() btn:Show() end)
+					else
+						prevShow = t
+						btn:Show()
+					end
 				end
 			end
 		end
@@ -781,7 +787,7 @@ do
 	scale2:SetFromScale(1,1)
 	scale2:SetToScale(0.2,0.2)
 	scale2:SetDuration(0.4)
-	scale2:SetEndDelay(7)
+	scale2:SetEndDelay(8)
 	local alpha = animGroup:CreateAnimation("Alpha")
 	alpha:SetOrder(1)
 	alpha:SetDuration(0.4)
@@ -792,7 +798,7 @@ do
 	alpha2:SetDuration(0.4)
 	alpha2:SetFromAlpha(0.4)
 	alpha2:SetToAlpha(1)
-	alpha2:SetEndDelay(7)
+	alpha2:SetEndDelay(8)
 	animGroup:Play()
 	btn:Hide()
 
@@ -817,6 +823,7 @@ do
 	btn:SetScript("OnShow", function()
 		if ticker then ticker:Cancel() end
 		ticker = C_Timer.NewTicker(5, tickerFunc)
+		tickerFunc()
 	end)
 	btn:SetScript("OnHide", function()
 		if ticker then
