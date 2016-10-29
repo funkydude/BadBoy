@@ -1,5 +1,6 @@
 
--- GLOBALS: BADBOY_BLACKLIST, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
+-- GLOBALS: BADBOY_BLACKLIST, BADBOY_TOOLTIP, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
+-- GLOBALS: CalendarFrame, GameTooltip, UIErrorsFrame, C_Timer, IsEncounterInProgress, GameTooltip_Hide
 local myDebug = false
 
 local reportMsg = "Spam blocked, click to report!"
@@ -756,7 +757,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		if myDebug then
 			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", trimmedPlayer)
 		else
-			if not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid] then
+			if (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) and not IsEncounterInProgress() then
 				spamCollector[guid] = lineId
 				if BADBOY_TOOLTIP then
 					spamLogger[guid] = debug
