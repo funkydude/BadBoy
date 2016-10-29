@@ -40,6 +40,7 @@ local commonList = {
 	"express",
 	"g[0o]ld",
 	"lowest",
+	"mount",
 	"order",
 	"powerle?ve?l",
 	"price",
@@ -296,6 +297,7 @@ local instantReportList = {
 	"^wt[bst]csgocdkee?y", --WTB CS GO CD KEEY PAY GOLD AND GOOD WISP ME YOUR OFFER WTB CS GO KNIFE SKINS
 	"^tradingcsgo.*gold", --Trading Cs:GO Knife for Gold /w me for more information!!!
 	"^wt[bst]csgocheap", --WTB CS GO CHEAPS BELOW 5 EURO WITH WOW GOLD!
+	"^wt[bst]goldforcsgo", --WTS gold for cs:go knife, i will pay good if its  a good one, add me and /w if you are intrested
 	"^wt[bst]mywowgold.*csgoskin", --WTT: My WOW Gold for your CSGO Skins. Offer 3k per 1€ skin value. No selling, Just trading! /w me for a chat.
 	"^sellinggolds?forcsgo", --Selling golds for CS:GO skins !!
 
@@ -561,7 +563,8 @@ local instantReportList = {
 	"help.*le?ve?ling.*demonboost[%.,]com", --Helping with lvling 100-110. Emerald Nightmare, Return to Karazhan, Mythic+ dungeons. [Demon-Boost.com]
 	"fast.*leveling.*honor.*в[o0][o0]sт", -- ►►►Fastest leveling 100-110 (6-12 hours), 850+ gear, Honor Ranks and MUCH MORE on [RРD-В00SТ,С0М]◄◄◄
 	"^wtsmythickarazhandungeons[,.]*whispme", --WTS Mythić+ & Kârazhan Dungeøns. Whísp me.
-	"^wtsboostkarazhan[,.]mythic[,.]mythicdungeon", --WTS boost karazhan. mythic. mythic+ dungeon  
+	"^wtsboostkarazhan[,.]mythic[,.]mythicdungeon", --WTS boost karazhan. mythic. mythic+ dungeon
+	"^wtskarazhan[,.]mythic[,.]%d+/%d+mythicdungeonboost", --WTS Karazhan,Mythic+,10/10Mythic dungeon boost
 	"rbg.*boost.*2200.*yourself.*account.*sharing.*info", --{RBG PUSH} Wts RBG Boost /1800/2000/2200/HOTA . You play yourself/NO account SHARING /w for more info  :)
 	"rbg.*honor.*priestige.*mount.*selfplay", --WTS RBG 1-75wins(honor rank/Priestige),6RBG mounts[Vicious Saddle]and BOP mount[Reins of the Long-Forgotten Hippogryph]},self play .PST
 	"topboost[,.]pro.*euro", --[TOPBOOST.PRO] - , HEROIC EN - 180 EURO (ML). HEROIC PL - 90 EURO.  MYTHIC +10 180 EURO
@@ -607,11 +610,13 @@ local instantReportList = {
 	"^saljerguldviaswish", --Säljer guld via swish 135kr för 100k /w för mer info eller adda Skype Dobzen2
 	"^saljergviaswish", --Säljer g via swish 1.7kr per 1k /w mig =D [minsta köp 50k]
 	"^saljerguldsnabbtviaswish", --Säljer guld snabbt via Swish 100k=170SEK 1.7kr/1000g Billigare vid bulk  /Whispra mig och chilla på svar
-	"^koperguldviaswish", --Köper guld via swish
+	--köper wow guld via swish
+	"^koperw?o?w?guldviaswish", --Köper guld via swish
 	"guld.*salu.*swish.*info", --Guld finns till salu via SWISH, /w för mer info
 	"^saljerwowguld.*viaswish", --Säljer wow guld för 140kr per 100k, via Swish! /W
 	"^saljer%d+kguldfor.*viaswish", --Säljer 600k guld för 800kr, via swish! Nu eller aldrig
 	"^saljerguld,swish", --Säljer guld, swish
+	"guldkvar.*viaswish", --100k guld kvar! 1,8kr/1000g betalning sker via swish! /w mig vid intresse! 50k är minsta köp!
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
