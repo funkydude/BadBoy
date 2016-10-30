@@ -748,7 +748,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				spamCollector[guid] = lineId
 				if BADBOY_OPTIONS.tipSpam then
 					spamLogger[guid] = debug
-					if btn:IsShown() then
+					if btn:IsShown() and reportFrame:IsMouseOver() then
 						GameTooltip_Hide()
 						reportFrame:GetScript("OnEnter")(reportFrame) -- Add more spam to tooltip if shown
 					end
