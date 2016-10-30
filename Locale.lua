@@ -8,8 +8,8 @@ L.noAnimate = "Disable button pulse animation"
 local loc = GetLocale()
 if loc == "frFR" then
 	L.spamBlocked = "Spam bloqué, cliquez pour signaler !"
-	--L.spamTooltip = "Show spam in button tooltip"
-	--L.noAnimate = "Disable button pulse animation"
+	L.spamTooltip = "Affichier le spam dans une infobulle"
+	L.noAnimate = "Désactiver l'animation d'impulsion du bouton."
 elseif loc == "deDE" then
 	L.spamBlocked = "Spam geblockt, zum Melden klicken"
 	--L.spamTooltip = "Show spam in button tooltip"
