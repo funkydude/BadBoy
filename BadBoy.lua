@@ -2,29 +2,10 @@
 -- GLOBALS: BADBOY_BLACKLIST, BADBOY_TOOLTIP, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
 -- GLOBALS: CalendarFrame, GameTooltip, UIErrorsFrame, C_Timer, IsEncounterInProgress, GameTooltip_Hide
 local myDebug = false
-
-local reportMsg = "Spam blocked, click to report!"
+local L
 do
-	local L = GetLocale()
-	if L == "frFR" then
-		reportMsg = "Spam bloqué, cliquez pour signaler !"
-	elseif L == "deDE" then
-		reportMsg = "Spam geblockt, zum Melden klicken"
-	elseif L == "zhTW" then
-		reportMsg = "垃圾訊息已被阻擋, 點擊以舉報 !"
-	elseif L == "zhCN" then
-		reportMsg = "垃圾信息已被拦截，点击举报！"
-	elseif L == "esES" or L == "esMX" then
-		reportMsg = "Spam bloqueado, haz clic para reportarlo."
-	elseif L == "ruRU" then
-		reportMsg = "Спам заблокирован. Нажмите, чтобы сообщить!"
-	elseif L == "koKR" then
-		--reportMsg = "Spam blocked, click to report!"
-	elseif L == "ptBR" then
-		reportMsg = "Spam bloqueado, clique para denunciar!"
-	elseif L == "itIT" then
-		reportMsg = "Spam bloccata, clic qui per riportare!"
-	end
+	local _
+	_, L = ...
 end
 
 --These entries add +1 point
@@ -909,7 +890,7 @@ do
 	end)
 	reportFrame:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
-		GameTooltip:AddDoubleLine("BadBoy:", reportMsg, 1, 1, 1, 1, 1, 1)
+		GameTooltip:AddDoubleLine("BadBoy:", L.spamBlocked, 1, 1, 1, 1, 1, 1)
 		if next(spamLogger) then
 			GameTooltip:AddLine(" ", 0.5, 0.5, 1)
 			for k, v in next, spamLogger do

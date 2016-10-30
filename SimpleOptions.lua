@@ -1,5 +1,10 @@
 
 -- GLOBALS: PlaySound, SlashCmdList, BADBOY_TOOLTIP, SLASH_BADBOY1, SLASH_BADBOY2
+local L
+do
+	local _
+	_, L = ...
+end
 
 --[[ Main Panel ]]--
 local badboy = CreateFrame("Frame", "BadBoyConfig", UIParent)
@@ -36,31 +41,7 @@ end)
 
 local btnShowSpamText = badboy:CreateFontString(nil, nil, "GameFontHighlight")
 btnShowSpamText:SetPoint("LEFT", btnShowSpam, "RIGHT", 0, 1)
-btnShowSpamText:SetText("Show spam in report button tooltip")
-do
-	local L = GetLocale()
-	if L == "frFR" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "deDE" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "zhTW" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "zhCN" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "esES" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "esMX" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "ruRU" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "koKR" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "ptBR" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	elseif L == "itIT" then
-		--btnShowSpamText:SetText("Show spam in report button tooltip")
-	end
-end
+btnShowSpamText:SetText(L.spamTooltip)
 
 --[[ BadBoy_Levels Title ]]--
 local levelsTitle = badboy:CreateFontString("BadBoyLevelsConfigTitle", nil, "GameFontNormalLarge")
