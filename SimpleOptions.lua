@@ -1,5 +1,5 @@
 
--- GLOBALS: PlaySound, SlashCmdList, BADBOY_TOOLTIP, SLASH_BADBOY1, SLASH_BADBOY2
+-- GLOBALS: PlaySound, SlashCmdList, BADBOY_OPTIONS, SLASH_BADBOY1
 local L
 do
 	local _
@@ -32,33 +32,48 @@ local btnShowSpam = CreateFrame("CheckButton", nil, badboy, "OptionsBaseCheckBut
 btnShowSpam:SetPoint("TOPLEFT", title, "BOTTOMLEFT")
 btnShowSpam:SetScript("OnClick", function(frame)
 	local tick = frame:GetChecked()
-	BADBOY_TOOLTIP = tick
+	BADBOY_OPTIONS.tipSpam = tick
 	PlaySound(tick and "igMainMenuOptionCheckBoxOn" or "igMainMenuOptionCheckBoxOff")
 end)
 btnShowSpam:SetScript("OnShow", function(frame)
-	frame:SetChecked(BADBOY_TOOLTIP)
+	frame:SetChecked(BADBOY_OPTIONS.tipSpam)
 end)
 
 local btnShowSpamText = badboy:CreateFontString(nil, nil, "GameFontHighlight")
 btnShowSpamText:SetPoint("LEFT", btnShowSpam, "RIGHT", 0, 1)
 btnShowSpamText:SetText(L.spamTooltip)
 
+--[[ Disable animation checkbox ]]--
+local btnNoAnim = CreateFrame("CheckButton", nil, badboy, "OptionsBaseCheckButtonTemplate")
+btnNoAnim:SetPoint("TOPLEFT", btnShowSpam, "BOTTOMLEFT")
+btnNoAnim:SetScript("OnClick", function(frame)
+	local tick = frame:GetChecked()
+	BADBOY_OPTIONS.noAnim = tick
+	PlaySound(tick and "igMainMenuOptionCheckBoxOn" or "igMainMenuOptionCheckBoxOff")
+end)
+btnNoAnim:SetScript("OnShow", function(frame)
+	frame:SetChecked(BADBOY_OPTIONS.noAnim)
+end)
+
+local btnNoAnimText = badboy:CreateFontString(nil, nil, "GameFontHighlight")
+btnNoAnimText:SetPoint("LEFT", btnNoAnim, "RIGHT", 0, 1)
+btnNoAnimText:SetText(L.noAnimate)
+
 --[[ BadBoy_Levels Title ]]--
 local levelsTitle = badboy:CreateFontString("BadBoyLevelsConfigTitle", nil, "GameFontNormalLarge")
-levelsTitle:SetPoint("TOPLEFT", btnShowSpam, "BOTTOMLEFT", 0, -3)
+levelsTitle:SetPoint("TOPLEFT", btnNoAnim, "BOTTOMLEFT", 0, -3)
 levelsTitle:SetText("BadBoy_Levels ["..ADDON_MISSING.."]")
 
 --[[ BadBoy_Guilded Title ]]--
 local guildedTitle = badboy:CreateFontString("BadBoyGuildedConfigTitle", nil, "GameFontNormalLarge")
-guildedTitle:SetPoint("TOPLEFT", btnShowSpam, "BOTTOMLEFT", 0, -48)
+guildedTitle:SetPoint("TOPLEFT", btnNoAnim, "BOTTOMLEFT", 0, -48)
 guildedTitle:SetText("BadBoy_Guilded ["..ADDON_MISSING.."]")
 
 --[[ BadBoy_CCleaner Title ]]--
 local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", nil, "GameFontNormalLarge")
-ccleanerTitle:SetPoint("TOPLEFT", btnShowSpam, "BOTTOMLEFT", 0, -116)
+ccleanerTitle:SetPoint("TOPLEFT", btnNoAnim, "BOTTOMLEFT", 0, -116)
 ccleanerTitle:SetText("BadBoy_CCleaner ["..ADDON_MISSING.."]")
 
 --[[ Slash Handler ]]--
 SlashCmdList["BADBOY"] = function() badboy:Show() end
 SLASH_BADBOY1 = "/badboy"
-SLASH_BADBOY2 = "/bb"

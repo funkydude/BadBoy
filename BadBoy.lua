@@ -1,5 +1,5 @@
 
--- GLOBALS: BADBOY_BLACKLIST, BADBOY_TOOLTIP, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
+-- GLOBALS: BADBOY_BLACKLIST, BADBOY_OPTIONS, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
 -- GLOBALS: CalendarFrame, GameTooltip, UIErrorsFrame, C_Timer, IsEncounterInProgress, GameTooltip_Hide
 local myDebug = false
 local L
@@ -721,7 +721,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				--
 				if spamCollector[guid] and IsSpam(msg) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
 					spamCollector[guid] = lineId
-					if BADBOY_TOOLTIP then
+					if BADBOY_OPTIONS.tipSpam then
 						spamLogger[guid] = debug
 					end
 				end
@@ -744,7 +744,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		else
 			if (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) and not IsEncounterInProgress() then
 				spamCollector[guid] = lineId
-				if BADBOY_TOOLTIP then
+				if BADBOY_OPTIONS.tipSpam then
 					spamLogger[guid] = debug
 					if btn:IsShown() then
 						GameTooltip_Hide()
@@ -835,6 +835,20 @@ do
 		if ticker then ticker:Cancel() end
 		ticker = C_Timer.NewTicker(5, tickerFunc)
 		tickerFunc()
+		-- Don't animate if the feature is disabled
+		if animGroup:IsPlaying() and BADBOY_OPTIONS.noAnim then
+			btn:SetWidth(12)
+			btn:SetHeight(12)
+			animGroup:Stop()
+			btn:ClearAllPoints()
+			btn:SetPoint("BOTTOMRIGHT", 0, -5)
+		elseif not animGroup:IsPlaying() and not BADBOY_OPTIONS.noAnim then
+			btn:SetWidth(46)
+			btn:SetHeight(46)
+			animGroup:Play()
+			btn:ClearAllPoints()
+			btn:SetPoint("BOTTOMRIGHT", 18, -20)
+		end
 	end)
 	btn:SetScript("OnHide", function()
 		if ticker then
@@ -931,16 +945,23 @@ end
 --[[ Blacklist ]]--
 do
 	local f = CreateFrame("Frame")
-	f:RegisterEvent("PLAYER_LOGIN") -- Can't use ADDON_LOADED as CalendarGetDate isn't always ready on very first login.
-	f:SetScript("OnEvent", function(frame, event)
-		-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-		local _, _, day = CalendarGetDate()
-		if type(BADBOY_BLACKLIST) ~= "table" or BADBOY_BLACKLIST.dayFromCal ~= day then
-			BADBOY_BLACKLIST = {dayFromCal = day}
+	f:RegisterEvent("ADDON_LOADED")
+	f:RegisterEvent("PLAYER_LOGIN")
+	f:SetScript("OnEvent", function(frame, event, addon)
+		if addon == "BadBoy" then
+			if type(BADBOY_OPTIONS) ~= "table" then BADBOY_OPTIONS = {} end
+			if type(BADBOY_BLACKLIST) ~= "table" then BADBOY_BLACKLIST = {} end
+			frame:UnregisterEvent(event)
+		elseif event == "PLAYER_LOGIN" then
+			-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
+			local _, _, day = CalendarGetDate()
+			if BADBOY_BLACKLIST.dayFromCal ~= day then
+				BADBOY_BLACKLIST = {dayFromCal = day} -- Can't use ADDON_LOADED as CalendarGetDate isn't always ready on very first login.
+			end
+			SetCVar("spamFilter", 1)
+			frame:UnregisterEvent(event)
+			frame:SetScript("OnEvent", nil)
 		end
-		SetCVar("spamFilter", 1)
-		frame:UnregisterEvent(event)
-		frame:SetScript("OnEvent", nil)
 	end)
 end
 
