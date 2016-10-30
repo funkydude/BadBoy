@@ -720,7 +720,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 20
 	if event == "CHAT_MSG_CHANNEL" then
 		for i=1, #chatLines do
-			if chatLines[i] == msg and chatPlayers[i] == trimmedPlayer then --If message same as one in previous 20 and from the same person...
+			if chatLines[i] == msg and chatPlayers[i] == guid then --If message same as one in previous 20 and from the same person...
 				blockedLineId = lineId
 				--
 				if spamCollector[guid] and IsSpam(msg) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
@@ -735,7 +735,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 			if i == 20 then tremove(chatLines, 1) tremove(chatPlayers, 1) end --Don't let the DB grow larger than 20
 		end
 		chatLines[#chatLines+1] = msg
-		chatPlayers[#chatPlayers+1] = trimmedPlayer
+		chatPlayers[#chatPlayers+1] = guid
 	end
 	--End text buffer
 
