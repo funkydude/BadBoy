@@ -394,6 +394,7 @@ local instantReportList = {
 	"^wt[bs][36]0days?prepaidgametime", --WTS 60day Prepaid Gametime  Card and WOD
 	"^wts%d+days?gametime", --wts 60 days gametime cde. and more stuff from blizzstore
 	"^wts%d+days?gamecard", --wts 60 days game card /w me
+	"^wts%d+kfor%d+euro", --WTS 950K FOR 35EURO(PayPal) /w me !
 
 	--[[  Misc  ]]--
 	"wts.*coaching.*boost.*skype", --WTS COĄCHING Ąrena Bøøst frøm r1 EU Glâdiâtors in 2s/3s ▬► ŠELFPLĄY (Yøu plây wiTh Prø) ◄▬ ŠKYPĒ: FindGuys
@@ -401,14 +402,6 @@ local instantReportList = {
 	"wts.*mythic.*boost.*pvp.*prestige.*price", --WTS Dungeons Mythic/ Mythic+ Chest Boost, EN normal/heroic, PvP PRESTIGE RANKS (we have the lowest prices on the euro-servers)!
 	"^wtsemeraldnightmarelootraids,heroic/mythicdungeons.*wisp", --WTS Emerald Nightmare lootraids, Heroic/Mythic Dungeons. Wisp!
 	"arena.*boost.*pro.*prestige.*mythic", --Arena boost 1800-2400, play with Pro, leveling, PvP Prestige Farm, Mythic/Mythic+ dungeons, EN (normal) /w
-	"2400.*selfplay.*honor.*tenheroic", --{WTS} 1800/2000/2400 3s,2s, Selfplay possible, Honor gear, TEN Heroic, /w me !
-	"2400.*selfplay.*pro.*keystone", --{WTS} 1800/2000/2400 3s,2s, Gold, Try selfplay with pro, ythic Dungeons and Keystone run, Leveling 100-110, /w me !
-	"2400.*prestige.*tenheroic.*selfplay", --{WTS} 1800/2000/2400 3s,2s, Prestige Rank, Gold, Coaching, TEN Heroic, Selfplay possible /w me !
-	"2400.*selfplay.*pro.*mythic", --{WTS} 1800/2000/2400 3s,2s, Try SElfplay with pro, Gold, Mythic dungeons 10/10 /w me !
-	"2400.*selfplay.*pro.*livestream", --{WTS} 1800/2000/2400 3s,2s, Honor, Try selfplay with pro, Live stream and selfplay possible /w me !
-	--Arena boost 1800/2400/2700, Try selfplay 2k with pro, Prestige Rank, Live stream/selfplay possible, TEN Heroic, /w me !
-	--{WTS} 1800/2000/2400 3s,2s, Try selfplay 2k with pro, Prestige Rank, Live stream/selfplay possible, TEN Heroic, /w me !
-	"2400.*selfplay.*pro.*tenheroic", --Arena boost 2200/2400/2700, Live stream and selfplay possible, Coaching with pro, Mythic dungeons 10/10, TEN Heroic, /w me !
 	"arena.*help.*pro.*prestige.*mythic", --Arena help 1800-2400, play with Pro, leveling, PvP Prestige Farm, Mythic/Mythic+ dungeons, EN (normal) /w
 	"pvp.*prestige.*mount.*accshare", --▓▓WTS Full PvP Talents 1-50▓Prestige Ranks▓Artiface Power farm▓all 6 vicious mounts[Vicious Saddle]right now,no accshare▓PST
 	"wts.*boost.*amazingprice.*gua?rantee.*only.*info", --Wts The emerald nightmare Heroic boost 7/7 clear for amazing price we gurantee you + 850 item level only today 17:00 server time w me for more infos.
@@ -419,7 +412,6 @@ local instantReportList = {
 	"wts.*mythic.*levell?ing.*artifact.*info", --WTS ▓▓ Heroic/Mythic Dungeons ▓ Emerald Nightmare ▓ Power Leveling ▓▓ World Quests  ▓▓ Artifactl ▓ Reputations /W me for more info
 	"wtsemeraldnightmareheroicnormalboosting.*mythicdungeons?boost", --WTS Emerald Nightmare Heroic-Normal boosting, Mythic dungeons boost
 	"wts.*mythic.*loot.*dungeon.*glory.*more.*info", --►►►[WTS] The Emerald Nightmare Mythic/Heroic/Normal with loot, Mythic+ dungeons, Glory of the Legion hero and more!  /w me for info◄◄◄
-	"mmolvl[%.,]c[0o]m.*skype", --For details visit mmo-lvl . c0m or write to skype: geny.k2  or to email: genydocum@gmail.com
 	"mythic.*price.*perfectway[%.,]one", --WTS Dungeons Mythic, Dungeons Heroic in Legion everyday!!! New prices [(Perfectway.one)]
 	"mount.*achiev.*raidboost[%.,]com", --Farewell Draenor! Mounts/Glories/Achievements. Hurry up to all WoD bounties on [Raidboost.com]
 	"best.*market.*gamebion", --◄Need help in HFC? We have a best offers on the market from various guilds and teams! For more info visit GAMEBION com►
@@ -432,8 +424,6 @@ local instantReportList = {
 	"skype.*website.*paypal", --Skype [RUSTAM.GARIEV] find me and I can link you website adress  If you can Pay -PayPal- we don't take what advance payment  you can pay in raid passing process
 	"service.*cyberstarlife%.ru", --Best prices and service at http://cyber-starlife.ru/ .PvE,PvP, Achievments,mounts etc with polite and friendly support!
 	"cyberstarlife%.ru.*skype", --Dont miss chance to get your Challange mode's WEAPON! Everything and more at http://cyber-starlife.ru/ or skype assortibg
-	"attention.*selfplay.*safe.*sale", --▓▓ ATTENTION! ▓▓ WTS: ▓▓ HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓ !!!SELFPLAY!!! MASTER LOOT! ▓▓ TODAY 20:00 SERVER TIME! ▓▓ 100% SAFE! ▓▓ SUPER SALE! ▓▓ Whisper me! ▓▓
-	"smooth.*join.*buyboost[%.,]pro", --|||| We are helping with your PvE progress. Any aspect of game. Fast and smooth. Join us now and become more powerful than your friends. |||| Buyboost.pro
 	"conquestcapped[%.,]com.*discount", -- ▄▀▄ WTS Full Conquest Cap █ [Vicious Saddle] + 27,000 Conquest Points █ [Conquest-Capped.com]█ /w to get 5% discount ▄▀▄
 	"boost.*mount.*gold.*prestigewow", --Offering Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance, golds and a lot more ! With [www.prestige-wow.com1]
 	"prestigewow.*cheap.*market", --[CONQUEST CAP] 27.000 Conquest + Full 710 Ilvl gear boosting on [prestige-wow.com]. CHEAPEST on the market, Selfplay available !
@@ -441,8 +431,6 @@ local instantReportList = {
 	"heroic.*more.*boosthive[%.,]eu", --WTS Hellfire Citadel Mythic & Heroic/ Challenges / PVE services and much more.  b o o s t h i v e . e u
 	"rbg.*mount.*wins.*gear.*selfplay", --███WTS:RBG 40/75wins mounts [Vicious War Kodo] and  [Horn of the Vicious War Wolf]1-75wins,full honor gear,self play,Pst
 	"easyboost[%.,]com.*skype", --EASY-BOOST.COM | WE HELP WITH ANY PVP OR PVE ACHIEVMENTS, MOUNTS AND EVERYTHING! VISIT [EASY-BOOST.COM] OR CONTACT VIA SKYPE: EASY-BOOSTSUPPORT
-	--WTS■■■■gold 100k=40$/ Carry raid Heroic HFc full run with master loot,all gears dropped belongs to u■■■■Carry [Challenge Warlord: Gold]Everyday●●●( Selfplay: 110U
-	"gold.*%d+k=.*carry.*selfplay", --WTS■■■■gold 100k=40$/ WTS-Heroic HFc full run with master loot■■■■Carry [Challenge Warlord: Gold]Everyday●●●( Selfplay: 110USD Pilot: 50 USD )...Skype:
 	"wts.*loots.*price.*mount.*account", --■■■■WTS Heroic HFC Full clear+loots tempting price[Calamity's Edge][Libram of Vindication]■■■ ■Archimonde Kill with mount/No account
 	"wts.*cool.*mount.*accshare.*price", --███WTS Full Honor Gears and Cool and rare mounts [Voidtalon of the Dark Star]and[Reins of the Time-Lost Proto-Drake]no acc share/w me price!
 	--██WTS RBG weekly Caps/RBG 40&75wins for mount/WOD S3 Full honorgear/BOP mount. ●●without accshare,carry you right now  ██.PST me for price█
@@ -553,16 +541,26 @@ local instantReportList = {
 	"^wtsemeraldnightmaremythiclootrun.*mlselfplay.*20.*realmtime", --WTS EmeraldNightmare Mythic lootrun (ML+selfplay) 20.00 realm time
 	"rbg.*boost.*2200.*yourself.*account.*sharing.*info", --{RBG PUSH} Wts RBG Boost /1800/2000/2200/HOTA . You play yourself/NO account SHARING /w for more info  :)
 	"rbg.*honor.*priestige.*mount.*selfplay", --WTS RBG 1-75wins(honor rank/Priestige),6RBG mounts[Vicious Saddle]and BOP mount[Reins of the Long-Forgotten Hippogryph]},self play .PST
-	"topboost[,.]pr.*euro", --[TOPBOOST.PRO] - , HEROIC EN - 180 EURO (ML). HEROIC PL - 90 EURO.  MYTHIC +10 180 EURO
+	--[TOPBOOST.PRO] - WTS HEROIC EN (PL) at 18.00 Server time. MYTHIC +10. KATAZHAN RUN and MORE
+	-->>> [TOPBOOST.PRO] <<< EMERALD NIGHTMARE HEROIC, NORMAL, MYTHIC+ RUNS, ACHIEVEMENTS AND MORE! DISCOUNTS ON MYTHIC EMERALD NIGHTMARE!
+	"topboost[,.]pr.*mythic", --[TOPBOOST.PRO] - , HEROIC EN - 180 EURO (ML). HEROIC PL - 90 EURO.  MYTHIC +10 180 EURO
 	"powerle?ve?l.*yourspuregame[,.]com", --EN Myth/HC lootRuns,Karazhan,Powerlevling,Mounts,Myth+Boosting and more in >>> www.yourspuregame.com <<<
 	"xperiencedparty.*runs.*walkthrough.*mythic.*glory.*karazhan", --xperienced party 880+ (more than 45 runs) will help you to walkthrough mythic, mythic+, Glory of the Legion Hero, Karazhan.
 	"wh?isp.*skype.*igor.*price", --Wisp in Skype [] for Detal/Prices.
 	"elitistgaming[,.]com.*mount", --Elitist-gaming,com Selling Emerald Nightmare on ALL difficulties, [Ahead of the Curve: Xavius]MYTHIC + dungeons and NIGHTBANE MOUNT, all self play  & more whisper for schedules
+	"instant.*delivery.*purchase.*gold.*extra", --Instant delivery!!Purchase 100k gold get extra 10k or  [Obliterum]*4! 200k get  [Obliterum] *10!! w me 
 	"promotion.*order.*gold.*coupon.*code", --Halloween Promotion!! Order gold from our site, and u will get  [Obliterum] or 10% gold for free!!! w me get coupon code!Happy Halloween^^!!!
 	"juststarted.*leveling.*twink.*gear.*dungeon.*more", --● Just Started The Legion or leveling a twink ? Need To Gear Up ? Try Our Karazhan, Emerald Nightmare N/HC/M, Dungeons+ Runs and More ●
+	"wts.*saddle.*carry.*hour.*start.*info", --█ [WTS] Vicious saddle. 100 3v3 wins carry just in 3 hours. We can start right now, whisper me for information █
+	"getgearup.*karazhan.*nightmare.*dungeons.*runs.*more", --● Get gear up  ►►► Karazhan, Emerald Nightmare N/HC/M, Dungeons+ Runs and More ●
+	"wts.*mythic.*master.*loot.*mythic.*details.*private", --EN WTS Mythic/HC Master - Loot, Karazhan, Mythic+ and more in >> details private messeng
+	"wts.*nightmare.*boosting.*loot.*mythic.*glory", --WTS Emerald Nightmare Mythic/Heroic/Normal boosting +loot, Karazhan boost, Mythic Keystone Boost 1-10+lvl, Mythic dungeons boost, Glory of the Legion Hero
+	"skype.*landroshop", --WTS [Keystone Conqueror] (2-10 lvl) and Karazhan, fast, smooth and fair. Details in skype: Landroshop
+	"pewpewshop.*mount", --[WTS] [►►►PewPewShop.Pro] — Emerald Nightmare Mythic with loot and selfplay! ►►► Mythic dungeons+, Karazhan time run with loot and mount!►►►
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
+	"qq.*549965838", --金币最低价20刀10w 微信ok4gold   微信或者QQ549965838 微信ok4gold  百万库存20刀=10w 百万库存20刀=10w QQ或者微信549965838 微信ok4gold  微信或者QQ549965838 微信ok4gold
 	"qq.*1505381907", --特价[Reins of the Swift Spectral Tiger]，金币28刀十万，量大优惠。等级代练，大秘境(刷橙装），荣誉等级(送坐骑），翡翠团本代练;,QQ:1505381907或者微信：babey1123
 	"qq.*593837031", --纯手工100-110 低价，大秘境1-10层热销中，翡翠梦境英雄普通包团毕业。橙装，神器三插槽，金币大量，感兴趣的联系QQ:593837031 skype:wspamela 微信 593837031
 	"100110.*q228102174", --100-110纯手工升级低价热卖，无敌飞机头 ，星光龙热卖1-2周保证拿到，，翡翠梦魇普通包团毕业火热销售中,职业大厅，神器点数，神器解锁三插槽 [，金币大量QQ228102174,微信894580231。skype.raulten1234]
@@ -579,6 +577,11 @@ local instantReportList = {
 	"qq.*1292706134", --大酋长团队 接大秘境维护1-10层，低层三箱刷橙，团本毕业，等级100-110，需要的加QQQ1292706134
 	"金币.*sesegold", --特价大小老虎,鸡蛋军马各TCG长期供货,金币169RMB=10万,98-110等级代练,大秘境保底,翡翠梦境H/M包团,5M代刷套餐特价-需要微信sesegold
 	"%d+.*万金.*支付宝", --100人民币=10万金，有30，个人出售，支付宝微信，骗子移步
+	"qq.*2278048179", --特价[Six-Feather Fan]850等级 金币32刀 10万 现货秒发。。大小老虎卡牌坐骑。 十年信誉品牌 欢迎咨询 QQ: 2278048179
+	"职业大厅战役.*要塞科技", --职业大厅战役,日常收菜，奖励神器点，随从任务，世界任务最终解锁神器第[三个插槽.要塞科技杬¬六层， 解锁橙色物品（可以多带一个橙色装备）,包含解锁神器第[三个插槽.等级110任务亝£练
+	"新版本提供版本维护.*金币大量库存", --7.0新版本提供版本维护---5H [5M毕业.翡翠梦魇英雄史诗毕业,神器维护,110等级套餐销售。H&M梦魇包团，毕业，指定督备毕业。110等级纯手工任务代练,全天接单,12小时完成。金币大量库存。
+	"奖励坐骑.*欢迎咨询", --苏拉玛任务,堕落精灵声望,神器点代[刷.翡翠梦魇普通包团,英雄史诗毕业热销中.茝£誉等级解锁50级,3V3奖励坐骑,大秘境6-10层+周奖励,2层三箱热卖中.欢迎咨询
+	"层箱子热卖.*人拾取热销中", --2层箱子热卖,脱非入欧 不在遥远. H梦魇包团, [个人拾取热销中.卡拉赞前置任务亝£[刷.坐骑亝£打
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -594,6 +597,7 @@ local instantReportList = {
 	"^sælgerguld.*mobilepay", --Sælger guld, forgår over mobile pay, 100k - 150 kr
 	"tilbud.*sælger%d+k.*mobilepay", --Dagens tilbud: Sælger 200 K for blot 280 kr - whisper for mere info: Mobilepay & Swipp
 	"^sælgerguld.*skype", --Sælger guld 20k 33kr og 100k til 149kr, skype ...
+	"sælgerlidtguld.*mobilepay", --Hej, jeg sælger lidt guld via. mobilepay. Tilbud : 100k for 150kr , 250k for 350kr - Skriv for mere info. :)
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
