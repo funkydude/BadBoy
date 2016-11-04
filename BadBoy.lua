@@ -1,7 +1,6 @@
 
 -- GLOBALS: BADBOY_BLACKLIST, BADBOY_OPTIONS, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
 -- GLOBALS: CalendarFrame, GameTooltip, UIErrorsFrame, C_Timer, IsEncounterInProgress, GameTooltip_Hide
-local myDebug = false
 local L
 do
 	local _
@@ -36,7 +35,8 @@ local commonList = {
 	"store",
 	"trusted",
 	"well?come",
-	"%d+k=%d+euro",
+	"%d+k[\\/=]%d+euro",
+	"%d+%$[\\/=]%d+g",
 
 	--French
 	"livraison", --delivery
@@ -130,7 +130,7 @@ local boostingList = {
 	"coaching",
 	"mythic",
 	"leveling",
-	"accshare",
+	"accshar[ei]",
 	"secure",
 	"delivery",
 	"store",
@@ -251,6 +251,7 @@ local instantReportList = {
 	--WTS an awesome rs account /w me details
 	"^wt[bs]a?n?awesomersaccount", --wts awesome rs account /w me
 	"runescapegoldforwowgold", --Selling my runescape gold for wow gold
+	"^buyingrs3stuff", --Buying RS3 stuff for gold
 
 	--[[ CS:GO ]]--
 	"^wt[bst]somecsgoskin", --WTB some CSGO skins and sell some /w for more info
@@ -430,12 +431,6 @@ local instantReportList = {
 	"heroic.*more.*boosthive[%.,]eu", --WTS Hellfire Citadel Mythic & Heroic/ Challenges / PVE services and much more.  b o o s t h i v e . e u
 	"rbg.*mount.*wins.*gear.*selfplay", --███WTS:RBG 40/75wins mounts [Vicious War Kodo] and  [Horn of the Vicious War Wolf]1-75wins,full honor gear,self play,Pst
 	"easyboost[%.,]com.*skype", --EASY-BOOST.COM | WE HELP WITH ANY PVP OR PVE ACHIEVMENTS, MOUNTS AND EVERYTHING! VISIT [EASY-BOOST.COM] OR CONTACT VIA SKYPE: EASY-BOOSTSUPPORT
-	"wts.*loots.*price.*mount.*account", --■■■■WTS Heroic HFC Full clear+loots tempting price[Calamity's Edge][Libram of Vindication]■■■ ■Archimonde Kill with mount/No account
-	"wts.*cool.*mount.*accshare.*price", --███WTS Full Honor Gears and Cool and rare mounts [Voidtalon of the Dark Star]and[Reins of the Time-Lost Proto-Drake]no acc share/w me price!
-	--██WTS RBG weekly Caps/RBG 40&75wins for mount/WOD S3 Full honorgear/BOP mount. ●●without accshare,carry you right now  ██.PST me for price█
-	"wtsrbg.*cap.*mount.*accshare.*price", --●●WTS RBG weekly Caps.1-75win.4 Vicious mount[Vicious Saddle]Full honor(700)gear,BOP mount[Voidtalon of the Dark Star]no accshare█me for price
-	"wtsrbg.*cap.*mount.*accshare.*carry", --WTS RBG weekly Caps/RBG 40&75wins 4 mount[Vicious War Mechanostrider]and[Reins of the Vicious War Steed]no accshare,carry you right now, ?PST me for
-	"wts.*loot.*sale.*skype.*$", --WTS [Cutting Edge: The Black Gate] 13/13M w/ loot & [Felsteel Annihilator] - Add "Felsteelsale" skype - $300
 	--[04:03:52] [LFG] [Alfredjp]: ▲Hello! We are helping with PVE raids Hellfire Citadel(NMHCM)▲Huge amounts of Loot▲EVERYDAY RAIDS▲Challenge mode - GOLD▲And much more▲/W for more information▲
 	"huge.*loot.*challenge.*gold.*info", --▲Hello! We are helping with PVE RAIDS  Heroic Hellfire Citadel ▲ Huge amounts of Loot ▲ EVERYDAY RAIDS ▲ Challenge mode - GOLD ▲ ON https://shadowboost.com ▲ /w for more information▲
 	"skype.*support.*shadowboost", --▲Hello! Please check all info at skype: Support.ShadowBoost and site https://shadowboost.com
@@ -562,6 +557,10 @@ local instantReportList = {
 	"saddle.*conquestcapped[%.,]com", -- ▄▀▄ WTS Full Conquest Cap █ [Vicious Saddle] + 27,000 Conquest Points █ [Conquest-Capped.com]█ /w to get 5% discount ▄▀▄
 	"^wts.*good.*fast.*powerle?ve?l", --WTS good and fast power leveling
 	"service.*mythic.*raid.*pay.*price", --▲▲▲/GUILD SERVICE/-/Emerald Nightmare/-/Mythic+/-/Trust raids-pay after b00st/-/RAID TODAY/-/Best prices/-/No resell. And many more   ▲▲▲
+	"wts.*karazhan.*mount.*nightmare.*hc.*dungeon.*run.*more", --● WTS  ►►► Karazhan(mount+), Emerald Nightmare N/HC/M, Dungeons+ Runs and More ●
+	"offer.*honor.*prestige.*boost.*pvp.*mount", --Offer Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance and a lot more ! /w me for more détails !
+	"brb2game.*sale", --=>>www.brb2game.com<<=28$=100K 5-15 mins Trade.CODE:USWOW  More L895   Gears for sale! LVL835-870 Classpackage  Hot Sale! /2 =>>www.brb2game.com<<=
+	"^wtsemeraldnightmare.*heroic.*pl.*tonight.*8.*fastrun.*highquality", --WTS EMERALD NIGHTMARE 7/7 Heroic with PL. Raid tonight at 8 pm. Fast run. High quality.
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -583,15 +582,16 @@ local instantReportList = {
 	"金币.*sesegold", --特价大小老虎,鸡蛋军马各TCG长期供货,金币169RMB=10万,98-110等级代练,大秘境保底,翡翠梦境H/M包团,5M代刷套餐特价-需要微信sesegold
 	"%d+.*万金.*支付宝", --100人民币=10万金，有30，个人出售，支付宝微信，骗子移步
 	"qq.*2278048179", --特价[Six-Feather Fan]850等级 金币32刀 10万 现货秒发。。大小老虎卡牌坐骑。 十年信誉品牌 欢迎咨询 QQ: 2278048179
-	"职业大厅战役.*要塞科技", --职业大厅战役,日常收菜，奖励神器点，随从任务，世界任务最终解锁神器第[三个插槽.要塞科技杬¬六层， 解锁橙色物品（可以多带一个橙色装备）,包含解锁神器第[三个插槽.等级110任务亝£练
-	"新版本提供版本维护.*金币大量库存", --7.0新版本提供版本维护---5H [5M毕业.翡翠梦魇英雄史诗毕业,神器维护,110等级套餐销售。H&M梦魇包团，毕业，指定督备毕业。110等级纯手工任务代练,全天接单,12小时完成。金币大量库存。
-	"奖励坐骑.*欢迎咨询", --苏拉玛任务,堕落精灵声望,神器点代[刷.翡翠梦魇普通包团,英雄史诗毕业热销中.茝£誉等级解锁50级,3V3奖励坐骑,大秘境6-10层+周奖励,2层三箱热卖中.欢迎咨询
-	"层箱子热卖.*人拾取热销中", --2层箱子热卖,脱非入欧 不在遥远. H梦魇包团, [个人拾取热销中.卡拉赞前置任务亝£[刷.坐骑亝£打
 	"金.*778587316", --亲，出售金币,10w29刀，-专业快速代练100-110 纯任务升级**苏拉吗9/11,解锁世界任务，神器三槽，，代练声望，翡翠梦境包团，重返卡拉赞+梦之魇坐骑，pvp邪气鞍座等微信：mia11125 Q778587316
 	"100110.*送坐骑.*tiger", --100-110级纯手工练级------G币28刀十万,现货秒发；荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，大小tiger坐骑有需要的M我
 	"100110.*币.*幽灵虎", --纯手工100-110升级    G币20刀十万    翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做 卡拉赞副本通关 代刷神器点数 解锁神器第三槽 苏拉码任务8/11  大小幽灵虎，有需要的M
 	"^marine.*人在秒回", --Marine5人本类业务，卡拉赞，5Mx10 大秘境10层低保ilvl880 及大秘境15层幻化解锁-----人在秒回
 	"881.*安全便宜快速.*ip", --881装等双橙大号出售自营AH绿色G，安全便宜快速，非工作室黑G，北美IP交易，买G最重要就是安全！全场最低 要的速M 人在就10分钟！
+	"特价出售黄金.*稀有坐骑", --特价出售黄金，等级代练纯手工，荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，稀有坐骑有需要的MMMMMMM
+	"200万手工金币.*paypal", --→→活动促销200万手工金币2.8刀1万 低价甩~ 买的多还送坐骑 安全 效率 要的老板密→支持淘宝、paypal 多种付款 薄利多销 另售卡牌坐骑 承接各种代练
+	"qq.*153874069", --华哥超低黄金27刀10万安全效率 大小幽灵虎坐骑请咨询 承接各种代练 支持淘宝、paypal 多种付款+微信QQ：153874069
+	"特价出售黄金.*tcg", --特价出售黄金，各种TCG坐骑，都是仓库现货，另售剑灵金币，保证全场最低，承接各种代练，欢迎咨询
+	"练级.*bearwow[,.]com", --承接WOW 100-110练级、大秘境、卡拉赞、世界任务、神器外观、神器第三槽解锁等,纯手工，市场最低价，请登陆网站：w w w.bearwow.c o m
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -663,6 +663,7 @@ local repTbl = {
 }
 
 local strfind = string.find
+local myDebug = false
 local IsSpam = function(msg)
 	for i=1, #instantReportList do
 		if strfind(msg, instantReportList[i]) then
@@ -711,7 +712,7 @@ local IsSpam = function(msg)
 end
 
 --[[ Chat Scanning ]]--
-local Ambiguate, BNGetGameAccountInfoByGUID, gsub, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, next, type, tremove
+local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
 local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
 local blockedLineId, chatLines, chatPlayers = 0, {}, {}
 local spamCollector, spamLogger, prevShow = {}, {}, 0
@@ -723,21 +724,22 @@ local function BadBoyIsFriendly(name, flag, lineId, guid)
 		return true
 	end
 end
+local function BadBoyCleanse(msg)
+	msg = lower(msg) --Lower all text, remove capitals
+	for k,v in next, repTbl do
+		msg = gsub(msg, k, v)
+	end
+	return msg
+end
 local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
 	blockedLineId = 0
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
 	local trimmedPlayer = Ambiguate(player, "none")
-	if not myDebug and BadBoyIsFriendly(trimmedPlayer, flag, lineId, guid) then return end
+	if BadBoyIsFriendly(trimmedPlayer, flag, lineId, guid) then return end
 
 	local debug = msg --Save original message format
-	msg = msg:lower() --Lower all text, remove capitals
-
-	--Symbol & space removal. They also like to replace English letters with UTF-8 "equivalents" to avoid detection.
-	for k,v in next, repTbl do --Parse over the 'repTbl' table and replace strings
-		msg = gsub(msg, k, v)
-	end
-	--End string replacements
+	msg = BadBoyCleanse(msg)
 
 	--20 line text buffer, this checks the current line, and blocks it if it's the same as one of the previous 20
 	if event == "CHAT_MSG_CHANNEL" then
@@ -966,6 +968,16 @@ do
 			frame:RegisterEvent(event)
 		end
 	end
+end
+
+if myDebug then
+	SlashCmdList.D = function(msg)
+		msg = BadBoyCleanse(msg)
+		if IsSpam(msg) then
+			print("Yes")
+		end
+	end
+	SLASH_D1 = "/d"
 end
 
 --[[ Blacklist ]]--
