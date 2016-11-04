@@ -107,7 +107,7 @@ local phishingList = {
 local boostingList = {
 	"paypal",
 	"skype",
-	"boost",
+	"b[o0][o0]st",
 	"arena",
 	"rbg",
 	"gladiator",
@@ -551,7 +551,7 @@ local instantReportList = {
 	"wts.*mythic.*master.*loot.*mythic.*details.*private", --EN WTS Mythic/HC Master - Loot, Karazhan, Mythic+ and more in >> details private messeng
 	"wts.*nightmare.*boosting.*loot.*mythic.*glory", --WTS Emerald Nightmare Mythic/Heroic/Normal boosting +loot, Karazhan boost, Mythic Keystone Boost 1-10+lvl, Mythic dungeons boost, Glory of the Legion Hero
 	"skype.*landroshop", --WTS [Keystone Conqueror] (2-10 lvl) and Karazhan, fast, smooth and fair. Details in skype: Landroshop
-	"pewpewshop.*mount", --[WTS] [►►►PewPewShop.Pro] — Emerald Nightmare Mythic with loot and selfplay! ►►► Mythic dungeons+, Karazhan time run with loot and mount!►►►
+	"pewpewshop.*loot", --[WTS] [►►►PewPewShop.Pro] — Emerald Nightmare Mythic with loot and selfplay! ►►► Mythic dungeons+, Karazhan time run with loot and mount!►►►
 	"wtskarazhan.*timerun.*mount.*mythic.*dungeonboost", --WTS Karazhan8/8,Timerun with 100% mount,Mythic+,10/10Mythic dungeon boost
 	--▄▀▄ WTS Artifact Leveling █ Emerald Nightmare Loot Runs █ Karazhan & Mythic+ Dungeons █ [Vicious Saddle] + Honor 1-50 + Prestige █ [Conquest-Capped.com] ▄▀▄
 	"saddle.*conquestcapped[%.,]com", -- ▄▀▄ WTS Full Conquest Cap █ [Vicious Saddle] + 27,000 Conquest Points █ [Conquest-Capped.com]█ /w to get 5% discount ▄▀▄
@@ -561,6 +561,7 @@ local instantReportList = {
 	"offer.*honor.*prestige.*boost.*pvp.*mount", --Offer Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance and a lot more ! /w me for more détails !
 	"brb2game.*sale", --=>>www.brb2game.com<<=28$=100K 5-15 mins Trade.CODE:USWOW  More L895   Gears for sale! LVL835-870 Classpackage  Hot Sale! /2 =>>www.brb2game.com<<=
 	"^wtsemeraldnightmare.*heroic.*pl.*tonight.*8.*fastrun.*highquality", --WTS EMERALD NIGHTMARE 7/7 Heroic with PL. Raid tonight at 8 pm. Fast run. High quality.
+	"elitegamerboosting[%.,]de.*skype", --Return to Karazhan! Organisiere dir durch und mit uns einen unbeschwerten Ausflug in die neue Instanz - Erfolge, Loot und Mount inklusive! Alle Angebote auf [elite-gamer-boosting.de] | Skype: [real.elite.gamer] | Ab sofort 3% sparen mit dem Code: SIMON
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -629,6 +630,7 @@ local instantReportList = {
 	"guldkvar.*viaswish", --100k guld kvar! 1,8kr/1000g betalning sker via swish! /w mig vid intresse! 50k är minsta köp!
 	"^guldviaswish", --Guld via swish /w :)
 	"^guld%d+k.*kr.*skype", --Guld 20k til 30kr og 100k til 129kr, skype
+	"^saljerviaswish", --Säljer via swish /w vid Intresse
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
