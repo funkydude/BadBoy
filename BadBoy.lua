@@ -810,8 +810,8 @@ end
 
 do
 	btn = CreateFrame("Frame", nil, ChatFrame1)
-	btn:SetWidth(46)
-	btn:SetHeight(46)
+	btn:SetWidth(50)
+	btn:SetHeight(50)
 	btn:SetPoint("BOTTOMRIGHT", 18, -20)
 	btn:SetFrameStrata("DIALOG")
 	local tx = btn:CreateTexture()
@@ -831,24 +831,12 @@ do
 	scale2:SetToScale(0.2,0.2)
 	scale2:SetDuration(0.4)
 	scale2:SetEndDelay(8)
-	local alpha = animGroup:CreateAnimation("Alpha")
-	alpha:SetOrder(1)
-	alpha:SetDuration(0.4)
-	alpha:SetFromAlpha(1)
-	alpha:SetToAlpha(0.4)
-	local alpha2 = animGroup:CreateAnimation("Alpha")
-	alpha2:SetOrder(2)
-	alpha2:SetDuration(0.4)
-	alpha2:SetFromAlpha(0.4)
-	alpha2:SetToAlpha(1)
-	alpha2:SetEndDelay(8)
 	animGroup:Play()
 	btn:Hide()
 
 	reportFrame = CreateFrame("Button", nil, btn)
 	reportFrame:SetAllPoints(ChatFrame1)
 	reportFrame:SetFrameStrata("DIALOG")
-	reportFrame:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	local ticker = nil
 	local tickerFunc = function()
 		local canReport = false
@@ -890,7 +878,14 @@ do
 		end
 	end)
 	reportFrame:SetScript("OnClick", function(self, btn)
-		if btn == "LeftButton" then
+		if IsAltKeyDown() then -- Dismiss
+			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
+			self:GetParent():Hide()
+			for k, v in next, spamCollector do
+				spamCollector[k] = nil
+				spamLogger[k] = nil
+			end
+		else -- Report
 			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
 			self:GetParent():Hide()
 
@@ -926,18 +921,12 @@ do
 				-- There's a delay before the event fires
 				C_Timer.After(5, function() CalendarFrame:RegisterEvent("CALENDAR_UPDATE_ERROR") end)
 			end
-		elseif btn == "RightButton" then
-			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
-			self:GetParent():Hide()
-			for k, v in next, spamCollector do
-				spamCollector[k] = nil
-				spamLogger[k] = nil
-			end
 		end
 	end)
 	reportFrame:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
-		GameTooltip:AddDoubleLine("BadBoy:", L.spamBlocked, 1, 1, 1, 1, 1, 1)
+		GameTooltip:AddLine("BadBoy: ".. L.spamBlocked, 1, 1, 1)
+		GameTooltip:AddLine(L.clickToReport, 1, 1, 1)
 		if next(spamLogger) then
 			GameTooltip:AddLine(" ", 0.5, 0.5, 1)
 			for k, v in next, spamLogger do
