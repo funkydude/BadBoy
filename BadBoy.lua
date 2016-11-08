@@ -560,6 +560,11 @@ local instantReportList = {
 	"wts.*nightmare.*mythic.*loot.*dungeon.*pvp.*glory", --►►►[WTS] The Emerald Nightmare Mythic/Heroic/Normal with loot, Mythic+ dungeons,► PvP help◄, Glory of the Legion hero & more!◄◄◄
 	"juststarted.*legion.*gearup.*karazhan.*nightmare.*dungeon.*more", --Just Started The Legion ? Need To Gear Up ? Try Our KARAZHAN, EMERALD NIGHTMARE, +DUNGEONS AND MORE runs WTS!
 	"bestboost[%.,]club.*service", --►►► [[BESTBOOST.CLUB]] - 100-110 BOOST, MYTHIC AND MYTHIC+ DUNGEONS 10/10, THE EMERALD NIGHTMARE RAID NORMAL/HEROIC/MYTHIC, RETURN TO KARAZHAN AND OTHER SERVICES [[BESTBOOST.CLUB]] ◄◄◄
+	"%d+k.*giveaway.*guild.*selling.*karazhan.*mount.*mythic.*dungeon.*nightmare.*raid", --100K weekly giveaway from our guild! By the way we are selling Karazhan with mount, Mythic Dungeons+, Emerald Nightmare raids
+	"l[o0][o0]tcl[o0]ud.*b[o0][o0][s5]t", --▲▲▲■■■LFB?>-L00tcl0ud?c0m?-GUILD B005T/-/EN HC 69e/-/Mythic+/-/Trust raids/Karazhan/-/Best offers/ And many more here-?L00tcl0ud?com?   ▲▲▲■■■
+	"wtskara.*fasttimerun.*guarantee.*mount", --WTS KARAZHAN // fast time runs with guaranteed awesome MOUNT! /w me for more info.
+	"wtsarena.*boost.*2%.?200.*2%.?400.*gladiator.*info", --WTS ARENA BOOST // 2.200 // 2.400 // 2.600 // 2.800 // GLADIATOR / /w Me for more info!
+	"wts.*nightmare.*mythic.*master.*personal.*quickraids.*everyday.*write", --««WTS Emerald Nightmare Heroic/Mythic with Master Loot or Personal, Quick Raids everyday! Write me for info»»
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
