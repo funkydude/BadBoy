@@ -878,17 +878,21 @@ do
 			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
 			self:GetParent():Hide()
 
-			local chat = ChatFrame1:IsEventRegistered("CHAT_MSG_SYSTEM")
-			if chat then
-				ChatFrame1:UnregisterEvent("CHAT_MSG_SYSTEM")
+			local systemMsg = {GetFramesRegisteredForEvent("CHAT_MSG_SYSTEM")} -- Don't show the "Complaint Registered" message
+			local infoMsg = {GetFramesRegisteredForEvent("UI_INFO_MESSAGE")} -- Don't show the "Thanks for the report" message
+			local calendarError = {GetFramesRegisteredForEvent("CALENDAR_UPDATE_ERROR")} -- Remove calendar error popup (Blizz bug)
+			local reportSubmit = {GetFramesRegisteredForEvent("PLAYER_REPORT_SUBMITTED")} -- Fix clearing chat that shouldn't be cleared (Blizz bug)
+			for i = 1, #systemMsg do
+				systemMsg[i]:UnregisterEvent("CHAT_MSG_SYSTEM")
 			end
-			local err = UIErrorsFrame:IsEventRegistered("UI_INFO_MESSAGE")
-			if err then
-				UIErrorsFrame:UnregisterEvent("UI_INFO_MESSAGE")
+			for i = 1, #infoMsg do
+				infoMsg[i]:UnregisterEvent("UI_INFO_MESSAGE")
 			end
-			local cal = CalendarFrame and CalendarFrame:IsEventRegistered("CALENDAR_UPDATE_ERROR")
-			if cal then
-				CalendarFrame:UnregisterEvent("CALENDAR_UPDATE_ERROR") -- Remove calendar error popup
+			for i = 1, #calendarError do
+				calendarError[i]:UnregisterEvent("CALENDAR_UPDATE_ERROR")
+			end
+			for i = 1, #reportSubmit do
+				reportSubmit[i]:UnregisterEvent("PLAYER_REPORT_SUBMITTED")
 			end
 
 			for k, v in next, spamCollector do
@@ -900,21 +904,24 @@ do
 				spamLogger[k] = nil
 			end
 
-			if chat then
-				ChatFrame1:RegisterEvent("CHAT_MSG_SYSTEM")
+			for i = 1, #systemMsg do
+				systemMsg[i]:RegisterEvent("CHAT_MSG_SYSTEM")
 			end
-			if err then
-				UIErrorsFrame:RegisterEvent("UI_INFO_MESSAGE")
+			for i = 1, #infoMsg do
+				infoMsg[i]:RegisterEvent("UI_INFO_MESSAGE")
 			end
-			if cal then
+			for i = 1, #calendarError do
 				-- There's a delay before the event fires
-				C_Timer.After(5, function() CalendarFrame:RegisterEvent("CALENDAR_UPDATE_ERROR") end)
+				C_Timer.After(5, function() calendarError[i]:RegisterEvent("CALENDAR_UPDATE_ERROR") end)
+			end
+			for i = 1, #reportSubmit do
+				reportSubmit[i]:RegisterEvent("PLAYER_REPORT_SUBMITTED")
 			end
 		end
 	end)
 	reportFrame:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
-		GameTooltip:AddLine("BadBoy: ".. L.spamBlocked, 1, 1, 1)
+		GameTooltip:AddLine(L.spamBlocked, 1, 1, 1)
 		GameTooltip:AddLine(L.clickToReport, 1, 1, 1)
 		if next(spamLogger) then
 			GameTooltip:AddLine(" ", 0.5, 0.5, 1)
