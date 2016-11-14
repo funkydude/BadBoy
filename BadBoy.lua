@@ -1,6 +1,6 @@
 
 -- GLOBALS: BADBOY_BLACKLIST, BADBOY_OPTIONS, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
--- GLOBALS: CalendarFrame, GameTooltip, UIErrorsFrame, C_Timer, IsEncounterInProgress, GameTooltip_Hide
+-- GLOBALS: GameTooltip, C_Timer, IsEncounterInProgress, GameTooltip_Hide
 local L
 do
 	local _
@@ -120,7 +120,8 @@ local boostingList = {
 	"secure",
 	"delivery",
 	"store",
-	"prestige",
+	"pri?est[ie]ge",
+	"quality",
 }
 local boostingWhiteList = {
 	"members",
@@ -470,7 +471,7 @@ local instantReportList = {
 	"wts.*le?ve?ll?i?n?g?.*dungeon.*pvp.*emerald.*info", --[WTS] <<Character leveling 100-110 lvl>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Soon Emerald Nightmare Runs and more. /W for more info.
 	"selling.*rbg.*honor.*mount.*selfplay", --██Selling RBG 1-75wins(honor rank/Priestige),40/75wins mounts [Vicious War Trike] and  [Vicious Warstrider]self play,PST
 	"selling.*mount.*honor.*gear.*accshare.*", --selling 1-75winsEarn mount +honor rank+ priestige/legendary gears 6vicious mount  ;also selling[Vicious War Trike]and[Vicious Saddle]},no acc share .PST
-	"rbg.*artifact.*mount.*accshare", --▓▓WTS RBGs,1-75wins(get HR and artifact power and 6vicious mounts)[Vicious War Trike]and[Vicious Saddle]right now,no accshare▓PST
+	"rbg.*artifact.*mount.*accshar", --▓▓WTS RBGs,1-75wins(get HR and artifact power and 6vicious mounts)[Vicious War Trike]and[Vicious Saddle]right now,no accshare▓PST
 	"heroic.*amazingprice.*strong.*group.*gua?rantee.*drop.*spot", --Wts Emerald nightmare Heroic 7/7 clear for amazing price with strong guide groupe we gurantee you Full heroic loot that drop for your class on tonight 19:00 st only 2 spots ! w me for more infos.
 	--WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 key,write me for info.
 	"wtsmythic.*key.*%d/%d/%d.*write.*info", --WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 /Write me for info.
@@ -535,10 +536,12 @@ local instantReportList = {
 	"l[o0][o0]tcl[o0]ud.*b[o0][o0][s5]t", --▲▲▲■■■LFB?>-L00tcl0ud?c0m?-GUILD B005T/-/EN HC 69e/-/Mythic+/-/Trust raids/Karazhan/-/Best offers/ And many more here-?L00tcl0ud?com?   ▲▲▲■■■
 	"wtskara.*fasttimerun.*guarantee.*mount", --WTS KARAZHAN // fast time runs with guaranteed awesome MOUNT! /w me for more info.
 	"wtsarena.*boost.*2%.?200.*2%.?400.*gladiator.*info", --WTS ARENA BOOST // 2.200 // 2.400 // 2.600 // 2.800 // GLADIATOR / /w Me for more info!
-	"wts.*nightmare.*mythic.*master.*personal.*quickraids.*everyday.*write", --««WTS Emerald Nightmare Heroic/Mythic with Master Loot or Personal, Quick Raids everyday! Write me for info»»
-	"b[o0][o0]sthelp.*2%.2.*2%.4.*glad.*coach.*info$", --B0ost! Help 2.2/2.2/2.4, (glad/r1), Coaching from glads, Leveling 100-110 /w me for more info
+	--««WTS Emerald Nightmare Mythic/Heroic/Normal with Master Loot, Quick Raids everyday! Write me for info» 
+	"wts.*nightmare.*mythic.*master.*loot.*quickraids.*everyday.*write", --««WTS Emerald Nightmare Heroic/Mythic with Master Loot or Personal, Quick Raids everyday! Write me for info»»
+	"2.*2%.4.*glad.*le?ve?ling.*100110.*info$", --B00st 2k/2.4+ 3s 2s, (glad/r1), Leveling 100-110, Want to get 2/2.2k+ playing yourself with r1? /w me for more info
+	"2.*2%.4.*glad.*coach.*100110.*info$", --B0ost! Help 2.2/2.2/2.4, (glad/r1), Coaching from glads, Leveling 100-110 /w me for more info
 	--B0ost arena 2.2/2.4/2.7+ (glad, r1), live streams, cant find teammates for push rating? /w me for info
-	"b[o0][o0]starena.*2%.2.*2%.4.*glad.*livestream.*info$", --B0ost arena 2.2/2.4/2.7+ (glad, r1), live streams, Want get 2k or more selfplay? /w me for info
+	"b[o0][o0]starena.*2.*2%.4.*glad.*livestream.*info$", --B0ost arena 2.2/2.4/2.7+ (glad, r1), live streams, Want get 2k or more selfplay? /w me for info
 	"wtsemeraldnightmarelootraids.*heroic.*mythic.*dungeons.*wisp$", --WTS Emerald Nightmare lootraids, Heroic/Mythic Dungeons. Wisp!
 	"wts.*mythic.*boosting.*loot.*keystone.*dungeon.*glory", --WTS EN and Trial of Valor Mythic/Heroic/Normal boosting +loot, Karazhan boost, Mythic Keystone Boost 1-10+lvl, Mythic+ dungeons chests runs,  Mythic dungeons boost, Glory of the Legion Hero
 	"selling.*professional.*team.*mount.*loot", --Selling <<Mythic+>>/<<Karazhan(mount)>>/<<EMERALD NIGHTMARE heroic>> by a professional team! Come get your mount and loot! Going Now pst for detail
@@ -549,6 +552,10 @@ local instantReportList = {
 	"^karazhanmount.*nightmareruns.*spotsleft.*contact.*details$", --Karazhan mount, Emerald Nightmare runs. Few spots left! Contact for more details
 	"^trial.*karazhanmount.*nightmareruns.*spotsleft.*contact.*details$", --Trial of Valor, Karazhan mount, Emerald Nightmare runs. Few spots left! Contact for more details
 	"wts.*heroic.*raid.*fast.*quality.*discount.*selfplay", --WTS EMERALD NIGHTMARE 7/7 Heroic with PL. Raid right now. Fast run. High [quality.Discount] for selfplay tonight!!!
+	"^wts.*emeraldnightmare.*masterloottoday.*cheapandfast.*whisperme$", --WTS the Emerald Nightmare 7/7 HC Master Loot today,cheap and fast,whisper me
+	"wtsrbg.*wins.*mount.*carry.*reins", --█ █WTS RBG 1-75wins(AP+HR)6Vicious [mount.carry] u right [now.also][Reins of the Long-Forgotten Hippogryph]and[Voidtalon of the Dark Star]█PST
+	"wts.*today.*nightmare.*lootrun.*masterloot.*bestprice", --WTS: |=Today EMERALD NIGHTMARE MYTHIC Lootrun (7/7)||Master Loot|| Best Price!!!
+	"wts.*valor.*lootrun.*mount.*mythic.*glory", --WTS: |=TRIALS OF VALOR N/HC=|=KARAZHAN Lootrun+Mount=|=Mythic+ Dungeons=|=Glory of the Legion Hero=|W/me!!!
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -594,7 +601,7 @@ local instantReportList = {
 
 	--[[ Danish ]]--
 	"^sælgerguldfor%d+", --sælger guld for 170kr pr. 100k (w for andre servere)
-	"^sælgerguld.*mobilepay", --Sælger guld, forgår over mobile pay, 100k - 150 kr
+	"^sælgerg[ou]ld.*mobilepay", --Sælger guld, forgår over mobile pay, 100k - 150 kr
 	"tilbud.*sælger%d+k.*mobilepay", --Dagens tilbud: Sælger 200 K for blot 280 kr - whisper for mere info: Mobilepay & Swipp
 	"^sælgerguld.*skype", --Sælger guld 20k 33kr og 100k til 149kr, skype ...
 	"sælgerlidtguld.*mobilepay", --Hej, jeg sælger lidt guld via. mobilepay. Tilbud : 100k for 150kr , 250k for 350kr - Skriv for mere info. :)
@@ -620,6 +627,8 @@ local instantReportList = {
 	"^guldviaswish", --Guld via swish /w :)
 	"^guld%d+k.*kr.*skype", --Guld 20k til 30kr og 100k til 129kr, skype
 	"^saljerviaswish", --Säljer via swish /w vid Intresse
+	"^gfinnsswish$", --g finns swish
+	"^gfinnsbilligt$", --g finns billigt
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
@@ -636,7 +645,7 @@ local instantReportList = {
 local repTbl = {
 	--Symbol & space removal
 	["[%*%-%(%)\"!`'_%+#%%%^&;:~{} ]"]="",
-	["¨"]="", ["”"]="", ["“"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="",
+	["¨"]="", ["”"]="", ["“"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="", ["«"]="", ["»"]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", ["Ą"]="a", ["ą"]="a", --First letter is Russian "\208\176". Convert > \97. Note: Ą fail with strlower, include both.
