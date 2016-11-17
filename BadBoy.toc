@@ -18,7 +18,7 @@
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
-## X-Curse-Project-ID: bad-boy
+## X-Curse-Project-ID: 5547
 ## X-WoWI-ID: 8736
 
 ## OptionalDeps: LibChatAnims
