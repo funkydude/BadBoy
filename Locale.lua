@@ -9,11 +9,11 @@ L.bigButton = "Make the report button bigger"
 
 local loc = GetLocale()
 if loc == "frFR" then
-	L.spamBlocked = "BadBoy: Spam bloqué"
-	L.spamTooltip = "Affichier le spam dans une infobulle"
+	L.spamBlocked = "BadBoy : Spam bloqué"
+	L.spamTooltip = "Afficher le spam dans une infobulle"
 	L.noAnimate = "Désactiver l'animation d'impulsion du bouton."
-	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.bigButton = "Make the report button bigger"
+	L.clickToReport = "|cffeda55fClic|r pour signaler, |cffeda55fAlt-Clic|r pour faire disparaître."
+	L.bigButton = "Rendre le bouton de signalement plus gros"
 elseif loc == "deDE" then
 	L.spamBlocked = "BadBoy: Spam geblockt"
 	--L.spamTooltip = "Show spam in button tooltip"
