@@ -395,8 +395,6 @@ local instantReportList = {
 	"skype.*website.*paypal", --Skype [RUSTAM.GARIEV] find me and I can link you website adress  If you can Pay -PayPal- we don't take what advance payment  you can pay in raid passing process
 	"service.*cyberstarlife%.ru", --Best prices and service at http://cyber-starlife.ru/ .PvE,PvP, Achievments,mounts etc with polite and friendly support!
 	"cyberstarlife%.ru.*skype", --Dont miss chance to get your Challange mode's WEAPON! Everything and more at http://cyber-starlife.ru/ or skype assortibg
-	"boost.*mount.*gold.*prestigewow", --Offering Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance, golds and a lot more ! With [www.prestige-wow.com1]
-	"prestigewow.*cheap.*market", --[CONQUEST CAP] 27.000 Conquest + Full 710 Ilvl gear boosting on [prestige-wow.com]. CHEAPEST on the market, Selfplay available !
 	--WTS Felsteel Annihilator/Ironhoof Destoyer/Lootruns Mythic or Heroic/Challenge Mode/Nemesis quest and more. visit: b o o s t h i v e . e u
 	"heroic.*more.*boosthive[%.,]eu", --WTS Hellfire Citadel Mythic & Heroic/ Challenges / PVE services and much more.  b o o s t h i v e . e u
 	"rbg.*mount.*wins.*gear.*selfplay", --███WTS:RBG 40/75wins mounts [Vicious War Kodo] and  [Horn of the Vicious War Wolf]1-75wins,full honor gear,self play,Pst
@@ -453,6 +451,7 @@ local instantReportList = {
 	"wts.*spot.*heroic.*raid.*loot.*spec.*invite", --█ WTS █ SPOTS in Emerald Nightmare Normal/Heroic raid next week, all loot for your spec is yours. /w to get invited!
 	"wts.*help.*honor.*prestige.*season.*info", --█ WTS █ Help with PvP Honor or Prestige levels and PvP Rewards today - season is starting soon! /w for info
 	"selling.*glory.*fast.*stress.*ilvl.*info", --█ Selling █ Glory of the Legion Hero - get your Leyfeather Hippogryph fast and with no stress! No ilvl requirements - /w for info
+	"loot.*piloted.*today.*%d%d%d%d.*whisper", --WTS: ▌▌THE EMERALD NIGHTMARE 7/7 (MYTHIC) ▌▌LOOT RUN ▌▌ SELFPLAY/PILOTED ▌▌MASTER LOOT ▌▌TODAY 21:00 CET▌▌Whisper me! ▌▌
 	--WTS: ▓▓ XAVIUS (HEROIC) KILL ▓▓ PERSONAL LOOT ▓▓ SELFPLAY/PILOTED ▓▓ TODAY 00:00 CET ▓▓ SUPER PRICE! Whisper me! ▓▓
 	"loot.*piloted.*%d%d%d%d.*price.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
 	--[Boostila.com] BEST PRICE FOR RAID BOOSTS,Mythic Dungeons, Character lvling, Geek Accessories and more! See on [Boostila.com]
@@ -494,7 +493,7 @@ local instantReportList = {
 	"^wtsmythickarazhandungeons[,.]*whispme", --WTS Mythić+ & Kârazhan Dungeøns. Whísp me.
 	"^wtskarazhan[,.]mythic.*mythic+dungeon$", --WTS karazhan. mythic and mythic+ dungeon
 	"^wtsboostkarazhan[,.]mythic[,.]mythicdungeon", --WTS boost karazhan. mythic. mythic+ dungeon
-	"^wtskarazhan[,.]mythic[,.]%d+/%d+mythicdungeonboost", --WTS Karazhan,Mythic+,10/10Mythic dungeon boost
+	"^wtskarazhan.*,mythic.*mythicdungeons?boost$", --WTS Karazhan,Mythic+,10/10Mythic dungeon boost
 	"^wtsemeraldnightmaremythiclootrun.*mlselfplay.*price.*gold", --WTS EmeraldNightmare Mythic lootrun (ML+selfplay) , price in gold : 4000k
 	"^wtsemeraldnightmaremythiclootrun.*mlselfplay.*20.*realmtime", --WTS EmeraldNightmare Mythic lootrun (ML+selfplay) 20.00 realm time
 	"^wtsmythicemeraldnightmare.*20.*realmtimeml", --Wts Mythic Emerald NIghtmare tonigth 20.00 realm time (ML) /w
@@ -561,6 +560,10 @@ local instantReportList = {
 	"^onespotleft.*nightmare.*mythicboost.*clear.*loot.*amazingprice.*raidstarts", --"one spot Left"Wts Emerald nightmare Mythic boost 7/7 clear including 8-12 loot Minimum for amazing price , raid starts at 15:00 st ! w me
 	"trial.*valor.*nightmare.*myth.*karazhan.*powerleveling.*muchmor", --TRIAL OF VALOR, EMERALD NIGHTMARE HC/MYTH, KARAZHAN, POWERLEVELING, MYTH+ AND MUCH MOR >>>
 	"^wts.*nightmare.*mythicboost.*clear.*loot.*amazingprice.*raidstarts", --Wts Emerald nightmare Mythic boost 7/7 clear including 8-12 loot Minimum for amazing price , raid starts at 18:00 st! w me .
+	--Doing Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, PvP Saddle, artifact power & appearance and a lot more ! visit [www.prestige-wow.com] for more details !
+	"boost.*talents.*prestigewow[%.,]c", --Offering Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance, golds and a lot more ! With [www.prestige-wow.com1]
+	"wts%d+kgoldfor%d+eu", --WTS 800k GOLD FOR  35 EURO NOW !
+	"skype.*vf3399", --[5000+ forums vouches]wts virtual currency 0.23$/k,safe gold guaranteed,mmogoldbay.NET,{laugh} my skype is vf3399
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -568,10 +571,8 @@ local instantReportList = {
 	"qq.*1505381907", --特价[Reins of the Swift Spectral Tiger]，金币28刀十万，量大优惠。等级代练，大秘境(刷橙装），荣誉等级(送坐骑），翡翠团本代练;,QQ:1505381907或者微信：babey1123
 	"qq.*593837031", --纯手工100-110 低价，大秘境1-10层热销中，翡翠梦境英雄普通包团毕业。橙装，神器三插槽，金币大量，感兴趣的联系QQ:593837031 skype:wspamela 微信 593837031
 	"100110.*q228102174", --100-110纯手工升级低价热卖，无敌飞机头 ，星光龙热卖1-2周保证拿到，，翡翠梦魇普通包团毕业火热销售中,职业大厅，神器点数，神器解锁三插槽 [，金币大量QQ228102174,微信894580231。skype.raulten1234]
-	"style.*[235]v[235].*%d+usd.*神器点数", --style公会团强力销售荣誉等级50解锁，3v3奖励马鞍，金币26USD包拍卖行手续费=秒发=库存200W 手工任务100-110练级8910层大秘境拿低保2-3层无限刷橙子和神器点数需要的MMMMM
 	"style.*强力销售.*%d+lvl.*100110", --style公会团强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工100-110等级加神器任务和大秘境代打欢迎预定
 	"100110.*苏拉玛任务.*星空龙", --纯手工90-100-110任务升级（任务全做，开启声望）。苏拉玛任务11/8。神器三插槽。荣誉50等级~（送邪气鞍座）。军团6大声望 [~手工金币30刀十万，现货秒发。200MB=10万.星空龙~无敌] 飞机头 1-2CD必出
-	"小母牛热卖金币.*包毕业.*稀有坐骑", --小母牛热卖金币29刀 =10w，人民币169.幽灵虎现货。纯手工等级，各类任务代*练。2-10层大秘境代刷。翡翠梦境H，M包团，包毕业。另有黑市坐骑，星光龙，祖格虎，稀有坐骑，水母，失落角鹰兽等
 	--小号代练--翡翠英雄本特价大秘镜3箱(橙装代刷),苏拉玛任务，堕落精灵声望，神器点代刷，解锁神器第三插槽,金币169=10万需要微信17788955341
 	--***大秘境12层保底885特价+++微信17788955341 ***超效率便宜翡翠H团***卡拉赞坐骑***金币159十万
 	--出售[Reins of the Swift Spectral Tiger].,.金币179RMB=10W,899RMB=500K.QQ微信17788955341
@@ -579,7 +580,7 @@ local instantReportList = {
 	"qq.*1433535628", --N/H翡翠梦境包团毕业， 大秘境（刷箱子刷橙装 ）， 地下城， 荣誉解锁送神器点数 ，装绑装备和材料以及各种坐骑， 金币和飞行解锁。欢迎咨询QQ:1433535628  skype：forgotmylove
 	--低层三箱刷橙 10层低保，新开11层12层低保 KLZ梦魇坐骑和全通 需要的加Q 1292706134
 	"低层三.*q1292706134", --大酋长团队 接大秘境维护1-10层，低层三箱刷橙，团本毕业，等级100-110，需要的加QQQ1292706134
-	"金币.*sesegold", --特价大小老虎,鸡蛋军马各TCG长期供货,金币169RMB=10万,98-110等级代练,大秘境保底,翡翠梦境H/M包团,5M代刷套餐特价-需要微信sesegold
+	"微信.*sesegold", --特价大小老虎,鸡蛋军马各TCG长期供货,金币169RMB=10万,98-110等级代练,大秘境保底,翡翠梦境H/M包团,5M代刷套餐特价-需要微信sesegold
 	"%d+.*万金.*支付宝", --100人民币=10万金，有30，个人出售，支付宝微信，骗子移步
 	"qq.*2278048179", --特价[Six-Feather Fan]850等级 金币32刀 10万 现货秒发。。大小老虎卡牌坐骑。 十年信誉品牌 欢迎咨询 QQ: 2278048179
 	"金.*778587316", --亲，出售金币,10w29刀，-专业快速代练100-110 纯任务升级**苏拉吗9/11,解锁世界任务，神器三槽，，代练声望，翡翠梦境包团，重返卡拉赞+梦之魇坐骑，pvp邪气鞍座等微信：mia11125 Q778587316
@@ -591,18 +592,25 @@ local instantReportList = {
 	"200万手工金币.*paypal", --→→活动促销200万手工金币2.8刀1万 低价甩~ 买的多还送坐骑 安全 效率 要的老板密→支持淘宝、paypal 多种付款 薄利多销 另售卡牌坐骑 承接各种代练
 	"qq.*153874069", --华哥超低黄金27刀10万安全效率 大小幽灵虎坐骑请咨询 承接各种代练 支持淘宝、paypal 多种付款+微信QQ：153874069
 	"qq.*3450345", --PGP工作室 H翡翠包团200刀可单买，团长分配保证6+拾取，新客户可免费再带一周。100-110代  练纯手工快速 12小时，代清世界任务，卡拉赞坐骑，联系QQ或微信都是 3450345
-	"特价出售黄金.*tcg", --特价出售黄金，各种TCG坐骑，都是仓库现货，另售剑灵金币，保证全场最低，承接各种代练，欢迎咨询
 	"练级.*bearwow[,.]com", --承接WOW 100-110练级、大秘境、卡拉赞、世界任务、神器外观、神器第三槽解锁等,纯手工，市场最低价，请登陆网站：w w w.bearwow.c o m
 	"100110.*手工金币.*%d+mb=%d+", --绝对纯手工100-110任务升级（任务全做，开启声望）。苏拉玛任务11/8。神器三插槽。荣誉50等级~（送邪气鞍座）。军团6大声望 ~手工金币26刀十万，现货秒发。170MB=10万
 	"出售特价金.*双11金币大甩卖", --出售特价金  20 for 100K    11.11    11.11 出售特价金  20 for 100K    11.11    11.11    11.11出售特价金  20 for 100K    双11金币大甩卖，需要的M  11.11    11.11 出售特价金 11.11
+	"出售特价金.*100110", --出售特价金  20 for 10W    纯手工100-110升级 翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做通关 代刷神器点数 神器三槽  星空龙 无敌 飞机头 大小幽灵虎，需要mmmmm
 	"特价出售金.*稀有坐骑", --特价出售金25for100K，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，稀有坐骑等等业务，需要的mmmmmm
+	"黄金.*神器点数.*稀有坐骑", --黄金25刀10万，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,翡翠梦境团本代练，稀有坐骑,需要的mmm
 	--特价[Reins of the Swift Spectral Tiger]，金币25for100K，等级代练纯手工，荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，稀有坐骑,需要的mmmmmmm
 	--特价[Reins of the Swift Spectral Tiger]，金币25刀10万，等级代练纯手工，神器点数，荣誉等级，大秘境刷箱子，苏拉玛1-8章,翡翠梦境团本代练，稀有坐骑,需要的mmm
 	"特价.*tiger.*稀有坐骑", --特价[Reins of the Swift Spectral Tiger]，黄金,26for100K，等级代练纯手工，荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，稀有坐骑,需要的mmmmmm
 	--出售特价金  20 for 100K    纯手工100-110升级 翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做通关 代刷神器点数 解锁神器第三槽 苏拉码任务8/11  大小幽灵虎，需要M我
 	"出售特价金.*%d+for%d+k.*100110", --出售特价金  20 for 100K    纯手工100-110升级 翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做通关 代刷神器点数 神器三槽 特价Reins of the Spectral Tiger，需要M我
 	"拿任意橙.*神器三槽.*110", --2层箱子热卖,脱非入櫛§，不在遥远.无限2箱,拿任意橙督。 8-10层大秘境,箱子+周奖励,快捷提升袛等.H梦魇包团,毕业,] 个人拾取热销中。神器三槽,110等级代练,苏拉玛任务声望代练接单.
-	"100110.*神器.*金币", --纯手工100-110，世界任务~神器三槽~苏拉玛11/8。荣誉等级（送坐骑），金币-26刀10W。星空龙~无敌 飞机头。
+	--100-110手工任务，清世界任务，荣誉等级（送坐骑），825装等毕业，5人M本840+毕业。神器三槽。大密境，苏拉玛1-8章，翡翠梦境团本。各种稀有坐骑~金25刀10万。
+	"100110.*神器.*金", --纯手工100-110，世界任务~神器三槽~苏拉玛11/8。荣誉等级（送坐骑），金币-26刀10W。星空龙~无敌 飞机头。
+	"qq.*100845995", --●橙装必备(大秘境无限刷低层箱子)√●提升装等必备(850-885装绑)√●长期在售 大秘境高层保底/卡拉赞坐骑/翡翠梦境(H/M)+勇气试炼团本/稀有坐骑~ 欢迎各wower老板咨询QQ:100845995 微信:446298161
+	"100110.*%dv%d.*神器点数", --100-110快速练级，荣誉等级50解锁，3v3马鞍，卡拉赞坐骑H翡翠包团毕业，8到10层大秘境拿2箱奖 励和低保，快速提升装等。2-3层无限刷橙子和神器点数需要的M
+	"解锁橙色物品.*欢迎咨询购买", --苏拉玛声望尊敬要塞科技第六层，解锁橙色物品（可以多带一个橙色备），包含解锁神器第三插槽 世界任务大秘境2-3层3箱子无限刷包橙业务，欢迎咨询购买
+	"业定制神器.*种最低价坐骑控", --H，M翡翠梦魇包团加支持自己上号毕业定制 神器维护加绝版坐骑T3黑市代秒各种版本成就龙坐骑,3大秘境高层2-3层3箱子无限刷，卡牌坐骑 ，各种最低价坐骑控M
+	"作室强力销售.*840.*100110", --精英工作室强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工 100-110等级加神器任务和大秘境代打欢迎预定
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -611,7 +619,7 @@ local instantReportList = {
 	"osboosting[%.,]com.*tarifs.*remise", --☼ www.os-boosting.com ☼ Le meilleur du boosting WoW à des tarifs imbattables. Donjons mythique 10/10 - Raids Cauchemar d'Emeraude 7/7 Normal & Héroïque - Métiers 700-800 - Pack 12 Pets TCG - Réputations Legion - Gold   | Code remise 5%: OS5%
 	"wallgaming.*loot.*keystone", --¤ www.WallGaming.com ¤ Raids Cauchemar d'Emeraude HM 7/7 6 loots/+ | Gloire au héros de Legion | Donjons Mythique 10/10 +5keystone | Arène 2c2 3c3 2000 & 2200 | Honneur PvP niveau 50 | Pets & Montures TCG |  N°1 FR
 	"profitez.*loot.*wallgaming", --☺♥ Profitez des dernières nouveautés de Legion maintenant  ♥☺ Cauchemar d'Emeraude HM Master Loot | Gloire au héros de Legion | Donjons Mythique+ / Karazhan 9/9 Mythique | Selle Vicieuse | Stuff PvE & PvP | www.wallgaming.com  Team FR
-	"gold.*web.*prestigewow[%.,]fr", --Propose PL Honneur et Prestige ; Débloque tous les talents pvp, équipement 840-870 ilvl, monture, puissance d'artefact & nouveau skin pour l'arme artefact, gold et bien plus encore ! Visitez notre site web : www.prestige-wow.fr pour plus d'infos !
+	"gold.*site.*prestigewow[%.,]fr", --Propose PL Honneur et Prestige ; Débloque tous les talents pvp, équipement 840-870 ilvl, monture, puissance d'artefact & nouveau skin pour l'arme artefact, gold et bien plus encore ! Visitez notre site web : www.prestige-wow.fr pour plus d'infos !
 
 	--[[ Danish ]]--
 	"^sælgerguldfor%d+", --sælger guld for 170kr pr. 100k (w for andre servere)
@@ -652,9 +660,7 @@ local instantReportList = {
 	--[mmo-prof.com] raffle: Hellfire Citadel (Difficulty level: Mythic) 13/13 including loot. Eligibility requirements to be found on [mmo-prof.com]; Heroic raids, CM GOLD, mounts, PVP and more can be found , too. We're looking forward to your visit!
 	"mmoprof.*loot.*gold", --{rt2} [mmo-prof.com] {rt2} BRF Heroic / Highmaul Heroic , Mystisch Lootruns !! Arena 2,2k - Gladiator .. Jegliche TCG Mounts , Play in a Pro Guild (Helfen euch einer absoluten Top Gilde beizutreten, alles für Gold !! Schau vorbei {rt2} [mmo-prof.com] {rt2}
 	"mythic.*coaching.*mmoprof", --Bieten Smaragdgrüner Alptraum Mythic/Heroic/Normal Lootruns. Mythic + Instanzen 2-10! Item-Level Push. Coaching für dich! Play with a Pro! Oder komm ich deine Traumgilde und erspiele dir mit Profis deine Erfolge! [mmo-prof.de]
-	"wts.*lootrun.*selfplay.*masterloot.*sofort.*gunstig", --WTS: ▓▓ Der smaragdgrüne Alptraum 7/7 (Heroisch) LOOTRUN▓▓SELFPLAY/PILOTED ▓▓ MASTER LOOT(Plündermeister )▓▓ SOFORT! ▓▓ SEHR GÜNSTIG ▓▓ Ermäßigung für Stoff, Kette und Leder ▓▓ /w ▓▓
-	--▓▓ Der smaragdgrüne Alptraum 7/7 (Heroisch) LOOTRUN▓▓SELFPLAY/PILOTED ▓▓ MASTER LOOT(Plündermeister )▓▓ HEUTE 21:00 CET▓▓ SEHR GÜNSTIG ▓▓ DER BESTE PREIS IN EUROPA ▓▓ /w ▓▓
-	"alptraum.*lootrun.*selfplay.*masterloot.*heute.*gunstig", --WTS: ▓▓ Der smaragdgrüne Alptraum 7/7 (Heroisch) LOOTRUN▓▓SELFPLAY/PILOTED ▓▓ MASTER LOOT(Plündermeister )▓▓ HEUTE 21:00 CET▓▓ SEHR GÜNSTIG ▓▓ /w ▓▓
+	"lootrun.*selfplay.*piloted.*gunstig", --WTS: ▌▌DIE PRÜFUNG DER TAPFERKEIT 3/3 (Heroisch) LOOTRUN▌▌SELFPLAY/PILOTED ▌▌ MASTER LOOT(Plündermeister ) ▌▌HEUTE 21:00 CET▌▌SEHR GÜNSTIG ▌▌ Ermäßigung für Stoff, Kette und Platte ▌▌ /w ▌▌
 	"rocketgaming.*mount.*skype", --RocketGaming die 1.Slots verfügbaren IDs von Emerald Nightmare HC/Myth, auch Nighthold sei der erste mit dem Guldan Mount! Hol dir die ClasshallTruhe der Mythic+ Inis für dein BiS Item, jede ID! Gladi/R1 Titel+Mount! Adde Skype: [christoph.rocket-gaming.]
 	"wts.*alptraum.*mythisch.*boost.*boost.*glory", --WTS Der Smaragdgrüne Alptraum Mythisch/Heroisch/Normal boosting,Karazhan boost, Mythischer Schlüsselstein boost 1-10+lvl, Mythisch dungeons boost, Glory of the Legion Hero
 }
@@ -664,6 +670,7 @@ local repTbl = {
 	["[%*%-%(%)\"!%?`'_%+#%%%^&;:~{} ]"]="",
 	["¨"]="", ["”"]="", ["“"]="", ["▄"]="", ["▀"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="",
 	["░"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="", ["«"]="", ["»"]="",
+	["▌"]="", ["√"]="", ["《"]="", ["》"]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", ["Ą"]="a", ["ą"]="a", --First letter is Russian "\208\176". Convert > \97. Note: Ą fail with strlower, include both.
