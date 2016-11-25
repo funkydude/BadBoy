@@ -564,6 +564,7 @@ local instantReportList = {
 	"boost.*talents.*prestigewow[%.,]c", --Offering Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance, golds and a lot more ! With [www.prestige-wow.com1]
 	"wts%d+kgoldfor%d+eu", --WTS 800k GOLD FOR  35 EURO NOW !
 	"skype.*vf3399", --[5000+ forums vouches]wts virtual currency 0.23$/k,safe gold guaranteed,mmogoldbay.NET,{laugh} my skype is vf3399
+	"wtskarazhanwithmount.*mythicdungeons.*valor.*nightmare", --BLACK FRIDAY SALES! DON'T MISS IT! WTS Karazhan with mount, Mythic Dungeons+, Trial of Valor, Emerald Nightmare raids
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -611,6 +612,7 @@ local instantReportList = {
 	"解锁橙色物品.*欢迎咨询购买", --苏拉玛声望尊敬要塞科技第六层，解锁橙色物品（可以多带一个橙色备），包含解锁神器第三插槽 世界任务大秘境2-3层3箱子无限刷包橙业务，欢迎咨询购买
 	"业定制神器.*种最低价坐骑控", --H，M翡翠梦魇包团加支持自己上号毕业定制 神器维护加绝版坐骑T3黑市代秒各种版本成就龙坐骑,3大秘境高层2-3层3箱子无限刷，卡牌坐骑 ，各种最低价坐骑控M
 	"作室强力销售.*840.*100110", --精英工作室强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工 100-110等级加神器任务和大秘境代打欢迎预定
+	"游戏业务专卖.*金币.*送坐骑", --游戏业务专卖，金币25刀=10万，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,英雄，史诗翡翠梦境团本代练，稀有坐骑,需要的联系
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -654,6 +656,7 @@ local instantReportList = {
 	"^gfinns@swish", --G finns @ swîsh /w
 	"^%d+kfinns@swish", --700k finns @ swish /w
 	"^nagonsomsaljerguldviaswish", --NÅGON SOM SÄLJER GULD VIA SWISH?
+	"^behoverdug@swish", --behöver du g? @ swish /w
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
