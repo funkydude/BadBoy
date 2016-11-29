@@ -274,6 +274,7 @@ local instantReportList = {
 	"^wt[bst]goldforcsgo", --WTS gold for cs:go knife, i will pay good if its  a good one, add me and /w if you are intrested
 	"^wt[bst]mywowgold.*csgoskin", --WTT: My WOW Gold for your CSGO Skins. Offer 3k per 1€ skin value. No selling, Just trading! /w me for a chat.
 	"^sellinggolds?forcsgo", --Selling golds for CS:GO skins !!
+	"^wt[bst]csgosteamgift", --WTB CS GO STEAM GIFT  (it cost 8.36 EUROS) FROM G2A FOR GOLD AND I'M OFFERING A GOOD PRICE !!!
 
 	--[[ SC 2 ]]--
 	"^wtsstarcraft.*cdkey.*gold", --WTS Starcraft Heart of Swarm cd key for wow golds.
@@ -565,13 +566,16 @@ local instantReportList = {
 	"trial.*valor.*nightmare.*myth.*karazhan.*powerleveling.*muchmor", --TRIAL OF VALOR, EMERALD NIGHTMARE HC/MYTH, KARAZHAN, POWERLEVELING, MYTH+ AND MUCH MOR >>>
 	"^wts.*nightmare.*mythicboost.*clear.*loot.*amazingprice.*raidstarts", --Wts Emerald nightmare Mythic boost 7/7 clear including 8-12 loot Minimum for amazing price , raid starts at 18:00 st! w me .
 	--Doing Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, PvP Saddle, artifact power & appearance and a lot more ! visit [www.prestige-wow.com] for more details !
-	"boo+st.*talents.*prestigewow[%.,]c", --Offering Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance, golds and a lot more ! With [www.prestige-wow.com1]
+	"boo+sl?t.*talents.*prestigewow[%.,]c", --Offering Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance, golds and a lot more ! With [www.prestige-wow.com1]
 	"wts%d+kgoldfor%d+eu", --WTS 800k GOLD FOR  35 EURO NOW !
 	"skype.*vf3399", --[5000+ forums vouches]wts virtual currency 0.23$/k,safe gold guaranteed,mmogoldbay.NET,{laugh} my skype is vf3399
 	"wtskarazhanwithmount.*mythicdungeons.*valor.*nightmare", --BLACK FRIDAY SALES! DON'T MISS IT! WTS Karazhan with mount, Mythic Dungeons+, Trial of Valor, Emerald Nightmare raids
+	"loot.*mount.*mythic.*dungeons.*sale", --►►► [WТS] ► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Karazhan lootrun + mount ► Mythic+ 0-15 lvl dungeons - TUESDAY SALE 20% OFF ◄ ask me to get more info!
 	"sale.*mount.*loot.*mythic.*dungeons", --►►► [WТS] ► SUNDAY Sale! Karazhan lootrun + mount 20% OFF► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Mythic+ 1-15 lvl dungeons ◄ ask me to get more info!
 	"wts.*mythic.*lootrun.*master.*fast.*cheap.*ready.*info", --[WTS] Now Emerald Nightmare Mythic Lootrun!Master Loot!Fast and Cheap!Ready to go in 15 min,/w me for more info
 	"selling.*nightmare.*heroic.*masterloot.*boost.*server.*info", --Selling Emerald Nightmare Heroic Masterloot boost, tomorrow at 19:00 server time, /w me for more info!!
+	"sale.*speedruncharacter[%.,]net", --WTS BEST OFFERS EMERALD NIGHTMARE HC/MYTH,TRIAL OF VALOR, KARAZHAN,MYTH+ AND MUCH MORE SALE START [SPEEDRUNCHARACTER.NET]
+	"wts.*xavius.*boost.*completed500.*curve.*%d+.*me.*info", --WTS HC Xavius boost we completed 500+ run take your curve next run 16:40 server time /w me more info !!
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -661,9 +665,11 @@ local instantReportList = {
 	"^gfinnsswish$", --g finns swish
 	"^gfinnsbilligt$", --g finns billigt
 	"^gfinns@swish", --G finns @ swîsh /w
-	"^%d+kfinns@swish", --700k finns @ swish /w
+	--900k finns att köpa Billigt @swish
+	"^%d+kfinns.*@swish", --700k finns @ swish /w
 	"^nagonsomsaljerguldviaswish", --NÅGON SOM SÄLJER GULD VIA SWISH?
 	"^behoverdug@swish", --behöver du g? @ swish /w
+	"^gfinnsatt?kopa.*swish", --G finns att köpa genom swish
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
