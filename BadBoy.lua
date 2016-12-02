@@ -122,7 +122,7 @@ local boostingList = {
 	"store",
 	"pri?est[ie]ge",
 	"quality",
-	"piloted",
+	"pil[o0]ted",
 }
 local boostingWhiteList = {
 	"members",
@@ -262,6 +262,7 @@ local instantReportList = {
 	"^sellingsomecsgocase", --Selling some CS:GO cases! PM ME!
 	"^sellingcsgocase", --Selling CS:GO cases! PM ME!
 	"^sellingcsgoitem", --{rt1} SELLING CS GO ITEMS FOR GOLD {rt1}
+	"^wt[bst]csskins", --wtb cs skins /w me what u have 300k +
 	"^wt[bst]keysincsgo", --WTB Keys in CS:GO for 3k each!
 	"wanttobuy[/\\]sellcsgoitem", --Want to buy/sell CS:GO items whisper me for more information :)
 	"wanttosell[/\\]buycsgoitem", --Want to sell/buy CS:GO items for wow gold, whisper me for more information :)
@@ -388,40 +389,6 @@ local instantReportList = {
 	"^wts%d+days?gamecard", --wts 60 days game card /w me
 	"^wts%d+kfor%d+euro", --WTS 950K FOR 35EURO(PayPal) /w me !
 
-	--[[  Misc  ]]--
-	"mythic.*price.*perfectway[%.,]one", --WTS Dungeons Mythic, Dungeons Heroic in Legion everyday!!! New prices [(Perfectway.one)]
-	"mount.*achiev.*raidboost[%.,]com", --Farewell Draenor! Mounts/Glories/Achievements. Hurry up to all WoD bounties on [Raidboost.com]
-	"best.*market.*gamebion", --◄Need help in HFC? We have a best offers on the market from various guilds and teams! For more info visit GAMEBION com►
-	"gear.*selfplay.*euro", --8/10 Mythic Dungeon-PL-Selfplay -90 euro 10/10 -PL- Selfplay -110 euro---Full Mythic Gear 840+ items in all slots -Selfplay--160 euro-
-	"skype.*website.*paypal", --Skype [RUSTAM.GARIEV] find me and I can link you website adress  If you can Pay -PayPal- we don't take what advance payment  you can pay in raid passing process
-	"service.*cyberstarlife%.ru", --Best prices and service at http://cyber-starlife.ru/ .PvE,PvP, Achievments,mounts etc with polite and friendly support!
-	"cyberstarlife%.ru.*skype", --Dont miss chance to get your Challange mode's WEAPON! Everything and more at http://cyber-starlife.ru/ or skype assortibg
-	--WTS Felsteel Annihilator/Ironhoof Destoyer/Lootruns Mythic or Heroic/Challenge Mode/Nemesis quest and more. visit: b o o s t h i v e . e u
-	"heroic.*more.*boosthive[%.,]eu", --WTS Hellfire Citadel Mythic & Heroic/ Challenges / PVE services and much more.  b o o s t h i v e . e u
-	"rbg.*mount.*wins.*gear.*selfplay", --███WTS:RBG 40/75wins mounts [Vicious War Kodo] and  [Horn of the Vicious War Wolf]1-75wins,full honor gear,self play,Pst
-	"easyboost[%.,]com.*skype", --EASY-BOOST.COM | WE HELP WITH ANY PVP OR PVE ACHIEVMENTS, MOUNTS AND EVERYTHING! VISIT [EASY-BOOST.COM] OR CONTACT VIA SKYPE: EASY-BOOSTSUPPORT
-	--Get Grove Warden Mount(moose), Mythic Dungeons, Hellfire Citadell and other on http://boostinglive.com
-	"mount.*boostinglive[%.,]com", --Cheapest Grove Warden Mount(moose), Mythic Dungeons Hellfire Citadell and other on http://boostinglive.com
-	"power.*boostinglive[%.,]com", --►►Artifact Power Farming. Heroic/Mythic Dungeons boost. Leveling [http://boostinglive.com] ►►
-	"gift.*boostinglive[%.,]com", --Get the best gear in game, and receive a gift. All news on http://boostinglive.com
-	"price.*boostinglive[%.,]com", --Hello! You can check prices on our website http://boostinglive.com If you have any questions feel free to ask our live chat support!
-	--Arena Ratings 2200/2400/2700, selfplay, Big Conquest Cap, Honor gear, HFC normal/Herioc, /w me !
-	"arena.*2200.*selfplay.*conquest.*normal", --Arena Ratings 2200/2400/2700, selfplay, Conquest Cap, Coaching with pro, Honor gear, HFC normal/Herioc, /w me !
-	"helping.*arena.*selfplay.*challenge.*con[gq]uest", --Helping with Arena Rating, Selfplay, Challenge Modes, 100 wins, BIG conguest CAP! /w
-	"helping.*2200.*selfplay.*challenge.*con[gq]uest", --Helping with 1800/2000/2200/2400/2600! Selfplay, Challenge Modes, 100 wins,BIG CONQUEST POINTS CAP! /w
-	"info.*cubeboost[%.,]c", --Wanna more info?  -> http://cubeboost.com
-	"company.*dantum[%.,]gg", --We are a new boosting company DANTUM! We will help you with Arena, RBGS, PVE. Come visit our website [DANTUM.GG] for more information
-	"boost.*today.*boomboost[%.,]com", --Boost Arena and HFC Heroic, have spots today, also conquest cap/honor/levelng boom-boost.com!
-	"client.*info.*boomboost[%.,]com", --525+ clients was happy, more info here -> boom-boost.com
-	"pro.*boomboost[%.,]com", --Arena 2000/2400/Glad, Honor Gear, Leveling 90-100. Big cap with glads, Want to play with Pro? boom-boost,сoм
-	"raid.*heroic.*loot.*exping.*fast.*power.*info", --Emerald Raids Heroic/Noraml Masterloot/Personal loot Today , Exping 100-110 (fast 10 hours) Artefacts power, pm me for more info!
-	"battlechest.*token.*add.*telegram", --BattleChest 40T , Legion 140T , WoW Token 30T ,Tala 400T Har 1000 Ta ADD https://telegram.me/<snip>
-	"wts.*mount.*share.*cheap.*gold", --WTS all rare mounts ,include[Reins of the Time-Lost Proto-Drake]/[Reins of the Grey Riding Camel]},no acc share .also sell Cheaper wow gold !!!!./Pst
-	"selling.*mount.*pet.*pvp.*purchase", --Selling all rare mounts, TGC pets, all PvP services, and much more! We offer great savings for combo purchases! Pst!
-	"wts.*power.*levell?ing.*loot.*info", --WTS Artifact power and leveling, Mythic/Heroic Dungeons with additional loot,Fast leveling to 110!Write me for info.
-	"wts.*gear.*loot.*levell?ing.*info", --WTS 840+ ilvl gear, Mythic/Heroic Dungeons with additional loot! Fast leveling 100-110 in 9-12 hour! Write me for more info!
-	"wts.*loot.*raid.*hurry.*best.*write", --♥WTS Emerald Nightmare Heroic/Normal with all loot for you! Raids run everyday!♥Hurry get best equipment!♥Write me for info!♥
-
 	--[[  2016  ]]--
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
 	"titaniumbay.*livraison", ---= TitaniumBay =- Obtenez 10% supplémentaire! Livraison rapide et sûr!
@@ -493,6 +460,7 @@ local instantReportList = {
 	"help.*le?ve?ling.*demonboost[%.,]com", --Helping with lvling 100-110. Emerald Nightmare, Return to Karazhan, Mythic+ dungeons. [Demon-Boost.com]
 	"fast.*leveling.*honor.*в[o0][o0]st", -- ►►►Fastest leveling 100-110 (6-12 hours), 850+ gear, Honor Ranks and MUCH MORE on [RРD-В00SТ,С0М]◄◄◄
 	"^wtsmythickarazhandungeons[,.]*whispme", --WTS Mythić+ & Kârazhan Dungeøns. Whísp me.
+	"^wtskarazhanboost[,.]mythic.*mythicdungeons?boost.*info", --WTS Karazhan boost, Mythic+ CHEST RUN, Mythic dungeons boost. /w for info
 	"^wtskarazhan[,.]mythic.*mythic+dungeon$", --WTS karazhan. mythic and mythic+ dungeon
 	"^wtsboostkarazhan[,.]mythic[,.]mythicdungeon", --WTS boost karazhan. mythic. mythic+ dungeon
 	"^wtskarazhan.*,mythic.*mythicdungeons?boost$", --WTS Karazhan,Mythic+,10/10Mythic dungeon boost
@@ -570,12 +538,14 @@ local instantReportList = {
 	"wts%d+kgoldfor%d+eu", --WTS 800k GOLD FOR  35 EURO NOW !
 	"skype.*vf3399", --[5000+ forums vouches]wts virtual currency 0.23$/k,safe gold guaranteed,mmogoldbay.NET,{laugh} my skype is vf3399
 	"wtskarazhanwithmount.*mythicdungeons.*valor.*nightmare", --BLACK FRIDAY SALES! DON'T MISS IT! WTS Karazhan with mount, Mythic Dungeons+, Trial of Valor, Emerald Nightmare raids
-	"loot.*mount.*mythic.*dungeons.*sale", --►►► [WТS] ► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Karazhan lootrun + mount ► Mythic+ 0-15 lvl dungeons - TUESDAY SALE 20% OFF ◄ ask me to get more info!
+	"loot.*mount.*mythic.*dungeons.*ask", --►►► [WТS] ► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Karazhan lootrun + mount ► Mythic+ 0-15 lvl dungeons - TUESDAY SALE 20% OFF ◄ ask me to get more info!
 	"sale.*mount.*loot.*mythic.*dungeons", --►►► [WТS] ► SUNDAY Sale! Karazhan lootrun + mount 20% OFF► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Mythic+ 1-15 lvl dungeons ◄ ask me to get more info!
 	"wts.*mythic.*lootrun.*master.*fast.*cheap.*ready.*info", --[WTS] Now Emerald Nightmare Mythic Lootrun!Master Loot!Fast and Cheap!Ready to go in 15 min,/w me for more info
 	"selling.*nightmare.*heroic.*masterloot.*boost.*server.*info", --Selling Emerald Nightmare Heroic Masterloot boost, tomorrow at 19:00 server time, /w me for more info!!
-	"sale.*speedruncharacter[%.,]net", --WTS BEST OFFERS EMERALD NIGHTMARE HC/MYTH,TRIAL OF VALOR, KARAZHAN,MYTH+ AND MUCH MORE SALE START [SPEEDRUNCHARACTER.NET]
+	"trial.*speedruncharacter[%.,]net", --WTS BEST OFFERS EMERALD NIGHTMARE HC/MYTH,TRIAL OF VALOR, KARAZHAN,MYTH+ AND MUCH MORE SALE START [SPEEDRUNCHARACTER.NET]
 	"wts.*xavius.*boost.*completed500.*curve.*%d+.*me.*info", --WTS HC Xavius boost we completed 500+ run take your curve next run 16:40 server time /w me more info !!
+	"^wtsenmythiclootruntonight.*goldpossible.*w", --WTS EN Mythic Lootrun tonight (ML, gold possible) ./w
+	"^wts.*keystoneconqueror.*karazhan.*fast,smoothandfair.*whisp", --WTS [Keystone Conqueror] (2-12 lvl) and Karazhan, fast, smooth and fair. Whisper for more info.
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -624,6 +594,8 @@ local instantReportList = {
 	"业定制神器.*种最低价坐骑控", --H，M翡翠梦魇包团加支持自己上号毕业定制 神器维护加绝版坐骑T3黑市代秒各种版本成就龙坐骑,3大秘境高层2-3层3箱子无限刷，卡牌坐骑 ，各种最低价坐骑控M
 	"作室强力销售.*840.*100110", --精英工作室强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工 100-110等级加神器任务和大秘境代打欢迎预定
 	"游戏业务专卖.*金币.*送坐骑", --游戏业务专卖，金币25刀=10万，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,英雄，史诗翡翠梦境团本代练，稀有坐骑,需要的联系
+	"感恩节大甩卖金子.*橙装掉率很高", --感恩节大甩卖金子 翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做通关 代刷神器点数 神器三槽  星空龙 无敌 飞机头 大小幽灵虎，感恩节大甩卖金子，金子感恩节大甩卖
+	"送坐骑.*金%d+刀%d+万", --等级代练纯手工任务，KLZ龙，荣誉等级（送坐骑），神器三槽。5人H-M本毕业。大密境（刷箱子），苏拉玛1-8章，KLZ龙，翡翠梦境团本最低价。星空龙，无敌，飞机头。金25刀10万。
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
