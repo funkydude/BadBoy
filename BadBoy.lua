@@ -734,6 +734,9 @@ local spamCollector, spamLogger, prevShow = {}, {}, 0
 local btn, reportFrame
 local function BadBoyIsFriendly(name, flag, lineId, guid)
 	if not guid then return true end -- LocalDefense automated prints
+	if not guid:find("^Player") then
+		print("BadBoy: Unexpected GUID requested by an addon:", guid)
+	end
 	local _, characterName = BNGetGameAccountInfoByGUID(guid)
 	if characterName or not CanComplainChat(lineId) or IsGuildMember(guid) or IsCharacterFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
 		return true
