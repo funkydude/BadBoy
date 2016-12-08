@@ -114,6 +114,7 @@ local boostingList = {
 	"discount",
 	"selfplay",
 	"coaching",
+	"live",
 	"mythic",
 	"leveling",
 	"accshar[ei]",
@@ -396,11 +397,9 @@ local instantReportList = {
 	"titaniumbay.*minut[eo]", --TitaniumBay - Erhalten Sie 40% mehr Gold in 15 Minuten! Das beste Angebot in der Stadt!
 	"titaniumbay.*gold", -- -= TitaniumBay =- Get up to 30% more gold compared to WoW Token
 	"titaniumbay.*gratis", ---= TiвtaniumBay =- Oferta Limitada >> Obtenga el 50% extra oro Gratis!
-	"boost.*mythic.*also.*10lvl.*key", --Boost 8\8 10\10 mythic(mythic+),also we can do 10lvl(i have key) key at once
 	--WTS [Keystone Conqueror] (2-10lvl) ►ŠELFPLĄY◄ Teâm Is Reâdy To Gø Right Nøw! ŠKYPĒ: FindGuys
 	"skype.*findguys", --Hello. Im sorry but I cant write here all prices. For all info and prices please add me in Skype: FindGuys
-	"mythic.*loot.*bestboost[%.,]c", --WTS: EN 7/7| Mythic+2-10 |LVL 100-110| Loot Run | Selfplay/Piloted | Master loot | SSL | More info>>> Best-boost .c0m <<
-	"best.*gear.*achiev.*mythic.*visit", -->> Best Boost here! We will help u with full PVE and PVP gear, achievs, mythic, raids and more. Visit web: Best-boost .c0m <<
+	"mythic.*bestboost[%.,]c", --WTS: EN 7/7| Mythic+2-10 |LVL 100-110| Loot Run | Selfplay/Piloted | Master loot | SSL | More info>>> Best-boost .c0m <<
 	"keystone.*mythic.*boost.*skype", --WTS Mythic+ CHEST RUN, Mythic+ (up keystone), Mythic dungeons boost. SKYPE - fastchallenge
 	--WTS 10/10 Mythic and Heroic all info in skype: qReaper_bst
 	"skype.*qreaperbst", --Add skype: qReaper_bst foк price and info
@@ -436,7 +435,6 @@ local instantReportList = {
 	"rbg.*artifact.*mount.*accshar", --▓▓WTS RBGs,1-75wins(get HR and artifact power and 6vicious mounts)[Vicious War Trike]and[Vicious Saddle]right now,no accshare▓PST
 	"heroic.*amazingprice.*strong.*group.*gua?rantee.*drop.*spot", --Wts Emerald nightmare Heroic 7/7 clear for amazing price with strong guide groupe we gurantee you Full heroic loot that drop for your class on tonight 19:00 st only 2 spots ! w me for more infos.
 	--WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 key,write me for info.
-	"wtsmythic.*key.*%d/%d/%d.*write.*info", --WTS Mythic + KEY~/+2/+3/+6/+8/+9/+10 /Write me for info.
 	"mythicstore[%.,]com.*skype", --For more details visit https://mythic-store.com , or write in skype: mythic-store
 	"wts.*tonight.*arena.*rbg.*mythic.*coaching", --WTS Emerald Nightmare 7/7 MYTHIC with ML tonight , 1 spot for now / Arena/RBG/Mythics/Coaching /w for info
 	--Legion 139Toman Game Time 30Toman Gold har 1k 450Toman Level Up ham Anjam midim |Web: www.iran-blizzard.com  Tel: 000000000000
@@ -539,12 +537,13 @@ local instantReportList = {
 	"sale.*mount.*loot.*mythic.*dungeons", --►►► [WТS] ► SUNDAY Sale! Karazhan lootrun + mount 20% OFF► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Mythic+ 1-15 lvl dungeons ◄ ask me to get more info!
 	"wts.*mythic.*lootrun.*master.*fast.*cheap.*ready.*info", --[WTS] Now Emerald Nightmare Mythic Lootrun!Master Loot!Fast and Cheap!Ready to go in 15 min,/w me for more info
 	"selling.*nightmare.*heroic.*masterloot.*boost.*server.*info", --Selling Emerald Nightmare Heroic Masterloot boost, tomorrow at 19:00 server time, /w me for more info!!
-	"trial.*speedruncharacter[%.,]net", --WTS BEST OFFERS EMERALD NIGHTMARE HC/MYTH,TRIAL OF VALOR, KARAZHAN,MYTH+ AND MUCH MORE SALE START [SPEEDRUNCHARACTER.NET]
+	"best.*speedruncharacter[%.,]net", --WTS BEST OFFERS EMERALD NIGHTMARE HC/MYTH,TRIAL OF VALOR, KARAZHAN,MYTH+ AND MUCH MORE SALE START [SPEEDRUNCHARACTER.NET]
 	"wts.*xavius.*boost.*completed500.*curve.*%d+.*me.*info", --WTS HC Xavius boost we completed 500+ run take your curve next run 16:40 server time /w me more info !!
 	"^wtsenmythiclootruntonight.*goldpossible.*w", --WTS EN Mythic Lootrun tonight (ML, gold possible) ./w
 	"^wts.*keystoneconqueror.*karazhan.*fast,smoothandfair.*whisp", --WTS [Keystone Conqueror] (2-12 lvl) and Karazhan, fast, smooth and fair. Whisper for more info.
 	"^wtsen.*tov.*boost.*mythic.*karazhan.*mount.*info", --WTS EN, TOV heroic BOOST (master loot),  Mythic+ (up to 12+ keys), Karazhan (with Nightbane and mount) PM for info
 	"^wtstoday.*nightmaremythic.*master.*fastcheap.*info", --WTS Today Emerald Nightmare Mythic(7/7) with Master Loot||Fast & Cheap||/w me for more info
+	"^=*wts=*today.*nightmaremythic.*master.*bestprice$", --=WTS= Today Emerald Nightmare Mythic(7/7)!Master Loot!Best Price!!!
 	"wts.*lootrun.*myth.*mount.*offers.*live", --■■■ <[WТS]> ToV NM/HC lootrun>; EN myth/hc/nm with loot; Karazhan lootrunMount, Mythic dungeons,<►Crazy offers◄> /w to get the best offer today!!! <Live support>■■■
 	--WWW,PVPOK,C0MGold,Item,Mounts On Hot Sale!WWW,PVPOK,C0M
 	"pvpok[%.,]c[o0]m.*www", --WWW,PVPOK,C0M100K=30$,Fast DeliveryWWW,PVPOK,C0M
@@ -554,6 +553,7 @@ local instantReportList = {
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
 	"qq.*549965838", --金币最低价20刀10w 微信ok4gold   微信或者QQ549965838 微信ok4gold  百万库存20刀=10w 百万库存20刀=10w QQ或者微信549965838 微信ok4gold  微信或者QQ549965838 微信ok4gold
 	"qq.*1505381907", --特价[Reins of the Swift Spectral Tiger]，金币28刀十万，量大优惠。等级代练，大秘境(刷橙装），荣誉等级(送坐骑），翡翠团本代练;,QQ:1505381907或者微信：babey1123
+	"微信.*1505381907", --圣诞节金币特价，25刀10万，大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本(史诗全通）,荣誉和等级代练纯手工，苏拉玛任务，大小幽灵虎等坐骑,需要的加我Q/微信：1505381907
 	"qq.*593837031", --纯手工100-110 低价，大秘境1-10层热销中，翡翠梦境英雄普通包团毕业。橙装，神器三插槽，金币大量，感兴趣的联系QQ:593837031 skype:wspamela 微信 593837031
 	"100110.*q228102174", --100-110纯手工升级低价热卖，无敌飞机头 ，星光龙热卖1-2周保证拿到，，翡翠梦魇普通包团毕业火热销售中,职业大厅，神器点数，神器解锁三插槽 [，金币大量QQ228102174,微信894580231。skype.raulten1234]
 	"style.*强力销售.*%d+lvl.*100110", --style公会团强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工100-110等级加神器任务和大秘境代打欢迎预定
@@ -599,6 +599,13 @@ local instantReportList = {
 	"游戏业务专卖.*金币.*送坐骑", --游戏业务专卖，金币25刀=10万，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,英雄，史诗翡翠梦境团本代练，稀有坐骑,需要的联系
 	"感恩节大甩卖金子.*橙装掉率很高", --感恩节大甩卖金子 翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做通关 代刷神器点数 神器三槽  星空龙 无敌 飞机头 大小幽灵虎，感恩节大甩卖金子，金子感恩节大甩卖
 	"送坐骑.*金%d+刀%d+万", --等级代练纯手工任务，KLZ龙，荣誉等级（送坐骑），神器三槽。5人H-M本毕业。大密境（刷箱子），苏拉玛1-8章，KLZ龙，翡翠梦境团本最低价。星空龙，无敌，飞机头。金25刀10万。
+	--怒刷一个人品渣子，角色名profoundsea，被X了装备退会太没有道德情义。希望收留他的公会可以继续把他插毕业 然后可以接受让他带一群人跑
+	"个人品渣子.*profoundsea", --怒刷一个人品渣子，角色名profoundsea,此人在工会骗取坦克装备毕业就退会，平常工会活动没需求就早退打大米。xsj18605816678微信 实名叫jiayxia玩一天就刷一天到你没队友为止。
+	"style.*快速练级.*50lvl", --Style工会强力手工快速练级，荣誉等级50LVL，3v3马鞍奖励，卡拉赞坐骑H和M翡翠包团毕业，10到12高层大米拿2箱奖 励和低保，2层3层无限刷橙装和神器点数奖励，另黑市高端坐骑代买。
+	--喜迎7.15版本和新春，本工作室手工110练级，荣誉50等级解锁送3v3马鞍大酬宾，强力卡拉赞坐骑M或者H翡翠包团及毕业，10到12层大米拿885低保送2箱，欧皇带你2-3层刷橙子和神器点数，欢迎咨询
+	"15版本和新春.*10", --喜迎7.15版本和新春稀有坐骑大酬宾无敌  飞机头 星光龙  季鲲子嗣  赫利东子赤炎  实验题12  黑龙  火乌鸦  纯血一周包出，10年稀有代刷经验为你服务
+	"无限拾取套餐特价.*金币25", --H/M大米2-12无限拾取套餐特价+850升级870装等套餐+H/M包团+卡拉赞全通加龙特价。。金币25十万大小老虎MMM
+	"低价出售翡翠包团.*金25", --纯手工任务升级~低价出售翡翠包团，KLZ龙。神器三槽~5人H-M本毕业。大密境（刷箱子），苏拉玛1-8章。星空龙，无敌 飞机头等坐骑。金25刀十万。
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -613,10 +620,13 @@ local instantReportList = {
 	"^sælgerguldfor%d+", --sælger guld for 170kr pr. 100k (w for andre servere)
 	"^sælgerg[ou]ld.*mobilepay", --Sælger guld, forgår over mobile pay, 100k - 150 kr
 	"tilbud.*sælger%d+k.*mobilepay", --Dagens tilbud: Sælger 200 K for blot 280 kr - whisper for mere info: Mobilepay & Swipp
-	"^sælgerguld.*skype", --Sælger guld 20k 33kr og 100k til 149kr, skype ...
-	"^sælgerguld.*priser", --Sælger guld: 200k for 250kr. Mulighed for bedre priser ved større køb
+	"sælgerguld.*skype", --Sælger guld 20k 33kr og 100k til 149kr, skype ...
+	"sælgerguld.*priser", --Sælger guld: 200k for 250kr. Mulighed for bedre priser ved større køb
 	"sælgerlidtguld.*mobilepay", --Hej, jeg sælger lidt guld via. mobilepay. Tilbud : 100k for 150kr , 250k for 350kr - Skriv for mere info. :)
-	"^sælgerg.*%d+kr?pr", --sælger g / w 1k pr. 1k
+	"sælgerg.*%d+kr?pr", --sælger g / w 1k pr. 1k
+	"sælgerguld.*info", --Hej. Sælger guld: 240 pr 200 K. [w for mere info]- mængderabat muligt
+	"nogen.*skalkobeg.*info", --Er der nogen der skal købe g? {w for mere info]
+	"sælgerguldviamp", --< SÆLGER GULD VIA MP!
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
@@ -630,7 +640,8 @@ local instantReportList = {
 	"^saljerguldsnabbtviaswish", --Säljer guld snabbt via Swish 100k=170SEK 1.7kr/1000g Billigare vid bulk  /Whispra mig och chilla på svar
 	--köper wow guld via swish
 	"^koperw?o?w?guldviaswish", --Köper guld via swish
-	"guld.*salu.*swish.*info", --Guld finns till salu via SWISH, /w för mer info
+	--Guld finns till salu, 1.3 per tusen! Betalning sker via swish! Mängdrabatt tillkommer.
+	"guldfinnstillsalu.*swish", --Guld finns till salu via SWISH, /w för mer info
 	"^saljerwowguld.*viaswish", --Säljer wow guld för 140kr per 100k, via Swish! /W
 	"^saljer%d+kguldfor.*viaswish", --Säljer 600k guld för 800kr, via swish! Nu eller aldrig
 	"^saljerguld,swish", --Säljer guld, swish
@@ -646,6 +657,7 @@ local instantReportList = {
 	"^nagonsomsaljerguldviaswish", --NÅGON SOM SÄLJER GULD VIA SWISH?
 	"^behoverdug@swish", --behöver du g? @ swish /w
 	"^gfinnsatt?kopa.*swish", --G finns att köpa genom swish
+	"spelpengar@swish", --behöver du spelpengar ? @ swish /w
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
@@ -740,6 +752,7 @@ local function BadBoyIsFriendly(name, flag, lineId, guid)
 	if not guid then return true end -- LocalDefense automated prints
 	if not guid:find("^Player") then
 		print("BadBoy: Unexpected GUID requested by an addon:", guid)
+		return true
 	end
 	local _, characterName = BNGetGameAccountInfoByGUID(guid)
 	if characterName or not CanComplainChat(lineId) or IsGuildMember(guid) or IsCharacterFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
