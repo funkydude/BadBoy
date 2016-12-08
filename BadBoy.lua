@@ -548,6 +548,7 @@ local instantReportList = {
 	"wts.*lootrun.*myth.*mount.*offers.*live", --■■■ <[WТS]> ToV NM/HC lootrun>; EN myth/hc/nm with loot; Karazhan lootrunMount, Mythic dungeons,<►Crazy offers◄> /w to get the best offer today!!! <Live support>■■■
 	--WWW,PVPOK,C0MGold,Item,Mounts On Hot Sale!WWW,PVPOK,C0M
 	"pvpok[%.,]c[o0]m.*www", --WWW,PVPOK,C0M100K=30$,Fast DeliveryWWW,PVPOK,C0M
+	"wtsfast.*smooth.*karazhan.*mount.*valor.*nightmare.*wisp", --WTS FAST and SMOOTH Karazhan with mount, Trial of Valor, Emerald Nightmare run. Wisp!
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
