@@ -537,6 +537,7 @@ local instantReportList = {
 	"sale.*mount.*loot.*mythic.*dungeons", --►►► [WТS] ► SUNDAY Sale! Karazhan lootrun + mount 20% OFF► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Mythic+ 1-15 lvl dungeons ◄ ask me to get more info!
 	"wts.*mythic.*lootrun.*master.*fast.*cheap.*ready.*info", --[WTS] Now Emerald Nightmare Mythic Lootrun!Master Loot!Fast and Cheap!Ready to go in 15 min,/w me for more info
 	"selling.*nightmare.*heroic.*masterloot.*boost.*server.*info", --Selling Emerald Nightmare Heroic Masterloot boost, tomorrow at 19:00 server time, /w me for more info!!
+	"cheap.*speedruncharacter[%.,]net", --WTS CHEAP price En hc/myth, kara + mount raid, myth + chest run, ToV hm/norm, dungeons and much more [SpeedRunCharacter.net]
 	"best.*speedruncharacter[%.,]net", --WTS BEST OFFERS EMERALD NIGHTMARE HC/MYTH,TRIAL OF VALOR, KARAZHAN,MYTH+ AND MUCH MORE SALE START [SPEEDRUNCHARACTER.NET]
 	"wts.*xavius.*boost.*completed500.*curve.*%d+.*me.*info", --WTS HC Xavius boost we completed 500+ run take your curve next run 16:40 server time /w me more info !!
 	"^wtsenmythiclootruntonight.*goldpossible.*w", --WTS EN Mythic Lootrun tonight (ML, gold possible) ./w
@@ -548,6 +549,9 @@ local instantReportList = {
 	--WWW,PVPOK,C0MGold,Item,Mounts On Hot Sale!WWW,PVPOK,C0M
 	"pvpok[%.,]c[o0]m.*www", --WWW,PVPOK,C0M100K=30$,Fast DeliveryWWW,PVPOK,C0M
 	"wtsfast.*smooth.*karazhan.*mount.*valor.*nightmare.*wisp", --WTS FAST and SMOOTH Karazhan with mount, Trial of Valor, Emerald Nightmare run. Wisp!
+	"wts.*nightmare.*heroic.*ml.*quality.*discount.*come.*items", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. High [quality.Discount] for cloth/mail/leather! Come get your 865+ items.
+	"wts.*heroic.*raid.*tonight.*come.*items.*quality.*discount", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. Raid tonight at 19.00 CET. Come get your 865+ [items.High] [quality.Discount] for cloth/leather/mail!
+	"wts.*nightmare.*valor.*mythic.*le?ve?ling.*price.*info", --►►►WTS: THE EMERALD NIGHTMARE | TRIAL OF VALOR | MYTHIC DUNGEONS | CHARACTER LVLing | BEST PRICE | WHISPER ME FOR MORE INFO!◄◄◄
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -658,6 +662,7 @@ local instantReportList = {
 	"^behoverdug@swish", --behöver du g? @ swish /w
 	"^gfinnsatt?kopa.*swish", --G finns att köpa genom swish
 	"spelpengar@swish", --behöver du spelpengar ? @ swish /w
+	"^guldfinns.*kopa.*swish$", --Guld finns att köpa genom swish
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
