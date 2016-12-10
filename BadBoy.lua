@@ -124,6 +124,7 @@ local boostingList = {
 	"pri?est[ie]ge",
 	"quality",
 	"pil[o0]ted",
+	"unlock",
 }
 local boostingWhiteList = {
 	"members",
@@ -197,6 +198,11 @@ local whiteList = {
 	"нoвoбpaн", --ru, recruits
 	"лфг", --ru, lfg
 	"peйд", --ru, raid
+}
+local sites = {
+	"prestigewow[%.,]com",
+	"dving[%.,]net",
+	"speedruncharacter[%.,]net",
 }
 
 --Any entry here will instantly report/block
@@ -459,9 +465,6 @@ local instantReportList = {
 	"^wtskarazhan[,.]mythic.*mythic+dungeon$", --WTS karazhan. mythic and mythic+ dungeon
 	"^wtsboostkarazhan[,.]mythic[,.]mythicdungeon", --WTS boost karazhan. mythic. mythic+ dungeon
 	"^wtskarazhan.*,mythic.*mythicdungeons?boost$", --WTS Karazhan,Mythic+,10/10Mythic dungeon boost
-	"^wtsemeraldnightmaremythiclootrun.*mlselfplay.*price.*gold", --WTS EmeraldNightmare Mythic lootrun (ML+selfplay) , price in gold : 4000k
-	"^wtsemeraldnightmaremythiclootrun.*mlselfplay.*20.*realmtime", --WTS EmeraldNightmare Mythic lootrun (ML+selfplay) 20.00 realm time
-	"^wtsmythicemeraldnightmare.*20.*realmtimeml", --Wts Mythic Emerald NIghtmare tonigth 20.00 realm time (ML) /w
 	"rbg.*boost.*2200.*yourself.*account.*sharing.*info", --{RBG PUSH} Wts RBG Boost /1800/2000/2200/HOTA . You play yourself/NO account SHARING /w for more info  :)
 	"rbg.*honor.*priestige.*mount.*selfplay", --WTS RBG 1-75wins(honor rank/Priestige),6RBG mounts[Vicious Saddle]and BOP mount[Reins of the Long-Forgotten Hippogryph]},self play .PST
 	--[TOPBOOST.PRO] - WTS HEROIC EN (PL) at 18.00 Server time. MYTHIC +10. KATAZHAN RUN and MORE
@@ -555,7 +558,7 @@ local instantReportList = {
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
-	"qq.*549965838", --金币最低价20刀10w 微信ok4gold   微信或者QQ549965838 微信ok4gold  百万库存20刀=10w 百万库存20刀=10w QQ或者微信549965838 微信ok4gold  微信或者QQ549965838 微信ok4gold
+	"微信.*549965838", --金币最低价20刀10w 微信ok4gold   微信或者QQ549965838 微信ok4gold  百万库存20刀=10w 百万库存20刀=10w QQ或者微信549965838 微信ok4gold  微信或者QQ549965838 微信ok4gold
 	"qq.*1505381907", --特价[Reins of the Swift Spectral Tiger]，金币28刀十万，量大优惠。等级代练，大秘境(刷橙装），荣誉等级(送坐骑），翡翠团本代练;,QQ:1505381907或者微信：babey1123
 	"微信.*1505381907", --圣诞节金币特价，25刀10万，大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本(史诗全通）,荣誉和等级代练纯手工，苏拉玛任务，大小幽灵虎等坐骑,需要的加我Q/微信：1505381907
 	"qq.*593837031", --纯手工100-110 低价，大秘境1-10层热销中，翡翠梦境英雄普通包团毕业。橙装，神器三插槽，金币大量，感兴趣的联系QQ:593837031 skype:wspamela 微信 593837031
@@ -596,13 +599,6 @@ local instantReportList = {
 	--100-110手工任务，清世界任务，荣誉等级（送坐骑），825装等毕业，5人M本840+毕业。神器三槽。大密境，苏拉玛1-8章，翡翠梦境团本。各种稀有坐骑~金25刀10万。
 	"100110.*神器.*金", --纯手工100-110，世界任务~神器三槽~苏拉玛11/8。荣誉等级（送坐骑），金币-26刀10W。星空龙~无敌 飞机头。
 	"qq.*100845995", --●橙装必备(大秘境无限刷低层箱子)√●提升装等必备(850-885装绑)√●长期在售 大秘境高层保底/卡拉赞坐骑/翡翠梦境(H/M)+勇气试炼团本/稀有坐骑~ 欢迎各wower老板咨询QQ:100845995 微信:446298161
-	"100110.*%dv%d.*神器点数", --100-110快速练级，荣誉等级50解锁，3v3马鞍，卡拉赞坐骑H翡翠包团毕业，8到10层大秘境拿2箱奖 励和低保，快速提升装等。2-3层无限刷橙子和神器点数需要的M
-	"解锁橙色物品.*欢迎咨询购买", --苏拉玛声望尊敬要塞科技第六层，解锁橙色物品（可以多带一个橙色备），包含解锁神器第三插槽 世界任务大秘境2-3层3箱子无限刷包橙业务，欢迎咨询购买
-	"业定制神器.*种最低价坐骑控", --H，M翡翠梦魇包团加支持自己上号毕业定制 神器维护加绝版坐骑T3黑市代秒各种版本成就龙坐骑,3大秘境高层2-3层3箱子无限刷，卡牌坐骑 ，各种最低价坐骑控M
-	"作室强力销售.*840.*100110", --精英工作室强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工 100-110等级加神器任务和大秘境代打欢迎预定
-	"游戏业务专卖.*金币.*送坐骑", --游戏业务专卖，金币25刀=10万，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,英雄，史诗翡翠梦境团本代练，稀有坐骑,需要的联系
-	"感恩节大甩卖金子.*橙装掉率很高", --感恩节大甩卖金子 翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做通关 代刷神器点数 神器三槽  星空龙 无敌 飞机头 大小幽灵虎，感恩节大甩卖金子，金子感恩节大甩卖
-	"送坐骑.*金%d+刀%d+万", --等级代练纯手工任务，KLZ龙，荣誉等级（送坐骑），神器三槽。5人H-M本毕业。大密境（刷箱子），苏拉玛1-8章，KLZ龙，翡翠梦境团本最低价。星空龙，无敌，飞机头。金25刀10万。
 	--怒刷一个人品渣子，角色名profoundsea，被X了装备退会太没有道德情义。希望收留他的公会可以继续把他插毕业 然后可以接受让他带一群人跑
 	"个人品渣子.*profoundsea", --怒刷一个人品渣子，角色名profoundsea,此人在工会骗取坦克装备毕业就退会，平常工会活动没需求就早退打大米。xsj18605816678微信 实名叫jiayxia玩一天就刷一天到你没队友为止。
 	"style.*快速练级.*50lvl", --Style工会强力手工快速练级，荣誉等级50LVL，3v3马鞍奖励，卡拉赞坐骑H和M翡翠包团毕业，10到12高层大米拿2箱奖 励和低保，2层3层无限刷橙装和神器点数奖励，另黑市高端坐骑代买。
@@ -610,6 +606,25 @@ local instantReportList = {
 	"15版本和新春.*10", --喜迎7.15版本和新春稀有坐骑大酬宾无敌  飞机头 星光龙  季鲲子嗣  赫利东子赤炎  实验题12  黑龙  火乌鸦  纯血一周包出，10年稀有代刷经验为你服务
 	"无限拾取套餐特价.*金币25", --H/M大米2-12无限拾取套餐特价+850升级870装等套餐+H/M包团+卡拉赞全通加龙特价。。金币25十万大小老虎MMM
 	"低价出售翡翠包团.*金25", --纯手工任务升级~低价出售翡翠包团，KLZ龙。神器三槽~5人H-M本毕业。大密境（刷箱子），苏拉玛1-8章。星空龙，无敌 飞机头等坐骑。金25刀十万。
+	"低层刷橙装和高层拿低保.*大小幽灵虎等稀有坐骑", --圣诞节特价，金子23刀=10万，大秘境刷箱子（低层刷橙装和高层拿低保）,英雄，史诗翡翠梦境团本,等级代练纯手工，神器点数，荣誉等级，苏拉玛1-8章，大小幽灵虎等稀有坐骑,需要的mm
+	"金币大量库存.*飞机头等坐骑", --手工任务升级，5人M本毕业。金币大量库存，威望等级~解锁苏拉玛1-8章，神器三插槽，翡翠梦魔包团最低价。星空龙，无敌，飞机头等坐骑。
+	"^marine.*老牌华人实力公会", --Marine 20M，30H团本业务，（老牌华人实力公会，进度最快，活跃玩家人数最多)支持包团，全LOOT及个人拾取
+	--Marine5人本成就及各种，卡拉赞，5Mx10 大秘境10层低保ilvl880 及大秘境15层幻化解锁
+	"^marine.*幻化", --Marine PVP一起打上分，2V2，3V3上分2000-2400，决斗者，角斗士称号及精锐幻化套餐
+	"^marine便宜金子", --Marine 便宜金子
+	"守望先锋上分.*2000.*3000.*前私密谈", --守望先锋上分 2000前每100分40， 2500前每100分50， 3000分60，4000前私密谈
+	--翡翠梦魇H/M副本包团包毕业装备，金币大量库存,j神器三插槽，威望等级，5M大米，手工升级，欢迎咨询,绝不忽悠.
+	"金币大量库存.*欢迎咨询", --Leo 手工等级业务,翡翠梦魇H/M包团，包毕业，H包团送普通包团，神器三插槽，神器能量，特价金币大量库存，解锁苏拉玛，荣誉和威望1234，全部纯手工，欢迎咨询
+	"^style.*光龙无敌火鹰等热卖", --Style手工练级，3v3马鞍奖励和威望等级，荣誉等级50,英雄H史诗M翡翠梦魇包团及毕业,10和12层大米拿2箱奖励或低保提升装等，2层3层欧皇低价无限刷橙装，卡拉赞坐骑星光龙无敌火鹰等热卖。
+
+	--[[  Russian  ]]--
+	"maxlvl[%.,]net.*пpoдaжa", --MAXLVL.NET Продажа персонажей 110(870+илвл). Лут-рейды ИК Нормал, Героик, Эпох. МИФ+15. Фарм престижа. Оденем вашего персонажа до 885+ илвл.
+	--Успей получить [Мстительный боец]  Цена снижена к концу сезона - https://LootKeeper.com
+	"цeн[ae].*lootkeeper[%.,]com", --Дракон из Каражана по хорошей цене ☼ Прокачка персонажей и фарм силы артефакта ☼ Фарм хонора и престижа ☼ Маунты ☼ - https://LootKeeper.com
+	"dving[%.,]ru.*уcлуги", --►►► DVING.RU - ПРОКАЧКА ПЕРСОНАЖА, ПОДЗЕМЕЛЬЯ ЛЮБОЙ СЛОЖНОСТИ, ИК С МАСТЕР ЛУТОМ , ПВП РЕЙТИНГИ И ДРУГИЕ УСЛУГИ - ПРОМОКОД "N16" - DVING.RU ◄◄◄
+	"низkиeцeны.*getloot[%.,]ru", --Поможем с ИК,ИД,мификами и плюсами, а так же [Возвращение в Каражан] Низкие цены на getloot. ru
+	"изуmpудныйkoшmap.*гepoиk.*kлaccиcпek.*иcпыtaниeдoблectи", --Изумрудный кошмар 7/7 героик,нормал,мифик. Лут на ваш класс и спек. Испытание доблести 3/3 нормал,героик.
+	"885.*гapaнtиpoвaнa.*kapaжaн.*maунt", --Мифик 1-12 уровни с ключами. Любые подземелья. 885 шмотка гарантирована. Каражан тайм ран + маунт.
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -631,6 +646,8 @@ local instantReportList = {
 	"sælgerguld.*info", --Hej. Sælger guld: 240 pr 200 K. [w for mere info]- mængderabat muligt
 	"nogen.*skalkobeg.*info", --Er der nogen der skal købe g? {w for mere info]
 	"sælgerguldviamp", --< SÆLGER GULD VIA MP!
+	"sælgerguldviamobile?pay", --Sægler Guld Via mobilepay 100k 100 Kroner w/me
+	"nogleg.*sælgerovermobilepay", --Har du brug for nogle g? Jeg sælger over mobilepay /w mig!
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
@@ -663,6 +680,7 @@ local instantReportList = {
 	"^gfinnsatt?kopa.*swish", --G finns att köpa genom swish
 	"spelpengar@swish", --behöver du spelpengar ? @ swish /w
 	"^guldfinns.*kopa.*swish$", --Guld finns att köpa genom swish
+	"^gsaljsbilligt.*swish", --G säljs billigt! (swish)
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
@@ -726,6 +744,13 @@ local IsSpam = function(msg)
 		if strfind(msg, phishingList[i]) then
 			phishPoints = phishPoints + 1
 			if myDebug then print("phishingList", phishingList[i], points, phishPoints, boostingPoints) end
+		end
+	end
+	for i=1, #sites do
+		if strfind(msg, sites[i]) then
+			points = points + 2
+			boostingPoints = boostingPoints + 2
+			if myDebug then print("sites", sites[i], points, phishPoints, boostingPoints) end
 		end
 	end
 
@@ -1014,6 +1039,10 @@ if myDebug then
 		end
 	end
 	SLASH_D1 = "/d"
+	SlashCmdList.C = function(msg)
+		print(BadBoyCleanse(msg))
+	end
+	SLASH_C1 = "/c"
 end
 
 --[[ Blacklist ]]--
