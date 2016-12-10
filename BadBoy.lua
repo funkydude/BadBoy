@@ -124,6 +124,7 @@ local boostingList = {
 	"pri?est[ie]ge",
 	"quality",
 	"pil[o0]ted",
+	"artifactpower",
 	"unlock",
 }
 local boostingWhiteList = {
