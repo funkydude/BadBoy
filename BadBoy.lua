@@ -555,7 +555,7 @@ local instantReportList = {
 	"wtsfast.*smooth.*karazhan.*mount.*valor.*nightmare.*wisp", --WTS FAST and SMOOTH Karazhan with mount, Trial of Valor, Emerald Nightmare run. Wisp!
 	"wts.*nightmare.*heroic.*ml.*quality.*discount.*come.*items", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. High [quality.Discount] for cloth/mail/leather! Come get your 865+ items.
 	"wts.*heroic.*raid.*tonight.*come.*items.*quality.*discount", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. Raid tonight at 19.00 CET. Come get your 865+ [items.High] [quality.Discount] for cloth/leather/mail!
-	"wts.*nightmare.*valor.*mythic.*le?ve?ling.*price.*info", --►►►WTS: THE EMERALD NIGHTMARE | TRIAL OF VALOR | MYTHIC DUNGEONS | CHARACTER LVLing | BEST PRICE | WHISPER ME FOR MORE INFO!◄◄◄
+	"wts.*nightmare.*valor.*le?ve?ling.*best.*info", --►►►WTS: THE EMERALD NIGHTMARE | TRIAL OF VALOR | MYTHIC DUNGEONS | CHARACTER LVLing | BEST PRICE | WHISPER ME FOR MORE INFO!◄◄◄
 	"wts.*rbgs.*mounts.*saddle.*accshare", --▓▓WTS RbgS(1-75wins)HR/ap/6 vicious mounts(viciours saddle)also[Reins of the Time-Lost Proto-Drake]▓[Voidtalon of the Dark Star]RN,no accshare▓PST
 	"^wts.*nightmare.*mythic.*gear.*gua?rantee.*amazing.*price.*details", --WTS Emerald nightmare mythic 7/7 clear including 8-12 Gear for you atleast (guranteed) for amazing price only today Going on 15:00 st ! w for more details.
 	"^wtsmount.*karazhan.*timerun.*quality.*service", --Wts mount from Karazhan (time run) right now! High quality service.
