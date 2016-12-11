@@ -559,6 +559,10 @@ local instantReportList = {
 	"wts.*rbgs.*mounts.*saddle.*accshare", --▓▓WTS RbgS(1-75wins)HR/ap/6 vicious mounts(viciours saddle)also[Reins of the Time-Lost Proto-Drake]▓[Voidtalon of the Dark Star]RN,no accshare▓PST
 	"^wts.*nightmare.*mythic.*gear.*gua?rantee.*amazing.*price.*details", --WTS Emerald nightmare mythic 7/7 clear including 8-12 Gear for you atleast (guranteed) for amazing price only today Going on 15:00 st ! w for more details.
 	"^wtsmount.*karazhan.*timerun.*quality.*service", --Wts mount from Karazhan (time run) right now! High quality service.
+	"wts.*mythic.*dungeon.*loot.*items.*le?ve?ling.*hours.*info", --[WTS} Mythic Dungeon with additional loot, get 20-30 items!!! Fast leveling 100-110 in 6-10 hours! Write me for info!
+	"wts.*mythicplus.*timer.*loot.*gift.*write", --►►► WTS Mythic Plus any lvl!! +10 and +15 on the timer!! loot as a gift for you! ►►► Write me for more info!
+	"wts.*today.*raid.*nightmare.*mythic.*heroic.*loot.*guarantee.*items", --WTS Today Raid Emerald Nightmare ^ Mythic // Heroic ^ with ALL Loot for you! !^Guarantee 5-6 items!For Mythic raid we have a good offer today!
+	"^wtskarazhad?nrunwithmount.*startin%d+min.*wformoreinfo$", --WTS Karazhan run with mount, start in 30 min, /w for more info!
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
