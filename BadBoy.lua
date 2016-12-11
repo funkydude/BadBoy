@@ -558,6 +558,7 @@ local instantReportList = {
 	"wts.*nightmare.*valor.*mythic.*le?ve?ling.*price.*info", --►►►WTS: THE EMERALD NIGHTMARE | TRIAL OF VALOR | MYTHIC DUNGEONS | CHARACTER LVLing | BEST PRICE | WHISPER ME FOR MORE INFO!◄◄◄
 	"wts.*rbgs.*mounts.*saddle.*accshare", --▓▓WTS RbgS(1-75wins)HR/ap/6 vicious mounts(viciours saddle)also[Reins of the Time-Lost Proto-Drake]▓[Voidtalon of the Dark Star]RN,no accshare▓PST
 	"^wts.*nightmare.*mythic.*gear.*gua?rantee.*amazing.*price.*details", --WTS Emerald nightmare mythic 7/7 clear including 8-12 Gear for you atleast (guranteed) for amazing price only today Going on 15:00 st ! w for more details.
+	"^wtsmount.*karazhan.*timerun.*quality.*service", --Wts mount from Karazhan (time run) right now! High quality service.
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -619,6 +620,8 @@ local instantReportList = {
 	--翡翠梦魇H/M副本包团包毕业装备，金币大量库存,j神器三插槽，威望等级，5M大米，手工升级，欢迎咨询,绝不忽悠.
 	"金币大量库存.*欢迎咨询", --Leo 手工等级业务,翡翠梦魇H/M包团，包毕业，H包团送普通包团，神器三插槽，神器能量，特价金币大量库存，解锁苏拉玛，荣誉和威望1234，全部纯手工，欢迎咨询
 	"^style.*光龙无敌火鹰等热卖", --Style手工练级，3v3马鞍奖励和威望等级，荣誉等级50,英雄H史诗M翡翠梦魇包团及毕业,10和12层大米拿2箱奖励或低保提升装等，2层3层欧皇低价无限刷橙装，卡拉赞坐骑星光龙无敌火鹰等热卖。
+	"圣诞节金币特价.*大小幽灵虎等坐骑", --圣诞节金币特价，23刀=10万，大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本(史诗全通）,荣誉和等级代练纯手工，苏拉玛任务，大小幽灵虎等坐骑,需要MMMM
+	"层箱子无限刷橙.*试炼包团", --大米2层箱子无限刷橙,10-12层箱子+周奖励,快捷提升装等.H&M翡翠可包团,毕业。神器三槽,110等级代练,苏拉玛任务声望代练接单.每日世界任务代清,燃尽巨龙代刷.H试炼包团
 
 	--[[  Russian  ]]--
 	"maxlvl[%.,]net.*пpoдaжa", --MAXLVL.NET Продажа персонажей 110(870+илвл). Лут-рейды ИК Нормал, Героик, Эпох. МИФ+15. Фарм престижа. Оденем вашего персонажа до 885+ илвл.
@@ -651,6 +654,8 @@ local instantReportList = {
 	"sælgerguldviamp", --< SÆLGER GULD VIA MP!
 	"sælgerguldviamobile?pay", --Sægler Guld Via mobilepay 100k 100 Kroner w/me
 	"nogleg.*sælgerovermobilepay", --Har du brug for nogle g? Jeg sælger over mobilepay /w mig!
+	"sælger%d+kguld.*mobile", --Sælger 100k guld for 100DKK. Skriv til mig :) Vi bruger mobilepay :)
+	"^sælgerguld.*skrivtilmig", --Sælger guld, skriv til mig
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
@@ -784,8 +789,9 @@ local btn, reportFrame
 local function BadBoyIsFriendly(name, flag, lineId, guid)
 	if not guid then return true end -- LocalDefense automated prints
 	if not guid:find("^Player") then
-		print("BadBoy: Unexpected GUID requested by an addon:", guid)
-		return true
+		local msg = "BadBoy: Unexpected GUID requested by an addon: ".. guid
+		print(msg)
+		error(msg)
 	end
 	local _, characterName = BNGetGameAccountInfoByGUID(guid)
 	if characterName or not CanComplainChat(lineId) or IsGuildMember(guid) or IsCharacterFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
