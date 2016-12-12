@@ -202,6 +202,7 @@ local whiteList = {
 }
 local sites = {
 	"prestigewow[%.,]com",
+	"farm4gold[%.,]com",
 	"dving[%.,]net",
 	"speedruncharacter[%.,]net",
 }
@@ -315,6 +316,7 @@ local instantReportList = {
 	"^wt[bs]lolacc.*skins", --WTS LoL acc level 30 EUW name ** got about 50 skins /w me for info include 3200 RP!
 	"^wt[bst]mygold%d*leagueoflegends", --WTT My Gold 3 League of Legends account for some sick CS:GO skins! 116 Champions, 158 Skins, 6 rune pages. /w me for more info/skype!
 	"^sellingwowgoldforleagueoflegends", --SELLING WOW GOLD FOR LEAGUE OF LEGENDS RP! /W ME
+	"^wt[bs]lolacc.*gold", --WTB lol acc for gold here w/me
 
 	--[[  Account Buy/Sell  ]]--
 	"selling.*accounts?forgold", --Selling Spotify,Netflix Accounts for gold!!! /w me
@@ -693,6 +695,7 @@ local instantReportList = {
 	"spelpengar@swish", --behöver du spelpengar ? @ swish /w
 	"^guldfinns.*kopa.*swish$", --Guld finns att köpa genom swish
 	"^gsaljsbilligt.*swish", --G säljs billigt! (swish)
+	"guldsalje[rs]viaswish", --Wow guld säljes via swish! 120kr per 100k.
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
