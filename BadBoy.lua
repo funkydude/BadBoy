@@ -110,6 +110,7 @@ local boostingList = {
 	"sale",
 	"season",
 	"professional",
+	"experience",
 	"customer",
 	"discount",
 	"selfplay",
@@ -571,6 +572,7 @@ local instantReportList = {
 	"微信.*549965838", --金币最低价20刀10w 微信ok4gold   微信或者QQ549965838 微信ok4gold  百万库存20刀=10w 百万库存20刀=10w QQ或者微信549965838 微信ok4gold  微信或者QQ549965838 微信ok4gold
 	"qq.*1505381907", --特价[Reins of the Swift Spectral Tiger]，金币28刀十万，量大优惠。等级代练，大秘境(刷橙装），荣誉等级(送坐骑），翡翠团本代练;,QQ:1505381907或者微信：babey1123
 	"微信.*1505381907", --圣诞节金币特价，25刀10万，大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本(史诗全通）,荣誉和等级代练纯手工，苏拉玛任务，大小幽灵虎等坐骑,需要的加我Q/微信：1505381907
+	"qq.*1513941814", --圣诞特价金币、等级代练，5h、m、大密、卡拉赞通刷坐骑、世界任务维护、苏拉玛1-8章、神器点数、翡翠团本，联系QQ1513941814、微信
 	"qq.*593837031", --纯手工100-110 低价，大秘境1-10层热销中，翡翠梦境英雄普通包团毕业。橙装，神器三插槽，金币大量，感兴趣的联系QQ:593837031 skype:wspamela 微信 593837031
 	"100110.*q228102174", --100-110纯手工升级低价热卖，无敌飞机头 ，星光龙热卖1-2周保证拿到，，翡翠梦魇普通包团毕业火热销售中,职业大厅，神器点数，神器解锁三插槽 [，金币大量QQ228102174,微信894580231。skype.raulten1234]
 	"style.*强力销售.*%d+lvl.*100110", --style公会团强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工100-110等级加神器任务和大秘境代打欢迎预定
@@ -628,6 +630,9 @@ local instantReportList = {
 	"^style.*光龙无敌火鹰等热卖", --Style手工练级，3v3马鞍奖励和威望等级，荣誉等级50,英雄H史诗M翡翠梦魇包团及毕业,10和12层大米拿2箱奖励或低保提升装等，2层3层欧皇低价无限刷橙装，卡拉赞坐骑星光龙无敌火鹰等热卖。
 	"圣诞节金币特价.*大小幽灵虎等坐骑", --圣诞节金币特价，23刀=10万，大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本(史诗全通）,荣誉和等级代练纯手工，苏拉玛任务，大小幽灵虎等坐骑,需要MMMM
 	"层箱子无限刷橙.*试炼包团", --大米2层箱子无限刷橙,10-12层箱子+周奖励,快捷提升装等.H&M翡翠可包团,毕业。神器三槽,110等级代练,苏拉玛任务声望代练接单.每日世界任务代清,燃尽巨龙代刷.H试炼包团
+	"圣诞节大甩卖金子.*刷箱子", --圣诞节大甩卖金子 20 for10w大小幽灵虎现货秒发 KLZ龙 纯手工任务升级 神器三槽 世界任务 神器能量5M毕业 大秘境（刷箱子） 苏拉玛1-8章 星空龙 翡翠包团  鸡蛋 龙鹰  幽灵马  大甩卖金子 m我
+	"清世界任务.*金%d+刀%d+万", --等级代练纯手工任务，清世界任务，神器三槽。5人H-M本毕业。苏拉玛8章，翡翠梦境团本最低价。星空龙，无敌，飞机头。金23刀10万
+	"无限拾取套餐特价.*金币二十万", --H/M大米2-12无限拾取套餐特价；卡拉赞龙队全通拾取特价；；H/M包团保底七个；勇气试炼H强力团购。。金币二十万=299RMB。大小老虎微信meitao1131
 
 	--[[  Russian  ]]--
 	"maxlvl[%.,]net.*пpoдaжa", --MAXLVL.NET Продажа персонажей 110(870+илвл). Лут-рейды ИК Нормал, Героик, Эпох. МИФ+15. Фарм престижа. Оденем вашего персонажа до 885+ илвл.
@@ -662,6 +667,7 @@ local instantReportList = {
 	"nogleg.*sælgerovermobilepay", --Har du brug for nogle g? Jeg sælger over mobilepay /w mig!
 	"sælger%d+kguld.*mobile", --Sælger 100k guld for 100DKK. Skriv til mig :) Vi bruger mobilepay :)
 	"^sælgerguld.*skrivtilmig", --Sælger guld, skriv til mig
+	"manglerdugold.*kroner.*mobilepay", --Mangler du gold! så du kommet til den rette!  100k = 89.5 kroner!!! MÆNGDERABAT PÅ ALT OVER 100k! PAYPAL/MOBILEPAY
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
@@ -676,7 +682,8 @@ local instantReportList = {
 	--köper wow guld via swish
 	"^koperw?o?w?guldviaswish", --Köper guld via swish
 	--Guld finns till salu, 1.3 per tusen! Betalning sker via swish! Mängdrabatt tillkommer.
-	"guldfinnstillsalu.*swish", --Guld finns till salu via SWISH, /w för mer info
+	--Guld finns via swish, 1.3kr per tusen! /w vid intresse.
+	"^guldfinns.*viaswish", --Guld finns till salu via SWISH, /w för mer info
 	"^saljerwowguld.*viaswish", --Säljer wow guld för 140kr per 100k, via Swish! /W
 	"^saljer%d+kguldfor.*viaswish", --Säljer 600k guld för 800kr, via swish! Nu eller aldrig
 	"^saljerguld,swish", --Säljer guld, swish
@@ -782,9 +789,8 @@ local IsSpam = function(msg)
 		end
 	end
 
-	if points > 3 or phishPoints > 3 or boostingPoints > 3 then
-		return true
-	end
+	local report = points > 3 or phishPoints > 3 or boostingPoints > 3
+	return report, points, phishPoints, boostingPoints
 end
 
 --[[ Chat Scanning ]]--
@@ -845,32 +851,28 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 	--End text buffer
 
 	if IsSpam(msg) then
-		if BadBoyLog and not myDebug then
+		if BadBoyLog then
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
-		if myDebug then
-			print("|cFF33FF99BadBoy_REPORT|r: ", debug, "-", event, "-", trimmedPlayer)
-		else
-			if (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) and not IsEncounterInProgress() then
-				spamCollector[guid] = lineId
-				if BADBOY_OPTIONS.tipSpam then
-					spamLogger[guid] = debug
-					if btn:IsShown() and reportFrame:IsMouseOver() then
-						GameTooltip_Hide()
-						reportFrame:GetScript("OnEnter")(reportFrame) -- Add more spam to tooltip if shown
-					end
+		if (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) and not IsEncounterInProgress() then
+			spamCollector[guid] = lineId
+			if BADBOY_OPTIONS.tipSpam then
+				spamLogger[guid] = debug
+				if btn:IsShown() and reportFrame:IsMouseOver() then
+					GameTooltip_Hide()
+					reportFrame:GetScript("OnEnter")(reportFrame) -- Add more spam to tooltip if shown
 				end
+			end
 
-				local t = GetTime()
-				if t-prevShow > 90 then
-					if prevShow == 0 then
-						prevShow = t+25
-						-- Delay the first one to grab more spam on really bad realms
-						C_Timer.After(25, function() btn:Show() end)
-					else
-						prevShow = t
-						btn:Show()
-					end
+			local t = GetTime()
+			if t-prevShow > 90 then
+				if prevShow == 0 then
+					prevShow = t+25
+					-- Delay the first one to grab more spam on really bad realms
+					C_Timer.After(25, function() btn:Show() end)
+				else
+					prevShow = t
+					btn:Show()
 				end
 			end
 		end
