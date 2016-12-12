@@ -207,6 +207,7 @@ local sites = {
 	"dving[%.,]net",
 	"speedruncharacter[%.,]net",
 	"boosthive[%.,]eu",
+	"leprestore[%.,]com",
 }
 
 --Any entry here will instantly report/block
@@ -565,6 +566,7 @@ local instantReportList = {
 	"^wtsmount.*karazhan.*timerun.*quality.*service", --Wts mount from Karazhan (time run) right now! High quality service.
 	"wts.*mythic.*dungeon.*loot.*items.*le?ve?ling.*hours.*info", --[WTS} Mythic Dungeon with additional loot, get 20-30 items!!! Fast leveling 100-110 in 6-10 hours! Write me for info!
 	"wts.*mythicplus.*timer.*loot.*gift.*write", --►►► WTS Mythic Plus any lvl!! +10 and +15 on the timer!! loot as a gift for you! ►►► Write me for more info!
+	"wts.*heroic.*master.*loot.*mythic.*items.*guarantee.*info", --►►► [WТS] ► Trial of Valor Heroic with Master loot  ► Emerald Nightmare Heroic & Mythic 6 Items Guaranteed! ◄ ask me to get more info!
 	"wts.*today.*raid.*nightmare.*mythic.*heroic.*loot.*guarantee.*items", --WTS Today Raid Emerald Nightmare ^ Mythic // Heroic ^ with ALL Loot for you! !^Guarantee 5-6 items!For Mythic raid we have a good offer today!
 	"^wtskarazhad?nrunwithmount.*startin%d+min.*wformoreinfo$", --WTS Karazhan run with mount, start in 30 min, /w for more info!
 	"^wtsnow.*nightmaremythic.*withmlfastcheap.*readytostartin%d+minute", --WTS Now Emerald Nightmare Mythic(7/7)with ML!Fast & Cheap!Get ready to start in 15 minutes!!!
@@ -734,7 +736,7 @@ local repTbl = {
 	["о"]="o", ["ò"]="o", ["ó"]="o", ["ö"]="o", ["ō"]="o", ["ô"]="o", ["õ"]="o", ["ő"]="o", ["ø"]="o", ["Ǿ"]="o", ["ǿ"]="o", ["Θ"]="o", ["θ"]="o", ["○"]="o", --First letter is Russian "\208\190". Convert > \111. Note: Ǿ, Θ fail with strlower, include both.
 	["р"]="p", --First letter is Russian "\209\128". Convert > \112
 	["Ř"]="r", ["ř"]="r", ["Ŕ"]="r", ["ŕ"]="r", ["Ŗ"]="r", ["ŗ"]="r", --Convert > \114. -- Note: Ř, Ŕ, Ŗ fail with strlower, include both.
-	["Ş"]="s", ["ş"]="s", ["Š"]="s", ["š"]="s", --Convert > \115. -- Note: Ş, Š fail with strlower, include both.
+	["Ş"]="s", ["ş"]="s", ["Š"]="s", ["š"]="s", ["Ś"]="s", ["ś"]="s", --Convert > \115. -- Note: Ş, Š, Ś fail with strlower, include both.
 	["т"]="t", --Convert > \116
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 	["ý"]="y", ["ÿ"]="y", --Convert > \121
