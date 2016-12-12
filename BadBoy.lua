@@ -206,6 +206,7 @@ local sites = {
 	"farm4gold[%.,]com",
 	"dving[%.,]net",
 	"speedruncharacter[%.,]net",
+	"boosthive[%.,]eu",
 }
 
 --Any entry here will instantly report/block
