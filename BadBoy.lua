@@ -435,6 +435,7 @@ local instantReportList = {
 	"mythic.*boostila[%.,]com", --[Boostila.com] BEST PRICE FOR BOOST on THE EMERALD NIGHTMARE (NM-HC),Artifact power quests farm, Mythic Dungeons, Character lvling and more!  SEE ON [Boostila.com]
 	"wts.*cheap.*fast.*loot.*mythic.*dungeon.*wisp.*everyday", --WTS cheap & fast Emerald Nightmare lootraids, Mythic15++ Dungeons. Wisp! Everyday!
 	"wts.*arena.*rbg.*rating.*loot.*info", --WTS Arena/Rbg ratings 1800-2400 , WTS 7/7HC emerald lootrun /w for info
+	"^sharjmahanemojodebaqeymat.*shawn3r", --Sharj Mahane MOjode Ba Qeymat 40t Va SafeTarin rah MomKen Va bedon Risk ,Baray Kharid ChanD Mahe takhfif khoob -Shawn3R#21706, WHisp3s MEh
 	"wts.*dungeon.*fast.*prestige.*emerald.*info", --[WTS] <<New Mythic/Heroic Dungeons>> | <<Artifact farm>> | <<Fast 100-110>> | <<Honor & Prestige Leveling>> | Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*fast.*dungeon.*rbg.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Mythic+ Dungeons>> | <<Honor/Prestige leveling>> | <<RBG Wins> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*fast.*dungeon.*pvp.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Heroic Dungeons>> | <<Full Dungeon Gear>> | <<Full PVP Gear>> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
@@ -686,6 +687,7 @@ local instantReportList = {
 	"^saljerguldsnabbtviaswish", --Säljer guld snabbt via Swish 100k=170SEK 1.7kr/1000g Billigare vid bulk  /Whispra mig och chilla på svar
 	--köper wow guld via swish
 	"^koperw?o?w?guldviaswish", --Köper guld via swish
+	"^kopergviaswish", --KÖPER G VIA SWISH
 	--Guld finns till salu, 1.3 per tusen! Betalning sker via swish! Mängdrabatt tillkommer.
 	--Guld finns via swish, 1.3kr per tusen! /w vid intresse.
 	"^guldfinns.*viaswish", --Guld finns till salu via SWISH, /w för mer info
