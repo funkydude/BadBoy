@@ -208,6 +208,7 @@ local sites = {
 	"speedruncharacter[%.,]net",
 	"boosthive[%.,]eu",
 	"leprestore[%.,]com",
+	"1proboost[%.,]com",
 }
 
 --Any entry here will instantly report/block
@@ -674,6 +675,7 @@ local instantReportList = {
 	"sælger%d+kguld.*mobile", --Sælger 100k guld for 100DKK. Skriv til mig :) Vi bruger mobilepay :)
 	"^sælgerguld.*skrivtilmig", --Sælger guld, skriv til mig
 	"manglerdugold.*kroner.*mobilepay", --Mangler du gold! så du kommet til den rette!  100k = 89.5 kroner!!! MÆNGDERABAT PÅ ALT OVER 100k! PAYPAL/MOBILEPAY
+	"sælgerg.*mobilepay", --Hej. Sælger g. 100 dkk pr 100 K. [w for mere information]- Mobilepay, Swipp & Paypal
 
 	--[[ Swedish ]]--
 	"saljerguld.*detail.*stock", --Säljer guld 1.7kore details Stock: 3000k
