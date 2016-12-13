@@ -570,8 +570,9 @@ local instantReportList = {
 	"wts.*mythicplus.*timer.*loot.*gift.*write", --►►► WTS Mythic Plus any lvl!! +10 and +15 on the timer!! loot as a gift for you! ►►► Write me for more info!
 	"wts.*heroic.*master.*loot.*mythic.*items.*guarantee.*info", --►►► [WТS] ► Trial of Valor Heroic with Master loot  ► Emerald Nightmare Heroic & Mythic 6 Items Guaranteed! ◄ ask me to get more info!
 	"wts.*today.*raid.*nightmare.*mythic.*heroic.*loot.*guarantee.*items", --WTS Today Raid Emerald Nightmare ^ Mythic // Heroic ^ with ALL Loot for you! !^Guarantee 5-6 items!For Mythic raid we have a good offer today!
-	"^wtskarazhad?nrunwithmount.*startin%d+min.*wformoreinfo$", --WTS Karazhan run with mount, start in 30 min, /w for more info!
+	"^wtskarazhad?nrunwithmount.*startin%d+.*wformoreinfo$", --WTS Karazhan run with mount, start in 30 min, /w for more info!
 	"^wtsnow.*nightmaremythic.*withmlfastcheap.*readytostartin%d+minute", --WTS Now Emerald Nightmare Mythic(7/7)with ML!Fast & Cheap!Get ready to start in 15 minutes!!!
+	"^wtstodaymythic.*higher.*hurry.*beforereset.*weeklychest.*write.*info", --▲▲▲WTS Today Mythic+10 or higher, Hurry do it before reset for weekly chest!! Write me for more info▲▲▲
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
