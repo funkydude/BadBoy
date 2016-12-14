@@ -133,7 +133,8 @@ local boostingWhiteList = {
 	"guild",
 	"social",
 	"|hspell",
-	"%d+k[/\\]dungeon",
+	"%d+k[/\\]?dungeon",
+	"%d+k[/\\]?each",
 	"onlyacceptinggold",
 	"goldonly",
 	"goldprices",
@@ -573,6 +574,7 @@ local instantReportList = {
 	"^wtskarazhad?nrunwithmount.*startin%d+.*wformoreinfo$", --WTS Karazhan run with mount, start in 30 min, /w for more info!
 	"^wtsnow.*nightmaremythic.*withmlfastcheap.*readytostartin%d+minute", --WTS Now Emerald Nightmare Mythic(7/7)with ML!Fast & Cheap!Get ready to start in 15 minutes!!!
 	"^wtstodaymythic.*higher.*hurry.*beforereset.*weeklychest.*write.*info", --▲▲▲WTS Today Mythic+10 or higher, Hurry do it before reset for weekly chest!! Write me for more info▲▲▲
+	"wtsartifactpower.*mount.*saddle.*accshare", --Wts artifact power to get  higher weapon lvls/ 6vicious mounts[Vicious Saddle]also selling[Voidtalon of the Dark Star]}No need acc share ! /Pst
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -749,8 +751,7 @@ local repTbl = {
 }
 
 local strfind = string.find
-local myDebug = false
-local IsSpam = function(msg)
+local IsSpam = function(msg, myDebug)
 	for i=1, #instantReportList do
 		if strfind(msg, instantReportList[i]) then
 			if myDebug then print("Instant", instantReportList[i]) end
