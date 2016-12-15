@@ -58,38 +58,6 @@ local commonList = {
 	"servicio", --service
 }
 
---These entries add +1 point to the phishing count
-local phishingList = {
-	--English
-	"account",
-	"blizz",
-	"claim",
-	"congratulations",
-	"free",
-	"gamemaster",
-	"gift",
-	"investigat", --investigate/investigation
-	"launch",
-	"log[io]n",
-	"luckyplayer",
-	"mount",
-	"pleasevisit",
-	"receive",
-	"service",
-	"surprise",
-	"suspe[cn][td]", --suspect/suspend
-	"system",
-	"validate",
-
-	--German
-	"berechtigt", --entitled
-	"erhalten", --get/receive
-	"deaktiviert", --deactivated
-	"konto", --acount
-	"kostenlos", --free
-	"qualifiziert", --qualified
-}
-
 local boostingList = {
 	"paypal",
 	"skype",
@@ -143,6 +111,24 @@ local boostingWhiteList = {
 	"tonight",
 	"gametime",
 	"servertime",
+	"%.battle%.net/",
+	"recrui?t",
+	"appl[iy]", --apply/application
+	"enjin%.com",
+	"guildlaunch%.com",
+	"gamerlaunch%.com",
+	"corplaunch%.com",
+	"wowlaunch%.com",
+	"wowstead%.com",
+	"guildwork.com",
+	"guildportal%.com",
+	"guildomatic%.com",
+	"guildhosting.org",
+	"%.wix%.com",
+	"shivtr%.com",
+	"own3d%.tv",
+	"ustream%.tv",
+	"twitch%.tv",
 }
 
 --These entries remove -2 points
@@ -153,7 +139,6 @@ local whiteList = {
 	"looking",
 	"lf[gm]",
 	"|cff",
-	"cardofomen",
 	"raid",
 	"scam",
 	"roleplay",
@@ -187,7 +172,6 @@ local whiteList = {
 	"players",
 	"portal",
 	"town",
-	"vialofthe",
 	"synonym",
 	"[235]v[235]",
 	"sucht", --de
@@ -212,6 +196,7 @@ local sites = {
 	"leprestore[%.,]com",
 	"1proboost[%.,]com",
 	"hordebank[%.,]com",
+	"justboost[%.,]net",
 }
 
 --Any entry here will instantly report/block
@@ -416,16 +401,6 @@ local instantReportList = {
 	--WTS [Keystone Conqueror] (2-10lvl) ►ŠELFPLĄY◄ Teâm Is Reâdy To Gø Right Nøw! ŠKYPĒ: FindGuys
 	"skype.*findguys", --Hello. Im sorry but I cant write here all prices. For all info and prices please add me in Skype: FindGuys
 	"mythic.*bestboost[%.,]c", --WTS: EN 7/7| Mythic+2-10 |LVL 100-110| Loot Run | Selfplay/Piloted | Master loot | SSL | More info>>> Best-boost .c0m <<
-	"keystone.*mythic.*boost.*skype", --WTS Mythic+ CHEST RUN, Mythic+ (up keystone), Mythic dungeons boost. SKYPE - fastchallenge
-	--WTS 10/10 Mythic and Heroic all info in skype: qReaper_bst
-	"skype.*qreaperbst", --Add skype: qReaper_bst foк price and info
-	--EN HC/M LOOTRUNS, KARAZHAN, POWERLEVELING, MYTH+ TRIAL OF VALOR  AND MUCH MORE >>> [JUSTBOOST.NET] <<<
-	"power.*justboost[%.,]net", --EN Myth/HC LootRuns, Karazhan, Powerleveling, Mounts,  Myth+ Boosting and more>>> [JUSTBOOST.NET] <<<
-	"mythic.*justboost[%.,]net", --WTS MYTHIC EN,  chests run, levelin 100-110 - [JUSTBOOST.NET]
-	-->>>[JUSTBOOST.NET]<<< EMERALD NIGHTMARE NORMAL/HC, MYTHIC+ RUNS, LEVELLING, ACHIEVEMENTS AND MORE<<<
-	"justboost[%.,]net.*mythic", --[JUSTBOOST.NET]  Legion services. Leveling 100-110, PVE equip 840+, 850+ Emerald Nightmare, Glory of the Legion Hero, Mythic Dungeons and MORE<<<<
-	--5% off just for today Emerald Nightmare Normal ML fast run. Start at 21:00 server time. [justboost.net]
-	"normal.*justboost[%.,]ne", --WTS Emerald Nightmare normal/heroic personal loot and other pvp/pve stuff more info [justboost.ne]
 	"wts.*help.*mythic.*dungeon.*gear.*info", --█ WTS █ Help with Heroic and Mythic dungeon runs and full gear - running today! /w me for info
 	"wts.*le?ve?ling.*power.*farming.*info", --█ WTS █ Level 100-110 Character Leveling and Artifact Power farming - get your character ready for raiding! /w for more info
 	"wts.*spot.*heroic.*raid.*loot.*spec.*invite", --█ WTS █ SPOTS in Emerald Nightmare Normal/Heroic raid next week, all loot for your spec is yours. /w to get invited!
@@ -759,49 +734,42 @@ local IsSpam = function(msg, myDebug)
 		end
 	end
 
-	local points, phishPoints, boostingPoints = 0, 0, 0
+	local points, boostingPoints = 0, 0
 	for i=1, #whiteList do
 		if strfind(msg, whiteList[i]) then
 			points = points - 2
-			phishPoints = phishPoints - 2 --Remove points for safe words
-			if myDebug then print("whiteList", whiteList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("whiteList", whiteList[i], points, boostingPoints) end
 		end
 	end
 	for i=1, #commonList do
 		if strfind(msg, commonList[i]) then
 			points = points + 1
-			if myDebug then print("commonList", commonList[i], points, phishPoints, boostingPoints) end
-		end
-	end
-	for i=1, #phishingList do
-		if strfind(msg, phishingList[i]) then
-			phishPoints = phishPoints + 1
-			if myDebug then print("phishingList", phishingList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("commonList", commonList[i], points, boostingPoints) end
 		end
 	end
 	for i=1, #sites do
 		if strfind(msg, sites[i]) then
-			points = points + 2
-			boostingPoints = boostingPoints + 2
-			if myDebug then print("sites", sites[i], points, phishPoints, boostingPoints) end
+			points = points + 3
+			boostingPoints = boostingPoints + 3
+			if myDebug then print("sites", sites[i], points, boostingPoints) end
 		end
 	end
 
 	for i=1, #boostingWhiteList do
 		if strfind(msg, boostingWhiteList[i]) then
 			boostingPoints = boostingPoints - 1
-			if myDebug then print("boostingWhiteList", boostingWhiteList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("boostingWhiteList", boostingWhiteList[i], points, boostingPoints) end
 		end
 	end
 	for i=1, #boostingList do
 		if strfind(msg, boostingList[i]) then
 			boostingPoints = boostingPoints + 1
-			if myDebug then print("boostingList", boostingList[i], points, phishPoints, boostingPoints) end
+			if myDebug then print("boostingList", boostingList[i], points, boostingPoints) end
 		end
 	end
 
-	local report = points > 3 or phishPoints > 3 or boostingPoints > 3
-	return report, points, phishPoints, boostingPoints
+	local report = points > 3 or boostingPoints > 3
+	return report, points, boostingPoints
 end
 
 --[[ Chat Scanning ]]--
