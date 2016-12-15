@@ -549,6 +549,8 @@ local instantReportList = {
 	"^wtstodaymythic.*higher.*hurry.*beforereset.*weeklychest.*write.*info", --▲▲▲WTS Today Mythic+10 or higher, Hurry do it before reset for weekly chest!! Write me for more info▲▲▲
 	"wtsartifactpower.*mount.*saddle.*accshare", --Wts artifact power to get  higher weapon lvls/ 6vicious mounts[Vicious Saddle]also selling[Voidtalon of the Dark Star]}No need acc share ! /Pst
 	"telegram.*amirangaming", --Foorooshe Legion 135T , BattleChest 44T  Tahvil fori , Telegram : https://telegram.me/AG_Co Or  @AmiranGaming
+	"^wts.*tonight.*nightmare.*mythic.*masterloot.*guarantee.*cheap.*price", --WTS ►Tonight Emereld Nightmare Mythic with Master Loot ▌▌7 loot guaranteed ▌▌Cheapest price! /w me
+	"strongandskilledteam.*helpyouwithmythicdungeon.*upto%d+fastandeasy", --Strong and skilled team will help You with Mythic+ dungeons up to 14+ fast and easy.
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -558,7 +560,7 @@ local instantReportList = {
 	"qq.*1513941814", --圣诞特价金币、等级代练，5h、m、大密、卡拉赞通刷坐骑、世界任务维护、苏拉玛1-8章、神器点数、翡翠团本，联系QQ1513941814、微信
 	"qq.*593837031", --纯手工100-110 低价，大秘境1-10层热销中，翡翠梦境英雄普通包团毕业。橙装，神器三插槽，金币大量，感兴趣的联系QQ:593837031 skype:wspamela 微信 593837031
 	"100110.*q228102174", --100-110纯手工升级低价热卖，无敌飞机头 ，星光龙热卖1-2周保证拿到，，翡翠梦魇普通包团毕业火热销售中,职业大厅，神器点数，神器解锁三插槽 [，金币大量QQ228102174,微信894580231。skype.raulten1234]
-	"style.*强力销售.*%d+lvl.*100110", --style公会团强力销售825等级英雄5人本毕业840LVL史诗5人本毕业英雄史诗翡翠865 880+装备，手工100-110等级加神器任务和大秘境代打欢迎预定
+	"gold.*eddie8806", --GOLD全服最低890装等双橙大号出售自营AH绿色G，安全便宜快速，非工作室黑G，北美IP交易，买G最重1要就是安全 要的速M 人在就10分钟！保证全场最低价微信eddie8806
 	"100110.*苏拉玛任务.*星空龙", --纯手工90-100-110任务升级（任务全做，开启声望）。苏拉玛任务11/8。神器三插槽。荣誉50等级~（送邪气鞍座）。军团6大声望 [~手工金币30刀十万，现货秒发。200MB=10万.星空龙~无敌] 飞机头 1-2CD必出
 	--小号代练--翡翠英雄本特价大秘镜3箱(橙装代刷),苏拉玛任务，堕落精灵声望，神器点代刷，解锁神器第三插槽,金币169=10万需要微信17788955341
 	--***大秘境12层保底885特价+++微信17788955341 ***超效率便宜翡翠H团***卡拉赞坐骑***金币159十万
@@ -614,7 +616,8 @@ local instantReportList = {
 	"圣诞节金币特价.*大小幽灵虎等坐骑", --圣诞节金币特价，23刀=10万，大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本(史诗全通）,荣誉和等级代练纯手工，苏拉玛任务，大小幽灵虎等坐骑,需要MMMM
 	"层箱子无限刷橙.*试炼包团", --大米2层箱子无限刷橙,10-12层箱子+周奖励,快捷提升装等.H&M翡翠可包团,毕业。神器三槽,110等级代练,苏拉玛任务声望代练接单.每日世界任务代清,燃尽巨龙代刷.H试炼包团
 	--圣诞节大甩卖 金20for10W，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,翡翠梦境团本代练，大小老虎坐骑,需要的M我
-	"圣诞节大甩卖金.*刷箱子", --圣诞节大甩卖金子 20 for10w大小幽灵虎现货秒发 KLZ龙 纯手工任务升级 神器三槽 世界任务 神器能量5M毕业 大秘境（刷箱子） 苏拉玛1-8章 星空龙 翡翠包团  鸡蛋 龙鹰  幽灵马  大甩卖金子 m我
+	--圣诞节金币热销 20for10W，等级代练纯手工，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,翡翠梦境团本代练（史诗全通），老虎，战马，公鸡等坐骑,需要的M我
+	"20for10w.*刷箱子", --圣诞节大甩卖金子 20 for10w大小幽灵虎现货秒发 KLZ龙 纯手工任务升级 神器三槽 世界任务 神器能量5M毕业 大秘境（刷箱子） 苏拉玛1-8章 星空龙 翡翠包团  鸡蛋 龙鹰  幽灵马  大甩卖金子 m我
 	"清世界任务.*金%d+刀%d+万", --等级代练纯手工任务，清世界任务，神器三槽。5人H-M本毕业。苏拉玛8章，翡翠梦境团本最低价。星空龙，无敌，飞机头。金23刀10万
 	"无限拾取套餐特价.*金币二十万", --H/M大米2-12无限拾取套餐特价；卡拉赞龙队全通拾取特价；；H/M包团保底七个；勇气试炼H强力团购。。金币二十万=299RMB。大小老虎微信meitao1131
 	"热售翡翠梦境包团.*金币", --热售翡翠梦境包团~等级纯手工任务升级~5人M本毕业，苏拉玛第8章~神器三槽。金币22刀十万。星空龙，无敌，飞机头等坐骑
