@@ -188,7 +188,7 @@ local whiteList = {
 	"peйд", --ru, raid
 }
 local sites = {
-	"prestigewow[%.,]com",
+	"prestigewow[%.,]com", --prestige-wow
 	"farm4gold[%.,]com",
 	"dving[%.,]net",
 	"speedruncharacter[%.,]net",
@@ -197,6 +197,14 @@ local sites = {
 	"1proboost[%.,]com",
 	"hordebank[%.,]com",
 	"justboost[%.,]net",
+	"pvpok[%.,]c[0o]m",
+	"boostila[%.,]com",
+	"pewpewshop[%.,]pro",
+	"perfectway[%.,]one",
+	"demonboost[%.,]com", --demon-boost
+	"bestboost[%.,]club",
+	"bestboost[%.,]com", --best-boost
+	"topboost[%.,]pro",
 }
 
 --Any entry here will instantly report/block
@@ -389,7 +397,8 @@ local instantReportList = {
 	"^wt[bs][36]0days?prepaidgametime", --WTS 60day Prepaid Gametime  Card and WOD
 	"^wts%d+days?gametime", --wts 60 days gametime cde. and more stuff from blizzstore
 	"^wts%d+days?gamecard", --wts 60 days game card /w me
-	"^wts%d+kfor%d+euro", --WTS 950K FOR 35EURO(PayPal) /w me !
+	"^wts%d+kfor%d+eu", --WTS 950K FOR 35EURO(PayPal) /w me !
+	"wts%d+kgoldfor%d+eu", --WTS 800k GOLD FOR  35 EURO NOW !
 
 	--[[  2016  ]]--
 	"titaniumbay.*extra", ---= TitaniumBay =- Get 10 % extra {rt2}! Fast and safe delivery!
@@ -400,7 +409,6 @@ local instantReportList = {
 	"titaniumbay.*gratis", ---= TiвtaniumBay =- Oferta Limitada >> Obtenga el 50% extra oro Gratis!
 	--WTS [Keystone Conqueror] (2-10lvl) ►ŠELFPLĄY◄ Teâm Is Reâdy To Gø Right Nøw! ŠKYPĒ: FindGuys
 	"skype.*findguys", --Hello. Im sorry but I cant write here all prices. For all info and prices please add me in Skype: FindGuys
-	"mythic.*bestboost[%.,]c", --WTS: EN 7/7| Mythic+2-10 |LVL 100-110| Loot Run | Selfplay/Piloted | Master loot | SSL | More info>>> Best-boost .c0m <<
 	"wts.*help.*mythic.*dungeon.*gear.*info", --█ WTS █ Help with Heroic and Mythic dungeon runs and full gear - running today! /w me for info
 	"wts.*le?ve?ling.*power.*farming.*info", --█ WTS █ Level 100-110 Character Leveling and Artifact Power farming - get your character ready for raiding! /w for more info
 	"wts.*spot.*heroic.*raid.*loot.*spec.*invite", --█ WTS █ SPOTS in Emerald Nightmare Normal/Heroic raid next week, all loot for your spec is yours. /w to get invited!
@@ -410,9 +418,6 @@ local instantReportList = {
 	"loot.*piloted.*now.*discount.*whisper", --WTS:  ▌▌ TRIAL OF VALOR 3/3 (HEROIC) ▌▌LOOT RUN ▌▌SELFPLAY/PILOTED ▌▌MASTER LOOT ▌▌RIGHT NOW! ▌▌ DISCOUNT for CLOTH, MAIL and PLATE! ▌▌ Whisper me! ▌▌
 	--WTS: ▓▓ XAVIUS (HEROIC) KILL ▓▓ PERSONAL LOOT ▓▓ SELFPLAY/PILOTED ▓▓ TODAY 00:00 CET ▓▓ SUPER PRICE! Whisper me! ▓▓
 	"loot.*piloted.*%d%d%d%d.*price.*whisper", --WTS: ▓▓▓▓HELLFIRE CITADEL: 13/13 (MYTHIC)! ▓▓MASTER LOOT, PILOTED!▓▓TOMORROW 20:00 CET▓▓ 100% SAFE! NEW SUPER PRICE! Whisper me! ▓▓▓▓▓▓▓▓
-	--[Boostila.com] BEST PRICE FOR RAID BOOSTS,Mythic Dungeons, Character lvling, Geek Accessories and more! See on [Boostila.com]
-	"mythic.*boostila[%.,]com", --[Boostila.com] BEST PRICE FOR BOOST on THE EMERALD NIGHTMARE (NM-HC),Artifact power quests farm, Mythic Dungeons, Character lvling and more!  SEE ON [Boostila.com]
-	"wts.*cheap.*fast.*loot.*mythic.*dungeon.*wisp.*everyday", --WTS cheap & fast Emerald Nightmare lootraids, Mythic15++ Dungeons. Wisp! Everyday!
 	"wts.*arena.*rbg.*rating.*loot.*info", --WTS Arena/Rbg ratings 1800-2400 , WTS 7/7HC emerald lootrun /w for info
 	"wts.*dungeon.*fast.*prestige.*emerald.*info", --[WTS] <<New Mythic/Heroic Dungeons>> | <<Artifact farm>> | <<Fast 100-110>> | <<Honor & Prestige Leveling>> | Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
 	"wts.*fast.*dungeon.*rbg.*emerald.*info", --[WTS] <<Fast 100-110>> | <<New Mythic/Mythic+ Dungeons>> | <<Honor/Prestige leveling>> | <<RBG Wins> || Emerald Nightmare Normal/Heroic/Mythic Raids and more. /W for more info
@@ -434,7 +439,6 @@ local instantReportList = {
 	"bank4dh.*%d+k", --=>>[www.bank4dh.com]<<=19E=100K. 5-15 m
 	"trusted.*bank4dh", --WTS BOE class set, 860 Six-Feather Fan, Best BOE gears for rading and alt [lvling.Trusted] seller,K+ feedback from OC. Plz vistor www bank4dh com Cheaper than AH.
 	"wts.*mythic.*powerle?ve?l.*glory.*info", --▲ WTS RUN in Emerald Nightmare (Normal or heroic) TODAY ▲ Mythic+ ▲ Power leveling 100-110 ▲ All Glory ▲ we have a lot runs every day ▲ and more other ▲ /W for more information ▲
-	"perfectway[%.,]one.*prestige", --(Perfectway.one) Dungeons Mythic/ Mythic+, EN normal/heroic, PvP PRESTIGE RANKS (Perfectway.one)
 	"rbg.*mount.*prestige.*accshare", --███WTS RBG40&75wins/Vicious Saddle/all 6 vicious mounts/honor rank/prestige[Vicious War Trike]and[Vicious Warstrider]no acc share,carry right now/w me
 	"mythic.*boostinglive.*faster", --Mythic dungeons, Heroic raids, and more on [boostinglive.com] !Dress up your character faster than others!
 	"koroboost.*everyday.*mythic", --Top guild "Koroboost" inviting you everyday from 1:00 pm CET  to mythic/mythic + dungeons. Became [Brokenly Epic] within 4 hours. Msg me!
@@ -442,7 +446,6 @@ local instantReportList = {
 	"gamesales[%.,]pro.*service.*arena", --[Gamesales.pro] - an assistance in PvP and PvE services: starting from training and ending with achievement of the highest ranks in the arena. [Gamesales.pro-] an opportunity to get the best in a short time. Find out more at [http://www.gamesales.pro]
 	"rbg.*artifact.*honor.*mount.*carry", --█░█WTS RBG 1-75wins(Artifact Power+Honor Rank)6Vicious mount[Vicious Saddle]also[Reins of the Long-Forgotten Hippogryph]carry u right now ▲PST
 	"^wtspowerleveling.*fast", --WTS Powerleveling (Fastest available)
-	"help.*le?ve?ling.*demonboost[%.,]com", --Helping with lvling 100-110. Emerald Nightmare, Return to Karazhan, Mythic+ dungeons. [Demon-Boost.com]
 	"fast.*leveling.*honor.*в[o0][o0]st", -- ►►►Fastest leveling 100-110 (6-12 hours), 850+ gear, Honor Ranks and MUCH MORE on [RРD-В00SТ,С0М]◄◄◄
 	"^wtsmythickarazhandungeons[,.]*whispme", --WTS Mythić+ & Kârazhan Dungeøns. Whísp me.
 	"^wtskarazhanboost[,.]mythic.*mythicdungeons?boost.*info", --WTS Karazhan boost, Mythic+ CHEST RUN, Mythic dungeons boost. /w for info
@@ -451,9 +454,6 @@ local instantReportList = {
 	"^wtskarazhan.*,mythic.*mythicdungeons?boost$", --WTS Karazhan,Mythic+,10/10Mythic dungeon boost
 	"rbg.*boost.*2200.*yourself.*account.*sharing.*info", --{RBG PUSH} Wts RBG Boost /1800/2000/2200/HOTA . You play yourself/NO account SHARING /w for more info  :)
 	"rbg.*honor.*priestige.*mount.*selfplay", --WTS RBG 1-75wins(honor rank/Priestige),6RBG mounts[Vicious Saddle]and BOP mount[Reins of the Long-Forgotten Hippogryph]},self play .PST
-	--[TOPBOOST.PRO] - WTS HEROIC EN (PL) at 18.00 Server time. MYTHIC +10. KATAZHAN RUN and MORE
-	-->>> [TOPBOOST.PRO] <<< EMERALD NIGHTMARE HEROIC, NORMAL, MYTHIC+ RUNS, ACHIEVEMENTS AND MORE! DISCOUNTS ON MYTHIC EMERALD NIGHTMARE!
-	"topboost[,.]pr.*mythic", --[TOPBOOST.PRO] - , HEROIC EN - 180 EURO (ML). HEROIC PL - 90 EURO.  MYTHIC +10 180 EURO
 	"powerle?ve?l.*yourspuregame[,.]com", --EN Myth/HC lootRuns,Karazhan,Powerlevling,Mounts,Myth+Boosting and more in >>> www.yourspuregame.com <<<
 	"xperiencedparty.*runs.*walkthrough.*mythic.*glory.*karazhan", --xperienced party 880+ (more than 45 runs) will help you to walkthrough mythic, mythic+, Glory of the Legion Hero, Karazhan.
 	"wh?isp.*skype.*igor.*price", --Wisp in Skype [] for Detal/Prices.
@@ -464,7 +464,6 @@ local instantReportList = {
 	"wts.*mythic.*master.*loot.*mythic.*details.*private", --EN WTS Mythic/HC Master - Loot, Karazhan, Mythic+ and more in >> details private messeng
 	"wts.*nightmare.*boosting.*loot.*mythic.*glory", --WTS Emerald Nightmare Mythic/Heroic/Normal boosting +loot, Karazhan boost, Mythic Keystone Boost 1-10+lvl, Mythic dungeons boost, Glory of the Legion Hero
 	"skype.*landroshop", --WTS [Keystone Conqueror] (2-10 lvl) and Karazhan, fast, smooth and fair. Details in skype: Landroshop
-	"pewpewshop.*loot", --[WTS] [►►►PewPewShop.Pro] — Emerald Nightmare Mythic with loot and selfplay! ►►► Mythic dungeons+, Karazhan time run with loot and mount!►►►
 	"wtskarazhan.*timerun.*mount.*mythic.*dungeonboost", --WTS Karazhan8/8,Timerun with 100% mount,Mythic+,10/10Mythic dungeon boost
 	--▄▀▄ WTS Artifact Leveling █ Emerald Nightmare Loot Runs █ Karazhan & Mythic+ Dungeons █ [Vicious Saddle] + Honor 1-50 + Prestige █ [Conquest-Capped.com] ▄▀▄
 	"saddle.*conquestcapped[%.,]com", -- ▄▀▄ WTS Full Conquest Cap █ [Vicious Saddle] + 27,000 Conquest Points █ [Conquest-Capped.com]█ /w to get 5% discount ▄▀▄
@@ -477,7 +476,6 @@ local instantReportList = {
 	"elitegamerboosting[%.,]de.*skype", --Return to Karazhan! Organisiere dir durch und mit uns einen unbeschwerten Ausflug in die neue Instanz - Erfolge, Loot und Mount inklusive! Alle Angebote auf [elite-gamer-boosting.de] | Skype: [real.elite.gamer] | Ab sofort 3% sparen mit dem Code: SIMON
 	"wts.*nightmare.*mythic.*loot.*dungeon.*pvp.*glory", --►►►[WTS] The Emerald Nightmare Mythic/Heroic/Normal with loot, Mythic+ dungeons,► PvP help◄, Glory of the Legion hero & more!◄◄◄
 	"juststarted.*legion.*gearup.*karazhan.*nightmare.*dungeon.*more", --Just Started The Legion ? Need To Gear Up ? Try Our KARAZHAN, EMERALD NIGHTMARE, +DUNGEONS AND MORE runs WTS!
-	"bestboost[%.,]club.*service", --►►► [[BESTBOOST.CLUB]] - 100-110 BOOST, MYTHIC AND MYTHIC+ DUNGEONS 10/10, THE EMERALD NIGHTMARE RAID NORMAL/HEROIC/MYTHIC, RETURN TO KARAZHAN AND OTHER SERVICES [[BESTBOOST.CLUB]] ◄◄◄
 	"%d+k.*giveaway.*guild.*selling.*karazhan.*mount.*mythic.*dungeon.*nightmare.*raid", --100K weekly giveaway from our guild! By the way we are selling Karazhan with mount, Mythic Dungeons+, Emerald Nightmare raids
 	"l[o0][o0]tcl[o0]ud.*b[o0][o0][s5]t", --▲▲▲■■■LFB?>-L00tcl0ud?c0m?-GUILD B005T/-/EN HC 69e/-/Mythic+/-/Trust raids/Karazhan/-/Best offers/ And many more here-?L00tcl0ud?com?   ▲▲▲■■■
 	"wtskara.*fasttimerun.*guarantee.*mount", --WTS KARAZHAN // fast time runs with guaranteed awesome MOUNT! /w me for more info.
@@ -515,15 +513,12 @@ local instantReportList = {
 	"^wts.*nightmare.*mythicboost.*clear.*loot.*amazingprice.*raidstarts", --Wts Emerald nightmare Mythic boost 7/7 clear including 8-12 loot Minimum for amazing price , raid starts at 18:00 st! w me .
 	--Doing Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, PvP Saddle, artifact power & appearance and a lot more ! visit [www.prestige-wow.com] for more details !
 	"%d+.*prestigewow[%.,][cf]", --Offering Honor and Prestige boosts : Unlock all PvP talents, 840-870 PvP gear, mounts, artifact power & appearance, golds and a lot more ! With [www.prestige-wow.com1]
-	"wts%d+kgoldfor%d+eu", --WTS 800k GOLD FOR  35 EURO NOW !
 	"skype.*vf3399", --[5000+ forums vouches]wts virtual currency 0.23$/k,safe gold guaranteed,mmogoldbay.NET,{laugh} my skype is vf3399
 	"wtskarazhanwithmount.*mythicdungeons.*valor.*nightmare", --BLACK FRIDAY SALES! DON'T MISS IT! WTS Karazhan with mount, Mythic Dungeons+, Trial of Valor, Emerald Nightmare raids
 	"loot.*mount.*mythic.*dungeons.*ask", --►►► [WТS] ► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Karazhan lootrun + mount ► Mythic+ 0-15 lvl dungeons - TUESDAY SALE 20% OFF ◄ ask me to get more info!
 	"sale.*mount.*loot.*mythic.*dungeons", --►►► [WТS] ► SUNDAY Sale! Karazhan lootrun + mount 20% OFF► Trial of Valor Normal/Heroic with loot ► Emerald Nightmare Heroic/Mythic with loot ► Mythic+ 1-15 lvl dungeons ◄ ask me to get more info!
 	"wts.*mythic.*lootrun.*master.*fast.*cheap.*ready.*info", --[WTS] Now Emerald Nightmare Mythic Lootrun!Master Loot!Fast and Cheap!Ready to go in 15 min,/w me for more info
 	"selling.*nightmare.*heroic.*masterloot.*boost.*server.*info", --Selling Emerald Nightmare Heroic Masterloot boost, tomorrow at 19:00 server time, /w me for more info!!
-	"cheap.*speedruncharacter[%.,]net", --WTS CHEAP price En hc/myth, kara + mount raid, myth + chest run, ToV hm/norm, dungeons and much more [SpeedRunCharacter.net]
-	"best.*speedruncharacter[%.,]net", --WTS BEST OFFERS EMERALD NIGHTMARE HC/MYTH,TRIAL OF VALOR, KARAZHAN,MYTH+ AND MUCH MORE SALE START [SPEEDRUNCHARACTER.NET]
 	"wts.*xavius.*boost.*completed500.*curve.*%d+.*me.*info", --WTS HC Xavius boost we completed 500+ run take your curve next run 16:40 server time /w me more info !!
 	"^wtsenmythiclootruntonight.*goldpossible.*w", --WTS EN Mythic Lootrun tonight (ML, gold possible) ./w
 	"^wts.*keystoneconqueror.*karazhan.*fast,smoothandfair.*whisp", --WTS [Keystone Conqueror] (2-12 lvl) and Karazhan, fast, smooth and fair. Whisper for more info.
@@ -531,8 +526,6 @@ local instantReportList = {
 	"^wtstoday.*nightmaremythic.*master.*fastcheap.*info", --WTS Today Emerald Nightmare Mythic(7/7) with Master Loot||Fast & Cheap||/w me for more info
 	"^=*wts=*today.*nightmaremythic.*master.*bestprice$", --=WTS= Today Emerald Nightmare Mythic(7/7)!Master Loot!Best Price!!!
 	"wts.*lootrun.*myth.*mount.*offers.*live", --■■■ <[WТS]> ToV NM/HC lootrun>; EN myth/hc/nm with loot; Karazhan lootrunMount, Mythic dungeons,<►Crazy offers◄> /w to get the best offer today!!! <Live support>■■■
-	--WWW,PVPOK,C0MGold,Item,Mounts On Hot Sale!WWW,PVPOK,C0M
-	"pvpok[%.,]c[o0]m.*www", --WWW,PVPOK,C0M100K=30$,Fast DeliveryWWW,PVPOK,C0M
 	"wtsfast.*smooth.*karazhan.*mount.*valor.*nightmare.*wisp", --WTS FAST and SMOOTH Karazhan with mount, Trial of Valor, Emerald Nightmare run. Wisp!
 	"wts.*nightmare.*heroic.*ml.*quality.*discount.*come.*items", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. High [quality.Discount] for cloth/mail/leather! Come get your 865+ items.
 	"wts.*heroic.*raid.*tonight.*come.*items.*quality.*discount", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. Raid tonight at 19.00 CET. Come get your 865+ [items.High] [quality.Discount] for cloth/leather/mail!
@@ -548,9 +541,12 @@ local instantReportList = {
 	"^wtsnow.*nightmaremythic.*withmlfastcheap.*readytostartin%d+minute", --WTS Now Emerald Nightmare Mythic(7/7)with ML!Fast & Cheap!Get ready to start in 15 minutes!!!
 	"^wtstodaymythic.*higher.*hurry.*beforereset.*weeklychest.*write.*info", --▲▲▲WTS Today Mythic+10 or higher, Hurry do it before reset for weekly chest!! Write me for more info▲▲▲
 	"wtsartifactpower.*mount.*saddle.*accshare", --Wts artifact power to get  higher weapon lvls/ 6vicious mounts[Vicious Saddle]also selling[Voidtalon of the Dark Star]}No need acc share ! /Pst
+	"sellingrbg.*honou?r.*mount.*accountshare", --Selling RBG 1-100wins(honor rank),6RBG mounts [Vicious Saddle],BOP mount[Voidtalon of the Dark Star][Reins of the Long-Forgotten Hippogryph]},no account share 
 	"telegram.*amirangaming", --Foorooshe Legion 135T , BattleChest 44T  Tahvil fori , Telegram : https://telegram.me/AG_Co Or  @AmiranGaming
 	"^wts.*tonight.*nightmare.*mythic.*masterloot.*guarantee.*cheap.*price", --WTS ►Tonight Emereld Nightmare Mythic with Master Loot ▌▌7 loot guaranteed ▌▌Cheapest price! /w me
 	"strongandskilledteam.*helpyouwithmythicdungeon.*upto%d+fastandeasy", --Strong and skilled team will help You with Mythic+ dungeons up to 14+ fast and easy.
+	"experiencedteamoffriends.*helpyouwithmythicdungeon.*upto%d+inshorttime", --Experienced team of friends will help You with Mythic+ dungeons up to 14+ in short time!
+	"helpyou.*skype.*warstre", --We will help you with the Emerald Nightmare N | H, Karazhan; Ember Wyrm; Mythic + Dungeon and other services. Skype: Warstre
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -582,11 +578,6 @@ local instantReportList = {
 	"qq.*153874069", --华哥超低黄金27刀10万安全效率 大小幽灵虎坐骑请咨询 承接各种代练 支持淘宝、paypal 多种付款+微信QQ：153874069
 	"qq.*3450345", --PGP工作室 H翡翠包团200刀可单买，团长分配保证6+拾取，新客户可免费再带一周。100-110代  练纯手工快速 12小时，代清世界任务，卡拉赞坐骑，联系QQ或微信都是 3450345
 	"练级.*bearwow[,.]com", --承接WOW 100-110练级、大秘境、卡拉赞、世界任务、神器外观、神器第三槽解锁等,纯手工，市场最低价，请登陆网站：w w w.bearwow.c o m
-	"100110.*手工金币.*%d+mb=%d+", --绝对纯手工100-110任务升级（任务全做，开启声望）。苏拉玛任务11/8。神器三插槽。荣誉50等级~（送邪气鞍座）。军团6大声望 ~手工金币26刀十万，现货秒发。170MB=10万
-	"出售特价金.*双11金币大甩卖", --出售特价金  20 for 100K    11.11    11.11 出售特价金  20 for 100K    11.11    11.11    11.11出售特价金  20 for 100K    双11金币大甩卖，需要的M  11.11    11.11 出售特价金 11.11
-	"出售特价金.*100110", --出售特价金  20 for 10W    纯手工100-110升级 翡翠英雄团 5M代刷 大秘境2-10层（橙装掉率很高） 卡拉赞前置任务代做通关 代刷神器点数 神器三槽  星空龙 无敌 飞机头 大小幽灵虎，需要mmmmm
-	"特价出售金.*稀有坐骑", --特价出售金25for100K，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，稀有坐骑等等业务，需要的mmmmmm
-	"黄金.*神器点数.*稀有坐骑", --黄金25刀10万，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,翡翠梦境团本代练，稀有坐骑,需要的mmm
 	--特价[Reins of the Swift Spectral Tiger]，金币25for100K，等级代练纯手工，荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，稀有坐骑,需要的mmmmmmm
 	--特价[Reins of the Swift Spectral Tiger]，金币25刀10万，等级代练纯手工，神器点数，荣誉等级，大秘境刷箱子，苏拉玛1-8章,翡翠梦境团本代练，稀有坐骑,需要的mmm
 	"特价.*tiger.*稀有坐骑", --特价[Reins of the Swift Spectral Tiger]，黄金,26for100K，等级代练纯手工，荣誉等级(送坐骑），大秘境刷箱子（橙装掉率很高），翡翠梦境团本，稀有坐骑,需要的mmmmmm
@@ -621,6 +612,7 @@ local instantReportList = {
 	"清世界任务.*金%d+刀%d+万", --等级代练纯手工任务，清世界任务，神器三槽。5人H-M本毕业。苏拉玛8章，翡翠梦境团本最低价。星空龙，无敌，飞机头。金23刀10万
 	"无限拾取套餐特价.*金币二十万", --H/M大米2-12无限拾取套餐特价；卡拉赞龙队全通拾取特价；；H/M包团保底七个；勇气试炼H强力团购。。金币二十万=299RMB。大小老虎微信meitao1131
 	"热售翡翠梦境包团.*金币", --热售翡翠梦境包团~等级纯手工任务升级~5人M本毕业，苏拉玛第8章~神器三槽。金币22刀十万。星空龙，无敌，飞机头等坐骑
+	"工作室手工任务练级.*龙无敌火鹰等热卖", --工作室手工任务练级，PVP装备荣誉等级马鞍奖励速刷,10或12层大秘境拿2箱奖励或低保快速提升装等，2层-3层欧皇无限刷橙装，英雄H史诗M翡翠梦魇包团及毕业,卡拉赞坐骑星光龙无敌火鹰等热卖
 
 	--[[  Russian  ]]--
 	"maxlvl[%.,]net.*пpoдaжa", --MAXLVL.NET Продажа персонажей 110(870+илвл). Лут-рейды ИК Нормал, Героик, Эпох. МИФ+15. Фарм престижа. Оденем вашего персонажа до 885+ илвл.
