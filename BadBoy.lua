@@ -541,12 +541,13 @@ local instantReportList = {
 	"^wtsnow.*nightmaremythic.*withmlfastcheap.*readytostartin%d+minute", --WTS Now Emerald Nightmare Mythic(7/7)with ML!Fast & Cheap!Get ready to start in 15 minutes!!!
 	"^wtstodaymythic.*higher.*hurry.*beforereset.*weeklychest.*write.*info", --▲▲▲WTS Today Mythic+10 or higher, Hurry do it before reset for weekly chest!! Write me for more info▲▲▲
 	"wtsartifactpower.*mount.*saddle.*accshare", --Wts artifact power to get  higher weapon lvls/ 6vicious mounts[Vicious Saddle]also selling[Voidtalon of the Dark Star]}No need acc share ! /Pst
-	"sellingrbg.*honou?r.*mount.*accountshare", --Selling RBG 1-100wins(honor rank),6RBG mounts [Vicious Saddle],BOP mount[Voidtalon of the Dark Star][Reins of the Long-Forgotten Hippogryph]},no account share 
+	"sellingrbg.*honou?r.*mount.*accountshare", --Selling RBG 1-100wins(honor rank),6RBG mounts [Vicious Saddle],BOP mount[Voidtalon of the Dark Star][Reins of the Long-Forgotten Hippogryph]},no account share
 	"telegram.*amirangaming", --Foorooshe Legion 135T , BattleChest 44T  Tahvil fori , Telegram : https://telegram.me/AG_Co Or  @AmiranGaming
 	"^wts.*tonight.*nightmare.*mythic.*masterloot.*guarantee.*cheap.*price", --WTS ►Tonight Emereld Nightmare Mythic with Master Loot ▌▌7 loot guaranteed ▌▌Cheapest price! /w me
 	"strongandskilledteam.*helpyouwithmythicdungeon.*upto%d+fastandeasy", --Strong and skilled team will help You with Mythic+ dungeons up to 14+ fast and easy.
 	"experiencedteamoffriends.*helpyouwithmythicdungeon.*upto%d+inshorttime", --Experienced team of friends will help You with Mythic+ dungeons up to 14+ in short time!
 	"helpyou.*skype.*warstre", --We will help you with the Emerald Nightmare N | H, Karazhan; Ember Wyrm; Mythic + Dungeon and other services. Skype: Warstre
+	"wtsmythic.*runs.*difficulty.*karazhan.*mount.*selfplay.*runseveryday.*info", --█ WTS █ Mythic+ Runs of any difficulty, Karazhan including mount. Selfplay! Runs every day. /w for more info
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -685,6 +686,8 @@ local instantReportList = {
 	"^guldfinns.*kopa.*swish$", --Guld finns att köpa genom swish
 	"^gsaljsbilligt.*swish", --G säljs billigt! (swish)
 	"guldsalje[rs]viaswish", --Wow guld säljes via swish! 120kr per 100k.
+	"^saljerwowguldgenomswish", --Säljer wow guld genom Swish 120 kr per 100k /w för skype!
+	"^saljerguldpaswish", --Säljer guld på swish. /w mig hur mycket du vill ha så säger jag ett pris
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
@@ -701,7 +704,7 @@ local repTbl = {
 	["[%*%-%(%)\"!%?`'_%+#%%%^&;:~{} ]"]="",
 	["¨"]="", ["”"]="", ["“"]="", ["▄"]="", ["▀"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="",
 	["░"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="", ["«"]="", ["»"]="",
-	["▌"]="", ["√"]="", ["《"]="", ["》"]="",
+	["▌"]="", ["√"]="", ["《"]="", ["》"]="", ["•"]=".",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", ["Ą"]="a", ["ą"]="a", --First letter is Russian "\208\176". Convert > \97. Note: Ą fail with strlower, include both.
