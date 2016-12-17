@@ -551,7 +551,7 @@ local instantReportList = {
 	"experiencedteamoffriends.*helpyouwithmythicdungeon.*upto%d+inshorttime", --Experienced team of friends will help You with Mythic+ dungeons up to 14+ in short time!
 	"helpyou.*skype.*warstre", --We will help you with the Emerald Nightmare N | H, Karazhan; Ember Wyrm; Mythic + Dungeon and other services. Skype: Warstre
 	"wtsmythic.*runs.*difficulty.*karazhan.*mount.*selfplay.*runseveryday.*info", --█ WTS █ Mythic+ Runs of any difficulty, Karazhan including mount. Selfplay! Runs every day. /w for more info
-	"prestigewow[%.,]+[cf].....................................",
+	"prestigewow[%.,]*[cf].....................................",
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -1007,7 +1007,8 @@ do
 	end)
 	reportFrame:SetScript("OnLeave", GameTooltip_Hide)
 	local function a(t) local n = {} for i=1,#t do n[i] = t[i] end return n end
-	if bbdbgn then bbdbgn(a(commonList), a(boostingList), a(boostingWhiteList), a(whiteList), a(sites), a(instantReportList), a(repTbl)) end
+	local function b(t) local n = {} for k,v in next, t do n[k]=v end return n end
+	if bbdbgn then bbdbgn(a(commonList), a(boostingList), a(boostingWhiteList), a(whiteList), a(sites), a(instantReportList), b(repTbl)) end
 end
 
 --[[ Add Filters ]]--
