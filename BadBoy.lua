@@ -108,9 +108,11 @@ local boostingWhiteList = {
 	"goldonly",
 	"goldprices",
 	"forgold",
+	"%d+kperrun",
 	"tonight",
 	"gametime",
 	"servertime",
+	"entrance",
 	"%.battle%.net/",
 	"recrui?t",
 	"appl[iy]", --apply/application
@@ -731,7 +733,7 @@ local repTbl = {
 	["т"]="t", --Convert > \116
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 	["ý"]="y", ["ÿ"]="y", --Convert > \121
-	["•"]=".",
+	["•"]=".", ["º"]="o",
 }
 
 local strfind = string.find
