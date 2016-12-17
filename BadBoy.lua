@@ -188,7 +188,7 @@ local whiteList = {
 	"peйд", --ru, raid
 }
 local sites = {
-	"prestigewow[%.,]com", --prestige-wow
+	"prestigewow[%.,]c[0o]m", --prestige-wow
 	"farm4gold[%.,]com",
 	"dving[%.,]net",
 	"speedruncharacter[%.,]net",
@@ -205,6 +205,8 @@ local sites = {
 	"bestboost[%.,]club",
 	"bestboost[%.,]com", --best-boost
 	"topboost[%.,]pro",
+	"gamesales[%.,]pro",
+	"mythicstore[%.,]com", --mythic-store
 }
 
 --Any entry here will instantly report/block
@@ -430,7 +432,6 @@ local instantReportList = {
 	"selling.*mount.*honor.*gear.*accshare.*", --selling 1-75winsEarn mount +honor rank+ priestige/legendary gears 6vicious mount  ;also selling[Vicious War Trike]and[Vicious Saddle]},no acc share .PST
 	"rbg.*artifact.*mount.*accshar", --▓▓WTS RBGs,1-75wins(get HR and artifact power and 6vicious mounts)[Vicious War Trike]and[Vicious Saddle]right now,no accshare▓PST
 	"heroic.*amazingprice.*strong.*group.*gua?rantee.*drop.*spot", --Wts Emerald nightmare Heroic 7/7 clear for amazing price with strong guide groupe we gurantee you Full heroic loot that drop for your class on tonight 19:00 st only 2 spots ! w me for more infos.
-	"mythicstore[%.,]com.*skype", --For more details visit https://mythic-store.com , or write in skype: mythic-store
 	"wts.*tonight.*arena.*rbg.*mythic.*coaching", --WTS Emerald Nightmare 7/7 MYTHIC with ML tonight , 1 spot for now / Arena/RBG/Mythics/Coaching /w for info
 	--Legion 139Toman Game Time 30Toman Gold har 1k 450Toman Level Up ham Anjam midim |Web: www.iran-blizzard.com  Tel: 000000000000
 	"legion.*gametime.*iranblizzard[%.,]com", --Legion 140T - Game Time 30Day 35T - 60Day 70Toman - www.iran-blizzard.com
@@ -443,7 +444,6 @@ local instantReportList = {
 	"mythic.*boostinglive.*faster", --Mythic dungeons, Heroic raids, and more on [boostinglive.com] !Dress up your character faster than others!
 	"koroboost.*everyday.*mythic", --Top guild "Koroboost" inviting you everyday from 1:00 pm CET  to mythic/mythic + dungeons. Became [Brokenly Epic] within 4 hours. Msg me!
 	"doyouwant.*level110.*12h.*noproblem.*msgme.*info", --Do you want [Level 110] within 12h? No problem, Msg me for info ♥♥
-	"gamesales[%.,]pro.*service.*arena", --[Gamesales.pro] - an assistance in PvP and PvE services: starting from training and ending with achievement of the highest ranks in the arena. [Gamesales.pro-] an opportunity to get the best in a short time. Find out more at [http://www.gamesales.pro]
 	"rbg.*artifact.*honor.*mount.*carry", --█░█WTS RBG 1-75wins(Artifact Power+Honor Rank)6Vicious mount[Vicious Saddle]also[Reins of the Long-Forgotten Hippogryph]carry u right now ▲PST
 	"^wtspowerleveling.*fast", --WTS Powerleveling (Fastest available)
 	"fast.*leveling.*honor.*в[o0][o0]st", -- ►►►Fastest leveling 100-110 (6-12 hours), 850+ gear, Honor Ranks and MUCH MORE on [RРD-В00SТ,С0М]◄◄◄
@@ -540,6 +540,7 @@ local instantReportList = {
 	"^wtskarazhad?nrunwithmount.*startin%d+.*wformoreinfo$", --WTS Karazhan run with mount, start in 30 min, /w for more info!
 	"^wtsnow.*nightmaremythic.*withmlfastcheap.*readytostartin%d+minute", --WTS Now Emerald Nightmare Mythic(7/7)with ML!Fast & Cheap!Get ready to start in 15 minutes!!!
 	"^wtstodaymythic.*higher.*hurry.*beforereset.*weeklychest.*write.*info", --▲▲▲WTS Today Mythic+10 or higher, Hurry do it before reset for weekly chest!! Write me for more info▲▲▲
+	"wts.*earnmount.*rank.*viciousmount.*selling.*accshare", --WTS 1-75wins Earn mount +honor rank  AP and 6vicious mount  ;also selling[Reins of the Long-Forgotten Hippogryph]and[Voidtalon of the Dark Star]},no acc share 
 	"wtsartifactpower.*mount.*saddle.*accshare", --Wts artifact power to get  higher weapon lvls/ 6vicious mounts[Vicious Saddle]also selling[Voidtalon of the Dark Star]}No need acc share ! /Pst
 	"sellingrbg.*honou?r.*mount.*accountshare", --Selling RBG 1-100wins(honor rank),6RBG mounts [Vicious Saddle],BOP mount[Voidtalon of the Dark Star][Reins of the Long-Forgotten Hippogryph]},no account share
 	"telegram.*amirangaming", --Foorooshe Legion 135T , BattleChest 44T  Tahvil fori , Telegram : https://telegram.me/AG_Co Or  @AmiranGaming
@@ -614,6 +615,9 @@ local instantReportList = {
 	"无限拾取套餐特价.*金币二十万", --H/M大米2-12无限拾取套餐特价；卡拉赞龙队全通拾取特价；；H/M包团保底七个；勇气试炼H强力团购。。金币二十万=299RMB。大小老虎微信meitao1131
 	"热售翡翠梦境包团.*金币", --热售翡翠梦境包团~等级纯手工任务升级~5人M本毕业，苏拉玛第8章~神器三槽。金币22刀十万。星空龙，无敌，飞机头等坐骑
 	"工作室手工任务练级.*龙无敌火鹰等热卖", --工作室手工任务练级，PVP装备荣誉等级马鞍奖励速刷,10或12层大秘境拿2箱奖励或低保快速提升装等，2层-3层欧皇无限刷橙装，英雄H史诗M翡翠梦魇包团及毕业,卡拉赞坐骑星光龙无敌火鹰等热卖
+	"圣诞节大甩卖金币.*金子大甩卖", --圣诞节大甩卖金币 大小幽灵虎现货秒发 KLZ龙 纯手工任务升级 神器三槽 世界任务 神器能量5M毕业 秘境（刷箱子苏拉玛1-8章 星空龙 翡翠包团  鸡蛋 龙鹰  幽灵马  大小幽灵虎现货 金子大甩卖 m我
+	"神器三槽.*金%d+刀%d+万", --N-110等级纯手工任务，神器三槽。5人M本毕业。大密境，苏拉玛8章，翡翠梦境团本最低价。星空龙，无敌，飞机头。金23刀10万。
+	"圣诞节金币大促销.*送坐骑", --圣诞节金币大促销 20刀--10万，等级代练纯手工，清理世界任务，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本代练，老虎，公鸡等坐骑,需要的密我.
 
 	--[[  Russian  ]]--
 	"maxlvl[%.,]net.*пpoдaжa", --MAXLVL.NET Продажа персонажей 110(870+илвл). Лут-рейды ИК Нормал, Героик, Эпох. МИФ+15. Фарм престижа. Оденем вашего персонажа до 885+ илвл.
@@ -622,6 +626,8 @@ local instantReportList = {
 	"dving[%.,]ru.*уcлуги", --►►► DVING.RU - ПРОКАЧКА ПЕРСОНАЖА, ПОДЗЕМЕЛЬЯ ЛЮБОЙ СЛОЖНОСТИ, ИК С МАСТЕР ЛУТОМ , ПВП РЕЙТИНГИ И ДРУГИЕ УСЛУГИ - ПРОМОКОД "N16" - DVING.RU ◄◄◄
 	"низkиeцeны.*getloot[%.,]ru", --Поможем с ИК,ИД,мификами и плюсами, а так же [Возвращение в Каражан] Низкие цены на getloot. ru
 	"wowmart[%.,]ru.*зoлoto", ---= WOWMART.ru =- Купим все ваши монетки. Продаем Legion за золото - 300к!
+	--| [Rpg-Gold.ru]\ Скупаем 9р за 1.000 Золото\\ Ищем поставщиков ||Все способы оплаты
+	"rpggold[%.,]ru.*cпocoбы", --|Сервис [Rpg-Gold.ru] | Прокачка 100-110ур/Лут-рейды|Мифик+|Каражан|Ключ Легиона За ГОЛД|Онлайн чат на сайте.| Ищем поставщиков||Все способы оплаты
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -688,6 +694,10 @@ local instantReportList = {
 	"guldsalje[rs]viaswish", --Wow guld säljes via swish! 120kr per 100k.
 	"^saljerwowguldgenomswish", --Säljer wow guld genom Swish 120 kr per 100k /w för skype!
 	"^saljerguldpaswish", --Säljer guld på swish. /w mig hur mycket du vill ha så säger jag ett pris
+	"^wtbg[ou]ldviaswish", --wtb guld via swish
+	--will köpa guld via swish
+	"^[vw]illkop[as]guldviaswish", --VILL KÖPS GULD VIA  SWISH
+	"^billigtguldviaswish", --Billigt guld via Swish /w vid intresse {Säljer på alla servrar]
 
 	--[[ German ]]--
 	"besten.*skype.*sarmael.*coaching", --[Melk Trupp]Der Marktführer kanns einfach am Besten, nun sogar als aktueller Blizzconsieger! Melde Dich bei mir im Skype:Sarmael123456 und überzeuge Dich selbst! Ob Arena, Dungeons, Coachings oder Raids-Bei uns bekommst du jede Hilfe, die Du benötigst!
@@ -704,7 +714,7 @@ local repTbl = {
 	["[%*%-%(%)\"!%?`'_%+#%%%^&;:~{} ]"]="",
 	["¨"]="", ["”"]="", ["“"]="", ["▄"]="", ["▀"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="",
 	["░"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="", ["«"]="", ["»"]="",
-	["▌"]="", ["√"]="", ["《"]="", ["》"]="", ["•"]=".",
+	["▌"]="", ["√"]="", ["《"]="", ["》"]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", ["Ą"]="a", ["ą"]="a", --First letter is Russian "\208\176". Convert > \97. Note: Ą fail with strlower, include both.
@@ -721,6 +731,7 @@ local repTbl = {
 	["т"]="t", --Convert > \116
 	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
 	["ý"]="y", ["ÿ"]="y", --Convert > \121
+	["•"]=".",
 }
 
 local strfind = string.find
