@@ -780,7 +780,7 @@ end
 --[[ Chat Scanning ]]--
 local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
 local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
-local blockedLineId, chatLines, chatPlayers = 0, {}, {}
+local blockedLineId, chatLines, chatPlayers, pl = 0, {}, {}, 1000
 local spamCollector, spamLogger, prevShow = {}, {}, 0
 local btn, reportFrame
 local function BadBoyIsFriendly(name, flag, lineId, guid)
@@ -806,6 +806,7 @@ end
 local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
 	blockedLineId = 0
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
+	if event == "CHAT_MSG_WHISPER" and pl < 60 then return end
 
 	local trimmedPlayer = Ambiguate(player, "none")
 	if BadBoyIsFriendly(trimmedPlayer, flag, lineId, guid) then return end
