@@ -551,7 +551,7 @@ local instantReportList = {
 	"experiencedteamoffriends.*helpyouwithmythicdungeon.*upto%d+inshorttime", --Experienced team of friends will help You with Mythic+ dungeons up to 14+ in short time!
 	"helpyou.*skype.*warstre", --We will help you with the Emerald Nightmare N | H, Karazhan; Ember Wyrm; Mythic + Dungeon and other services. Skype: Warstre
 	"wtsmythic.*runs.*difficulty.*karazhan.*mount.*selfplay.*runseveryday.*info", --█ WTS █ Mythic+ Runs of any difficulty, Karazhan including mount. Selfplay! Runs every day. /w for more info
-	"prestigewow[%.,][cf].....................................",
+	"prestigewow[%.,]+[cf].....................................",
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -738,10 +738,9 @@ local repTbl = {
 }
 
 local strfind = string.find
-local IsSpam = function(msg, myDebug)
+local IsSpam = function(msg)
 	for i=1, #instantReportList do
 		if strfind(msg, instantReportList[i]) then
-			if myDebug then print("Instant", instantReportList[i]) end
 			return true
 		end
 	end
@@ -750,38 +749,32 @@ local IsSpam = function(msg, myDebug)
 	for i=1, #whiteList do
 		if strfind(msg, whiteList[i]) then
 			points = points - 2
-			if myDebug then print("whiteList", whiteList[i], points, boostingPoints) end
 		end
 	end
 	for i=1, #commonList do
 		if strfind(msg, commonList[i]) then
 			points = points + 1
-			if myDebug then print("commonList", commonList[i], points, boostingPoints) end
 		end
 	end
 	for i=1, #sites do
 		if strfind(msg, sites[i]) then
 			points = points + 3
 			boostingPoints = boostingPoints + 3
-			if myDebug then print("sites", sites[i], points, boostingPoints) end
 		end
 	end
 
 	for i=1, #boostingWhiteList do
 		if strfind(msg, boostingWhiteList[i]) then
 			boostingPoints = boostingPoints - 1
-			if myDebug then print("boostingWhiteList", boostingWhiteList[i], points, boostingPoints) end
 		end
 	end
 	for i=1, #boostingList do
 		if strfind(msg, boostingList[i]) then
 			boostingPoints = boostingPoints + 1
-			if myDebug then print("boostingList", boostingList[i], points, boostingPoints) end
 		end
 	end
 
-	local report = points > 3 or boostingPoints > 3
-	return report, points, boostingPoints
+	return report
 end
 
 --[[ Chat Scanning ]]--
@@ -1013,7 +1006,8 @@ do
 		GameTooltip:Show()
 	end)
 	reportFrame:SetScript("OnLeave", GameTooltip_Hide)
-	BadBoyConfig.IsSpam, BadBoyConfig.Cleanse = IsSpam, Cleanse
+	local function a(t) local n = {} for i=1,#t do n[i] = t[i] end return n end
+	if bbdbgn then bbdbgn(a(commonList), a(boostingList), a(boostingWhiteList), a(whiteList), a(sites), a(instantReportList), a(repTbl)) end
 end
 
 --[[ Add Filters ]]--
