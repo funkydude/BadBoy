@@ -442,7 +442,6 @@ local instantReportList = {
 	"bank4dh.*%d+k", --=>>[www.bank4dh.com]<<=19E=100K. 5-15 m
 	"trusted.*bank4dh", --WTS BOE class set, 860 Six-Feather Fan, Best BOE gears for rading and alt [lvling.Trusted] seller,K+ feedback from OC. Plz vistor www bank4dh com Cheaper than AH.
 	"wts.*mythic.*powerle?ve?l.*glory.*info", --▲ WTS RUN in Emerald Nightmare (Normal or heroic) TODAY ▲ Mythic+ ▲ Power leveling 100-110 ▲ All Glory ▲ we have a lot runs every day ▲ and more other ▲ /W for more information ▲
-	"rbg.*mount.*prestige.*accshare", --███WTS RBG40&75wins/Vicious Saddle/all 6 vicious mounts/honor rank/prestige[Vicious War Trike]and[Vicious Warstrider]no acc share,carry right now/w me
 	"mythic.*boostinglive.*faster", --Mythic dungeons, Heroic raids, and more on [boostinglive.com] !Dress up your character faster than others!
 	"koroboost.*everyday.*mythic", --Top guild "Koroboost" inviting you everyday from 1:00 pm CET  to mythic/mythic + dungeons. Became [Brokenly Epic] within 4 hours. Msg me!
 	"doyouwant.*level110.*12h.*noproblem.*msgme.*info", --Do you want [Level 110] within 12h? No problem, Msg me for info ♥♥
@@ -532,6 +531,7 @@ local instantReportList = {
 	"wts.*nightmare.*heroic.*ml.*quality.*discount.*come.*items", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. High [quality.Discount] for cloth/mail/leather! Come get your 865+ items.
 	"wts.*heroic.*raid.*tonight.*come.*items.*quality.*discount", --WTS EMERALD NIGHTMARE 7/7 Heroic with ML. Raid tonight at 19.00 CET. Come get your 865+ [items.High] [quality.Discount] for cloth/leather/mail!
 	"wts.*nightmare.*valor.*le?ve?ling.*best.*info", --►►►WTS: THE EMERALD NIGHTMARE | TRIAL OF VALOR | MYTHIC DUNGEONS | CHARACTER LVLing | BEST PRICE | WHISPER ME FOR MORE INFO!◄◄◄
+	"rbg.*mount.*bop.*accshare", --Selling RBG 1-100wins (honor rank)and 6vicious mount  [Vicious Saddle]and BOP Mount[Reins of the Long-Forgotten Hippogryph]},no acc share .PST
 	"wts.*rbgs.*mounts.*saddle.*accshare", --▓▓WTS RbgS(1-75wins)HR/ap/6 vicious mounts(viciours saddle)also[Reins of the Time-Lost Proto-Drake]▓[Voidtalon of the Dark Star]RN,no accshare▓PST
 	"^wts.*nightmare.*mythic.*gear.*gua?rantee.*amazing.*price.*details", --WTS Emerald nightmare mythic 7/7 clear including 8-12 Gear for you atleast (guranteed) for amazing price only today Going on 15:00 st ! w for more details.
 	"^wtsmount.*karazhan.*timerun.*quality.*service", --Wts mount from Karazhan (time run) right now! High quality service.
@@ -545,12 +545,16 @@ local instantReportList = {
 	"wts.*earnmount.*rank.*viciousmount.*selling.*accshare", --WTS 1-75wins Earn mount +honor rank  AP and 6vicious mount  ;also selling[Reins of the Long-Forgotten Hippogryph]and[Voidtalon of the Dark Star]},no acc share 
 	"wtsartifactpower.*mount.*saddle.*accshare", --Wts artifact power to get  higher weapon lvls/ 6vicious mounts[Vicious Saddle]also selling[Voidtalon of the Dark Star]}No need acc share ! /Pst
 	"sellingrbg.*honou?r.*mount.*accountshare", --Selling RBG 1-100wins(honor rank),6RBG mounts [Vicious Saddle],BOP mount[Voidtalon of the Dark Star][Reins of the Long-Forgotten Hippogryph]},no account share
+	--██WTS:RBG 1-75wins 6vicious mount+honor rank+prestige ;also selling[Ratstallion]and[Voidtalon of the Dark Star]no accout share , PST
+	"rbg.*mount.*prestige.*acco?u?n?t?share", --███WTS RBG40&75wins/Vicious Saddle/all 6 vicious mounts/honor rank/prestige[Vicious War Trike]and[Vicious Warstrider]no acc share,carry right now/w me
 	"telegram.*amirangaming", --Foorooshe Legion 135T , BattleChest 44T  Tahvil fori , Telegram : https://telegram.me/AG_Co Or  @AmiranGaming
 	"^wts.*tonight.*nightmare.*mythic.*masterloot.*guarantee.*cheap.*price", --WTS ►Tonight Emereld Nightmare Mythic with Master Loot ▌▌7 loot guaranteed ▌▌Cheapest price! /w me
 	"strongandskilledteam.*helpyouwithmythicdungeon.*upto%d+fastandeasy", --Strong and skilled team will help You with Mythic+ dungeons up to 14+ fast and easy.
 	"experiencedteamoffriends.*helpyouwithmythicdungeon.*upto%d+inshorttime", --Experienced team of friends will help You with Mythic+ dungeons up to 14+ in short time!
 	"helpyou.*skype.*warstre", --We will help you with the Emerald Nightmare N | H, Karazhan; Ember Wyrm; Mythic + Dungeon and other services. Skype: Warstre
 	"wtsmythic.*runs.*difficulty.*karazhan.*mount.*selfplay.*runseveryday.*info", --█ WTS █ Mythic+ Runs of any difficulty, Karazhan including mount. Selfplay! Runs every day. /w for more info
+	"^want.*level110.*within.*maybekarazhanmount.*mythic.*prestigelevels.*wisp", --Want [Level 110] within 12h Or maybe Karazhan mount? Mythic +10 run or Prestige  levels?  Wisp me ♥♥
+	"^topguildinvit.*daily.*mythicdungeon.*kara.*raid.*brokenlyepic.*4hours.*msg", --Top guild inviting you daily to mythic/mythic + dungeons, kara runs and EN raids. Became [Brokenly Epic] within 4 hours. Msg me!
 	"prestigewow[%.,@]*[cf].....................................",
 
 	--[[ Chinese ]]--
@@ -614,6 +618,8 @@ local instantReportList = {
 	--圣诞节大甩卖 金20for10W，等级代练纯手工，神器点数，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,翡翠梦境团本代练，大小老虎坐骑,需要的M我
 	--圣诞节金币热销 20for10W，等级代练纯手工，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保），苏拉玛1-8章,翡翠梦境团本代练（史诗全通），老虎，战马，公鸡等坐骑,需要的M我
 	"20for10w.*刷箱子", --圣诞节大甩卖金子 20 for10w大小幽灵虎现货秒发 KLZ龙 纯手工任务升级 神器三槽 世界任务 神器能量5M毕业 大秘境（刷箱子） 苏拉玛1-8章 星空龙 翡翠包团  鸡蛋 龙鹰  幽灵马  大甩卖金子 m我
+	"20=10w.*刷箱子", --圣诞节金币大甩卖 20=10W，等级代练纯手工，清理世界任务，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本代练，老虎，公鸡等坐骑,需要的私聊我。
+	"20刀?=10w.*另有黑市坐骑", --小母牛出售低价金币。20刀=10w幽灵虎现货。纯手工升级做任务。2-10层大 秘境代刷。翡翠梦境H，M包团，包毕业。另有黑市坐骑，星光龙，祖格虎,刷屏见谅。
 	"清世界任务.*金%d+刀%d+万", --等级代练纯手工任务，清世界任务，神器三槽。5人H-M本毕业。苏拉玛8章，翡翠梦境团本最低价。星空龙，无敌，飞机头。金23刀10万
 	"无限拾取套餐特价.*金币二十万", --H/M大米2-12无限拾取套餐特价；卡拉赞龙队全通拾取特价；；H/M包团保底七个；勇气试炼H强力团购。。金币二十万=299RMB。大小老虎微信meitao1131
 	"热售翡翠梦境包团.*金币", --热售翡翠梦境包团~等级纯手工任务升级~5人M本毕业，苏拉玛第8章~神器三槽。金币22刀十万。星空龙，无敌，飞机头等坐骑
@@ -621,6 +627,11 @@ local instantReportList = {
 	"圣诞节大甩卖金币.*金子大甩卖", --圣诞节大甩卖金币 大小幽灵虎现货秒发 KLZ龙 纯手工任务升级 神器三槽 世界任务 神器能量5M毕业 秘境（刷箱子苏拉玛1-8章 星空龙 翡翠包团  鸡蛋 龙鹰  幽灵马  大小幽灵虎现货 金子大甩卖 m我
 	"神器三槽.*金%d+刀%d+万", --N-110等级纯手工任务，神器三槽。5人M本毕业。大密境，苏拉玛8章，翡翠梦境团本最低价。星空龙，无敌，飞机头。金23刀10万。
 	"圣诞节金币大促销.*送坐骑", --圣诞节金币大促销 20刀--10万，等级代练纯手工，清理世界任务，荣誉等级(送坐骑），大秘境刷箱子（低层掉橙装和高层拿低保）,翡翠梦境团本代练，老虎，公鸡等坐骑,需要的密我.
+	"纯手工任务升级.*金%d+刀十万", --纯手工任务升级~翡翠梦魔包团最低价~N-110（自己上号），5人M本毕业。金22刀十万~苏拉玛第8章，神器三插槽，星空龙，无敌，飞机头等坐骑
+	--喜迎7.15版本和新年，本工作室手工110练级，强力代打卡拉赞全通及坐骑，7/7M工会带你全通M或者H翡翠包团及毕业，速打10到12层大米拿885低保送2箱，欧皇带你2-3层刷橙子及装备提升，需要mmm
+	"喜迎7.15版本和新年.*%d+", --喜迎7.15版本和新年稀有坐骑大酬宾,黑市T3，稀有坐骑代秒，10年稀有代刷经验为你服务无敌@飞机头@星光龙@@火乌鸦@纯血等一周包出，价格低到不敢想象 ，工作室因人员变动招收休闲打手
+	"卡拉赞全通打龙.*来就开来就开.*有需要的赶紧", --~~**~~卡拉赞全通打龙 ~~大米12层保底~~超级特价~来就开来就开~有需要的赶紧MMM
+	"公会专业队伍出售.*%d+usd", --公会专业队伍出售M+ ，896TANK带队，890+GROUP，10层60USD，老板可躺，+12大密一小时内搞定,夜之魇坐骑价格实惠,有意详聊!
 
 	--[[  Russian  ]]--
 	"maxlvl[%.,]net.*пpoдaжa", --MAXLVL.NET Продажа персонажей 110(870+илвл). Лут-рейды ИК Нормал, Героик, Эпох. МИФ+15. Фарм престижа. Оденем вашего персонажа до 885+ илвл.
@@ -629,8 +640,9 @@ local instantReportList = {
 	"dving[%.,]ru.*уcлуги", --►►► DVING.RU - ПРОКАЧКА ПЕРСОНАЖА, ПОДЗЕМЕЛЬЯ ЛЮБОЙ СЛОЖНОСТИ, ИК С МАСТЕР ЛУТОМ , ПВП РЕЙТИНГИ И ДРУГИЕ УСЛУГИ - ПРОМОКОД "N16" - DVING.RU ◄◄◄
 	"низkиeцeны.*getloot[%.,]ru", --Поможем с ИК,ИД,мификами и плюсами, а так же [Возвращение в Каражан] Низкие цены на getloot. ru
 	"wowmart[%.,]ru.*зoлoto", ---= WOWMART.ru =- Купим все ваши монетки. Продаем Legion за золото - 300к!
-	--| [Rpg-Gold.ru]\ Скупаем 9р за 1.000 Золото\\ Ищем поставщиков ||Все способы оплаты
-	"rpggold[%.,]ru.*cпocoбы", --|Сервис [Rpg-Gold.ru] | Прокачка 100-110ур/Лут-рейды|Мифик+|Каражан|Ключ Легиона За ГОЛД|Онлайн чат на сайте.| Ищем поставщиков||Все способы оплаты
+	"rpggold[%.,]ru.*зoлoto", --| [Rpg-Gold.ru]\ Скупаем 9р за 1.000 Золото\\ Ищем поставщиков ||Все способы оплаты
+	--| Сервис [Rpg-Gold.ru] | Прокачка 100-110ур/Лут-рейды| ИЗУМРУДНЫЙ КОШМАР(Мифик) |Мифик+|Каражан|Ключ Легиона За ГОЛД|Онлайн чат на сайте.|
+	"rpggold[%.,]ru.*гoлд", --|Сервис [Rpg-Gold.ru] | Прокачка 100-110ур/Лут-рейды|Мифик+|Каражан|Ключ Легиона За ГОЛД|Онлайн чат на сайте.| Ищем поставщиков||Все способы оплаты
 
 	--[[  Spanish  ]]--
 	"oro.*tutiendawow.*barato", --¿Todavía sin tu prepago actualizada? ¡CÓMPRALA POR ORO EN WWW.TUTIENDAWOW.COM! ¡PRECIOS ANTICRISIS! ¡65KS 60 DÍAS! Visita nuestra web y accede a nuestro CHAT EN VIVO. ENTREGAS INMEDIATAS. MAS BARATO QUE FICHA WOW.
@@ -717,7 +729,7 @@ local repTbl = {
 	["[%*%-%(%)\"!%?`'_%+#%%%^&;:~{} ]"]="",
 	["¨"]="", ["”"]="", ["“"]="", ["▄"]="", ["▀"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="",
 	["░"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="", ["«"]="", ["»"]="",
-	["▌"]="", ["√"]="", ["《"]="", ["》"]="", ["²"]="",
+	["▌"]="", ["√"]="", ["《"]="", ["》"]="", ["²"]="", ["´"]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", ["Ą"]="a", ["ą"]="a", --First letter is Russian "\208\176". Convert > \97. Note: Ą fail with strlower, include both.
@@ -774,13 +786,14 @@ local IsSpam = function(msg)
 		end
 	end
 
+	local report = points > 3 or boostingPoints > 3
 	return report
 end
 
 --[[ Chat Scanning ]]--
 local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
 local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
-local blockedLineId, chatLines, chatPlayers, pl = 0, {}, {}, 1000
+local blockedLineId, chatLines, chatPlayers, pl = 0, {}, {}, UnitLevel("player")
 local spamCollector, spamLogger, prevShow = {}, {}, 0
 local btn, reportFrame
 local function BadBoyIsFriendly(name, flag, lineId, guid)
