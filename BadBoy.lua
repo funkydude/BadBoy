@@ -555,7 +555,7 @@ local instantReportList = {
 	"wtsmythic.*runs.*difficulty.*karazhan.*mount.*selfplay.*runseveryday.*info", --█ WTS █ Mythic+ Runs of any difficulty, Karazhan including mount. Selfplay! Runs every day. /w for more info
 	"^want.*level110.*within.*maybekarazhanmount.*mythic.*prestigelevels.*wisp", --Want [Level 110] within 12h Or maybe Karazhan mount? Mythic +10 run or Prestige  levels?  Wisp me ♥♥
 	"^topguildinvit.*daily.*mythicdungeon.*kara.*raid.*brokenlyepic.*4hours.*msg", --Top guild inviting you daily to mythic/mythic + dungeons, kara runs and EN raids. Became [Brokenly Epic] within 4 hours. Msg me!
-	"prestigewow[%.,@<>]*[cf].....................................",
+	"prestigewow[%.,@]*[cf].....................................",
 
 	--[[ Chinese ]]--
 	"ok4gold.*skype", --纯手工100-110升级█翡翠英雄团█5M代刷 大秘境2-10层（橙装代刷）█代刷神器点数 解锁神器第三槽█金币20刀=10w█微信ok4gold█QQ或微信549965838█skype；gold4oks█微信ok4gold█v
@@ -726,7 +726,7 @@ local instantReportList = {
 
 local repTbl = {
 	--Symbol & space removal
-	["[%*%-%(%)\"!%?`'_%+#%%%^&;:~{} ]"]="",
+	["[%*%-<>%(%)\"!%?`'_%+#%%%^&;:~{} ]"]="",
 	["¨"]="", ["”"]="", ["“"]="", ["▄"]="", ["▀"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="",
 	["░"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="", ["«"]="", ["»"]="",
 	["▌"]="", ["√"]="", ["《"]="", ["》"]="", ["²"]="", ["´"]="",
