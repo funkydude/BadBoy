@@ -28,5 +28,6 @@ embeds.xml
 
 Locale.lua
 SimpleOptions.lua
+Generate.lua
 BadBoy.lua
 
