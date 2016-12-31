@@ -32,7 +32,7 @@ local repTbl = {
 	["Ę"]="e", ["ę"]="e", ["Ė"]="e", ["ė"]="e", ["Ě"]="e", ["ě"]="e", ["Ē"]="e", ["ē"]="e", ["Έ"]="e", ["έ"]="e", ["Ĕ"]="e", ["ĕ"]="e", ["Ε"]="e", ["ε"]="e", --Note: Ę, Ė, Ě, Ē, Έ, Ĕ, Ε fail with strlower, include both.
 	["Ğ"]="g", ["ğ"]="g", ["Ĝ"]="g", ["ĝ"]="g", ["Ģ"]="g", ["ģ"]="g", -- Convert > \103. Note: Ğ, Ĝ, Ģ fail with strlower, include both.
 	["ì"]="i", ["í"]="i", ["ï"]="i", ["î"]="i", ["İ"]="i", ["ı"]="i", -- Convert > \105.
-	["Ϊ"]="i", ["ϊ"]="i", ["Ι"]="i", ["ι"]="i", ["Ί"]="i", ["ί"]="i", ["Ĭ"]="i", ["ĭ"]="i", --Convert > \105. -- Note: Ϊ, Ι, Ί, Ĭ fail with strlower, include both.
+	["Ϊ"]="i", ["ϊ"]="i", ["Ι"]="i", ["ι"]="i", ["Ί"]="i", ["ί"]="i", ["Ĭ"]="i", ["ĭ"]="i", ["Ї"]="i", ["ї"]="i", --Convert > \105. -- Note: Ϊ, Ι, Ί, Ĭ, Ї fail with strlower, include both.
 	["к"]="k", ["Ķ"]="k", ["ķ"]="k", -- First letter is Russian "\208\186". Convert > \107. -- Note: Ķ fail with strlower, include both.
 	["Ł"]="l", ["ł"]="l", -- Convert > \107. -- Note: Ł fail with strlower, include both.
 	["Μ"]="m", ["м"]="m", -- First letter is capital Greek μ "\206\156". Convert > \109
@@ -43,7 +43,7 @@ local repTbl = {
 	["г"]="r", ["Ř"]="r", ["ř"]="r", ["Ŕ"]="r", ["ŕ"]="r", ["Ŗ"]="r", ["ŗ"]="r", --Convert > \114. -- Note: Ř, Ŕ, Ŗ fail with strlower, include both.
 	["Ş"]="s", ["ş"]="s", ["Š"]="s", ["š"]="s", ["Ś"]="s", ["ś"]="s", ["Ѕ"]="s", ["ѕ"]="s", --Convert > \115. -- Note: Ş, Š, Ś, Ѕ fail with strlower, include both.
 	["т"]="t", ["Ŧ"]="t", ["ŧ"]="t", ["Τ"]="t", ["τ"]="t", ["Ţ"]="t", ["ţ"]="t", ["†"]="t", --Convert > \116. -- Note: Ŧ, Τ, Ţ fail with strlower, include both.
-	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", --Convert > \117
+	["ù"]="u", ["ú"]="u", ["ü"]="u", ["û"]="u", ["Ụ"]="u", ["ụ"]="u", --Convert > \117. -- Note: Ụ fail with strlower, include both.
 	["ω"]="w", ["ώ"]="w", -- First letter is small Greek omega Ώ "\207\142". Convert > \119
 	["ý"]="y", ["Ÿ"]="y", ["ÿ"]="y", --Convert > \121. -- Note: Ÿ fail with strlower, include both.
 	["•"]=".", ["，"]=",", ["º"]="o", ["®"]="r", ["○"]="o",
