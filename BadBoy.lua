@@ -58,40 +58,41 @@ local repTbl = {
 
 local strfind = string.find
 local Spam = function(msg)
-	for i=1, #dedicatedList do
-		if strfind(msg, dedicatedList[i]) then
+	for k in next, dedicatedList do
+		if strfind(msg, k) then
 			return true
 		end
 	end
-	for i=1, #dynList do
-		if strfind(msg, dynList[i]) then
+	for k in next, dynList do
+		if strfind(msg, k) then
 			return true
 		end
 	end
 	local points, boostingPoints = 0, 0
-	for i=1, #whiteList do
-		if strfind(msg, whiteList[i]) then
+	for k in next, whiteList do
+		if strfind(msg, k) then
 			points = points - 2
 		end
 	end
-	for i=1, #commonList do
-		if strfind(msg, commonList[i]) then
+	for k in next, commonList do
+		if strfind(msg, k) then
 			points = points + 1
 		end
 	end
-	for i=1, #sites do
-		if strfind(msg, sites[i]) then
+	for k in next, sites do
+		if strfind(msg, k) then
 			points = points + 3
 			boostingPoints = boostingPoints + 3
+			break
 		end
 	end
-	for i=1, #boostingWhiteList do
-		if strfind(msg, boostingWhiteList[i]) then
+	for k in next, boostingWhiteList do
+		if strfind(msg, k) then
 			boostingPoints = boostingPoints - 1
 		end
 	end
-	for i=1, #boostingList do
-		if strfind(msg, boostingList[i]) then
+	for k in next, boostingList do
+		if strfind(msg, k) then
 			boostingPoints = boostingPoints + 1
 		end
 	end

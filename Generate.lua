@@ -12,7 +12,7 @@ t.gen = function(entry)
 			local n = tonumber(text)
 			if j == 1 then
 				if pos > 0 then
-					tbl[pos] = str
+					tbl[str] = true
 					str = ""
 				end
 				pos = pos + 1
@@ -20,6 +20,6 @@ t.gen = function(entry)
 			str = str .. string.char(n)
 		end
 	end
-	tbl[pos] = str
+	tbl[str] = true
 	return tbl
 end
