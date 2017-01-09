@@ -1,5 +1,5 @@
 
--- GLOBALS: BADBOY_BLACKLIST, BADBOY_OPTIONS, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate, SetCVar
+-- GLOBALS: BADBOY_BLACKLIST, BADBOY_OPTIONS, BadBoyLog, ChatFrame1, GetTime, print, ReportPlayer, CalendarGetDate
 -- GLOBALS: GameTooltip, C_Timer, IsEncounterInProgress, GameTooltip_Hide
 local L
 local cmnList, bstList, bstWList, wList, dmnList, sttcList, frList, dynList
@@ -24,7 +24,7 @@ local repTbl = {
 	["¨"]="", ["”"]="", ["“"]="", ["▄"]="", ["▀"]="", ["█"]="", ["▓"]="", ["▲"]="", ["◄"]="", ["►"]="", ["▼"]="",
 	["░"]="", ["♥"]="", ["♫"]="", ["●"]="", ["■"]="", ["☼"]="", ["¤"]="", ["☺"]="", ["↑"]="", ["«"]="", ["»"]="",
 	["▌"]="", ["□"]="", ["¬"]="", ["√"]="", ["《"]="", ["》"]="", ["²"]="", ["´"]="", ["☻"]="", ["★"]="", ["◙"]="",
-	["▒"]="", ["¦"]="", ["|"]="", [";"]="", ["΅"]="", ["☆"]="", [" "]="",
+	["▒"]="", ["¦"]="", ["|"]="", [";"]="", ["΅"]="", ["☆"]="", ["◆"]="", [" "]="",
 
 	--This is the replacement table. It serves to deobfuscate words by replacing letters with their English "equivalents".
 	["а"]="a", ["à"]="a", ["á"]="a", ["ä"]="a", ["â"]="a", ["ã"]="a", ["å"]="a", -- First letter is Russian "\208\176". Convert > \97.
@@ -59,53 +59,54 @@ local repTbl = {
 
 local strfind = string.find
 local Spam = function(msg)
-	for k in next, sttcList do
-		if strfind(msg, k) then
+	for i=1, #sttcList do
+		if strfind(msg, sttcList[i]) then
 			return true
 		end
 	end
-	for k in next, dynList do
-		if strfind(msg, k) then
+	for i=1, #dynList do
+		if strfind(msg, dynList[i]) then
 			return true
 		end
 	end
+
 	local points, boostingPoints = 0, 0
-	for k in next, wList do
-		if strfind(msg, k) then
-			points = points - 2
-		end
-	end
-	for k in next, cmnList do
-		if strfind(msg, k) then
+	for i=1, #cmnList do
+		if strfind(msg, cmnList[i]) then
 			points = points + 1
 		end
 	end
-	for k in next, dmnList do
-		if strfind(msg, k) then
-			points = points + 3
-			boostingPoints = boostingPoints + 3
-			break
-		end
-	end
-	for k in next, bstWList do
-		if strfind(msg, k) then
-			boostingPoints = boostingPoints - 1
-		end
-	end
-	for k in next, bstList do
-		if strfind(msg, k) then
+	for i=1, #bstList do
+		if strfind(msg, bstList[i]) then
 			boostingPoints = boostingPoints + 1
 		end
 	end
+	for i=1, #bstWList do
+		if strfind(msg, bstWList[i]) then
+			boostingPoints = boostingPoints - 1
+		end
+	end
+	for i=1, #wList do
+		if strfind(msg, wList[i]) then
+			points = points - 2
+		end
+	end
+	for i=1, #dmnList do
+		if strfind(msg, dmnList[i]) then
+			points = points + 3
+			boostingPoints = boostingPoints + 3
+		end
+	end
+
 	local report = points > 3 or boostingPoints > 3
 	return report
 end
 
 --[[ Chat Scanning ]]--
 local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
-local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
+local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar
 local blockedLineId, chatLines, chatPlayers = 0, {}, {}
-local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
+local spamCollector, backupCollector, spamLogger, prevShow, enableBubble = {}, {}, {}, 0, false
 local btn, reportFrame
 local function IsFriendly(name, flag, lineId, guid)
 	if not guid then return true end -- LocalDefense automated prints
@@ -150,12 +151,14 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		for i=1, #chatLines do
 			if chatLines[i] == cleanestMsg and chatPlayers[i] == guid then --If message same as one in previous 20 and from the same person...
 				blockedLineId = lineId
-				--
-				if spamCollector[guid] and Spam(msg) then -- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
+				-- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
+				if spamCollector[guid] and Spam(msg) then
 					spamCollector[guid] = lineId
 					if BADBOY_OPTIONS.tipSpam then
 						spamLogger[guid] = debug
 					end
+				elseif backupCollector[guid] and next(spamCollector) and Spam(msg) then
+					backupCollector[guid] = lineId
 				end
 				--
 				return
@@ -189,7 +192,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		if BadBoyLog then
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
-		if (not BADBOY_BLACKLIST or not BADBOY_BLACKLIST[guid]) and not IsEncounterInProgress() then
+		if not BADBOY_BLACKLIST[guid] and not IsEncounterInProgress() then
 			spamCollector[guid] = lineId
 			if BADBOY_OPTIONS.tipSpam then
 				spamLogger[guid] = debug
@@ -211,6 +214,13 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				end
 			end
 		end
+
+		if BADBOY_BLACKLIST[guid] then
+			-- We have already reported this person today. We won't show the button again, but add them to the backup table to report them
+			-- again only if we click the button for other spam, to completely eliminate processing their chat, improving performance.
+			backupCollector[guid] = lineId
+		end
+
 		blockedLineId = lineId
 		return
 	elseif next(spamCollector) then
@@ -265,6 +275,11 @@ do
 			else
 				spamCollector[k] = nil
 				spamLogger[k] = nil
+			end
+		end
+		for k, v in next, backupCollector do
+			if not CanComplainChat(v) then
+				backupCollector[k] = nil
 			end
 		end
 		if not canReport then
@@ -332,6 +347,12 @@ do
 				end
 				spamCollector[k] = nil
 				spamLogger[k] = nil
+			end
+			for k, v in next, backupCollector do
+				if CanComplainChat(v) then
+					ReportPlayer("spam", v)
+				end
+				backupCollector[k] = nil
 			end
 
 			for i = 1, #systemMsg do
