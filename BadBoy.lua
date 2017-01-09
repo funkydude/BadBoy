@@ -105,7 +105,7 @@ end
 local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
 local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat
 local blockedLineId, chatLines, chatPlayers = 0, {}, {}
-local spamCollector, spamLogger, prevShow = {}, {}, 0
+local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
 local btn, reportFrame
 local function IsFriendly(name, flag, lineId, guid)
 	if not guid then return true end -- LocalDefense automated prints
@@ -129,6 +129,12 @@ local function Cleanse(msg)
 	return msg
 end
 local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
+	-- Re-enable chat bubbles if they were disabled in the previous event.
+	if enableBubble then
+		enableBubble = false
+		SetCVar("chatBubbles", 1)
+	end
+
 	blockedLineId = 0
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
@@ -171,6 +177,15 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 	--End text buffer
 
 	if Spam(msg) then
+		if event == "CHAT_MSG_SAY" or event == "CHAT_MSG_YELL" then
+			-- Awful way of disabling chat bubbles when spam is detected.
+			-- Chat bubbles are processed internally by the game client AFTER all the addon event handlers are fired.
+			if GetCVarBool("chatBubbles") then
+				enableBubble = true
+				SetCVar("chatBubbles", 0)
+			end
+		end
+
 		if BadBoyLog then
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
@@ -393,13 +408,25 @@ do
 			end
 			SetCVar("spamFilter", 1)
 			frame:UnregisterEvent(event)
-			if not BADBOY_OPTIONS.tmp then
+			BADBOY_OPTIONS.tmp = nil
+			if not BADBOY_OPTIONS.tmpm then
 				C_Timer.After(15, function()
-					BADBOY_OPTIONS.tmp = true
-					print("BadBoy: One time message: Your version now has improved support against multi-line spam! It is becoming a lot more difficult and time consuming to block the latest spam, please consider supporting my work on patreon.com/funkydude")
+					BADBOY_OPTIONS.tmpm = true
+					print("|cFF33FF99BadBoy|r now blocks spam in /say chat bubbles! It's difficult and time consuming to block the latest spam, please consider supporting my work on patreon.com/funkydude")
 				end)
 			end
-			frame:SetScript("OnEvent", nil)
+
+			-- Chat bubble restore
+			frame:SetScript("OnEvent", function()
+				if enableBubble then
+					enableBubble = false
+					SetCVar("chatBubbles", 1)
+				end
+			end)
+			-- Hopefully we never end up in a situation where we've permanently disabled chat bubbles for the user.
+			frame:RegisterEvent("PLAYER_LOGOUT")
+			frame:RegisterEvent("CHAT_MSG_MONSTER_SAY")
+			frame:RegisterEvent("CHAT_MSG_MONSTER_YELL")
 		end
 	end)
 end
