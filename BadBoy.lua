@@ -326,7 +326,6 @@ do
 			local systemMsg = {GetFramesRegisteredForEvent("CHAT_MSG_SYSTEM")} -- Don't show the "Complaint Registered" message
 			local infoMsg = {GetFramesRegisteredForEvent("UI_INFO_MESSAGE")} -- Don't show the "Thanks for the report" message
 			local calendarError = {GetFramesRegisteredForEvent("CALENDAR_UPDATE_ERROR")} -- Remove calendar error popup (Blizz bug)
-			local reportSubmit = {GetFramesRegisteredForEvent("PLAYER_REPORT_SUBMITTED")} -- Fix clearing chat that shouldn't be cleared (Blizz bug)
 			for i = 1, #systemMsg do
 				systemMsg[i]:UnregisterEvent("CHAT_MSG_SYSTEM")
 			end
@@ -335,9 +334,6 @@ do
 			end
 			for i = 1, #calendarError do
 				calendarError[i]:UnregisterEvent("CALENDAR_UPDATE_ERROR")
-			end
-			for i = 1, #reportSubmit do
-				reportSubmit[i]:UnregisterEvent("PLAYER_REPORT_SUBMITTED")
 			end
 
 			for k, v in next, spamCollector do
@@ -364,9 +360,6 @@ do
 			for i = 1, #calendarError do
 				-- There's a delay before the event fires
 				C_Timer.After(5, function() calendarError[i]:RegisterEvent("CALENDAR_UPDATE_ERROR") end)
-			end
-			for i = 1, #reportSubmit do
-				reportSubmit[i]:RegisterEvent("PLAYER_REPORT_SUBMITTED")
 			end
 		end
 	end)
