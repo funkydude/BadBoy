@@ -405,6 +405,66 @@ do
 	end
 end
 
+--[[ LFG Filter ]]--
+do
+	local f = CreateFrame("Button", nil, LFGListSearchPanelScrollFrameScrollChild, "UIPanelButtonTemplate")
+	f:SetPoint("CENTER")
+	f:SetFrameStrata("DIALOG")
+	f:SetText(L.clickToFilterLFG)
+	f:SetSize(f:GetTextWidth()+30, 35)
+	f:Hide()
+	f:SetScript("OnClick", function(self)
+		for i = 1, #self.entriesToRemove do
+			table.remove(self.results, self.entriesToRemove[i])
+		end
+		table.sort(self.results, LFGListUtil_SortSearchResultsCB)
+		LFGListFrame.SearchPanel.results = self.results
+		LFGListFrame.SearchPanel.applications = C_LFGList.GetApplications()
+		self:Hide()
+		LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
+
+		local systemMsg = {GetFramesRegisteredForEvent("CHAT_MSG_SYSTEM")} -- Don't show the "Complaint Registered" message
+		local infoMsg = {GetFramesRegisteredForEvent("UI_INFO_MESSAGE")} -- Don't show the "Thanks for the report" message
+		for i = 1, #systemMsg do
+			systemMsg[i]:UnregisterEvent("CHAT_MSG_SYSTEM")
+		end
+		for i = 1, #infoMsg do
+			infoMsg[i]:UnregisterEvent("UI_INFO_MESSAGE")
+		end
+
+		for k in next, self.entriesToReport do
+			C_LFGList.ReportSearchResult(k, "lfglistcomment")
+		end
+
+		for i = 1, #systemMsg do
+			systemMsg[i]:RegisterEvent("CHAT_MSG_SYSTEM")
+		end
+		for i = 1, #infoMsg do
+			infoMsg[i]:RegisterEvent("UI_INFO_MESSAGE")
+		end
+
+		self.results, self.entriesToRemove, self.entriesToReport = nil, nil, nil
+	end)
+	f:RegisterEvent("LFG_LIST_SEARCH_RESULTS_RECEIVED")
+	f:SetScript("OnEvent", function(self)
+		self:Hide()
+		local entriesToRemove, entriesToReport = {}, {}
+		local _, results = C_LFGList.GetSearchResults()
+		for i = #results, 1, -1 do
+			local id, _, _, comment = C_LFGList.GetSearchResultInfo(results[i])
+			comment = Cleanse(comment)
+			if Spam(comment) then
+				entriesToReport[id] = true
+				entriesToRemove[#entriesToRemove+1] = i
+			end
+		end
+		if entriesToRemove[1] then
+			self.results, self.entriesToRemove, self.entriesToReport = results, entriesToRemove, entriesToReport
+			self:Show()
+		end
+	end)
+end
+
 --[[ Blacklist ]]--
 do
 	local f = CreateFrame("Frame")
@@ -424,10 +484,11 @@ do
 			SetCVar("spamFilter", 1)
 			frame:UnregisterEvent(event)
 			BADBOY_OPTIONS.tmp = nil
-			if not BADBOY_OPTIONS.tmpm then
+			BADBOY_OPTIONS.tmpm = nil
+			if not BADBOY_OPTIONS.tmpl then
 				C_Timer.After(15, function()
-					BADBOY_OPTIONS.tmpm = true
-					print("|cFF33FF99BadBoy|r now blocks spam in /say chat bubbles! It's difficult and time consuming to block the latest spam, please consider supporting my work on patreon.com/funkydude")
+					BADBOY_OPTIONS.tmpl = true
+					print("|cFF33FF99BadBoy|r can now filter spam from the LFG tool! It's difficult and time consuming to block the latest spam, please consider supporting my work on patreon.com/funkydude")
 				end)
 			end
 
