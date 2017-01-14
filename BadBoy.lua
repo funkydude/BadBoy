@@ -421,6 +421,7 @@ do
 		end
 		LFGListUtil_SortSearchResults(self.results) -- Some LFG filter addons hook this function to do custom sorting, let's cooperate by using it.
 		LFGListFrame.SearchPanel.results = self.results
+		LFGListFrame.SearchPanel.totalResults = #self.results
 		LFGListFrame.SearchPanel.applications = GetApplications()
 		self:Hide()
 		LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
