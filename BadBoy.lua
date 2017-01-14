@@ -419,7 +419,7 @@ do
 		for i = 1, #self.entriesToRemove do
 			table.remove(self.results, self.entriesToRemove[i])
 		end
-		table.sort(self.results, LFGListUtil_SortSearchResultsCB)
+		LFGListUtil_SortSearchResults(self.results) -- Some LFG filter addons hook this function to do custom sorting, let's cooperate by using it.
 		LFGListFrame.SearchPanel.results = self.results
 		LFGListFrame.SearchPanel.applications = GetApplications()
 		self:Hide()
@@ -449,8 +449,8 @@ do
 	end)
 	f:RegisterEvent("LFG_LIST_SEARCH_RESULTS_RECEIVED")
 	f:SetScript("OnEvent", function(self)
-		if PremadeGroupsFilter or PremadeFilter_Frame then return end -- XXX temporary, kill this feature until we can work on integration with filter addons.
-		self:Hide()
+		if PremadeFilter_Frame then return end -- XXX temporary, kill this feature until we can work on integration with filter addons.
+		self:Hide() -- Always hide the button, we only want it showing when spam is found.
 		local entriesToRemove, entriesToReport = {}, {}
 		local _, results = GetSearchResults()
 		for i = #results, 1, -1 do
@@ -461,7 +461,7 @@ do
 				entriesToRemove[#entriesToRemove+1] = i
 			end
 		end
-		if entriesToRemove[1] then
+		if entriesToRemove[1] then -- Spam entry found, show the button.
 			self.results, self.entriesToRemove, self.entriesToReport = results, entriesToRemove, entriesToReport
 			self:Show()
 		end
