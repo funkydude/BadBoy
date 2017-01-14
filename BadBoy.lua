@@ -407,6 +407,8 @@ end
 
 --[[ LFG Filter ]]--
 do
+	local GetSearchResults, GetSearchResultInfo = C_LFGList.GetSearchResults, C_LFGList.GetSearchResultInfo
+	local GetApplications, ReportSearchResult = C_LFGList.GetApplications, C_LFGList.ReportSearchResult
 	local f = CreateFrame("Button", nil, LFGListSearchPanelScrollFrameScrollChild, "UIPanelButtonTemplate")
 	f:SetPoint("CENTER")
 	f:SetFrameStrata("DIALOG")
@@ -419,7 +421,7 @@ do
 		end
 		table.sort(self.results, LFGListUtil_SortSearchResultsCB)
 		LFGListFrame.SearchPanel.results = self.results
-		LFGListFrame.SearchPanel.applications = C_LFGList.GetApplications()
+		LFGListFrame.SearchPanel.applications = GetApplications()
 		self:Hide()
 		LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
 
@@ -433,7 +435,7 @@ do
 		end
 
 		for k in next, self.entriesToReport do
-			C_LFGList.ReportSearchResult(k, "lfglistcomment")
+			ReportSearchResult(k, "lfglistcomment")
 		end
 
 		for i = 1, #systemMsg do
@@ -447,11 +449,12 @@ do
 	end)
 	f:RegisterEvent("LFG_LIST_SEARCH_RESULTS_RECEIVED")
 	f:SetScript("OnEvent", function(self)
+		if PremadeGroupsFilter or PremadeFilter_Frame then return end -- XXX temporary, kill this feature until we can work on integration with filter addons.
 		self:Hide()
 		local entriesToRemove, entriesToReport = {}, {}
-		local _, results = C_LFGList.GetSearchResults()
+		local _, results = GetSearchResults()
 		for i = #results, 1, -1 do
-			local id, _, _, comment = C_LFGList.GetSearchResultInfo(results[i])
+			local id, _, _, comment = GetSearchResultInfo(results[i])
 			comment = Cleanse(comment)
 			if Spam(comment) then
 				entriesToReport[id] = true
