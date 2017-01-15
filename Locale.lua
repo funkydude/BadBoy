@@ -3,7 +3,7 @@ local _, L = ...
 
 L.spamBlocked = "BadBoy: Spam blocked"
 L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 L.spamTooltip = "Show spam in button tooltip"
 L.noAnimate = "Disable button pulse animation"
 L.frequentButton = "Show the button more frequently"
@@ -15,7 +15,7 @@ if loc == "frFR" then
 	L.spamTooltip = "Afficher le spam dans une infobulle"
 	L.noAnimate = "Désactiver l'animation d'impulsion du bouton."
 	L.clickToReport = "|cffeda55fClic|r pour signaler, |cffeda55fAlt-Clic|r pour faire disparaître."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "deDE" then
@@ -23,7 +23,7 @@ elseif loc == "deDE" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "zhTW" then
@@ -31,7 +31,7 @@ elseif loc == "zhTW" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "zhCN" then
@@ -39,7 +39,7 @@ elseif loc == "zhCN" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "esES" or loc == "esMX" then
@@ -47,7 +47,7 @@ elseif loc == "esES" or loc == "esMX" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "ruRU" then
@@ -55,7 +55,7 @@ elseif loc == "ruRU" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "koKR" then
@@ -63,7 +63,7 @@ elseif loc == "koKR" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "ptBR" then
@@ -71,7 +71,7 @@ elseif loc == "ptBR" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "itIT" then
@@ -79,7 +79,7 @@ elseif loc == "itIT" then
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.clickToFilterLFG = "BadBoy: Filter & Report Spam"
+	--L.clickToFilterLFG = "|cFF33FF99BadBoy:|r Spam groups removed."
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 end

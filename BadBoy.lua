@@ -409,49 +409,33 @@ end
 do
 	local GetSearchResults, GetSearchResultInfo = C_LFGList.GetSearchResults, C_LFGList.GetSearchResultInfo
 	local GetApplications, ReportSearchResult = C_LFGList.GetApplications, C_LFGList.ReportSearchResult
-	local f = CreateFrame("Button", nil, LFGListSearchPanelScrollFrameScrollChild, "UIPanelButtonTemplate")
-	f:SetPoint("CENTER")
+	local f = CreateFrame("Frame", nil, PVEFrame)
+	f:SetPoint("BOTTOMLEFT", PVEFrame, "BOTTOMLEFT", 10, 10)
 	f:SetFrameStrata("DIALOG")
-	f:SetText(L.clickToFilterLFG)
-	f:SetSize(f:GetTextWidth()+30, 35)
+	f:SetSize(200, 20)
 	f:Hide()
-	f:SetScript("OnClick", function(self)
-		for i = 1, #self.entriesToRemove do
-			table.remove(self.results, self.entriesToRemove[i])
-		end
-		LFGListUtil_SortSearchResults(self.results) -- Some LFG filter addons hook this function to do custom sorting, let's cooperate by using it.
-		LFGListFrame.SearchPanel.results = self.results
-		LFGListFrame.SearchPanel.totalResults = #self.results
-		LFGListFrame.SearchPanel.applications = GetApplications()
-		self:Hide()
-		LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
-
-		local systemMsg = {GetFramesRegisteredForEvent("CHAT_MSG_SYSTEM")} -- Don't show the "Complaint Registered" message
-		local infoMsg = {GetFramesRegisteredForEvent("UI_INFO_MESSAGE")} -- Don't show the "Thanks for the report" message
-		for i = 1, #systemMsg do
-			systemMsg[i]:UnregisterEvent("CHAT_MSG_SYSTEM")
-		end
-		for i = 1, #infoMsg do
-			infoMsg[i]:UnregisterEvent("UI_INFO_MESSAGE")
-		end
-
-		for k in next, self.entriesToReport do
-			ReportSearchResult(k, "lfglistcomment")
-		end
-
-		for i = 1, #systemMsg do
-			systemMsg[i]:RegisterEvent("CHAT_MSG_SYSTEM")
-		end
-		for i = 1, #infoMsg do
-			infoMsg[i]:RegisterEvent("UI_INFO_MESSAGE")
-		end
-
-		self.results, self.entriesToRemove, self.entriesToReport = nil, nil, nil
-	end)
+	local t = f:CreateTexture()
+	t:SetAllPoints(f)
+	t:SetColorTexture(0, 0.3, 1)
+	local txt = f:CreateFontString(nil, nil, "GameFontNormal")
+	txt:SetPoint("LEFT", f, "LEFT", 5, 0)
+	txt:SetJustifyH("LEFT")
+	txt:SetText(L.clickToFilterLFG)
+	f:SetWidth(txt:GetStringWidth()+10)
+	local group = f:CreateAnimationGroup()
+	group:SetScript("OnFinished", function(anim) anim:GetParent():Hide() end)
+	f:SetScript("OnShow", function() group:Play() end)
+	local fade = group:CreateAnimation("Alpha")
+	fade:SetStartDelay(1)
+	fade:SetDuration(1.5)
+	fade:SetFromAlpha(1)
+	fade:SetToAlpha(0)
+	fade:SetOrder(1)
 	f:RegisterEvent("LFG_LIST_SEARCH_RESULTS_RECEIVED")
 	f:SetScript("OnEvent", function(self)
 		if PremadeFilter_Frame then return end -- XXX temporary, kill this feature until we can work on integration with filter addons.
-		self:Hide() -- Always hide the button, we only want it showing when spam is found.
+
+		self:Hide() -- Always hide the notification, we only want it showing when spam is found.
 		local entriesToRemove, entriesToReport = {}, {}
 		local _, results = GetSearchResults()
 		for i = #results, 1, -1 do
@@ -462,8 +446,36 @@ do
 				entriesToRemove[#entriesToRemove+1] = i
 			end
 		end
-		if entriesToRemove[1] then -- Spam entry found, show the button.
-			self.results, self.entriesToRemove, self.entriesToReport = results, entriesToRemove, entriesToReport
+		if entriesToRemove[1] then -- Spam entry found, customize the list.
+			for i = 1, #entriesToRemove do
+				table.remove(results, entriesToRemove[i])
+			end
+			LFGListUtil_SortSearchResults(results) -- Some LFG filter addons hook this function to do custom sorting, let's cooperate by using it so they customize our list.
+			LFGListFrame.SearchPanel.results = results -- Attach results table to frame
+			LFGListFrame.SearchPanel.totalResults = #results -- Attach result counter to frame
+			LFGListFrame.SearchPanel.applications = GetApplications() -- Attach applications to frame
+			LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel) -- Finally, feed frame holding the results to the panel
+
+			local systemMsg = {GetFramesRegisteredForEvent("CHAT_MSG_SYSTEM")} -- Don't show the "Complaint Registered" message
+			local infoMsg = {GetFramesRegisteredForEvent("UI_INFO_MESSAGE")} -- Don't show the "Thanks for the report" message
+			for i = 1, #systemMsg do
+				systemMsg[i]:UnregisterEvent("CHAT_MSG_SYSTEM")
+			end
+			for i = 1, #infoMsg do
+				infoMsg[i]:UnregisterEvent("UI_INFO_MESSAGE")
+			end
+
+			for k in next, entriesToReport do
+				ReportSearchResult(k, "lfglistcomment") -- Report spam groups
+			end
+
+			for i = 1, #systemMsg do
+				systemMsg[i]:RegisterEvent("CHAT_MSG_SYSTEM")
+			end
+			for i = 1, #infoMsg do
+				infoMsg[i]:RegisterEvent("UI_INFO_MESSAGE")
+			end
+
 			self:Show()
 		end
 	end)
