@@ -123,7 +123,7 @@ local function IsFriendly(name, flag, lineId, guid)
 	end
 end
 local function Cleanse(msg)
-	msg = gsub(msg, "|h[^|]+|h%[([^%]]+)%]|h", "%1") -- Speed up processing messages with links by removing them
+	msg = gsub(msg, "|c[^%[]+%[([^%]]+)%]|h|r", "%1") -- Speed up processing messages with links by removing them
 	msg = lower(msg) --Lower all text, remove capitals
 	for k,v in next, repTbl do
 		msg = gsub(msg, k, v)
