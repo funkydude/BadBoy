@@ -27,5 +27,5 @@ t.gen = function(...)
 		total[i] = tbl
 	end
 	t.gen = nil
-	return total[1], total[2], total[3], total[4], total[5], total[6], total[7], total[8] 
+	return total[1], total[2], total[3], total[4], total[5], total[6], total[7], total[8], total[9]
 end
