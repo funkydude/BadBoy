@@ -64,11 +64,11 @@ local btnFreqButton = CreateFrame("CheckButton", nil, badboy, "OptionsBaseCheckB
 btnFreqButton:SetPoint("TOPLEFT", btnNoAnim, "BOTTOMLEFT")
 btnFreqButton:SetScript("OnClick", function(frame)
 	local tick = frame:GetChecked()
-	BADBOY_OPTIONS.freqButton = tick
+	BADBOY_OPTIONS.freqBtn = tick
 	PlaySound(tick and "igMainMenuOptionCheckBoxOn" or "igMainMenuOptionCheckBoxOff")
 end)
 btnFreqButton:SetScript("OnShow", function(frame)
-	frame:SetChecked(BADBOY_OPTIONS.freqButton)
+	frame:SetChecked(BADBOY_OPTIONS.freqBtn)
 end)
 btnFreqButton:SetScript("OnEnter", function(self)
 	GameTooltip:SetOwner(self, "ANCHOR_BOTTOM")
