@@ -2,7 +2,7 @@
 local _, t = ...
 
 t.gen = function(...)
-	local total = {}
+	local select, strsplit, tonumber, char = select, strsplit, tonumber, string.char
 	for i = 1, select("#", ...) do
 		local tbl = {}
 		local pos = 0
@@ -11,8 +11,10 @@ t.gen = function(...)
 		for i = 1, select("#", strsplit("^", entry)) do
 			local db = select(i, strsplit("^", entry))
 			for j = 1, select("#", strsplit(",", db)) do
-				local text = select(j, strsplit(",", db))
-				local n = tonumber(text)
+				local t = select(j, strsplit(",", db))
+				local n, d = strsplit(".", t)
+				local rn, rd = tonumber(n), tonumber(d)
+				rn = rn - rd
 				if j == 1 then
 					if pos > 0 then
 						tbl[pos] = str
@@ -20,12 +22,11 @@ t.gen = function(...)
 					end
 					pos = pos + 1
 				end
-				str = str .. string.char(n)
+				str = str .. char(rn)
 			end
 		end
 		tbl[pos] = str
-		total[i] = tbl
+		t[i] = tbl
 	end
 	t.gen = nil
-	return total[1], total[2], total[3], total[4], total[5], total[6], total[7], total[8], total[9]
 end
