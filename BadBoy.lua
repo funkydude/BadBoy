@@ -390,7 +390,8 @@ do
 	fade:SetToAlpha(0)
 	fade:SetOrder(1)
 	f:RegisterEvent("LFG_LIST_SEARCH_RESULTS_RECEIVED")
-	f:SetScript("OnEvent", function(self)
+	f:RegisterEvent("LFG_LIST_SEARCH_FAILED")
+	local filter = function(self, ev)
 		if PremadeFilter_Frame then return end -- XXX temporary, kill this feature until we can work on integration with filter addons.
 
 		self:Hide() -- Always hide the notification, we only want it showing when spam is found.
@@ -400,8 +401,8 @@ do
 			local id, _, name, comment, voiceChat = GetSearchResultInfo(results[i])
 			local msg = name .. comment .. voiceChat -- They like to split messages
 			msg = Cleanse(msg)
-			local s = false
-			if not BADBOY_OPTIONS.freqButton then
+			local s = ev ~= "LFG_LIST_SEARCH_RESULTS_RECEIVED"
+			if not s and not BADBOY_OPTIONS.freqButton then
 				for i = 1, #L[et] do
 					if strfind(msg, L[et][i]) then
 						s = true
@@ -481,7 +482,11 @@ do
 			searchId = 0
 			evLog = nil
 		end
+	end
+	LFGListFrame.SearchPanel:HookScript("OnShow", function()
+		filter(f)
 	end)
+	f:SetScript("OnEvent", filter)
 end
 
 --[[ Blacklist ]]--
@@ -514,6 +519,11 @@ do
 						evLog[i]:UnregisterEvent("LFG_LIST_SEARCH_RESULT_UPDATED")
 					end
 					C_LFGList.Search(searchId, "", 0)
+				end
+			end)
+			C_Timer.After(10, function()
+				if PremadeFilter_Frame then
+					print("|cFF33FF99BadBoy|r: You are using a badly coded addon (|cFF33FF99Premade Filter|r) that conflicts with BadBoy LFG filtering, we recommend you switch to using '|cFF33FF99PremadeGroupsFilter|r' instead.")
 				end
 			end)
 
