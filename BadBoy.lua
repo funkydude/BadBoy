@@ -523,7 +523,7 @@ do
 			end)
 			C_Timer.After(10, function()
 				if PremadeFilter_Frame then
-					print("|cFF33FF99BadBoy|r: You are using a badly coded addon (|cFF33FF99Premade Filter|r) that conflicts with BadBoy LFG filtering, we recommend you switch to using '|cFF33FF99PremadeGroupsFilter|r' instead.")
+					print("|cFF33FF99BadBoy|r: You are using a badly coded addon (|cFF33FF99Premade Filter|r) that conflicts with BadBoy LFG filtering, we recommend you switch to using '|cFF33FF99Premade Groups Filter|r' instead.")
 				end
 			end)
 
