@@ -8,13 +8,12 @@ t.gen = function(...)
 		local pos = 0
 		local str = ""
 		local entry = select(i, ...)
-		for i = 1, select("#", strsplit("^", entry)) do
-			local db = select(i, strsplit("^", entry))
+		for l = 1, select("#", strsplit("^", entry)) do
+			local db = select(l, strsplit("^", entry))
 			for j = 1, select("#", strsplit(",", db)) do
 				local t = select(j, strsplit(",", db))
-				local n, d = strsplit(".", t)
-				local rn, rd = tonumber(n), tonumber(d)
-				rn = rn - rd
+				local rn = tonumber(t)
+				rn = rn - i
 				if j == 1 then
 					if pos > 0 then
 						tbl[pos] = str
