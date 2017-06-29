@@ -33,7 +33,11 @@ btnShowSpam:SetPoint("TOPLEFT", title, "BOTTOMLEFT")
 btnShowSpam:SetScript("OnClick", function(frame)
 	local tick = frame:GetChecked()
 	BADBOY_OPTIONS.tipSpam = tick
-	PlaySound(tick and "igMainMenuOptionCheckBoxOn" or "igMainMenuOptionCheckBoxOff")
+	if tick then
+		PlaySound(PlaySoundKitID and "igMainMenuOptionCheckBoxOn" or 856) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON
+	else
+		PlaySound(PlaySoundKitID and "igMainMenuOptionCheckBoxOff" or 857) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF
+	end
 end)
 btnShowSpam:SetScript("OnShow", function(frame)
 	frame:SetChecked(BADBOY_OPTIONS.tipSpam)
@@ -49,7 +53,11 @@ btnNoAnim:SetPoint("TOPLEFT", btnShowSpam, "BOTTOMLEFT")
 btnNoAnim:SetScript("OnClick", function(frame)
 	local tick = frame:GetChecked()
 	BADBOY_OPTIONS.noAnim = tick
-	PlaySound(tick and "igMainMenuOptionCheckBoxOn" or "igMainMenuOptionCheckBoxOff")
+	if tick then
+		PlaySound(PlaySoundKitID and "igMainMenuOptionCheckBoxOn" or 856) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON
+	else
+		PlaySound(PlaySoundKitID and "igMainMenuOptionCheckBoxOff" or 857) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF
+	end
 end)
 btnNoAnim:SetScript("OnShow", function(frame)
 	frame:SetChecked(BADBOY_OPTIONS.noAnim)
@@ -65,7 +73,11 @@ btnFreqButton:SetPoint("TOPLEFT", btnNoAnim, "BOTTOMLEFT")
 btnFreqButton:SetScript("OnClick", function(frame)
 	local tick = frame:GetChecked()
 	BADBOY_OPTIONS.freqBtn = tick
-	PlaySound(tick and "igMainMenuOptionCheckBoxOn" or "igMainMenuOptionCheckBoxOff")
+	if tick then
+		PlaySound(PlaySoundKitID and "igMainMenuOptionCheckBoxOn" or 856) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON
+	else
+		PlaySound(PlaySoundKitID and "igMainMenuOptionCheckBoxOff" or 857) -- SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF
+	end
 end)
 btnFreqButton:SetScript("OnShow", function(frame)
 	frame:SetChecked(BADBOY_OPTIONS.freqBtn)
