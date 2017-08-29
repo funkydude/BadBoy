@@ -441,7 +441,7 @@ do
 			end
 
 			for k in next, toRep do
-				ReportSearchResult(k, PlaySoundKitID and "lfglistcomment" or "lfglistspam") -- Report spam groups || XXX temp compat 7.3
+				ReportSearchResult(k, "lfglistspam") -- Report spam groups
 			end
 
 			for i = 1, #systemMsg do
