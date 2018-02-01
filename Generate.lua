@@ -1,7 +1,7 @@
 
 local _, t = ...
 
-t.gnr = function(...)
+t.gn = function(...)
 	local select, strsplit, tonumber, char = select, strsplit, tonumber, string.char
 	for i = 1, select("#", ...) do
 		local tbl = {}
