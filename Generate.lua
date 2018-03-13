@@ -1,8 +1,8 @@
 
 local _, t = ...
 
-t.gna = function(...)
-	local select, strsplit, tonumber, char = select, strsplit, tonumber, string.char
+t.gnt = function(...)
+	local select, strsplit, tonumber, n, char = select, strsplit, tonumber, GetAreaMapInfo(401), string.char
 	for i = 1, select("#", ...) do
 		local tbl = {}
 		local pos = 0
@@ -13,7 +13,7 @@ t.gna = function(...)
 			for j = 1, select("#", strsplit(",", db)) do
 				local t = select(j, strsplit(",", db))
 				local rn = tonumber(t)
-				rn = rn - i
+				rn = rn - i - n
 				if j == 1 then
 					if pos > 0 then
 						tbl[pos] = str
