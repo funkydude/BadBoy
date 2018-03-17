@@ -27,5 +27,18 @@ t.gnt = function(...)
 		tbl[pos] = str
 		t[i] = tbl
 	end
-	t.gen = nil
+	t.gnt = nil
+end
+
+local strfind = string.find
+t.is = function(msg)
+	local a = 0
+	for i = 1, 6 do
+		for j=1, #t[i] do
+			if strfind(msg, t[i][j]) then
+				a = i>5 and a+3 or i>4 and a-1 or i>3 and a+2 or i>2 and a+1 or a+10
+			end
+		end
+	end
+	return a > 3
 end
