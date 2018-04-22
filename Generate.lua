@@ -2,7 +2,7 @@
 local _, t = ...
 
 t.gnt = function(...)
-	local select, strsplit, tonumber, n, char = select, strsplit, tonumber, GetAreaMapInfo(691), string.char
+	local select, strsplit, tonumber, n, char = select, strsplit, tonumber, GetAreaMapInfo and GetAreaMapInfo(756) or C_Map.GetMapInfo(33).parentMapID, string.char
 	for i = 1, select("#", ...) do
 		local tbl = {}
 		local pos = 0
