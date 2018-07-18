@@ -99,12 +99,12 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				blockedLineId = lineId
 				-- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
 				if spamCollector[guid] and S.is(msg) then
-					spamCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
+					spamCollector[guid] = PlayerLocation:CreateFromChatLineID(lineId)
 					if BADBOY_OPTIONS.tipSpam then
 						spamLogger[guid] = debug
 					end
 				elseif backupCollector[guid] and next(spamCollector) and S.is(msg) then
-					backupCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
+					backupCollector[guid] = PlayerLocation:CreateFromChatLineID(lineId)
 				end
 				--
 				return
@@ -137,7 +137,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
 		if not BADBOY_BLACKLIST[guid] and not IsEncounterInProgress() then
-			spamCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
+			spamCollector[guid] = PlayerLocation:CreateFromChatLineID(lineId)
 			if BADBOY_OPTIONS.tipSpam then
 				spamLogger[guid] = debug
 				if btn:IsShown() and reportFrame:IsMouseOver() then
@@ -162,7 +162,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		if BADBOY_BLACKLIST[guid] then
 			-- We have already reported this person today. We won't show the button again, but add them to the backup table to report them
 			-- again only if we click the button for other spam, to completely eliminate processing their chat, improving performance.
-			backupCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
+			backupCollector[guid] = PlayerLocation:CreateFromChatLineID(lineId)
 		end
 
 		blockedLineId = lineId
