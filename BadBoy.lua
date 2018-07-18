@@ -50,9 +50,7 @@ local repTbl = {
 --[[ Chat Scanning ]]--
 local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
 local IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar = IsCharacterFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar
-local CanReportPlayer = C_ChatInfo and C_ChatInfo.CanReportPlayer -- XXX 8.0
-local ReportPlayer = C_ChatInfo and C_ChatInfo.ReportPlayer or ReportPlayer -- XXX 8.0
-local PlayerLocation = PlayerLocation -- XXX 8.0
+local CanReportPlayer, ReportPlayer, PlayerLocation = C_ChatInfo.CanReportPlayer, C_ChatInfo.ReportPlayer, PlayerLocation
 local spamCollector, backupCollector, spamLogger, prevShow, enableBubble = {}, {}, {}, 0, false
 local blockedLineId, et, chatLines, chatPlayers = 0, 7, {}, {}
 local btn, reportFrame
@@ -101,12 +99,12 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 				blockedLineId = lineId
 				-- Reduce the chances of a spam report expiring (line id is too old) by refreshing it
 				if spamCollector[guid] and S.is(msg) then
-					spamCollector[guid] = CanReportPlayer and PlayerLocation:CreateFromChatLineID(lineID) or lineId
+					spamCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
 					if BADBOY_OPTIONS.tipSpam then
 						spamLogger[guid] = debug
 					end
 				elseif backupCollector[guid] and next(spamCollector) and S.is(msg) then
-					backupCollector[guid] = CanReportPlayer and PlayerLocation:CreateFromChatLineID(lineID) or lineId
+					backupCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
 				end
 				--
 				return
@@ -139,7 +137,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
 		if not BADBOY_BLACKLIST[guid] and not IsEncounterInProgress() then
-			spamCollector[guid] = CanReportPlayer and PlayerLocation:CreateFromChatLineID(lineID) or lineId
+			spamCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
 			if BADBOY_OPTIONS.tipSpam then
 				spamLogger[guid] = debug
 				if btn:IsShown() and reportFrame:IsMouseOver() then
@@ -164,7 +162,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 		if BADBOY_BLACKLIST[guid] then
 			-- We have already reported this person today. We won't show the button again, but add them to the backup table to report them
 			-- again only if we click the button for other spam, to completely eliminate processing their chat, improving performance.
-			backupCollector[guid] = CanReportPlayer and PlayerLocation:CreateFromChatLineID(lineID) or lineId
+			backupCollector[guid] = PlayerLocation:CreateFromChatLineID(lineID)
 		end
 
 		blockedLineId = lineId
@@ -216,7 +214,7 @@ do
 	local tickerFunc = function()
 		local canReport = false
 		for k, v in next, spamCollector do
-			if (CanComplainChat and CanComplainChat(v)) or (CanReportPlayer and CanReportPlayer(v)) then -- XXX 8.0
+			if CanReportPlayer(v) then
 				canReport = true
 			else
 				spamCollector[k] = nil
@@ -224,14 +222,8 @@ do
 			end
 		end
 		for k, v in next, backupCollector do
-			if CanReportPlayer then -- XXX 8.0
-				if not CanReportPlayer(v) then
-					backupCollector[k] = nil
-				end
-			else
-				if not CanComplainChat(v) then
-					backupCollector[k] = nil
-				end
+			if not CanReportPlayer(v) then
+				backupCollector[k] = nil
 			end
 		end
 		if not canReport then
@@ -289,7 +281,7 @@ do
 			end
 
 			for k, v in next, spamCollector do
-				if (CanComplainChat and CanComplainChat(v)) or (CanReportPlayer and CanReportPlayer(v)) then -- XXX 8.0
+				if CanReportPlayer(v) then
 					BADBOY_BLACKLIST[k] = true
 					ReportPlayer("spam", v, "Reported by the BadBoy addon. If this seems wrong, tell the author @funkbw on twitter.")
 				end
@@ -297,7 +289,7 @@ do
 				spamLogger[k] = nil
 			end
 			for k, v in next, backupCollector do
-				if (CanComplainChat and CanComplainChat(v)) or (CanReportPlayer and CanReportPlayer(v)) then -- XXX 8.0
+				if CanReportPlayer(v) then
 					ReportPlayer("spam", v, "Reported by the BadBoy addon. If this seems wrong, tell the author @funkbw on twitter.")
 				end
 				backupCollector[k] = nil
@@ -438,9 +430,7 @@ do
 			end
 
 			for k in next, toRep do
-				ReportSearchResult(k, "lfglistspam") -- Report spam groups
-				ReportSearchResult(k, "lfglistname") -- Report spam groups
-				ReportSearchResult(k, "lfglistcomment") -- Report spam groups
+				ReportSearchResult(k, "lfglistspam", "Reported by the BadBoy addon. If this seems wrong, tell the author @funkbw on twitter.") -- Report spam groups
 			end
 
 			for i = 1, #systemMsg do
@@ -473,17 +463,10 @@ do
 			frame:UnregisterEvent(event)
 		elseif event == "PLAYER_LOGIN" then
 			-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-			if CalendarGetDate then -- XXX 8.0
-				local _, _, day = CalendarGetDate()
-				if BADBOY_BLACKLIST.dayFromCal ~= day then
-					BADBOY_BLACKLIST = {dayFromCal = day} -- Can't use ADDON_LOADED as CalendarGetDate isn't always ready on very first login.
-				end
-			else
-				local dateTbl = C_Calendar.GetDate()
-				local day = dateTbl.monthDay
-				if BADBOY_BLACKLIST.dayFromCal ~= day then
-					BADBOY_BLACKLIST = {dayFromCal = day} -- Can't use ADDON_LOADED as CalendarGetDate isn't always ready on very first login.
-				end
+			local dateTbl = C_Calendar.GetDate()
+			local day = dateTbl.monthDay
+			if BADBOY_BLACKLIST.dayFromCal ~= day then
+				BADBOY_BLACKLIST = {dayFromCal = day} -- Can't use ADDON_LOADED as CalendarGetDate isn't always ready on very first login.
 			end
 			SetCVar("spamFilter", 1)
 			frame:UnregisterEvent(event)
