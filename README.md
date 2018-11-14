@@ -1,8 +1,8 @@
 # BadBoy
 
 ## Features
-* Blocking & reporting spam: gold, hack, phishing, account trading, runescape gold trading, casino, illegal item selling, etc...
-* Spam is removed from: LFG tool, Chat, Chat bubbles.
+* Blocking & reporting spam: gold, hack, phishing, account trading, casino, etc...
+* Spam is removed from: Chat, Chat bubbles.
 * A 20 line chat buffer/throttle to prevent people spamming the same message one after another.
 * Configuration screen by typing **/badboy**
 
