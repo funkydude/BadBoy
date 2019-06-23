@@ -11,11 +11,11 @@ The following channels are monitored: Trade, General, Yell, Whispers.
 
 ## Plugins
 
-* Simple and infinite ignore list [BadBoy_Ignore](https://mods.curse.com/addons/wow/badboy_ignore).
-* Block chat by typing in keywords [BadBoy_CCleaner](https://mods.curse.com/addons/wow/badboy_ccleaner).
-* Remove guild advertising [BadBoy_Guilded](https://mods.curse.com/addons/wow/badboy_guilded).
-* Block whispers by player level [BadBoy_Levels](https://mods.curse.com/addons/wow/badboy_levels).
-* Log all removed chat [BadBoy_History](https://mods.curse.com/addons/wow/badboy_history).
+* Simple and infinite ignore list [BadBoy_Ignore](https://www.curseforge.com/wow/addons/badboy_ignore).
+* Block chat by typing in keywords [BadBoy_CCleaner](https://www.curseforge.com/wow/addons/badboy_ccleaner).
+* Remove guild advertising [BadBoy_Guilded](https://www.curseforge.com/wow/addons/badboy_guilded).
+* Block whispers by player level [BadBoy_Levels](https://www.curseforge.com/wow/addons/badboy_levels).
+* Log all removed chat [BadBoy_History](https://www.curseforge.com/wow/addons/badboy_history).
 
 ## Download
-https://mods.curse.com/addons/wow/bad-boy
+https://www.curseforge.com/wow/addons/bad-boy
