@@ -50,7 +50,7 @@ local repTbl = {
 --[[ Chat Scanning ]]--
 local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
 local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar
-local CanReportPlayer, PlayerLocation = C_ReportSystem.CanReportPlayer, PlayerLocation
+local CanReportPlayer, OpenReportPlayerDialog, PlayerLocation = C_ReportSystem.CanReportPlayer, C_ReportSystem.OpenReportPlayerDialog, PlayerLocation
 local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
 local blockedLineId, et, chatLines, chatPlayers = 0, 7, {}, {}
 local btn, reportFrame
@@ -244,6 +244,7 @@ do
 			ticker = nil
 		end
 	end)
+	local temp82Msg = false
 	reportFrame:SetScript("OnClick", function(self, btn)
 		if IsAltKeyDown() then -- Dismiss
 			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
@@ -268,15 +269,25 @@ do
 			for k, v in next, spamCollector do
 				if CanReportPlayer(v) then
 					BADBOY_BLACKLIST[k] = true
-					--local token = InitiateReportPlayer("spam", v)
-					--SendReportPlayer(token, "Reported by the BadBoy addon. If this seems wrong, tell the author @funkbw on Twitter.")
+					if OpenReportPlayerDialog then
+						OpenReportPlayerDialog("spam", "Spammer blocked by BadBoy", v)
+						if not temp82Msg then
+							temp82Msg = true
+							print("|cFF33FF99BadBoy:|r This is a temporary message to inform you that as of patch 8.2 I am now forced to show you a popup to report spammers. This is a Blizz decision. I am very sorry :(")
+							print("|cFF33FF99BadBoy:|r Clicking 'Report Player' on the popup will prevent this popup showing again for this specific spammer, but there may be multiple depending on how busy your server is.")
+						end
+					end
 				end
 				spamCollector[k] = nil
 				spamLogger[k] = nil
+				if BADBOY_BLACKLIST[k] then
+					break -- Only open 1 dialog
+				end
 			end
 
 			for i = 1, #systemMsg do
-				systemMsg[i]:RegisterEvent("REPORT_PLAYER_RESULT")
+				-- Compensate for people taking a while to click accept
+				C_Timer.After(5, function() systemMsg[i]:RegisterEvent("REPORT_PLAYER_RESULT") end)
 			end
 			for i = 1, #calendarError do
 				-- There's a delay before the event fires
