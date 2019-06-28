@@ -348,11 +348,13 @@ do
 			frame:UnregisterEvent(event)
 		elseif event == "PLAYER_LOGIN" then
 			-- Blacklist DB setup, needed since Blizz nerfed ReportPlayer so hard the block sometimes only lasts a few minutes.
-			local dateTbl = C_DateAndTime.GetCurrentCalendarTime()
-			local day = dateTbl.monthDay
-			if BADBOY_BLACKLIST.dayFromCal ~= day then
-				BADBOY_BLACKLIST = {dayFromCal = day} -- Can't use ADDON_LOADED as date function isn't always ready on very first login.
-			end
+			C_Timer.After(2, function() -- 8.2 screwed this and we need a minor delay for correct results
+				local dateTbl = C_DateAndTime.GetCurrentCalendarTime()
+				local day = dateTbl.monthDay
+				if BADBOY_BLACKLIST.dayFromCal ~= day then
+					BADBOY_BLACKLIST = {dayFromCal = day} -- Can't use ADDON_LOADED as date function isn't always ready on very first login.
+				end
+			end)
 			SetCVar("spamFilter", 1)
 			frame:UnregisterEvent(event)
 			BADBOY_OPTIONS.tmp = nil
