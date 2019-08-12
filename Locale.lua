@@ -14,8 +14,8 @@ if loc == "frFR" then
 	L.spamTooltip = "Afficher le spam dans une infobulle"
 	L.noAnimate = "Désactiver l'animation d'impulsion du bouton."
 	L.clickToReport = "|cffeda55fClic|r pour signaler, |cffeda55fAlt-Clic|r pour faire disparaître."
-	--L.frequentButton = "Show the button more frequently"
-	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
+	L.frequentButton = "Afficher le bouton plus fréquemment"
+	L.frequentButtonTip = "Pour réduire les désagréments, le bouton de rapport s'affichera de en temps en temps. Activez cette option pour toujours afficher le bouton demandant le rapport et l'afficher plus rapidement."
 elseif loc == "deDE" then
 	L.spamBlocked = "BadBoy: Spam geblockt"
 	--L.spamTooltip = "Show spam in button tooltip"
