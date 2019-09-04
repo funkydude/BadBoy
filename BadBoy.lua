@@ -176,6 +176,10 @@ local filterFunc = function(_, _, _, _, _, _, _, _, _, _, _, _, lineId)
 end
 
 do
+	--temp
+	local xpcall = xpcall
+	local dummy = function() end
+	--end temp
 	btn = CreateFrame("Frame", nil, ChatFrame1)
 	btn:SetWidth(50)
 	btn:SetHeight(50)
@@ -208,7 +212,8 @@ do
 	local tickerFunc = function()
 		local canReport = false
 		for k, v in next, spamCollector do
-			if CanReportPlayer(v) then
+			local go, pass = xpcall(CanReportPlayer, dummy, v)
+			if go and pass then
 				canReport = true
 			else
 				spamCollector[k] = nil
@@ -264,7 +269,8 @@ do
 			end
 
 			for k, v in next, spamCollector do
-				if CanReportPlayer(v) then
+				local go, pass = xpcall(CanReportPlayer, dummy, v)
+				if go and pass then
 					BADBOY_BLACKLIST[k] = true
 					if OpenReportPlayerDialog then
 						OpenReportPlayerDialog("spam", "Spammer blocked by BadBoy", v)
