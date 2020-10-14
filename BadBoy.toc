@@ -1,4 +1,4 @@
-## Interface: 80200
+## Interface: 90001
 ## Version: @project-version@
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
