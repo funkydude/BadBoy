@@ -48,7 +48,7 @@ local repTbl = {
 }
 
 --[[ Chat Scanning ]]--
-local Ambiguate, BNGetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
+local Ambiguate, GetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, C_BattleNet.GetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
 local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar
 local CanReportPlayer, OpenReportPlayerDialog, PlayerLocation = C_ReportSystem.CanReportPlayer, C_ReportSystem.OpenReportPlayerDialog, PlayerLocation
 local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
@@ -62,8 +62,8 @@ local function IsFriendly(name, flag, _, guid)
 		geterrorhandler()(msg)
 		return true
 	end
-	local _, characterName = BNGetGameAccountInfoByGUID(guid)
-	if characterName or IsGuildMember(guid) or IsFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
+	local isBnetFriend = GetGameAccountInfoByGUID(guid)
+	if isBnetFriend or IsGuildMember(guid) or IsFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
 		return true
 	end
 end
