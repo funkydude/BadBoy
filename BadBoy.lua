@@ -85,6 +85,13 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, chan
 	blockedLineId = 0
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
+	-- XXX temp until patched by Blizz
+	if msg:find("|HclubTicket", nil, true) and msg:find("|TInterface", nil, true) then
+		blockedLineId = lineId
+		return
+	end
+	-- XXX end
+
 	local trimmedPlayer = Ambiguate(player, "none")
 	if IsFriendly(trimmedPlayer, flag, nil, guid) then return end
 
