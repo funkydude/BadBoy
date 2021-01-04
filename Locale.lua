@@ -39,11 +39,11 @@ elseif loc == "zhCN" then
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "esES" or loc == "esMX" then
 	L.spamBlocked = "BadBoy: Spam bloqueado"
-	--L.spamTooltip = "Show spam in button tooltip"
-	--L.noAnimate = "Disable button pulse animation"
-	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."
-	--L.frequentButton = "Show the button more frequently"
-	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
+	L.spamTooltip = "Mostrar spam en la descripción emergente del botón"
+	L.noAnimate = "Desactivar animación del botón"
+	L.clickToReport = "|cffeda55fClick|r para reportar, |cffeda55fAlt-Click|r para descartar."
+	L.frequentButton = "Mostrar el botón más a menudo"
+	L.frequentButtonTip = "Para reducir las molestias al jugador, el botón de reporte no se muestra siempre.\nActive esto para mostrar siempre y de manera más rápida el botón de reporte."
 elseif loc == "ruRU" then
 	L.spamBlocked = "BadBoy: Спам заблокирован"
 	--L.spamTooltip = "Show spam in button tooltip"
