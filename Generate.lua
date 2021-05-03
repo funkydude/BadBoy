@@ -11,8 +11,8 @@ t.gnt = function(u, ...)
 		for l = 1, select("#", strsplit("^", entry)) do
 			local db = select(l, strsplit("^", entry))
 			for j = 1, select("#", strsplit(",", db)) do
-				local t = select(j, strsplit(",", db))
-				local rn = tonumber(t)
+				local tm = select(j, strsplit(",", db))
+				local rn = tonumber(tm)
 				rn = rn - i - n
 				if j == 1 then
 					if pos > 0 then

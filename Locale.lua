@@ -52,7 +52,7 @@ elseif loc == "ruRU" then
 	--L.frequentButton = "Show the button more frequently"
 	--L.frequentButtonTip = "To reduce player annoyance the report button will not always show.\nEnable this to always show the button asking to report and show it faster."
 elseif loc == "koKR" then
-	--L.spamBlocked = "BadBoy: Spam blocked"
+	L.spamBlocked = "BadBoy: 스팸 차단"
 	--L.spamTooltip = "Show spam in button tooltip"
 	--L.noAnimate = "Disable button pulse animation"
 	--L.clickToReport = "|cffeda55fClick|r to report, |cffeda55fAlt-Click|r to dismiss."

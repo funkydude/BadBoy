@@ -104,9 +104,9 @@ guildedTitle:SetPoint("TOPLEFT", btnFreqButton, "BOTTOMLEFT", 0, -88)
 guildedTitle:SetText("BadBoy_Guilded ["..ADDON_MISSING.."]")
 
 --[[ BadBoy_Ignore Title ]]--
-local guildedTitle = badboy:CreateFontString("BadBoyIgnoreConfigTitle", nil, "GameFontNormalLarge")
-guildedTitle:SetPoint("TOPLEFT", btnFreqButton, "BOTTOMLEFT", 0, -156)
-guildedTitle:SetText("BadBoy_Ignore ["..ADDON_MISSING.."]")
+local ignoreTitle = badboy:CreateFontString("BadBoyIgnoreConfigTitle", nil, "GameFontNormalLarge")
+ignoreTitle:SetPoint("TOPLEFT", btnFreqButton, "BOTTOMLEFT", 0, -156)
+ignoreTitle:SetText("BadBoy_Ignore ["..ADDON_MISSING.."]")
 
 --[[ BadBoy_CCleaner Title ]]--
 local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", nil, "GameFontNormalLarge")
