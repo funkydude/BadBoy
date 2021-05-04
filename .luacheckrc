@@ -7,6 +7,7 @@ exclude_files = {
 ignore = {
 	"111/SLASH_BADBOY1", -- slash handlers
 	"112/SlashCmdList",
+	"143/*", -- accessing undefined field split of global string
 }
 globals = {
 	"Ambiguate",
