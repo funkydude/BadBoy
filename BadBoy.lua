@@ -48,8 +48,8 @@ local repTbl = {
 }
 
 --[[ Chat Scanning ]]--
-local Ambiguate, GetGameAccountInfoByGUID, gsub, lower, next, type, tremove = Ambiguate, C_BattleNet.GetGameAccountInfoByGUID, gsub, string.lower, next, type, tremove
-local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, CanComplainChat, SetCVar
+local Ambiguate, GetGameAccountInfoByGUID, strfind, gsub, lower, next, type, tremove = Ambiguate, C_BattleNet.GetGameAccountInfoByGUID, string.find, string.gsub, string.lower, next, type, tremove
+local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, SetCVar, GetCVarBool = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, C_CVar.SetCVar, C_CVar.GetCVarBool
 local CanReportPlayer, OpenReportPlayerDialog, PlayerLocation = C_ReportSystem.CanReportPlayer, C_ReportSystem.OpenReportPlayerDialog, PlayerLocation
 local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
 local blockedLineId, et, chatLines, chatPlayers = 0, 7, {}, {}
@@ -75,7 +75,7 @@ local function Cleanse(msg)
 	end
 	return msg
 end
-local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, channelNum, _, _, lineId, guid)
+local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId, guid)
 	-- Re-enable chat bubbles if they were disabled in the previous event.
 	if enableBubble then
 		enableBubble = false
@@ -243,7 +243,7 @@ do
 			ticker = nil
 		end
 	end)
-	reportFrame:SetScript("OnClick", function(self, btn)
+	reportFrame:SetScript("OnClick", function(self)
 		if IsAltKeyDown() then -- Dismiss
 			prevShow = GetTime() -- Refresh throttle so we don't risk showing again straight after reporting
 			self:GetParent():Hide()
@@ -298,7 +298,7 @@ do
 		tt:AddLine(S.clickToReport, 1, 1, 1)
 		if next(spamLogger) then
 			tt:AddLine(" ", 0.5, 0.5, 1)
-			for k, v in next, spamLogger do
+			for _, v in next, spamLogger do
 				tt:AddLine(v, 0.2, 1, 0)
 			end
 		end
@@ -323,14 +323,14 @@ do
 	for i = 1, #tbl do
 		local event = tbl[i]
 		local frames = {GetFramesRegisteredForEvent(event)}
-		for i = 1, #frames do
-			local frame = frames[i]
+		for j = 1, #frames do
+			local frame = frames[j]
 			frame:UnregisterEvent(event)
 		end
 		f:RegisterEvent(event)
 		ChatFrame_AddMessageEventFilter(event, filterFunc)
-		for i = 1, #frames do
-			local frame = frames[i]
+		for j = 1, #frames do
+			local frame = frames[j]
 			frame:RegisterEvent(event)
 		end
 	end
