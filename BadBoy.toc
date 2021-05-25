@@ -1,4 +1,6 @@
-## Interface: 11302
+## Interface: 20501
+## Interface-Classic: 11307
+## Interface-BCC: 20501
 ## Version: @project-version@
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
@@ -19,7 +21,7 @@
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
 ## X-Curse-Project-ID: 5547
-# X-WoWI-ID: 8736
+## X-WoWI-ID: 8736
 
 ## OptionalDeps: LibChatAnims
 ## X-Embeds: LibChatAnims

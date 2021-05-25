@@ -3,8 +3,3 @@ wowi-archive-previous: no
 
 externals:
     Libs/LibChatAnims: https://repos.wowace.com/wow/libchatanims/trunk/LibChatAnims
-
-ignore:
-  - .travis.yml
-  - ISSUE_TEMPLATE.md
-  - README.md

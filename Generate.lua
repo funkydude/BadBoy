@@ -1,12 +1,8 @@
 
-if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then
-	return
-end
-
 local _, t = ...
 
 t.gnt = function(u, ...)
-	local select, strsplit, tonumber, n, char = select, strsplit, tonumber, C_Map.GetMapInfo(u).parentMapID, string.char
+	local select, strsplit, tonumber, n, char = select, string.split, tonumber, C_Map.GetMapInfo(u).parentMapID, string.char
 	for i = 1, select("#", ...) do
 		local tbl = {}
 		local pos = 0
@@ -15,8 +11,8 @@ t.gnt = function(u, ...)
 		for l = 1, select("#", strsplit("^", entry)) do
 			local db = select(l, strsplit("^", entry))
 			for j = 1, select("#", strsplit(",", db)) do
-				local t = select(j, strsplit(",", db))
-				local rn = tonumber(t)
+				local tm = select(j, strsplit(",", db))
+				local rn = tonumber(tm)
 				rn = rn - i - n
 				if j == 1 then
 					if pos > 0 then

@@ -1,8 +1,4 @@
 
-if WOW_PROJECT_ID ~= WOW_PROJECT_CLASSIC then
-	return
-end
-
 -- GLOBALS: PlaySound, SlashCmdList, BADBOY_OPTIONS, SLASH_BADBOY1
 local L
 do
@@ -29,7 +25,7 @@ close:SetPoint("TOPRIGHT", badboy, "TOPRIGHT", -5, -5)
 
 local title = badboy:CreateFontString(nil, nil, "GameFontNormalLarge")
 title:SetPoint("TOPLEFT", 16, -16)
-title:SetText("BadBoy @project-version@") -- packager magic, replaced with tag version
+title:SetText("BadBoy")
 
 --[[ Show spam checkbox ]]--
 local btnShowSpam = CreateFrame("CheckButton", nil, badboy, "OptionsBaseCheckButtonTemplate")
@@ -108,9 +104,9 @@ guildedTitle:SetPoint("TOPLEFT", btnFreqButton, "BOTTOMLEFT", 0, -88)
 guildedTitle:SetText("BadBoy_Guilded ["..ADDON_MISSING.."]")
 
 --[[ BadBoy_Ignore Title ]]--
-local guildedTitle = badboy:CreateFontString("BadBoyIgnoreConfigTitle", nil, "GameFontNormalLarge")
-guildedTitle:SetPoint("TOPLEFT", btnFreqButton, "BOTTOMLEFT", 0, -156)
-guildedTitle:SetText("BadBoy_Ignore ["..ADDON_MISSING.."]")
+local ignoreTitle = badboy:CreateFontString("BadBoyIgnoreConfigTitle", nil, "GameFontNormalLarge")
+ignoreTitle:SetPoint("TOPLEFT", btnFreqButton, "BOTTOMLEFT", 0, -156)
+ignoreTitle:SetText("BadBoy_Ignore ["..ADDON_MISSING.."]")
 
 --[[ BadBoy_CCleaner Title ]]--
 local ccleanerTitle = badboy:CreateFontString("BadBoyCCleanerConfigTitle", nil, "GameFontNormalLarge")
