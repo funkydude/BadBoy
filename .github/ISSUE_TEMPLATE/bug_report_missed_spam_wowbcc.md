@@ -1,6 +1,6 @@
 ---
 name: Missed spam on Burning Crusade Classic
-about: Tell us about missed spam on Burning Crusade Classic WoW
+about: Tell us about missed spam on Burning Crusade Classic WoW.
 title: 'Missed Spam'
 labels: bcc
 assignees: ''

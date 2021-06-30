@@ -1,6 +1,6 @@
 ---
 name: Missed spam on Classic
-about: Tell us about missed spam on Classic WoW
+about: Tell us about missed spam on Classic WoW.
 title: 'Missed Spam'
 labels: classic
 assignees: ''
