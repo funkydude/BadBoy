@@ -47,7 +47,7 @@ local repTbl = {
 
 --[[ Chat Scanning ]]--
 local Ambiguate, BNGetGameAccountInfoByGUID, strfind, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, string.find, string.gsub, string.lower, next, type, tremove
-local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, SetCVar, GetCVarBool = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, SetCVar, GetCVarBool
+local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, SetCVar, GetCVarBool = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, C_CVar.SetCVar, C_CVar.GetCVarBool
 local CanReportPlayer, ReportPlayer, PlayerLocation = C_ChatInfo.CanReportPlayer, C_ChatInfo.ReportPlayer, PlayerLocation
 local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
 local blockedLineId, et, chatLines, chatPlayers = 0, 7, {}, {}

@@ -31,7 +31,6 @@ globals = {
 	"IsEncounterInProgress",
 	"IsGuildMember",
 	"PlayerLocation",
-	"SetCVar",
 	"tremove",
 	"UnitInParty",
 	"UnitInRaid",
@@ -43,4 +42,8 @@ globals = {
 	"GameTooltip_Hide",
 	"PlaySound",
 	"UIParent",
+
+	-- Classic
+	"BNGetGameAccountInfoByGUID",
+	"C_ChatInfo",
 }
