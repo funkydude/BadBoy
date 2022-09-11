@@ -185,13 +185,23 @@ do
 	animGroup:SetLooping("REPEAT")
 	local scale = animGroup:CreateAnimation("Scale")
 	scale:SetOrder(1)
-	scale:SetFromScale(0.25,0.25)
-	scale:SetToScale(1,1)
+	if scale.SetFromScale then -- XXX Dragonflight compat
+		scale:SetFromScale(0.25,0.25)
+		scale:SetToScale(1,1)
+	else
+		scale:SetScaleFrom(0.25,0.25)
+		scale:SetScaleTo(1,1)
+	end
 	scale:SetDuration(0.4)
 	local scale2 = animGroup:CreateAnimation("Scale")
 	scale2:SetOrder(2)
-	scale2:SetFromScale(1,1)
-	scale2:SetToScale(0.25,0.25)
+	if scale.SetFromScale then -- XXX Dragonflight compat
+		scale2:SetFromScale(1,1)
+		scale2:SetToScale(0.25,0.25)
+	else
+		scale2:SetScaleFrom(1,1)
+		scale2:SetScaleTo(0.25,0.25)
+	end
 	scale2:SetDuration(0.4)
 	scale2:SetEndDelay(8)
 	animGroup:Play()
