@@ -47,8 +47,8 @@ local repTbl = {
 
 --[[ Chat Scanning ]]--
 local Ambiguate, BNGetGameAccountInfoByGUID, strfind, gsub, lower, next, type, tremove = Ambiguate, BNGetGameAccountInfoByGUID, string.find, string.gsub, string.lower, next, type, tremove
-local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, SetCVar, GetCVarBool = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, C_CVar.SetCVar, C_CVar.GetCVarBool
-local CanReportPlayer, ReportPlayer, PlayerLocation = C_ChatInfo.CanReportPlayer, C_ChatInfo.ReportPlayer, PlayerLocation
+local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, SetCVar, GetCVarBool, GetName = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, C_CVar.SetCVar, C_CVar.GetCVarBool, C_PlayerInfo.GetName
+local CanReportPlayer, ReportInfo, ReportFrame, PlayerLocation = C_ChatInfo.CanReportPlayer, ReportInfo, ReportFrame, PlayerLocation
 local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
 local blockedLineId, et, chatLines, chatPlayers = 0, 7, {}, {}
 local btn, reportFrame
@@ -273,7 +273,15 @@ do
 				local go, pass = xpcall(CanReportPlayer, dummy, v)
 				if go and pass then
 					BADBOY_BLACKLIST[k] = true
-					ReportPlayer("spam", v)
+					local reportInfo = ReportInfo:CreateReportInfoFromType(Enum.ReportType.Chat)
+					reportInfo:SetReportMajorCategory(Enum.ReportMajorCategory.InappropriateCommunication)
+					reportInfo:SetComment("Spammer blocked by BadBoy")
+
+					ReportFrame:SetMajorType(Enum.ReportMajorCategory.InappropriateCommunication);
+					ReportFrame:SetMinorCategoryFlag(Enum.ReportMinorCategory.Spam, true);
+
+					local playerName = GetName(v)
+					ReportFrame:InitiateReport(reportInfo, playerName, v, false, true)
 				end
 				spamCollector[k] = nil
 				spamLogger[k] = nil
