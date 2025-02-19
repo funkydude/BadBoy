@@ -46,9 +46,9 @@ elseif loc == "esES" or loc == "esMX" then
 	L.frequentButtonTip = "Para reducir las molestias al jugador, el botón de reporte no se muestra siempre.\nActive esto para mostrar siempre y de manera más rápida el botón de reporte."
 elseif loc == "ruRU" then
 	L.spamBlocked = "BadBoy: Спам заблокирован"
-	L.spamTooltip = "Показывать спам во всплывающей подсказке кнопки"
-	L.noAnimate = "Отключить анимацию импульса кнопки"
-	L.clickToReport = "|cffeda55fЩелкните|r, чтобы пожаловаться, |cffeda55fAlt-щелчок|r, чтобы отклонить."
+	L.spamTooltip = "Показывать спам во всплывающей подсказке"
+	L.noAnimate = "Отключить анимацию пульсации кнопки"
+	L.clickToReport = "|cffeda55fЩелкните|r, чтобы пожаловаться. |cffeda55fAlt-щелчок|r, чтобы отклонить."
 	L.frequentButton = "Показывать кнопку чаще"
 	L.frequentButtonTip = "Чтобы уменьшить раздражение игроков, кнопка отчета будет отображаться не всегда.\nВключите эту опцию, чтобы всегда отображать кнопку с просьбой сообщить и показывать ее быстрее."
 elseif loc == "koKR" then
