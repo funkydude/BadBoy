@@ -1,4 +1,4 @@
-## Interface: 11504, 11505
+## Interface: 11506
 ## Version: @project-version@
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
