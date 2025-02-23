@@ -1,4 +1,4 @@
-## Interface: 40400, 40401
+## Interface: 40400, 40401, 40402
 ## Version: @project-version@
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
