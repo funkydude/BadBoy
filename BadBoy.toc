@@ -1,4 +1,4 @@
-## Interface: 110005, 110007, 110100
+## Interface: 110105, 110107, 110100
 ## Version: @project-version@
 ## Title: BadBoy
 ## Notes: A simple spam blocker & reporter.
@@ -12,7 +12,7 @@
 ## Notes-esMX: Un bloqueador y un informador para spam.
 ## Notes-ptBR: Um simples bloqueador de spams.
 ## Notes-itIT: Un semplice blocco spam che segnala le spam alla Blizzard.
-## Author: Funkydude
+## Author: Funkeh
 ## SavedVariables: BADBOY_BLACKLIST, BADBOY_OPTIONS
 
 ## X-Credits: Shadowed(API hunting), Ellipsis(remembering odd things), Anea(original SpamSentry blacklist in BadBoy v1), WoW Community(for reporting spam)
