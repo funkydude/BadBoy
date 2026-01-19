@@ -18,4 +18,5 @@ The following channels are monitored: Trade, General, Yell, Whispers.
 * Log all removed chat [BadBoy_History](https://www.curseforge.com/wow/addons/badboy_history).
 
 ## Download
-https://www.curseforge.com/wow/addons/bad-boy
+* <https://www.curseforge.com/wow/addons/bad-boy>
+* <https://addons.wago.io/addons/badboy>
