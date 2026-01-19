@@ -8,3 +8,5 @@ assignees: ''
 
 **DO NOT POST SPAM DIRECTLY**
 Post text (not screenshots) on <https://pastebin.com/> and link it here.
+
+### What specific version of classic WoW did this happen on?
