@@ -73,6 +73,7 @@ local function Cleanse(msg)
 	end
 	return msg
 end
+local issecretvalue = issecretvalue or function() return false end
 local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId, guid)
 	-- Re-enable chat bubbles if they were disabled in the previous event.
 	if enableBubble then
@@ -81,6 +82,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _
 	end
 
 	blockedLineId = 0
+	if issecretvalue(msg) then return end
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
 	local trimmedPlayer = Ambiguate(player, "none")
