@@ -30,6 +30,7 @@ globals = {
 	"IsAltKeyDown",
 	"IsEncounterInProgress",
 	"IsGuildMember",
+	"issecretvalue",
 	"PlayerLocation",
 	"tremove",
 	"UnitInParty",
