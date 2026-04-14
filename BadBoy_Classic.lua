@@ -316,6 +316,7 @@ do
 		"CHAT_MSG_DND",
 		"CHAT_MSG_AFK",
 	}
+	local ChatFrame_AddMessageEventFilter = ChatFrameUtil and ChatFrameUtil.AddMessageEventFilter or ChatFrame_AddMessageEventFilter
 	for i = 1, #tbl do
 		local event = tbl[i]
 		local frames = {GetFramesRegisteredForEvent(event)}
