@@ -22,6 +22,7 @@ globals = {
 	"C_Timer",
 	"ChatFrame_AddMessageEventFilter",
 	"ChatFrame1",
+	"ChatFrameUtil",
 	"date",
 	"geterrorhandler",
 	"GetFramesRegisteredForEvent",

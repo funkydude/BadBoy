@@ -149,7 +149,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _
 			local t = GetTime()
 			if t-prevShow > (BADBOY_OPTIONS.freqBtn and 30 or 90) then
 				prevShow = t
-				btn:Show()
+				--btn:Show()
 			end
 		end
 
@@ -159,7 +159,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _
 		local t = GetTime()
 		if t-prevShow > (BADBOY_OPTIONS.freqBtn and 30 or 90) then
 			prevShow = t
-			btn:Show()
+			--btn:Show()
 		end
 	end
 end
