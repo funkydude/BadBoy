@@ -336,13 +336,17 @@ do
 		local frames = {GetFramesRegisteredForEvent(event)}
 		for j = 1, #frames do
 			local frame = frames[j]
-			frame:UnregisterEvent(event)
+			if not f.IsForbidden(frame) then
+				f.UnregisterEvent(frame, event)
+			end
 		end
 		f:RegisterEvent(event)
 		ChatFrame_AddMessageEventFilter(event, filterFunc)
 		for j = 1, #frames do
 			local frame = frames[j]
-			frame:RegisterEvent(event)
+			if not f.IsForbidden(frame) then
+				f.RegisterEvent(frame, event)
+			end
 		end
 	end
 end
