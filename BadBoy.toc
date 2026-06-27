@@ -22,13 +22,7 @@
 ## X-WoWI-ID: 8736
 ## X-Wago-ID: LvNAbo6o
 
-## OptionalDeps: LibChatAnims
-## X-Embeds: LibChatAnims
-
-embeds.xml
-
 Locale.lua
 SimpleOptions.lua
 Generate.lua
 BadBoy.lua
-
