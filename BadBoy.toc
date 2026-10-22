@@ -24,5 +24,7 @@
 
 Locale.lua
 SimpleOptions.lua
+Cleanse.lua
 Generate.lua
+Info_[Game].lua
 BadBoy.lua
