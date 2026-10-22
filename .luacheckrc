@@ -38,8 +38,4 @@ globals = {
 	"GameTooltip_Hide",
 	"PlaySound",
 	"UIParent",
-
-	-- Classic
-	"BNGetGameAccountInfoByGUID",
-	"C_ChatInfo",
 }
