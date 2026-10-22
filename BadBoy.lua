@@ -46,13 +46,13 @@ local repTbl = {
 }
 
 --[[ Chat Scanning ]]--
-local Ambiguate, GetGameAccountInfoByGUID, strfind, gsub, lower, next, type, tremove = Ambiguate, C_BattleNet.GetGameAccountInfoByGUID, string.find, string.gsub, string.lower, next, type, tremove
-local IsFriend, IsGuildMember, UnitInRaid, UnitInParty, SetCVar, GetCVarBool = C_FriendList.IsFriend, IsGuildMember, UnitInRaid, UnitInParty, C_CVar.SetCVar, C_CVar.GetCVarBool
+local Ambiguate, GetGameAccountInfoByGUID, strfind, gsub, lower, next, type, tremove = Ambiguate, C_BattleNet.GetGameAccountInfoByGUID, string.find, string.gsub, string.lower, next, type, table.remove
+local IsFriend, IsGuildMember, IsGUIDInGroup, SetCVar, GetCVarBool = C_FriendList.IsFriend, IsGuildMember, C_PartyInfo.IsGUIDInGroup, C_CVar.SetCVar, C_CVar.GetCVarBool
 local CanReportPlayer, OpenReportPlayerDialog, PlayerLocation = C_ReportSystem.CanReportPlayer, C_ReportSystem.OpenReportPlayerDialog, PlayerLocation
 local spamCollector, spamLogger, prevShow, enableBubble = {}, {}, 0, false
 local blockedLineId, et, chatLines, chatPlayers = 0, 7, {}, {}
 local btn, reportFrame
-local function IsFriendly(name, flag, _, guid)
+local function IsFriendly(guid, flag)
 	if not guid then return true end -- LocalDefense automated prints
 	if not guid:find("^Player") then -- Bad addons
 		local msg = "BadBoy: Unexpected GUID requested by an addon: ".. guid
@@ -61,7 +61,7 @@ local function IsFriendly(name, flag, _, guid)
 		return true
 	end
 	local isBnetFriend = GetGameAccountInfoByGUID(guid)
-	if isBnetFriend or IsGuildMember(guid) or IsFriend(guid) or UnitInRaid(name) or UnitInParty(name) or flag == "GM" or flag == "DEV" then
+	if isBnetFriend or IsGuildMember(guid) or IsFriend(guid) or IsGUIDInGroup(guid) or flag == "GM" or flag == "DEV" then
 		return true
 	end
 end
@@ -73,7 +73,7 @@ local function Cleanse(msg)
 	end
 	return msg
 end
-local issecretvalue = issecretvalue or function() return false end
+local issecretvalue = issecretvalue
 local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _, _, lineId, guid)
 	-- Re-enable chat bubbles if they were disabled in the previous event.
 	if enableBubble then
@@ -86,7 +86,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _
 	if event == "CHAT_MSG_CHANNEL" and (channelId == 0 or type(channelId) ~= "number") then return end --Only scan official custom channels (gen/trade)
 
 	local trimmedPlayer = Ambiguate(player, "none")
-	if IsFriendly(trimmedPlayer, flag, nil, guid) then return end
+	if IsFriendly(guid, flag) then return end
 
 	local debug = msg --Save original message format
 	msg = Cleanse(msg)
@@ -135,7 +135,7 @@ local eventFunc = function(_, event, msg, player, _, _, _, flag, channelId, _, _
 		if BadBoyLog then
 			BadBoyLog("BadBoy", event, trimmedPlayer, debug)
 		end
-		if not BADBOY_BLACKLIST[guid] and not IsEncounterInProgress() then
+		if not BADBOY_BLACKLIST[guid] and not C_InstanceEncounter.IsEncounterInProgress() then
 			local loc = PlayerLocation:CreateFromChatLineID(lineId)
 			spamCollector[guid] = loc
 			if BADBOY_OPTIONS.tipSpam then
@@ -330,7 +330,7 @@ do
 		"CHAT_MSG_DND",
 		"CHAT_MSG_AFK",
 	}
-	local ChatFrame_AddMessageEventFilter = ChatFrameUtil and ChatFrameUtil.AddMessageEventFilter or ChatFrame_AddMessageEventFilter
+	local AddMessageEventFilter = ChatFrameUtil.AddMessageEventFilter
 	for i = 1, #tbl do
 		local event = tbl[i]
 		local frames = {GetFramesRegisteredForEvent(event)}
@@ -341,7 +341,7 @@ do
 			end
 		end
 		f:RegisterEvent(event)
-		ChatFrame_AddMessageEventFilter(event, filterFunc)
+		AddMessageEventFilter(event, filterFunc)
 		for j = 1, #frames do
 			local frame = frames[j]
 			if not f.IsForbidden(frame) then
